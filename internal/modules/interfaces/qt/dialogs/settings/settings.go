@@ -25,7 +25,7 @@ type SettingsDialogModule struct {
 
 // NewSettingsDialogModule creates a new SettingsDialogModule instance
 func NewSettingsDialogModule() *SettingsDialogModule {
-	base := core.NewBaseModule("ui", "settings-dialog-module")
+	base := core.NewBaseModule("settingsDialog", "settings-dialog-module")
 	base.SetRequires("qtApp", "settings")
 
 	return &SettingsDialogModule{

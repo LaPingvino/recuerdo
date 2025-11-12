@@ -25,7 +25,7 @@ type FileDialogModule struct {
 
 // NewFileDialogModule creates a new FileDialogModule instance
 func NewFileDialogModule() *FileDialogModule {
-	base := core.NewBaseModule("ui", "file-dialog-module")
+	base := core.NewBaseModule("fileDialog", "file-dialog-module")
 	base.SetRequires("qtApp")
 
 	return &FileDialogModule{

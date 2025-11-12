@@ -58,6 +58,11 @@ import (
 	// ALL Qt imports temporarily disabled to get core system working first
 	// TODO: Re-enable Qt modules incrementally once basic system is validated
 
+	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/dialogs/about"
+	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/dialogs/file"
+	settingsDialog "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/dialogs/settings"
+	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/lessonDialogs"
+
 	// "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/dialogs/documentation" // Disabled due to build constraints
 	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/gui"
 	loadergui "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/loaderGui"
@@ -101,6 +106,7 @@ import (
 	topomaps "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/topoMaps"
 	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/typingTutor/keyboard"
 	"github.com/LaPingvino/openteacher/internal/modules/logic/authors"
+	"github.com/LaPingvino/openteacher/internal/modules/logic/settings"
 
 	logicevent "github.com/LaPingvino/openteacher/internal/modules/logic/event"
 	"github.com/LaPingvino/openteacher/internal/modules/logic/execute"
@@ -200,7 +206,6 @@ import (
 	"github.com/LaPingvino/openteacher/internal/modules/logic/savers/sylk"
 	topohtml "github.com/LaPingvino/openteacher/internal/modules/logic/savers/topoHtml"
 	wordshtml "github.com/LaPingvino/openteacher/internal/modules/logic/savers/wordsHtml"
-	"github.com/LaPingvino/openteacher/internal/modules/logic/settings"
 
 	testtypesmedia "github.com/LaPingvino/openteacher/internal/modules/logic/testTypes/media"
 	testtypestopo "github.com/LaPingvino/openteacher/internal/modules/logic/testTypes/topo"
@@ -308,6 +313,27 @@ func registerAllModules(manager *core.Manager) error {
 	guiModule := gui.InitGuiModule()
 	if err := manager.Register(guiModule); err != nil {
 		return fmt.Errorf("failed to register gui module: %w", err)
+	}
+
+	// Register dialog modules
+	fileDialogModule := file.NewFileDialogModule()
+	if err := manager.Register(fileDialogModule); err != nil {
+		return fmt.Errorf("failed to register file dialog module: %w", err)
+	}
+
+	aboutDialogModule := about.NewAboutDialogModule()
+	if err := manager.Register(aboutDialogModule); err != nil {
+		return fmt.Errorf("failed to register about dialog module: %w", err)
+	}
+
+	settingsDialogModule := settingsDialog.NewSettingsDialogModule()
+	if err := manager.Register(settingsDialogModule); err != nil {
+		return fmt.Errorf("failed to register settings dialog module: %w", err)
+	}
+
+	lessonDialogsModule := lessonDialogs.NewLessonDialogsModule()
+	if err := manager.Register(lessonDialogsModule); err != nil {
+		return fmt.Errorf("failed to register lesson dialogs module: %w", err)
 	}
 
 	// Temporarily disable business card and background image modules to test core system

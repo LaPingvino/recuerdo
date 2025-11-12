@@ -10,7 +10,7 @@ import (
 	"fmt"
 
 	"github.com/LaPingvino/openteacher/internal/core"
-	"github.com/therecipe/qt/core"
+	qtcore "github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/widgets"
 )
 
@@ -23,7 +23,7 @@ type AboutDialogModule struct {
 
 // NewAboutDialogModule creates a new AboutDialogModule instance
 func NewAboutDialogModule() *AboutDialogModule {
-	base := core.NewBaseModule("ui", "about-module")
+	base := core.NewBaseModule("aboutDialog", "about-module")
 	base.SetRequires("qtApp")
 
 	return &AboutDialogModule{
@@ -49,7 +49,7 @@ func (mod *AboutDialogModule) createDialog() {
 	mod.dialog = widgets.NewQDialog(nil, 0)
 	mod.dialog.SetWindowTitle("About OpenTeacher")
 	mod.dialog.SetFixedSize2(400, 300)
-	mod.dialog.SetWindowModality(core.Qt__ApplicationModal)
+	mod.dialog.SetWindowModality(qtcore.Qt__ApplicationModal)
 
 	// Create main layout
 	layout := widgets.NewQVBoxLayout()
@@ -61,28 +61,28 @@ func (mod *AboutDialogModule) createDialog() {
 	titleFont.SetPointSize(18)
 	titleFont.SetBold(true)
 	titleLabel.SetFont(titleFont)
-	titleLabel.SetAlignment(core.Qt__AlignHCenter)
+	titleLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	layout.AddWidget(titleLabel, 0, 0)
 
 	// Add version info
 	versionLabel := widgets.NewQLabel2("Version 4.0.0-alpha", nil, 0)
-	versionLabel.SetAlignment(core.Qt__AlignHCenter)
+	versionLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	layout.AddWidget(versionLabel, 0, 0)
 
 	// Add description
 	descLabel := widgets.NewQLabel2("OpenTeacher helps you learn whatever you want to learn!\nIt's designed to help you learn a foreign language,\nbut can also be used for other subjects.", nil, 0)
-	descLabel.SetAlignment(core.Qt__AlignHCenter)
+	descLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	descLabel.SetWordWrap(true)
 	layout.AddWidget(descLabel, 0, 0)
 
 	// Add copyright
 	copyrightLabel := widgets.NewQLabel2("Copyright © 2010-2023 OpenTeacher Team", nil, 0)
-	copyrightLabel.SetAlignment(core.Qt__AlignHCenter)
+	copyrightLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	layout.AddWidget(copyrightLabel, 0, 0)
 
 	// Add website link
 	websiteLabel := widgets.NewQLabel2(`<a href="http://openteacher.org">http://openteacher.org</a>`, nil, 0)
-	websiteLabel.SetAlignment(core.Qt__AlignHCenter)
+	websiteLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	websiteLabel.SetOpenExternalLinks(true)
 	layout.AddWidget(websiteLabel, 0, 0)
 

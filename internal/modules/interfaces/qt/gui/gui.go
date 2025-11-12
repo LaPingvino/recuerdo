@@ -165,12 +165,14 @@ func (mod *GuiModule) createMenuBar() {
 	newAction := fileMenu.AddAction("&New Lesson...")
 	newAction.SetShortcut(gui.NewQKeySequence2("Ctrl+N", gui.QKeySequence__NativeText))
 	newAction.ConnectTriggered(func(checked bool) {
+		log.Printf("[EVENT] New Lesson menu action triggered")
 		mod.showNewLessonDialog()
 	})
 
 	openAction := fileMenu.AddAction("&Open...")
 	openAction.SetShortcut(gui.NewQKeySequence2("Ctrl+O", gui.QKeySequence__NativeText))
 	openAction.ConnectTriggered(func(checked bool) {
+		log.Printf("[EVENT] Open Lesson menu action triggered")
 		mod.showOpenDialog()
 	})
 
@@ -189,6 +191,7 @@ func (mod *GuiModule) createMenuBar() {
 	exitAction := fileMenu.AddAction("E&xit")
 	exitAction.SetShortcut(gui.NewQKeySequence2("Ctrl+Q", gui.QKeySequence__NativeText))
 	exitAction.ConnectTriggered(func(checked bool) {
+		log.Printf("[EVENT] Exit menu action triggered")
 		mod.mainWindow.Close()
 	})
 
@@ -197,6 +200,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	propertiesAction := editMenu.AddAction("&Properties...")
 	propertiesAction.ConnectTriggered(func(checked bool) {
+		log.Printf("[EVENT] Properties menu action triggered")
 		mod.showPropertiesDialog()
 	})
 
@@ -205,6 +209,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	settingsAction := toolsMenu.AddAction("&Settings...")
 	settingsAction.ConnectTriggered(func(checked bool) {
+		log.Printf("[EVENT] Settings menu action triggered")
 		mod.showSettingsDialog()
 	})
 
@@ -213,6 +218,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	aboutAction := helpMenu.AddAction("&About...")
 	aboutAction.ConnectTriggered(func(checked bool) {
+		log.Printf("[EVENT] About menu action triggered")
 		mod.showAboutDialog()
 	})
 }
@@ -257,6 +263,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	newLessonBtn := widgets.NewQPushButton2("Create New Lesson", nil)
 	newLessonBtn.SetFixedSize2(200, 50)
 	newLessonBtn.ConnectClicked(func(checked bool) {
+		log.Printf("[EVENT] Create New Lesson button clicked")
 		mod.showNewLessonDialog()
 	})
 	buttonsLayout.AddWidget(newLessonBtn, 0, 0)
@@ -267,6 +274,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	openLessonBtn := widgets.NewQPushButton2("Open Lesson", nil)
 	openLessonBtn.SetFixedSize2(200, 50)
 	openLessonBtn.ConnectClicked(func(checked bool) {
+		log.Printf("[EVENT] Open Lesson button clicked")
 		mod.showOpenDialog()
 	})
 	buttonsLayout.AddWidget(openLessonBtn, 0, 0)
@@ -288,33 +296,133 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 
 // Dialog helper methods
 func (mod *GuiModule) showNewLessonDialog() {
-	log.Printf("[STUB] GuiModule.showNewLessonDialog() - lesson dialog creation not implemented")
-	// TODO: Get lesson dialogs module and show new lesson dialog
-	mod.statusBar.ShowMessage("New lesson dialog requested", 3000)
+	log.Printf("[ACTION] GuiModule.showNewLessonDialog() - attempting to show lesson dialog")
+
+	// Try to find lesson dialog module
+	lessonDialogModules := mod.manager.GetModulesByType("lessonDialogs")
+	if len(lessonDialogModules) > 0 {
+		log.Printf("[SUCCESS] Found %d lessonDialogs modules, using first one", len(lessonDialogModules))
+
+		// Try to call ShowNewLessonDialog method on the module
+		if lessonMod, ok := lessonDialogModules[0].(interface{ ShowNewLessonDialog() map[string]interface{} }); ok {
+			log.Printf("[SUCCESS] Calling ShowNewLessonDialog() on lessonDialogs module")
+			lessonData := lessonMod.ShowNewLessonDialog()
+			if lessonData != nil {
+				log.Printf("[SUCCESS] New lesson dialog returned data: %v", lessonData)
+				mod.statusBar.ShowMessage("New lesson created successfully", 3000)
+				// TODO: Create actual lesson from returned data
+			} else {
+				log.Printf("[INFO] New lesson dialog was cancelled")
+				mod.statusBar.ShowMessage("New lesson creation cancelled", 3000)
+			}
+		} else {
+			log.Printf("[ERROR] lessonDialogs module does not implement ShowNewLessonDialog() method")
+			mod.statusBar.ShowMessage("Error: Lesson dialog not available", 3000)
+		}
+	} else {
+		log.Printf("[ERROR] No lessonDialogs modules found")
+		mod.statusBar.ShowMessage("Error: No lesson dialog modules available", 3000)
+	}
 }
 
 func (mod *GuiModule) showOpenDialog() {
-	log.Printf("[STUB] GuiModule.showOpenDialog() - file dialog not implemented")
-	// TODO: Get file dialog module and show open dialog
-	mod.statusBar.ShowMessage("Open dialog requested", 3000)
+	log.Printf("[ACTION] GuiModule.showOpenDialog() - attempting to show file dialog")
+
+	// Try to find file dialog module
+	fileDialogModules := mod.manager.GetModulesByType("fileDialog")
+	if len(fileDialogModules) > 0 {
+		log.Printf("[SUCCESS] Found %d fileDialog modules, using first one", len(fileDialogModules))
+
+		// Try to call OpenFile method on the module
+		if fileMod, ok := fileDialogModules[0].(interface {
+			OpenFile(parent interface{}, title string, filter string) string
+		}); ok {
+			log.Printf("[SUCCESS] Calling OpenFile() on fileDialog module")
+			fileName := fileMod.OpenFile(nil, "Open Lesson File", "Lesson Files (*.ot *.xml);;All Files (*.*)")
+			if fileName != "" {
+				log.Printf("[SUCCESS] File dialog returned: %s", fileName)
+				mod.statusBar.ShowMessage(fmt.Sprintf("Selected file: %s", fileName), 5000)
+				// TODO: Load the selected file
+			} else {
+				log.Printf("[INFO] File dialog was cancelled")
+				mod.statusBar.ShowMessage("File selection cancelled", 3000)
+			}
+		} else {
+			log.Printf("[ERROR] fileDialog module does not implement OpenFile() method")
+			mod.statusBar.ShowMessage("Error: File dialog not available", 3000)
+		}
+	} else {
+		log.Printf("[ERROR] No fileDialog modules found")
+		mod.statusBar.ShowMessage("Error: No file dialog modules available", 3000)
+	}
 }
 
 func (mod *GuiModule) showPropertiesDialog() {
 	log.Printf("[STUB] GuiModule.showPropertiesDialog() - properties dialog not implemented")
+
+	// Try to find properties dialog module
+	propertiesDialogModules := mod.manager.GetModulesByType("propertiesDialog")
+	if len(propertiesDialogModules) > 0 {
+		log.Printf("[DEBUG] Found %d propertiesDialog modules", len(propertiesDialogModules))
+	} else {
+		log.Printf("[ERROR] No propertiesDialog modules found")
+	}
+
 	// TODO: Show lesson properties dialog
 	mod.statusBar.ShowMessage("Properties dialog requested", 3000)
 }
 
 func (mod *GuiModule) showSettingsDialog() {
-	log.Printf("[STUB] GuiModule.showSettingsDialog() - settings dialog not implemented")
-	// TODO: Get settings dialog module and show it
-	mod.statusBar.ShowMessage("Settings dialog requested", 3000)
+	log.Printf("[ACTION] GuiModule.showSettingsDialog() - attempting to show settings dialog")
+
+	// Try to find settings dialog module
+	settingsDialogModules := mod.manager.GetModulesByType("settingsDialog")
+	if len(settingsDialogModules) > 0 {
+		log.Printf("[SUCCESS] Found %d settingsDialog modules, using first one", len(settingsDialogModules))
+
+		// Try to call ShowSettingsDialog method on the module
+		if settingsMod, ok := settingsDialogModules[0].(interface{ ShowSettingsDialog() bool }); ok {
+			log.Printf("[SUCCESS] Calling ShowSettingsDialog() on settingsDialog module")
+			applied := settingsMod.ShowSettingsDialog()
+			if applied {
+				log.Printf("[SUCCESS] Settings dialog applied changes")
+				mod.statusBar.ShowMessage("Settings updated successfully", 3000)
+			} else {
+				log.Printf("[INFO] Settings dialog was cancelled or no changes made")
+				mod.statusBar.ShowMessage("Settings dialog cancelled", 3000)
+			}
+		} else {
+			log.Printf("[ERROR] settingsDialog module does not implement ShowSettingsDialog() method")
+			mod.statusBar.ShowMessage("Error: Settings dialog not available", 3000)
+		}
+	} else {
+		log.Printf("[ERROR] No settingsDialog modules found")
+		mod.statusBar.ShowMessage("Error: No settings dialog modules available", 3000)
+	}
 }
 
 func (mod *GuiModule) showAboutDialog() {
-	log.Printf("[STUB] GuiModule.showAboutDialog() - about dialog not implemented")
-	// TODO: Get about dialog module and show it
-	mod.statusBar.ShowMessage("About dialog requested", 3000)
+	log.Printf("[ACTION] GuiModule.showAboutDialog() - attempting to show about dialog")
+
+	// Try to find about dialog module
+	aboutDialogModules := mod.manager.GetModulesByType("aboutDialog")
+	if len(aboutDialogModules) > 0 {
+		log.Printf("[SUCCESS] Found %d aboutDialog modules, using first one", len(aboutDialogModules))
+
+		// Try to call ShowAboutDialog method on the module
+		if aboutMod, ok := aboutDialogModules[0].(interface{ ShowAboutDialog() }); ok {
+			log.Printf("[SUCCESS] Calling ShowAboutDialog() on aboutDialog module")
+			aboutMod.ShowAboutDialog()
+			log.Printf("[SUCCESS] About dialog was shown")
+			mod.statusBar.ShowMessage("About dialog displayed", 2000)
+		} else {
+			log.Printf("[ERROR] aboutDialog module does not implement ShowAboutDialog() method")
+			mod.statusBar.ShowMessage("Error: About dialog not available", 3000)
+		}
+	} else {
+		log.Printf("[ERROR] No aboutDialog modules found")
+		mod.statusBar.ShowMessage("Error: No about dialog modules available", 3000)
+	}
 }
 
 // InitGuiModule creates and returns a new GuiModule instance

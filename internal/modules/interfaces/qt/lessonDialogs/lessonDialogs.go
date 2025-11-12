@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/LaPingvino/openteacher/internal/core"
-	"github.com/therecipe/qt/core"
+	qtcore "github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/widgets"
 )
 
@@ -27,7 +27,7 @@ type LessonDialogsModule struct {
 
 // NewLessonDialogsModule creates a new LessonDialogsModule instance
 func NewLessonDialogsModule() *LessonDialogsModule {
-	base := core.NewBaseModule("ui", "lesson-dialogs-module")
+	base := core.NewBaseModule("lessonDialogs", "lesson-dialogs-module")
 	base.SetRequires("qtApp")
 
 	return &LessonDialogsModule{
@@ -85,7 +85,7 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *widgets.QWidget) {
 	mod.newLessonDialog = widgets.NewQDialog(parent, 0)
 	mod.newLessonDialog.SetWindowTitle("Create New Lesson")
 	mod.newLessonDialog.SetFixedSize2(400, 350)
-	mod.newLessonDialog.SetWindowModality(core.Qt__ApplicationModal)
+	mod.newLessonDialog.SetWindowModality(qtcore.Qt__ApplicationModal)
 
 	layout := widgets.NewQVBoxLayout()
 	mod.newLessonDialog.SetLayout(layout)
@@ -166,7 +166,7 @@ func (mod *LessonDialogsModule) createPropertiesDialog(parent *widgets.QWidget) 
 	mod.propertiesDialog = widgets.NewQDialog(parent, 0)
 	mod.propertiesDialog.SetWindowTitle("Lesson Properties")
 	mod.propertiesDialog.SetFixedSize2(450, 400)
-	mod.propertiesDialog.SetWindowModality(core.Qt__ApplicationModal)
+	mod.propertiesDialog.SetWindowModality(qtcore.Qt__ApplicationModal)
 
 	layout := widgets.NewQVBoxLayout()
 	mod.propertiesDialog.SetLayout(layout)
@@ -242,7 +242,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *widgets.QWidget) {
 	mod.importDialog = widgets.NewQDialog(parent, 0)
 	mod.importDialog.SetWindowTitle("Import Lesson")
 	mod.importDialog.SetFixedSize2(500, 300)
-	mod.importDialog.SetWindowModality(core.Qt__ApplicationModal)
+	mod.importDialog.SetWindowModality(qtcore.Qt__ApplicationModal)
 
 	layout := widgets.NewQVBoxLayout()
 	mod.importDialog.SetLayout(layout)
@@ -339,17 +339,17 @@ func (mod *LessonDialogsModule) resetNewLessonForm() {
 		return
 	}
 
-	nameEdit := mod.newLessonDialog.FindChild("lessonName", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+	nameEdit := widgets.NewQLineEditFromPointer(mod.newLessonDialog.FindChild("lessonName", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if nameEdit != nil {
 		nameEdit.Clear()
 	}
 
-	descEdit := mod.newLessonDialog.FindChild("lessonDescription", core.Qt__FindChildrenRecursively).(*widgets.QTextEdit)
+	descEdit := widgets.NewQTextEditFromPointer(mod.newLessonDialog.FindChild("lessonDescription", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if descEdit != nil {
 		descEdit.Clear()
 	}
 
-	wordsRadio := mod.newLessonDialog.FindChild("wordsRadio", core.Qt__FindChildrenRecursively).(*widgets.QRadioButton)
+	wordsRadio := widgets.NewQRadioButtonFromPointer(mod.newLessonDialog.FindChild("wordsRadio", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if wordsRadio != nil {
 		wordsRadio.SetChecked(true)
 	}
@@ -363,20 +363,20 @@ func (mod *LessonDialogsModule) getNewLessonData() map[string]interface{} {
 
 	data := make(map[string]interface{})
 
-	nameEdit := mod.newLessonDialog.FindChild("lessonName", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+	nameEdit := widgets.NewQLineEditFromPointer(mod.newLessonDialog.FindChild("lessonName", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if nameEdit != nil {
 		data["name"] = strings.TrimSpace(nameEdit.Text())
 	}
 
-	descEdit := mod.newLessonDialog.FindChild("lessonDescription", core.Qt__FindChildrenRecursively).(*widgets.QTextEdit)
+	descEdit := widgets.NewQTextEditFromPointer(mod.newLessonDialog.FindChild("lessonDescription", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if descEdit != nil {
 		data["description"] = strings.TrimSpace(descEdit.ToPlainText())
 	}
 
 	// Determine lesson type
-	wordsRadio := mod.newLessonDialog.FindChild("wordsRadio", core.Qt__FindChildrenRecursively).(*widgets.QRadioButton)
-	topoRadio := mod.newLessonDialog.FindChild("topoRadio", core.Qt__FindChildrenRecursively).(*widgets.QRadioButton)
-	mediaRadio := mod.newLessonDialog.FindChild("mediaRadio", core.Qt__FindChildrenRecursively).(*widgets.QRadioButton)
+	wordsRadio := widgets.NewQRadioButtonFromPointer(mod.newLessonDialog.FindChild("wordsRadio", qtcore.Qt__FindChildrenRecursively).Pointer())
+	topoRadio := widgets.NewQRadioButtonFromPointer(mod.newLessonDialog.FindChild("topoRadio", qtcore.Qt__FindChildrenRecursively).Pointer())
+	mediaRadio := widgets.NewQRadioButtonFromPointer(mod.newLessonDialog.FindChild("mediaRadio", qtcore.Qt__FindChildrenRecursively).Pointer())
 
 	if wordsRadio != nil && wordsRadio.IsChecked() {
 		data["type"] = "words"
@@ -389,12 +389,12 @@ func (mod *LessonDialogsModule) getNewLessonData() map[string]interface{} {
 	}
 
 	// Get languages
-	questionLang := mod.newLessonDialog.FindChild("questionLanguage", core.Qt__FindChildrenRecursively).(*widgets.QComboBox)
+	questionLang := widgets.NewQComboBoxFromPointer(mod.newLessonDialog.FindChild("questionLanguage", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if questionLang != nil {
 		data["questionLanguage"] = questionLang.CurrentText()
 	}
 
-	answerLang := mod.newLessonDialog.FindChild("answerLanguage", core.Qt__FindChildrenRecursively).(*widgets.QComboBox)
+	answerLang := widgets.NewQComboBoxFromPointer(mod.newLessonDialog.FindChild("answerLanguage", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if answerLang != nil {
 		data["answerLanguage"] = answerLang.CurrentText()
 	}
@@ -409,28 +409,28 @@ func (mod *LessonDialogsModule) loadPropertiesData(lessonData map[string]interfa
 	}
 
 	if name, ok := lessonData["name"].(string); ok {
-		nameEdit := mod.propertiesDialog.FindChild("propLessonName", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+		nameEdit := widgets.NewQLineEditFromPointer(mod.propertiesDialog.FindChild("propLessonName", qtcore.Qt__FindChildrenRecursively).Pointer())
 		if nameEdit != nil {
 			nameEdit.SetText(name)
 		}
 	}
 
 	if desc, ok := lessonData["description"].(string); ok {
-		descEdit := mod.propertiesDialog.FindChild("propLessonDescription", core.Qt__FindChildrenRecursively).(*widgets.QTextEdit)
+		descEdit := widgets.NewQTextEditFromPointer(mod.propertiesDialog.FindChild("propLessonDescription", qtcore.Qt__FindChildrenRecursively).Pointer())
 		if descEdit != nil {
 			descEdit.SetPlainText(desc)
 		}
 	}
 
 	if author, ok := lessonData["author"].(string); ok {
-		authorEdit := mod.propertiesDialog.FindChild("propAuthor", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+		authorEdit := widgets.NewQLineEditFromPointer(mod.propertiesDialog.FindChild("propAuthor", qtcore.Qt__FindChildrenRecursively).Pointer())
 		if authorEdit != nil {
 			authorEdit.SetText(author)
 		}
 	}
 
 	if version, ok := lessonData["version"].(string); ok {
-		versionEdit := mod.propertiesDialog.FindChild("propVersion", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+		versionEdit := widgets.NewQLineEditFromPointer(mod.propertiesDialog.FindChild("propVersion", qtcore.Qt__FindChildrenRecursively).Pointer())
 		if versionEdit != nil {
 			versionEdit.SetText(version)
 		}
@@ -438,7 +438,7 @@ func (mod *LessonDialogsModule) loadPropertiesData(lessonData map[string]interfa
 
 	// Update statistics
 	if itemCount, ok := lessonData["itemCount"].(int); ok {
-		itemLabel := mod.propertiesDialog.FindChild("itemCount", core.Qt__FindChildrenRecursively).(*widgets.QLabel)
+		itemLabel := widgets.NewQLabelFromPointer(mod.propertiesDialog.FindChild("itemCount", qtcore.Qt__FindChildrenRecursively).Pointer())
 		if itemLabel != nil {
 			itemLabel.SetText(fmt.Sprintf("%d", itemCount))
 		}
@@ -453,22 +453,22 @@ func (mod *LessonDialogsModule) getPropertiesData() map[string]interface{} {
 
 	data := make(map[string]interface{})
 
-	nameEdit := mod.propertiesDialog.FindChild("propLessonName", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+	nameEdit := widgets.NewQLineEditFromPointer(mod.propertiesDialog.FindChild("propLessonName", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if nameEdit != nil {
 		data["name"] = strings.TrimSpace(nameEdit.Text())
 	}
 
-	descEdit := mod.propertiesDialog.FindChild("propLessonDescription", core.Qt__FindChildrenRecursively).(*widgets.QTextEdit)
+	descEdit := widgets.NewQTextEditFromPointer(mod.propertiesDialog.FindChild("propLessonDescription", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if descEdit != nil {
 		data["description"] = strings.TrimSpace(descEdit.ToPlainText())
 	}
 
-	authorEdit := mod.propertiesDialog.FindChild("propAuthor", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+	authorEdit := widgets.NewQLineEditFromPointer(mod.propertiesDialog.FindChild("propAuthor", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if authorEdit != nil {
 		data["author"] = strings.TrimSpace(authorEdit.Text())
 	}
 
-	versionEdit := mod.propertiesDialog.FindChild("propVersion", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+	versionEdit := widgets.NewQLineEditFromPointer(mod.propertiesDialog.FindChild("propVersion", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if versionEdit != nil {
 		data["version"] = strings.TrimSpace(versionEdit.Text())
 	}
@@ -484,22 +484,22 @@ func (mod *LessonDialogsModule) getImportData() map[string]interface{} {
 
 	data := make(map[string]interface{})
 
-	fileEdit := mod.importDialog.FindChild("importFile", core.Qt__FindChildrenRecursively).(*widgets.QLineEdit)
+	fileEdit := widgets.NewQLineEditFromPointer(mod.importDialog.FindChild("importFile", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if fileEdit != nil {
 		data["file"] = strings.TrimSpace(fileEdit.Text())
 	}
 
-	encodingCombo := mod.importDialog.FindChild("encoding", core.Qt__FindChildrenRecursively).(*widgets.QComboBox)
+	encodingCombo := widgets.NewQComboBoxFromPointer(mod.importDialog.FindChild("encoding", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if encodingCombo != nil {
 		data["encoding"] = encodingCombo.CurrentText()
 	}
 
-	separatorCombo := mod.importDialog.FindChild("separator", core.Qt__FindChildrenRecursively).(*widgets.QComboBox)
+	separatorCombo := widgets.NewQComboBoxFromPointer(mod.importDialog.FindChild("separator", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if separatorCombo != nil {
 		data["separator"] = separatorCombo.CurrentText()
 	}
 
-	firstRowCheck := mod.importDialog.FindChild("firstRowHeaders", core.Qt__FindChildrenRecursively).(*widgets.QCheckBox)
+	firstRowCheck := widgets.NewQCheckBoxFromPointer(mod.importDialog.FindChild("firstRowHeaders", qtcore.Qt__FindChildrenRecursively).Pointer())
 	if firstRowCheck != nil {
 		data["firstRowHeaders"] = firstRowCheck.IsChecked()
 	}
