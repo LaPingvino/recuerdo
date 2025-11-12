@@ -13,9 +13,11 @@ import (
 	"fmt"
 	"log"
 	"path/filepath"
+	"strings"
 
 	"github.com/LaPingvino/openteacher/internal/core"
 	"github.com/LaPingvino/openteacher/internal/lesson"
+	"github.com/LaPingvino/openteacher/internal/logging"
 	qtcore "github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/gui"
 	"github.com/therecipe/qt/widgets"
@@ -31,15 +33,17 @@ type GuiModule struct {
 	statusBar      *widgets.QStatusBar
 	lastLoadedFile string
 	lastLoadTime   int64
+	logger         *logging.Logger
 }
 
 // NewGuiModule creates a new GuiModule instance
 func NewGuiModule() *GuiModule {
 	base := core.NewBaseModule("ui", "gui-module")
-	base.SetRequires("event", "qtApp")
+	base.SetRequires("qtApp")
 
 	return &GuiModule{
 		BaseModule: base,
+		logger:     logging.GetModuleLogger("GUI"),
 	}
 }
 
@@ -60,7 +64,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 	// Access the QApplication through interface
 	if qtMod, ok := qtAppModule.(interface{ GetApplication() *widgets.QApplication }); ok {
 		mod.app = qtMod.GetApplication()
-		log.Printf("[SUCCESS] GuiModule got QApplication from qtApp module")
+		mod.logger.Success("Got QApplication from qtApp module")
 	} else {
 		log.Printf("[ERROR] GuiModule.Enable() failed - qtApp module does not provide GetApplication method")
 		return fmt.Errorf("qtApp module does not provide GetApplication method")
@@ -94,7 +98,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 	// Show the window
 	mod.mainWindow.Show()
 
-	log.Printf("[SUCCESS] GuiModule enabled - Qt main window created and shown")
+	mod.logger.Success("Qt main window created and shown")
 	fmt.Println("GuiModule enabled - Main window created")
 	return nil
 }
@@ -133,7 +137,7 @@ func (mod *GuiModule) SetManager(manager *core.Manager) {
 // ShowMainWindow shows the main application window
 func (mod *GuiModule) ShowMainWindow() {
 	if mod.mainWindow != nil {
-		log.Printf("[SUCCESS] GuiModule.ShowMainWindow() - showing main window")
+		mod.logger.Success("ShowMainWindow() - main window displayed")
 		mod.mainWindow.Show()
 		mod.mainWindow.Raise()
 		mod.mainWindow.ActivateWindow()
@@ -150,9 +154,9 @@ func (mod *GuiModule) GetMainWindow() *widgets.QMainWindow {
 // RunEventLoop starts the Qt event loop (blocking call)
 func (mod *GuiModule) RunEventLoop() int {
 	if mod.app != nil {
-		log.Printf("[SUCCESS] GuiModule.RunEventLoop() - starting Qt event loop")
+		mod.logger.Success("RunEventLoop() - Qt event loop started")
 		exitCode := mod.app.Exec()
-		log.Printf("[SUCCESS] GuiModule.RunEventLoop() - Qt event loop finished with code %d", exitCode)
+		mod.logger.Success("RunEventLoop() - Qt event loop finished with code %d", exitCode)
 		return exitCode
 	}
 	log.Printf("[ERROR] GuiModule.RunEventLoop() - QApplication is nil")
@@ -169,14 +173,14 @@ func (mod *GuiModule) createMenuBar() {
 	newAction := fileMenu.AddAction("&New Lesson...")
 	newAction.SetShortcut(gui.NewQKeySequence2("Ctrl+N", gui.QKeySequence__NativeText))
 	newAction.ConnectTriggered(func(checked bool) {
-		log.Printf("[EVENT] New Lesson menu action triggered")
+		mod.logger.Event("New Lesson menu action triggered")
 		mod.showNewLessonDialog()
 	})
 
 	openAction := fileMenu.AddAction("&Open...")
 	openAction.SetShortcut(gui.NewQKeySequence2("Ctrl+O", gui.QKeySequence__NativeText))
 	openAction.ConnectTriggered(func(checked bool) {
-		log.Printf("[EVENT] Open Lesson menu action triggered")
+		mod.logger.Event("Open Lesson menu action triggered")
 		mod.showOpenDialog()
 	})
 
@@ -195,7 +199,7 @@ func (mod *GuiModule) createMenuBar() {
 	exitAction := fileMenu.AddAction("E&xit")
 	exitAction.SetShortcut(gui.NewQKeySequence2("Ctrl+Q", gui.QKeySequence__NativeText))
 	exitAction.ConnectTriggered(func(checked bool) {
-		log.Printf("[EVENT] Exit menu action triggered")
+		mod.logger.Event("Exit menu action triggered")
 		mod.mainWindow.Close()
 	})
 
@@ -204,7 +208,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	propertiesAction := editMenu.AddAction("&Properties...")
 	propertiesAction.ConnectTriggered(func(checked bool) {
-		log.Printf("[EVENT] Properties menu action triggered")
+		mod.logger.Event("Properties menu action triggered")
 		mod.showPropertiesDialog()
 	})
 
@@ -213,7 +217,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	settingsAction := toolsMenu.AddAction("&Settings...")
 	settingsAction.ConnectTriggered(func(checked bool) {
-		log.Printf("[EVENT] Settings menu action triggered")
+		mod.logger.Event("Settings menu action triggered")
 		mod.showSettingsDialog()
 	})
 
@@ -222,7 +226,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	aboutAction := helpMenu.AddAction("&About...")
 	aboutAction.ConnectTriggered(func(checked bool) {
-		log.Printf("[EVENT] About menu action triggered")
+		mod.logger.Event("About menu action triggered")
 		mod.showAboutDialog()
 	})
 }
@@ -267,7 +271,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	newLessonBtn := widgets.NewQPushButton2("Create New Lesson", nil)
 	newLessonBtn.SetFixedSize2(200, 50)
 	newLessonBtn.ConnectClicked(func(checked bool) {
-		log.Printf("[EVENT] Create New Lesson button clicked")
+		mod.logger.Event("Create New Lesson button clicked")
 		mod.showNewLessonDialog()
 	})
 	buttonsLayout.AddWidget(newLessonBtn, 0, 0)
@@ -278,7 +282,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	openLessonBtn := widgets.NewQPushButton2("Open Lesson", nil)
 	openLessonBtn.SetFixedSize2(200, 50)
 	openLessonBtn.ConnectClicked(func(checked bool) {
-		log.Printf("[EVENT] Open Lesson button clicked")
+		mod.logger.Event("Open Lesson button clicked")
 		mod.showOpenDialog()
 	})
 	buttonsLayout.AddWidget(openLessonBtn, 0, 0)
@@ -300,16 +304,16 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 
 // Dialog helper methods
 func (mod *GuiModule) showNewLessonDialog() {
-	log.Printf("[ACTION] GuiModule.showNewLessonDialog() - attempting to show lesson dialog")
+	mod.logger.Action("showNewLessonDialog() - attempting to show lesson dialog")
 
 	// Try to find lesson dialog module
 	lessonDialogModules := mod.manager.GetModulesByType("lessonDialogs")
 	if len(lessonDialogModules) > 0 {
-		log.Printf("[SUCCESS] Found %d lessonDialogs modules, using first one", len(lessonDialogModules))
+		mod.logger.Success("Found %d lessonDialogs modules, using first one", len(lessonDialogModules))
 
 		// Try to call ShowNewLessonDialog method on the module
 		if lessonMod, ok := lessonDialogModules[0].(interface{ ShowNewLessonDialog() map[string]interface{} }); ok {
-			log.Printf("[SUCCESS] Calling ShowNewLessonDialog() on lessonDialogs module")
+			mod.logger.Success("Calling ShowNewLessonDialog() on lessonDialogs module")
 			lessonData := lessonMod.ShowNewLessonDialog()
 			if lessonData != nil {
 				log.Printf("[SUCCESS] New lesson dialog returned data: %v", lessonData)
@@ -320,55 +324,55 @@ func (mod *GuiModule) showNewLessonDialog() {
 				mod.statusBar.ShowMessage("New lesson creation cancelled", 3000)
 			}
 		} else {
-			log.Printf("[ERROR] lessonDialogs module does not implement ShowNewLessonDialog() method")
+			mod.logger.DeadEnd("lessonDialogs module", "does not implement ShowNewLessonDialog() method", "legacy/modules/org/openteacher/interfaces/qt/lessonDialogs/")
 			mod.statusBar.ShowMessage("Error: Lesson dialog not available", 3000)
 		}
 	} else {
-		log.Printf("[ERROR] No lessonDialogs modules found")
+		mod.logger.DeadEnd("lessonDialogs system", "No lessonDialogs modules found", "legacy/modules/org/openteacher/interfaces/qt/lessonDialogs/")
 		mod.statusBar.ShowMessage("Error: No lesson dialog modules available", 3000)
 	}
 }
 
 func (mod *GuiModule) showOpenDialog() {
-	log.Printf("[ACTION] GuiModule.showOpenDialog() - attempting to show file dialog")
+	mod.logger.Action("showOpenDialog() - attempting to show file dialog")
 
 	// Try to find file dialog module
 	fileDialogModules := mod.manager.GetModulesByType("fileDialog")
 	if len(fileDialogModules) > 0 {
-		log.Printf("[SUCCESS] Found %d fileDialog modules, using first one", len(fileDialogModules))
+		mod.logger.Success("Found %d fileDialog modules, using first one", len(fileDialogModules))
 
 		// Try to call OpenFile method on the module
 		if fileMod, ok := fileDialogModules[0].(interface {
 			OpenFile(parent interface{}, title string, filter string) string
 		}); ok {
-			log.Printf("[SUCCESS] Calling OpenFile() on fileDialog module")
+			mod.logger.Success("Calling OpenFile() on fileDialog module")
 			fileName := fileMod.OpenFile(nil, "Open Lesson File", "Lesson Files (*.ot *.csv *.tsv *.txt *.json *.xml);;OpenTeacher Files (*.ot);;Spreadsheet Files (*.csv *.tsv);;Text Files (*.txt);;JSON Files (*.json);;All Files (*.*)")
 			if fileName != "" {
-				log.Printf("[SUCCESS] File dialog returned: %s", fileName)
+				mod.logger.Success("File dialog returned: %s", fileName)
 				mod.statusBar.ShowMessage(fmt.Sprintf("Selected file: %s", fileName), 5000)
 				mod.loadSelectedFile(fileName)
 			} else {
-				log.Printf("[INFO] File dialog was cancelled")
+				mod.logger.Info("File dialog was cancelled")
 				mod.statusBar.ShowMessage("File selection cancelled", 3000)
 			}
 		} else {
-			log.Printf("[ERROR] fileDialog module does not implement OpenFile() method")
-			mod.statusBar.ShowMessage("Error: File dialog not available", 3000)
+			mod.logger.DeadEnd("fileDialog module", "does not implement OpenFile() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
+			mod.statusBar.ShowMessage("Error: File dialog not available", 000)
 		}
 	} else {
-		log.Printf("[ERROR] No fileDialog modules found")
+		mod.logger.DeadEnd("fileDialog system", "No fileDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
 		mod.statusBar.ShowMessage("Error: No file dialog modules available", 3000)
 	}
 }
 
 // loadSelectedFile loads the file selected by the user
 func (mod *GuiModule) loadSelectedFile(fileName string) {
-	log.Printf("[ACTION] GuiModule.loadSelectedFile() - loading file: %s", fileName)
+	mod.logger.Action("loadSelectedFile() - loading file: %s", fileName)
 
 	// Prevent duplicate loading of the same file within 2 seconds
 	currentTime := qtcore.QDateTime_CurrentMSecsSinceEpoch()
 	if mod.lastLoadedFile == fileName && (currentTime-mod.lastLoadTime) < 2000 {
-		log.Printf("[WARNING] Ignoring duplicate load request for: %s", fileName)
+		mod.logger.Warning("Ignoring duplicate load request for: %s (double-click protection)", fileName)
 		return
 	}
 	mod.lastLoadedFile = fileName
@@ -380,14 +384,14 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 	// Load the lesson data
 	lessonData, err := fileLoader.LoadFile(fileName)
 	if err != nil {
-		log.Printf("[ERROR] Failed to load file '%s': %v", fileName, err)
+		mod.logger.Error("Failed to load file '%s': %v", fileName, err)
 		mod.statusBar.ShowMessage(fmt.Sprintf("Error loading file: %v", err), 5000)
 		return
 	}
 
 	// Get file type
 	fileType := fileLoader.GetFileType(fileName)
-	log.Printf("[SUCCESS] Loaded lesson file - Type: %s, Items: %d", fileType, len(lessonData.List.Items))
+	mod.logger.Success("Loaded lesson file - Type: %s, Items: %d", fileType, len(lessonData.List.Items))
 
 	// Create lesson instance
 	newLesson := lesson.NewLesson(fileType)
@@ -408,122 +412,201 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 	}
 	mod.statusBar.ShowMessage(statusMsg, 10000)
 
-	// For now, log the lesson details
-	log.Printf("[SUCCESS] Lesson loaded successfully:")
-	log.Printf("  - Title: %s", title)
-	log.Printf("  - Question Language: %s", newLesson.Data.List.QuestionLanguage)
-	log.Printf("  - Answer Language: %s", newLesson.Data.List.AnswerLanguage)
-	log.Printf("  - Word pairs: %d", wordCount)
-	log.Printf("  - Test results: %d", testCount)
+	// Log the lesson details
+	mod.logger.Success("Lesson loaded successfully:")
+	mod.logger.Info("  - Title: %s", title)
+	mod.logger.Info("  - Question Language: %s", newLesson.Data.List.QuestionLanguage)
+	mod.logger.Info("  - Answer Language: %s", newLesson.Data.List.AnswerLanguage)
+	mod.logger.Info("  - Word pairs: %d", wordCount)
+	mod.logger.Info("  - Test results: %d", testCount)
 
 	// Sample the first few words for verification
 	if len(newLesson.Data.List.Items) > 0 {
-		log.Printf("[DEBUG] Sample word pairs:")
+		mod.logger.Debug("Sample word pairs:")
 		maxSamples := 3
 		if len(newLesson.Data.List.Items) < maxSamples {
 			maxSamples = len(newLesson.Data.List.Items)
 		}
 		for i := 0; i < maxSamples; i++ {
 			item := newLesson.Data.List.Items[i]
-			log.Printf("  - %v → %v", item.Questions, item.Answers)
+			mod.logger.Debug("  - %v → %v", item.Questions, item.Answers)
 		}
 		if len(newLesson.Data.List.Items) > maxSamples {
-			log.Printf("  - ... and %d more", len(newLesson.Data.List.Items)-maxSamples)
+			mod.logger.Debug("  - ... and %d more", len(newLesson.Data.List.Items)-maxSamples)
 		}
 	}
 
-	// TODO: Create lesson tab and display in main window
+	// Create lesson tab and display in main window
 	mod.displayLessonInTab(newLesson)
 }
 
-// displayLessonInTab creates a new tab for the lesson (placeholder for now)
+// displayLessonInTab creates a new tab for the lesson
 func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
-	log.Printf("[ACTION] GuiModule.displayLessonInTab() - displaying lesson in tab")
+	mod.logger.Action("displayLessonInTab() - creating lesson tab for: %s", lesson.Path)
 
-	// For now, just show a message dialog with lesson info
+	// Track double dialog issue - check if we've already created a tab for this file recently
+	if mod.lastLoadedFile == lesson.Path {
+		mod.logger.Warning("DOUBLE DIALOG ISSUE: displayLessonInTab called again for same file: %s", lesson.Path)
+		mod.logger.LegacyReminder("dialog management", "legacy/modules/org/openteacher/interfaces/qt/gui/gui.py", "check addFileTab and tab management logic")
+	}
+
+	// Create tab widget if it doesn't exist
+	var tabWidget *widgets.QTabWidget
+	centralWidget := mod.mainWindow.CentralWidget()
+	if centralWidget == nil {
+		tabWidget = widgets.NewQTabWidget(mod.mainWindow)
+		mod.mainWindow.SetCentralWidget(tabWidget)
+		mod.logger.Success("Created central tab widget")
+	} else {
+		// For now, just create a new tab widget and replace
+		// TODO: Properly check if existing widget is already a tab widget
+		tabWidget = widgets.NewQTabWidget(mod.mainWindow)
+		mod.mainWindow.SetCentralWidget(tabWidget)
+		mod.logger.Success("Replaced central widget with tab widget")
+	}
+
+	// Create lesson content widget
+	lessonWidget := mod.createLessonWidget(lesson)
+
+	// Create tab title
 	title := lesson.Data.List.Title
 	if title == "" {
 		title = filepath.Base(lesson.Path)
 	}
 
-	message := fmt.Sprintf("Lesson loaded successfully!\n\nTitle: %s\nWord pairs: %d\nPath: %s",
-		title, lesson.Data.List.GetWordCount(), lesson.Path)
+	// Add the tab
+	tabIndex := tabWidget.AddTab(lessonWidget, title)
+	tabWidget.SetCurrentIndex(tabIndex)
 
-	// Show info dialog
-	msgBox := widgets.NewQMessageBox(mod.mainWindow)
-	msgBox.SetWindowTitle("Lesson Loaded")
-	msgBox.SetText("Lesson File Loaded")
-	msgBox.SetInformativeText(message)
-	msgBox.SetIcon(widgets.QMessageBox__Information)
-	msgBox.Exec()
+	// Update status bar
+	statusMsg := fmt.Sprintf("Opened '%s' - %d words", title, lesson.Data.List.GetWordCount())
+	mod.statusBar.ShowMessage(statusMsg, 5000)
 
-	log.Printf("[SUCCESS] Lesson displayed - ready for Phase 3 (lesson editing/teaching)")
+	mod.logger.Success("Lesson tab created: %s (%d words)", title, lesson.Data.List.GetWordCount())
+}
+
+// createLessonWidget creates a widget to display lesson content
+func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *widgets.QWidget {
+	// Create main widget
+	widget := widgets.NewQWidget(mod.mainWindow, 0)
+	layout := widgets.NewQVBoxLayout()
+	widget.SetLayout(layout)
+
+	// Lesson info section
+	infoGroup := widgets.NewQGroupBox2("Lesson Information", widget)
+	infoLayout := widgets.NewQFormLayout(infoGroup)
+
+	titleLabel := widgets.NewQLabel2(lesson.Data.List.Title, widget, 0)
+	infoLayout.AddRow3("Title:", titleLabel)
+
+	if lesson.Data.List.QuestionLanguage != "" {
+		qLangLabel := widgets.NewQLabel2(lesson.Data.List.QuestionLanguage, widget, 0)
+		infoLayout.AddRow3("Question Language:", qLangLabel)
+	}
+
+	if lesson.Data.List.AnswerLanguage != "" {
+		aLangLabel := widgets.NewQLabel2(lesson.Data.List.AnswerLanguage, widget, 0)
+		infoLayout.AddRow3("Answer Language:", aLangLabel)
+	}
+
+	wordCountLabel := widgets.NewQLabel2(fmt.Sprintf("%d", len(lesson.Data.List.Items)), widget, 0)
+	infoLayout.AddRow3("Word Pairs:", wordCountLabel)
+
+	layout.AddWidget(infoGroup, 0, 0)
+
+	// Word list section
+	wordsGroup := widgets.NewQGroupBox2("Word Pairs", widget)
+	wordsLayout := widgets.NewQVBoxLayout()
+	wordsGroup.SetLayout(wordsLayout)
+
+	// Create table widget for words
+	table := widgets.NewQTableWidget2(len(lesson.Data.List.Items), 3, widget)
+	table.SetHorizontalHeaderLabels([]string{"Questions", "Answers", "Comment"})
+
+	// Populate table with word data
+	for i, item := range lesson.Data.List.Items {
+		questionsText := strings.Join(item.Questions, "; ")
+		answersText := strings.Join(item.Answers, "; ")
+
+		questionItem := widgets.NewQTableWidgetItem2(questionsText, 0)
+		answerItem := widgets.NewQTableWidgetItem2(answersText, 0)
+		commentItem := widgets.NewQTableWidgetItem2(item.Comment, 0)
+
+		table.SetItem(i, 0, questionItem)
+		table.SetItem(i, 1, answerItem)
+		table.SetItem(i, 2, commentItem)
+	}
+
+	table.ResizeColumnsToContents()
+	wordsLayout.AddWidget(table, 0, 0)
+	layout.AddWidget(wordsGroup, 0, 0)
+
+	return widget
 }
 
 func (mod *GuiModule) showPropertiesDialog() {
-	log.Printf("[STUB] GuiModule.showPropertiesDialog() - properties dialog not implemented")
+	mod.logger.Stub("showPropertiesDialog", "legacy/modules/org/openteacher/interfaces/qt/dialogs/", "properties dialog not implemented")
 
 	// Try to find properties dialog module
 	propertiesDialogModules := mod.manager.GetModulesByType("propertiesDialog")
 	if len(propertiesDialogModules) > 0 {
-		log.Printf("[DEBUG] Found %d propertiesDialog modules", len(propertiesDialogModules))
+		mod.logger.Debug("Found %d propertiesDialog modules", len(propertiesDialogModules))
 	} else {
-		log.Printf("[ERROR] No propertiesDialog modules found")
+		mod.logger.DeadEnd("propertiesDialog system", "No propertiesDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
 	}
 
-	// TODO: Show lesson properties dialog
 	mod.statusBar.ShowMessage("Properties dialog requested", 3000)
 }
 
 func (mod *GuiModule) showSettingsDialog() {
-	log.Printf("[ACTION] GuiModule.showSettingsDialog() - attempting to show settings dialog")
+	mod.logger.Action("showSettingsDialog() - attempting to show settings dialog")
 
 	// Try to find settings dialog module
 	settingsDialogModules := mod.manager.GetModulesByType("settingsDialog")
 	if len(settingsDialogModules) > 0 {
-		log.Printf("[SUCCESS] Found %d settingsDialog modules, using first one", len(settingsDialogModules))
+		mod.logger.Success("Found %d settingsDialog modules, using first one", len(settingsDialogModules))
 
 		// Try to call ShowSettingsDialog method on the module
 		if settingsMod, ok := settingsDialogModules[0].(interface{ ShowSettingsDialog() bool }); ok {
-			log.Printf("[SUCCESS] Calling ShowSettingsDialog() on settingsDialog module")
+			mod.logger.Success("Calling ShowSettingsDialog() on settingsDialog module")
 			applied := settingsMod.ShowSettingsDialog()
 			if applied {
-				log.Printf("[SUCCESS] Settings dialog applied changes")
+				mod.logger.Success("Settings dialog applied changes")
 				mod.statusBar.ShowMessage("Settings updated successfully", 3000)
 			} else {
-				log.Printf("[INFO] Settings dialog was cancelled or no changes made")
+				mod.logger.Info("Settings dialog was cancelled or no changes made")
 				mod.statusBar.ShowMessage("Settings dialog cancelled", 3000)
 			}
 		} else {
-			log.Printf("[ERROR] settingsDialog module does not implement ShowSettingsDialog() method")
+			mod.logger.DeadEnd("settingsDialog module", "does not implement ShowSettingsDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
 			mod.statusBar.ShowMessage("Error: Settings dialog not available", 3000)
 		}
 	} else {
-		log.Printf("[ERROR] No settingsDialog modules found")
+		mod.logger.DeadEnd("settingsDialog system", "No settingsDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
 		mod.statusBar.ShowMessage("Error: No settings dialog modules available", 3000)
 	}
 }
 
 func (mod *GuiModule) showAboutDialog() {
-	log.Printf("[ACTION] GuiModule.showAboutDialog() - attempting to show about dialog")
+	mod.logger.Action("showAboutDialog() - attempting to show about dialog")
 
 	// Try to find about dialog module
 	aboutDialogModules := mod.manager.GetModulesByType("aboutDialog")
 	if len(aboutDialogModules) > 0 {
-		log.Printf("[SUCCESS] Found %d aboutDialog modules, using first one", len(aboutDialogModules))
+		mod.logger.Success("Found %d aboutDialog modules, using first one", len(aboutDialogModules))
 
 		// Try to call ShowAboutDialog method on the module
 		if aboutMod, ok := aboutDialogModules[0].(interface{ ShowAboutDialog() }); ok {
-			log.Printf("[SUCCESS] Calling ShowAboutDialog() on aboutDialog module")
+			mod.logger.Success("Calling ShowAboutDialog() on aboutDialog module")
 			aboutMod.ShowAboutDialog()
-			log.Printf("[SUCCESS] About dialog was shown")
+			mod.logger.Success("About dialog was shown")
 			mod.statusBar.ShowMessage("About dialog displayed", 2000)
 		} else {
-			log.Printf("[ERROR] aboutDialog module does not implement ShowAboutDialog() method")
+			mod.logger.DeadEnd("aboutDialog module", "does not implement ShowAboutDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
 			mod.statusBar.ShowMessage("Error: About dialog not available", 3000)
 		}
 	} else {
-		log.Printf("[ERROR] No aboutDialog modules found")
+		mod.logger.DeadEnd("aboutDialog system", "No aboutDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
 		mod.statusBar.ShowMessage("Error: No about dialog modules available", 3000)
 	}
 }

@@ -1,0 +1,209 @@
+OpenTeacher 4.0.0-alpha - Starting...
+  ✓ Registered event module
+  ✓ Registered execute module
+  ✓ Registered settings module
+  ✓ Registered buttonRegister module
+  ✓ Registered lessontracker module
+✅ Core modules successfully registered!
+Note: Many optional modules are disabled to resolve import conflicts
+Registered 202 modules of 19 types
+Available module types: [aboutDialog buttonRegister data event execute fileDialog interface lessonDialogs lessonTracker logic metadata profileDescription qtApp saver settings settingsDialog startWidget translator ui]
+Enabling modules...
+Event module enabled - ready to handle events
+looking for qtbox in: /home/joop/openteacher/qtbox
+final qtbox location: /home/joop/openteacher/qtbox
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+Qt Application initialized
+QtAppModule enabled
+Button register module enabled - ready to register buttons
+Settings module enabled - loaded from: /home/joop/.openteacher/settings.json
+2025/11/12 23:46:59 execute.go:46: [SUCCESS] ExecuteModule enabled - ready to handle application lifecycle
+SettingsWidgetModule enabled
+ModulesModule enabled
+MediaTypeModule enabled
+WordsHtmlGeneratorModule enabled
+VocaLoaderModule enabled
+RecentlyOpenedModule enabled
+MapModule enabled
+SettingsWidgetModule enabled
+PyinstallerInterfaceModule enabled
+JSLibModule enabled
+JvltLoaderModule enabled
+SafeHtmlCheckerModule enabled
+SylkSaverModule enabled
+OpenTeachingMediaLoaderModule enabled
+JSMapModule enabled
+FmdLoaderModule enabled
+OpenTeacherLoaderModule enabled
+ProfileDescriptionModule enabled
+CsvLoaderModule enabled
+TopoTestTypeModule enabled
+PercentsNoteCalculatorModule enabled
+TopoMapsModule enabled
+JSBisectModule enabled
+ProfileDescriptionModule enabled
+SettingsWidgetModule enabled
+OdtSaverModule enabled
+HtmlSaverModule enabled
+DutchNoteCalculatorModule enabled
+MapModule enabled
+GermanNoteCalculatorModule enabled
+SmartModule enabled
+ProfileDescriptionModule enabled
+JMemorizeLessonLoaderModule enabled
+JavascriptLessonTypeModule enabled
+OpenTeachingTopoLoaderModule enabled
+LaTeXSaverModule enabled
+OdtSaverModule enabled
+SettingsWidgetModule enabled
+TypingTutorModelModule enabled
+SettingsWidgetModule enabled
+LoaderModule enabled
+MapModule enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+CueCardLoaderModule enabled
+OpenTeachingWordsLoaderModule enabled
+TypingTeachTypeModule enabled
+ProfileDescriptionModule enabled
+CuneiformOCRModule enabled
+JSLibModule enabled
+FrenchNoteCalculatorModule enabled
+ProfileDescriptionModule enabled
+KvtmlLoaderModule enabled
+HangmanGraphics enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+TestMenuModule enabled
+WrtsLoaderModule enabled
+ProfileDescriptionModule enabled
+GreekModule enabled
+MapModule enabled
+RepeatAnswerTeachTypeModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+SettingsWidgetModule enabled
+TestModeStudentsViewModule enabled
+ButtonRegisterModule enabled
+OverhoorLoaderModule enabled
+ForeignKnownModule enabled
+WebLogicGeneratorModule enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+LibreofficeFormatsSaverModule enabled
+ProfileDescriptionModule enabled
+PaukerLoaderModule enabled
+AmericanNoteCalculatorModule enabled
+MapModule enabled
+Teach2000LoaderModule enabled
+LanguageCodeGuesserModule enabled
+InMindTeachTypeModule enabled
+VTrainTxtLoaderModule enabled
+MnemosyneLoaderModule enabled
+ProfileDescriptionModule enabled
+PrinterModule enabled
+SettingsWidgetModule enabled
+PercentsCalculatorModule enabled
+ProfileDescriptionModule enabled
+SortModule enabled
+JSInputTypingLogicModule enabled
+OtxxSaverModule enabled
+AuthorsModule enabled
+TestModeTeacherPanelModule enabled
+OverhoringsprogrammaTalenLoaderModule enabled
+TeachmasterLoaderModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+RecentlyOpenedViewerModule enabled
+VokabelTrainerLoaderModule enabled
+Anki2LoaderModule enabled
+PngSaverModule enabled
+PercentsCalculatorModule enabled
+ProfileDescriptionModule enabled
+AnkiApkgLoaderModule enabled
+LoaderGuiModule enabled
+AllOnceModule enabled
+TesseractOCRModule enabled
+ProgressViewerModule enabled
+TypingTutorKeyboardModule enabled
+PercentNotesViewerModule enabled
+ProfileDescriptionModule enabled
+PdfSaverModule enabled
+GnuVocabTrainLoaderModule enabled
+WordsNeverAnsweredCorrectlyModule enabled
+LessonTrackerModule enabled
+GranuleLoaderModule enabled
+LudemLoaderModule enabled
+MimicryTypefaceConverterModule enabled
+VocabulariumLoaderModule enabled
+ProfileDescriptionModule enabled
+InputTypingLogicModule enabled
+MediaTypeModule enabled
+MetadataModule enabled
+ThemeModule enabled
+ReverseModule enabled
+HtmlSaverModule enabled
+OtxxLoaderModule enabled
+JSSumModule enabled
+SettingsWidgetModule enabled
+SymbolsModule enabled
+AnkiLoaderModule enabled
+OpenTeacherAuthorsModule enabled
+BackpackLoaderModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+FriendlyTranslationNamesModule enabled
+JSEvaluatorModule enabled
+NoteCalculatorChooserModule enabled
+2025/11/12 23:46:59 hangman.go:50: [STUB] Hangman TypingTeachTypeModule enabled - hangman teaching functionality not implemented
+TypingTeachTypeModule enabled
+ProfileDescriptionModule enabled
+UserDocumentationModule enabled
+ShuffleAnswerTeachTypeModule enabled
+MediaTypeModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+HardWordsModule enabled
+ProfileDescriptionModule enabled
+DataTypeIconsModule enabled
+ProfileDescriptionModule enabled
+MediaDisplayModule enabled
+DomingoLoaderModule enabled
+OcrGuiModule enabled
+CyrillicModule enabled
+MediaTypeModule enabled
+HtmlSaverModule enabled
+WordsTestTypeModule enabled
+RandomModule enabled
+KGeographyMapLoaderModule enabled
+MediaTypeModule enabled
+SettingsWidgetsModule enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+GenerateBusinessCard profile description enabled
+SettingsWidgetModule enabled
+MapModule enabled
+FlashQardLoaderModule enabled
+AbbyyLoaderModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+SettingsWidgetModule enabled
+ECTSNoteCalculatorModule enabled
+MediaTestTypeModule enabled
+OcrWordListLoaderModule enabled
+TranslatorModule enabled
+AboutDialogModule enabled
+FileDialogModule enabled
+LessonDialogsModule enabled
+2025/11/12 23:46:59 logger.go:146: 2025/11/12 23:46:59 [32m[SUCCESS][0m GUI.gui.go:67 - Got QApplication from qtApp module
+2025/11/12 23:47:00 logger.go:146: 2025/11/12 23:47:00 [32m[SUCCESS][0m GUI.gui.go:101 - Qt main window created and shown
+GuiModule enabled - Main window created
+StartwidgetModule enabled
+SettingsDialogModule enabled
+SaverModule enabled
+All modules enabled successfully
+Starting Qt GUI...
+2025/11/12 23:47:00 logger.go:146: 2025/11/12 23:47:00 [32m[SUCCESS][0m GUI.gui.go:140 - ShowMainWindow() - main window displayed
+Starting Qt event loop...
+2025/11/12 23:47:00 logger.go:146: 2025/11/12 23:47:00 [32m[SUCCESS][0m GUI.gui.go:157 - RunEventLoop() - Qt event loop started
