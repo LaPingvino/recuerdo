@@ -13,7 +13,7 @@ import (
 	"os"
 
 	"github.com/LaPingvino/openteacher/internal/core"
-	"github.com/therecipe/qt/core"
+	qtcore "github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/widgets"
 )
 
@@ -88,7 +88,7 @@ func (mod *QtAppModule) GetApplication() *widgets.QApplication {
 // ProcessEvents processes pending Qt events
 func (mod *QtAppModule) ProcessEvents() {
 	if mod.app != nil {
-		mod.app.ProcessEvents2(core.QEventLoop__AllEvents, 0)
+		mod.app.ProcessEvents2(qtcore.QEventLoop__AllEvents, 0)
 	}
 }
 

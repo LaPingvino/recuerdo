@@ -59,6 +59,7 @@ import (
 	// TODO: Re-enable Qt modules incrementally once basic system is validated
 
 	// "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/dialogs/documentation" // Disabled due to build constraints
+	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/gui"
 	loadergui "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/loaderGui"
 	mediadisplay "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/mediaDisplay"
 	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/mediaTypes/audio"
@@ -74,6 +75,7 @@ import (
 	percentnotesviewer "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/percentNotesViewer"
 	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/printer"
 	progressviewer "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/progressViewer"
+	qtapp "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/qtApp"
 	recentlyopenedviewer "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/recentlyOpenedViewer"
 	"github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/settingsWidget/boolean"
 	charactertable "github.com/LaPingvino/openteacher/internal/modules/interfaces/qt/settingsWidget/characterTable"
@@ -296,9 +298,16 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register start widget module: %w", err)
 	}
 
-	uiModule := modules.NewUIModule()
-	if err := manager.Register(uiModule); err != nil {
-		return fmt.Errorf("failed to register ui module: %w", err)
+	// Register qtApp module first (required by GUI module)
+	qtappModule := qtapp.NewQtAppModule()
+	if err := manager.Register(qtappModule); err != nil {
+		return fmt.Errorf("failed to register qtapp module: %w", err)
+	}
+
+	// Register the real Qt GUI module instead of stub
+	guiModule := gui.InitGuiModule()
+	if err := manager.Register(guiModule); err != nil {
+		return fmt.Errorf("failed to register gui module: %w", err)
 	}
 
 	// Temporarily disable business card and background image modules to test core system
@@ -318,11 +327,7 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register profile description module: %w", err)
 	}
 
-	// Register qtapp module - DISABLED for now due to Qt API issues
-	// qtappModule := qtapp.NewQtAppModule()
-	// if err := manager.Register(qtappModule); err != nil {
-	// 	return fmt.Errorf("failed to register qtapp module: %w", err)
-	// }
+	// qtApp module is now registered above with GUI module
 
 	// Register charskeyboard module - DISABLED for now
 	// charskeyboardModule := charskeyboard.NewCharsKeyboardModule()
@@ -1746,21 +1751,41 @@ func runApplication(ctx context.Context, manager *core.Manager) error {
 	guiModule, exists := manager.GetDefaultModule("ui")
 	if exists {
 		fmt.Println("Starting Qt GUI...")
+
 		// Show the main window
 		if guiMod, ok := guiModule.(interface{ ShowMainWindow() }); ok {
 			guiMod.ShowMainWindow()
+		} else {
+			fmt.Println("Warning: GUI module does not support ShowMainWindow()")
 		}
 
-		// Run the Qt event loop
+		// Run the Qt event loop in a goroutine to allow cancellation
 		if guiMod, ok := guiModule.(interface{ RunEventLoop() int }); ok {
 			fmt.Println("Starting Qt event loop...")
-			exitCode := guiMod.RunEventLoop()
-			fmt.Printf("Qt event loop finished with exit code: %d\n", exitCode)
-			return nil
+
+			// Run Qt event loop in separate goroutine to handle context cancellation
+			exitCodeChan := make(chan int, 1)
+			go func() {
+				exitCode := guiMod.RunEventLoop()
+				exitCodeChan <- exitCode
+			}()
+
+			// Wait for either event loop to finish or context cancellation
+			select {
+			case exitCode := <-exitCodeChan:
+				fmt.Printf("Qt event loop finished with exit code: %d\n", exitCode)
+				return nil
+			case <-ctx.Done():
+				fmt.Println("Context cancelled, shutting down Qt GUI...")
+				return ctx.Err()
+			}
+		} else {
+			fmt.Println("Warning: GUI module does not support RunEventLoop()")
 		}
 	}
 
-	// Fallback to execute module if no GUI
+	// Fallback to execute module if no GUI or GUI doesn't work
+	fmt.Println("GUI not available or not functional, falling back to execute module...")
 	executeModule, exists := manager.GetDefaultModule("execute")
 	if !exists {
 		return fmt.Errorf("no execute or ui module found")

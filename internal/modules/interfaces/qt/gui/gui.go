@@ -13,7 +13,7 @@ import (
 	"fmt"
 
 	"github.com/LaPingvino/openteacher/internal/core"
-	"github.com/therecipe/qt/core"
+	qtcore "github.com/therecipe/qt/core"
 	"github.com/therecipe/qt/gui"
 	"github.com/therecipe/qt/widgets"
 )
@@ -99,6 +99,12 @@ func (mod *GuiModule) Disable(ctx context.Context) error {
 
 	// Clean up GUI resources
 	if mod.mainWindow != nil {
+		// Safely close the main window
+		defer func() {
+			if r := recover(); r != nil {
+				fmt.Printf("Warning: Error closing main window: %v\n", r)
+			}
+		}()
 		mod.mainWindow.Close()
 		mod.mainWindow = nil
 	}
@@ -214,7 +220,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	titleFont.SetPointSize(24)
 	titleFont.SetBold(true)
 	titleLabel.SetFont(titleFont)
-	titleLabel.SetAlignment(core.Qt__AlignHCenter)
+	titleLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	layout.AddWidget(titleLabel, 0, 0)
 
 	// Subtitle
@@ -222,7 +228,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	subtitleFont := subtitleLabel.Font()
 	subtitleFont.SetPointSize(14)
 	subtitleLabel.SetFont(subtitleFont)
-	subtitleLabel.SetAlignment(core.Qt__AlignHCenter)
+	subtitleLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	layout.AddWidget(subtitleLabel, 0, 0)
 
 	// Add some spacing
@@ -259,7 +265,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 
 	// Status info
 	statusLabel := widgets.NewQLabel2("Module system initialized successfully", nil, 0)
-	statusLabel.SetAlignment(core.Qt__AlignHCenter)
+	statusLabel.SetAlignment(qtcore.Qt__AlignHCenter)
 	statusLabel.SetStyleSheet("color: green; font-style: italic;")
 	layout.AddWidget(statusLabel, 0, 0)
 
