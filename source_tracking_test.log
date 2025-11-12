@@ -1,0 +1,443 @@
+OpenTeacher 4.0.0-alpha - Starting...
+  ✓ Registered event module
+  ✓ Registered execute module
+  ✓ Registered settings module
+  ✓ Registered buttonRegister module
+  ✓ Registered lessontracker module
+✅ Core modules successfully registered!
+Note: Many optional modules are disabled to resolve import conflicts
+Registered 202 modules of 19 types
+Available module types: [aboutDialog buttonRegister data event execute fileDialog interface lessonDialogs lessonTracker logic metadata profileDescription qtApp saver settings settingsDialog startWidget translator ui]
+Enabling modules...
+looking for qtbox in: /home/joop/openteacher/qtbox
+final qtbox location: /home/joop/openteacher/qtbox
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+Qt Application initialized
+QtAppModule enabled
+Event module enabled - ready to handle events
+Button register module enabled - ready to register buttons
+Settings module enabled - loaded from: /home/joop/.openteacher/settings.json
+2025/11/12 23:55:16 execute.go:46: [SUCCESS] ExecuteModule enabled - ready to handle application lifecycle
+OverhoorLoaderModule enabled
+HardWordsModule enabled
+InMindTeachTypeModule enabled
+AllOnceModule enabled
+FlashQardLoaderModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+UserDocumentationModule enabled
+BackpackLoaderModule enabled
+TopoTestTypeModule enabled
+ButtonRegisterModule enabled
+GreekModule enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+TypingTutorKeyboardModule enabled
+ProfileDescriptionModule enabled
+KGeographyMapLoaderModule enabled
+LessonTrackerModule enabled
+TopoMapsModule enabled
+ForeignKnownModule enabled
+AbbyyLoaderModule enabled
+TypingTutorModelModule enabled
+ProfileDescriptionModule enabled
+LoaderModule enabled
+2025/11/12 23:55:16 hangman.go:50: [STUB] Hangman TypingTeachTypeModule enabled - hangman teaching functionality not implemented
+TypingTeachTypeModule enabled
+PercentNotesViewerModule enabled
+NoteCalculatorChooserModule enabled
+MapModule enabled
+SylkSaverModule enabled
+WordsHtmlGeneratorModule enabled
+AnkiLoaderModule enabled
+CyrillicModule enabled
+SettingsWidgetModule enabled
+CueCardLoaderModule enabled
+KvtmlLoaderModule enabled
+PercentsCalculatorModule enabled
+SettingsWidgetModule enabled
+SettingsWidgetModule enabled
+PngSaverModule enabled
+MediaTypeModule enabled
+RepeatAnswerTeachTypeModule enabled
+CuneiformOCRModule enabled
+HtmlSaverModule enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+OtxxSaverModule enabled
+JSSumModule enabled
+TestModeTeacherPanelModule enabled
+ModulesModule enabled
+MediaTypeModule enabled
+MimicryTypefaceConverterModule enabled
+TesseractOCRModule enabled
+MediaTypeModule enabled
+AuthorsModule enabled
+OpenTeacherAuthorsModule enabled
+ProfileDescriptionModule enabled
+OpenTeachingMediaLoaderModule enabled
+JSLibModule enabled
+RecentlyOpenedModule enabled
+Anki2LoaderModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+JSMapModule enabled
+SettingsWidgetsModule enabled
+RandomModule enabled
+ProfileDescriptionModule enabled
+MediaTypeModule enabled
+OcrWordListLoaderModule enabled
+SettingsWidgetModule enabled
+VTrainTxtLoaderModule enabled
+ShuffleAnswerTeachTypeModule enabled
+WebLogicGeneratorModule enabled
+DomingoLoaderModule enabled
+SettingsWidgetModule enabled
+FmdLoaderModule enabled
+VocaLoaderModule enabled
+ProfileDescriptionModule enabled
+WordsTestTypeModule enabled
+ProfileDescriptionModule enabled
+Teach2000LoaderModule enabled
+OpenTeachingTopoLoaderModule enabled
+MapModule enabled
+OdtSaverModule enabled
+OpenTeachingWordsLoaderModule enabled
+JvltLoaderModule enabled
+LibreofficeFormatsSaverModule enabled
+SettingsWidgetModule enabled
+AmericanNoteCalculatorModule enabled
+MediaDisplayModule enabled
+LanguageCodeGuesserModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+ProfileDescriptionModule enabled
+PyinstallerInterfaceModule enabled
+SortModule enabled
+ProfileDescriptionModule enabled
+TypingTeachTypeModule enabled
+OcrGuiModule enabled
+ProfileDescriptionModule enabled
+GnuVocabTrainLoaderModule enabled
+MediaTypeModule enabled
+PrinterModule enabled
+LudemLoaderModule enabled
+SafeHtmlCheckerModule enabled
+AnkiApkgLoaderModule enabled
+ProfileDescriptionModule enabled
+SymbolsModule enabled
+MapModule enabled
+ProfileDescriptionModule enabled
+LaTeXSaverModule enabled
+SettingsWidgetModule enabled
+MetadataModule enabled
+ThemeModule enabled
+MapModule enabled
+PercentsNoteCalculatorModule enabled
+JMemorizeLessonLoaderModule enabled
+SettingsWidgetModule enabled
+PdfSaverModule enabled
+DutchNoteCalculatorModule enabled
+PaukerLoaderModule enabled
+InputTypingLogicModule enabled
+OpenTeacherLoaderModule enabled
+HangmanGraphics enabled
+GenerateBusinessCard profile description enabled
+ProfileDescriptionModule enabled
+FriendlyTranslationNamesModule enabled
+JSBisectModule enabled
+MediaTypeModule enabled
+ProfileDescriptionModule enabled
+LoaderGuiModule enabled
+ProfileDescriptionModule enabled
+VocabulariumLoaderModule enabled
+SettingsWidgetModule enabled
+TestMenuModule enabled
+TestModeStudentsViewModule enabled
+ProfileDescriptionModule enabled
+HtmlSaverModule enabled
+ProfileDescriptionModule enabled
+JavascriptLessonTypeModule enabled
+ECTSNoteCalculatorModule enabled
+JSEvaluatorModule enabled
+ProfileDescriptionModule enabled
+HtmlSaverModule enabled
+MediaTestTypeModule enabled
+TeachmasterLoaderModule enabled
+ProfileDescriptionModule enabled
+WrtsLoaderModule enabled
+MnemosyneLoaderModule enabled
+FrenchNoteCalculatorModule enabled
+MapModule enabled
+SmartModule enabled
+ProfileDescriptionModule enabled
+MapModule enabled
+ProfileDescriptionModule enabled
+JSLibModule enabled
+PercentsCalculatorModule enabled
+WordsNeverAnsweredCorrectlyModule enabled
+CsvLoaderModule enabled
+GranuleLoaderModule enabled
+VokabelTrainerLoaderModule enabled
+GermanNoteCalculatorModule enabled
+ProgressViewerModule enabled
+OverhoringsprogrammaTalenLoaderModule enabled
+JSInputTypingLogicModule enabled
+ReverseModule enabled
+OdtSaverModule enabled
+OtxxLoaderModule enabled
+MediaTypeModule enabled
+DataTypeIconsModule enabled
+ProfileDescriptionModule enabled
+RecentlyOpenedViewerModule enabled
+SettingsWidgetModule enabled
+LessonDialogsModule enabled
+FileDialogModule enabled
+2025/11/12 23:55:16 logger.go:146: 2025/11/12 23:55:16 [32m[SUCCESS][0m GUI.gui.go:69 - Got QApplication from qtApp module
+2025/11/12 23:55:16 logger.go:146: 2025/11/12 23:55:16 [32m[SUCCESS][0m GUI.gui.go:103 - Qt main window created and shown
+GuiModule enabled - Main window created
+AboutDialogModule enabled
+TranslatorModule enabled
+StartwidgetModule enabled
+SettingsDialogModule enabled
+SaverModule enabled
+All modules enabled successfully
+Starting Qt GUI...
+2025/11/12 23:55:16 logger.go:146: 2025/11/12 23:55:16 [32m[SUCCESS][0m GUI.gui.go:142 - ShowMainWindow() - main window displayed
+Starting Qt event loop...
+2025/11/12 23:55:16 logger.go:146: 2025/11/12 23:55:16 [32m[SUCCESS][0m GUI.gui.go:159 - RunEventLoop() - Qt event loop started
+2025/11/12 23:55:19 logger.go:146: 2025/11/12 23:55:19 [34m[EVENT][0m GUI.gui.go:287 - Open Lesson button clicked
+2025/11/12 23:55:19 logger.go:146: 2025/11/12 23:55:19 [35m[ACTION][0m GUI.gui.go:343 - showOpenDialogFrom(BUTTON) - attempting to show file dialog
+2025/11/12 23:55:19 logger.go:146: 2025/11/12 23:55:19 [32m[SUCCESS][0m GUI.gui.go:358 - Found 1 fileDialog modules, using first one
+2025/11/12 23:55:19 logger.go:146: 2025/11/12 23:55:19 [32m[SUCCESS][0m GUI.gui.go:364 - Calling OpenFile() on fileDialog module
+2025/11/12 23:55:19 logger.go:146: 2025/11/12 23:55:19 [90m[DEBUG][0m GUI.gui.go:365 - TRACKING: About to call OpenFile() - call stack marker A
+Case insensitive sorting unsupported in the posix collation implementation
+Numeric mode unsupported in the posix collation implementation
+Case insensitive sorting unsupported in the posix collation implementation
+Numeric mode unsupported in the posix collation implementation
+Case insensitive sorting unsupported in the posix collation implementation
+Numeric mode unsupported in the posix collation implementation
+Case insensitive sorting unsupported in the posix collation implementation
+Numeric mode unsupported in the posix collation implementation
+Case insensitive sorting unsupported in the posix collation implementation
+Numeric mode unsupported in the posix collation implementation
+Case insensitive sorting unsupported in the posix collation implementation
+Numeric mode unsupported in the posix collation implementation
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:367 - TRACKING: OpenFile() returned - call stack marker B
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [32m[SUCCESS][0m GUI.gui.go:369 - File dialog returned: /home/joop/openteacher/test_lesson.ot
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:370 - TRACKING: About to call loadSelectedFile() - call stack marker C
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [35m[ACTION][0m GUI.gui.go:390 - loadSelectedFile() - loading file: /home/joop/openteacher/test_lesson.ot
+2025/11/12 23:55:29 loader.go:27: [ACTION] FileLoader.LoadFile() - loading file: /home/joop/openteacher/test_lesson.ot
+2025/11/12 23:55:29 loader.go:206: [ACTION] FileLoader.loadOpenTeacherFile() - parsing .ot XML file
+2025/11/12 23:55:29 loader.go:298: [SUCCESS] FileLoader.loadOpenTeacherFile() - loaded 10 word pairs with 36 test results
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [32m[SUCCESS][0m GUI.gui.go:414 - Loaded lesson file - Type: words, Items: 10
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [32m[SUCCESS][0m GUI.gui.go:436 - Lesson loaded successfully:
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [36m[INFO][0m GUI.gui.go:437 -   - Title: Spanish Basic Vocabulary
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [36m[INFO][0m GUI.gui.go:438 -   - Question Language: English
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [36m[INFO][0m GUI.gui.go:439 -   - Answer Language: Spanish
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [36m[INFO][0m GUI.gui.go:440 -   - Word pairs: 10
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [36m[INFO][0m GUI.gui.go:441 -   - Test results: 1
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:445 - Sample word pairs:
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:452 -   - [Hello] → [Hola]
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:452 -   - [Goodbye] → [Adiós]
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:452 -   - [Thank you] → [Gracias]
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:455 -   - ... and 7 more
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [35m[ACTION][0m GUI.gui.go:465 - displayLessonInTab() - creating lesson tab for: /home/joop/openteacher/test_lesson.ot
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [32m[SUCCESS][0m GUI.gui.go:489 - Replaced central widget with tab widget
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [32m[SUCCESS][0m GUI.gui.go:509 - Lesson tab created: Spanish Basic Vocabulary (10 words)
+2025/11/12 23:55:29 logger.go:146: 2025/11/12 23:55:29 [90m[DEBUG][0m GUI.gui.go:373 - TRACKING: loadSelectedFile() completed - call stack marker D
+2025/11/12 23:55:31 logger.go:146: 2025/11/12 23:55:31 [34m[EVENT][0m GUI.gui.go:204 - Exit menu action triggered
+2025/11/12 23:55:31 logger.go:146: 2025/11/12 23:55:31 [32m[SUCCESS][0m GUI.gui.go:161 - RunEventLoop() - Qt event loop finished with code 0
+Qt event loop finished with exit code: 0
+Disabling modules...
+SaverModule disabled
+SettingsDialogModule disabled
+StartwidgetModule disabled
+TranslatorModule disabled
+AboutDialogModule disabled
+httpRequest error: ["",935664160,"widgets.QMainWindow","Close"] -> Post "http://127.0.0.1:8000/syncCallIntoLocal": dial tcp 127.0.0.1:8000: connect: connection refused
+Warning: Error closing main window: interface conversion: interface {} is nil, not bool
+FileDialogModule disabled
+LessonDialogsModule disabled
+SettingsWidgetModule disabled
+RecentlyOpenedViewerModule disabled
+ProfileDescriptionModule disabled
+DataTypeIconsModule disabled
+MediaTypeModule disabled
+OtxxLoaderModule disabled
+OdtSaverModule disabled
+ReverseModule disabled
+JSInputTypingLogicModule disabled
+OverhoringsprogrammaTalenLoaderModule disabled
+ProgressViewerModule disabled
+GermanNoteCalculatorModule disabled
+VokabelTrainerLoaderModule disabled
+GranuleLoaderModule disabled
+CsvLoaderModule disabled
+WordsNeverAnsweredCorrectlyModule disabled
+PercentsCalculatorModule disabled
+JSLibModule disabled
+ProfileDescriptionModule disabled
+MapModule disabled
+ProfileDescriptionModule disabled
+SmartModule disabled
+MapModule disabled
+FrenchNoteCalculatorModule disabled
+MnemosyneLoaderModule disabled
+WrtsLoaderModule disabled
+ProfileDescriptionModule disabled
+TeachmasterLoaderModule disabled
+MediaTestTypeModule disabled
+HtmlSaverModule disabled
+ProfileDescriptionModule disabled
+JSEvaluatorModule disabled
+ECTSNoteCalculatorModule disabled
+JavascriptLessonTypeModule disabled
+ProfileDescriptionModule disabled
+HtmlSaverModule disabled
+ProfileDescriptionModule disabled
+TestModeStudentsViewModule disabled
+TestMenuModule disabled
+SettingsWidgetModule disabled
+VocabulariumLoaderModule disabled
+ProfileDescriptionModule disabled
+LoaderGuiModule disabled
+ProfileDescriptionModule disabled
+MediaTypeModule disabled
+JSBisectModule disabled
+FriendlyTranslationNamesModule disabled
+ProfileDescriptionModule disabled
+GenerateBusinessCard profile description disabled
+HangmanGraphics disabled
+OpenTeacherLoaderModule disabled
+InputTypingLogicModule disabled
+PaukerLoaderModule disabled
+DutchNoteCalculatorModule disabled
+PdfSaverModule disabled
+SettingsWidgetModule disabled
+JMemorizeLessonLoaderModule disabled
+PercentsNoteCalculatorModule disabled
+MapModule disabled
+ThemeModule disabled
+MetadataModule disabled
+SettingsWidgetModule disabled
+LaTeXSaverModule disabled
+ProfileDescriptionModule disabled
+MapModule disabled
+SymbolsModule disabled
+ProfileDescriptionModule disabled
+AnkiApkgLoaderModule disabled
+SafeHtmlCheckerModule disabled
+LudemLoaderModule disabled
+PrinterModule disabled
+MediaTypeModule disabled
+GnuVocabTrainLoaderModule disabled
+ProfileDescriptionModule disabled
+OcrGuiModule disabled
+TypingTeachTypeModule disabled
+ProfileDescriptionModule disabled
+SortModule disabled
+PyinstallerInterfaceModule disabled
+ProfileDescriptionModule disabled
+ProfileDescriptionModule disabled
+ProfileDescriptionModule disabled
+LanguageCodeGuesserModule disabled
+MediaDisplayModule disabled
+AmericanNoteCalculatorModule disabled
+SettingsWidgetModule disabled
+LibreofficeFormatsSaverModule disabled
+JvltLoaderModule disabled
+OpenTeachingWordsLoaderModule disabled
+OdtSaverModule disabled
+MapModule disabled
+OpenTeachingTopoLoaderModule disabled
+Teach2000LoaderModule disabled
+ProfileDescriptionModule disabled
+WordsTestTypeModule disabled
+ProfileDescriptionModule disabled
+VocaLoaderModule disabled
+FmdLoaderModule disabled
+SettingsWidgetModule disabled
+DomingoLoaderModule disabled
+WebLogicGeneratorModule disabled
+ShuffleAnswerTeachTypeModule disabled
+VTrainTxtLoaderModule disabled
+SettingsWidgetModule disabled
+OcrWordListLoaderModule disabled
+MediaTypeModule disabled
+ProfileDescriptionModule disabled
+RandomModule disabled
+SettingsWidgetsModule disabled
+JSMapModule disabled
+ProfileDescriptionModule disabled
+ProfileDescriptionModule disabled
+Anki2LoaderModule disabled
+RecentlyOpenedModule disabled
+JSLibModule disabled
+OpenTeachingMediaLoaderModule disabled
+ProfileDescriptionModule disabled
+OpenTeacherAuthorsModule disabled
+AuthorsModule disabled
+MediaTypeModule disabled
+TesseractOCRModule disabled
+MimicryTypefaceConverterModule disabled
+MediaTypeModule disabled
+ModulesModule disabled
+TestModeTeacherPanelModule disabled
+JSSumModule disabled
+OtxxSaverModule disabled
+MediaTypeModule disabled
+ProfileDescriptionModule disabled
+HtmlSaverModule disabled
+CuneiformOCRModule disabled
+RepeatAnswerTeachTypeModule disabled
+MediaTypeModule disabled
+PngSaverModule disabled
+SettingsWidgetModule disabled
+SettingsWidgetModule disabled
+PercentsCalculatorModule disabled
+KvtmlLoaderModule disabled
+CueCardLoaderModule disabled
+SettingsWidgetModule disabled
+CyrillicModule disabled
+AnkiLoaderModule disabled
+WordsHtmlGeneratorModule disabled
+SylkSaverModule disabled
+MapModule disabled
+NoteCalculatorChooserModule disabled
+PercentNotesViewerModule disabled
+2025/11/12 23:55:31 hangman.go:64: [STUB] Hangman TypingTeachTypeModule disabled - cleanup not implemented
+TypingTeachTypeModule disabled
+LoaderModule disabled
+ProfileDescriptionModule disabled
+TypingTutorModelModule disabled
+AbbyyLoaderModule disabled
+ForeignKnownModule disabled
+TopoMapsModule disabled
+LessonTrackerModule disabled
+KGeographyMapLoaderModule disabled
+ProfileDescriptionModule disabled
+TypingTutorKeyboardModule disabled
+MediaTypeModule disabled
+ProfileDescriptionModule disabled
+GreekModule disabled
+ButtonRegisterModule disabled
+TopoTestTypeModule disabled
+BackpackLoaderModule disabled
+UserDocumentationModule disabled
+ProfileDescriptionModule disabled
+ProfileDescriptionModule disabled
+ProfileDescriptionModule disabled
+FlashQardLoaderModule disabled
+AllOnceModule disabled
+InMindTeachTypeModule disabled
+HardWordsModule disabled
+OverhoorLoaderModule disabled
+2025/11/12 23:55:31 execute.go:53: [SUCCESS] ExecuteModule disabled - application lifecycle handling stopped
+Settings module disabled
+Button register module disabled - all buttons cleared
+Event module disabled - all events cleared
+httpRequest error: ["",934319040,"widgets.QApplication","Quit"] -> Post "http://127.0.0.1:8000/syncCallIntoLocal": dial tcp 127.0.0.1:8000: connect: connection refused
+QtAppModule disabled
+OpenTeacher shutdown complete

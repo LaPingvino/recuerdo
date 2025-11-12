@@ -34,6 +34,8 @@ type GuiModule struct {
 	lastLoadedFile string
 	lastLoadTime   int64
 	logger         *logging.Logger
+	addingTab      bool
+	showingDialog  bool
 }
 
 // NewGuiModule creates a new GuiModule instance
@@ -181,7 +183,7 @@ func (mod *GuiModule) createMenuBar() {
 	openAction.SetShortcut(gui.NewQKeySequence2("Ctrl+O", gui.QKeySequence__NativeText))
 	openAction.ConnectTriggered(func(checked bool) {
 		mod.logger.Event("Open Lesson menu action triggered")
-		mod.showOpenDialog()
+		mod.showOpenDialogFrom("MENU")
 	})
 
 	fileMenu.AddSeparator()
@@ -283,7 +285,7 @@ func (mod *GuiModule) createWelcomeWidget() *widgets.QWidget {
 	openLessonBtn.SetFixedSize2(200, 50)
 	openLessonBtn.ConnectClicked(func(checked bool) {
 		mod.logger.Event("Open Lesson button clicked")
-		mod.showOpenDialog()
+		mod.showOpenDialogFrom("BUTTON")
 	})
 	buttonsLayout.AddWidget(openLessonBtn, 0, 0)
 
@@ -334,7 +336,21 @@ func (mod *GuiModule) showNewLessonDialog() {
 }
 
 func (mod *GuiModule) showOpenDialog() {
-	mod.logger.Action("showOpenDialog() - attempting to show file dialog")
+	mod.showOpenDialogFrom("UNKNOWN")
+}
+
+func (mod *GuiModule) showOpenDialogFrom(source string) {
+	mod.logger.Action("showOpenDialogFrom(%s) - attempting to show file dialog", source)
+
+	// Prevent double dialog calls (Qt signal issue)
+	if mod.showingDialog {
+		mod.logger.Warning("PREVENTED: showOpenDialog called while already showing dialog")
+		return
+	}
+	mod.showingDialog = true
+	defer func() {
+		mod.showingDialog = false
+	}()
 
 	// Try to find file dialog module
 	fileDialogModules := mod.manager.GetModulesByType("fileDialog")
@@ -346,11 +362,15 @@ func (mod *GuiModule) showOpenDialog() {
 			OpenFile(parent interface{}, title string, filter string) string
 		}); ok {
 			mod.logger.Success("Calling OpenFile() on fileDialog module")
+			mod.logger.Debug("TRACKING: About to call OpenFile() - call stack marker A")
 			fileName := fileMod.OpenFile(nil, "Open Lesson File", "Lesson Files (*.ot *.csv *.tsv *.txt *.json *.xml);;OpenTeacher Files (*.ot);;Spreadsheet Files (*.csv *.tsv);;Text Files (*.txt);;JSON Files (*.json);;All Files (*.*)")
+			mod.logger.Debug("TRACKING: OpenFile() returned - call stack marker B")
 			if fileName != "" {
 				mod.logger.Success("File dialog returned: %s", fileName)
+				mod.logger.Debug("TRACKING: About to call loadSelectedFile() - call stack marker C")
 				mod.statusBar.ShowMessage(fmt.Sprintf("Selected file: %s", fileName), 5000)
 				mod.loadSelectedFile(fileName)
+				mod.logger.Debug("TRACKING: loadSelectedFile() completed - call stack marker D")
 			} else {
 				mod.logger.Info("File dialog was cancelled")
 				mod.statusBar.ShowMessage("File selection cancelled", 3000)
@@ -444,11 +464,15 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 	mod.logger.Action("displayLessonInTab() - creating lesson tab for: %s", lesson.Path)
 
-	// Track double dialog issue - check if we've already created a tab for this file recently
-	if mod.lastLoadedFile == lesson.Path {
-		mod.logger.Warning("DOUBLE DIALOG ISSUE: displayLessonInTab called again for same file: %s", lesson.Path)
-		mod.logger.LegacyReminder("dialog management", "legacy/modules/org/openteacher/interfaces/qt/gui/gui.py", "check addFileTab and tab management logic")
+	// Prevent double tab creation similar to Python _addingTab flag
+	if mod.addingTab {
+		mod.logger.Warning("PREVENTED: displayLessonInTab called while already adding tab for: %s", lesson.Path)
+		return
 	}
+	mod.addingTab = true
+	defer func() {
+		mod.addingTab = false
+	}()
 
 	// Create tab widget if it doesn't exist
 	var tabWidget *widgets.QTabWidget
