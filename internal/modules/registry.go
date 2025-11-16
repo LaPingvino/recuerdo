@@ -4,6 +4,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/core"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profiledescriptions"
 	"github.com/LaPingvino/recuerdo/internal/modules/profilerunners/backgroundimage"
+	"github.com/LaPingvino/recuerdo/internal/modules/system"
 )
 
 // ModuleRegistry holds all available module initializers
@@ -27,6 +28,9 @@ func NewModuleRegistry() *ModuleRegistry {
 	// registry.RegisterModule("businessCardGenerator", businesscard.Init)
 	registry.RegisterModule("backgroundImageGenerator", backgroundimage.Init)
 	registry.RegisterModule("profileDescription-generateBusinessCard", profiledescriptions.Init)
+
+	// Register system modules
+	registry.RegisterModule("systeminfo", system.InitSystemInfoModule)
 
 	// TODO: Register other modules as they are ported from Python
 	// registry.RegisterModule("metadata", metadata.Init)

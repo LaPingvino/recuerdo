@@ -386,7 +386,7 @@ type TeachTabWidget struct {
 	unicodeButton *widgets.QPushButton
 
 	// Unicode character picker
-	unicodePicker *UnicodePicker
+	unicodePicker *IntegratedUnicodePicker
 
 	// Teaching state
 	currentIndex   int
@@ -407,9 +407,9 @@ func NewTeachTabWidget(lesson *lesson.Lesson, parent widgets.QWidget_ITF) *Teach
 		logger:  logging.NewLogger("TeachTabWidget"),
 	}
 
-	// Create Unicode picker as top-level window (nil parent)
-	widget.unicodePicker = NewUnicodePicker("", nil)
-	widget.logger.Debug("Created Unicode picker widget")
+	// Create integrated Unicode picker
+	widget.unicodePicker = NewIntegratedUnicodePicker("", widget)
+	widget.logger.Debug("Created integrated Unicode picker widget")
 
 	widget.setupUI()
 	widget.connectSignals()
@@ -472,7 +472,8 @@ func (w *TeachTabWidget) setupUI() {
 
 	// Unicode character picker button
 	w.unicodeButton = widgets.NewQPushButton2("⚿ Characters", w)
-	w.unicodeButton.SetToolTip("Open Unicode character picker for accented letters and special characters")
+	w.unicodeButton.SetToolTip("Show/hide Unicode character picker for accented letters and special characters")
+	w.unicodeButton.SetCheckable(true)
 	w.unicodeButton.SetEnabled(false)
 	w.unicodeButton.SetStyleSheet(`
 		QPushButton {
@@ -499,7 +500,11 @@ func (w *TeachTabWidget) setupUI() {
 
 	questionLayout.AddLayout(answerLayout, 0)
 
-	w.logger.Info("Configured answer input field with Unicode character picker")
+	// Add integrated Unicode picker (initially hidden)
+	w.unicodePicker.Hide()
+	questionLayout.AddWidget(w.unicodePicker, 0, 0)
+
+	w.logger.Info("Configured answer input field with integrated Unicode character picker")
 	w.logger.Action("Dead keys may not work - use Unicode picker button for accented characters")
 
 	// Result label
@@ -542,9 +547,9 @@ func (w *TeachTabWidget) connectSignals() {
 		w.nextQuestion()
 	})
 
-	w.unicodeButton.ConnectClicked(func(checked bool) {
-		w.logger.Debug("Unicode picker button clicked")
-		w.toggleUnicodePicker()
+	w.unicodeButton.ConnectToggled(func(checked bool) {
+		w.logger.Debug("Unicode picker button toggled: %v", checked)
+		w.toggleUnicodePicker(checked)
 	})
 
 	w.answerEdit.ConnectReturnPressed(func() {
@@ -739,7 +744,8 @@ func (w *TeachTabWidget) resetTeachingState() {
 	w.progressBar.SetValue(0)
 
 	// Hide Unicode picker
-	w.unicodePicker.HidePicker()
+	w.unicodePicker.Hide()
+	w.unicodeButton.SetChecked(false)
 
 	if w.lesson != nil && len(w.lesson.Data.List.Items) > 0 {
 		w.statusLabel.SetText("Ready to start teaching")
@@ -751,35 +757,26 @@ func (w *TeachTabWidget) resetTeachingState() {
 }
 
 // toggleUnicodePicker toggles the Unicode character picker visibility
-func (w *TeachTabWidget) toggleUnicodePicker() {
-	w.logger.Debug("toggleUnicodePicker called - current visible: %v", w.unicodePicker.IsVisible())
+func (w *TeachTabWidget) toggleUnicodePicker(show bool) {
+	w.logger.Debug("toggleUnicodePicker called - show: %v", show)
 
 	if w.unicodePicker == nil {
 		w.logger.Error("Unicode picker is nil!")
 		return
 	}
 
-	if w.unicodePicker.IsVisible() {
-		w.unicodePicker.HidePicker()
-		w.logger.Info("Unicode picker hidden")
-	} else {
+	if show {
 		// Set the target edit widget first
 		w.unicodePicker.SetTargetEdit(w.answerEdit)
 		w.logger.Debug("Set target edit widget for Unicode picker")
 
-		// Simple center positioning (like the working test)
-		w.logger.Debug("Positioning Unicode picker at screen center")
-		screen := widgets.QApplication_Desktop().AvailableGeometry2(nil)
-		centerX := screen.Width()/2 - w.unicodePicker.Width()/2
-		centerY := screen.Height()/2 - w.unicodePicker.Height()/2
-		w.unicodePicker.Move2(centerX, centerY)
-
-		// Show the picker (using working pattern from test)
-		w.logger.Debug("Calling Show(), Raise(), ActivateWindow()")
+		// Show the integrated picker
 		w.unicodePicker.Show()
-		w.unicodePicker.Raise()
-		w.unicodePicker.ActivateWindow()
-		w.logger.Info("Unicode picker should now be visible")
+		w.logger.Info("Integrated Unicode picker shown")
+	} else {
+		// Hide the integrated picker
+		w.unicodePicker.Hide()
+		w.logger.Info("Integrated Unicode picker hidden")
 	}
 }
 

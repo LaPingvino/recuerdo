@@ -1,32 +1,66 @@
 # Recuerdo
 
-A modern language learning application in Go, based on OpenTeacher. Recuerdo maintains the original modular architecture while adding type safety and improved performance.
+A modern language learning application in Go, evolved from OpenTeacher. Recuerdo features a clean modular architecture with comprehensive system detection and robust Unicode input handling.
 
 ## Overview
 
-Recuerdo is an educational application for creating and managing language learning exercises. This Go version preserves the plugin-based architecture of the original Python OpenTeacher application while modernizing the codebase.
+Recuerdo is an educational application for creating and managing language learning exercises. This Go version modernizes the original Python OpenTeacher codebase while maintaining its powerful plugin-based architecture and adding enhanced cross-platform support.
+
+## Quick Start
+
+```bash
+# Build and run the test application
+go build ./cmd/test-core
+./test-core
+```
+
+The system will automatically detect your display server configuration and provide diagnostics for potential input issues.
+
+## Key Features
+
+- **Smart System Detection**: Automatic detection of X11/Wayland, Qt backends, and input methods
+- **Unicode Character Picker**: Fallback input system for international keyboards  
+- **Modular Architecture**: Clean plugin-based design with hot-swappable modules
+- **Cross-Platform Support**: Native integration with GNOME, KDE, and other Linux desktops
+- **Input Diagnostics**: Comprehensive troubleshooting for keyboard input issues
 
 ## Architecture
 
-### Modular Design
-- **Interface-based modules**: Each module implements well-defined Go interfaces
-- **Dependency injection**: Clean separation between interfaces and implementations  
-- **Event-driven communication**: Observer pattern for inter-module communication
-- **Resource management**: Modules can access local resources and configurations
+### Directory Structure
+```
+recuerdo/
+├── cmd/           # Entry points and applications
+├── internal/      # Core application code
+│   ├── core/      # Module system and lifecycle management
+│   ├── modules/   # Feature modules
+│   └── system/    # System detection and utilities
+├── data/          # Application data files
+├── docs/          # Comprehensive documentation
+├── legacy/        # Original Python codebase (reference)
+└── scripts/       # Build and development scripts
+```
 
 ### Core Components
-- **Module Manager**: Handles registration, dependency resolution, and lifecycle management
-- **Event System**: Thread-safe event handling with subscribe/unsubscribe patterns
-- **Settings System**: JSON-based configuration with type-safe accessors
-- **Execute System**: Application lifecycle and profile management
+- **Module Manager**: Registration, dependency resolution, and lifecycle management
+- **System Detection**: Automatic environment detection and diagnostics
+- **Event System**: Thread-safe inter-module communication
+- **Settings System**: Type-safe configuration management
+
+## Documentation
+
+- **[Complete Documentation](./docs/)** - Comprehensive project documentation
+- **[Module Documentation](./docs/modules/)** - Specific module implementations
+- **[Conversion History](./docs/conversion/)** - Python-to-Go conversion documentation
 
 ## Project Status
 
 **Current Version**: 4.0.0-alpha  
-**Phase**: Core Infrastructure Complete ✅
+**Status**: Core Infrastructure Complete ✅
 
 ### Completed Features
-- ✅ Complete module system with dependency resolution
+- ✅ Complete modular system with dependency resolution
+- ✅ System detection and Qt backend diagnostics
+- ✅ Unicode character picker for input fallback
 - ✅ Thread-safe event handling system
 - ✅ Settings persistence and management
 - ✅ Application lifecycle management
