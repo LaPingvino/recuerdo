@@ -145,6 +145,7 @@ type BaseModule struct {
 	uses       []string
 	priority   int
 	active     bool
+	manager    *Manager
 }
 
 // NewBaseModule creates a new base module
@@ -234,4 +235,14 @@ func (b *BaseModule) Enable(ctx context.Context) error {
 func (b *BaseModule) Disable(ctx context.Context) error {
 	b.active = false
 	return nil
+}
+
+// SetManager sets the module manager for this module
+func (b *BaseModule) SetManager(manager *Manager) {
+	b.manager = manager
+}
+
+// GetManager returns the module manager
+func (b *BaseModule) GetManager() *Manager {
+	return b.manager
 }

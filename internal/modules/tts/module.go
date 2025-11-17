@@ -2,7 +2,6 @@
 package tts
 
 import (
-	"context"
 	"fmt"
 	"time"
 
@@ -18,7 +17,7 @@ type TTSModule struct {
 // NewTTSModule creates a new TTS module instance
 func NewTTSModule() *TTSModule {
 	return &TTSModule{
-		BaseModule: core.NewBaseModule(),
+		BaseModule: core.NewBaseModule("tts", "Text-to-Speech Engine"),
 		engine:     NewEngine(),
 	}
 }
@@ -32,119 +31,32 @@ func (m *TTSModule) Initialize(manager *core.Manager) error {
 		return fmt.Errorf("no text-to-speech backend available on this system")
 	}
 
-	// Register event handlers
-	m.registerEventHandlers()
-
 	return nil
 }
 
-// GetType returns the module type
-func (m *TTSModule) GetType() string {
-	return "tts"
-}
-
-// GetPriority returns module priority for loading order
-func (m *TTSModule) GetPriority() int {
+// Override BaseModule methods to provide TTS-specific behavior
+func (m *TTSModule) Priority() int {
 	return 300 // Load after core systems but before UI
 }
 
-// GetRequires returns module dependencies
-func (m *TTSModule) GetRequires() []string {
+func (m *TTSModule) Requires() []string {
 	return []string{"core"}
 }
 
-// GetProvides returns services this module provides
-func (m *TTSModule) GetProvides() []string {
-	return []string{"tts", "text-to-speech"}
+// SpeakWord speaks a single word, optionally in a specific language
+func (m *TTSModule) SpeakWord(word, language string) error {
+	if language != "" {
+		m.selectVoiceForLanguage(language)
+	}
+	return m.engine.Speak(word)
 }
 
-// registerEventHandlers sets up event listeners
-func (m *TTSModule) registerEventHandlers() {
-	if manager := m.GetManager(); manager != nil {
-		// Listen for lesson events to provide pronunciation help
-		manager.RegisterEventHandler("lesson.word.speak", m.handleSpeakWord)
-		manager.RegisterEventHandler("lesson.text.speak", m.handleSpeakText)
-		manager.RegisterEventHandler("tts.stop", m.handleStopSpeech)
-		manager.RegisterEventHandler("tts.configure", m.handleConfigure)
+// SpeakText speaks longer text, optionally in a specific language
+func (m *TTSModule) SpeakText(text, language string) error {
+	if language != "" {
+		m.selectVoiceForLanguage(language)
 	}
-}
-
-// handleSpeakWord handles requests to speak a word
-func (m *TTSModule) handleSpeakWord(ctx context.Context, data map[string]interface{}) error {
-	word, ok := data["word"].(string)
-	if !ok {
-		return fmt.Errorf("invalid word parameter")
-	}
-
-	// Optional language parameter for voice selection
-	if lang, exists := data["language"].(string); exists {
-		m.selectVoiceForLanguage(lang)
-	}
-
-	return m.engine.SpeakAsync(word, func(err error) {
-		if err != nil {
-			m.GetManager().EmitEvent("tts.error", map[string]interface{}{
-				"error": err.Error(),
-				"text":  word,
-			})
-		} else {
-			m.GetManager().EmitEvent("tts.completed", map[string]interface{}{
-				"text": word,
-			})
-		}
-	})
-}
-
-// handleSpeakText handles requests to speak longer text
-func (m *TTSModule) handleSpeakText(ctx context.Context, data map[string]interface{}) error {
-	text, ok := data["text"].(string)
-	if !ok {
-		return fmt.Errorf("invalid text parameter")
-	}
-
-	// Optional language parameter
-	if lang, exists := data["language"].(string); exists {
-		m.selectVoiceForLanguage(lang)
-	}
-
-	return m.engine.SpeakAsync(text, func(err error) {
-		if err != nil {
-			m.GetManager().EmitEvent("tts.error", map[string]interface{}{
-				"error": err.Error(),
-				"text":  text,
-			})
-		} else {
-			m.GetManager().EmitEvent("tts.completed", map[string]interface{}{
-				"text": text,
-			})
-		}
-	})
-}
-
-// handleStopSpeech handles requests to stop current speech
-func (m *TTSModule) handleStopSpeech(ctx context.Context, data map[string]interface{}) error {
-	m.engine.Stop()
-	m.GetManager().EmitEvent("tts.stopped", map[string]interface{}{})
-	return nil
-}
-
-// handleConfigure handles TTS configuration changes
-func (m *TTSModule) handleConfigure(ctx context.Context, data map[string]interface{}) error {
-	if voice, exists := data["voice"].(string); exists {
-		if err := m.engine.SetVoice(voice); err != nil {
-			return fmt.Errorf("failed to set voice: %v", err)
-		}
-	}
-
-	if rate, exists := data["rate"].(int); exists {
-		m.engine.SetRate(rate)
-	}
-
-	if volume, exists := data["volume"].(float64); exists {
-		m.engine.SetVolume(volume)
-	}
-
-	return nil
+	return m.engine.Speak(text)
 }
 
 // selectVoiceForLanguage attempts to select an appropriate voice for the given language
