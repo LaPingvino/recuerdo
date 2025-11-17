@@ -1819,7 +1819,6 @@ func registerAllModules(manager *core.Manager) error {
 	fmt.Println("Note: Many optional modules are disabled to resolve import conflicts")
 
 	return nil
-	return nil
 }
 
 func runApplication(ctx context.Context, manager *core.Manager, lessonFile, commands string) error {
