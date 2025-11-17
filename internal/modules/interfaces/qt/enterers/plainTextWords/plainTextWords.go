@@ -195,7 +195,7 @@ func (m *PlainTextWordsEntererModule) CreateLesson() {
 // createEnterPlainTextDialog creates a new plain text entry dialog
 func (m *PlainTextWordsEntererModule) createEnterPlainTextDialog() *EnterPlainTextDialog {
 	dialog := &EnterPlainTextDialog{
-		QDialog: qt.NewQDialog(),
+		QDialog: qt.NewQDialog(nil),
 		module:  m,
 	}
 
@@ -212,22 +212,20 @@ func (d *EnterPlainTextDialog) setupUI() {
 	d.Resize(800, 600)
 
 	// Create button box
-	d.buttonBox = qt.NewQDialogButtonBox2(
-		qt.QDialogButtonBox_Cancel|qt.QDialogButtonBox_Ok,
-		d.QDialog,
-	)
+	d.buttonBox = qt.NewQDialogButtonBox(d.QDialog.QWidget)
+	d.buttonBox.SetStandardButtons(qt.QDialogButtonBox__Cancel | qt.QDialogButtonBox__Ok)
 
 	// Create label
-	d.label = qt.NewQLabel2("", d.QDialog, 0)
+	d.label = qt.NewQLabel(d.QDialog.QWidget)
 	d.label.SetWordWrap(true)
-	d.label.SetSizePolicy2(qt.QSizePolicy_Preferred, qt.QSizePolicy_Fixed)
 
 	// Create text edit
-	d.textEdit = qt.NewQTextEdit(d.QDialog)
+	d.textEdit = qt.NewQTextEdit(d.QDialog.QWidget)
 
 	// Create splitter for text edit and optional character keyboard
-	splitter := qt.NewQSplitter2(qt.Orientation_Horizontal, d.QDialog)
-	splitter.AddWidget(d.textEdit)
+	splitter := qt.NewQSplitter(d.QDialog.QWidget)
+	splitter.SetOrientation(qt.Horizontal)
+	splitter.AddWidget(d.textEdit.QWidget)
 	splitter.SetStretchFactor(0, 3)
 
 	// Add character keyboard if available
@@ -238,12 +236,10 @@ func (d *EnterPlainTextDialog) setupUI() {
 	}
 
 	// Create layout
-	layout := qt.NewQVBoxLayout()
-	layout.AddWidget(d.label, 0, 0)
-	layout.AddWidget(splitter, 0, 0)
-	layout.AddWidget(d.buttonBox, 0, 0)
-
-	d.SetLayout(layout)
+	layout := qt.NewQVBoxLayout(d.QDialog.QWidget)
+	layout.AddWidget(d.label.QWidget)
+	layout.AddWidget(splitter.QWidget)
+	layout.AddWidget(d.buttonBox.QWidget)
 }
 
 // connectSignals connects Qt signals to slots
@@ -376,17 +372,15 @@ func (d *EnterPlainTextDialog) getLessonSize(lesson *Lesson) int {
 // showError displays an error message box
 func (d *EnterPlainTextDialog) showError(title, message string) {
 	qt.QMessageBox_Warning(
-		d.QDialog,
+		d.QDialog.QWidget,
 		title,
 		message,
-		qt.QMessageBox_Ok,
-		qt.QMessageBox_Ok,
 	)
 }
 
 // focus sets focus to the text edit
 func (d *EnterPlainTextDialog) focus() {
-	d.textEdit.SetFocus2(qt.FocusReason_OtherFocusReason)
+	d.textEdit.SetFocus()
 }
 
 // cleanup removes the dialog from the active dialogs list
