@@ -20,6 +20,15 @@ jobs:
         with:
           go-version: "1.25.1"
 
+      - name: Install development libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qtbase5-dev qttools5-dev-tools qtmultimedia5-dev qtbase5-private-dev libqt5svg5-dev libqt5webchannel5-dev qtdeclarative5-dev pkg-config build-essential libsqlite3-dev gcc g++
+
+      - name: Set CGO environment
+        run: |
+          echo "CGO_ENABLED=1" >> $GITHUB_ENV
+
       - name: Build
         run: go build -v ./...
 
