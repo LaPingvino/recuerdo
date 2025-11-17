@@ -19,9 +19,10 @@ func NewModuleRegistry() *ModuleRegistry {
 	}
 
 	// Register core modules
-	registry.RegisterModule("execute", func() core.Module {
-		return NewExecuteModule()
-	})
+	// TODO: Add execute module when implemented
+	// registry.RegisterModule("execute", func() core.Module {
+	//	return NewExecuteModule()
+	// })
 
 	// Register business card related modules
 	// Temporarily disable business card generator to avoid UI dependency issues

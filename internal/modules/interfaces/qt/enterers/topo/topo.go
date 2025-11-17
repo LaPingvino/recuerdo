@@ -6,8 +6,8 @@ package topo
 import (
 	"context"
 	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
 )
 
 // TopoEntererModule is a Go port of the Python TopoEntererModule class
