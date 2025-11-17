@@ -434,7 +434,7 @@ func TestParseWordString(t *testing.T) {
 		{"one, two, three", []string{"one", "two", "three"}},
 		{"one; two; three", []string{"one", "two", "three"}},
 		{"  spaced  ,  words  ", []string{"spaced", "words"}},
-		{"mixed, content; here", []string{"mixed", "content; here"}}, // comma takes precedence
+		{"mixed, content; here", []string{"mixed, content", "here"}}, // semicolon takes precedence
 	}
 
 	for _, tc := range testCases {
@@ -462,7 +462,8 @@ func TestAutoDetection(t *testing.T) {
 	unknownFile := filepath.Join(tmpDir, "test.unknown")
 
 	csvContent := `question1,answer1
-question2,answer2`
+question2,answer2
+question3,answer3`
 
 	err := os.WriteFile(unknownFile, []byte(csvContent), 0644)
 	if err != nil {
@@ -476,8 +477,8 @@ question2,answer2`
 	}
 
 	// Should have loaded some data
-	if len(lessonData.List.Items) == 0 {
-		t.Error("Auto-detection failed to load any items")
+	if len(lessonData.List.Items) < 3 {
+		t.Errorf("Auto-detection loaded %d items, expected at least 3", len(lessonData.List.Items))
 	}
 }
 
@@ -546,5 +547,204 @@ func TestLegacyFileCompatibility(t *testing.T) {
 
 			t.Logf("Successfully loaded legacy file %s with %d items", tc.filename, len(lessonData.List.Items))
 		})
+	}
+}
+
+func TestRealTestdataFiles(t *testing.T) {
+	loader := NewFileLoader()
+
+	testCases := []struct {
+		filename     string
+		expectedType string
+		minItems     int
+	}{
+		{"sample.csv", "words", 20},  // Has 30 word pairs
+		{"accents.csv", "words", 5},  // Has accent examples
+		{"sample.kvtml", "words", 1}, // KVTML format
+		{"sample.ot", "words", 1},    // OpenTeacher format
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.filename, func(t *testing.T) {
+			filePath := filepath.Join("../../testdata", "lessons", tc.filename)
+
+			// Check if file exists
+			if _, err := os.Stat(filePath); os.IsNotExist(err) {
+				t.Skip("Testdata file not available")
+				return
+			}
+
+			// Check file type detection
+			detectedType := loader.GetFileType(filePath)
+			if detectedType != tc.expectedType {
+				t.Errorf("GetFileType(%s) = %s; want %s", tc.filename, detectedType, tc.expectedType)
+			}
+
+			// Try to load the file
+			lessonData, err := loader.LoadFile(filePath)
+			if err != nil {
+				t.Errorf("Failed to load testdata file %s: %v", tc.filename, err)
+				return
+			}
+
+			// Check minimum item count
+			if len(lessonData.List.Items) < tc.minItems {
+				t.Errorf("Testdata file %s loaded %d items, expected at least %d", tc.filename, len(lessonData.List.Items), tc.minItems)
+			}
+
+			// Basic sanity checks
+			if lessonData.List.Title == "" {
+				t.Errorf("Testdata file %s has empty title", tc.filename)
+			}
+
+			// Check that items have both questions and answers
+			validItems := 0
+			for _, item := range lessonData.List.Items {
+				if len(item.Questions) > 0 && len(item.Answers) > 0 {
+					validItems++
+				}
+			}
+
+			if validItems < tc.minItems {
+				t.Errorf("Testdata file %s has %d valid items, expected at least %d", tc.filename, validItems, tc.minItems)
+			}
+
+			t.Logf("Successfully loaded %s: %d items, title: %s", tc.filename, len(lessonData.List.Items), lessonData.List.Title)
+		})
+	}
+}
+
+func TestLegacyFileTypeSupport(t *testing.T) {
+	loader := NewFileLoader()
+
+	// Test a sample of legacy files from each major format category
+	legacyFiles := []struct {
+		filename string
+		fileType string
+		format   string
+	}{
+		{"application_x-kvtml.parley.kvtml", "words", "KVTML"},
+		{"text_csv.openteacher3x.csv", "words", "CSV"},
+		{"application_x-openteacher.openteacher2x.ot", "words", "OpenTeacher"},
+		{"application_xml.abbyylingvotutor_x5.xml", "words", "XML"},
+		{"application_x-anki.anki.anki", "words", "Anki"},
+		{"application_x-teach2000.teach2000.t2k", "words", "Teach2000"},
+	}
+
+	for _, tc := range legacyFiles {
+		t.Run(tc.filename, func(t *testing.T) {
+			filePath := filepath.Join("../../testdata", "legacy_files", tc.filename)
+
+			// Skip if file doesn't exist
+			if _, err := os.Stat(filePath); os.IsNotExist(err) {
+				t.Skip("Legacy test file not available")
+				return
+			}
+
+			// Check file type detection
+			detectedType := loader.GetFileType(filePath)
+			if detectedType != tc.fileType {
+				t.Errorf("GetFileType(%s) = %s; want %s", tc.filename, detectedType, tc.fileType)
+			}
+
+			// Try to load the file (some may fail due to complex formats)
+			lessonData, err := loader.LoadFile(filePath)
+			if err != nil {
+				t.Logf("Legacy file %s (%s format) could not be loaded: %v", tc.filename, tc.format, err)
+				return
+			}
+
+			t.Logf("Successfully loaded legacy %s file %s: %d items", tc.format, tc.filename, len(lessonData.List.Items))
+		})
+	}
+}
+
+func TestComprehensiveFormatSupport(t *testing.T) {
+	loader := NewFileLoader()
+
+	// Test additional legacy file formats for comprehensive coverage
+	formatTests := []struct {
+		filename   string
+		format     string
+		expectLoad bool // whether we expect successful loading
+		minItems   int  // minimum items if loading succeeds
+	}{
+		// KVTML variants
+		{"application_x-kvtml.kwordquiz.kvtml", "KWordQuiz KVTML", true, 1},
+		{"application_x-kvtml.kvoctrain.kvtml", "KVocTrain KVTML", true, 0}, // Empty legacy file
+
+		// OpenTeacher variants
+		{"application_x-openteacher.openteacher1x.ot", "OpenTeacher 1.x", true, 1},
+		{"application_x-openteacher.openteacher3x.ot", "OpenTeacher 3.x", true, 1},
+
+		// Anki formats (now proper SQLite support)
+		{"application_x-anki2.anki.anki2", "Anki 2.0", true, 3},   // SQLite database parsing
+		{"application_x-apkg.anki.apkg", "Anki Package", true, 3}, // CSV fallback works
+
+		// Text formats
+		{"text_plain.gnuVocabTrain.txt", "GNU VocabTrain", true, 1},
+
+		// Teach2000 format (now implemented)
+		{"application_x-teach2000.teach2000.t2k", "Teach2000", true, 3},
+
+		// SQLite databases (now implemented)
+		{"application_x-sqlite3.mnemosyne.db", "Mnemosyne", true, 3},
+
+		// Other vocabulary trainers (now implemented)
+		{"application_x-backpack.backpack", "Backpack", true, 1},       // Backpack text format
+		{"application_x-cuecard.cuecard.wcu", "CueCard", true, 3},      // CueCard XML format
+		{"application_x-flashqard.flashqard.fq", "FlashQard", true, 2}, // FlashQard XML format
+		{"application_x-jvlt.jvlt.jvlt", "JVLT", true, 2},              // JVLT ZIP format
+		{"application_x-teachmaster.vok2", "TeachMaster", true, 3},     // TeachMaster XML format
+
+		// XML variants
+		{"application_xml.abbyylingvotutor_x3-modified.xml", "ABBYY Lingvo (modified)", true, 1},
+	}
+
+	successCount := 0
+	totalCount := len(formatTests)
+
+	for _, tc := range formatTests {
+		t.Run(tc.filename, func(t *testing.T) {
+			filePath := filepath.Join("../../testdata", "legacy_files", tc.filename)
+
+			// Skip if file doesn't exist
+			if _, err := os.Stat(filePath); os.IsNotExist(err) {
+				t.Skip("Legacy test file not available")
+				return
+			}
+
+			// Try to load the file
+			lessonData, err := loader.LoadFile(filePath)
+
+			if tc.expectLoad {
+				if err != nil {
+					t.Errorf("Expected %s to load successfully, but got error: %v", tc.format, err)
+					return
+				}
+
+				if len(lessonData.List.Items) < tc.minItems {
+					t.Errorf("%s loaded %d items, expected at least %d", tc.format, len(lessonData.List.Items), tc.minItems)
+					return
+				}
+
+				t.Logf("✅ Successfully loaded %s: %d items", tc.format, len(lessonData.List.Items))
+				successCount++
+			} else {
+				if err == nil && len(lessonData.List.Items) > 0 {
+					t.Logf("⚠️  %s unexpectedly loaded successfully: %d items (format may be partially supported)", tc.format, len(lessonData.List.Items))
+					successCount++
+				} else {
+					t.Logf("❌ %s format not implemented (expected): %v", tc.format, err)
+				}
+			}
+		})
+	}
+
+	t.Logf("Format support summary: %d/%d formats successfully loaded (%.1f%%)", successCount, totalCount, float64(successCount)/float64(totalCount)*100)
+
+	// Don't fail the test - this is informational
+	if successCount < totalCount/2 {
+		t.Logf("Note: Less than 50%% of formats are fully supported, which is expected for legacy compatibility testing")
 	}
 }

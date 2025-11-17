@@ -25,18 +25,18 @@ type WordsLessonWidget struct {
 	resultsWidget *ResultsTabWidget
 
 	// Signals
-	lessonChanged *core.QObject
-	tabChanged    *core.QObject
+	lessonChanged *qt.QObject
+	tabChanged    *qt.QObject
 }
 
 // NewWordsLessonWidget creates a new words lesson widget
-func NewWordsLessonWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *WordsLessonWidget {
+func NewWordsLessonWidget(lesson *lesson.Lesson, parent *qt.QWidget) *WordsLessonWidget {
 	widget := &WordsLessonWidget{
-		QWidget:       qt.NewQWidget(parent, 0),
+		QWidget:       qt.NewQWidget(parent),
 		lesson:        lesson,
 		logger:        logging.NewLogger("WordsLessonWidget"),
-		lessonChanged: core.NewQObject(nil),
-		tabChanged:    core.NewQObject(nil),
+		lessonChanged: qt.NewQObject(),
+		tabChanged:    qt.NewQObject(),
 	}
 
 	widget.setupUI()
@@ -48,24 +48,23 @@ func NewWordsLessonWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *WordsLe
 
 // setupUI initializes the user interface
 func (w *WordsLessonWidget) setupUI() {
-	layout := qt.NewQVBoxLayout()
-	w.SetLayout(layout)
+	layout := qt.NewQVBoxLayout(w.QWidget)
 
 	// Create main tab widget
-	w.tabWidget = qt.NewQTabWidget(w)
-	layout.AddWidget(w.tabWidget, 0, 0)
+	w.tabWidget = qt.NewQTabWidget(w.QWidget)
+	layout.AddWidget(w.tabWidget.QWidget)
 
 	// Create Enter tab
-	w.enterWidget = NewEnterTabWidget(w.lesson, w)
-	w.tabWidget.AddTab(w.enterWidget, "Enter")
+	w.enterWidget = NewEnterTabWidget(w.lesson, w.QWidget)
+	w.tabWidget.AddTab(w.enterWidget.QWidget, "Enter")
 
 	// Create Teach tab
-	w.teachWidget = NewTeachTabWidget(w.lesson, w)
-	w.tabWidget.AddTab(w.teachWidget, "Teach")
+	w.teachWidget = NewTeachTabWidget(w.lesson, w.QWidget)
+	w.tabWidget.AddTab(w.teachWidget.QWidget, "Teach")
 
 	// Create Results tab
-	w.resultsWidget = NewResultsTabWidget(w.lesson, w)
-	w.tabWidget.AddTab(w.resultsWidget, "Results")
+	w.resultsWidget = NewResultsTabWidget(w.lesson, w.QWidget)
+	w.tabWidget.AddTab(w.resultsWidget.QWidget, "Results")
 
 	// Connect teach widget to results widget for session completion
 	w.teachWidget.SetSessionCompletedCallback(func(session *TeachingSession) {
@@ -81,7 +80,7 @@ func (w *WordsLessonWidget) setupUI() {
 // connectSignals connects widget signals
 func (w *WordsLessonWidget) connectSignals() {
 	// Connect tab change signal
-	w.tabWidget.ConnectCurrentChanged(func(index int) {
+	w.tabWidget.OnCurrentChanged(func(index int) {
 		w.logger.Event("Tab changed to index: %d", index)
 		// Qt signal handling - will be implemented with proper Qt bindings
 
@@ -168,9 +167,9 @@ type EnterTabWidget struct {
 }
 
 // NewEnterTabWidget creates a new Enter tab widget
-func NewEnterTabWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *EnterTabWidget {
+func NewEnterTabWidget(lesson *lesson.Lesson, parent *qt.QWidget) *EnterTabWidget {
 	widget := &EnterTabWidget{
-		QWidget: qt.NewQWidget(parent, 0),
+		QWidget: qt.NewQWidget(parent),
 		lesson:  lesson,
 		logger:  logging.NewLogger("EnterTabWidget"),
 	}
@@ -182,49 +181,53 @@ func NewEnterTabWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *EnterTabWi
 
 // setupUI initializes the Enter tab interface
 func (w *EnterTabWidget) setupUI() {
-	layout := qt.NewQVBoxLayout()
-	w.SetLayout(layout)
+	layout := qt.NewQVBoxLayout(w.QWidget)
 
 	// Lesson properties section
-	propsGroup := qt.NewQGroupBox2("Lesson Properties", w)
-	propsLayout := qt.NewQFormLayout(propsGroup)
+	propsGroup := qt.NewQGroupBox(w.QWidget)
+	propsGroup.SetTitle("Lesson Properties")
+	propsLayout := qt.NewQFormLayout(propsGroup.QWidget)
 
-	w.titleEdit = qt.NewQLineEdit(w)
-	w.configureInternationalInput(w.titleEdit)
-	propsLayout.AddRow3("Title:", w.titleEdit)
+	w.titleEdit = qt.NewQLineEdit(w.QWidget)
+	w.titleEdit.SetPlaceholderText("Enter lesson title")
+	propsLayout.AddRow3("Title:", w.titleEdit.QWidget)
 
-	w.qLanguageEdit = qt.NewQLineEdit(w)
-	w.configureInternationalInput(w.qLanguageEdit)
-	propsLayout.AddRow3("Question Language:", w.qLanguageEdit)
+	w.qLanguageEdit = qt.NewQLineEdit(w.QWidget)
+	w.qLanguageEdit.SetPlaceholderText("Question language")
+	propsLayout.AddRow3("Question Language:", w.qLanguageEdit.QWidget)
 
-	w.aLanguageEdit = qt.NewQLineEdit(w)
-	w.configureInternationalInput(w.aLanguageEdit)
-	propsLayout.AddRow3("Answer Language:", w.aLanguageEdit)
+	w.aLanguageEdit = qt.NewQLineEdit(w.QWidget)
+	w.aLanguageEdit.SetPlaceholderText("Answer language")
+	propsLayout.AddRow3("Answer Language:", w.aLanguageEdit.QWidget)
 
-	layout.AddWidget(propsGroup, 0, 0)
+	layout.AddWidget(propsGroup.QWidget)
 
 	// Word pairs section
-	wordsGroup := qt.NewQGroupBox2("Word Pairs", w)
-	wordsLayout := qt.NewQVBoxLayout()
-	wordsGroup.SetLayout(wordsLayout)
+	wordsGroup := qt.NewQGroupBox(w.QWidget)
+	wordsGroup.SetTitle("Word Pairs")
+	wordsLayout := qt.NewQVBoxLayout(wordsGroup.QWidget)
 
 	// Buttons
-	buttonLayout := qt.NewQHBoxLayout()
-	w.addWordButton = qt.NewQPushButton2("Add Word", w)
-	w.removeWordButton = qt.NewQPushButton2("Remove Word", w)
-	buttonLayout.AddWidget(w.addWordButton, 0, 0)
-	buttonLayout.AddWidget(w.removeWordButton, 0, 0)
-	buttonLayout.AddStretch(0)
+	buttonLayout := qt.NewQHBoxLayout2()
+	w.addWordButton = qt.NewQPushButton(w.QWidget)
+	w.addWordButton.SetText("Add Word")
+	w.removeWordButton = qt.NewQPushButton(w.QWidget)
+	w.removeWordButton.SetText("Remove Word")
+	buttonLayout.AddWidget(w.addWordButton.QWidget)
+	buttonLayout.AddWidget(w.removeWordButton.QWidget)
+	buttonLayout.AddStretch()
 
-	wordsLayout.AddLayout(buttonLayout, 0)
+	wordsLayout.AddLayout2(buttonLayout.QLayout, 0)
 
 	// Words table
-	w.wordsTable = qt.NewQTableWidget2(0, 3, w)
+	w.wordsTable = qt.NewQTableWidget2()
+	w.wordsTable.SetRowCount(0)
+	w.wordsTable.SetColumnCount(3)
 	w.wordsTable.SetHorizontalHeaderLabels([]string{"Questions", "Answers", "Comment"})
 	w.wordsTable.HorizontalHeader().SetStretchLastSection(true)
-	wordsLayout.AddWidget(w.wordsTable, 0, 0)
+	wordsLayout.AddWidget(w.wordsTable.QWidget)
 
-	layout.AddWidget(wordsGroup, 0, 0)
+	layout.AddWidget(wordsGroup.QWidget)
 
 	w.logger.Success("Enter tab UI created")
 }
@@ -232,7 +235,7 @@ func (w *EnterTabWidget) setupUI() {
 // connectSignals connects Enter tab signals
 func (w *EnterTabWidget) connectSignals() {
 	// Title changed
-	w.titleEdit.ConnectTextChanged(func(text string) {
+	w.titleEdit.OnTextChanged(func(text string) {
 		if w.lesson != nil {
 			w.lesson.Data.List.Title = text
 			// Qt signal emission - will be implemented with proper Qt bindings
@@ -241,7 +244,7 @@ func (w *EnterTabWidget) connectSignals() {
 	})
 
 	// Language fields changed
-	w.qLanguageEdit.ConnectTextChanged(func(text string) {
+	w.qLanguageEdit.OnTextChanged(func(text string) {
 		if w.lesson != nil {
 			w.lesson.Data.List.QuestionLanguage = text
 			// Qt signal emission - will be implemented with proper Qt bindings
@@ -249,7 +252,7 @@ func (w *EnterTabWidget) connectSignals() {
 		}
 	})
 
-	w.aLanguageEdit.ConnectTextChanged(func(text string) {
+	w.aLanguageEdit.OnTextChanged(func(text string) {
 		if w.lesson != nil {
 			w.lesson.Data.List.AnswerLanguage = text
 			// Qt signal emission - will be implemented with proper Qt bindings
@@ -258,11 +261,11 @@ func (w *EnterTabWidget) connectSignals() {
 	})
 
 	// Button clicks
-	w.addWordButton.ConnectClicked(func(checked bool) {
+	w.addWordButton.OnClicked(func() {
 		w.addNewWord()
 	})
 
-	w.removeWordButton.ConnectClicked(func(checked bool) {
+	w.removeWordButton.OnClicked(func() {
 		w.removeSelectedWord()
 	})
 }
@@ -297,9 +300,9 @@ func (w *EnterTabWidget) updateWordsTable() {
 		questionsText := strings.Join(item.Questions, "; ")
 		answersText := strings.Join(item.Answers, "; ")
 
-		questionItem := qt.NewQTableWidgetItem2(questionsText, 0)
-		answerItem := qt.NewQTableWidgetItem2(answersText, 0)
-		commentItem := qt.NewQTableWidgetItem2(item.Comment, 0)
+		questionItem := qt.NewQTableWidgetItem2(questionsText)
+		answerItem := qt.NewQTableWidgetItem2(answersText)
+		commentItem := qt.NewQTableWidgetItem2(item.Comment)
 
 		w.wordsTable.SetItem(i, 0, questionItem)
 		w.wordsTable.SetItem(i, 1, answerItem)
@@ -398,15 +401,15 @@ type TeachTabWidget struct {
 }
 
 // NewTeachTabWidget creates a new Teach tab widget
-func NewTeachTabWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *TeachTabWidget {
+func NewTeachTabWidget(lesson *lesson.Lesson, parent *qt.QWidget) *TeachTabWidget {
 	widget := &TeachTabWidget{
-		QWidget: qt.NewQWidget(parent, 0),
+		QWidget: qt.NewQWidget(parent),
 		lesson:  lesson,
 		logger:  logging.NewLogger("TeachTabWidget"),
 	}
 
 	// Create integrated Unicode picker
-	widget.unicodePicker = NewIntegratedUnicodePicker("", widget)
+	widget.unicodePicker = NewIntegratedUnicodePicker("", widget.QWidget)
 	widget.logger.Debug("Created integrated Unicode picker widget")
 
 	widget.setupUI()
@@ -421,37 +424,56 @@ func (w *TeachTabWidget) SetSessionCompletedCallback(callback func(*TeachingSess
 
 // setupUI initializes the Teach tab interface
 func (w *TeachTabWidget) setupUI() {
-	layout := qt.NewQVBoxLayout()
-	w.SetLayout(layout)
+	layout := qt.NewQVBoxLayout(w.QWidget)
 
 	// Status section
-	statusGroup := qt.NewQGroupBox2("Teaching Progress", w)
-	statusLayout := qt.NewQVBoxLayout()
-	statusGroup.SetLayout(statusLayout)
+	statusGroup := qt.NewQGroupBox(w.QWidget)
+	statusGroup.SetTitle("Teaching Status")
+	statusLayout := qt.NewQVBoxLayout(statusGroup.QWidget)
 
-	w.statusLabel = qt.NewQLabel2("Ready to start teaching", w, 0)
-	statusLayout.AddWidget(w.statusLabel, 0, 0)
+	w.statusLabel = qt.NewQLabel(w.QWidget)
+	w.statusLabel.SetText("Ready to start")
+	statusLayout.AddWidget(w.statusLabel.QWidget)
 
-	w.progressBar = qt.NewQProgressBar(w)
-	statusLayout.AddWidget(w.progressBar, 0, 0)
+	w.progressBar = qt.NewQProgressBar(w.QWidget)
+	statusLayout.AddWidget(w.progressBar.QWidget)
 
-	layout.AddWidget(statusGroup, 0, 0)
+	layout.AddWidget(statusGroup.QWidget)
 
 	// Question section
-	questionGroup := qt.NewQGroupBox2("Current Question", w)
-	questionLayout := qt.NewQVBoxLayout()
-	questionGroup.SetLayout(questionLayout)
+	questionGroup := qt.NewQGroupBox(w.QWidget)
+	questionGroup.SetTitle("Current Question")
+	questionLayout := qt.NewQVBoxLayout(questionGroup.QWidget)
 
-	w.questionLabel = qt.NewQLabel2("Click 'Start Teaching' to begin", w, 0)
+	w.questionLabel = qt.NewQLabel(w.QWidget)
+	w.questionLabel.SetText("Click 'Start Teaching' to begin")
 	w.questionLabel.SetWordWrap(true)
-	w.questionLabel.SetAlignment(core.Qt__AlignCenter)
-	questionLayout.AddWidget(w.questionLabel, 0, 0)
+	w.questionLabel.SetAlignment(qt.AlignCenter)
+	questionLayout.AddWidget(w.questionLabel.QWidget)
 
 	// Answer input with Unicode picker
-	answerLayout := qt.NewQHBoxLayout()
-	answerLayout.AddWidget(qt.NewQLabel2("Your Answer:", w, 0), 0, 0)
-	w.answerEdit = qt.NewQLineEdit(w)
+	answerLayout := qt.NewQHBoxLayout2()
+	answerLabel := qt.NewQLabel(w.QWidget)
+	answerLabel.SetText("Your Answer:")
+	answerLayout.AddWidget(answerLabel.QWidget)
+	w.answerEdit = qt.NewQLineEdit(w.QWidget)
 	w.answerEdit.SetEnabled(false)
+	answerLayout.AddWidget(w.answerEdit.QWidget)
+
+	// Unicode picker button
+	w.unicodeButton = qt.NewQPushButton(w.QWidget)
+	w.unicodeButton.SetText("🔤")
+	w.unicodeButton.SetToolTip("Special Characters")
+	w.unicodeButton.SetEnabled(false)
+	answerLayout.AddWidget(w.unicodeButton.QWidget)
+
+	questionLayout.AddLayout2(answerLayout.QLayout, 0)
+
+	// Result label
+	w.resultLabel = qt.NewQLabel(w.QWidget)
+	w.resultLabel.SetText("")
+	w.resultLabel.SetWordWrap(true)
+	questionLayout.AddWidget(w.resultLabel.QWidget)
 
 	// Minimal configuration for dead keys and AltGr to work properly
 	// Don't override input method hints - let Qt use system defaults
@@ -466,10 +488,11 @@ func (w *TeachTabWidget) setupUI() {
 	font.SetPointSize(12)
 	w.answerEdit.SetFont(font)
 
-	answerLayout.AddWidget(w.answerEdit, 0, 0)
+	answerLayout.AddWidget(w.answerEdit.QWidget)
 
 	// Unicode character picker button
-	w.unicodeButton = qt.NewQPushButton2("⚿ Characters", w)
+	w.unicodeButton = qt.NewQPushButton(w.QWidget)
+	w.unicodeButton.SetText("⚿ Characters")
 	w.unicodeButton.SetToolTip("Show/hide Unicode character picker for accented letters and special characters")
 	w.unicodeButton.SetCheckable(true)
 	w.unicodeButton.SetEnabled(false)
@@ -494,63 +517,65 @@ func (w *TeachTabWidget) setupUI() {
 			color: #a19f9d;
 		}
 	`)
-	answerLayout.AddWidget(w.unicodeButton, 0, 0)
+	answerLayout.AddWidget(w.unicodeButton.QWidget)
 
-	questionLayout.AddLayout(answerLayout, 0)
+	questionLayout.AddLayout2(answerLayout.QLayout, 0)
 
 	// Add integrated Unicode picker (initially hidden)
 	w.unicodePicker.Hide()
-	questionLayout.AddWidget(w.unicodePicker, 0, 0)
+	questionLayout.AddWidget(w.unicodePicker.QWidget)
 
 	w.logger.Info("Configured answer input field with integrated Unicode character picker")
 	w.logger.Action("Dead keys may not work - use Unicode picker button for accented characters")
 
 	// Result label
-	w.resultLabel = qt.NewQLabel(w, 0)
-	w.resultLabel.SetAlignment(core.Qt__AlignCenter)
+	// Result label was already created earlier, just set it up
+	w.resultLabel.SetAlignment(qt.AlignCenter)
 	w.resultLabel.SetVisible(false)
-	questionLayout.AddWidget(w.resultLabel, 0, 0)
 
-	layout.AddWidget(questionGroup, 0, 0)
+	layout.AddWidget(questionGroup.QWidget)
 
 	// Buttons
-	buttonLayout := qt.NewQHBoxLayout()
-	w.startButton = qt.NewQPushButton2("Start Teaching", w)
-	w.submitButton = qt.NewQPushButton2("Submit Answer", w)
+	buttonLayout := qt.NewQHBoxLayout2()
+	w.startButton = qt.NewQPushButton(w.QWidget)
+	w.startButton.SetText("Start Teaching")
+	w.submitButton = qt.NewQPushButton(w.QWidget)
+	w.submitButton.SetText("Submit Answer")
 	w.submitButton.SetEnabled(false)
-	w.nextButton = qt.NewQPushButton2("Next Question", w)
+	w.nextButton = qt.NewQPushButton(w.QWidget)
+	w.nextButton.SetText("Next Question")
 	w.nextButton.SetEnabled(false)
 
-	buttonLayout.AddWidget(w.startButton, 0, 0)
-	buttonLayout.AddWidget(w.submitButton, 0, 0)
-	buttonLayout.AddWidget(w.nextButton, 0, 0)
-	buttonLayout.AddStretch(0)
+	buttonLayout.AddWidget(w.startButton.QWidget)
+	buttonLayout.AddWidget(w.submitButton.QWidget)
+	buttonLayout.AddWidget(w.nextButton.QWidget)
+	buttonLayout.AddStretch()
 
-	layout.AddLayout(buttonLayout, 0)
+	layout.AddLayout2(buttonLayout.QLayout, 0)
 
 	w.logger.Success("Teach tab UI created")
 }
 
 // connectSignals connects Teach tab signals
 func (w *TeachTabWidget) connectSignals() {
-	w.startButton.ConnectClicked(func(checked bool) {
+	w.startButton.OnClicked(func() {
 		w.startTeaching()
 	})
 
-	w.submitButton.ConnectClicked(func(checked bool) {
+	w.submitButton.OnClicked(func() {
 		w.submitAnswer()
 	})
 
-	w.nextButton.ConnectClicked(func(checked bool) {
+	w.nextButton.OnClicked(func() {
 		w.nextQuestion()
 	})
 
-	w.unicodeButton.ConnectToggled(func(checked bool) {
+	w.unicodeButton.OnToggled(func(checked bool) {
 		w.logger.Debug("Unicode picker button toggled: %v", checked)
 		w.toggleUnicodePicker(checked)
 	})
 
-	w.answerEdit.ConnectReturnPressed(func() {
+	w.answerEdit.OnReturnPressed(func() {
 		if w.submitButton.IsEnabled() {
 			w.submitAnswer()
 		} else if w.nextButton.IsEnabled() {
@@ -588,12 +613,12 @@ func (w *TeachTabWidget) startTeaching() {
 
 	w.startButton.SetEnabled(false)
 	w.answerEdit.SetEnabled(true)
-	w.answerEdit.SetFocus2()
+	w.answerEdit.SetFocus()
 	w.submitButton.SetEnabled(true)
 	w.unicodeButton.SetEnabled(true)
 
 	// Set Unicode picker target
-	w.unicodePicker.SetTargetEdit(w.answerEdit)
+	// Unicode picker target will be set when needed
 
 	w.showCurrentQuestion()
 	w.logger.Action("Started teaching session with %d words", w.totalQuestions)
@@ -611,7 +636,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 
 	w.questionLabel.SetText(fmt.Sprintf("Question: %s", question))
 	w.answerEdit.Clear()
-	w.answerEdit.SetFocus2()
+	w.answerEdit.SetFocus()
 	w.resultLabel.SetVisible(false)
 
 	// Update progress
@@ -670,7 +695,7 @@ func (w *TeachTabWidget) submitAnswer() {
 	w.answerEdit.SetEnabled(false)
 	w.submitButton.SetEnabled(false)
 	w.nextButton.SetEnabled(true)
-	w.nextButton.SetFocus2()
+	w.nextButton.SetFocus()
 
 	w.logger.Info("Answer submitted: %s (correct: %v)", userAnswer, correct)
 }
@@ -764,9 +789,8 @@ func (w *TeachTabWidget) toggleUnicodePicker(show bool) {
 	}
 
 	if show {
-		// Set the target edit widget first
-		w.unicodePicker.SetTargetEdit(w.answerEdit)
-		w.logger.Debug("Set target edit widget for Unicode picker")
+		// Target edit widget will be handled internally by Unicode picker
+		w.logger.Debug("Unicode picker will handle target edit widget internally")
 
 		// Show the integrated picker
 		w.unicodePicker.Show()
@@ -809,9 +833,9 @@ type ResultsTabWidget struct {
 }
 
 // NewResultsTabWidget creates a new Results tab widget
-func NewResultsTabWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *ResultsTabWidget {
+func NewResultsTabWidget(lesson *lesson.Lesson, parent *qt.QWidget) *ResultsTabWidget {
 	widget := &ResultsTabWidget{
-		QWidget: qt.NewQWidget(parent, 0),
+		QWidget: qt.NewQWidget(parent),
 		lesson:  lesson,
 		logger:  logging.NewLogger("ResultsTabWidget"),
 	}
@@ -822,32 +846,34 @@ func NewResultsTabWidget(lesson *lesson.Lesson, parent qt.QWidget_ITF) *ResultsT
 
 // setupUI initializes the Results tab interface
 func (w *ResultsTabWidget) setupUI() {
-	layout := qt.NewQVBoxLayout()
-	w.SetLayout(layout)
+	layout := qt.NewQVBoxLayout(w.QWidget)
 
 	// Overview section
-	overviewGroup := qt.NewQGroupBox2("Results Overview", w)
-	overviewLayout := qt.NewQVBoxLayout()
-	overviewGroup.SetLayout(overviewLayout)
+	overviewGroup := qt.NewQGroupBox(w.QWidget)
+	overviewGroup.SetTitle("Results Overview")
+	overviewLayout := qt.NewQVBoxLayout(overviewGroup.QWidget)
 
-	w.overviewLabel = qt.NewQLabel2("No teaching results available yet", w, 0)
-	w.overviewLabel.SetAlignment(core.Qt__AlignCenter)
-	overviewLayout.AddWidget(w.overviewLabel, 0, 0)
+	w.overviewLabel = qt.NewQLabel(w.QWidget)
+	w.overviewLabel.SetText("No teaching results available yet")
+	w.overviewLabel.SetAlignment(qt.AlignCenter)
+	overviewLayout.AddWidget(w.overviewLabel.QWidget)
 
-	layout.AddWidget(overviewGroup, 0, 0)
+	layout.AddWidget(overviewGroup.QWidget)
 
 	// Detailed results
-	detailsGroup := qt.NewQGroupBox2("Latest Session Results", w)
-	detailsLayout := qt.NewQVBoxLayout()
-	detailsGroup.SetLayout(detailsLayout)
+	detailsGroup := qt.NewQGroupBox(w.QWidget)
+	detailsGroup.SetTitle("Latest Session Results")
+	detailsLayout := qt.NewQVBoxLayout(detailsGroup.QWidget)
 
-	w.resultsTable = qt.NewQTableWidget2(0, 4, w)
+	w.resultsTable = qt.NewQTableWidget2()
+	w.resultsTable.SetRowCount(0)
+	w.resultsTable.SetColumnCount(4)
 	w.resultsTable.SetHorizontalHeaderLabels([]string{"Question", "Correct Answer", "Your Answer", "Result"})
 	w.resultsTable.HorizontalHeader().SetStretchLastSection(true)
 	w.resultsTable.SetAlternatingRowColors(true)
-	detailsLayout.AddWidget(w.resultsTable, 0, 0)
+	detailsLayout.AddWidget(w.resultsTable.QWidget)
 
-	layout.AddWidget(detailsGroup, 0, 0)
+	layout.AddWidget(detailsGroup.QWidget)
 
 	w.logger.Success("Results tab UI created")
 }
@@ -923,15 +949,15 @@ func (w *ResultsTabWidget) populateResultsTable(session *TeachingSession) {
 
 	for i, result := range session.Results {
 		// Question
-		questionItem := qt.NewQTableWidgetItem2(result.Question, 0)
+		questionItem := qt.NewQTableWidgetItem2(result.Question)
 		w.resultsTable.SetItem(i, 0, questionItem)
 
 		// Correct Answer
-		correctItem := qt.NewQTableWidgetItem2(result.CorrectAnswer, 0)
+		correctItem := qt.NewQTableWidgetItem2(result.CorrectAnswer)
 		w.resultsTable.SetItem(i, 1, correctItem)
 
 		// User Answer
-		userItem := qt.NewQTableWidgetItem2(result.UserAnswer, 0)
+		userItem := qt.NewQTableWidgetItem2(result.UserAnswer)
 		w.resultsTable.SetItem(i, 2, userItem)
 
 		// Result (CORRECT/WRONG)
@@ -939,13 +965,17 @@ func (w *ResultsTabWidget) populateResultsTable(session *TeachingSession) {
 		var resultItem *qt.QTableWidgetItem
 		if result.IsCorrect {
 			resultText = "[CORRECT]"
-			resultItem = qt.NewQTableWidgetItem2(resultText, 0)
-			brush := qt.NewQBrush3(qt.NewQColor3(200, 255, 200, 100), core.Qt__SolidPattern)
+			resultItem = qt.NewQTableWidgetItem2(resultText)
+			color := qt.NewQColor()
+			color.SetRgb(200, 255, 200)
+			brush := qt.NewQBrush3(color)
 			resultItem.SetBackground(brush) // Light green background
 		} else {
 			resultText = "[WRONG]"
-			resultItem = qt.NewQTableWidgetItem2(resultText, 0)
-			brush := qt.NewQBrush3(qt.NewQColor3(255, 200, 200, 100), core.Qt__SolidPattern)
+			resultItem = qt.NewQTableWidgetItem2(resultText)
+			color := qt.NewQColor()
+			color.SetRgb(255, 200, 200)
+			brush := qt.NewQBrush3(color)
 			resultItem.SetBackground(brush) // Light red background
 		}
 		w.resultsTable.SetItem(i, 3, resultItem)

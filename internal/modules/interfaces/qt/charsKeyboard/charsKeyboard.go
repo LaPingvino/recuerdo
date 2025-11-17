@@ -47,16 +47,16 @@ func (mod *CharsKeyboardModule) GetWidget() *qt.QWidget {
 
 // createWidget creates the character keyboard widget
 func (mod *CharsKeyboardModule) createWidget() {
-	mod.widget = qt.NewQWidget(nil, 0)
-	layout := qt.NewQVBoxLayout()
-	mod.widget.SetLayout(layout)
+	mod.widget = qt.NewQWidget(nil)
+	layout := qt.NewQVBoxLayout(mod.widget)
 
 	// Header
-	headerLabel := qt.NewQLabel2("Special Characters", nil, 0)
+	headerLabel := qt.NewQLabel(mod.widget)
+	headerLabel.SetText("Special Characters")
 	headerFont := headerLabel.Font()
 	headerFont.SetBold(true)
 	headerLabel.SetFont(headerFont)
-	layout.AddWidget(headerLabel, 0, 0)
+	layout.AddWidget(headerLabel.QWidget)
 
 	// Character sets
 	mod.createCharacterSet("Common", []string{"á", "é", "í", "ó", "ú", "ñ", "ü", "ç"}, layout)
@@ -65,36 +65,37 @@ func (mod *CharsKeyboardModule) createWidget() {
 	mod.createCharacterSet("Spanish", []string{"á", "é", "í", "ó", "ú", "ñ", "¿", "¡"}, layout)
 
 	// Clear button
-	clearButton := qt.NewQPushButton2("Clear", nil)
-	clearButton.ConnectClicked(func(checked bool) {
+	clearButton := qt.NewQPushButton(nil)
+	clearButton.SetText("Clear")
+	clearButton.OnClicked(func() {
 		mod.clearTarget()
 	})
-	layout.AddWidget(clearButton, 0, 0)
+	layout.AddWidget(clearButton.QWidget)
 }
 
 // createCharacterSet creates a set of character buttons
 func (mod *CharsKeyboardModule) createCharacterSet(setName string, chars []string, parentLayout *qt.QVBoxLayout) {
-	groupBox := qt.NewQGroupBox2(setName, nil)
-	layout := qt.NewQHBoxLayout()
-	groupBox.SetLayout(layout)
+	groupBox := qt.NewQGroupBox(nil)
+	groupBox.SetTitle(setName)
+	groupLayout := qt.NewQHBoxLayout(groupBox.QWidget)
 
 	for _, char := range chars {
-		button := qt.NewQPushButton2(char, nil)
-		button.SetFixedSize2(40, 40)
-		button.SetToolTip(fmt.Sprintf("Insert character: %s", char))
+		button := qt.NewQPushButton(nil)
+		button.SetText(char)
+		button.SetMaximumSize2(40, 40)
+		button.SetMinimumSize2(40, 40)
 
-		// Capture the character for the closure
+		// Capture the character in the closure
 		character := char
-		button.ConnectClicked(func(checked bool) {
+		button.OnClicked(func() {
 			mod.insertCharacter(character)
 		})
 
-		layout.AddWidget(button, 0, 0)
+		groupLayout.AddWidget(button.QWidget)
 		mod.charButtons = append(mod.charButtons, button)
 	}
 
-	layout.AddStretch(1)
-	parentLayout.AddWidget(groupBox, 0, 0)
+	parentLayout.AddWidget(groupBox.QWidget)
 }
 
 // SetTargetLineEdit sets the line edit widget that will receive the characters
@@ -121,14 +122,14 @@ func (mod *CharsKeyboardModule) insertCharacter(char string) {
 	mod.targetLineEdit.SetCursorPosition(cursorPos + len(char))
 
 	// Give focus back to the line edit
-	mod.targetLineEdit.SetFocus2()
+	mod.targetLineEdit.SetFocus()
 }
 
 // clearTarget clears the target line edit
 func (mod *CharsKeyboardModule) clearTarget() {
 	if mod.targetLineEdit != nil {
 		mod.targetLineEdit.Clear()
-		mod.targetLineEdit.SetFocus2()
+		mod.targetLineEdit.SetFocus()
 	}
 }
 

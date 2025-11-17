@@ -1,6 +1,6 @@
 // Package topo provides functionality ported from Python module
 //
-// The module
+// # The module
 //
 // This is an automated port - implementation may be incomplete.
 package topo
@@ -8,8 +8,8 @@ package topo
 import (
 	"context"
 	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
 )
 
 // TeachTopoLessonModule is a Go port of the Python TeachTopoLessonModule class

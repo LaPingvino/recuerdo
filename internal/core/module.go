@@ -169,6 +169,21 @@ func (b *BaseModule) Name() string {
 	return b.moduleName
 }
 
+// GetType returns the module type (alias for Type for test compatibility)
+func (b *BaseModule) GetType() string {
+	return b.moduleType
+}
+
+// GetName returns the module name (alias for Name for test compatibility)
+func (b *BaseModule) GetName() string {
+	return b.moduleName
+}
+
+// GetRequires returns required dependencies (alias for Requires for test compatibility)
+func (b *BaseModule) GetRequires() []string {
+	return append([]string(nil), b.requires...)
+}
+
 // Requires returns required dependencies
 func (b *BaseModule) Requires() []string {
 	return append([]string(nil), b.requires...)

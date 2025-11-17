@@ -47,8 +47,8 @@ func (mod *FileDialogModule) OpenFile(parent interface{}, title string, filter s
 		filter = mod.fileFilter
 	}
 
-	// Use GetOpenFileName directly - single dialog approach
-	selectedFile := qt.QFileDialog_GetOpenFileName(parentWidget, title, mod.lastDir, filter, "", 0)
+	// Use GetOpenFileName with proper parameters
+	selectedFile := qt.QFileDialog_GetOpenFileName4(parentWidget, title, mod.lastDir, filter)
 	if selectedFile != "" {
 		mod.lastDir = filepath.Dir(selectedFile)
 		return selectedFile
@@ -63,17 +63,11 @@ func (mod *FileDialogModule) OpenFiles(parent *qt.QWidget, title string, filter 
 		filter = mod.fileFilter
 	}
 
-	dialog := qt.NewQFileDialog2(parent, title, mod.lastDir, filter)
-	dialog.SetFileMode(qt.QFileDialog__ExistingFiles)
-	dialog.SetAcceptMode(qt.QFileDialog__AcceptOpen)
-
-	if dialog.Exec() == int(qt.QDialog__Accepted) {
-		// Use QFileDialog.GetOpenFileNames instead for multiple files
-		selectedFiles := qt.QFileDialog_GetOpenFileNames(parent, title, mod.lastDir, filter, "", 0)
-		if len(selectedFiles) > 0 {
-			mod.lastDir = filepath.Dir(selectedFiles[0])
-			return selectedFiles
-		}
+	// Use GetOpenFileNames with proper parameters
+	selectedFiles := qt.QFileDialog_GetOpenFileNames4(parent, title, mod.lastDir, filter)
+	if len(selectedFiles) > 0 {
+		mod.lastDir = filepath.Dir(selectedFiles[0])
+		return selectedFiles
 	}
 
 	return []string{}
@@ -90,18 +84,10 @@ func (mod *FileDialogModule) SaveFile(parent *qt.QWidget, title string, filter s
 		startPath = filepath.Join(mod.lastDir, defaultName)
 	}
 
-	dialog := qt.NewQFileDialog2(parent, title, startPath, filter)
-	dialog.SetFileMode(qt.QFileDialog__AnyFile)
-	dialog.SetAcceptMode(qt.QFileDialog__AcceptSave)
-	dialog.SetDefaultSuffix("ot")
-
-	if dialog.Exec() == int(qt.QDialog__Accepted) {
-		selectedFiles := dialog.SelectedFiles()
-		if len(selectedFiles) > 0 {
-			filePath := selectedFiles[0]
-			mod.lastDir = filepath.Dir(filePath)
-			return filePath
-		}
+	selectedFile := qt.QFileDialog_GetSaveFileName4(parent, title, startPath, filter)
+	if selectedFile != "" {
+		mod.lastDir = filepath.Dir(selectedFile)
+		return selectedFile
 	}
 
 	return ""
@@ -109,17 +95,10 @@ func (mod *FileDialogModule) SaveFile(parent *qt.QWidget, title string, filter s
 
 // SelectDirectory shows a directory selection dialog
 func (mod *FileDialogModule) SelectDirectory(parent *qt.QWidget, title string) string {
-	dialog := qt.NewQFileDialog2(parent, title, mod.lastDir, "")
-	dialog.SetFileMode(qt.QFileDialog__Directory)
-	dialog.SetOption(qt.QFileDialog__ShowDirsOnly, true)
-
-	if dialog.Exec() == int(qt.QDialog__Accepted) {
-		selectedFiles := dialog.SelectedFiles()
-		if len(selectedFiles) > 0 {
-			dirPath := selectedFiles[0]
-			mod.lastDir = dirPath
-			return dirPath
-		}
+	selectedDir := qt.QFileDialog_GetExistingDirectory3(parent, title, mod.lastDir)
+	if selectedDir != "" {
+		mod.lastDir = selectedDir
+		return selectedDir
 	}
 
 	return ""

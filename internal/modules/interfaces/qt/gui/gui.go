@@ -17,6 +17,8 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/core"
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/logging"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/media"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/topo"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
 	"github.com/mappu/miqt/qt"
 )
@@ -72,9 +74,9 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 	}
 
 	// Create main window
-	mod.mainWindow = qt.NewQMainWindow(nil, 0)
+	mod.mainWindow = qt.NewQMainWindow(nil)
 	mod.mainWindow.SetWindowTitle("OpenTeacher 4.0")
-	mod.mainWindow.Resize2(1000, 700)
+	mod.mainWindow.Resize(1000, 700)
 	mod.mainWindow.SetMinimumSize2(800, 600)
 
 	// Create menu bar
@@ -82,19 +84,18 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 
 	// Create status bar
 	mod.statusBar = mod.mainWindow.StatusBar()
-	mod.statusBar.ShowMessage("Ready", 0)
+	mod.statusBar.ShowMessage("Ready")
 
 	// Create central widget with basic layout
-	centralWidget := qt.NewQWidget(nil, 0)
+	centralWidget := qt.NewQWidget(nil)
 	mod.mainWindow.SetCentralWidget(centralWidget)
 
 	// Create main layout
-	mainLayout := qt.NewQVBoxLayout()
-	centralWidget.SetLayout(mainLayout)
+	mainLayout := qt.NewQVBoxLayout(centralWidget)
 
 	// Add welcome area
 	welcomeWidget := mod.createWelcomeWidget()
-	mainLayout.AddWidget(welcomeWidget, 1, 0)
+	mainLayout.AddWidget(welcomeWidget)
 
 	// Show the window
 	mod.mainWindow.Show()
@@ -199,7 +200,7 @@ func (mod *GuiModule) GetMainWindow() *qt.QMainWindow {
 func (mod *GuiModule) RunEventLoop() int {
 	if mod.app != nil {
 		mod.logger.Success("RunEventLoop() - Qt event loop started")
-		exitCode := mod.app.Exec()
+		exitCode := qt.QApplication_Exec()
 		mod.logger.Success("RunEventLoop() - Qt event loop finished with code %d", exitCode)
 		return exitCode
 	}
@@ -212,18 +213,20 @@ func (mod *GuiModule) createMenuBar() {
 	mod.menuBar = mod.mainWindow.MenuBar()
 
 	// File menu
-	fileMenu := mod.menuBar.AddMenu2("&File")
+	fileMenu := qt.NewQMenu2()
+	fileMenu.SetTitle("&File")
+	mod.menuBar.AddMenu(fileMenu)
 
 	newAction := fileMenu.AddAction("&New Lesson...")
-	newAction.SetShortcut(qt.NewQKeySequence2("Ctrl+N", qt.QKeySequence__NativeText))
-	newAction.ConnectTriggered(func(checked bool) {
+	newAction.SetShortcut(qt.NewQKeySequence2("Ctrl+N"))
+	newAction.OnTriggered(func() {
 		mod.logger.Event("New Lesson menu action triggered")
 		mod.showNewLessonDialog()
 	})
 
 	openAction := fileMenu.AddAction("&Open...")
-	openAction.SetShortcut(qt.NewQKeySequence2("Ctrl+O", qt.QKeySequence__NativeText))
-	openAction.ConnectTriggered(func(checked bool) {
+	openAction.SetShortcut(qt.NewQKeySequence2("Ctrl+O"))
+	openAction.OnTriggered(func() {
 		mod.logger.Event("Open Lesson menu action triggered")
 		mod.showOpenDialogFrom("MENU")
 	})
@@ -231,117 +234,140 @@ func (mod *GuiModule) createMenuBar() {
 	fileMenu.AddSeparator()
 
 	saveAction := fileMenu.AddAction("&Save")
-	saveAction.SetShortcut(qt.NewQKeySequence2("Ctrl+S", qt.QKeySequence__NativeText))
+	saveAction.SetShortcut(qt.NewQKeySequence2("Ctrl+S"))
 	saveAction.SetEnabled(false) // Enable when lesson is loaded
+	saveAction.OnTriggered(func() {
+		mod.logger.Event("Save menu action triggered")
+	})
 
 	saveAsAction := fileMenu.AddAction("Save &As...")
-	saveAsAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Shift+S", qt.QKeySequence__NativeText))
-	saveAsAction.SetEnabled(false)
+	saveAsAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Shift+S"))
+	saveAsAction.SetEnabled(false) // Enable when lesson is loaded
+	saveAsAction.OnTriggered(func() {
+		mod.logger.Event("Save As menu action triggered")
+	})
 
 	fileMenu.AddSeparator()
 
 	exitAction := fileMenu.AddAction("E&xit")
-	exitAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Q", qt.QKeySequence__NativeText))
-	exitAction.ConnectTriggered(func(checked bool) {
+	exitAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Q"))
+	exitAction.OnTriggered(func() {
 		mod.logger.Event("Exit menu action triggered")
 		mod.mainWindow.Close()
 	})
 
 	// Edit menu
-	editMenu := mod.menuBar.AddMenu2("&Edit")
+	editMenu := qt.NewQMenu2()
+	editMenu.SetTitle("&Edit")
+	mod.menuBar.AddMenu(editMenu)
 
 	propertiesAction := editMenu.AddAction("&Properties...")
-	propertiesAction.ConnectTriggered(func(checked bool) {
+	propertiesAction.OnTriggered(func() {
 		mod.logger.Event("Properties menu action triggered")
 		mod.showPropertiesDialog()
 	})
 
 	// Tools menu
-	toolsMenu := mod.menuBar.AddMenu2("&Tools")
+	toolsMenu := qt.NewQMenu2()
+	toolsMenu.SetTitle("&Tools")
+	mod.menuBar.AddMenu(toolsMenu)
 
 	settingsAction := toolsMenu.AddAction("&Settings...")
-	settingsAction.ConnectTriggered(func(checked bool) {
+	settingsAction.OnTriggered(func() {
 		mod.logger.Event("Settings menu action triggered")
 		mod.showSettingsDialog()
 	})
 
+	toolsMenu.AddSeparator()
+
+	importAction := toolsMenu.AddAction("&Import...")
+	importAction.OnTriggered(func() {
+		mod.logger.Event("Import menu action triggered")
+		mod.logger.Warning("Import functionality not yet implemented")
+	})
+
 	// Help menu
-	helpMenu := mod.menuBar.AddMenu2("&Help")
+	helpMenu := qt.NewQMenu2()
+	helpMenu.SetTitle("&Help")
+	mod.menuBar.AddMenu(helpMenu)
 
 	aboutAction := helpMenu.AddAction("&About...")
-	aboutAction.ConnectTriggered(func(checked bool) {
+	aboutAction.OnTriggered(func() {
 		mod.logger.Event("About menu action triggered")
 		mod.showAboutDialog()
 	})
 }
 
-// createWelcomeWidget creates the main welcome widget
+// createWelcomeWidget creates the welcome screen widget
 func (mod *GuiModule) createWelcomeWidget() *qt.QWidget {
-	widget := qt.NewQWidget(nil, 0)
-	layout := qt.NewQVBoxLayout()
-	widget.SetLayout(layout)
+	widget := qt.NewQWidget(nil)
+	layout := qt.NewQVBoxLayout(widget)
 
 	// Add some spacing
-	layout.AddStretch(1)
+	layout.AddStretch()
 
 	// Main title
-	titleLabel := qt.NewQLabel2("Welcome to OpenTeacher 4.0!", nil, 0)
+	titleLabel := qt.NewQLabel(nil)
+	titleLabel.SetText("Welcome to OpenTeacher 4.0")
 	titleFont := titleLabel.Font()
 	titleFont.SetPointSize(24)
 	titleFont.SetBold(true)
 	titleLabel.SetFont(titleFont)
 	titleLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(titleLabel, 0, 0)
+	layout.AddWidget(titleLabel.QWidget)
 
 	// Subtitle
-	subtitleLabel := qt.NewQLabel2("Learn whatever you want to learn", nil, 0)
+	subtitleLabel := qt.NewQLabel(nil)
+	subtitleLabel.SetText("Learn whatever you want to learn")
 	subtitleFont := subtitleLabel.Font()
 	subtitleFont.SetPointSize(14)
 	subtitleLabel.SetFont(subtitleFont)
 	subtitleLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(subtitleLabel, 0, 0)
+	layout.AddWidget(subtitleLabel.QWidget)
 
 	// Add some spacing
-	layout.AddSpacing(40)
+	layout.AddSpacing(20)
 
 	// Quick action buttons
-	buttonsWidget := qt.NewQWidget(nil, 0)
-	buttonsLayout := qt.NewQHBoxLayout()
-	buttonsWidget.SetLayout(buttonsLayout)
+	buttonsWidget := qt.NewQWidget(nil)
+	buttonsLayout := qt.NewQHBoxLayout(buttonsWidget)
 
-	buttonsLayout.AddStretch(1)
+	buttonsLayout.AddStretch()
 
 	// New lesson button
-	newLessonBtn := qt.NewQPushButton2("Create New Lesson", nil)
+	newLessonBtn := qt.NewQPushButton(nil)
+	newLessonBtn.SetText("Create New Lesson")
 	newLessonBtn.SetFixedSize2(200, 50)
-	newLessonBtn.ConnectClicked(func(checked bool) {
+	newLessonBtn.OnClicked(func() {
 		mod.logger.Event("Create New Lesson button clicked")
 		mod.showNewLessonDialog()
 	})
-	buttonsLayout.AddWidget(newLessonBtn, 0, 0)
+	buttonsLayout.AddWidget(newLessonBtn.QWidget)
 
 	buttonsLayout.AddSpacing(20)
 
 	// Open lesson button
-	openLessonBtn := qt.NewQPushButton2("Open Lesson", nil)
+	openLessonBtn := qt.NewQPushButton(nil)
+	openLessonBtn.SetText("Open Lesson")
 	openLessonBtn.SetFixedSize2(200, 50)
-	openLessonBtn.ConnectClicked(func(checked bool) {
+	openLessonBtn.OnClicked(func() {
 		mod.logger.Event("Open Lesson button clicked")
 		mod.showOpenDialogFrom("BUTTON")
 	})
-	buttonsLayout.AddWidget(openLessonBtn, 0, 0)
+	buttonsLayout.AddWidget(openLessonBtn.QWidget)
 
-	buttonsLayout.AddStretch(1)
+	buttonsLayout.AddStretch()
 
-	layout.AddWidget(buttonsWidget, 0, 0)
+	layout.AddWidget(buttonsWidget)
 
 	// Status info
-	statusLabel := qt.NewQLabel2("Module system initialized successfully", nil, 0)
+	statusLabel := qt.NewQLabel(nil)
+	statusLabel.SetText("Module system initialized successfully")
 	statusLabel.SetAlignment(qt.AlignHCenter)
-	statusLabel.SetStyleSheet("color: green; font-style: italic;")
-	layout.AddWidget(statusLabel, 0, 0)
+	statusLabel.SetStyleSheet("color: #888; font-size: 12px; margin: 20px;")
+	layout.AddWidget(statusLabel.QWidget)
 
-	layout.AddStretch(2)
+	layout.AddStretch()
 
 	return widget
 }
@@ -366,24 +392,24 @@ func (mod *GuiModule) showNewLessonDialog() {
 				newLesson, err := mod.CreateLessonFromDialogData(lessonData)
 				if err != nil {
 					mod.logger.Error("Failed to create lesson from dialog data: %v", err)
-					mod.statusBar.ShowMessage("Error creating lesson: "+err.Error(), 5000)
+					mod.statusBar.ShowMessage("Error creating lesson: " + err.Error())
 					return
 				}
 
 				// Display lesson in new tab
 				mod.displayLessonInTab(newLesson)
-				mod.statusBar.ShowMessage("New lesson created successfully", 3000)
+				mod.statusBar.ShowMessage("New lesson created successfully")
 			} else {
 				log.Printf("[INFO] New lesson dialog was cancelled")
-				mod.statusBar.ShowMessage("New lesson creation cancelled", 3000)
+				mod.statusBar.ShowMessage("New lesson dialog created")
 			}
 		} else {
 			mod.logger.DeadEnd("lessonDialogs module", "does not implement ShowNewLessonDialog() method", "legacy/modules/org/openteacher/interfaces/qt/lessonDialogs/")
-			mod.statusBar.ShowMessage("Error: Lesson dialog not available", 3000)
+			mod.statusBar.ShowMessage("Error: Lesson dialog not available")
 		}
 	} else {
 		mod.logger.DeadEnd("lessonDialogs system", "No lessonDialogs modules found", "legacy/modules/org/openteacher/interfaces/qt/lessonDialogs/")
-		mod.statusBar.ShowMessage("Error: No lesson dialog modules available", 3000)
+		mod.statusBar.ShowMessage("Error: No lesson dialog modules available")
 	}
 }
 
@@ -420,20 +446,20 @@ func (mod *GuiModule) showOpenDialogFrom(source string) {
 			if fileName != "" {
 				mod.logger.Success("File dialog returned: %s", fileName)
 				mod.logger.Debug("TRACKING: About to call loadSelectedFile() - call stack marker C")
-				mod.statusBar.ShowMessage(fmt.Sprintf("Selected file: %s", fileName), 5000)
+				mod.statusBar.ShowMessage(fmt.Sprintf("Selected file: %s", fileName))
 				mod.loadSelectedFile(fileName)
 				mod.logger.Debug("TRACKING: loadSelectedFile() completed - call stack marker D")
 			} else {
 				mod.logger.Info("File dialog was cancelled")
-				mod.statusBar.ShowMessage("File selection cancelled", 3000)
+				mod.statusBar.ShowMessage("Open operation cancelled")
 			}
 		} else {
 			mod.logger.DeadEnd("fileDialog module", "does not implement OpenFile() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
-			mod.statusBar.ShowMessage("Error: File dialog not available", 000)
+			mod.statusBar.ShowMessage("Error: File dialog not available")
 		}
 	} else {
 		mod.logger.DeadEnd("fileDialog system", "No fileDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
-		mod.statusBar.ShowMessage("Error: No file dialog modules available", 3000)
+		mod.statusBar.ShowMessage("Error: No file dialog modules available")
 	}
 }
 
@@ -457,7 +483,7 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 	lessonData, err := fileLoader.LoadFile(fileName)
 	if err != nil {
 		mod.logger.Error("Failed to load file '%s': %v", fileName, err)
-		mod.statusBar.ShowMessage(fmt.Sprintf("Error loading file: %v", err), 5000)
+		mod.statusBar.ShowMessage(fmt.Sprintf("Error loading file: %v", err))
 		return
 	}
 
@@ -482,7 +508,7 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 	if testCount > 0 {
 		statusMsg += fmt.Sprintf(", %d tests", testCount)
 	}
-	mod.statusBar.ShowMessage(statusMsg, 10000)
+	mod.statusBar.ShowMessage(statusMsg)
 
 	// Log the lesson details
 	mod.logger.Success("Lesson loaded successfully:")
@@ -575,13 +601,13 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 
 	// Create tab widget if it doesn't exist
 	if mod.tabWidget == nil {
-		mod.tabWidget = qt.NewQTabWidget(mod.mainWindow)
-		mod.mainWindow.SetCentralWidget(mod.tabWidget)
+		mod.tabWidget = qt.NewQTabWidget(nil)
+		mod.mainWindow.SetCentralWidget(mod.tabWidget.QWidget)
 		mod.logger.Success("Created central tab widget")
 	} else {
 		// Tab widget already exists, just update the central widget if needed
-		if mod.mainWindow.CentralWidget() != mod.tabWidget.QWidget_PTR() {
-			mod.mainWindow.SetCentralWidget(mod.tabWidget)
+		if mod.mainWindow.CentralWidget() != mod.tabWidget.QWidget {
+			mod.mainWindow.SetCentralWidget(mod.tabWidget.QWidget)
 			mod.logger.Success("Replaced central widget with tab widget")
 		}
 	}
@@ -601,15 +627,36 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 
 	// Update status bar
 	statusMsg := fmt.Sprintf("Opened '%s' - %d words", title, lesson.Data.List.GetWordCount())
-	mod.statusBar.ShowMessage(statusMsg, 5000)
+	mod.statusBar.ShowMessage(statusMsg)
 
 	mod.logger.Success("Lesson tab created: %s (%d words)", title, lesson.Data.List.GetWordCount())
 }
 
 // createLessonWidget creates a widget to display lesson content
 func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
-	// Create the new lesson widget with Enter/Teach/Results tabs
-	lessonWidget := words.NewWordsLessonWidget(lesson, mod.mainWindow)
+	// Determine lesson type and create appropriate widget
+	var lessonWidget *qt.QWidget
+
+	switch lesson.DataType {
+	case "topo":
+		mod.logger.Info("Creating topography lesson widget for: %s", lesson.Path)
+		topoWidget := topo.NewTopoLessonWidget(lesson, mod.mainWindow.QWidget)
+		lessonWidget = topoWidget.QWidget
+
+		// Validate layout after creation (will check for overlaps in strict mode)
+		topoWidget.ValidateLayoutAfterShow()
+	case "media":
+		mod.logger.Info("Creating media lesson widget for: %s", lesson.Path)
+		mediaWidget := media.NewMediaLessonWidget(lesson, mod.mainWindow.QWidget)
+		lessonWidget = mediaWidget.QWidget
+	case "words":
+		fallthrough
+	default:
+		// Default to words widget for unknown types or actual words lessons
+		mod.logger.Info("Creating words lesson widget for: %s (type: %s)", lesson.Path, lesson.DataType)
+		wordsWidget := words.NewWordsLessonWidget(lesson, mod.mainWindow.QWidget)
+		lessonWidget = wordsWidget.QWidget
+	}
 
 	// TODO: Connect lesson change signal to update window title and status
 	// This will be implemented when proper Qt signal system is in place
@@ -617,7 +664,7 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 	mod.logger.Info("Created lesson widget for: %s", lesson.Path)
 
 	mod.logger.Success("Created lesson widget with Enter/Teach/Results tabs")
-	return lessonWidget.QWidget
+	return lessonWidget
 }
 
 func (mod *GuiModule) showPropertiesDialog() {
@@ -627,7 +674,7 @@ func (mod *GuiModule) showPropertiesDialog() {
 	currentLessonData := mod.getCurrentLessonData()
 	if currentLessonData == nil {
 		mod.logger.Error("No current lesson to show properties for")
-		mod.statusBar.ShowMessage("No lesson open to show properties", 3000)
+		mod.statusBar.ShowMessage("No lesson open to show properties")
 		return
 	}
 
@@ -635,7 +682,7 @@ func (mod *GuiModule) showPropertiesDialog() {
 	lessonDialogModules := mod.manager.GetModulesByType("lessonDialogs")
 	if len(lessonDialogModules) == 0 {
 		mod.logger.DeadEnd("lessonDialogs system", "No lessonDialogs modules found", "internal/modules/interfaces/qt/lessonDialogs/")
-		mod.statusBar.ShowMessage("Properties dialog not available", 3000)
+		mod.statusBar.ShowMessage("Properties dialog cancelled")
 		return
 	}
 
@@ -648,18 +695,18 @@ func (mod *GuiModule) showPropertiesDialog() {
 		mod.logger.Success("Calling ShowPropertiesDialog() on lessonDialogs module")
 
 		// Show the properties dialog and get the result
-		updatedData := dialogMod.ShowPropertiesDialog(mod.mainWindow.QWidget_PTR(), currentLessonData)
+		updatedData := dialogMod.ShowPropertiesDialog(mod.mainWindow.QWidget, currentLessonData)
 
 		if updatedData != nil {
 			mod.logger.Success("Properties dialog returned updated data")
 			mod.updateCurrentLessonData(updatedData)
-			mod.statusBar.ShowMessage("Lesson properties updated", 3000)
+			mod.statusBar.ShowMessage("Lesson properties updated successfully")
 		} else {
 			mod.logger.Info("Properties dialog was cancelled or no changes made")
 		}
 	} else {
 		mod.logger.Error("lessonDialogs module doesn't have ShowPropertiesDialog method")
-		mod.statusBar.ShowMessage("Properties dialog not available", 3000)
+		mod.statusBar.ShowMessage("Error: Properties dialog not available")
 	}
 }
 
@@ -677,18 +724,18 @@ func (mod *GuiModule) showSettingsDialog() {
 			applied := settingsMod.ShowSettingsDialog()
 			if applied {
 				mod.logger.Success("Settings dialog applied changes")
-				mod.statusBar.ShowMessage("Settings updated successfully", 3000)
+				mod.statusBar.ShowMessage("File opened successfully")
 			} else {
 				mod.logger.Info("Settings dialog was cancelled or no changes made")
-				mod.statusBar.ShowMessage("Settings dialog cancelled", 3000)
+				mod.statusBar.ShowMessage("Settings dialog created")
 			}
 		} else {
 			mod.logger.DeadEnd("settingsDialog module", "does not implement ShowSettingsDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
-			mod.statusBar.ShowMessage("Error: Settings dialog not available", 3000)
+			mod.statusBar.ShowMessage("Error: Settings dialog not available")
 		}
 	} else {
 		mod.logger.DeadEnd("settingsDialog system", "No settingsDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
-		mod.statusBar.ShowMessage("Error: No settings dialog modules available", 3000)
+		mod.statusBar.ShowMessage("Error: No settings dialog modules available")
 	}
 }
 
@@ -705,14 +752,14 @@ func (mod *GuiModule) showAboutDialog() {
 			mod.logger.Success("Calling ShowAboutDialog() on aboutDialog module")
 			aboutMod.ShowAboutDialog()
 			mod.logger.Success("About dialog was shown")
-			mod.statusBar.ShowMessage("About dialog displayed", 2000)
+			mod.statusBar.ShowMessage("Import dialog created")
 		} else {
 			mod.logger.DeadEnd("aboutDialog module", "does not implement ShowAboutDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
-			mod.statusBar.ShowMessage("Error: About dialog not available", 3000)
+			mod.statusBar.ShowMessage("About dialog not available")
 		}
 	} else {
 		mod.logger.DeadEnd("aboutDialog system", "No aboutDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
-		mod.statusBar.ShowMessage("Error: No about dialog modules available", 3000)
+		mod.statusBar.ShowMessage("Error: No about dialog modules available")
 	}
 }
 

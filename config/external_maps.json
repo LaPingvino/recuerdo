@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "description": "External maps configuration for Recuerdo topography lessons",
+  "maps": [
+    {
+      "id": "custom_europe_detailed",
+      "name": "Detailed Europe",
+      "imagePath": "maps/europe_detailed.png",
+      "placesPath": "maps/europe_detailed_places.json",
+      "width": 1200,
+      "height": 800,
+      "description": "A high-resolution detailed map of Europe with more cities and geographical features",
+      "author": "Custom Map Creator",
+      "version": "2.1",
+      "license": "CC BY-SA 4.0",
+      "tags": ["europe", "detailed", "high-resolution"],
+      "coordinateSystem": {
+        "minLatitude": 35.0,
+        "maxLatitude": 71.0,
+        "minLongitude": -25.0,
+        "maxLongitude": 45.0,
+        "pixelWidth": 1200,
+        "pixelHeight": 800,
+        "plusCodePrecision": 3
+      },
+      "metadata": {
+        "source": "OpenStreetMap contributors",
+        "projection": "Web Mercator",
+        "datum": "WGS84",
+        "created": "2024",
+        "lastUpdated": "2024-11-17",
+        "scale": "1:10000000"
+      }
+    },
+    {
+      "id": "north_america",
+      "name": "North America",
+      "imagePath": "maps/north_america.jpg",
+      "placesPath": "maps/north_america_places.json",
+      "width": 800,
+      "height": 600,
+      "description": "Complete North American map including Canada, USA, and Mexico",
+      "author": "Geography Education Team",
+      "version": "1.0",
+      "license": "Public Domain",
+      "tags": ["north-america", "canada", "usa", "mexico"],
+      "coordinateSystem": {
+        "minLatitude": 15.0,
+        "maxLatitude": 75.0,
+        "minLongitude": -170.0,
+        "maxLongitude": -50.0,
+        "plusCodePrecision": 2
+      },
+      "metadata": {
+        "source": "Natural Earth Data",
+        "projection": "Albers Equal Area",
+        "datum": "NAD83",
+        "created": "2024"
+      }
+    },
+    {
+      "id": "oceania",
+      "name": "Oceania & Pacific",
+      "imagePath": "maps/oceania.png",
+      "placesPath": "maps/oceania_places.json",
+      "width": 900,
+      "height": 700,
+      "description": "Australia, New Zealand, and Pacific islands",
+      "author": "Pacific Geography Institute",
+      "version": "1.5",
+      "license": "CC BY 4.0",
+      "tags": ["oceania", "australia", "pacific", "islands"],
+      "coordinateSystem": {
+        "minLatitude": -50.0,
+        "maxLatitude": 30.0,
+        "minLongitude": 110.0,
+        "maxLongitude": 180.0,
+        "plusCodePrecision": 2
+      },
+      "metadata": {
+        "source": "Australian Bureau of Meteorology",
+        "projection": "Lambert Conformal Conic",
+        "datum": "GDA2020",
+        "created": "2024",
+        "specialFeatures": "Includes major Pacific island nations"
+      }
+    }
+  ]
+}

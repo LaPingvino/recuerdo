@@ -1,7 +1,7 @@
 // Package hiddenbrowser provides functionality ported from Python module
 //
-// Provides a hidden browser widget for web content rendering and processing.
-// This module can be used for background web operations without displaying UI.
+// Provides a browser widget for web content rendering and processing.
+// This module can be used for displaying web content, maps, and media.
 //
 // This is an automated port - implementation may be incomplete.
 package hiddenbrowser
@@ -34,20 +34,40 @@ func NewHiddenBrowserModule() *HiddenBrowserModule {
 	}
 }
 
-// LoadUrl loads a URL in the hidden browser
+// CreateWebView creates a web view widget that can be embedded
+func (mod *HiddenBrowserModule) CreateWebView(parent *qt.QWidget) *qt.QWidget {
+	// For now, create a placeholder widget that can display HTML content
+	// TODO: This should use QWebEngineView when miqt supports it
+	widget := qt.NewQWidget(parent)
+
+	// Create a label to show we need WebEngine
+	layout := qt.NewQVBoxLayout(widget)
+	widget.SetLayout(layout.QLayout)
+
+	label := qt.NewQLabel(widget)
+	label.SetText("WebEngine support needed for full browser functionality")
+	label.SetStyleSheet("color: #666; font-style: italic; padding: 20px;")
+	layout.AddWidget(label.QWidget)
+
+	return widget
+}
+
+// LoadUrl loads a URL in the browser
 func (mod *HiddenBrowserModule) LoadUrl(url string) {
 	mod.currentUrl = url
 	mod.isLoading = true
 
-	// Create a minimal web view widget if not exists
-	if mod.webView == nil {
-		mod.webView = qt.NewQWidget(nil, 0)
-		mod.webView.SetVisible(false) // Keep it hidden
-	}
+	// TODO: Implement actual web loading when WebEngine is available
+	fmt.Printf("Browser would load URL: %s\n", url)
 
-	// Simulate loading completion
 	mod.isLoading = false
-	fmt.Printf("Hidden browser loaded URL: %s\n", url)
+}
+
+// LoadHtmlContent loads HTML content directly
+func (mod *HiddenBrowserModule) LoadHtmlContent(html string, baseUrl string) {
+	mod.currentUrl = baseUrl
+	// TODO: Implement HTML loading when WebEngine is available
+	fmt.Printf("Browser would load HTML content (base: %s)\n", baseUrl)
 }
 
 // IsLoading returns whether the browser is currently loading content
@@ -60,16 +80,16 @@ func (mod *HiddenBrowserModule) GetCurrentUrl() string {
 	return mod.currentUrl
 }
 
-// ExecuteScript executes JavaScript in the hidden browser
+// ExecuteScript executes JavaScript in the browser
 func (mod *HiddenBrowserModule) ExecuteScript(script string) string {
-	// Placeholder implementation - would need actual web engine integration
-	fmt.Printf("Executing script in hidden browser: %s\n", script)
+	// TODO: Implement when WebEngine is available
+	fmt.Printf("Would execute script: %s\n", script)
 	return "script_result"
 }
 
 // GetPageContent returns the current page content
 func (mod *HiddenBrowserModule) GetPageContent() string {
-	// Placeholder implementation
+	// TODO: Implement when WebEngine is available
 	return fmt.Sprintf("Content from %s", mod.currentUrl)
 }
 
@@ -89,11 +109,7 @@ func (mod *HiddenBrowserModule) Enable(ctx context.Context) error {
 		return err
 	}
 
-	// Initialize the hidden web view
-	mod.webView = qt.NewQWidget(nil, 0)
-	mod.webView.SetVisible(false)
-
-	fmt.Println("HiddenBrowserModule enabled")
+	fmt.Println("HiddenBrowserModule enabled (WebEngine support pending)")
 	return nil
 }
 

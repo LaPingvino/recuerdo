@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "description": "Tile-based maps configuration for Recuerdo topography lessons",
+  "tileMaps": [
+    {
+      "id": "cartodb_light_nolabels",
+      "name": "CartoDB Light (No Labels)",
+      "description": "Clean light map without labels, perfect for topography training",
+      "tileUrl": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png",
+      "subdomains": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "minZoom": 0,
+      "maxZoom": 18,
+      "defaultZoom": 6,
+      "boundingBox": {
+        "north": 85.0511,
+        "south": -85.0511,
+        "east": 180,
+        "west": -180
+      },
+      "tileSize": 256,
+      "attribution": "© OpenStreetMap contributors, © CartoDB",
+      "cacheEnabled": true,
+      "cacheTtl": 168,
+      "license": "ODbL",
+      "tags": [
+        "light",
+        "clean",
+        "training",
+        "global"
+      ]
+    },
+    {
+      "id": "cartodb_positron",
+      "name": "CartoDB Positron",
+      "description": "Very light map with minimal features, excellent contrast for place names",
+      "tileUrl": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+      "subdomains": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "minZoom": 0,
+      "maxZoom": 18,
+      "defaultZoom": 6,
+      "boundingBox": {
+        "north": 85.0511,
+        "south": -85.0511,
+        "east": 180,
+        "west": -180
+      },
+      "tileSize": 256,
+      "attribution": "© OpenStreetMap contributors, © CartoDB",
+      "cacheEnabled": true,
+      "cacheTtl": 168,
+      "license": "ODbL",
+      "tags": [
+        "light",
+        "minimal",
+        "contrast",
+        "global"
+      ]
+    },
+    {
+      "id": "openstreetmap_standard",
+      "name": "OpenStreetMap Standard",
+      "description": "Standard OpenStreetMap tiles with full detail",
+      "tileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "subdomains": [
+        "a",
+        "b",
+        "c"
+      ],
+      "minZoom": 0,
+      "maxZoom": 19,
+      "defaultZoom": 8,
+      "boundingBox": {
+        "north": 85.0511,
+        "south": -85.0511,
+        "east": 180,
+        "west": -180
+      },
+      "tileSize": 256,
+      "attribution": "© OpenStreetMap contributors",
+      "cacheEnabled": true,
+      "cacheTtl": 72,
+      "license": "ODbL",
+      "tags": [
+        "standard",
+        "detailed",
+        "osm",
+        "global"
+      ]
+    }
+  ]
+}

@@ -46,55 +46,60 @@ func (mod *AboutDialogModule) Show() {
 
 // createDialog creates and configures the about dialog
 func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
-	mod.dialog = qt.NewQDialog(parent, 0)
+	mod.dialog = qt.NewQDialog(parent)
 	mod.dialog.SetWindowTitle("About Recuerdo")
 	mod.dialog.SetFixedSize2(400, 300)
 	mod.dialog.SetWindowModality(qt.ApplicationModal)
 
 	// Create main layout
-	layout := qt.NewQVBoxLayout()
-	mod.dialog.SetLayout(layout)
+	layout := qt.NewQVBoxLayout(mod.dialog.QWidget)
 
 	// Add Recuerdo logo/title
-	titleLabel := qt.NewQLabel2("Recuerdo", nil, 0)
+	titleLabel := qt.NewQLabel(mod.dialog.QWidget)
+	titleLabel.SetText("Recuerdo")
 	titleFont := titleLabel.Font()
 	titleFont.SetPointSize(18)
 	titleFont.SetBold(true)
 	titleLabel.SetFont(titleFont)
 	titleLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(titleLabel, 0, 0)
+	layout.AddWidget(titleLabel.QWidget)
 
 	// Add version info
-	versionLabel := qt.NewQLabel2("Version 4.0.0-alpha", nil, 0)
+	versionLabel := qt.NewQLabel(mod.dialog.QWidget)
+	versionLabel.SetText("Version 4.0.0-alpha")
 	versionLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(versionLabel, 0, 0)
+	layout.AddWidget(versionLabel.QWidget)
 
 	// Add description
-	descLabel := qt.NewQLabel2("Recuerdo helps you learn whatever you want to learn!\nIt's designed to help you learn a foreign language,\nbut can also be used for other subjects.", nil, 0)
+	descLabel := qt.NewQLabel(mod.dialog.QWidget)
+	descLabel.SetText("Recuerdo helps you learn whatever you want to learn!\nIt's designed to help you learn a foreign language,\nbut can also be used for other subjects.")
 	descLabel.SetAlignment(qt.AlignHCenter)
 	descLabel.SetWordWrap(true)
-	layout.AddWidget(descLabel, 0, 0)
+	layout.AddWidget(descLabel.QWidget)
 
 	// Add copyright
-	copyrightLabel := qt.NewQLabel2("Copyright © 2025 Joop Kiefte\nBased on OpenTeacher © 2010-2023 OpenTeacher Team", nil, 0)
+	copyrightLabel := qt.NewQLabel(mod.dialog.QWidget)
+	copyrightLabel.SetText("Copyright © 2025 Joop Kiefte\nBased on OpenTeacher © 2010-2023 OpenTeacher Team")
 	copyrightLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(copyrightLabel, 0, 0)
+	layout.AddWidget(copyrightLabel.QWidget)
 
 	// Add website link
-	websiteLabel := qt.NewQLabel2(`<a href="http://openteacher.org">http://openteacher.org</a>`, nil, 0)
+	websiteLabel := qt.NewQLabel(mod.dialog.QWidget)
+	websiteLabel.SetText(`<a href="http://openteacher.org">http://openteacher.org</a>`)
 	websiteLabel.SetAlignment(qt.AlignHCenter)
 	websiteLabel.SetOpenExternalLinks(true)
-	layout.AddWidget(websiteLabel, 0, 0)
+	layout.AddWidget(websiteLabel.QWidget)
 
 	// Add spacer
-	layout.AddStretch(1)
+	layout.AddStretch()
 
 	// Add close button
-	buttonBox := qt.NewQDialogButtonBox3(qt.QDialogButtonBox__Close, nil)
-	layout.AddWidget(buttonBox, 0, 0)
+	buttonBox := qt.NewQDialogButtonBox(mod.dialog.QWidget)
+	buttonBox.SetStandardButtons(qt.QDialogButtonBox__Close)
+	layout.AddWidget(buttonBox.QWidget)
 
 	// Connect close button
-	buttonBox.ConnectRejected(func() {
+	buttonBox.OnRejected(func() {
 		mod.dialog.Close()
 	})
 
@@ -153,7 +158,7 @@ func (mod *AboutDialogModule) ShowAboutDialog() {
 	uiModules := mod.manager.GetModulesByType("ui")
 	if len(uiModules) > 0 {
 		if guiMod, ok := uiModules[0].(interface{ GetMainWindow() *qt.QMainWindow }); ok {
-			parentWidget = guiMod.GetMainWindow().QWidget_PTR()
+			parentWidget = guiMod.GetMainWindow().QWidget
 			log.Printf("[SUCCESS] AboutDialogModule got parent window from GUI module")
 		}
 	}

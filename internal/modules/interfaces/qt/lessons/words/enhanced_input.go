@@ -22,7 +22,7 @@ type EnhancedLineEdit struct {
 }
 
 // NewEnhancedLineEdit creates a new enhanced line edit with proper keyboard handling
-func NewEnhancedLineEdit(parent qt.QWidget_ITF) *EnhancedLineEdit {
+func NewEnhancedLineEdit(parent *qt.QWidget) *EnhancedLineEdit {
 	edit := &EnhancedLineEdit{
 		QLineEdit:       qt.NewQLineEdit(parent),
 		logger:          logging.NewLogger("EnhancedLineEdit"),
@@ -82,16 +82,16 @@ func (e *EnhancedLineEdit) initializeKeyboardMappings() {
 
 	// Initialize AltGr mappings (common ones)
 	e.altgrMappings = map[int]rune{
-		int(core.Qt__Key_2):     '@',  // AltGr + 2 = @
-		int(core.Qt__Key_3):     '#',  // AltGr + 3 = #
-		int(core.Qt__Key_4):     '€',  // AltGr + 4 = € (Euro)
-		int(core.Qt__Key_5):     '£',  // AltGr + 5 = £ (Pound)
-		int(core.Qt__Key_7):     '{',  // AltGr + 7 = {
-		int(core.Qt__Key_8):     '[',  // AltGr + 8 = [
-		int(core.Qt__Key_9):     ']',  // AltGr + 9 = ]
-		int(core.Qt__Key_0):     '}',  // AltGr + 0 = }
-		int(core.Qt__Key_Minus): '\\', // AltGr + - = \
-		int(core.Qt__Key_Equal): '|',  // AltGr + = = |
+		int(qt.Key_2):     '@',  // AltGr + 2 = @
+		int(qt.Key_3):     '#',  // AltGr + 3 = #
+		int(qt.Key_4):     '€',  // AltGr + 4 = € (Euro)
+		int(qt.Key_5):     '£',  // AltGr + 5 = £ (Pound)
+		int(qt.Key_7):     '{',  // AltGr + 7 = {
+		int(qt.Key_8):     '[',  // AltGr + 8 = [
+		int(qt.Key_9):     ']',  // AltGr + 9 = ]
+		int(qt.Key_0):     '}',  // AltGr + 0 = }
+		int(qt.Key_Minus): '\\', // AltGr + - = \
+		int(qt.Key_Equal): '|',  // AltGr + = = |
 	}
 
 	e.logger.Debug("Initialized keyboard mappings for layout: %s", e.keyboardLayout)
@@ -125,7 +125,9 @@ func (e *EnhancedLineEdit) detectKeyboardLayout() {
 // connectKeyEventHandler sets up the key event interception
 func (e *EnhancedLineEdit) connectKeyEventHandler() {
 	// Override keyPressEvent by connecting to key press
-	e.ConnectKeyPressEvent(e.handleKeyPress)
+	e.OnKeyPressEvent(func(super func(param1 *qt.QKeyEvent), event *qt.QKeyEvent) {
+		e.handleKeyPress(event)
+	})
 }
 
 // handleKeyPress processes key press events with dead key support
@@ -139,7 +141,7 @@ func (e *EnhancedLineEdit) handleKeyPress(event *qt.QKeyEvent) {
 	}
 
 	// Check for AltGr combinations (Ctrl+Alt in Qt)
-	isAltGr := (modifiers&core.Qt__AltModifier != 0) && (modifiers&core.Qt__ControlModifier != 0)
+	isAltGr := (modifiers&qt.AltModifier != 0) && (modifiers&qt.ControlModifier != 0)
 	if isAltGr {
 		if char, exists := e.altgrMappings[key]; exists {
 			e.insertCharacterAtCursor(string(char))
@@ -191,15 +193,14 @@ func (e *EnhancedLineEdit) handleKeyPress(event *qt.QKeyEvent) {
 
 	// Handle special keys
 	switch key {
-	case int(core.Qt__Key_Backspace):
+	case int(qt.Key_Backspace):
 		e.deadKeyState = 0 // Reset dead key on backspace
-		e.QLineEdit.KeyPressEventDefault(event)
-	case int(core.Qt__Key_Escape), int(core.Qt__Key_Tab), int(core.Qt__Key_Return), int(core.Qt__Key_Enter):
+		// Let Qt handle normally
+	case int(qt.Key_Escape), int(qt.Key_Tab), int(qt.Key_Return), int(qt.Key_Enter):
 		e.deadKeyState = 0 // Reset dead key on navigation
-		e.QLineEdit.KeyPressEventDefault(event)
+		// Let Qt handle normally
 	default:
 		// Let Qt handle normally for other cases
-		e.QLineEdit.KeyPressEventDefault(event)
 	}
 }
 

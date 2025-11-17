@@ -225,9 +225,10 @@ const (
 
 // Command-line arguments
 var (
-	commands = flag.String("commands", "", "Comma-separated list of commands to execute (e.g., 'show-properties,show-settings')")
-	listCmds = flag.Bool("list-commands", false, "List available commands and exit")
-	helpFlag = flag.Bool("help", false, "Show help message")
+	commands         = flag.String("commands", "", "Comma-separated list of commands to execute (e.g., 'show-properties,show-settings')")
+	listCmds         = flag.Bool("list-commands", false, "List available commands and exit")
+	helpFlag         = flag.Bool("help", false, "Show help message")
+	strictValidation = flag.Bool("strict-validation", false, "Enable strict UI layout validation (fail on overlaps)")
 )
 
 func main() {
@@ -298,10 +299,15 @@ func main() {
 
 	// Enable all modules
 	fmt.Println("Enabling modules...")
+	// Set strict validation mode globally if requested
+	if *strictValidation {
+		os.Setenv("RECUERDO_STRICT_LAYOUT", "1")
+		log.Println("Strict layout validation enabled")
+	}
+
 	if err := manager.EnableAll(ctx); err != nil {
 		log.Fatalf("Failed to enable modules: %v", err)
 	}
-
 	fmt.Println("All modules enabled successfully")
 
 	// Start the main application
@@ -1847,26 +1853,14 @@ func runApplication(ctx context.Context, manager *core.Manager, lessonFile, comm
 			fmt.Println("Warning: GUI module does not support ShowMainWindow()")
 		}
 
-		// Run the Qt event loop in a goroutine to allow cancellation
+		// Run the Qt event loop on the main thread (Qt requirement)
 		if guiMod, ok := guiModule.(interface{ RunEventLoop() int }); ok {
 			fmt.Println("Starting Qt event loop...")
 
-			// Run Qt event loop in separate goroutine to handle context cancellation
-			exitCodeChan := make(chan int, 1)
-			go func() {
-				exitCode := guiMod.RunEventLoop()
-				exitCodeChan <- exitCode
-			}()
-
-			// Wait for either event loop to finish or context cancellation
-			select {
-			case exitCode := <-exitCodeChan:
-				fmt.Printf("Qt event loop finished with exit code: %d\n", exitCode)
-				return nil
-			case <-ctx.Done():
-				fmt.Println("Context cancelled, shutting down Qt GUI...")
-				return ctx.Err()
-			}
+			// Qt event loop must run on main thread - call directly
+			exitCode := guiMod.RunEventLoop()
+			fmt.Printf("Qt event loop finished with exit code: %d\n", exitCode)
+			return nil
 		} else {
 			fmt.Println("Warning: GUI module does not support RunEventLoop()")
 		}
