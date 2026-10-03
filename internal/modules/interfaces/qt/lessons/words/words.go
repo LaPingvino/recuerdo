@@ -407,6 +407,9 @@ type TeachTabWidget struct {
 	orderCombo      *qt.QComboBox
 	askAnswersCheck *qt.QCheckBox
 	session         *teaching.Session
+	typing          *teaching.Typing
+	skipButton      *qt.QPushButton
+	correctButton   *qt.QPushButton
 	// notation returns the grade notation to show; set by the lesson widget
 	notation func() string
 
@@ -588,15 +591,26 @@ func (w *TeachTabWidget) setupUI() {
 	w.startButton = qt.NewQPushButton(w.QWidget)
 	w.startButton.SetText("Start Teaching")
 	w.submitButton = qt.NewQPushButton(w.QWidget)
-	w.submitButton.SetText("Submit Answer")
+	w.submitButton.SetText("Check")
 	w.submitButton.SetEnabled(false)
 	w.nextButton = qt.NewQPushButton(w.QWidget)
-	w.nextButton.SetText("Next Question")
+	w.nextButton.SetText("Continue")
+	w.nextButton.SetToolTip("Go on after seeing the right answer")
 	w.nextButton.SetEnabled(false)
+	w.skipButton = qt.NewQPushButton(w.QWidget)
+	w.skipButton.SetText("Skip")
+	w.skipButton.SetToolTip("Ask this word again later")
+	w.skipButton.SetEnabled(false)
+	w.correctButton = qt.NewQPushButton(w.QWidget)
+	w.correctButton.SetText("Correct anyway")
+	w.correctButton.SetToolTip("Count your last answer as right after all")
+	w.correctButton.SetEnabled(false)
 
 	buttonLayout.AddWidget(w.startButton.QWidget)
 	buttonLayout.AddWidget(w.submitButton.QWidget)
 	buttonLayout.AddWidget(w.nextButton.QWidget)
+	buttonLayout.AddWidget(w.skipButton.QWidget)
+	buttonLayout.AddWidget(w.correctButton.QWidget)
 	buttonLayout.AddStretch()
 
 	layout.AddLayout2(buttonLayout.QLayout, 0)
@@ -616,6 +630,19 @@ func (w *TeachTabWidget) connectSignals() {
 
 	w.nextButton.OnClicked(func() {
 		w.nextQuestion()
+	})
+
+	w.skipButton.OnClicked(func() {
+		if w.typing != nil {
+			w.report(w.typing.Skip())
+		}
+	})
+
+	w.correctButton.OnClicked(func() {
+		if w.typing != nil {
+			w.report(w.typing.CorrectAnyway())
+			w.feedback("Your last answer counts as right.", true)
+		}
 	})
 
 	w.unicodeButton.OnToggled(func(checked bool) {
@@ -650,8 +677,6 @@ func (w *TeachTabWidget) startTeaching() {
 		Order:      w.orderCombo.CurrentText(),
 		AskAnswers: w.askAnswersCheck.IsChecked(),
 	})
-	w.session.Start()
-
 	w.isTeaching = true
 	w.correctAnswers = 0
 	_, w.totalQuestions = w.session.Progress()
@@ -667,12 +692,11 @@ func (w *TeachTabWidget) startTeaching() {
 
 	w.setOptionsEnabled(false)
 	w.startButton.SetEnabled(false)
-	w.answerEdit.SetEnabled(true)
-	w.answerEdit.SetFocus()
-	w.submitButton.SetEnabled(true)
 	w.unicodeButton.SetEnabled(true)
+	w.resultLabel.SetVisible(false)
 
-	w.showCurrentQuestion()
+	// OpenTeacher's typing mode drives the tab from here (TypingUI below)
+	w.typing = teaching.NewTyping(w.session, w)
 	w.logger.Action("Started teaching session with %d words (%s, %s)", w.totalQuestions,
 		w.lessonTypeCombo.CurrentText(), w.orderCombo.CurrentText())
 }
@@ -696,7 +720,6 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 	w.questionLabel.SetText(fmt.Sprintf("Question: %s", question))
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
-	w.resultLabel.SetVisible(false)
 
 	// Update progress (lesson types that repeat words add to the total)
 	asked, total := w.session.Progress()
@@ -704,74 +727,69 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 	if total > 0 {
 		w.progressBar.SetValue(asked * 100 / total)
 	}
+	w.correctAnswers, _ = w.session.Score()
 	w.statusLabel.SetText(fmt.Sprintf("Question %d of %d (Score: %d/%d correct)",
 		asked+1, total, w.correctAnswers, asked))
 }
 
-// submitAnswer checks the user's answer
+// submitAnswer checks the typed answer (Check button or Enter)
 func (w *TeachTabWidget) submitAnswer() {
-	if w.session == nil || w.session.Done() || w.currentSession == nil {
+	if w.typing == nil {
 		return
 	}
-
 	userAnswer := strings.TrimSpace(w.answerEdit.Text())
 	if userAnswer == "" {
 		return
 	}
-
-	item, _, _ := w.session.Current()
-
-	// OpenTeacher's answer rules: alternatives separated by "," or ";",
-	// numbered obligatory parts ("1. ... 2. ..."); capitals are ignored
-	answer := w.session.Answer(userAnswer)
-	correct := answer.Right
-
-	// Create teaching result record
-	result := TeachingResult{
-		Question:      composer.Compose(checker.StoredAnswers(item.Questions)),
-		CorrectAnswer: answer.Correct,
-		UserAnswer:    userAnswer,
-		IsCorrect:     correct,
-		ItemIndex:     w.currentIndex,
+	w.report(w.typing.Check(userAnswer))
+	if !w.typing.ShowingCorrection() {
+		w.feedback("Right!", true)
 	}
-
-	// Add to session results
-	w.currentSession.Results = append(w.currentSession.Results, result)
-
-	// Update score and show result
-	if correct {
-		w.correctAnswers++
-		w.currentSession.CorrectCount++
-		w.resultLabel.SetText("[CORRECT!]")
-		w.resultLabel.SetStyleSheet("color: green; font-weight: bold; background-color: lightgreen; padding: 5px; border-radius: 3px;")
-	} else {
-		w.resultLabel.SetText(fmt.Sprintf("[INCORRECT] Correct answer(s): %s", result.CorrectAnswer))
-		w.resultLabel.SetStyleSheet("color: red; font-weight: bold; background-color: lightcoral; padding: 5px; border-radius: 3px;")
-	}
-
-	w.resultLabel.SetVisible(true)
-	w.answerEdit.SetEnabled(false)
-	w.submitButton.SetEnabled(false)
-	w.nextButton.SetEnabled(true)
-	w.nextButton.SetFocus()
-
-	w.logger.Info("Answer submitted: %s (correct: %v)", userAnswer, correct)
+	w.logger.Info("Answer checked: %s", userAnswer)
 }
 
-// nextQuestion moves to the next question
+// nextQuestion continues after a correction (Continue button or Enter)
 func (w *TeachTabWidget) nextQuestion() {
-	if w.session == nil {
-		return
+	if w.typing != nil {
+		w.report(w.typing.CorrectionShowingDone())
 	}
-	w.session.Next()
-	if w.session.Done() {
-		w.finishTeaching()
-		return
+}
+
+func (w *TeachTabWidget) report(err error) {
+	if err != nil {
+		w.logger.Debug("typing: %v", err)
 	}
-	w.answerEdit.SetEnabled(true)
-	w.submitButton.SetEnabled(true)
+}
+
+func (w *TeachTabWidget) feedback(text string, right bool) {
+	style := "color: green; font-weight: bold; background-color: lightgreen; padding: 5px; border-radius: 3px;"
+	if !right {
+		style = "color: red; font-weight: bold; background-color: lightcoral; padding: 5px; border-radius: 3px;"
+	}
+	w.resultLabel.SetText(text)
+	w.resultLabel.SetStyleSheet(style)
+	w.resultLabel.SetVisible(true)
+}
+
+// TypingUI, called by the typing controller.
+
+func (w *TeachTabWidget) ClearInput()                     { w.showCurrentQuestion() }
+func (w *TeachTabWidget) FocusInput()                     { w.answerEdit.SetFocus() }
+func (w *TeachTabWidget) SetInputEnabled(on bool)         { w.answerEdit.SetEnabled(on) }
+func (w *TeachTabWidget) SetCheckEnabled(on bool)         { w.submitButton.SetEnabled(on) }
+func (w *TeachTabWidget) SetSkipEnabled(on bool)          { w.skipButton.SetEnabled(on) }
+func (w *TeachTabWidget) SetCorrectAnywayEnabled(on bool) { w.correctButton.SetEnabled(on) }
+func (w *TeachTabWidget) LessonDone()                     { w.finishTeaching() }
+
+func (w *TeachTabWidget) ShowCorrection(answer string) {
+	w.feedback(fmt.Sprintf("Wrong. The right answer is: %s", answer), false)
+	w.nextButton.SetEnabled(true)
+	w.nextButton.SetFocus()
+}
+
+func (w *TeachTabWidget) HideCorrection() {
+	w.resultLabel.SetVisible(false)
 	w.nextButton.SetEnabled(false)
-	w.showCurrentQuestion()
 }
 
 // finishTeaching completes the teaching session
@@ -796,6 +814,16 @@ func (w *TeachTabWidget) finishTeaching() {
 		if w.session != nil {
 			w.currentSession.Test = w.session.Test()
 			w.currentSession.Report = w.session.Report()
+			w.currentSession.Results = w.currentSession.Results[:0]
+			for i, row := range w.currentSession.Report.Rows {
+				w.currentSession.Results = append(w.currentSession.Results, TeachingResult{
+					Question:      row.Question,
+					CorrectAnswer: row.Answer,
+					UserAnswer:    row.Given,
+					IsCorrect:     row.Right,
+					ItemIndex:     w.currentSession.Test.Results[i].ItemID,
+				})
+			}
 			percentage = percentscalculator.Percents(w.currentSession.Test)
 			grade = teaching.Grade(notation, w.currentSession.Test)
 		}
@@ -835,6 +863,9 @@ func (w *TeachTabWidget) finishTeaching() {
 func (w *TeachTabWidget) resetTeachingState() {
 	w.isTeaching = false
 	w.session = nil
+	w.typing = nil
+	w.skipButton.SetEnabled(false)
+	w.correctButton.SetEnabled(false)
 	w.setOptionsEnabled(true)
 	w.currentIndex = 0
 	w.correctAnswers = 0
