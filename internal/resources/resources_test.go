@@ -19,9 +19,7 @@ func TestDirFindsWorkingDirectory(t *testing.T) {
 	if err := os.MkdirAll(filepath.Join(tmp, "data", "maps"), 0o755); err != nil {
 		t.Fatal(err)
 	}
-	wd, _ := os.Getwd()
-	t.Cleanup(func() { os.Chdir(wd) })
-	os.Chdir(tmp)
+	t.Chdir(tmp)
 	if got, _ := filepath.EvalSymlinks(Dir()); got != mustEval(t, tmp) {
 		t.Errorf("Dir() = %q, want %q", Dir(), tmp)
 	}
@@ -29,9 +27,7 @@ func TestDirFindsWorkingDirectory(t *testing.T) {
 
 func TestDirFallsBackToDot(t *testing.T) {
 	t.Setenv("RECUERDO_DATA", "")
-	wd, _ := os.Getwd()
-	t.Cleanup(func() { os.Chdir(wd) })
-	os.Chdir(t.TempDir())
+	t.Chdir(t.TempDir())
 	if Dir() != "." {
 		t.Errorf("Dir() = %q, want .", Dir())
 	}
