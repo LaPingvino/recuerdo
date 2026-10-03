@@ -655,6 +655,11 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 		// Default to words widget for unknown types or actual words lessons
 		mod.logger.Info("Creating words lesson widget for: %s (type: %s)", lesson.Path, lesson.DataType)
 		wordsWidget := words.NewWordsLessonWidget(lesson, mod.mainWindow.QWidget)
+		if settings, ok := mod.manager.GetDefaultModule("settings"); ok {
+			if st, ok := settings.(words.Settings); ok {
+				wordsWidget.UseSettings(st)
+			}
+		}
 		lessonWidget = wordsWidget.QWidget
 	}
 

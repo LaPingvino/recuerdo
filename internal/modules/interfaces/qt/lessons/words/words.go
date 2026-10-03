@@ -53,6 +53,43 @@ func NewWordsLessonWidget(lesson *lesson.Lesson, parent *qt.QWidget) *WordsLesso
 	return widget
 }
 
+// Settings is what the lesson widget needs from the settings module.
+type Settings interface {
+	GetSettingWithDefault(key string, defaultValue interface{}) interface{}
+	SetSetting(key string, value interface{}) error
+}
+
+// Setting keys, named as in OpenTeacher. The fade duration is in
+// milliseconds.
+const (
+	NotationSetting       = "org.openteacher.noteCalculatorChooser.noteCalculator"
+	RepeatDurationSetting = "org.openteacher.teachTypes.repeatAnswer.fadeDuration"
+)
+
+// UseSettings makes the lesson remember the grade notation and the Repeat
+// answer duration in s, starting from the values already there.
+func (w *WordsLessonWidget) UseSettings(s Settings) {
+	if s == nil {
+		return
+	}
+	w.teachWidget.useSettings(s)
+	w.resultsWidget.useSettings(s)
+}
+
+// number converts a setting read from JSON (float64) or set in Go to a
+// float64.
+func number(v interface{}) (float64, bool) {
+	switch n := v.(type) {
+	case float64:
+		return n, true
+	case int:
+		return float64(n), true
+	case int64:
+		return float64(n), true
+	}
+	return 0, false
+}
+
 // setupUI initializes the user interface
 func (w *WordsLessonWidget) setupUI() {
 	layout := qt.NewQVBoxLayout(w.QWidget)
@@ -414,6 +451,9 @@ type TeachTabWidget struct {
 	repeatTimer     *qt.QTimer
 	// RepeatDuration is how long Repeat answer shows the answer
 	RepeatDuration time.Duration
+	repeatLabel    *qt.QLabel
+	repeatSpin     *qt.QDoubleSpinBox
+	settings       Settings
 	skipButton     *qt.QPushButton
 	correctButton  *qt.QPushButton
 	// In mind
@@ -503,6 +543,25 @@ func (w *TeachTabWidget) setupUI() {
 	w.modeCombo.AddItems(teaching.TeachTypes)
 	w.modeCombo.SetToolTip("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory.")
 	optionsLayout.AddWidget(w.modeCombo.QWidget)
+	w.repeatLabel = qt.NewQLabel(w.QWidget)
+	w.repeatLabel.SetText("Show answer for:")
+	optionsLayout.AddWidget(w.repeatLabel.QWidget)
+	w.repeatSpin = qt.NewQDoubleSpinBox(w.QWidget)
+	w.repeatSpin.SetRange(0.5, 30)
+	w.repeatSpin.SetSingleStep(0.5)
+	w.repeatSpin.SetDecimals(1)
+	w.repeatSpin.SetSuffix(" s")
+	w.repeatSpin.SetValue(teaching.RepeatFadeDuration.Seconds())
+	w.repeatSpin.SetToolTip("How long Repeat answer shows the answer before you type it")
+	w.repeatSpin.OnValueChanged(w.setRepeatSeconds)
+	optionsLayout.AddWidget(w.repeatSpin.QWidget)
+	showRepeat := func() {
+		on := w.modeCombo.CurrentText() == teaching.RepeatAnswer
+		w.repeatLabel.SetVisible(on)
+		w.repeatSpin.SetVisible(on)
+	}
+	w.modeCombo.OnCurrentTextChanged(func(string) { showRepeat() })
+	showRepeat()
 	w.askAnswersCheck = qt.NewQCheckBox(w.QWidget)
 	w.askAnswersCheck.SetText("Ask the answers")
 	w.askAnswersCheck.SetToolTip("Practise the other way round: the answers are asked and the questions are the answers")
@@ -878,6 +937,25 @@ func (w *TeachTabWidget) inMindJudge(right bool) {
 	w.inMindNext()
 }
 
+// setRepeatSeconds sets how long Repeat answer shows the answer, and
+// remembers it.
+func (w *TeachTabWidget) setRepeatSeconds(seconds float64) {
+	w.RepeatDuration = time.Duration(seconds * float64(time.Second))
+	if w.settings != nil {
+		w.settings.SetSetting(RepeatDurationSetting, w.RepeatDuration.Milliseconds())
+	}
+}
+
+// useSettings loads the remembered Repeat answer duration and keeps it
+// up to date in s.
+func (w *TeachTabWidget) useSettings(s Settings) {
+	if ms, ok := number(s.GetSettingWithDefault(RepeatDurationSetting, nil)); ok && ms > 0 {
+		w.repeatSpin.SetValue(ms / 1000) // calls setRepeatSeconds
+		w.RepeatDuration = time.Duration(ms) * time.Millisecond
+	}
+	w.settings = s
+}
+
 // repeatShown ends Repeat answer's showing of the answer.
 func (w *TeachTabWidget) repeatShown() {
 	if w.typing == nil || w.session == nil || w.session.Done() || w.typing.ShowingCorrection() {
@@ -1116,6 +1194,7 @@ type ResultsTabWidget struct {
 	// UI components
 	overviewLabel *qt.QLabel
 	notationCombo *qt.QComboBox
+	settings      Settings
 	resultsTable  *qt.QTableWidget
 
 	// Results data
@@ -1150,7 +1229,12 @@ func (w *ResultsTabWidget) setupUI() {
 	w.notationCombo = qt.NewQComboBox(w.QWidget)
 	w.notationCombo.AddItems(teaching.Notations)
 	w.notationCombo.SetCurrentText(teaching.DefaultNotation)
-	w.notationCombo.OnCurrentTextChanged(func(string) { w.updateResultsDisplay() })
+	w.notationCombo.OnCurrentTextChanged(func(name string) {
+		if w.settings != nil {
+			w.settings.SetSetting(NotationSetting, name)
+		}
+		w.updateResultsDisplay()
+	})
 	notationLayout.AddWidget(w.notationCombo.QWidget)
 	notationLayout.AddStretch()
 	overviewLayout.AddLayout2(notationLayout.QLayout, 0)
@@ -1178,6 +1262,19 @@ func (w *ResultsTabWidget) setupUI() {
 	layout.AddWidget(detailsGroup.QWidget)
 
 	w.logger.Success("Results tab UI created")
+}
+
+// useSettings shows grades in the remembered notation and remembers the
+// one the user picks.
+func (w *ResultsTabWidget) useSettings(s Settings) {
+	if name, ok := s.GetSettingWithDefault(NotationSetting, nil).(string); ok {
+		for _, n := range teaching.Notations {
+			if n == name {
+				w.notationCombo.SetCurrentText(name)
+			}
+		}
+	}
+	w.settings = s
 }
 
 // Notation is the grade notation chosen on the Results tab.

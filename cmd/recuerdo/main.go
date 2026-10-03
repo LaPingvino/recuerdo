@@ -36,6 +36,7 @@ import (
 	wordsonly "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/wordsOnly"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
+	wordslesson "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
 	"github.com/mappu/miqt/qt"
 	"github.com/mappu/miqt/qt/mainthread"
 
@@ -185,6 +186,9 @@ import (
 )
 
 const appName = "Recuerdo"
+
+// The GUI passes the settings module to word lessons as wordslesson.Settings.
+var _ wordslesson.Settings = (*modules.SettingsModule)(nil)
 
 // appVersion is set by release builds with -ldflags "-X main.appVersion=...".
 var appVersion = "4.0.0-alpha"

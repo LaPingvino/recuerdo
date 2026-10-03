@@ -22,10 +22,17 @@ func TestMain(m *testing.M) {
 	modesErr = checkModes()
 	inMindErr = checkInMind()
 	hangmanErr = checkHangman()
+	settingsErr = checkSettings()
 	os.Exit(m.Run())
 }
 
-var teachErr, modesErr, inMindErr, hangmanErr error
+var teachErr, modesErr, inMindErr, hangmanErr, settingsErr error
+
+func TestLessonSettings(t *testing.T) {
+	if settingsErr != nil {
+		t.Fatal(settingsErr)
+	}
+}
 
 func TestTeachTabHangman(t *testing.T) {
 	if hangmanErr != nil {
@@ -238,6 +245,68 @@ func checkHangman() error {
 	}
 	if w.hangmanLabel.IsVisibleTo(w.QWidget) || !w.skipButton.IsVisibleTo(w.QWidget) {
 		return fmt.Errorf("layout not restored after hangman")
+	}
+	return nil
+}
+
+// mapSettings stands in for the settings module; values read back from
+// its JSON file are float64, as here.
+type mapSettings map[string]interface{}
+
+func (m mapSettings) GetSettingWithDefault(key string, def interface{}) interface{} {
+	if v, ok := m[key]; ok {
+		return v
+	}
+	return def
+}
+
+func (m mapSettings) SetSetting(key string, value interface{}) error {
+	m[key] = value
+	return nil
+}
+
+func checkSettings() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"een"}, Answers: []string{"one"}},
+	}}}}
+
+	// remembered values are used
+	s := mapSettings{NotationSetting: "American", RepeatDurationSetting: float64(1500)}
+	w := NewWordsLessonWidget(l, nil)
+	w.UseSettings(s)
+	if got := w.resultsWidget.Notation(); got != "American" {
+		return fmt.Errorf("notation %q, want American", got)
+	}
+	if got := w.teachWidget.RepeatDuration; got.Milliseconds() != 1500 {
+		return fmt.Errorf("repeat duration %v, want 1.5s", got)
+	}
+
+	// the duration field only shows for Repeat answer
+	t := w.teachWidget
+	t.modeCombo.SetCurrentText("Typing")
+	if t.repeatSpin.IsVisibleTo(t.QWidget) {
+		return fmt.Errorf("duration shown in Typing mode")
+	}
+	t.modeCombo.SetCurrentText("Repeat answer")
+	if !t.repeatSpin.IsVisibleTo(t.QWidget) {
+		return fmt.Errorf("duration hidden in Repeat answer mode")
+	}
+
+	// changes are remembered
+	w.resultsWidget.notationCombo.SetCurrentText("Percents")
+	t.repeatSpin.SetValue(5)
+	if s[NotationSetting] != "Percents" {
+		return fmt.Errorf("notation saved as %v", s[NotationSetting])
+	}
+	if ms, _ := number(s[RepeatDurationSetting]); ms != 5000 {
+		return fmt.Errorf("duration saved as %v", s[RepeatDurationSetting])
+	}
+
+	// unknown or missing values keep the defaults
+	w = NewWordsLessonWidget(l, nil)
+	w.UseSettings(mapSettings{NotationSetting: "Klingon"})
+	if w.resultsWidget.Notation() == "Klingon" || w.teachWidget.RepeatDuration <= 0 {
+		return fmt.Errorf("bad settings: notation %q, duration %v", w.resultsWidget.Notation(), w.teachWidget.RepeatDuration)
 	}
 	return nil
 }
