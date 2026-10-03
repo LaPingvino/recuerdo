@@ -12,7 +12,13 @@ import (
 	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 )
 
-func grade(test lessontypes.Test) float64 { return percentscalculator.Fraction(test)*9 + 1 }
+// grade is right/total * 9 + 1. The explicit conversion keeps the product
+// rounded before the addition: without it the compiler may fuse the two
+// into one FMA instruction (as on arm64), which changes results on the
+// rounding boundary (17/20 would give 8,7 instead of OpenTeacher's 8,6).
+func grade(test lessontypes.Test) float64 {
+	return float64(percentscalculator.Fraction(test)*9) + 1
+}
 
 // format writes a grade with one decimal and a comma; 10 is written "10"
 // ("10,0" would suggest 10,8 exists).
