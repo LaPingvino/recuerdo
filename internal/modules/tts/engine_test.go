@@ -2,6 +2,7 @@
 package tts
 
 import (
+	"os"
 	"testing"
 	"time"
 )
@@ -136,6 +137,7 @@ func TestRateAndVolume(t *testing.T) {
 }
 
 func TestSpeechSynthesis(t *testing.T) {
+	needAudio(t)
 	engine := NewEngine()
 
 	if !engine.IsAvailable() {
@@ -154,6 +156,7 @@ func TestSpeechSynthesis(t *testing.T) {
 }
 
 func TestAsyncSpeech(t *testing.T) {
+	needAudio(t)
 	engine := NewEngine()
 
 	if !engine.IsAvailable() {
@@ -195,6 +198,7 @@ func TestAsyncSpeech(t *testing.T) {
 }
 
 func TestSpeechControl(t *testing.T) {
+	needAudio(t)
 	engine := NewEngine()
 
 	if !engine.IsAvailable() {
@@ -225,6 +229,7 @@ func TestSpeechControl(t *testing.T) {
 }
 
 func TestSpeakAndWait(t *testing.T) {
+	needAudio(t)
 	engine := NewEngine()
 
 	if !engine.IsAvailable() {
@@ -307,5 +312,15 @@ func BenchmarkVoiceLoading(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		engine := NewEngine()
 		engine.loadVoices()
+	}
+}
+
+// needAudio skips tests that play speech on machines without sound, such
+// as CI runners (where the engine exists but playback fails); set
+// RECUERDO_TEST_AUDIO=1 to run them there anyway.
+func needAudio(t *testing.T) {
+	t.Helper()
+	if os.Getenv("CI") != "" && os.Getenv("RECUERDO_TEST_AUDIO") == "" {
+		t.Skip("no audio output on CI; set RECUERDO_TEST_AUDIO=1 to play speech")
 	}
 }
