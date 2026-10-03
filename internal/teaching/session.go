@@ -75,6 +75,7 @@ type Session struct {
 	right    int
 	answered int
 	asked    time.Time // when the current question was shown
+	last     *lessontypes.Result
 }
 
 // New prepares a session over list; call Start to ask the first question.
@@ -157,6 +158,7 @@ func (s *Session) Next() {
 	if r.Right {
 		s.right++
 	}
+	s.last = &r
 	s.lt.SetResult(r)
 }
 
@@ -195,3 +197,18 @@ func (s *Session) Test() lessontypes.Test {
 // List is the list being practised (questions and answers swapped when
 // practising the other way round); result ItemIDs index its items.
 func (s *Session) List() lesson.WordList { return s.list }
+
+// CorrectLast turns the last recorded answer into a right one ("I was
+// right"), as OpenTeacher's "Correct anyway" does; the given answer is
+// marked as corrected.
+func (s *Session) CorrectLast() {
+	if s.last == nil || s.last.Right {
+		return
+	}
+	r := *s.last
+	r.Right = true
+	r.GivenAnswer = "Corrected: " + r.GivenAnswer
+	s.last = &r
+	s.right++
+	s.lt.CorrectLastAnswer(r)
+}
