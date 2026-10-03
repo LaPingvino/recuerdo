@@ -3,7 +3,6 @@ package teaching
 import (
 	"math/rand"
 
-	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
 	"strings"
 	"time"
 )
@@ -23,7 +22,7 @@ const (
 )
 
 // TeachTypes lists the practice modes, default first.
-var TeachTypes = []string{TeachTyping, ShuffleAnswer, RepeatAnswer, InMind}
+var TeachTypes = []string{TeachTyping, ShuffleAnswer, RepeatAnswer, InMind} // Hangman joins once the Teach tab plays it
 
 // RepeatFadeDuration is how long Repeat answer shows the answer
 // (OpenTeacher's default).
@@ -71,16 +70,4 @@ func (s *Session) ViewAnswer() string {
 
 // Judge is In mind's "I was right" / "I was wrong": it records the user's
 // own verdict on the current question and moves to the next one.
-func (s *Session) Judge(right bool) {
-	if !s.hasItem {
-		return
-	}
-	end := s.viewedAt
-	if !s.viewed {
-		end = s.opts.Now()
-	}
-	_, index, _ := s.Current()
-	s.pending = &lessontypes.Result{ItemID: index, Right: right, Start: s.asked, End: end}
-	s.viewed = false
-	s.Next()
-}
+func (s *Session) Judge(right bool) { s.Record(right, "") }
