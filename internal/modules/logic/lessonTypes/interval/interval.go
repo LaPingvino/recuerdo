@@ -134,8 +134,8 @@ func NewIntervalModule() *IntervalModule {
 	return &IntervalModule{BaseModule: base, Settings: DefaultSettings}
 }
 
-// Name is the lesson type's name as shown to users.
-func (mod *IntervalModule) Name() string { return "Interval" }
+// DisplayName is the lesson type's name as shown to users (Name is the module identifier).
+func (mod *IntervalModule) DisplayName() string { return "Interval" }
 
 // CreateLessonType starts a lesson over the given item indexes.
 func (mod *IntervalModule) CreateLessonType(indexes []int) lessontypes.LessonType {

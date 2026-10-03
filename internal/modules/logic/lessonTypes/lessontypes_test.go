@@ -207,3 +207,16 @@ func TestIntervalCounts(t *testing.T) {
 		t.Errorf("asked %d of %d, finished %v", l.AskedItems(), l.TotalItems(), l.Test().Finished)
 	}
 }
+
+func TestModuleNamesAreIdentifiers(t *testing.T) {
+	type named interface {
+		Name() string
+		DisplayName() string
+		Type() string
+	}
+	for _, m := range []named{allonce.NewAllOnceModule(), smart.NewSmartModule(), interval.NewIntervalModule()} {
+		if m.Type() != "lessonType" || m.Name() == m.DisplayName() {
+			t.Errorf("%T: type %q, name %q, display name %q", m, m.Type(), m.Name(), m.DisplayName())
+		}
+	}
+}

@@ -62,8 +62,8 @@ func NewAllOnceModule() *AllOnceModule {
 	return &AllOnceModule{BaseModule: base}
 }
 
-// Name is the lesson type's name as shown to users.
-func (mod *AllOnceModule) Name() string { return "All once" }
+// DisplayName is the lesson type's name as shown to users (Name is the module identifier).
+func (mod *AllOnceModule) DisplayName() string { return "All once" }
 
 // CreateLessonType starts a lesson over the given item indexes.
 func (mod *AllOnceModule) CreateLessonType(indexes []int) lessontypes.LessonType {

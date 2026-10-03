@@ -1,68 +1,49 @@
-// Package words provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package words reverses a word list: questions become answers and the
+// other way round, so a list can be practised in both directions. Port of
+// OpenTeacher's logic/reversers/words.
 package words
 
 import (
 	"context"
-	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/lesson"
 )
 
-// WordsReverserModule is a Go port of the Python WordsReverserModule class
+// Reverse swaps the questions and answers of every item, and the question
+// and answer languages, in place.
+func Reverse(list *lesson.WordList) {
+	for i := range list.Items {
+		item := &list.Items[i]
+		item.Questions, item.Answers = item.Answers, item.Questions
+	}
+	list.QuestionLanguage, list.AnswerLanguage = list.AnswerLanguage, list.QuestionLanguage
+}
+
+// WordsReverserModule offers Reverse as an OpenTeacher "reverser" module.
 type WordsReverserModule struct {
 	*core.BaseModule
 	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewWordsReverserModule creates a new WordsReverserModule instance
+// NewWordsReverserModule creates the module.
 func NewWordsReverserModule() *WordsReverserModule {
-	base := core.NewBaseModule("logic", "words-module")
-
-	return &WordsReverserModule{
-		BaseModule: base,
-	}
+	return &WordsReverserModule{BaseModule: core.NewBaseModule("reverser", "words-reverser")}
 }
 
-// Reverse is the Go port of the Python reverse method
-func (mod *WordsReverserModule) Reverse() {
-	// TODO: Port Python method logic
-}
+// DataType is the kind of list this reverser handles.
+func (mod *WordsReverserModule) DataType() string { return "words" }
 
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *WordsReverserModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
+// Reverse reverses the list in place.
+func (mod *WordsReverserModule) Reverse(list *lesson.WordList) { Reverse(list) }
 
-	// TODO: Port Python enable logic
-
-	fmt.Println("WordsReverserModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
+func (mod *WordsReverserModule) Enable(ctx context.Context) error { return mod.BaseModule.Enable(ctx) }
 func (mod *WordsReverserModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("WordsReverserModule disabled")
-	return nil
+	return mod.BaseModule.Disable(ctx)
 }
 
-// SetManager sets the module manager
-func (mod *WordsReverserModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
+// SetManager sets the module manager reference.
+func (mod *WordsReverserModule) SetManager(manager *core.Manager) { mod.manager = manager }
 
-// InitWordsReverserModule creates and returns a new WordsReverserModule instance
-// This is the Go equivalent of the Python init function
-func InitWordsReverserModule() core.Module {
-	return NewWordsReverserModule()
-}
+// InitWordsReverserModule creates and returns the module.
+func InitWordsReverserModule() core.Module { return NewWordsReverserModule() }

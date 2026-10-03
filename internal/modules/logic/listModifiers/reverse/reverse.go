@@ -1,75 +1,46 @@
-// Package reverse provides functionality ported from Python module
-//
-// Reverses all indexes of items in a test.
-//
-// This is an automated port - implementation may be incomplete.
+// Package reverse asks a word list from last to first. Port of
+// OpenTeacher's logic/listModifiers/reverse.
 package reverse
 
 import (
 	"context"
-	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
 )
 
-// ReverseModule is a Go port of the Python ReverseModule class
+// ModifyList returns the item indexes in reverse order.
+func ModifyList(indexes []int) []int {
+	out := make([]int, len(indexes))
+	for i, index := range indexes {
+		out[len(indexes)-1-i] = index
+	}
+	return out
+}
+
+// ReverseModule offers ModifyList as an OpenTeacher "listModifier" module.
 type ReverseModule struct {
 	*core.BaseModule
 	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewReverseModule creates a new ReverseModule instance
+// NewReverseModule creates the module.
 func NewReverseModule() *ReverseModule {
-	base := core.NewBaseModule("logic", "reverse-module")
-
-	return &ReverseModule{
-		BaseModule: base,
-	}
+	base := core.NewBaseModule("listModifier", "reverse")
+	base.SetPriority(848)
+	return &ReverseModule{BaseModule: base}
 }
 
-// Modifylist is the Go port of the Python modifyList method
-func (mod *ReverseModule) Modifylist() {
-	// TODO: Port Python method logic
-}
+// DisplayName is the modifier's name as shown to users (Name is the module identifier).
+func (mod *ReverseModule) DisplayName() string { return "Reverse" }
 
-// retranslate is the Go port of the Python _retranslate method
-func (mod *ReverseModule) retranslate() {
-	// TODO: Port Python method logic
-}
+// ModifyList returns the indexes reversed.
+func (mod *ReverseModule) ModifyList(indexes []int) []int { return ModifyList(indexes) }
 
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *ReverseModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
+func (mod *ReverseModule) Enable(ctx context.Context) error  { return mod.BaseModule.Enable(ctx) }
+func (mod *ReverseModule) Disable(ctx context.Context) error { return mod.BaseModule.Disable(ctx) }
 
-	// TODO: Port Python enable logic
+// SetManager sets the module manager reference.
+func (mod *ReverseModule) SetManager(manager *core.Manager) { mod.manager = manager }
 
-	fmt.Println("ReverseModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *ReverseModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("ReverseModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *ReverseModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitReverseModule creates and returns a new ReverseModule instance
-// This is the Go equivalent of the Python init function
-func InitReverseModule() core.Module {
-	return NewReverseModule()
-}
+// InitReverseModule creates and returns the module.
+func InitReverseModule() core.Module { return NewReverseModule() }
