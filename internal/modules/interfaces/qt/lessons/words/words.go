@@ -8,6 +8,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/logging"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
+	"github.com/LaPingvino/recuerdo/internal/teaching"
 	"github.com/mappu/miqt/qt"
 )
 
@@ -388,6 +389,12 @@ type TeachTabWidget struct {
 	resultLabel   *qt.QLabel
 	unicodeButton *qt.QPushButton
 
+	// Practice options (OpenTeacher's lesson types and list modifiers)
+	lessonTypeCombo *qt.QComboBox
+	orderCombo      *qt.QComboBox
+	askAnswersCheck *qt.QCheckBox
+	session         *teaching.Session
+
 	// Unicode character picker
 	unicodePicker *IntegratedUnicodePicker
 
@@ -441,6 +448,30 @@ func (w *TeachTabWidget) setupUI() {
 	statusLayout.AddWidget(w.progressBar.QWidget)
 
 	layout.AddWidget(statusGroup.QWidget)
+
+	// Practice options
+	optionsGroup := qt.NewQGroupBox(w.QWidget)
+	optionsGroup.SetTitle("Practice")
+	optionsLayout := qt.NewQHBoxLayout(optionsGroup.QWidget)
+	lessonTypeLabel := qt.NewQLabel(w.QWidget)
+	lessonTypeLabel.SetText("Lesson type:")
+	optionsLayout.AddWidget(lessonTypeLabel.QWidget)
+	w.lessonTypeCombo = qt.NewQComboBox(w.QWidget)
+	w.lessonTypeCombo.AddItems(teaching.LessonTypes)
+	w.lessonTypeCombo.SetToolTip("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them.")
+	optionsLayout.AddWidget(w.lessonTypeCombo.QWidget)
+	orderLabel := qt.NewQLabel(w.QWidget)
+	orderLabel.SetText("Order:")
+	optionsLayout.AddWidget(orderLabel.QWidget)
+	w.orderCombo = qt.NewQComboBox(w.QWidget)
+	w.orderCombo.AddItems(teaching.Orders)
+	optionsLayout.AddWidget(w.orderCombo.QWidget)
+	w.askAnswersCheck = qt.NewQCheckBox(w.QWidget)
+	w.askAnswersCheck.SetText("Ask the answers")
+	w.askAnswersCheck.SetToolTip("Practise the other way round: the answers are asked and the questions are the answers")
+	optionsLayout.AddWidget(w.askAnswersCheck.QWidget)
+	optionsLayout.AddStretch()
+	layout.AddWidget(optionsGroup.QWidget)
 
 	// Question section
 	questionGroup := qt.NewQGroupBox(w.QWidget)
@@ -599,10 +630,16 @@ func (w *TeachTabWidget) startTeaching() {
 		return
 	}
 
+	w.session = teaching.New(w.lesson.Data.List, teaching.Options{
+		LessonType: w.lessonTypeCombo.CurrentText(),
+		Order:      w.orderCombo.CurrentText(),
+		AskAnswers: w.askAnswersCheck.IsChecked(),
+	})
+	w.session.Start()
+
 	w.isTeaching = true
-	w.currentIndex = 0
 	w.correctAnswers = 0
-	w.totalQuestions = len(w.lesson.Data.List.Items)
+	_, w.totalQuestions = w.session.Progress()
 
 	// Initialize new teaching session
 	w.currentSession = &TeachingSession{
@@ -613,44 +650,52 @@ func (w *TeachTabWidget) startTeaching() {
 		Completed:      false,
 	}
 
+	w.setOptionsEnabled(false)
 	w.startButton.SetEnabled(false)
 	w.answerEdit.SetEnabled(true)
 	w.answerEdit.SetFocus()
 	w.submitButton.SetEnabled(true)
 	w.unicodeButton.SetEnabled(true)
 
-	// Set Unicode picker target
-	// Unicode picker target will be set when needed
-
 	w.showCurrentQuestion()
-	w.logger.Action("Started teaching session with %d words", w.totalQuestions)
+	w.logger.Action("Started teaching session with %d words (%s, %s)", w.totalQuestions,
+		w.lessonTypeCombo.CurrentText(), w.orderCombo.CurrentText())
+}
+
+func (w *TeachTabWidget) setOptionsEnabled(enabled bool) {
+	w.lessonTypeCombo.SetEnabled(enabled)
+	w.orderCombo.SetEnabled(enabled)
+	w.askAnswersCheck.SetEnabled(enabled)
 }
 
 // showCurrentQuestion displays the current question
 func (w *TeachTabWidget) showCurrentQuestion() {
-	if w.lesson == nil || w.currentIndex >= len(w.lesson.Data.List.Items) {
+	if w.session == nil || w.session.Done() {
 		w.finishTeaching()
 		return
 	}
+	item, index, _ := w.session.Current()
+	w.currentIndex = index
 
-	item := w.lesson.Data.List.Items[w.currentIndex]
-	question := strings.Join(item.Questions, " / ")
-
+	question := composer.Compose(checker.StoredAnswers(item.Questions))
 	w.questionLabel.SetText(fmt.Sprintf("Question: %s", question))
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
 	w.resultLabel.SetVisible(false)
 
-	// Update progress
-	progress := int((float64(w.currentIndex) / float64(w.totalQuestions)) * 100)
-	w.progressBar.SetValue(progress)
+	// Update progress (lesson types that repeat words add to the total)
+	asked, total := w.session.Progress()
+	w.totalQuestions = total
+	if total > 0 {
+		w.progressBar.SetValue(asked * 100 / total)
+	}
 	w.statusLabel.SetText(fmt.Sprintf("Question %d of %d (Score: %d/%d correct)",
-		w.currentIndex+1, w.totalQuestions, w.correctAnswers, w.currentIndex))
+		asked+1, total, w.correctAnswers, asked))
 }
 
 // submitAnswer checks the user's answer
 func (w *TeachTabWidget) submitAnswer() {
-	if w.lesson == nil || w.currentIndex >= len(w.lesson.Data.List.Items) || w.currentSession == nil {
+	if w.session == nil || w.session.Done() || w.currentSession == nil {
 		return
 	}
 
@@ -659,16 +704,17 @@ func (w *TeachTabWidget) submitAnswer() {
 		return
 	}
 
-	item := w.lesson.Data.List.Items[w.currentIndex]
+	item, _, _ := w.session.Current()
 
 	// OpenTeacher's answer rules: alternatives separated by "," or ";",
 	// numbered obligatory parts ("1. ... 2. ..."); capitals are ignored
-	correct := checker.CorrectText(userAnswer, item.Answers, false)
+	answer := w.session.Answer(userAnswer)
+	correct := answer.Right
 
 	// Create teaching result record
 	result := TeachingResult{
-		Question:      strings.Join(item.Questions, " / "),
-		CorrectAnswer: composer.Compose(checker.StoredAnswers(item.Answers)),
+		Question:      composer.Compose(checker.StoredAnswers(item.Questions)),
+		CorrectAnswer: answer.Correct,
 		UserAnswer:    userAnswer,
 		IsCorrect:     correct,
 		ItemIndex:     w.currentIndex,
@@ -699,21 +745,26 @@ func (w *TeachTabWidget) submitAnswer() {
 
 // nextQuestion moves to the next question
 func (w *TeachTabWidget) nextQuestion() {
-	w.currentIndex++
-
-	if w.currentIndex >= len(w.lesson.Data.List.Items) {
-		w.finishTeaching()
-	} else {
-		w.answerEdit.SetEnabled(true)
-		w.submitButton.SetEnabled(true)
-		w.nextButton.SetEnabled(false)
-		w.showCurrentQuestion()
+	if w.session == nil {
+		return
 	}
+	w.session.Next()
+	if w.session.Done() {
+		w.finishTeaching()
+		return
+	}
+	w.answerEdit.SetEnabled(true)
+	w.submitButton.SetEnabled(true)
+	w.nextButton.SetEnabled(false)
+	w.showCurrentQuestion()
 }
 
 // finishTeaching completes the teaching session
 func (w *TeachTabWidget) finishTeaching() {
 	w.isTeaching = false
+	if w.session != nil {
+		w.correctAnswers, w.totalQuestions = w.session.Score()
+	}
 	percentage := 0
 	if w.totalQuestions > 0 {
 		percentage = int((float64(w.correctAnswers) / float64(w.totalQuestions)) * 100)
@@ -722,8 +773,10 @@ func (w *TeachTabWidget) finishTeaching() {
 	// Complete the session record
 	if w.currentSession != nil {
 		w.currentSession.Score = percentage
+		w.currentSession.TotalQuestions = w.totalQuestions
 		w.currentSession.Completed = true
 	}
+	w.setOptionsEnabled(true)
 
 	w.questionLabel.SetText(fmt.Sprintf("Teaching completed! Final Score: %d/%d correct (%d%%)",
 		w.correctAnswers, w.totalQuestions, percentage))
@@ -749,6 +802,8 @@ func (w *TeachTabWidget) finishTeaching() {
 // resetTeachingState resets the teaching state
 func (w *TeachTabWidget) resetTeachingState() {
 	w.isTeaching = false
+	w.session = nil
+	w.setOptionsEnabled(true)
 	w.currentIndex = 0
 	w.correctAnswers = 0
 	w.totalQuestions = 0
