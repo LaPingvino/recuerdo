@@ -15,7 +15,8 @@ type SettingsModule struct {
 	*core.BaseModule
 	settings map[string]interface{}
 	filePath string
-	mu       sync.RWMutex
+	mu       sync.RWMutex // guards settings and filePath
+	fileMu   sync.Mutex   // serialises reading and writing the settings file; taken before mu
 }
 
 // NewSettingsModule creates a new settings module
@@ -161,42 +162,71 @@ func (s *SettingsModule) GetInt(key string) (int, error) {
 	return 0, fmt.Errorf("setting %q is not an integer", key)
 }
 
-// LoadSettings loads settings from storage
+// LoadSettings loads settings from storage, merging them into the
+// current settings. A file that cannot be parsed leaves them unchanged.
 func (s *SettingsModule) LoadSettings() error {
-	s.mu.Lock()
-	defer s.mu.Unlock()
+	s.fileMu.Lock()
+	defer s.fileMu.Unlock()
 
-	data, err := os.ReadFile(s.filePath)
+	data, err := os.ReadFile(s.GetSettingsPath())
 	if err != nil {
 		return err
 	}
 
-	if err := json.Unmarshal(data, &s.settings); err != nil {
+	loaded := make(map[string]interface{})
+	if err := json.Unmarshal(data, &loaded); err != nil {
 		return fmt.Errorf("failed to parse settings file: %w", err)
 	}
 
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	for k, v := range loaded {
+		s.settings[k] = v
+	}
 	return nil
 }
 
-// SaveSettings persists settings to storage
+// SaveSettings persists settings to storage. Saves are serialised and
+// each one writes a complete file under a temporary name before renaming
+// it into place, so concurrent saves and loads never see a partial file.
 func (s *SettingsModule) SaveSettings() error {
-	s.mu.RLock()
-	settingsCopy := make(map[string]interface{})
-	for k, v := range s.settings {
-		settingsCopy[k] = v
-	}
-	s.mu.RUnlock()
+	s.fileMu.Lock()
+	defer s.fileMu.Unlock()
 
-	data, err := json.MarshalIndent(settingsCopy, "", "  ")
+	s.mu.RLock()
+	path := s.filePath
+	data, err := json.MarshalIndent(s.settings, "", "  ")
+	s.mu.RUnlock()
 	if err != nil {
 		return fmt.Errorf("failed to marshal settings: %w", err)
 	}
 
-	if err := os.WriteFile(s.filePath, data, 0644); err != nil {
+	if err := writeFileAtomic(path, data, 0644); err != nil {
 		return fmt.Errorf("failed to write settings file: %w", err)
 	}
-
 	return nil
+}
+
+// writeFileAtomic writes data to a temporary file next to path and renames
+// it over path.
+func writeFileAtomic(path string, data []byte, perm os.FileMode) error {
+	tmp, err := os.CreateTemp(filepath.Dir(path), "."+filepath.Base(path)+".*.tmp")
+	if err != nil {
+		return err
+	}
+	defer os.Remove(tmp.Name()) // no-op once renamed
+
+	if _, err := tmp.Write(data); err != nil {
+		tmp.Close()
+		return err
+	}
+	if err := tmp.Close(); err != nil {
+		return err
+	}
+	if err := os.Chmod(tmp.Name(), perm); err != nil {
+		return err
+	}
+	return os.Rename(tmp.Name(), path)
 }
 
 // SetSettingsPath changes the settings file path
