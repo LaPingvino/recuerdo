@@ -193,6 +193,13 @@ func (w *WordsLessonWidget) GetCurrentTab() int {
 	return w.tabWidget.CurrentIndex()
 }
 
+// StartTeaching switches to the Teach tab and starts a session, as the
+// Start Teaching button does.
+func (w *WordsLessonWidget) StartTeaching() {
+	w.SetCurrentTab(1)
+	w.teachWidget.startButton.Click()
+}
+
 // SetCurrentTab sets the active tab
 func (w *WordsLessonWidget) SetCurrentTab(index int) {
 	if index >= 0 && index < w.tabWidget.Count() {

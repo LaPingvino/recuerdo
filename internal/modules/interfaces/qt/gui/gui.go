@@ -27,6 +27,7 @@ import (
 type GuiModule struct {
 	*core.BaseModule
 	manager        *core.Manager
+	lastWords      *words.WordsLessonWidget // the most recently opened word lesson
 	mainWindow     *qt.QMainWindow
 	app            *qt.QApplication
 	menuBar        *qt.QMenuBar
@@ -186,6 +187,7 @@ func (mod *GuiModule) ShowMainWindow() {
 		mod.mainWindow.Show()
 		mod.mainWindow.Raise()
 		mod.mainWindow.ActivateWindow()
+		mod.startScreenshots()
 	} else {
 		log.Printf("[ERROR] GuiModule.ShowMainWindow() - main window is nil")
 	}
@@ -661,6 +663,7 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 			}
 		}
 		lessonWidget = wordsWidget.QWidget
+		mod.lastWords = wordsWidget
 	}
 
 	// TODO: Connect lesson change signal to update window title and status
