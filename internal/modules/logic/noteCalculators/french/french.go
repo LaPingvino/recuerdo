@@ -1,83 +1,40 @@
-// Package french provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package french grades on the French 0-20 scale. Port of OpenTeacher's
+// logic/noteCalculators/french.
 package french
 
 import (
-	"context"
-	"fmt"
+	"math"
+	"strconv"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
+	notecalculators "github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators"
+	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 )
 
-// FrenchNoteCalculatorModule is a Go port of the Python FrenchNoteCalculatorModule class
-type FrenchNoteCalculatorModule struct {
-	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
+func grade(test lessontypes.Test) int {
+	return int(math.Round(percentscalculator.Fraction(test) * 20))
 }
 
-// NewFrenchNoteCalculatorModule creates a new FrenchNoteCalculatorModule instance
+// Note is the French grade for a test.
+func Note(test lessontypes.Test) string { return strconv.Itoa(grade(test)) }
+
+// AverageNote is the average of the tests' grades, rounded down (as
+// OpenTeacher does).
+func AverageNote(tests []lessontypes.Test) string {
+	sum := 0
+	for _, t := range tests {
+		sum += grade(t)
+	}
+	return strconv.Itoa(int(float64(sum) / float64(len(tests))))
+}
+
+type FrenchNoteCalculatorModule = notecalculators.Module
+
+// NewFrenchNoteCalculatorModule creates the module.
 func NewFrenchNoteCalculatorModule() *FrenchNoteCalculatorModule {
-	base := core.NewBaseModule("logic", "french-module")
-
-	return &FrenchNoteCalculatorModule{
-		BaseModule: base,
-	}
+	return notecalculators.NewModule("french", "French", 935, Note, AverageNote)
 }
 
-// calculate is the Go port of the Python _calculate method
-func (mod *FrenchNoteCalculatorModule) calculate() {
-	// TODO: Port Python method logic
-}
-
-// Calculatenote is the Go port of the Python calculateNote method
-func (mod *FrenchNoteCalculatorModule) Calculatenote() {
-	// TODO: Port Python method logic
-}
-
-// Calculateaveragenote is the Go port of the Python calculateAverageNote method
-func (mod *FrenchNoteCalculatorModule) Calculateaveragenote() {
-	// TODO: Port Python method logic
-}
-
-// retranslate is the Go port of the Python _retranslate method
-func (mod *FrenchNoteCalculatorModule) retranslate() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *FrenchNoteCalculatorModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("FrenchNoteCalculatorModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *FrenchNoteCalculatorModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("FrenchNoteCalculatorModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *FrenchNoteCalculatorModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitFrenchNoteCalculatorModule creates and returns a new FrenchNoteCalculatorModule instance
-// This is the Go equivalent of the Python init function
-func InitFrenchNoteCalculatorModule() core.Module {
-	return NewFrenchNoteCalculatorModule()
-}
+// InitFrenchNoteCalculatorModule creates and returns the module.
+func InitFrenchNoteCalculatorModule() core.Module { return NewFrenchNoteCalculatorModule() }

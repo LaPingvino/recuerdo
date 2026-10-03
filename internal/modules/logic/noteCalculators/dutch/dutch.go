@@ -1,88 +1,46 @@
-// Package dutch provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package dutch grades on the Dutch 1-10 scale ("7,3", and "10" for a
+// perfect score). Port of OpenTeacher's logic/noteCalculators/dutch.
 package dutch
 
 import (
-	"context"
-	"fmt"
+	"strconv"
+	"strings"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
+	notecalculators "github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators"
+	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 )
 
-// DutchNoteCalculatorModule is a Go port of the Python DutchNoteCalculatorModule class
-type DutchNoteCalculatorModule struct {
-	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
+func grade(test lessontypes.Test) float64 { return percentscalculator.Fraction(test)*9 + 1 }
+
+// format writes a grade with one decimal and a comma; 10 is written "10"
+// ("10,0" would suggest 10,8 exists).
+func format(g float64) string {
+	if g == 10 {
+		return "10"
+	}
+	return strings.Replace(strconv.FormatFloat(g, 'f', 1, 64), ".", ",", 1)
 }
 
-// NewDutchNoteCalculatorModule creates a new DutchNoteCalculatorModule instance
+// Note is the Dutch grade for a test.
+func Note(test lessontypes.Test) string { return format(grade(test)) }
+
+// AverageNote is the average Dutch grade of the tests.
+func AverageNote(tests []lessontypes.Test) string {
+	sum := 0.0
+	for _, t := range tests {
+		sum += grade(t)
+	}
+	return format(sum / float64(len(tests)))
+}
+
+type DutchNoteCalculatorModule = notecalculators.Module
+
+// NewDutchNoteCalculatorModule creates the module.
 func NewDutchNoteCalculatorModule() *DutchNoteCalculatorModule {
-	base := core.NewBaseModule("logic", "dutch-module")
-
-	return &DutchNoteCalculatorModule{
-		BaseModule: base,
-	}
+	return notecalculators.NewModule("dutch", "Dutch", 935, Note, AverageNote)
 }
 
-// formatnote is the Go port of the Python _formatNote method
-func (mod *DutchNoteCalculatorModule) formatnote() {
-	// TODO: Port Python method logic
-}
-
-// calculatefloat is the Go port of the Python _calculateFloat method
-func (mod *DutchNoteCalculatorModule) calculatefloat() {
-	// TODO: Port Python method logic
-}
-
-// Calculatenote is the Go port of the Python calculateNote method
-func (mod *DutchNoteCalculatorModule) Calculatenote() {
-	// TODO: Port Python method logic
-}
-
-// Calculateaveragenote is the Go port of the Python calculateAverageNote method
-func (mod *DutchNoteCalculatorModule) Calculateaveragenote() {
-	// TODO: Port Python method logic
-}
-
-// retranslate is the Go port of the Python _retranslate method
-func (mod *DutchNoteCalculatorModule) retranslate() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *DutchNoteCalculatorModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("DutchNoteCalculatorModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *DutchNoteCalculatorModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("DutchNoteCalculatorModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *DutchNoteCalculatorModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitDutchNoteCalculatorModule creates and returns a new DutchNoteCalculatorModule instance
-// This is the Go equivalent of the Python init function
-func InitDutchNoteCalculatorModule() core.Module {
-	return NewDutchNoteCalculatorModule()
-}
+// InitDutchNoteCalculatorModule creates and returns the module.
+func InitDutchNoteCalculatorModule() core.Module { return NewDutchNoteCalculatorModule() }

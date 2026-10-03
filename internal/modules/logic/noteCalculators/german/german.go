@@ -1,83 +1,29 @@
-// Package german provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package german grades in the German notation. Port of OpenTeacher's
+// logic/noteCalculators/german.
 package german
 
 import (
-	"context"
-	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/core"
+	notecalculators "github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators"
 )
 
-// GermanNoteCalculatorModule is a Go port of the Python GermanNoteCalculatorModule class
-type GermanNoteCalculatorModule struct {
-	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
-}
+var (
+	bounds = []int{30, 50, 67, 81, 92}
+	grades = []string{"6", "5", "4", "3", "2", "1"}
+)
 
-// NewGermanNoteCalculatorModule creates a new GermanNoteCalculatorModule instance
+// Convert turns a percentage into a grade.
+func Convert(percents int) string { return grades[notecalculators.Bisect(bounds, percents)] }
+
+// Note and AverageNote grade a test and the average of tests.
+var Note, AverageNote = notecalculators.FromPercents(Convert)
+
+type GermanNoteCalculatorModule = notecalculators.Module
+
+// NewGermanNoteCalculatorModule creates the module.
 func NewGermanNoteCalculatorModule() *GermanNoteCalculatorModule {
-	base := core.NewBaseModule("logic", "german-module")
-
-	return &GermanNoteCalculatorModule{
-		BaseModule: base,
-	}
+	return notecalculators.NewModule("german", "German", 935, Note, AverageNote)
 }
 
-// convert is the Go port of the Python _convert method
-func (mod *GermanNoteCalculatorModule) convert() {
-	// TODO: Port Python method logic
-}
-
-// Calculatenote is the Go port of the Python calculateNote method
-func (mod *GermanNoteCalculatorModule) Calculatenote() {
-	// TODO: Port Python method logic
-}
-
-// Calculateaveragenote is the Go port of the Python calculateAverageNote method
-func (mod *GermanNoteCalculatorModule) Calculateaveragenote() {
-	// TODO: Port Python method logic
-}
-
-// retranslate is the Go port of the Python _retranslate method
-func (mod *GermanNoteCalculatorModule) retranslate() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *GermanNoteCalculatorModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("GermanNoteCalculatorModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *GermanNoteCalculatorModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("GermanNoteCalculatorModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *GermanNoteCalculatorModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitGermanNoteCalculatorModule creates and returns a new GermanNoteCalculatorModule instance
-// This is the Go equivalent of the Python init function
-func InitGermanNoteCalculatorModule() core.Module {
-	return NewGermanNoteCalculatorModule()
-}
+// InitGermanNoteCalculatorModule creates and returns the module.
+func InitGermanNoteCalculatorModule() core.Module { return NewGermanNoteCalculatorModule() }

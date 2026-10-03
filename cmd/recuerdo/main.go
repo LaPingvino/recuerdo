@@ -12,8 +12,6 @@ import (
 	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
-	"github.com/mappu/miqt/qt/mainthread"
 	"github.com/LaPingvino/recuerdo/internal/modules"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/cyrillic"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/greek"
@@ -59,6 +57,8 @@ import (
 	wordsonly "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/wordsOnly"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profiledescriptions"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
+	"github.com/mappu/miqt/qt"
+	"github.com/mappu/miqt/qt/mainthread"
 
 	// ALL Qt imports temporarily disabled to get core system working first
 	// TODO: Re-enable Qt modules incrementally once basic system is validated
@@ -189,7 +189,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/ects"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/french"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/german"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/javaScript/percents"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/percents"
 	cuneiformrecognizer "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/cuneiformRecognizer"
 	tesseractrecognizer "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/tesseractRecognizer"
 	wordlistloader "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/wordListLoader"
@@ -1525,45 +1525,9 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register german module: %w", err)
 	}
 
-	// Register american module
-	noteCalcAmericanModule := american.NewAmericanNoteCalculatorModule()
-	if err := manager.Register(noteCalcAmericanModule); err != nil {
-		return fmt.Errorf("failed to register american module: %w", err)
-	}
-
-	// Register dutch module
-	noteCalcDutchModule := dutch.NewDutchNoteCalculatorModule()
-	if err := manager.Register(noteCalcDutchModule); err != nil {
-		return fmt.Errorf("failed to register dutch module: %w", err)
-	}
-
-	// Register ects module
-	noteCalcEctsModule := ects.NewECTSNoteCalculatorModule()
-	if err := manager.Register(noteCalcEctsModule); err != nil {
-		return fmt.Errorf("failed to register ects module: %w", err)
-	}
-
-	// Register french module
-	noteCalcFrenchModule := french.NewFrenchNoteCalculatorModule()
-	if err := manager.Register(noteCalcFrenchModule); err != nil {
-		return fmt.Errorf("failed to register french module: %w", err)
-	}
-
-	// Register german module
-	noteCalcGermanModule := german.NewGermanNoteCalculatorModule()
-	if err := manager.Register(noteCalcGermanModule); err != nil {
-		return fmt.Errorf("failed to register german module: %w", err)
-	}
-
 	// Register percents module
 	percentsModule := percents.NewPercentsNoteCalculatorModule()
 	if err := manager.Register(percentsModule); err != nil {
-		return fmt.Errorf("failed to register percents module: %w", err)
-	}
-
-	// Register percents module
-	noteCalcPercentsModule := percents.NewPercentsNoteCalculatorModule()
-	if err := manager.Register(noteCalcPercentsModule); err != nil {
 		return fmt.Errorf("failed to register percents module: %w", err)
 	}
 

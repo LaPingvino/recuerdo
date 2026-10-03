@@ -1,78 +1,86 @@
-// Package notecalculatorchooser provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package notecalculatorchooser picks the grade notation the user wants.
+// Port of OpenTeacher's logic/noteCalculatorChooser.
 package notecalculatorchooser
 
 import (
 	"context"
-	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	notecalculators "github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/american"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/dutch"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/ects"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/french"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/german"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/percents"
 )
 
-// NoteCalculatorChooserModule is a Go port of the Python NoteCalculatorChooserModule class
+// SettingKey is the setting holding the chosen notation (its display name),
+// named as in OpenTeacher.
+const SettingKey = "org.openteacher.noteCalculatorChooser.noteCalculator"
+
+// Default is the notation used when none is chosen.
+const Default = "Dutch"
+
+var calculators = []notecalculators.Calculator{
+	american.NewAmericanNoteCalculatorModule(),
+	dutch.NewDutchNoteCalculatorModule(),
+	ects.NewECTSNoteCalculatorModule(),
+	french.NewFrenchNoteCalculatorModule(),
+	german.NewGermanNoteCalculatorModule(),
+	percents.NewPercentsNoteCalculatorModule(),
+}
+
+// Names lists the notations, sorted by name (as OpenTeacher offers them).
+func Names() []string {
+	names := make([]string, len(calculators))
+	for i, c := range calculators {
+		names[i] = c.DisplayName()
+	}
+	return names
+}
+
+// Choose returns the calculator with the given display name, or the
+// default one.
+func Choose(name string) notecalculators.Calculator {
+	var fallback notecalculators.Calculator
+	for _, c := range calculators {
+		switch c.DisplayName() {
+		case name:
+			return c
+		case Default:
+			fallback = c
+		}
+	}
+	return fallback
+}
+
+// NoteCalculatorChooserModule offers Choose as an OpenTeacher
+// "noteCalculatorChooser" module.
 type NoteCalculatorChooserModule struct {
 	*core.BaseModule
 	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewNoteCalculatorChooserModule creates a new NoteCalculatorChooserModule instance
+// NewNoteCalculatorChooserModule creates the module.
 func NewNoteCalculatorChooserModule() *NoteCalculatorChooserModule {
-	base := core.NewBaseModule("logic", "notecalculatorchooser-module")
-
-	return &NoteCalculatorChooserModule{
-		BaseModule: base,
-	}
+	return &NoteCalculatorChooserModule{BaseModule: core.NewBaseModule("noteCalculatorChooser", "note-calculator-chooser")}
 }
 
-// retranslate is the Go port of the Python _retranslate method
-func (mod *NoteCalculatorChooserModule) retranslate() {
-	// TODO: Port Python method logic
+// NoteCalculator returns the calculator for the chosen notation.
+func (mod *NoteCalculatorChooserModule) NoteCalculator(name string) notecalculators.Calculator {
+	return Choose(name)
 }
 
-// updateoptions is the Go port of the Python _updateOptions method
-func (mod *NoteCalculatorChooserModule) updateoptions() {
-	// TODO: Port Python method logic
-}
-
-// Notecalculator is the Go port of the Python noteCalculator method
-func (mod *NoteCalculatorChooserModule) Notecalculator() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
 func (mod *NoteCalculatorChooserModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("NoteCalculatorChooserModule enabled")
-	return nil
+	return mod.BaseModule.Enable(ctx)
 }
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
 func (mod *NoteCalculatorChooserModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("NoteCalculatorChooserModule disabled")
-	return nil
+	return mod.BaseModule.Disable(ctx)
 }
 
-// SetManager sets the module manager
-func (mod *NoteCalculatorChooserModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
+// SetManager sets the module manager reference.
+func (mod *NoteCalculatorChooserModule) SetManager(manager *core.Manager) { mod.manager = manager }
 
-// InitNoteCalculatorChooserModule creates and returns a new NoteCalculatorChooserModule instance
-// This is the Go equivalent of the Python init function
-func InitNoteCalculatorChooserModule() core.Module {
-	return NewNoteCalculatorChooserModule()
-}
+// InitNoteCalculatorChooserModule creates and returns the module.
+func InitNoteCalculatorChooserModule() core.Module { return NewNoteCalculatorChooserModule() }
