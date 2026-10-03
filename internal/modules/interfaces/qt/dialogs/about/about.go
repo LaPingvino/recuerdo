@@ -8,6 +8,8 @@ package about
 import (
 	"context"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/icon"
+	"github.com/LaPingvino/recuerdo/internal/version"
 	"log"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
@@ -48,60 +50,50 @@ func (mod *AboutDialogModule) Show() {
 func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
 	mod.dialog = qt.NewQDialog(parent)
 	mod.dialog.SetWindowTitle("About Recuerdo")
-	mod.dialog.SetFixedSize2(400, 300)
 	mod.dialog.SetWindowModality(qt.ApplicationModal)
+	mod.dialog.SetMinimumWidth(440)
 
-	// Create main layout
 	layout := qt.NewQVBoxLayout(mod.dialog.QWidget)
+	layout.SetSpacing(8)
+	// grow to fit the wrapped text instead of clipping it
+	layout.SetSizeConstraint(qt.QLayout__SetMinimumSize)
+	layout.SetContentsMargins(24, 20, 24, 16)
+	label := func(text string) *qt.QLabel {
+		l := qt.NewQLabel(mod.dialog.QWidget)
+		l.SetText(text)
+		l.SetAlignment(qt.AlignHCenter)
+		layout.AddWidget(l.QWidget)
+		return l
+	}
 
-	// Add Recuerdo logo/title
-	titleLabel := qt.NewQLabel(mod.dialog.QWidget)
-	titleLabel.SetText("Recuerdo")
-	titleFont := titleLabel.Font()
-	titleFont.SetPointSize(18)
+	logo := label("")
+	logo.SetPixmap(icon.Pixmap(96))
+	logo.SetMinimumHeight(100)
+
+	title := label("Recuerdo")
+	titleFont := title.Font()
+	titleFont.SetPointSize(20)
 	titleFont.SetBold(true)
-	titleLabel.SetFont(titleFont)
-	titleLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(titleLabel.QWidget)
+	title.SetFont(titleFont)
 
-	// Add version info
-	versionLabel := qt.NewQLabel(mod.dialog.QWidget)
-	versionLabel.SetText("Version 4.0.0-alpha")
-	versionLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(versionLabel.QWidget)
+	label("Version " + version.Version).SetStyleSheet("color: palette(dark);")
+	layout.AddSpacing(6)
+	label("Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember.")
+	layout.AddSpacing(6)
+	label("© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023")
+	license := label("Free software under the GNU General Public License,\nversion 3 or later")
+	license.SetStyleSheet("color: palette(dark);")
+	links := label(`<a href="https://github.com/LaPingvino/recuerdo">github.com/LaPingvino/recuerdo</a> · <a href="https://openteacher.org">openteacher.org</a>`)
+	links.SetOpenExternalLinks(true)
 
-	// Add description
-	descLabel := qt.NewQLabel(mod.dialog.QWidget)
-	descLabel.SetText("Recuerdo helps you learn whatever you want to learn!\nIt's designed to help you learn a foreign language,\nbut can also be used for other subjects.")
-	descLabel.SetAlignment(qt.AlignHCenter)
-	descLabel.SetWordWrap(true)
-	layout.AddWidget(descLabel.QWidget)
-
-	// Add copyright
-	copyrightLabel := qt.NewQLabel(mod.dialog.QWidget)
-	copyrightLabel.SetText("Copyright © 2025 Joop Kiefte\nBased on OpenTeacher © 2010-2023 OpenTeacher Team")
-	copyrightLabel.SetAlignment(qt.AlignHCenter)
-	layout.AddWidget(copyrightLabel.QWidget)
-
-	// Add website link
-	websiteLabel := qt.NewQLabel(mod.dialog.QWidget)
-	websiteLabel.SetText(`<a href="http://openteacher.org">http://openteacher.org</a>`)
-	websiteLabel.SetAlignment(qt.AlignHCenter)
-	websiteLabel.SetOpenExternalLinks(true)
-	layout.AddWidget(websiteLabel.QWidget)
-
-	// Add spacer
-	layout.AddStretch()
-
-	// Add close button
+	layout.AddSpacing(8)
 	buttonBox := qt.NewQDialogButtonBox(mod.dialog.QWidget)
 	buttonBox.SetStandardButtons(qt.QDialogButtonBox__Close)
 	layout.AddWidget(buttonBox.QWidget)
-
-	// Connect close button
 	buttonBox.OnRejected(func() {
 		mod.dialog.Close()
 	})
+	mod.dialog.AdjustSize()
 
 	mod.retranslate()
 }

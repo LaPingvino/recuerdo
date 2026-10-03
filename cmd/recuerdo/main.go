@@ -37,6 +37,7 @@ import (
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	wordslesson "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
+	"github.com/LaPingvino/recuerdo/internal/version"
 	"github.com/mappu/miqt/qt"
 	"github.com/mappu/miqt/qt/mainthread"
 
@@ -191,7 +192,7 @@ const appName = "Recuerdo"
 var _ wordslesson.Settings = (*modules.SettingsModule)(nil)
 
 // appVersion is set by release builds with -ldflags "-X main.appVersion=...".
-var appVersion = "4.0.0-alpha"
+var appVersion = "0.2.0-dev"
 
 // Command-line arguments
 var (
@@ -239,6 +240,7 @@ func main() {
 	// Setup logging
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
+	version.Version = appVersion
 	fmt.Printf("%s %s - Starting...\n", appName, appVersion)
 
 	// Create module manager

@@ -10,6 +10,8 @@ package qtapp
 import (
 	"context"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/icon"
+	"github.com/LaPingvino/recuerdo/internal/version"
 	"os"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
@@ -46,7 +48,8 @@ func (mod *QtAppModule) Enable(ctx context.Context) error {
 
 		// Set application properties using static functions
 		qt.QCoreApplication_SetApplicationName("Recuerdo")
-		qt.QCoreApplication_SetApplicationVersion("4.0.0")
+		qt.QCoreApplication_SetApplicationVersion(version.Version)
+		qt.QGuiApplication_SetWindowIcon(icon.Icon())
 		qt.QCoreApplication_SetOrganizationName("Kiefte")
 		// lets Wayland docks match the window to eu.kiefte.Recuerdo.desktop
 		qt.QGuiApplication_SetDesktopFileName("eu.kiefte.Recuerdo")

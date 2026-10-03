@@ -11,6 +11,7 @@ package gui
 import (
 	"context"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/icon"
 	"log"
 	"path/filepath"
 
@@ -304,73 +305,65 @@ func (mod *GuiModule) createMenuBar() {
 func (mod *GuiModule) createWelcomeWidget() *qt.QWidget {
 	widget := qt.NewQWidget(nil)
 	layout := qt.NewQVBoxLayout(widget)
-
-	// Add some spacing
 	layout.AddStretch()
 
-	// Main title
+	logo := qt.NewQLabel(nil)
+	logo.SetPixmap(icon.Pixmap(128))
+	logo.SetAlignment(qt.AlignHCenter)
+	layout.AddWidget(logo.QWidget)
+	layout.AddSpacing(12)
+
 	titleLabel := qt.NewQLabel(nil)
-	titleLabel.SetText("Welcome to Recuerdo")
+	titleLabel.SetText("Recuerdo")
 	titleFont := titleLabel.Font()
-	titleFont.SetPointSize(24)
+	titleFont.SetPointSize(26)
 	titleFont.SetBold(true)
 	titleLabel.SetFont(titleFont)
 	titleLabel.SetAlignment(qt.AlignHCenter)
 	layout.AddWidget(titleLabel.QWidget)
 
-	// Subtitle
 	subtitleLabel := qt.NewQLabel(nil)
-	subtitleLabel.SetText("Learn whatever you want to learn")
+	subtitleLabel.SetText("Learn words, places and more by heart")
 	subtitleFont := subtitleLabel.Font()
-	subtitleFont.SetPointSize(14)
+	subtitleFont.SetPointSize(13)
 	subtitleLabel.SetFont(subtitleFont)
 	subtitleLabel.SetAlignment(qt.AlignHCenter)
+	subtitleLabel.SetStyleSheet("color: palette(dark);")
 	layout.AddWidget(subtitleLabel.QWidget)
+	layout.AddSpacing(28)
 
-	// Add some spacing
-	layout.AddSpacing(20)
-
-	// Quick action buttons
-	buttonsWidget := qt.NewQWidget(nil)
-	buttonsLayout := qt.NewQHBoxLayout(buttonsWidget)
-
+	buttonsLayout := qt.NewQHBoxLayout2()
 	buttonsLayout.AddStretch()
-
-	// New lesson button
 	newLessonBtn := qt.NewQPushButton(nil)
-	newLessonBtn.SetText("Create New Lesson")
-	newLessonBtn.SetFixedSize2(200, 50)
+	newLessonBtn.SetText("New Lesson")
+	newLessonBtn.SetMinimumSize2(180, 44)
+	newLessonBtn.SetDefault(true)
 	newLessonBtn.OnClicked(func() {
 		mod.logger.Event("Create New Lesson button clicked")
 		mod.showNewLessonDialog()
 	})
 	buttonsLayout.AddWidget(newLessonBtn.QWidget)
-
-	buttonsLayout.AddSpacing(20)
-
-	// Open lesson button
+	buttonsLayout.AddSpacing(16)
 	openLessonBtn := qt.NewQPushButton(nil)
-	openLessonBtn.SetText("Open Lesson")
-	openLessonBtn.SetFixedSize2(200, 50)
+	openLessonBtn.SetText("Open Lesson…")
+	openLessonBtn.SetMinimumSize2(180, 44)
 	openLessonBtn.OnClicked(func() {
 		mod.logger.Event("Open Lesson button clicked")
 		mod.showOpenDialogFrom("BUTTON")
 	})
 	buttonsLayout.AddWidget(openLessonBtn.QWidget)
-
 	buttonsLayout.AddStretch()
+	layout.AddLayout(buttonsLayout.QLayout)
+	layout.AddSpacing(20)
 
-	layout.AddWidget(buttonsWidget)
-
-	// Status info
-	statusLabel := qt.NewQLabel(nil)
-	statusLabel.SetText("Module system initialized successfully")
-	statusLabel.SetAlignment(qt.AlignHCenter)
-	statusLabel.SetStyleSheet("color: #888; font-size: 12px; margin: 20px;")
-	layout.AddWidget(statusLabel.QWidget)
+	hint := qt.NewQLabel(nil)
+	hint.SetText("Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files")
+	hint.SetAlignment(qt.AlignHCenter)
+	hint.SetWordWrap(true)
+	hint.SetStyleSheet("color: palette(dark);")
+	layout.AddWidget(hint.QWidget)
 
 	layout.AddStretch()
-
 	return widget
 }
 
