@@ -24,15 +24,57 @@ func NewSettingsModule() *SettingsModule {
 	base := core.NewBaseModule("settings", "settings-module")
 	base.SetPriority(1500) // High priority - many modules depend on settings
 
-	// Default settings file path
-	homeDir, _ := os.UserHomeDir()
-	settingsPath := filepath.Join(homeDir, ".openteacher", "settings.json")
-
 	return &SettingsModule{
 		BaseModule: base,
 		settings:   make(map[string]interface{}),
-		filePath:   settingsPath,
+		filePath:   DefaultSettingsPath(),
 	}
+}
+
+// DefaultSettingsPath is recuerdo/settings.json in the user's configuration
+// directory (~/.config on Linux, ~/Library/Application Support on macOS,
+// %AppData% on Windows).
+func DefaultSettingsPath() string {
+	dir, err := os.UserConfigDir()
+	if err != nil {
+		home, _ := os.UserHomeDir()
+		dir = filepath.Join(home, ".config")
+	}
+	return filepath.Join(dir, "recuerdo", "settings.json")
+}
+
+// legacySettingsPath is where earlier Recuerdo versions kept settings.
+func legacySettingsPath() string {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return ""
+	}
+	return filepath.Join(home, ".openteacher", "settings.json")
+}
+
+// migrateSettings copies the settings file at legacy to path if path does
+// not exist yet. The old file is left alone. It reports whether it copied.
+func migrateSettings(path, legacy string) (bool, error) {
+	if legacy == "" {
+		return false, nil
+	}
+	if _, err := os.Stat(path); !os.IsNotExist(err) {
+		return false, err
+	}
+	data, err := os.ReadFile(legacy)
+	if os.IsNotExist(err) {
+		return false, nil
+	} else if err != nil {
+		return false, err
+	}
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return false, err
+	}
+	tmp := path + ".tmp"
+	if err := os.WriteFile(tmp, data, 0o644); err != nil {
+		return false, err
+	}
+	return true, os.Rename(tmp, path)
 }
 
 // Enable initializes the settings module
@@ -44,6 +86,15 @@ func (s *SettingsModule) Enable(ctx context.Context) error {
 	// Ensure settings directory exists
 	if err := s.ensureSettingsDir(); err != nil {
 		return fmt.Errorf("failed to create settings directory: %w", err)
+	}
+
+	// First run with the new location: carry over the old settings.
+	if s.GetSettingsPath() == DefaultSettingsPath() {
+		if copied, err := migrateSettings(s.GetSettingsPath(), legacySettingsPath()); err != nil {
+			fmt.Printf("Warning: could not copy settings from %s: %v\n", legacySettingsPath(), err)
+		} else if copied {
+			fmt.Printf("Copied settings from %s\n", legacySettingsPath())
+		}
 	}
 
 	// Load existing settings

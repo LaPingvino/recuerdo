@@ -520,3 +520,42 @@ func TestSettingsModuleConcurrency(t *testing.T) {
 		assert.Equal(t, "initial.value", value)
 	})
 }
+
+func TestDefaultSettingsPath(t *testing.T) {
+	p := DefaultSettingsPath()
+	if filepath.Base(p) != "settings.json" || filepath.Base(filepath.Dir(p)) != "recuerdo" {
+		t.Errorf("DefaultSettingsPath() = %q, want .../recuerdo/settings.json", p)
+	}
+}
+
+func TestMigrateSettings(t *testing.T) {
+	dir := t.TempDir()
+	legacy := filepath.Join(dir, "old", "settings.json")
+	path := filepath.Join(dir, "new", "recuerdo", "settings.json")
+
+	// nothing to copy
+	if copied, err := migrateSettings(path, legacy); copied || err != nil {
+		t.Fatalf("without old file: copied=%v err=%v", copied, err)
+	}
+
+	os.MkdirAll(filepath.Dir(legacy), 0o755)
+	os.WriteFile(legacy, []byte(`{"a":1}`), 0o644)
+	if copied, err := migrateSettings(path, legacy); !copied || err != nil {
+		t.Fatalf("first run: copied=%v err=%v", copied, err)
+	}
+	if got, _ := os.ReadFile(path); string(got) != `{"a":1}` {
+		t.Errorf("copied %q", got)
+	}
+	if _, err := os.Stat(legacy); err != nil {
+		t.Errorf("old file should stay: %v", err)
+	}
+
+	// an existing new file is never overwritten
+	os.WriteFile(path, []byte(`{"b":2}`), 0o644)
+	if copied, err := migrateSettings(path, legacy); copied || err != nil {
+		t.Fatalf("second run: copied=%v err=%v", copied, err)
+	}
+	if got, _ := os.ReadFile(path); string(got) != `{"b":2}` {
+		t.Errorf("new file overwritten: %q", got)
+	}
+}

@@ -118,8 +118,9 @@ lessons, printing, speech and the rest come after.
   `TestSettingsModuleConcurrency` (settings file corrupted by concurrent
   save/load). `go vet` reports a non-constant format string in
   `internal/logging/logger.go`.
-- Running the app writes `~/.openteacher/settings.json` (OpenTeacher's
-  location); decide whether Recuerdo should use its own config directory.
+- Settings live in Recuerdo's own config directory
+  (`recuerdo/settings.json` under `os.UserConfigDir()`); on first run an
+  existing `~/.openteacher/settings.json` is copied there and left in place.
 
 ### Priority list
 
