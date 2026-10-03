@@ -3,6 +3,7 @@ package words
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/logging"
@@ -408,8 +409,13 @@ type TeachTabWidget struct {
 	askAnswersCheck *qt.QCheckBox
 	session         *teaching.Session
 	typing          *teaching.Typing
-	skipButton      *qt.QPushButton
-	correctButton   *qt.QPushButton
+	modeCombo       *qt.QComboBox
+	hintLabel       *qt.QLabel
+	repeatTimer     *qt.QTimer
+	// RepeatDuration is how long Repeat answer shows the answer
+	RepeatDuration time.Duration
+	skipButton     *qt.QPushButton
+	correctButton  *qt.QPushButton
 	// notation returns the grade notation to show; set by the lesson widget
 	notation func() string
 
@@ -484,6 +490,13 @@ func (w *TeachTabWidget) setupUI() {
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
 	w.orderCombo.AddItems(teaching.Orders)
 	optionsLayout.AddWidget(w.orderCombo.QWidget)
+	modeLabel := qt.NewQLabel(w.QWidget)
+	modeLabel.SetText("Mode:")
+	optionsLayout.AddWidget(modeLabel.QWidget)
+	w.modeCombo = qt.NewQComboBox(w.QWidget)
+	w.modeCombo.AddItems(teaching.TeachTypes)
+	w.modeCombo.SetToolTip("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory.")
+	optionsLayout.AddWidget(w.modeCombo.QWidget)
 	w.askAnswersCheck = qt.NewQCheckBox(w.QWidget)
 	w.askAnswersCheck.SetText("Ask the answers")
 	w.askAnswersCheck.SetToolTip("Practise the other way round: the answers are asked and the questions are the answers")
@@ -501,6 +514,16 @@ func (w *TeachTabWidget) setupUI() {
 	w.questionLabel.SetWordWrap(true)
 	w.questionLabel.SetAlignment(qt.AlignCenter)
 	questionLayout.AddWidget(w.questionLabel.QWidget)
+
+	// Shuffle answer's hint / Repeat answer's answer
+	w.hintLabel = qt.NewQLabel(w.QWidget)
+	w.hintLabel.SetAlignment(qt.AlignCenter)
+	w.hintLabel.SetVisible(false)
+	questionLayout.AddWidget(w.hintLabel.QWidget)
+	w.RepeatDuration = teaching.RepeatFadeDuration
+	w.repeatTimer = qt.NewQTimer()
+	w.repeatTimer.SetSingleShot(true)
+	w.repeatTimer.OnTimeout(w.repeatShown)
 
 	// Answer input with Unicode picker
 	answerLayout := qt.NewQHBoxLayout2()
@@ -704,6 +727,7 @@ func (w *TeachTabWidget) startTeaching() {
 func (w *TeachTabWidget) setOptionsEnabled(enabled bool) {
 	w.lessonTypeCombo.SetEnabled(enabled)
 	w.orderCombo.SetEnabled(enabled)
+	w.modeCombo.SetEnabled(enabled)
 	w.askAnswersCheck.SetEnabled(enabled)
 }
 
@@ -718,6 +742,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 
 	question := composer.Compose(checker.StoredAnswers(item.Questions))
 	w.questionLabel.SetText(fmt.Sprintf("Question: %s", question))
+	w.showModeExtras()
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
 
@@ -730,6 +755,40 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 	w.correctAnswers, _ = w.session.Score()
 	w.statusLabel.SetText(fmt.Sprintf("Question %d of %d (Score: %d/%d correct)",
 		asked+1, total, w.correctAnswers, asked))
+}
+
+// showModeExtras shows what the practice mode adds to a new question.
+func (w *TeachTabWidget) showModeExtras() {
+	w.repeatTimer.Stop()
+	switch w.modeCombo.CurrentText() {
+	case teaching.ShuffleAnswer:
+		w.hintLabel.SetStyleSheet("")
+		w.hintLabel.SetText(teaching.ShuffleHint(w.session.CurrentAnswer(), nil))
+		w.hintLabel.SetVisible(true)
+	case teaching.RepeatAnswer:
+		// show the answer first; typing starts when it is gone
+		w.hintLabel.SetStyleSheet("font-size: 20px; font-weight: bold;")
+		w.hintLabel.SetText(w.session.CurrentAnswer())
+		w.hintLabel.SetVisible(true)
+		w.SetInputEnabled(false)
+		w.SetCheckEnabled(false)
+		w.SetSkipEnabled(false)
+		w.repeatTimer.Start(int(w.RepeatDuration.Milliseconds()))
+	default:
+		w.hintLabel.SetVisible(false)
+	}
+}
+
+// repeatShown ends Repeat answer's showing of the answer.
+func (w *TeachTabWidget) repeatShown() {
+	if w.typing == nil || w.session == nil || w.session.Done() || w.typing.ShowingCorrection() {
+		return
+	}
+	w.hintLabel.SetVisible(false)
+	w.SetInputEnabled(true)
+	w.SetCheckEnabled(true)
+	w.SetSkipEnabled(true)
+	w.FocusInput()
 }
 
 // submitAnswer checks the typed answer (Check button or Enter)
@@ -795,6 +854,8 @@ func (w *TeachTabWidget) HideCorrection() {
 // finishTeaching completes the teaching session
 func (w *TeachTabWidget) finishTeaching() {
 	w.isTeaching = false
+	w.repeatTimer.Stop()
+	w.hintLabel.SetVisible(false)
 	if w.session != nil {
 		w.correctAnswers, w.totalQuestions = w.session.Score()
 	}
@@ -861,6 +922,8 @@ func (w *TeachTabWidget) finishTeaching() {
 
 // resetTeachingState resets the teaching state
 func (w *TeachTabWidget) resetTeachingState() {
+	w.repeatTimer.Stop()
+	w.hintLabel.SetVisible(false)
 	w.isTeaching = false
 	w.session = nil
 	w.typing = nil

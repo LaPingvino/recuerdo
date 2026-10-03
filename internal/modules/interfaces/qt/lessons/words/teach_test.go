@@ -19,10 +19,17 @@ func TestMain(m *testing.M) {
 	os.Setenv("QT_QPA_PLATFORM", "offscreen")
 	qt.NewQApplication([]string{"words-test"})
 	teachErr = checkTeachTab()
+	modesErr = checkModes()
 	os.Exit(m.Run())
 }
 
-var teachErr error
+var teachErr, modesErr error
+
+func TestTeachTabModes(t *testing.T) {
+	if modesErr != nil {
+		t.Fatal(modesErr)
+	}
+}
 
 func TestTeachTabTypingMode(t *testing.T) {
 	if teachErr != nil {
@@ -86,6 +93,43 @@ func checkTeachTab() error {
 	}
 	if !w.startButton.IsEnabled() || w.skipButton.IsEnabled() {
 		return fmt.Errorf("buttons after the end")
+	}
+	return nil
+}
+
+func checkModes() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"drie"}, Answers: []string{"three"}},
+		{ID: 1, Questions: []string{"vier"}, Answers: []string{"four"}},
+	}}}}
+
+	// Shuffle answer: a hint with the answer's letters
+	w := NewTeachTabWidget(l, nil)
+	w.modeCombo.SetCurrentText("Shuffle answer")
+	w.startButton.Click()
+	hint := w.hintLabel.Text()
+	if !w.hintLabel.IsVisibleTo(w.QWidget) || !strings.HasPrefix(hint, "Hint: ") || len(hint) != len("Hint: three") || hint == "Hint: three" {
+		return fmt.Errorf("shuffle hint %q", hint)
+	}
+
+	// Repeat answer: the answer first, input locked; then typing from memory
+	w = NewTeachTabWidget(l, nil)
+	w.modeCombo.SetCurrentText("Repeat answer")
+	w.startButton.Click()
+	if w.hintLabel.Text() != "three" || w.answerEdit.IsEnabled() || w.submitButton.IsEnabled() {
+		return fmt.Errorf("repeat: showing %q, input enabled %v", w.hintLabel.Text(), w.answerEdit.IsEnabled())
+	}
+	w.repeatShown() // what the timer does when the answer has been shown long enough
+	if w.hintLabel.IsVisibleTo(w.QWidget) || !w.answerEdit.IsEnabled() || !w.submitButton.IsEnabled() {
+		return fmt.Errorf("repeat: after showing, input enabled %v", w.answerEdit.IsEnabled())
+	}
+	w.answerEdit.SetText("three")
+	w.submitButton.Click()
+	if w.hintLabel.Text() != "four" || w.answerEdit.IsEnabled() {
+		return fmt.Errorf("repeat: next word shows %q", w.hintLabel.Text())
+	}
+	if w.modeCombo.IsEnabled() {
+		return fmt.Errorf("mode can be changed during a session")
 	}
 	return nil
 }
