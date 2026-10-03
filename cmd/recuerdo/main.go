@@ -140,6 +140,7 @@ import (
 	javascriptpercentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/javaScriptPercentsCalculator"
 	languagecodeguesser "github.com/LaPingvino/recuerdo/internal/modules/logic/languageCodeGuesser"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/smart"
 	hardwords "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/hardWords"
 	random "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/random_"
@@ -1228,6 +1229,12 @@ func registerAllModules(manager *core.Manager) error {
 	smartModule := smart.NewSmartModule()
 	if err := manager.Register(smartModule); err != nil {
 		return fmt.Errorf("failed to register smart module: %w", err)
+	}
+
+	// Register interval module
+	intervalModule := interval.NewIntervalModule()
+	if err := manager.Register(intervalModule); err != nil {
+		return fmt.Errorf("failed to register interval module: %w", err)
 	}
 
 	// Register hardwords module

@@ -6,6 +6,7 @@ import (
 
 	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/smart"
 )
 
@@ -13,6 +14,9 @@ import (
 var lessonTypes = map[string]func([]int) lessontypes.LessonType{
 	"allOnce": func(i []int) lessontypes.LessonType { return allonce.New(i) },
 	"smart":   func(i []int) lessontypes.LessonType { return smart.New(i) },
+	"interval": func(i []int) lessontypes.LessonType {
+		return interval.New(i, interval.DefaultSettings)
+	},
 }
 
 const items = 2
@@ -52,7 +56,7 @@ func TestAllItemsAskedAndLessonDone(t *testing.T) {
 			}
 		})
 		l.Start()
-		if !done || len(asked) != items {
+		if !done || len(asked) < items {
 			t.Errorf("%s: done=%v asked=%v", name, done, asked)
 		}
 		if l.AskedItems() != items || l.TotalItems() != items {
@@ -156,4 +160,50 @@ func equal(a, b []int) bool {
 		}
 	}
 	return true
+}
+
+// Reference orders from running OpenTeacher's Python interval lesson type
+// with the same choice of positions ("low" always picks the nearest
+// allowed position, "high" the farthest).
+func TestIntervalMatchesOpenTeacher(t *testing.T) {
+	low := func(n int) int { return 0 }
+	high := func(n int) int { return n - 1 }
+	wrongFirstTime := func() func(int) bool {
+		seen := map[int]bool{}
+		return func(i int) bool {
+			if i == 1 && !seen[i] {
+				seen[i] = true
+				return false
+			}
+			return true
+		}
+	}
+	allRight := func(int) bool { return true }
+	cases := []struct {
+		name    string
+		indexes []int
+		intn    func(int) int
+		answer  func(int) bool
+		want    []int
+	}{
+		{"all right, low", []int{0, 1, 2}, low, allRight, []int{0, 1, 0, 1, 2, 2}},
+		{"all right, high", []int{0, 1, 2, 3, 4}, high, allRight, []int{0, 1, 2, 3, 0, 1, 2, 3, 4, 4}},
+		{"one wrong, high", []int{0, 1, 2, 3}, high, wrongFirstTime(), []int{0, 1, 2, 3, 0, 1, 2, 3, 1, 1, 1}},
+	}
+	for _, c := range cases {
+		l := interval.New(c.indexes, interval.DefaultSettings)
+		l.Intn = c.intn
+		if got := run(l, c.answer); !equal(got, c.want) {
+			t.Errorf("%s: asked %v, want %v", c.name, got, c.want)
+		}
+	}
+}
+
+func TestIntervalCounts(t *testing.T) {
+	l := interval.New([]int{0, 1, 2}, interval.DefaultSettings)
+	l.Intn = func(int) int { return 0 }
+	run(l, func(int) bool { return true })
+	if l.AskedItems() != 3 || l.TotalItems() != 3 || !l.Test().Finished {
+		t.Errorf("asked %d of %d, finished %v", l.AskedItems(), l.TotalItems(), l.Test().Finished)
+	}
 }
