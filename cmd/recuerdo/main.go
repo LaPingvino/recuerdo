@@ -12,6 +12,8 @@ import (
 	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/mappu/miqt/qt"
+	"github.com/mappu/miqt/qt/mainthread"
 	"github.com/LaPingvino/recuerdo/internal/modules"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/cyrillic"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/greek"
@@ -294,6 +296,8 @@ func main() {
 		sig := <-sigChan
 		fmt.Printf("\nReceived signal: %v\n", sig)
 		fmt.Println("Shutting down gracefully...")
+		// a second signal ends the process even if shutdown hangs
+		signal.Reset(syscall.SIGINT, syscall.SIGTERM)
 		cancel()
 	}()
 
@@ -1856,8 +1860,18 @@ func runApplication(ctx context.Context, manager *core.Manager, lessonFile, comm
 		if guiMod, ok := guiModule.(interface{ RunEventLoop() int }); ok {
 			fmt.Println("Starting Qt event loop...")
 
-			// Qt event loop must run on main thread - call directly
+			// Qt event loop must run on main thread - call directly.
+			// A cancelled context (SIGINT/SIGTERM) asks Qt to leave it.
+			loopDone := make(chan struct{})
+			go func() {
+				select {
+				case <-ctx.Done():
+					mainthread.Start(qt.QCoreApplication_Quit)
+				case <-loopDone:
+				}
+			}()
 			exitCode := guiMod.RunEventLoop()
+			close(loopDone)
 			fmt.Printf("Qt event loop finished with exit code: %d\n", exitCode)
 			return nil
 		} else {

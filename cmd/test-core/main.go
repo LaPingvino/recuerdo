@@ -4,11 +4,12 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/event"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
+	"github.com/LaPingvino/recuerdo/internal/modules"
 	"github.com/LaPingvino/recuerdo/internal/modules/system"
 )
 
@@ -22,14 +23,25 @@ func main() {
 	fmt.Println("Registering core modules...")
 
 	// Register event module
-	eventModule := event.NewEventModule()
+	// the hand-written core modules the app uses, not the generated
+	// skeletons under internal/modules/logic
+	eventModule := modules.NewEventModule()
 	if err := manager.Register(eventModule); err != nil {
 		log.Fatalf("Failed to register event module: %v", err)
 	}
 	fmt.Println("  ✓ Registered event module")
 
 	// Register settings module
-	settingsModule := settings.NewSettingsModule()
+	settingsModule := modules.NewSettingsModule()
+	// a throwaway settings file, so testing never touches the user's own
+	settingsDir, err := os.MkdirTemp("", "recuerdo-test-core-")
+	if err != nil {
+		log.Fatalf("Failed to create temporary settings directory: %v", err)
+	}
+	defer os.RemoveAll(settingsDir)
+	if err := settingsModule.SetSettingsPath(filepath.Join(settingsDir, "settings.json")); err != nil {
+		log.Fatalf("Failed to set settings path: %v", err)
+	}
 	if err := manager.Register(settingsModule); err != nil {
 		log.Fatalf("Failed to register settings module: %v", err)
 	}
@@ -60,9 +72,18 @@ func main() {
 		log.Fatal("Event module not found")
 	}
 
-	// Cast to event module interface and test basic functionality
-	_ = eventMod // Use the variable to avoid unused error
-	fmt.Println("  ✓ Event module found and accessible")
+	received := make(chan interface{}, 1)
+	ev := eventMod.(*modules.EventModule).CreateEvent("test-core")
+	if err := ev.Subscribe(func(data interface{}) error { received <- data; return nil }); err != nil {
+		log.Fatalf("Failed to subscribe to event: %v", err)
+	}
+	if err := ev.Trigger("ping"); err != nil {
+		log.Fatalf("Failed to trigger event: %v", err)
+	}
+	if got := <-received; got != "ping" {
+		log.Fatalf("Event handler received %v, want ping", got)
+	}
+	fmt.Println("  ✓ Event triggered and handled")
 
 	// Test settings system
 	fmt.Println("Testing settings system...")
@@ -70,14 +91,24 @@ func main() {
 	if !exists {
 		log.Fatal("Settings module not found")
 	}
-
-	_ = settingsMod // Use the variable to avoid unused error
-	fmt.Println("  ✓ Settings module found and accessible")
+	sm := settingsMod.(*modules.SettingsModule)
+	if err := sm.SetSetting("test-core.key", "value"); err != nil {
+		log.Fatalf("Failed to set setting: %v", err)
+	}
+	if err := sm.SaveSettings(); err != nil {
+		log.Fatalf("Failed to save settings: %v", err)
+	}
+	if err := sm.LoadSettings(); err != nil {
+		log.Fatalf("Failed to load settings: %v", err)
+	}
+	if v, err := sm.GetSetting("test-core.key"); err != nil || v != "value" {
+		log.Fatalf("Setting read back as %v (%v), want value", v, err)
+	}
+	fmt.Println("  ✓ Setting saved and read back")
 
 	// Show module statistics
 	fmt.Printf("Module Statistics:\n")
-	fmt.Printf("  Total registered: %d\n", 3) // We registered 3 modules
-	fmt.Printf("  Total enabled: %d\n", 3)    // All should be enabled
+	fmt.Printf("  Total registered: %d\n", manager.ModuleCount())
 
 	fmt.Println("\n🎉 SUCCESS: Recuerdo core system is working!")
 	fmt.Println("   - Module registration: ✓")
