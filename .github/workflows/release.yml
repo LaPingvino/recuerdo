@@ -3,6 +3,9 @@ name: Release
 on:
   push:
     tags: ["v*"]
+    branches: ["**"]
+    # also test-build the packages when packaging changes (no release then)
+    paths: ["packaging/**", "assets/**", ".github/workflows/release.yml"]
   workflow_dispatch:
     inputs:
       version:
