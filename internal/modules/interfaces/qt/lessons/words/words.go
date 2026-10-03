@@ -6,6 +6,8 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/logging"
+	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
+	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
@@ -68,6 +70,9 @@ func (w *WordsLessonWidget) setupUI() {
 	// Create Results tab
 	w.resultsWidget = NewResultsTabWidget(w.lesson, w.QWidget)
 	w.tabWidget.AddTab(w.resultsWidget.QWidget, "Results")
+
+	// The Teach tab shows grades in the notation chosen on the Results tab
+	w.teachWidget.notation = w.resultsWidget.Notation
 
 	// Connect teach widget to results widget for session completion
 	w.teachWidget.SetSessionCompletedCallback(func(session *TeachingSession) {
@@ -364,6 +369,8 @@ type TeachingResult struct {
 
 // TeachingSession represents a complete teaching session with all results
 type TeachingSession struct {
+	// Test is the run as the lesson type recorded it, for grading
+	Test           lessontypes.Test
 	Results        []TeachingResult
 	TotalQuestions int
 	CorrectCount   int
@@ -394,6 +401,8 @@ type TeachTabWidget struct {
 	orderCombo      *qt.QComboBox
 	askAnswersCheck *qt.QCheckBox
 	session         *teaching.Session
+	// notation returns the grade notation to show; set by the lesson widget
+	notation func() string
 
 	// Unicode character picker
 	unicodePicker *IntegratedUnicodePicker
@@ -770,16 +779,32 @@ func (w *TeachTabWidget) finishTeaching() {
 		percentage = int((float64(w.correctAnswers) / float64(w.totalQuestions)) * 100)
 	}
 
+	notation := teaching.DefaultNotation
+	if w.notation != nil {
+		notation = w.notation()
+	}
+	grade := ""
+
 	// Complete the session record
 	if w.currentSession != nil {
+		if w.session != nil {
+			w.currentSession.Test = w.session.Test()
+			percentage = percentscalculator.Percents(w.currentSession.Test)
+			grade = teaching.Grade(notation, w.currentSession.Test)
+		}
 		w.currentSession.Score = percentage
+		w.currentSession.CorrectCount = w.correctAnswers
 		w.currentSession.TotalQuestions = w.totalQuestions
 		w.currentSession.Completed = true
 	}
 	w.setOptionsEnabled(true)
 
-	w.questionLabel.SetText(fmt.Sprintf("Teaching completed! Final Score: %d/%d correct (%d%%)",
-		w.correctAnswers, w.totalQuestions, percentage))
+	text := fmt.Sprintf("Teaching completed! Final Score: %d/%d correct (%d%%)",
+		w.correctAnswers, w.totalQuestions, percentage)
+	if grade != "" && notation != "Percents" {
+		text += fmt.Sprintf("\nGrade (%s): %s", notation, grade)
+	}
+	w.questionLabel.SetText(text)
 
 	w.answerEdit.SetEnabled(false)
 	w.submitButton.SetEnabled(false)
@@ -878,6 +903,7 @@ type ResultsTabWidget struct {
 
 	// UI components
 	overviewLabel *qt.QLabel
+	notationCombo *qt.QComboBox
 	resultsTable  *qt.QTableWidget
 
 	// Results data
@@ -905,6 +931,18 @@ func (w *ResultsTabWidget) setupUI() {
 	overviewGroup.SetTitle("Results Overview")
 	overviewLayout := qt.NewQVBoxLayout(overviewGroup.QWidget)
 
+	notationLayout := qt.NewQHBoxLayout2()
+	notationLabel := qt.NewQLabel(w.QWidget)
+	notationLabel.SetText("Grades in:")
+	notationLayout.AddWidget(notationLabel.QWidget)
+	w.notationCombo = qt.NewQComboBox(w.QWidget)
+	w.notationCombo.AddItems(teaching.Notations)
+	w.notationCombo.SetCurrentText(teaching.DefaultNotation)
+	w.notationCombo.OnCurrentTextChanged(func(string) { w.updateResultsDisplay() })
+	notationLayout.AddWidget(w.notationCombo.QWidget)
+	notationLayout.AddStretch()
+	overviewLayout.AddLayout2(notationLayout.QLayout, 0)
+
 	w.overviewLabel = qt.NewQLabel(w.QWidget)
 	w.overviewLabel.SetText("No teaching results available yet")
 	w.overviewLabel.SetAlignment(qt.AlignCenter)
@@ -928,6 +966,14 @@ func (w *ResultsTabWidget) setupUI() {
 	layout.AddWidget(detailsGroup.QWidget)
 
 	w.logger.Success("Results tab UI created")
+}
+
+// Notation is the grade notation chosen on the Results tab.
+func (w *ResultsTabWidget) Notation() string {
+	if w.notationCombo == nil {
+		return teaching.DefaultNotation
+	}
+	return w.notationCombo.CurrentText()
 }
 
 // UpdateLesson updates the Results tab with lesson data
@@ -965,22 +1011,23 @@ func (w *ResultsTabWidget) updateResultsDisplay() {
 		latestSession := w.sessions[len(w.sessions)-1]
 		totalSessions := len(w.sessions)
 
-		// Calculate average score across all sessions
-		totalScore := 0
+		// Grades as OpenTeacher computes them, in the chosen notation
+		notation := w.Notation()
+		tests := make([]lessontypes.Test, 0, totalSessions)
 		for _, session := range w.sessions {
-			totalScore += session.Score
+			tests = append(tests, session.Test)
 		}
-		avgScore := totalScore / totalSessions
 
 		overviewText := fmt.Sprintf(`Lesson: %d word pairs | Sessions completed: %d
 
-Latest Session: %d/%d correct (%d%%)
-Average Score: %d%%
+Latest Session: %d/%d correct (%d%%), grade %s
+Average grade: %s (%d%%)
 
 Detailed results from latest session:`,
 			wordCount, totalSessions,
 			latestSession.CorrectCount, latestSession.TotalQuestions, latestSession.Score,
-			avgScore)
+			teaching.Grade(notation, latestSession.Test),
+			teaching.AverageGrade(notation, tests), percentscalculator.AveragePercents(tests))
 
 		w.overviewLabel.SetText(overviewText)
 

@@ -175,3 +175,11 @@ func (s *Session) remaining() int {
 
 // Score is the number of right answers and answers given.
 func (s *Session) Score() (right, answered int) { return s.right, s.answered }
+
+// Test is the record of this run so far (empty before the first answer).
+func (s *Session) Test() lessontypes.Test {
+	if t := s.lt.Test(); t != nil {
+		return *t
+	}
+	return lessontypes.Test{}
+}
