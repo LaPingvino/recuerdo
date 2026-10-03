@@ -42,15 +42,14 @@ func (m *Manager) Register(module Module) error {
 		return fmt.Errorf("module name cannot be empty")
 	}
 
-	// Register the module (append to slice for this name)
-	m.modules[name] = append(m.modules[name], module)
-
-	// Add to type mapping
 	moduleType := module.Type()
 	if moduleType == "" {
 		return fmt.Errorf("module type cannot be empty for module %q", name)
 	}
 
+	// Several modules may share a name (as in OpenTeacher, where they are
+	// told apart by type); GetModule returns the first.
+	m.modules[name] = append(m.modules[name], module)
 	m.modulesByType[moduleType] = append(m.modulesByType[moduleType], module)
 
 	// Set the manager reference if the module supports it

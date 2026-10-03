@@ -190,8 +190,7 @@ func (l *Logger) Event(format string, args ...interface{}) {
 // Stub logs when hitting a stub/unimplemented function
 func (l *Logger) Stub(functionName, suggestedLegacyPath string, format string, args ...interface{}) {
 	message := fmt.Sprintf(format, args...)
-	fullMessage := fmt.Sprintf("STUB: %s() - %s", functionName, message)
-	l.log(STUB, fullMessage)
+	l.log(STUB, "STUB: %s() - %s", functionName, message)
 
 	if suggestedLegacyPath != "" {
 		l.log(LEGACY_REMINDER, "Check implementation in: %s", suggestedLegacyPath)

@@ -77,9 +77,22 @@ func TestManager(t *testing.T) {
 		err := manager.Register(module1)
 		require.NoError(t, err)
 
+		// modules may share a name; both are kept, the first wins GetModule
 		err = manager.Register(module2)
+		require.NoError(t, err)
+
+		assert.Equal(t, []Module{module1, module2}, manager.GetModulesByName("duplicate-name"))
+		first, ok := manager.GetModule("duplicate-name")
+		assert.True(t, ok)
+		assert.Same(t, module1, first)
+	})
+
+	t.Run("register_without_type_is_rejected_cleanly", func(t *testing.T) {
+		manager := NewManager()
+		err := manager.Register(NewTestModule("", "typeless"))
 		assert.Error(t, err)
-		assert.Contains(t, err.Error(), "already registered")
+		_, ok := manager.GetModule("typeless")
+		assert.False(t, ok, "a rejected module must not stay registered by name")
 	})
 
 	t.Run("unregister_module", func(t *testing.T) {

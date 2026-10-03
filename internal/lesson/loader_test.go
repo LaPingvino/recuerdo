@@ -142,7 +142,7 @@ func TestGetFormatName(t *testing.T) {
 		{".ovr", "Overhoringsprogramma Talen"},
 		{".pau", "Pauker File"},
 		{".t2k", "Teach2000 File"},
-		{".vok2", "Teachmaster File"},
+		{".vok2", "TeachMaster File"},
 		{".wdl", "Oriente Voca File"},
 		{".vtl3", "VokabelTrainer File"},
 		{".wrts", "WRTS File"},
