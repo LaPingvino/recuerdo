@@ -62,7 +62,7 @@ func TestSettingsModule(t *testing.T) {
 		// Check some default settings
 		appName, err := module.GetString("app.name")
 		require.NoError(t, err)
-		assert.Equal(t, "OpenTeacher", appName)
+		assert.Equal(t, "Recuerdo", appName)
 
 		autoSave, err := module.GetBool("app.autoSave")
 		require.NoError(t, err)

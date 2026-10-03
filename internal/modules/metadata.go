@@ -102,13 +102,13 @@ func (m *MetadataModule) initializeMetadata() {
 	logoPath := m.findLogoPath(execDir)
 
 	m.metadata = map[string]interface{}{
-		"name":             "OpenTeacher",
+		"name":             "Recuerdo",
 		"version":          "4.0.0-alpha",
-		"shortDescription": "Free open source exam training software",
-		"longDescription":  "OpenTeacher is a free open source application that helps you learn a foreign language vocabulary, topography or any other subject that can be learned by heart quickly and effectively.",
-		"author":           "OpenTeacher Team",
-		"website":          "http://openteacher.org/",
-		"email":            "info@openteacher.org",
+		"shortDescription": "Free open source learning software",
+		"longDescription":  "Recuerdo is a free open source application that helps you learn a foreign language vocabulary, topography or any other subject that can be learned by heart quickly and effectively.",
+		"author":           "Joop Kiefte (based on OpenTeacher by the OpenTeacher Team)",
+		"website":          "https://github.com/LaPingvino/recuerdo",
+		"email":            "",
 		"iconPath":         iconPath,
 		"logoPath":         logoPath,
 
@@ -118,7 +118,7 @@ func (m *MetadataModule) initializeMetadata() {
 		"backgroundColor": "#F5F5F5",
 
 		// Application properties
-		"applicationId": "org.openteacher.OpenTeacher",
+		"applicationId": "eu.kiefte.Recuerdo",
 		"category":      "Education",
 		"keywords":      []string{"education", "learning", "vocabulary", "language", "study"},
 

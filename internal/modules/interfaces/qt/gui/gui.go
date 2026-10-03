@@ -75,7 +75,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 
 	// Create main window
 	mod.mainWindow = qt.NewQMainWindow(nil)
-	mod.mainWindow.SetWindowTitle("OpenTeacher 4.0")
+	mod.mainWindow.SetWindowTitle("Recuerdo")
 	mod.mainWindow.Resize(1000, 700)
 	mod.mainWindow.SetMinimumSize2(800, 600)
 
@@ -308,7 +308,7 @@ func (mod *GuiModule) createWelcomeWidget() *qt.QWidget {
 
 	// Main title
 	titleLabel := qt.NewQLabel(nil)
-	titleLabel.SetText("Welcome to OpenTeacher 4.0")
+	titleLabel.SetText("Welcome to Recuerdo")
 	titleFont := titleLabel.Font()
 	titleFont.SetPointSize(24)
 	titleFont.SetBold(true)

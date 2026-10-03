@@ -293,7 +293,7 @@ func main() {
 		log.Printf("Error during shutdown: %v", err)
 	}
 
-	fmt.Println("OpenTeacher shutdown complete")
+	fmt.Println("Recuerdo shutdown complete")
 }
 
 func registerAllModules(manager *core.Manager) error {

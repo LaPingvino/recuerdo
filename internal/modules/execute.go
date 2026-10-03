@@ -82,7 +82,7 @@ func (e *ExecuteModule) StartRunning(ctx context.Context) error {
 	}
 
 	// Main application loop
-	fmt.Println("OpenTeacher is now running...")
+	fmt.Println("Recuerdo is now running...")
 	fmt.Println("Press Ctrl+C to exit")
 
 	// Simple implementation: just wait for context cancellation
@@ -110,7 +110,7 @@ func (e *ExecuteModule) StartRunning(ctx context.Context) error {
 			return ctx.Err()
 
 		case <-ticker.C:
-			fmt.Printf("OpenTeacher heartbeat - profile: %s, active: %t\n", e.profile, e.running)
+			fmt.Printf("Recuerdo heartbeat - profile: %s, active: %t\n", e.profile, e.running)
 		}
 	}
 }

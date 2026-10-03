@@ -45,10 +45,12 @@ func (mod *QtAppModule) Enable(ctx context.Context) error {
 		mod.app = qt.NewQApplication(os.Args)
 
 		// Set application properties using static functions
-		qt.QCoreApplication_SetApplicationName("OpenTeacher")
+		qt.QCoreApplication_SetApplicationName("Recuerdo")
 		qt.QCoreApplication_SetApplicationVersion("4.0.0")
-		qt.QCoreApplication_SetOrganizationName("OpenTeacher")
-		qt.QCoreApplication_SetOrganizationDomain("openteacher.org")
+		qt.QCoreApplication_SetOrganizationName("Kiefte")
+		// lets Wayland docks match the window to eu.kiefte.Recuerdo.desktop
+		qt.QGuiApplication_SetDesktopFileName("eu.kiefte.Recuerdo")
+		qt.QCoreApplication_SetOrganizationDomain("kiefte.eu")
 
 		// Configure international input support
 		fmt.Println("Configuring international input and font support...")

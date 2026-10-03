@@ -338,7 +338,7 @@ func (s *SettingsModule) ensureSettingsDir() error {
 // setDefaultSettings initializes the settings with default values
 func (s *SettingsModule) setDefaultSettings() {
 	s.settings = map[string]interface{}{
-		"app.name":          "OpenTeacher",
+		"app.name":          "Recuerdo",
 		"app.version":       "4.0.0-alpha",
 		"app.profile":       "all",
 		"ui.language":       "en",
