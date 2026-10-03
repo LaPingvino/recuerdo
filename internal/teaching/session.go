@@ -5,6 +5,8 @@
 package teaching
 
 import (
+	"time"
+
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
@@ -50,6 +52,8 @@ type Options struct {
 	Shuffle func(n int, swap func(i, j int))
 	// Intn replaces the interval lesson's random choice (for tests).
 	Intn func(n int) int
+	// Now replaces the clock used to time answers (for tests).
+	Now func() time.Time
 }
 
 // Answer is the outcome of answering the current question.
@@ -70,6 +74,7 @@ type Session struct {
 	pending  *lessontypes.Result
 	right    int
 	answered int
+	asked    time.Time // when the current question was shown
 }
 
 // New prepares a session over list; call Start to ask the first question.
@@ -106,7 +111,10 @@ func New(list lesson.WordList, opts Options) *Session {
 	default:
 		s.lt = allonce.New(indexes)
 	}
-	s.lt.OnNewItem(func(i int) { s.current, s.hasItem = i, true })
+	if s.opts.Now == nil {
+		s.opts.Now = time.Now
+	}
+	s.lt.OnNewItem(func(i int) { s.current, s.hasItem, s.asked = i, true, s.opts.Now() })
 	s.lt.OnLessonDone(func() { s.done, s.hasItem = true, false })
 	return s
 }
@@ -134,7 +142,7 @@ func (s *Session) Answer(text string) Answer {
 		return Answer{}
 	}
 	right := checker.CorrectText(text, item.Answers, s.opts.CaseSensitive)
-	s.pending = &lessontypes.Result{ItemID: index, Right: right}
+	s.pending = &lessontypes.Result{ItemID: index, Right: right, GivenAnswer: text, Start: s.asked, End: s.opts.Now()}
 	return Answer{Right: right, Correct: composer.Compose(checker.StoredAnswers(item.Answers))}
 }
 
@@ -183,3 +191,7 @@ func (s *Session) Test() lessontypes.Test {
 	}
 	return lessontypes.Test{}
 }
+
+// List is the list being practised (questions and answers swapped when
+// practising the other way round); result ItemIDs index its items.
+func (s *Session) List() lesson.WordList { return s.list }

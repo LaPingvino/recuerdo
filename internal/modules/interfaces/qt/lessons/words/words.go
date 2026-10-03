@@ -6,6 +6,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/logging"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
 	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
@@ -78,6 +79,9 @@ func (w *WordsLessonWidget) setupUI() {
 	w.teachWidget.SetSessionCompletedCallback(func(session *TeachingSession) {
 		w.logger.Event("Teaching session completed - adding to results")
 		w.resultsWidget.AddSession(session)
+		// and show the results of this run, as OpenTeacher does
+		notation := w.resultsWidget.Notation()
+		results.Show(w.QWidget, session.Report, teaching.Grade(notation, session.Test), notation)
 		// Auto-switch to Results tab to show the results
 		w.tabWidget.SetCurrentIndex(2)
 	})
@@ -370,7 +374,9 @@ type TeachingResult struct {
 // TeachingSession represents a complete teaching session with all results
 type TeachingSession struct {
 	// Test is the run as the lesson type recorded it, for grading
-	Test           lessontypes.Test
+	Test lessontypes.Test
+	// Report is what the results dialog shows about the run
+	Report         teaching.Report
 	Results        []TeachingResult
 	TotalQuestions int
 	CorrectCount   int
@@ -789,6 +795,7 @@ func (w *TeachTabWidget) finishTeaching() {
 	if w.currentSession != nil {
 		if w.session != nil {
 			w.currentSession.Test = w.session.Test()
+			w.currentSession.Report = w.session.Report()
 			percentage = percentscalculator.Percents(w.currentSession.Test)
 			grade = teaching.Grade(notation, w.currentSession.Test)
 		}

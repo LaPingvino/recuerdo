@@ -10,6 +10,11 @@ import "time"
 type Result struct {
 	ItemID int
 	Right  bool
+	// GivenAnswer is what the user answered (optional).
+	GivenAnswer string
+	// Start and End are when the question was shown and answered
+	// (optional; OpenTeacher's "active" period, for thinking time).
+	Start, End time.Time
 }
 
 // Pause is a period the user paused the lesson.

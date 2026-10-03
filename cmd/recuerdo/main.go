@@ -57,6 +57,7 @@ import (
 	wordsonly "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/wordsOnly"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profiledescriptions"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
+	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	"github.com/mappu/miqt/qt"
 	"github.com/mappu/miqt/qt/mainthread"
 
@@ -1488,6 +1489,11 @@ func registerAllModules(manager *core.Manager) error {
 	// if err := manager.Register(modulestestfiletoimportModule); err != nil {
 	// 	return fmt.Errorf("failed to register modulestestFiletoimport module: %w", err)
 	// }
+
+	// Register results dialog module
+	if err := manager.Register(resultsdialog.NewResultsDialogModule()); err != nil {
+		return fmt.Errorf("failed to register results dialog module: %w", err)
+	}
 
 	// Register notecalculatorchooser module
 	notecalculatorchooserModule := notecalculatorchooser.NewNoteCalculatorChooserModule()
