@@ -184,10 +184,10 @@ import (
 	// Removed duplicate auto-converted modules - using manually implemented versions instead
 )
 
-const (
-	appName    = "Recuerdo"
-	appVersion = "4.0.0-alpha"
-)
+const appName = "Recuerdo"
+
+// appVersion is set by release builds with -ldflags "-X main.appVersion=...".
+var appVersion = "4.0.0-alpha"
 
 // Command-line arguments
 var (

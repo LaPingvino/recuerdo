@@ -1,0 +1,133 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version for the packages (e.g. 0.1.0); artifacts only, no release"
+        required: false
+        default: "0.0.0-dev"
+
+permissions:
+  contents: write
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+    steps:
+      - id: v
+        shell: bash
+        run: |
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then v="${GITHUB_REF_NAME#v}"; else v="${{ github.event.inputs.version }}"; fi
+          echo "version=${v:-0.0.0-dev}" >> "$GITHUB_OUTPUT"
+
+  linux:
+    needs: version
+    # build on the oldest supported Ubuntu so the AppImage runs on older distributions
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qtbase5-dev qtwayland5 build-essential pkg-config libfuse2
+      - name: Package
+        env:
+          CGO_ENABLED: "1"
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          go build -trimpath -ldflags="-s -w -X main.appVersion=${VERSION}" -o recuerdo ./cmd/recuerdo
+          packaging/linux/build-appimage.sh ./recuerdo "$VERSION" dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux
+          path: dist/*
+
+  windows:
+    needs: version
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          install: >-
+            zip
+            mingw-w64-ucrt-x86_64-go
+            mingw-w64-ucrt-x86_64-gcc
+            mingw-w64-ucrt-x86_64-pkgconf
+            mingw-w64-ucrt-x86_64-qt5-base
+            mingw-w64-ucrt-x86_64-qt5-tools
+      - name: Build and collect DLLs
+        env:
+          CGO_ENABLED: "1"
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          go build -trimpath -ldflags="-s -w -H windowsgui -X main.appVersion=${VERSION}" -o recuerdo.exe ./cmd/recuerdo
+          packaging/windows/deploy.sh recuerdo.exe build/windows
+          mkdir -p dist
+          (cd build && mv windows Recuerdo && zip -qr "../dist/Recuerdo-${VERSION}-windows-x64-portable.zip" Recuerdo && mv Recuerdo windows)
+      - name: Installer (Inno Setup)
+        shell: pwsh
+        run: |
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe" "/DAppVersion=${{ needs.version.outputs.version }}" "/DSourceDir=$env:GITHUB_WORKSPACE\build\windows" packaging\windows\recuerdo.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: dist/*
+
+  macos:
+    needs: version
+    # Apple Silicon only: Homebrew's Qt on these runners is arm64
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Qt 5
+        run: |
+          brew install qt@5 pkg-config
+          echo "PKG_CONFIG_PATH=$(brew --prefix qt@5)/lib/pkgconfig" >> "$GITHUB_ENV"
+      - name: Package
+        env:
+          CGO_ENABLED: "1"
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          go build -trimpath -ldflags="-s -w -X main.appVersion=${VERSION}" -o recuerdo ./cmd/recuerdo
+          mkdir -p build dist
+          packaging/macos/build-app.sh ./recuerdo "$VERSION" build
+          ditto -c -k --keepParent build/Recuerdo.app "dist/Recuerdo-${VERSION}-macos-arm64.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos
+          path: dist/*
+
+  release:
+    if: github.ref_type == 'tag'
+    needs: [version, linux, windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls -l dist
+          gh release create "${GITHUB_REF_NAME}" dist/* --repo "${GITHUB_REPOSITORY}" --title "Recuerdo ${GITHUB_REF_NAME}" --generate-notes
