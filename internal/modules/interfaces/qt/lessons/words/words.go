@@ -418,6 +418,10 @@ type TeachTabWidget struct {
 	correctButton  *qt.QPushButton
 	// In mind
 	viewButton, rightButton, wrongButton *qt.QPushButton
+	// Hangman
+	hangman      *teaching.HangmanWord
+	hangmanLabel *qt.QLabel
+	hangmanTimer *qt.QTimer
 	// notation returns the grade notation to show; set by the lesson widget
 	notation func() string
 
@@ -526,6 +530,14 @@ func (w *TeachTabWidget) setupUI() {
 	w.repeatTimer = qt.NewQTimer()
 	w.repeatTimer.SetSingleShot(true)
 	w.repeatTimer.OnTimeout(w.repeatShown)
+
+	w.hangmanLabel = qt.NewQLabel(w.QWidget)
+	w.hangmanLabel.SetAlignment(qt.AlignCenter)
+	w.hangmanLabel.SetVisible(false)
+	questionLayout.AddWidget(w.hangmanLabel.QWidget)
+	w.hangmanTimer = qt.NewQTimer()
+	w.hangmanTimer.SetSingleShot(true)
+	w.hangmanTimer.OnTimeout(w.hangmanLost)
 
 	// Answer input with Unicode picker
 	answerLayout := qt.NewQHBoxLayout2()
@@ -739,6 +751,13 @@ func (w *TeachTabWidget) startTeaching() {
 	w.resultLabel.SetVisible(false)
 
 	w.typing = nil
+	w.hangman = nil
+	if w.modeCombo.CurrentText() == teaching.Hangman {
+		w.setHangmanLayout(true)
+		w.session.Start()
+		w.hangmanNext()
+		return
+	}
 	if w.modeCombo.CurrentText() == teaching.InMind {
 		// no typing: think, look, and say whether you knew it
 		w.setInMindLayout(true)
@@ -873,6 +892,10 @@ func (w *TeachTabWidget) repeatShown() {
 
 // submitAnswer checks the typed answer (Check button or Enter)
 func (w *TeachTabWidget) submitAnswer() {
+	if w.hangman != nil {
+		w.hangmanGuess(w.answerEdit.Text())
+		return
+	}
 	if w.typing == nil {
 		return
 	}
@@ -937,6 +960,8 @@ func (w *TeachTabWidget) finishTeaching() {
 	w.repeatTimer.Stop()
 	w.hintLabel.SetVisible(false)
 	w.setInMindLayout(false)
+	w.hangmanTimer.Stop()
+	w.setHangmanLayout(false)
 	w.skipButton.SetEnabled(false)
 	if w.session != nil {
 		w.correctAnswers, w.totalQuestions = w.session.Score()
@@ -1005,7 +1030,10 @@ func (w *TeachTabWidget) finishTeaching() {
 // resetTeachingState resets the teaching state
 func (w *TeachTabWidget) resetTeachingState() {
 	w.repeatTimer.Stop()
+	w.hangmanTimer.Stop()
+	w.hangman = nil
 	w.setInMindLayout(false)
+	w.setHangmanLayout(false)
 	w.hintLabel.SetVisible(false)
 	w.isTeaching = false
 	w.session = nil

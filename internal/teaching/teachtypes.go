@@ -22,7 +22,7 @@ const (
 )
 
 // TeachTypes lists the practice modes, default first.
-var TeachTypes = []string{TeachTyping, ShuffleAnswer, RepeatAnswer, InMind} // Hangman joins once the Teach tab plays it
+var TeachTypes = []string{TeachTyping, ShuffleAnswer, RepeatAnswer, InMind, Hangman}
 
 // RepeatFadeDuration is how long Repeat answer shows the answer
 // (OpenTeacher's default).

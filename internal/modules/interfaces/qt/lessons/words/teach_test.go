@@ -21,10 +21,17 @@ func TestMain(m *testing.M) {
 	teachErr = checkTeachTab()
 	modesErr = checkModes()
 	inMindErr = checkInMind()
+	hangmanErr = checkHangman()
 	os.Exit(m.Run())
 }
 
-var teachErr, modesErr, inMindErr error
+var teachErr, modesErr, inMindErr, hangmanErr error
+
+func TestTeachTabHangman(t *testing.T) {
+	if hangmanErr != nil {
+		t.Fatal(hangmanErr)
+	}
+}
 
 func TestTeachTabInMind(t *testing.T) {
 	if inMindErr != nil {
@@ -172,6 +179,65 @@ func checkInMind() error {
 	}
 	if !w.answerEdit.IsVisibleTo(w.QWidget) || visible(w.viewButton) {
 		return fmt.Errorf("typing layout not restored after In mind")
+	}
+	return nil
+}
+
+func checkHangman() error {
+	// the head's outline: left edge of the circle at (178, 40)-(202, 64)
+	headPixel := func(pm *qt.QPixmap) uint { return pm.ToImage().Pixel(178, 52) & 0xffffff }
+	if headPixel(drawHangman(0)) != 0xffffff || headPixel(drawHangman(1)) == 0xffffff {
+		return fmt.Errorf("drawing: head pixel %x without mistakes, %x after one", headPixel(drawHangman(0)), headPixel(drawHangman(1)))
+	}
+
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"kat"}, Answers: []string{"cat"}},
+		{ID: 1, Questions: []string{"hond"}, Answers: []string{"dog"}},
+	}}}}
+	w := NewTeachTabWidget(l, nil)
+	var finished *TeachingSession
+	w.SetSessionCompletedCallback(func(s *TeachingSession) { finished = s })
+	guess := func(g string) { w.answerEdit.SetText(g); w.submitButton.Click() }
+
+	w.modeCombo.SetCurrentText("Hangman")
+	w.startButton.Click()
+	if w.hintLabel.Text() != "---" || !w.hangmanLabel.IsVisibleTo(w.QWidget) || w.skipButton.IsVisibleTo(w.QWidget) {
+		return fmt.Errorf("hangman start: %q", w.hintLabel.Text())
+	}
+	guess("a")
+	if w.hintLabel.Text() != "-a-" {
+		return fmt.Errorf("after a: %q", w.hintLabel.Text())
+	}
+	guess("a")
+	if !strings.Contains(w.resultLabel.Text(), "already tried") {
+		return fmt.Errorf("repeat guess: %q", w.resultLabel.Text())
+	}
+	guess("c")
+	guess("t") // won: next word
+	if !strings.Contains(w.questionLabel.Text(), "hond") || w.hintLabel.Text() != "---" {
+		return fmt.Errorf("after winning: %q %q", w.questionLabel.Text(), w.hintLabel.Text())
+	}
+
+	for _, g := range []string{"x", "y", "z", "q", "w"} {
+		guess(g)
+	}
+	if !strings.Contains(w.resultLabel.Text(), "x  |  y") {
+		return fmt.Errorf("mistakes: %q", w.resultLabel.Text())
+	}
+	guess("v") // sixth mistake
+	if !strings.Contains(w.resultLabel.Text(), "the answer was: dog") || w.answerEdit.IsEnabled() {
+		return fmt.Errorf("lost: %q", w.resultLabel.Text())
+	}
+	w.hangmanLost() // what the timer does
+
+	if finished == nil || finished.CorrectCount != 1 || finished.TotalQuestions != 2 {
+		return fmt.Errorf("finished %+v", finished)
+	}
+	if r := finished.Results[1]; r.IsCorrect || r.UserAnswer != "hanged man" {
+		return fmt.Errorf("lost round result %+v", r)
+	}
+	if w.hangmanLabel.IsVisibleTo(w.QWidget) || !w.skipButton.IsVisibleTo(w.QWidget) {
+		return fmt.Errorf("layout not restored after hangman")
 	}
 	return nil
 }
