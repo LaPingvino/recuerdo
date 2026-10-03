@@ -2,8 +2,6 @@ package modules
 
 import (
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profiledescriptions"
-	"github.com/LaPingvino/recuerdo/internal/modules/profilerunners/backgroundimage"
 	"github.com/LaPingvino/recuerdo/internal/modules/system"
 )
 
@@ -23,12 +21,6 @@ func NewModuleRegistry() *ModuleRegistry {
 	// registry.RegisterModule("execute", func() core.Module {
 	//	return NewExecuteModule()
 	// })
-
-	// Register business card related modules
-	// Temporarily disable business card generator to avoid UI dependency issues
-	// registry.RegisterModule("businessCardGenerator", businesscard.Init)
-	registry.RegisterModule("backgroundImageGenerator", backgroundimage.Init)
-	registry.RegisterModule("profileDescription-generateBusinessCard", profiledescriptions.Init)
 
 	// Register system modules
 	registry.RegisterModule("systeminfo", system.InitSystemInfoModule)

@@ -77,7 +77,7 @@ def code_lines(src):
     return n
 
 
-RANK = ["missing", "scaffold", "partial", "untested", "working"]  # "central": see central_format
+RANK = ["missing", "scaffold", "partial", "untested", "working"]  # plus "central", "dropped", "test suite"  # "central": see central_format
 
 
 def go_candidates(rel):
@@ -166,6 +166,30 @@ def central_format(rel):
     return ""
 
 
+# Areas removed from the Go port on purpose (web version, packaging and
+# generator tooling, classroom test mode, web services): see
+# docs/OPENTEACHER_INVENTORY.md.
+DROPPED = (
+    "javaScript", "interfaces/qt/testMode", "interfaces/qt/webServices",
+    "interfaces/webServicesServer", "logic/webDatabase", "logic/moduleGraphBuilder",
+    "profileRunners/packagers", "profileRunners/backgroundImageGenerator",
+    "profileRunners/businessCardGenerator", "profileRunners/codeComplexity",
+    "profileRunners/getTranslationAuthors", "profileRunners/languageCodeGuesserTableGenerator",
+    "profileRunners/moduleGraph", "profileRunners/rosettaUpdater", "profileRunners/translationUpdater",
+    "profileRunners/ircBot", "profileRunners/webServicesServerRunner", "profileRunners/gtkGui",
+    "data/profileDescriptions/codeComplexity", "data/profileDescriptions/codeDocumentation",
+    "data/profileDescriptions/generate", "data/profileDescriptions/getTranslationAuthors",
+    "data/profileDescriptions/ircBot", "data/profileDescriptions/moduleGraph",
+    "data/profileDescriptions/package", "data/profileDescriptions/update",
+    "data/profileDescriptions/webServicesServer",
+)
+
+
+def dropped(rel):
+    r = str(rel)
+    return any(r.startswith(d) or "/" + d in "/" + r for d in DROPPED)
+
+
 def rows():
     for d in legacy_modules():
         rel = d.relative_to(LEGACY)
@@ -174,6 +198,8 @@ def rows():
         central = central_format(rel)
         if central and st["status"] in ("missing", "scaffold"):
             st["status"] = "central"
+        if dropped(rel):
+            st["status"] = "dropped"
         name = rel.parts[-1]
         if name.endswith("Test") or name in ("test", "testRunner", "testserver", "testServer", "testSuite") \
                 or "testserver" in rel.parts:

@@ -27,35 +27,13 @@ import (
 	openteacherauthors "github.com/LaPingvino/recuerdo/internal/modules/data/openteacherAuthors"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/all"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/cli"
-	codecomplexity "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/codeComplexity"
-	codedocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/codeDocumentation"
-	generatebusinesscard "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/generateBusinessCard"
-	generatelanguagecodeguessertable "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/generateLanguageCodeGuesserTable"
-	generatemobile "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/generateMobile"
-	generateweb "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/generateWeb"
-	generatewebsite "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/generateWebsite"
-	gettranslationauthors "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/getTranslationAuthors"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/help"
-	ircbot "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/ircBot"
-	modulegraph "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/moduleGraph"
-	packagearch "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageArch"
-	packagedebian "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageDebian"
-	packagemac "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageMac"
-	packagerpm "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageRpm"
-	packagesource "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageSource"
-	packagesourcewithsetup "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageSourceWithSetup"
-	packagewindowsmsi "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageWindowsMsi"
-	packagewindowsportable "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/packageWindowsPortable"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/selfstudy"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/shell"
 	studentathome "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/studentAtHome"
 	studentatschool "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/studentAtSchool"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/teacher"
-	updaterosetta "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/updateRosetta"
-	updatetranslations "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/updateTranslations"
-	profilewebservicesserver "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/webServicesServer"
 	wordsonly "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/wordsOnly"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profiledescriptions"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	"github.com/mappu/miqt/qt"
@@ -105,9 +83,6 @@ import (
 	repeatanswer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/repeatAnswer"
 	shuffleanswer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/shuffleAnswer"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/typing"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/testMode/menu"
-	studentsview "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/testMode/studentsView"
-	teacherpanel "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/testMode/teacherPanel"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/theme"
 	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/typingTutor/keyboard"
@@ -117,28 +92,15 @@ import (
 	logicevent "github.com/LaPingvino/recuerdo/internal/modules/logic/event"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/execute"
 	friendlytranslationnames "github.com/LaPingvino/recuerdo/internal/modules/logic/friendlyTranslationNames"
-	javascriptwords "github.com/LaPingvino/recuerdo/internal/modules/logic/htmlGenerator/javaScriptWords"
 
 	htmltopo "github.com/LaPingvino/recuerdo/internal/modules/logic/htmlGenerator/topo"
 	htmlwords "github.com/LaPingvino/recuerdo/internal/modules/logic/htmlGenerator/words"
 
 	buttonregister "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/buttonRegister"
 	inputtypinglogic "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/inputTypingLogic"
-	javascriptinputtypinglogic "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/javaScriptInputTypingLogic"
 	lessontracker "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/lessonTracker"
 	typingtutormodel "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/typingTutorModel"
 	foreignknown "github.com/LaPingvino/recuerdo/internal/modules/logic/itemModifiers/foreignKnown"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/bisect"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/evaluator"
-	jsevent "github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/event"
-	lessontype "github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/lessonType"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/libraries/jquery"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/libraries/tmpl"
-	jsmap "github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/map"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/sum"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/translator"
-	weblogicgenerator "github.com/LaPingvino/recuerdo/internal/modules/logic/javaScript/webLogicGenerator"
-	javascriptpercentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/javaScriptPercentsCalculator"
 	languagecodeguesser "github.com/LaPingvino/recuerdo/internal/modules/logic/languageCodeGuesser"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
@@ -403,11 +365,6 @@ func registerAllModules(manager *core.Manager) error {
 	// if err := manager.Register(backgroundImageModule); err != nil {
 	// 	return fmt.Errorf("failed to register background image module: %w", err)
 	// }
-
-	profileDescModule := profiledescriptions.Init()
-	if err := manager.Register(profileDescModule); err != nil {
-		return fmt.Errorf("failed to register profile description module: %w", err)
-	}
 
 	// qtApp module is now registered above with GUI module
 
@@ -774,29 +731,11 @@ func registerAllModules(manager *core.Manager) error {
 	//	return fmt.Errorf("failed to register words module: %w", err)
 	// }
 
-	// Register menu module
-	menuModule := menu.NewTestMenuModule()
-	if err := manager.Register(menuModule); err != nil {
-		return fmt.Errorf("failed to register menu module: %w", err)
-	}
-
-	// Register studentsview module
-	studentsviewModule := studentsview.NewTestModeStudentsViewModule()
-	if err := manager.Register(studentsviewModule); err != nil {
-		return fmt.Errorf("failed to register studentsview module: %w", err)
-	}
-
 	// Register teacher module - DISABLED for now (module doesn't exist)
 	// teacherModule := teacher.NewTestModeTeacherModule()
 	// if err := manager.Register(teacherModule); err != nil {
 	// 	return fmt.Errorf("failed to register teacher module: %w", err)
 	// }
-
-	// Register teacherpanel module
-	teacherpanelModule := teacherpanel.NewTestModeTeacherPanelModule()
-	if err := manager.Register(teacherpanelModule); err != nil {
-		return fmt.Errorf("failed to register teacherpanel module: %w", err)
-	}
 
 	// Register theme module
 	themeModule := theme.NewThemeModule()
@@ -912,118 +851,10 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register cli module: %w", err)
 	}
 
-	// Register codecomplexity module
-	codecomplexityModule := codecomplexity.NewProfileDescriptionModule()
-	if err := manager.Register(codecomplexityModule); err != nil {
-		return fmt.Errorf("failed to register codecomplexity module: %w", err)
-	}
-
-	// Register codedocumentation module
-	codedocumentationModule := codedocumentation.NewProfileDescriptionModule()
-	if err := manager.Register(codedocumentationModule); err != nil {
-		return fmt.Errorf("failed to register codedocumentation module: %w", err)
-	}
-
-	// Register generatebusinesscard module
-	generatebusinesscardModule := generatebusinesscard.NewProfileDescriptionModule()
-	if err := manager.Register(generatebusinesscardModule); err != nil {
-		return fmt.Errorf("failed to register generatebusinesscard module: %w", err)
-	}
-
-	// Register generatelanguagecodeguessertable module
-	generatelanguagecodeguessertableModule := generatelanguagecodeguessertable.NewProfileDescriptionModule()
-	if err := manager.Register(generatelanguagecodeguessertableModule); err != nil {
-		return fmt.Errorf("failed to register generatelanguagecodeguessertable module: %w", err)
-	}
-
-	// Register generatemobile module
-	generatemobileModule := generatemobile.NewProfileDescriptionModule()
-	if err := manager.Register(generatemobileModule); err != nil {
-		return fmt.Errorf("failed to register generatemobile module: %w", err)
-	}
-
-	// Register generateweb module
-	generatewebModule := generateweb.NewProfileDescriptionModule()
-	if err := manager.Register(generatewebModule); err != nil {
-		return fmt.Errorf("failed to register generateweb module: %w", err)
-	}
-
-	// Register generatewebsite module
-	generatewebsiteModule := generatewebsite.NewProfileDescriptionModule()
-	if err := manager.Register(generatewebsiteModule); err != nil {
-		return fmt.Errorf("failed to register generatewebsite module: %w", err)
-	}
-
-	// Register gettranslationauthors module
-	gettranslationauthorsModule := gettranslationauthors.NewProfileDescriptionModule()
-	if err := manager.Register(gettranslationauthorsModule); err != nil {
-		return fmt.Errorf("failed to register gettranslationauthors module: %w", err)
-	}
-
 	// Register help module
 	helpModule := help.NewProfileDescriptionModule()
 	if err := manager.Register(helpModule); err != nil {
 		return fmt.Errorf("failed to register help module: %w", err)
-	}
-
-	// Register ircbot module
-	ircbotModule := ircbot.NewProfileDescriptionModule()
-	if err := manager.Register(ircbotModule); err != nil {
-		return fmt.Errorf("failed to register ircbot module: %w", err)
-	}
-
-	// Register modulegraph module
-	modulegraphModule := modulegraph.NewProfileDescriptionModule()
-	if err := manager.Register(modulegraphModule); err != nil {
-		return fmt.Errorf("failed to register modulegraph module: %w", err)
-	}
-
-	// Register packagearch module
-	packagearchModule := packagearch.NewProfileDescriptionModule()
-	if err := manager.Register(packagearchModule); err != nil {
-		return fmt.Errorf("failed to register packagearch module: %w", err)
-	}
-
-	// Register packagedebian module
-	packagedebianModule := packagedebian.NewProfileDescriptionModule()
-	if err := manager.Register(packagedebianModule); err != nil {
-		return fmt.Errorf("failed to register packagedebian module: %w", err)
-	}
-
-	// Register packagemac module
-	packagemacModule := packagemac.NewProfileDescriptionModule()
-	if err := manager.Register(packagemacModule); err != nil {
-		return fmt.Errorf("failed to register packagemac module: %w", err)
-	}
-
-	// Register packagerpm module
-	packagerpmModule := packagerpm.NewProfileDescriptionModule()
-	if err := manager.Register(packagerpmModule); err != nil {
-		return fmt.Errorf("failed to register packagerpm module: %w", err)
-	}
-
-	// Register packagesource module
-	packagesourceModule := packagesource.NewProfileDescriptionModule()
-	if err := manager.Register(packagesourceModule); err != nil {
-		return fmt.Errorf("failed to register packagesource module: %w", err)
-	}
-
-	// Register packagesourcewithsetup module
-	packagesourcewithsetupModule := packagesourcewithsetup.NewProfileDescriptionModule()
-	if err := manager.Register(packagesourcewithsetupModule); err != nil {
-		return fmt.Errorf("failed to register packagesourcewithsetup module: %w", err)
-	}
-
-	// Register packagewindowsmsi module
-	packagewindowsmsiModule := packagewindowsmsi.NewProfileDescriptionModule()
-	if err := manager.Register(packagewindowsmsiModule); err != nil {
-		return fmt.Errorf("failed to register packagewindowsmsi module: %w", err)
-	}
-
-	// Register packagewindowsportable module
-	packagewindowsportableModule := packagewindowsportable.NewProfileDescriptionModule()
-	if err := manager.Register(packagewindowsportableModule); err != nil {
-		return fmt.Errorf("failed to register packagewindowsportable module: %w", err)
 	}
 
 	// Register selfstudy module
@@ -1054,24 +885,6 @@ func registerAllModules(manager *core.Manager) error {
 	teacherModule := teacher.NewProfileDescriptionModule()
 	if err := manager.Register(teacherModule); err != nil {
 		return fmt.Errorf("failed to register teacher module: %w", err)
-	}
-
-	// Register updaterosetta module
-	updaterosettaModule := updaterosetta.NewProfileDescriptionModule()
-	if err := manager.Register(updaterosettaModule); err != nil {
-		return fmt.Errorf("failed to register updaterosetta module: %w", err)
-	}
-
-	// Register updatetranslations module
-	updatetranslationsModule := updatetranslations.NewProfileDescriptionModule()
-	if err := manager.Register(updatetranslationsModule); err != nil {
-		return fmt.Errorf("failed to register updatetranslations module: %w", err)
-	}
-
-	// Register webservicesserver module
-	profilewebservicesserverModule := profilewebservicesserver.NewProfileDescriptionModule()
-	if err := manager.Register(profilewebservicesserverModule); err != nil {
-		return fmt.Errorf("failed to register webservicesserver module: %w", err)
 	}
 
 	// Register wordsonly module
@@ -1112,12 +925,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register friendlytranslationnames module: %w", err)
 	}
 
-	// Register javascriptwords module
-	javascriptwordsModule := javascriptwords.NewWordsHtmlGeneratorModule()
-	if err := manager.Register(javascriptwordsModule); err != nil {
-		return fmt.Errorf("failed to register javascriptwords module: %w", err)
-	}
-
 	// Register media module - DISABLED (duplicate module name conflict)
 	// htmlgenmediaModule := testtypesmedia.NewMediaTestTypeModule()
 	// if err := manager.Register(htmlgenmediaModule); err != nil {
@@ -1140,72 +947,6 @@ func registerAllModules(manager *core.Manager) error {
 	foreignknownModule := foreignknown.NewForeignKnownModule()
 	if err := manager.Register(foreignknownModule); err != nil {
 		return fmt.Errorf("failed to register foreignknown module: %w", err)
-	}
-
-	// Register bisect module
-	bisectModule := bisect.NewJSBisectModule()
-	if err := manager.Register(bisectModule); err != nil {
-		return fmt.Errorf("failed to register bisect module: %w", err)
-	}
-
-	// Register evaluator module
-	evaluatorModule := evaluator.NewJSEvaluatorModule()
-	if err := manager.Register(evaluatorModule); err != nil {
-		return fmt.Errorf("failed to register evaluator module: %w", err)
-	}
-
-	// Register event module
-	jsEventModule := jsevent.NewJavascriptEventModule()
-	if err := manager.Register(jsEventModule); err != nil {
-		return fmt.Errorf("failed to register event module: %w", err)
-	}
-
-	// Register lessontype module
-	lessontypeModule := lessontype.NewJavascriptLessonTypeModule()
-	if err := manager.Register(lessontypeModule); err != nil {
-		return fmt.Errorf("failed to register lessontype module: %w", err)
-	}
-
-	// Register jquery module
-	jqueryModule := jquery.NewJSLibModule()
-	if err := manager.Register(jqueryModule); err != nil {
-		return fmt.Errorf("failed to register jquery module: %w", err)
-	}
-
-	// Register tmpl module
-	tmplModule := tmpl.NewJSLibModule()
-	if err := manager.Register(tmplModule); err != nil {
-		return fmt.Errorf("failed to register tmpl module: %w", err)
-	}
-
-	// Register map module
-	mapModule := jsmap.NewJSMapModule()
-	if err := manager.Register(mapModule); err != nil {
-		return fmt.Errorf("failed to register map module: %w", err)
-	}
-
-	// Register sum module
-	sumModule := sum.NewJSSumModule()
-	if err := manager.Register(sumModule); err != nil {
-		return fmt.Errorf("failed to register sum module: %w", err)
-	}
-
-	// Register translator module
-	translatorModule := translator.NewJSTranslatorModule()
-	if err := manager.Register(translatorModule); err != nil {
-		return fmt.Errorf("failed to register translator module: %w", err)
-	}
-
-	// Register weblogicgenerator module
-	weblogicgeneratorModule := weblogicgenerator.NewWebLogicGeneratorModule()
-	if err := manager.Register(weblogicgeneratorModule); err != nil {
-		return fmt.Errorf("failed to register weblogicgenerator module: %w", err)
-	}
-
-	// Register javascriptpercentscalculator module
-	javascriptpercentscalculatorModule := javascriptpercentscalculator.NewPercentsCalculatorModule()
-	if err := manager.Register(javascriptpercentscalculatorModule); err != nil {
-		return fmt.Errorf("failed to register javascriptpercentscalculator module: %w", err)
 	}
 
 	// Register languagecodeguesser module
@@ -1775,12 +1516,6 @@ func registerAllModules(manager *core.Manager) error {
 	inputtypinglogicModule := inputtypinglogic.NewInputTypingLogicModule()
 	if err := manager.Register(inputtypinglogicModule); err != nil {
 		return fmt.Errorf("failed to register inputtypinglogic module: %w", err)
-	}
-
-	// Register javascriptinputtypinglogic module
-	javascriptinputtypinglogicModule := javascriptinputtypinglogic.NewJSInputTypingLogicModule()
-	if err := manager.Register(javascriptinputtypinglogicModule); err != nil {
-		return fmt.Errorf("failed to register javascriptinputtypinglogic module: %w", err)
 	}
 
 	// Register lessontracker module

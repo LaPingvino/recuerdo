@@ -44,6 +44,10 @@ files; most of those files are skeletons):
   `FileSaver.SaveFile` in `internal/lesson` rather than by a module of its own
 - **scaffold**: generated skeleton; methods are `// TODO: Port Python method logic`
 - **missing**: no Go code
+- **dropped**: removed from the Go port on purpose (October 2026): the
+  JavaScript/web version, packaging and generator tooling, the classroom
+  test mode and web services; Go's and the distributions' own tooling
+  replace the packagers
 - **test suite**: one of OpenTeacher's own test modules (their Go
   counterpart is `_test.go` files, not a port)
 
@@ -51,14 +55,14 @@ Where a hand-written implementation exists outside the module's directory
 (`internal/modules/settings.go`, `event.go`, `execute.go`), the script
 uses it.
 
-| Area | working | untested | partial | central | scaffold | missing | test suite | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| data |  |  |  |  | 43 |  | 6 | 49 |
-| interfaces | 1 | 3 | 7 |  | 66 | 3 | 14 | 94 |
-| logic | 2 | 3 |  | 29 | 107 |  | 39 | 180 |
-| misc |  |  |  |  | 1 |  | 3 | 4 |
-| profileRunners |  |  |  |  | 22 |  | 5 | 27 |
-| **all** | **3** | **6** | **7** | **29** | **239** | **3** | **67** | **354** |
+| Area | working | untested | partial | central | scaffold | missing | dropped | test suite | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| data |  |  |  |  | 22 |  | 21 | 6 | 49 |
+| interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
+| logic | 7 | 16 |  | 29 | 63 |  | 26 | 39 | 180 |
+| misc |  |  |  |  | 1 |  |  | 3 | 4 |
+| profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
+| **all** | **9** | **19** | **7** | **29** | **144** | **2** | **77** | **67** | **354** |
 
 Remarks:
 
@@ -174,25 +178,25 @@ reference until they are updated or removed.
 | `data/openteacherAuthors` | openteacherAuthors | 151 | 38 | 4 | 0 | scaffold |
 | `data/profileDescriptions/all` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
 | `data/profileDescriptions/cli` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/generateLanguageCodeGuesserTable` | profileDescription | 23 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/generateMobile` | profileDescription | 24 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/generateWeb` | profileDescription | 24 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
+| `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/generateLanguageCodeGuesserTable` | profileDescription | 23 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/generateMobile` | profileDescription | 24 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/generateWeb` | profileDescription | 24 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/help` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
-| `data/profileDescriptions/ircBot` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageArch` | profileDescription | 22 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageDebian` | profileDescription | 22 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageMac` | profileDescription | 22 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageRpm` | profileDescription | 22 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageSource` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageSourceWithSetup` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageWindowsMsi` | profileDescription | 22 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/packageWindowsPortable` | profileDescription | 22 | 36 | 3 | 0 | scaffold |
+| `data/profileDescriptions/ircBot` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageArch` | profileDescription | 22 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageDebian` | profileDescription | 22 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageMac` | profileDescription | 22 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageRpm` | profileDescription | 22 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageSource` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageSourceWithSetup` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageWindowsMsi` | profileDescription | 22 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/packageWindowsPortable` | profileDescription | 22 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/selfstudy` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
 | `data/profileDescriptions/shell` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
 | `data/profileDescriptions/studentAtHome` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
@@ -201,9 +205,9 @@ reference until they are updated or removed.
 | `data/profileDescriptions/test` | test | 24 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testServer` | profileDescription | 41 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testSuite` | profileDescription | 19 | 0 | 0 | 0 | test suite |
-| `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
+| `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
 | `data/userDocumentation` | userDocumentation | 57 | 40 | 5 | 0 | scaffold |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
@@ -215,7 +219,7 @@ reference until they are updated or removed.
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/file` | fileDialogs | 91 | 137 | 0 | 1 | working |
 | `interfaces/qt/dialogs/print` | printDialog | 31 | 185 | 12 | 0 | scaffold |
-| `interfaces/qt/dialogs/results` | resultsDialog | 51 | 0 | 0 | 0 | missing |
+| `interfaces/qt/dialogs/results` | resultsDialog | 51 | 86 | 0 | 1 | working |
 | `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 210 | 2 | 0 | partial |
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/enterers/media` | mediaEnterer | 305 | 40 | 5 | 0 | scaffold |
@@ -232,7 +236,7 @@ reference until they are updated or removed.
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 1316 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 1403 | 10 | 0 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 1805 | 10 | 1 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -279,14 +283,14 @@ reference until they are updated or removed.
 | `interfaces/qt/teachers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/teachers/words` | wordsTeacher | 387 | 48 | 9 | 0 | scaffold |
 | `interfaces/qt/teachers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/testMode/connection` | testModeConnection | 216 | 37 | 3 | 0 | scaffold |
-| `interfaces/qt/testMode/menu` | testMenu | 51 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/testMode/studentsView` | testModeStudentsView | 74 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/testMode/teacher` | wordsTestTeacher | 102 | 40 | 5 | 0 | scaffold |
-| `interfaces/qt/testMode/teacherPanel` | testModeTeacherPanel | 496 | 44 | 7 | 0 | scaffold |
-| `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 54 | 17 | 0 | scaffold |
-| `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 50 | 15 | 0 | scaffold |
-| `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 37 | 3 | 0 | scaffold |
+| `interfaces/qt/testMode/connection` | testModeConnection | 216 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/menu` | testMenu | 51 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/studentsView` | testModeStudentsView | 74 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/teacher` | wordsTestTeacher | 102 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/teacherPanel` | testModeTeacherPanel | 496 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/testViewer` | testViewer | 175 | 62 | 20 | 0 | scaffold |
 | `interfaces/qt/testViewerTest` | test | 73 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/testsViewer` | testsViewer | 275 | 100 | 35 | 0 | scaffold |
@@ -294,13 +298,13 @@ reference until they are updated or removed.
 | `interfaces/qt/topoMaps` | topoMaps | 231 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 38 | 4 | 0 | scaffold |
 | `interfaces/qt/typingTutor/main` | typingTutor | 358 | 40 | 5 | 0 | scaffold |
-| `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 37 | 3 | 0 | scaffold |
-| `interfaces/qt/webServices/quizletApi` | quizletApi | 236 | 37 | 3 | 0 | scaffold |
-| `interfaces/qt/webServices/studyStackApi` | studyStackApi | 222 | 37 | 3 | 0 | scaffold |
+| `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/webServices/quizletApi` | quizletApi | 236 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/webServices/studyStackApi` | studyStackApi | 222 | 0 | 0 | 0 | dropped |
 | `interfaces/textToSpeech/impl` | textToSpeech | 122 | 40 | 5 | 0 | scaffold |
 | `interfaces/textToSpeech/providers/topo` | ttsProvider | 70 | 40 | 5 | 0 | scaffold |
 | `interfaces/textToSpeech/providers/words` | ttsProvider | 79 | 40 | 5 | 0 | scaffold |
-| `interfaces/webServicesServer` | webServicesServer | 391 | 73 | 6 | 0 | scaffold |
+| `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | dropped |
 | `logic/authors` | authors | 45 | 40 | 5 | 0 | scaffold |
 | `logic/authorsTest` | test | 62 | 1 | 0 | 0 | test suite |
 | `logic/dataStore` | dataStore | 51 | 36 | 3 | 0 | scaffold |
@@ -309,7 +313,7 @@ reference until they are updated or removed.
 | `logic/execute` | execute | 115 | 108 | 3 | 1 | scaffold |
 | `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 38 | 4 | 0 | scaffold |
 | `logic/friendlyTranslationNamesTest` | test | 33 | 42 | 11 | 0 | test suite |
-| `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 38 | 4 | 0 | scaffold |
+| `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | dropped |
 | `logic/htmlGenerator/media` | htmlGenerator | 25 | 38 | 4 | 0 | scaffold |
 | `logic/htmlGenerator/test` | test | 37 | 0 | 0 | 0 | test suite |
 | `logic/htmlGenerator/topo` | htmlGenerator | 25 | 38 | 4 | 0 | scaffold |
@@ -318,40 +322,40 @@ reference until they are updated or removed.
 | `logic/interfaces/buttonRegisterTest` | test | 70 | 54 | 17 | 0 | test suite |
 | `logic/interfaces/inputTypingLogic` | inputTypingLogic | 171 | 40 | 5 | 0 | scaffold |
 | `logic/interfaces/inputTypingLogicTest` | test | 177 | 0 | 0 | 0 | test suite |
-| `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 40 | 5 | 0 | scaffold |
+| `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | dropped |
 | `logic/interfaces/lessonTracker` | lessonTracker | 55 | 44 | 7 | 0 | scaffold |
 | `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 40 | 5 | 0 | scaffold |
 | `logic/interfaces/typingTutorModelTest` | test | 119 | 82 | 31 | 0 | test suite |
 | `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 38 | 4 | 0 | scaffold |
 | `logic/itemModifiers/test` | test | 26 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/bisect` | bisectfunc | 23 | 36 | 3 | 0 | scaffold |
-| `logic/javaScript/bisectTest` | test | 37 | 46 | 13 | 0 | test suite |
-| `logic/javaScript/evaluator` | javaScriptEvaluator | 22 | 38 | 4 | 0 | scaffold |
-| `logic/javaScript/evaluatorTest` | testSuite | 26 | 28 | 5 | 0 | test suite |
-| `logic/javaScript/event` | javaScriptEvent | 25 | 38 | 4 | 0 | scaffold |
-| `logic/javaScript/implementationTest` | test | 28 | 38 | 9 | 0 | test suite |
-| `logic/javaScript/jshintTest` | test | 46 | 40 | 10 | 0 | test suite |
-| `logic/javaScript/lessonType` | javaScriptLessonType | 27 | 38 | 4 | 0 | scaffold |
-| `logic/javaScript/libraries/jquery` | jsLib | 15 | 36 | 3 | 0 | scaffold |
-| `logic/javaScript/libraries/tmpl` | jsLib | 15 | 36 | 3 | 0 | scaffold |
-| `logic/javaScript/map` | mapfunc | 15 | 36 | 3 | 0 | scaffold |
-| `logic/javaScript/sum` | sumfunc | 15 | 36 | 3 | 0 | scaffold |
-| `logic/javaScript/translator` | jsTranslator | 15 | 36 | 3 | 0 | scaffold |
-| `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 42 | 6 | 0 | scaffold |
-| `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 40 | 5 | 0 | scaffold |
+| `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/bisectTest` | test | 37 | 0 | 0 | 0 | test suite |
+| `logic/javaScript/evaluator` | javaScriptEvaluator | 22 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/evaluatorTest` | testSuite | 26 | 0 | 0 | 0 | test suite |
+| `logic/javaScript/event` | javaScriptEvent | 25 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/implementationTest` | test | 28 | 0 | 0 | 0 | test suite |
+| `logic/javaScript/jshintTest` | test | 46 | 0 | 0 | 0 | test suite |
+| `logic/javaScript/lessonType` | javaScriptLessonType | 27 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/libraries/jquery` | jsLib | 15 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/libraries/tmpl` | jsLib | 15 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/map` | mapfunc | 15 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/sum` | sumfunc | 15 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/translator` | jsTranslator | 15 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 0 | 0 | 0 | dropped |
+| `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | dropped |
 | `logic/languageCodeGuesser` | languageCodeGuesser | 30 | 78 | 9 | 0 | scaffold |
 | `logic/languageCodeGuesserTest` | test | 45 | 58 | 19 | 0 | test suite |
-| `logic/lessonTypes/allOnce` | lessonType | 108 | 42 | 6 | 0 | scaffold |
-| `logic/lessonTypes/interval` | lessonType | 181 | 37 | 3 | 0 | scaffold |
-| `logic/lessonTypes/smart` | lessonType | 122 | 42 | 6 | 0 | scaffold |
+| `logic/lessonTypes/allOnce` | lessonType | 108 | 54 | 0 | 0 | untested |
+| `logic/lessonTypes/interval` | lessonType | 181 | 102 | 0 | 0 | untested |
+| `logic/lessonTypes/smart` | lessonType | 122 | 80 | 0 | 0 | untested |
 | `logic/lessonTypes/test` | test | 99 | 0 | 0 | 0 | test suite |
 | `logic/listModifiers/hardWords` | listModifier | 61 | 44 | 7 | 0 | scaffold |
 | `logic/listModifiers/hardWordsTest` | test | 138 | 46 | 13 | 0 | test suite |
 | `logic/listModifiers/randomTest` | test | 39 | 36 | 8 | 0 | test suite |
-| `logic/listModifiers/random_` | listModifier | 45 | 40 | 5 | 0 | scaffold |
-| `logic/listModifiers/reverse` | listModifier | 47 | 40 | 5 | 0 | scaffold |
+| `logic/listModifiers/random_` | listModifier | 45 | 29 | 0 | 0 | untested |
+| `logic/listModifiers/reverse` | listModifier | 47 | 27 | 0 | 0 | untested |
 | `logic/listModifiers/reverseTest` | test | 29 | 36 | 8 | 0 | test suite |
-| `logic/listModifiers/sort` | listModifier | 50 | 40 | 5 | 0 | scaffold |
+| `logic/listModifiers/sort` | listModifier | 50 | 53 | 0 | 0 | untested |
 | `logic/listModifiers/sortTest` | test | 38 | 36 | 8 | 0 | test suite |
 | `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 44 | 7 | 0 | scaffold |
 | `logic/listModifiers/wordsNeverAnsweredCorrectlyTest` | test | 104 | 46 | 13 | 0 | test suite |
@@ -393,23 +397,23 @@ reference until they are updated or removed.
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
 | `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 38 | 4 | 0 | scaffold |
 | `logic/mimicryTypefaceConverterTest` | test | 30 | 44 | 12 | 0 | test suite |
-| `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 37 | 3 | 0 | scaffold |
-| `logic/moduleGraphBuilderTest` | test | 33 | 36 | 8 | 0 | test suite |
+| `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | dropped |
+| `logic/moduleGraphBuilderTest` | test | 33 | 0 | 0 | 0 | test suite |
 | `logic/modules` | modules | 148 | 58 | 14 | 0 | scaffold |
 | `logic/modulesTest` | test | 44 | 78 | 14 | 0 | test suite |
-| `logic/noteCalculatorChooser` | noteCalculatorChooser | 67 | 42 | 6 | 0 | scaffold |
-| `logic/noteCalculators/american` | noteCalculator | 57 | 44 | 7 | 0 | scaffold |
-| `logic/noteCalculators/dutch` | noteCalculator | 52 | 46 | 8 | 0 | scaffold |
-| `logic/noteCalculators/ects` | noteCalculator | 57 | 44 | 7 | 0 | scaffold |
-| `logic/noteCalculators/french` | noteCalculator | 51 | 44 | 7 | 0 | scaffold |
-| `logic/noteCalculators/german` | noteCalculator | 55 | 44 | 7 | 0 | scaffold |
-| `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 38 | 4 | 0 | scaffold |
-| `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 38 | 4 | 0 | scaffold |
-| `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 38 | 4 | 0 | scaffold |
-| `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 38 | 4 | 0 | scaffold |
-| `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 38 | 4 | 0 | scaffold |
-| `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 38 | 4 | 0 | scaffold |
-| `logic/noteCalculators/percents` | noteCalculator | 55 | 44 | 7 | 0 | scaffold |
+| `logic/noteCalculatorChooser` | noteCalculatorChooser | 67 | 59 | 0 | 1 | working |
+| `logic/noteCalculators/american` | noteCalculator | 57 | 16 | 0 | 0 | untested |
+| `logic/noteCalculators/dutch` | noteCalculator | 52 | 29 | 0 | 0 | untested |
+| `logic/noteCalculators/ects` | noteCalculator | 57 | 16 | 0 | 0 | untested |
+| `logic/noteCalculators/french` | noteCalculator | 51 | 25 | 0 | 0 | untested |
+| `logic/noteCalculators/german` | noteCalculator | 55 | 16 | 0 | 0 | untested |
+| `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/percents` | noteCalculator | 55 | 13 | 0 | 0 | untested |
 | `logic/noteCalculators/test` | test | 444 | 0 | 0 | 0 | test suite |
 | `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 40 | 5 | 0 | scaffold |
 | `logic/ocr/tesseractRecognizer` | ocrRecognizer | 34 | 40 | 5 | 0 | scaffold |
@@ -417,13 +421,13 @@ reference until they are updated or removed.
 | `logic/odtsaver` | odtSaver | 32 | 38 | 4 | 0 | scaffold |
 | `logic/otxxloader` | otxxLoader | 64 | 44 | 7 | 0 | scaffold |
 | `logic/otxxsaver` | otxxSaver | 40 | 42 | 6 | 0 | scaffold |
-| `logic/percentsCalculator` | percentsCalculator | 24 | 40 | 5 | 0 | scaffold |
+| `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 0 | untested |
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
 | `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 44 | 7 | 0 | scaffold |
 | `logic/recentlyOpened` | recentlyOpened | 90 | 42 | 6 | 0 | scaffold |
 | `logic/reversers/media` | reverser | 18 | 38 | 4 | 0 | scaffold |
 | `logic/reversers/mediaTest` | test | 44 | 38 | 9 | 0 | test suite |
-| `logic/reversers/words` | reverser | 19 | 38 | 4 | 0 | scaffold |
+| `logic/reversers/words` | reverser | 19 | 28 | 0 | 1 | working |
 | `logic/reversers/wordsTest` | test | 55 | 40 | 10 | 0 | test suite |
 | `logic/safeHtmlChecker` | safeHtmlChecker | 28 | 38 | 4 | 0 | scaffold |
 | `logic/safeHtmlCheckerTest` | test | 81 | 72 | 26 | 0 | test suite |
@@ -447,7 +451,7 @@ reference until they are updated or removed.
 | `logic/savers/txt` | save | 103 | 37 | 3 | 0 | central |
 | `logic/savers/wordsHtml` | save | 52 | 40 | 5 | 0 | central |
 | `logic/savers/wrts` | save | 86 | 42 | 6 | 0 | scaffold |
-| `logic/settings` | settings | 106 | 198 | 0 | 1 | working |
+| `logic/settings` | settings | 106 | 222 | 0 | 1 | working |
 | `logic/settingsFilterer` | settingsFilterer | 47 | 40 | 5 | 0 | scaffold |
 | `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |
 | `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 82 | 26 | 0 | scaffold |
@@ -464,52 +468,51 @@ reference until they are updated or removed.
 | `logic/translationTest` | test | 58 | 40 | 10 | 0 | test suite |
 | `logic/translator` | translator | 89 | 37 | 3 | 0 | scaffold |
 | `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 38 | 4 | 0 | scaffold |
-| `logic/webDatabase` | webDatabase | 198 | 73 | 6 | 0 | scaffold |
-| `logic/webDatabaseTest` | test | 137 | 40 | 10 | 0 | test suite |
+| `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | dropped |
+| `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |
 | `logic/wordListString/composer` | wordListStringComposer | 35 | 40 | 5 | 0 | scaffold |
 | `logic/wordListString/composerTest` | test | 145 | 58 | 19 | 0 | test suite |
-| `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 38 | 4 | 0 | scaffold |
-| `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 37 | 3 | 0 | scaffold |
+| `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 0 | 0 | 0 | dropped |
+| `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 0 | 0 | 0 | dropped |
 | `logic/wordListString/parser` | wordListStringParser | 50 | 38 | 4 | 0 | scaffold |
 | `logic/wordListString/parserTest` | test | 159 | 66 | 23 | 0 | test suite |
-| `logic/wordsString/checker` | wordsStringChecker | 59 | 42 | 6 | 0 | scaffold |
+| `logic/wordsString/checker` | wordsStringChecker | 59 | 117 | 0 | 1 | working |
 | `logic/wordsString/checkerTest` | test | 78 | 1 | 0 | 0 | test suite |
-| `logic/wordsString/composer` | wordsStringComposer | 33 | 38 | 4 | 0 | scaffold |
+| `logic/wordsString/composer` | wordsStringComposer | 33 | 44 | 0 | 1 | working |
 | `logic/wordsString/composerTest` | test | 55 | 52 | 16 | 0 | test suite |
-| `logic/wordsString/javaScript/checker` | wordsStringChecker | 31 | 38 | 4 | 0 | scaffold |
-| `logic/wordsString/javaScript/composer` | wordsStringComposer | 35 | 38 | 4 | 0 | scaffold |
-| `logic/wordsString/javaScript/parser` | wordsStringParser | 34 | 38 | 4 | 0 | scaffold |
-| `logic/wordsString/parser` | wordsStringParser | 34 | 38 | 4 | 0 | scaffold |
+| `logic/wordsString/javaScript/checker` | wordsStringChecker | 31 | 0 | 0 | 0 | dropped |
+| `logic/wordsString/javaScript/composer` | wordsStringComposer | 35 | 0 | 0 | 0 | dropped |
+| `logic/wordsString/javaScript/parser` | wordsStringParser | 34 | 0 | 0 | 0 | dropped |
+| `logic/wordsString/parser` | wordsStringParser | 34 | 86 | 0 | 1 | working |
 | `logic/wordsString/parserTest` | test | 115 | 1 | 0 | 0 | test suite |
 | `misc/cliTest` | test | 131 | 1 | 0 | 0 | test suite |
 | `misc/moduleManagerTest` | test | 114 | 1 | 0 | 0 | test suite |
 | `misc/testUrllibMock` |  | 44 | 46 | 13 | 0 | scaffold |
 | `misc/testsTest` | test | 34 | 42 | 11 | 0 | test suite |
-| `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 38 | 4 | 0 | scaffold |
-| `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 40 | 5 | 0 | scaffold |
+| `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 0 | 0 | 0 | dropped |
+| `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 0 | 0 | 0 | dropped |
 | `profileRunners/cli` | cli | 343 | 37 | 3 | 0 | scaffold |
-| `profileRunners/codeComplexity` | codeComplexity | 68 | 74 | 7 | 0 | scaffold |
-| `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 37 | 3 | 0 | scaffold |
-| `profileRunners/gtkGui` | gtkGui | 136 | 42 | 6 | 0 | scaffold |
-| `profileRunners/ircBot` | ircBot | 284 | 74 | 7 | 0 | scaffold |
-| `profileRunners/languageCodeGuesserTableGenerator` | languageCodeGuesserTableGenerator | 49 | 37 | 3 | 0 | scaffold |
-| `profileRunners/moduleGraph` | moduleGraph | 31 | 38 | 4 | 0 | scaffold |
-| `profileRunners/packagers/arch` | archPackager | 68 | 40 | 5 | 0 | scaffold |
-| `profileRunners/packagers/debian` | debianPackager | 77 | 38 | 4 | 0 | scaffold |
-| `profileRunners/packagers/mac` | macPackager | 38 | 38 | 4 | 0 | scaffold |
-| `profileRunners/packagers/rpm` | rpmPackager | 77 | 37 | 3 | 0 | scaffold |
-| `profileRunners/packagers/source` | sourcePackager | 38 | 38 | 4 | 0 | scaffold |
-| `profileRunners/packagers/sourceWithSetup` | sourceWithSetupPackager | 35 | 38 | 4 | 0 | scaffold |
-| `profileRunners/packagers/windowsPortable` | windowsPortablePackager | 40 | 38 | 4 | 0 | scaffold |
+| `profileRunners/codeComplexity` | codeComplexity | 68 | 0 | 0 | 0 | dropped |
+| `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 0 | 0 | 0 | dropped |
+| `profileRunners/gtkGui` | gtkGui | 136 | 0 | 0 | 0 | dropped |
+| `profileRunners/ircBot` | ircBot | 284 | 0 | 0 | 0 | dropped |
+| `profileRunners/languageCodeGuesserTableGenerator` | languageCodeGuesserTableGenerator | 49 | 0 | 0 | 0 | dropped |
+| `profileRunners/moduleGraph` | moduleGraph | 31 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/arch` | archPackager | 68 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/debian` | debianPackager | 77 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/mac` | macPackager | 38 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/rpm` | rpmPackager | 77 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/source` | sourcePackager | 38 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/sourceWithSetup` | sourceWithSetupPackager | 35 | 0 | 0 | 0 | dropped |
+| `profileRunners/packagers/windowsPortable` | windowsPortablePackager | 40 | 0 | 0 | 0 | dropped |
 | `profileRunners/profilesHelp` | profilesHelp | 44 | 37 | 3 | 0 | scaffold |
-| `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 37 | 3 | 0 | scaffold |
+| `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | dropped |
 | `profileRunners/shell` | shell | 81 | 37 | 3 | 0 | scaffold |
 | `profileRunners/testRunner` | testRunner | 44 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver` | test_server | 65 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/admin_files/js` |  | 40 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/ot_testserver` |  | 119 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/ot_testserver/testserver` |  | 574 | 0 | 0 | 0 | test suite |
-| `profileRunners/translationUpdater` |  | 66 | 37 | 3 | 0 | scaffold |
+| `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | dropped |
 | `profileRunners/uiController` | uiController | 320 | 37 | 3 | 0 | scaffold |
-| `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 38 | 4 | 0 | scaffold |
-
+| `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | dropped |
