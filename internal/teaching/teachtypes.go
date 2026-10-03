@@ -2,6 +2,8 @@ package teaching
 
 import (
 	"math/rand"
+
+	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
 	"strings"
 	"time"
 )
@@ -16,10 +18,12 @@ const (
 	// RepeatAnswer: the answer is shown first and fades away, then typed
 	// from memory.
 	RepeatAnswer = "Repeat answer"
+	// InMind: think of the answer, look at it, and say whether you knew it.
+	InMind = "In mind"
 )
 
 // TeachTypes lists the practice modes, default first.
-var TeachTypes = []string{TeachTyping, ShuffleAnswer, RepeatAnswer}
+var TeachTypes = []string{TeachTyping, ShuffleAnswer, RepeatAnswer, InMind}
 
 // RepeatFadeDuration is how long Repeat answer shows the answer
 // (OpenTeacher's default).
@@ -53,4 +57,30 @@ func (s *Session) CurrentAnswer() string {
 		return ""
 	}
 	return compose(item.Answers)
+}
+
+// ViewAnswer is In mind's "View answer": the thinking time for the
+// current question ends now. It returns the answer to show.
+func (s *Session) ViewAnswer() string {
+	if !s.hasItem || s.viewed {
+		return s.CurrentAnswer()
+	}
+	s.viewedAt, s.viewed = s.opts.Now(), true
+	return s.CurrentAnswer()
+}
+
+// Judge is In mind's "I was right" / "I was wrong": it records the user's
+// own verdict on the current question and moves to the next one.
+func (s *Session) Judge(right bool) {
+	if !s.hasItem {
+		return
+	}
+	end := s.viewedAt
+	if !s.viewed {
+		end = s.opts.Now()
+	}
+	_, index, _ := s.Current()
+	s.pending = &lessontypes.Result{ItemID: index, Right: right, Start: s.asked, End: end}
+	s.viewed = false
+	s.Next()
 }

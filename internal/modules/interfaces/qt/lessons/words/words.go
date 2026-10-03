@@ -416,6 +416,8 @@ type TeachTabWidget struct {
 	RepeatDuration time.Duration
 	skipButton     *qt.QPushButton
 	correctButton  *qt.QPushButton
+	// In mind
+	viewButton, rightButton, wrongButton *qt.QPushButton
 	// notation returns the grade notation to show; set by the lesson widget
 	notation func() string
 
@@ -634,6 +636,16 @@ func (w *TeachTabWidget) setupUI() {
 	buttonLayout.AddWidget(w.nextButton.QWidget)
 	buttonLayout.AddWidget(w.skipButton.QWidget)
 	buttonLayout.AddWidget(w.correctButton.QWidget)
+	w.viewButton = qt.NewQPushButton(w.QWidget)
+	w.viewButton.SetText("View answer")
+	w.rightButton = qt.NewQPushButton(w.QWidget)
+	w.rightButton.SetText("I was right")
+	w.wrongButton = qt.NewQPushButton(w.QWidget)
+	w.wrongButton.SetText("I was wrong")
+	for _, b := range []*qt.QPushButton{w.viewButton, w.rightButton, w.wrongButton} {
+		b.SetVisible(false)
+		buttonLayout.AddWidget(b.QWidget)
+	}
 	buttonLayout.AddStretch()
 
 	layout.AddLayout2(buttonLayout.QLayout, 0)
@@ -656,10 +668,18 @@ func (w *TeachTabWidget) connectSignals() {
 	})
 
 	w.skipButton.OnClicked(func() {
-		if w.typing != nil {
+		switch {
+		case w.typing != nil:
 			w.report(w.typing.Skip())
+		case w.session != nil && !w.session.Done():
+			w.session.Skip()
+			w.inMindNext()
 		}
 	})
+
+	w.viewButton.OnClicked(w.inMindView)
+	w.rightButton.OnClicked(func() { w.inMindJudge(true) })
+	w.wrongButton.OnClicked(func() { w.inMindJudge(false) })
 
 	w.correctButton.OnClicked(func() {
 		if w.typing != nil {
@@ -718,6 +738,15 @@ func (w *TeachTabWidget) startTeaching() {
 	w.unicodeButton.SetEnabled(true)
 	w.resultLabel.SetVisible(false)
 
+	w.typing = nil
+	if w.modeCombo.CurrentText() == teaching.InMind {
+		// no typing: think, look, and say whether you knew it
+		w.setInMindLayout(true)
+		w.session.Start()
+		w.inMindNext()
+		return
+	}
+
 	// OpenTeacher's typing mode drives the tab from here (TypingUI below)
 	w.typing = teaching.NewTyping(w.session, w)
 	w.logger.Action("Started teaching session with %d words (%s, %s)", w.totalQuestions,
@@ -765,6 +794,10 @@ func (w *TeachTabWidget) showModeExtras() {
 		w.hintLabel.SetStyleSheet("")
 		w.hintLabel.SetText(teaching.ShuffleHint(w.session.CurrentAnswer(), nil))
 		w.hintLabel.SetVisible(true)
+	case teaching.InMind:
+		w.hintLabel.SetStyleSheet("")
+		w.hintLabel.SetText("Think about the answer, and press 'View answer' when you're done.")
+		w.hintLabel.SetVisible(true)
 	case teaching.RepeatAnswer:
 		// show the answer first; typing starts when it is gone
 		w.hintLabel.SetStyleSheet("font-size: 20px; font-weight: bold;")
@@ -777,6 +810,53 @@ func (w *TeachTabWidget) showModeExtras() {
 	default:
 		w.hintLabel.SetVisible(false)
 	}
+}
+
+// setInMindLayout swaps the answer field and typing buttons for In mind's.
+func (w *TeachTabWidget) setInMindLayout(on bool) {
+	w.answerEdit.SetVisible(!on)
+	w.unicodeButton.SetVisible(!on)
+	w.submitButton.SetVisible(!on)
+	w.nextButton.SetVisible(!on)
+	w.correctButton.SetVisible(!on)
+	w.viewButton.SetVisible(on)
+	w.rightButton.SetVisible(false)
+	w.wrongButton.SetVisible(false)
+}
+
+// inMindNext asks the next question in In mind, or ends the session.
+func (w *TeachTabWidget) inMindNext() {
+	if w.session.Done() {
+		w.finishTeaching()
+		return
+	}
+	w.showCurrentQuestion()
+	w.viewButton.SetVisible(true)
+	w.viewButton.SetEnabled(true)
+	w.viewButton.SetFocus()
+	w.skipButton.SetEnabled(true)
+	w.rightButton.SetVisible(false)
+	w.wrongButton.SetVisible(false)
+}
+
+func (w *TeachTabWidget) inMindView() {
+	if w.session == nil || w.session.Done() {
+		return
+	}
+	w.hintLabel.SetText("Translation: " + w.session.ViewAnswer())
+	w.viewButton.SetVisible(false)
+	w.skipButton.SetEnabled(false)
+	w.rightButton.SetVisible(true)
+	w.wrongButton.SetVisible(true)
+	w.rightButton.SetFocus()
+}
+
+func (w *TeachTabWidget) inMindJudge(right bool) {
+	if w.session == nil || w.session.Done() {
+		return
+	}
+	w.session.Judge(right)
+	w.inMindNext()
 }
 
 // repeatShown ends Repeat answer's showing of the answer.
@@ -856,6 +936,8 @@ func (w *TeachTabWidget) finishTeaching() {
 	w.isTeaching = false
 	w.repeatTimer.Stop()
 	w.hintLabel.SetVisible(false)
+	w.setInMindLayout(false)
+	w.skipButton.SetEnabled(false)
 	if w.session != nil {
 		w.correctAnswers, w.totalQuestions = w.session.Score()
 	}
@@ -923,6 +1005,7 @@ func (w *TeachTabWidget) finishTeaching() {
 // resetTeachingState resets the teaching state
 func (w *TeachTabWidget) resetTeachingState() {
 	w.repeatTimer.Stop()
+	w.setInMindLayout(false)
 	w.hintLabel.SetVisible(false)
 	w.isTeaching = false
 	w.session = nil

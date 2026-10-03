@@ -20,10 +20,17 @@ func TestMain(m *testing.M) {
 	qt.NewQApplication([]string{"words-test"})
 	teachErr = checkTeachTab()
 	modesErr = checkModes()
+	inMindErr = checkInMind()
 	os.Exit(m.Run())
 }
 
-var teachErr, modesErr error
+var teachErr, modesErr, inMindErr error
+
+func TestTeachTabInMind(t *testing.T) {
+	if inMindErr != nil {
+		t.Fatal(inMindErr)
+	}
+}
 
 func TestTeachTabModes(t *testing.T) {
 	if modesErr != nil {
@@ -130,6 +137,41 @@ func checkModes() error {
 	}
 	if w.modeCombo.IsEnabled() {
 		return fmt.Errorf("mode can be changed during a session")
+	}
+	return nil
+}
+
+func checkInMind() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"een"}, Answers: []string{"one"}},
+		{ID: 1, Questions: []string{"twee"}, Answers: []string{"two"}},
+	}}}}
+	w := NewTeachTabWidget(l, nil)
+	var finished *TeachingSession
+	w.SetSessionCompletedCallback(func(s *TeachingSession) { finished = s })
+	visible := func(b *qt.QPushButton) bool { return b.IsVisibleTo(w.QWidget) }
+
+	w.modeCombo.SetCurrentText("In mind")
+	w.startButton.Click()
+	if w.answerEdit.IsVisibleTo(w.QWidget) || !visible(w.viewButton) || visible(w.rightButton) || !strings.Contains(w.questionLabel.Text(), "een") {
+		return fmt.Errorf("in mind start: question %q", w.questionLabel.Text())
+	}
+	w.viewButton.Click()
+	if w.hintLabel.Text() != "Translation: one" || !visible(w.rightButton) || !visible(w.wrongButton) || visible(w.viewButton) {
+		return fmt.Errorf("after view answer: %q", w.hintLabel.Text())
+	}
+	w.rightButton.Click()
+	if !strings.Contains(w.questionLabel.Text(), "twee") || visible(w.rightButton) {
+		return fmt.Errorf("after I was right: %q", w.questionLabel.Text())
+	}
+	w.viewButton.Click()
+	w.wrongButton.Click()
+
+	if finished == nil || finished.CorrectCount != 1 || finished.TotalQuestions != 2 {
+		return fmt.Errorf("finished session %+v", finished)
+	}
+	if !w.answerEdit.IsVisibleTo(w.QWidget) || visible(w.viewButton) {
+		return fmt.Errorf("typing layout not restored after In mind")
 	}
 	return nil
 }

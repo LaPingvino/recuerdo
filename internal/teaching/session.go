@@ -76,6 +76,8 @@ type Session struct {
 	answered int
 	asked    time.Time // when the current question was shown
 	last     *lessontypes.Result
+	viewed   bool      // In mind: the answer was viewed
+	viewedAt time.Time // ...at this time
 }
 
 // New prepares a session over list; call Start to ask the first question.
@@ -115,7 +117,7 @@ func New(list lesson.WordList, opts Options) *Session {
 	if s.opts.Now == nil {
 		s.opts.Now = time.Now
 	}
-	s.lt.OnNewItem(func(i int) { s.current, s.hasItem, s.asked = i, true, s.opts.Now() })
+	s.lt.OnNewItem(func(i int) { s.current, s.hasItem, s.asked, s.viewed = i, true, s.opts.Now(), false })
 	s.lt.OnLessonDone(func() { s.done, s.hasItem = true, false })
 	return s
 }
