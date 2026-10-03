@@ -4,8 +4,10 @@ package checker
 
 import (
 	"context"
+	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/parser"
 )
 
 // Result is the outcome of checking one answer.
@@ -29,6 +31,50 @@ func Correct(given, answers [][]string) bool {
 		return singlePartCorrect(given[0], answers)
 	}
 	return multiplePartsCorrect(given, answers)
+}
+
+// StoredAnswers turns a word's answers as Recuerdo's lesson model keeps
+// them (a flat list) back into obligatory parts: a single stored answer
+// that is itself a numbered list ("1. one 2. two") gives its parts;
+// otherwise the stored answers are the alternatives of one part.
+func StoredAnswers(stored []string) [][]string {
+	if len(stored) == 1 {
+		if parts := parser.Parse(stored[0]); len(parts) > 1 {
+			return parts
+		}
+	}
+	var alternatives []string
+	for _, a := range stored {
+		if a = strings.TrimSpace(a); a != "" {
+			alternatives = append(alternatives, a)
+		}
+	}
+	if len(alternatives) == 0 {
+		return [][]string{}
+	}
+	return [][]string{alternatives}
+}
+
+// CorrectText checks an answer as typed against a word's stored answers.
+// Unless caseSensitive is set, capitals are ignored (OpenTeacher itself
+// compares exactly).
+func CorrectText(typed string, stored []string, caseSensitive bool) bool {
+	given, answers := parser.Parse(typed), StoredAnswers(stored)
+	if !caseSensitive {
+		given, answers = lower(given), lower(answers)
+	}
+	return Correct(given, answers)
+}
+
+func lower(item [][]string) [][]string {
+	out := make([][]string, len(item))
+	for i, part := range item {
+		out[i] = make([]string, len(part))
+		for j, w := range part {
+			out[i][j] = strings.ToLower(w)
+		}
+	}
+	return out
 }
 
 func singlePartCorrect(given []string, answers [][]string) bool {

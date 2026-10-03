@@ -6,6 +6,8 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/logging"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
 	"github.com/mappu/miqt/qt"
 )
 
@@ -658,20 +660,15 @@ func (w *TeachTabWidget) submitAnswer() {
 	}
 
 	item := w.lesson.Data.List.Items[w.currentIndex]
-	correct := false
 
-	// Check if answer matches any of the correct answers (case-insensitive)
-	for _, answer := range item.Answers {
-		if strings.EqualFold(userAnswer, strings.TrimSpace(answer)) {
-			correct = true
-			break
-		}
-	}
+	// OpenTeacher's answer rules: alternatives separated by "," or ";",
+	// numbered obligatory parts ("1. ... 2. ..."); capitals are ignored
+	correct := checker.CorrectText(userAnswer, item.Answers, false)
 
 	// Create teaching result record
 	result := TeachingResult{
 		Question:      strings.Join(item.Questions, " / "),
-		CorrectAnswer: strings.Join(item.Answers, " / "),
+		CorrectAnswer: composer.Compose(checker.StoredAnswers(item.Answers)),
 		UserAnswer:    userAnswer,
 		IsCorrect:     correct,
 		ItemIndex:     w.currentIndex,
