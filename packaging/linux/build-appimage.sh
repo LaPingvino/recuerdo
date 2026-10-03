@@ -14,6 +14,7 @@ appdir=$(mktemp -d)/AppDir
 mkdir -p "$appdir/usr/bin" "$appdir/usr/share/recuerdo"
 install -m755 "$bin" "$appdir/usr/bin/recuerdo"
 cp -r "$root/data" "$root/config" "$appdir/usr/share/recuerdo/"
+install -Dm644 "$root/LICENSE" "$appdir/usr/share/licenses/recuerdo/LICENSE"
 
 for t in linuxdeploy linuxdeploy-plugin-qt; do
 	curl -fsSL -o "$tools/$t" "https://github.com/linuxdeploy/$t/releases/download/continuous/$t-$arch.AppImage"

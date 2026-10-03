@@ -25,6 +25,7 @@ OutputBaseFilename=Recuerdo-{#AppVersion}-Setup
 Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
+LicenseFile=..\..\LICENSE
 ; install for the current user unless the user chooses all users
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog

@@ -9,6 +9,7 @@ root=$(cd "$(dirname "$0")/../.." && pwd)
 mkdir -p "$out"
 cp "$exe" "$out/recuerdo.exe"
 cp -r "$root/data" "$root/config" "$out/"
+cp "$root/LICENSE" "$out/LICENSE.txt"
 # Qt DLLs and plugins (platforms, styles, image formats)
 windeployqt-qt5 --release --no-translations --no-system-d3d-compiler --no-opengl-sw "$out/recuerdo.exe" ||
 	windeployqt --release --no-translations --no-system-d3d-compiler --no-opengl-sw "$out/recuerdo.exe"

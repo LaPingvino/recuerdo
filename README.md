@@ -157,7 +157,7 @@ go build -v ./...
 
 ## License
 
-GPL v3+ - Free and open source software
+GPL v3+ - Free and open source software (see [LICENSE](LICENSE))
 
 Based on OpenTeacher © 2010-2023 OpenTeacher Team  
 Recuerdo © 2025 Joop Kiefte

@@ -11,7 +11,7 @@ app="$out/Recuerdo.app"
 rm -rf "$app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
 cp "$bin" "$app/Contents/MacOS/recuerdo"
-cp -r "$root/data" "$root/config" "$app/Contents/Resources/"
+cp -r "$root/data" "$root/config" "$root/LICENSE" "$app/Contents/Resources/"
 
 iconset=$(mktemp -d)/recuerdo.iconset
 mkdir -p "$iconset"
