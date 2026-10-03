@@ -1,68 +1,69 @@
-// Package composer provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package composer turns OpenTeacher's internal form of a word's questions
+// or answers back into the text a user would type. Port of OpenTeacher's
+// logic/wordsString/composer module.
 package composer
 
 import (
 	"context"
-	"fmt"
+	"strconv"
+	"strings"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
 )
 
-// WordsStringComposerModule is a Go port of the Python WordsStringComposerModule class
+// Compose is the inverse of parser.Parse:
+//
+//	[[one two]]          -> "one, two"
+//	[[one uno] [two]]    -> "1. one, uno 2. two"
+func Compose(item [][]string) string {
+	switch len(item) {
+	case 0:
+		return ""
+	case 1:
+		return strings.Join(item[0], ", ")
+	}
+	parts := make([]string, len(item))
+	for i, alternatives := range item {
+		parts[i] = strconv.Itoa(i+1) + ". " + strings.Join(alternatives, ", ")
+	}
+	return strings.Join(parts, " ")
+}
+
+// WordsStringComposerModule offers Compose as an OpenTeacher
+// "wordsStringComposer" module.
 type WordsStringComposerModule struct {
 	*core.BaseModule
 	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewWordsStringComposerModule creates a new WordsStringComposerModule instance
+// NewWordsStringComposerModule creates the module.
 func NewWordsStringComposerModule() *WordsStringComposerModule {
-	base := core.NewBaseModule("logic", "composer-module")
-
-	return &WordsStringComposerModule{
-		BaseModule: base,
-	}
+	base := core.NewBaseModule("wordsStringComposer", "words-string-composer")
+	base.SetPriority(10)
+	return &WordsStringComposerModule{BaseModule: base}
 }
 
-// Compose is the Go port of the Python compose method
-func (mod *WordsStringComposerModule) Compose() {
-	// TODO: Port Python method logic
+// Compose composes questions or answers text; see the package function.
+func (mod *WordsStringComposerModule) Compose(item [][]string) string {
+	return Compose(item)
 }
 
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
+// Enable activates the module.
 func (mod *WordsStringComposerModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("WordsStringComposerModule enabled")
-	return nil
+	return mod.BaseModule.Enable(ctx)
 }
 
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
+// Disable deactivates the module.
 func (mod *WordsStringComposerModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("WordsStringComposerModule disabled")
-	return nil
+	return mod.BaseModule.Disable(ctx)
 }
 
-// SetManager sets the module manager
+// SetManager sets the module manager reference.
 func (mod *WordsStringComposerModule) SetManager(manager *core.Manager) {
 	mod.manager = manager
 }
 
-// InitWordsStringComposerModule creates and returns a new WordsStringComposerModule instance
-// This is the Go equivalent of the Python init function
+// InitWordsStringComposerModule creates and returns the module.
 func InitWordsStringComposerModule() core.Module {
 	return NewWordsStringComposerModule()
 }
