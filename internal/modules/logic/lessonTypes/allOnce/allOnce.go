@@ -1,78 +1,80 @@
-// Package allonce provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package allonce asks every item once, in the order given. Port of
+// OpenTeacher's logic/lessonTypes/allOnce.
 package allonce
 
 import (
 	"context"
-	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	lessontypes "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes"
 )
 
-// AllOnceModule is a Go port of the Python AllOnceModule class
+// LessonType asks each index once; skipped items move to the end.
+type LessonType struct {
+	lessontypes.Base
+	indexes []int
+	asked   int
+}
+
+// New creates an "all once" lesson over the given item indexes.
+func New(indexes []int) *LessonType {
+	return &LessonType{indexes: append([]int(nil), indexes...)}
+}
+
+func (l *LessonType) Start() { l.sendNext() }
+
+func (l *LessonType) SetResult(r lessontypes.Result) {
+	l.Record(r)
+	l.asked++
+	l.sendNext()
+}
+
+func (l *LessonType) Skip() {
+	if l.asked < len(l.indexes) {
+		skipped := l.indexes[l.asked]
+		l.indexes = append(append(l.indexes[:l.asked:l.asked], l.indexes[l.asked+1:]...), skipped)
+	}
+	l.sendNext()
+}
+
+func (l *LessonType) CorrectLastAnswer(r lessontypes.Result) { l.ReplaceLast(r) }
+func (l *LessonType) TotalItems() int                        { return len(l.indexes) }
+func (l *LessonType) AskedItems() int                        { return l.asked }
+
+func (l *LessonType) sendNext() {
+	if l.asked >= len(l.indexes) {
+		l.Done()
+		return
+	}
+	l.Ask(l.indexes[l.asked])
+}
+
+// AllOnceModule offers the lesson type as an OpenTeacher "lessonType" module.
 type AllOnceModule struct {
 	*core.BaseModule
 	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewAllOnceModule creates a new AllOnceModule instance
+// NewAllOnceModule creates the module.
 func NewAllOnceModule() *AllOnceModule {
-	base := core.NewBaseModule("logic", "allonce-module")
-
-	return &AllOnceModule{
-		BaseModule: base,
-	}
+	base := core.NewBaseModule("lessonType", "all-once")
+	base.SetPriority(140)
+	return &AllOnceModule{BaseModule: base}
 }
 
-// retranslate is the Go port of the Python _retranslate method
-func (mod *AllOnceModule) retranslate() {
-	// TODO: Port Python method logic
+// Name is the lesson type's name as shown to users.
+func (mod *AllOnceModule) Name() string { return "All once" }
+
+// CreateLessonType starts a lesson over the given item indexes.
+func (mod *AllOnceModule) CreateLessonType(indexes []int) lessontypes.LessonType {
+	return New(indexes)
 }
 
-// createevent is the Go port of the Python _createEvent method
-func (mod *AllOnceModule) createevent() {
-	// TODO: Port Python method logic
-}
+func (mod *AllOnceModule) Enable(ctx context.Context) error  { return mod.BaseModule.Enable(ctx) }
+func (mod *AllOnceModule) Disable(ctx context.Context) error { return mod.BaseModule.Disable(ctx) }
 
-// Createlessontype is the Go port of the Python createLessonType method
-func (mod *AllOnceModule) Createlessontype() {
-	// TODO: Port Python method logic
-}
+// SetManager sets the module manager reference.
+func (mod *AllOnceModule) SetManager(manager *core.Manager) { mod.manager = manager }
 
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *AllOnceModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("AllOnceModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *AllOnceModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("AllOnceModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *AllOnceModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitAllOnceModule creates and returns a new AllOnceModule instance
-// This is the Go equivalent of the Python init function
-func InitAllOnceModule() core.Module {
-	return NewAllOnceModule()
-}
+// InitAllOnceModule creates and returns the module.
+func InitAllOnceModule() core.Module { return NewAllOnceModule() }
