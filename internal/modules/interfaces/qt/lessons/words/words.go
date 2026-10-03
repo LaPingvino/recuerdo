@@ -452,10 +452,14 @@ type TeachTabWidget struct {
 	// RepeatDuration is how long Repeat answer shows the answer
 	RepeatDuration time.Duration
 	repeatLabel    *qt.QLabel
-	repeatSpin     *qt.QDoubleSpinBox
-	settings       Settings
-	skipButton     *qt.QPushButton
-	correctButton  *qt.QPushButton
+	// Repeat answer fades the answer out, as OpenTeacher does
+	hintOpacity   *qt.QGraphicsOpacityEffect
+	fadeTimer     *qt.QTimer
+	fadeStart     time.Time
+	repeatSpin    *qt.QDoubleSpinBox
+	settings      Settings
+	skipButton    *qt.QPushButton
+	correctButton *qt.QPushButton
 	// In mind
 	viewButton, rightButton, wrongButton *qt.QPushButton
 	// Hangman
@@ -589,6 +593,10 @@ func (w *TeachTabWidget) setupUI() {
 	w.repeatTimer = qt.NewQTimer()
 	w.repeatTimer.SetSingleShot(true)
 	w.repeatTimer.OnTimeout(w.repeatShown)
+	w.hintOpacity = qt.NewQGraphicsOpacityEffect2(w.hintLabel.QObject)
+	w.hintLabel.SetGraphicsEffect(w.hintOpacity.QGraphicsEffect)
+	w.fadeTimer = qt.NewQTimer()
+	w.fadeTimer.OnTimeout(w.fadeStep)
 
 	w.hangmanLabel = qt.NewQLabel(w.QWidget)
 	w.hangmanLabel.SetAlignment(qt.AlignCenter)
@@ -866,7 +874,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 
 // showModeExtras shows what the practice mode adds to a new question.
 func (w *TeachTabWidget) showModeExtras() {
-	w.repeatTimer.Stop()
+	w.stopRepeat()
 	switch w.modeCombo.CurrentText() {
 	case teaching.ShuffleAnswer:
 		w.hintLabel.SetStyleSheet("")
@@ -885,6 +893,8 @@ func (w *TeachTabWidget) showModeExtras() {
 		w.SetCheckEnabled(false)
 		w.SetSkipEnabled(false)
 		w.repeatTimer.Start(int(w.RepeatDuration.Milliseconds()))
+		w.fadeStart = time.Now()
+		w.fadeTimer.Start(40)
 	default:
 		w.hintLabel.SetVisible(false)
 	}
@@ -956,8 +966,28 @@ func (w *TeachTabWidget) useSettings(s Settings) {
 	w.settings = s
 }
 
+// stopRepeat stops showing Repeat answer's answer, and its fading.
+func (w *TeachTabWidget) stopRepeat() {
+	w.repeatTimer.Stop()
+	w.fadeTimer.Stop()
+	w.hintOpacity.SetOpacity(1)
+}
+
+// fadeStep fades the shown answer out evenly over RepeatDuration, as
+// OpenTeacher does.
+func (w *TeachTabWidget) fadeStep() {
+	opacity := 1 - float64(time.Since(w.fadeStart))/float64(w.RepeatDuration)
+	if opacity <= 0 {
+		opacity = 0
+		w.fadeTimer.Stop()
+	}
+	w.hintOpacity.SetOpacity(opacity)
+}
+
 // repeatShown ends Repeat answer's showing of the answer.
 func (w *TeachTabWidget) repeatShown() {
+	w.fadeTimer.Stop()
+	w.hintOpacity.SetOpacity(1)
 	if w.typing == nil || w.session == nil || w.session.Done() || w.typing.ShowingCorrection() {
 		return
 	}
@@ -1035,7 +1065,7 @@ func (w *TeachTabWidget) HideCorrection() {
 // finishTeaching completes the teaching session
 func (w *TeachTabWidget) finishTeaching() {
 	w.isTeaching = false
-	w.repeatTimer.Stop()
+	w.stopRepeat()
 	w.hintLabel.SetVisible(false)
 	w.setInMindLayout(false)
 	w.hangmanTimer.Stop()
@@ -1107,7 +1137,7 @@ func (w *TeachTabWidget) finishTeaching() {
 
 // resetTeachingState resets the teaching state
 func (w *TeachTabWidget) resetTeachingState() {
-	w.repeatTimer.Stop()
+	w.stopRepeat()
 	w.hangmanTimer.Stop()
 	w.hangman = nil
 	w.setInMindLayout(false)

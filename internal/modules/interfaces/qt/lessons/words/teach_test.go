@@ -6,6 +6,7 @@ import (
 	"runtime"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/mappu/miqt/qt"
@@ -140,7 +141,24 @@ func checkModes() error {
 	if w.hintLabel.Text() != "three" || w.answerEdit.IsEnabled() || w.submitButton.IsEnabled() {
 		return fmt.Errorf("repeat: showing %q, input enabled %v", w.hintLabel.Text(), w.answerEdit.IsEnabled())
 	}
+	// the answer fades out evenly over the duration
+	if o := w.hintOpacity.Opacity(); o != 1 {
+		return fmt.Errorf("repeat: opacity %v at the start", o)
+	}
+	w.fadeStart = time.Now().Add(-w.RepeatDuration / 2)
+	w.fadeStep()
+	if o := w.hintOpacity.Opacity(); o < 0.4 || o > 0.6 {
+		return fmt.Errorf("repeat: opacity %v half-way", o)
+	}
+	w.fadeStart = time.Now().Add(-2 * w.RepeatDuration)
+	w.fadeStep()
+	if o := w.hintOpacity.Opacity(); o != 0 || w.fadeTimer.IsActive() {
+		return fmt.Errorf("repeat: opacity %v at the end, fading %v", o, w.fadeTimer.IsActive())
+	}
 	w.repeatShown() // what the timer does when the answer has been shown long enough
+	if o := w.hintOpacity.Opacity(); o != 1 {
+		return fmt.Errorf("repeat: opacity %v after showing (hint label is reused)", o)
+	}
 	if w.hintLabel.IsVisibleTo(w.QWidget) || !w.answerEdit.IsEnabled() || !w.submitButton.IsEnabled() {
 		return fmt.Errorf("repeat: after showing, input enabled %v", w.answerEdit.IsEnabled())
 	}
