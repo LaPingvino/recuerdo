@@ -40,8 +40,8 @@ files; most of those files are skeletons):
 - **working**: Go code without stub markers, with tests
 - **untested**: Go code without stub markers, no tests
 - **partial**: substantial Go code (150+ lines, at least 40 per stub marker) that still has TODOs
-- **in loader.go / in saver.go**: the file format is handled by the central
-  `internal/lesson` loader or saver rather than by a module of its own
+- **central**: the file format is dispatched by `FileLoader.LoadFile` or
+  `FileSaver.SaveFile` in `internal/lesson` rather than by a module of its own
 - **scaffold**: generated skeleton; methods are `// TODO: Port Python method logic`
 - **missing**: no Go code
 - **test suite**: one of OpenTeacher's own test modules (their Go
@@ -51,19 +51,20 @@ Where a hand-written implementation exists outside the module's directory
 (`internal/modules/settings.go`, `event.go`, `execute.go`), the script
 uses it.
 
-| Area | working | untested | partial | in loader.go | in saver.go | scaffold | missing | test suite | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data |  |  |  |  |  | 43 |  | 6 | 49 |
-| interfaces | 1 | 3 | 7 |  |  | 66 | 3 | 14 | 94 |
-| logic | 2 | 3 |  | 25 | 1 | 110 |  | 39 | 180 |
-| misc |  |  |  |  |  | 1 |  | 3 | 4 |
-| profileRunners |  |  |  |  |  | 22 |  | 5 | 27 |
-| **all** | **3** | **6** | **7** | **25** | **1** | **242** | **3** | **67** | **354** |
+| Area | working | untested | partial | central | scaffold | missing | test suite | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| data |  |  |  |  | 43 |  | 6 | 49 |
+| interfaces | 1 | 3 | 7 |  | 66 | 3 | 14 | 94 |
+| logic | 2 | 3 |  | 29 | 107 |  | 39 | 180 |
+| misc |  |  |  |  | 1 |  | 3 | 4 |
+| profileRunners |  |  |  |  | 22 |  | 5 | 27 |
+| **all** | **3** | **6** | **7** | **29** | **239** | **3** | **67** | **354** |
 
 Remarks:
 
 - The real implementation work is concentrated in a few places: the file
-  format loaders (`internal/lesson/loader.go`), the main Qt lesson screens
+  formats (`internal/lesson`: 20 extensions loaded, 10 saved), map display
+  (`internal/maps`, outside the module tree), the main Qt lesson screens
   (`interfaces/qt/lessons/{words,topo,media}`, `lessonDialogs`, `gui`,
   `enterers/plainTextWords`), and the core module system (`settings.go`,
   `event.go`, `execute.go`, `internal/core`).
@@ -71,10 +72,89 @@ Remarks:
   and `data/profileDescriptions` / `data/profiledescriptions`, exist side by
   side: two generations of generated code.
 
-Sections 4 and 5 (features grouped for a first release, and corrections to
-the repository's status documents) follow in the next step.
+## 3. Features, and what a first release needs
 
-## 3. Module table
+A first usable release is taken to mean: open or type a word list, practise
+it the way OpenTeacher does, see a grade, and save it. Topography and media
+lessons, printing, speech and the rest come after.
+
+| Feature | OpenTeacher modules | Go state | First release? |
+|---|---|---|---|
+| Application core: module system, events, settings, startup | `logic/{event,settings,execute,modules}`, `interfaces/qt/{qtApp,gui}`, `data/metadata` | event and settings work with tests; execute has 3 stubs; gui partial; app starts | **Yes** (plus clean shutdown, see below) |
+| Open and save word lists | `logic/loaders/*` (32), `logic/savers/*` (18), file dialogs, `logic/{loader,saver}` | 20 extensions loaded and 10 saved in `internal/lesson`; file dialogs work; `.apkg`, `.fmd`, `.wrts` and others only through content auto-detection | **Yes**, mostly there |
+| Enter a word list | `interfaces/qt/enterers/{words,plainTextWords}` | words lesson has its own Enter tab; plain-text enterer partial | **Yes** |
+| Answer syntax: alternatives, optional parts, numbered meanings | `logic/wordsString/{parser,composer,checker}`, `logic/wordListString/{parser,composer}` | **scaffold**; the words lesson compares answers case-insensitively against whole stored answers | **Yes, critical** |
+| Lesson order: all once, interval, smart repetition | `logic/lessonTypes/{allOnce,interval,smart}` | **scaffold**; the words lesson asks every item once in order | **Yes, critical** |
+| Practice modes | `interfaces/qt/teachTypes/{typing,repeatAnswer,shuffleAnswer,hangman,inMind}`, `interfaces/qt/inputTyping`, `logic/interfaces/inputTypingLogic` | **scaffold / missing**; the words lesson has one typing mode of its own | **Yes**: typing first |
+| List modifiers | `logic/listModifiers/{random_,sort,reverse,hardWords,wordsNeverAnsweredCorrectly}`, `logic/itemModifiers/foreignKnown`, `logic/reversers/words` | scaffold | Yes: random, reverse question/answer |
+| Grades and results | `logic/noteCalculators/*` (6), `noteCalculatorChooser`, `percentsCalculator`, `interfaces/qt/dialogs/results`, `testViewer`, `testsViewer`, `progressViewer` | scaffold / missing; the words lesson has a results tab with a percentage | **Yes**: one note calculator (Dutch, the OpenTeacher default, plus American) and the results dialog |
+| Topography lessons | `interfaces/qt/{lessons,enterers,teachers}/topo`, `logic/testTypes/topo`, `data/maps/*`, `interfaces/qt/topoMaps` | lessons/topo partial; testTypes/topo untested; map rendering in `internal/maps` | Later |
+| Media lessons | `interfaces/qt/{lessons,enterers,teachers}/media`, `mediaTypes/*`, `mediaDisplay` | lessons/media partial; media types scaffold | Later |
+| Printing, HTML/ODT output | `interfaces/qt/{print/*,printer,dialogs/print}`, `logic/htmlGenerator/*`, `logic/odtsaver`, `logic/savers/{odt,libreofficeFormats,sylk,png}` | scaffold (HTML and LaTeX saving exist centrally) | Later |
+| Typing tutor, character keyboard | `interfaces/qt/typingTutor/*`, `charsKeyboard`, `data/chars/*` | charsKeyboard untested; the words lesson has a Unicode picker | Later |
+| Text to speech | `interfaces/textToSpeech/*` | scaffold | Later |
+| Settings UI widgets | `interfaces/qt/settingsWidget/*`, `settingsWidgets`, `dialogs/settings` | settings dialog partial; widgets scaffold | Later (dialog is enough) |
+| Test mode (classroom server) | `interfaces/qt/testMode/*`, `interfaces/webServicesServer`, `logic/webDatabase` | scaffold | Later / maybe never |
+| Web services import | `interfaces/qt/webServices/{quizletApi,studyStackApi,courseHeroApi}` | scaffold | Probably never: APIs changed or closed |
+| OCR | `logic/ocr/*`, `interfaces/qt/ocrGui` | scaffold | Later |
+| Spell checking, language guessing, translations, documentation | `logic/{spellChecker,languageCodeGuesser,translator,translationIndex/*,userDocumentationWrapper}`, `data/userDocumentation`, `interfaces/qt/dialogs/documentation` | scaffold | Later |
+| JavaScript/web version | `logic/javaScript/*`, `**/javaScript/*` | scaffold | No: not relevant to a Go desktop app |
+| Profiles, packaging, generators, CLI, shell, IRC bot | `profileRunners/*` (22), `data/profileDescriptions/*` (30) | scaffold | No, except a command-line runner later; packaging is done by Go/distro tooling |
+
+### Other findings from building and running
+
+- `cmd/recuerdo` builds and starts the Qt window, but does not stop on
+  SIGTERM or SIGINT: it installs a signal handler that does not end the Qt
+  event loop, so only SIGKILL stops it (a problem at logout and for
+  scripts).
+- `cmd/test-core`, which the README suggests for testing your system, fails
+  with "Event module not found".
+- `go test ./...`: `internal/lesson` fails `TestGetFormatName/.vok2`
+  ("TeachMaster File" vs "Teachmaster File"), and `internal/modules` fails
+  `TestSettingsModuleConcurrency` (settings file corrupted by concurrent
+  save/load). `go vet` reports a non-constant format string in
+  `internal/logging/logger.go`.
+- Running the app writes `~/.openteacher/settings.json` (OpenTeacher's
+  location); decide whether Recuerdo should use its own config directory.
+
+### Priority list
+
+1. Clean shutdown on SIGTERM/SIGINT; fix `test-core`; fix the failing tests
+   and the vet warning (small, unblocks trustworthy CI).
+2. Port `logic/wordsString` (parser, composer, checker) with OpenTeacher's
+   tests, and use it for answer checking in the words lesson.
+3. Port `logic/lessonTypes` (allOnce, interval, smart) and the random and
+   reverse list modifiers; use them for question order in the words lesson.
+4. Port the Dutch and American note calculators, the percents calculator
+   and the chooser; show the grade, and add the results dialog.
+5. Typing practice mode as a teach type, with `inputTyping`; then
+   repeatAnswer and shuffleAnswer.
+6. Remove the second generation of generated directories
+   (`profilerunners`, `profiledescriptions`) and decide which scaffold
+   areas to delete outright (JavaScript, packaging, test mode, web
+   services) so the module tree shows what is real.
+7. Topography lessons, then media lessons, then printing.
+
+## 4. Corrections to the repository's status documents
+
+Checked against the code on 3 October 2026:
+
+| Document | Claim | Actually |
+|---|---|---|
+| `scripts/verify_coverage.py` | 76% of files converted | It counts Go files that exist. By content: 3 modules working, 6 untested, 7 partial, 29 formats handled centrally, 239 generated scaffolds (section 2) |
+| `CURRENT_STATUS_SUMMARY.md` | "Ready for Production Use" | The core study flow lacks OpenTeacher's answer checking, lesson order, practice modes and grades (section 3); the app cannot be stopped with SIGTERM |
+| `CURRENT_STATUS_SUMMARY.md` | Export 1/8 formats (CSV only) | `SaveFile` writes 10: csv, ot, txt, json, t2k, kvtml, html, tex, ottp, otmd |
+| `CURRENT_STATUS_SUMMARY.md` | Import 15/15 (100%), incl. Anki package via CSV fallback | `LoadFile` dispatches 20 extensions; `.apkg` is not one of them and only reaches content auto-detection |
+| `EXPORT_IMPLEMENTATION_COMPLETE.md` | 8 formats, 100% test coverage, "enterprise grade" | 10 formats in `SaveFile`; coverage not measured; `internal/lesson` tests currently fail (`.vok2` format name) |
+| `ROADMAP.md` | "Qt GUI Dialog System Complete" | File dialogs work; settings partial; about untested; print and documentation dialogs scaffold; results dialog missing |
+| `README.md` | Media lessons with images, audio, video; clickable geography maps; quizzes with progress tracking; "Test your system" with `test-core` | Media types are scaffolds; topo lessons are partial; the words quiz is basic; `test-core` fails |
+| `EMBEDDED_MAPS_IMPLEMENTATION.md` | "COMPLETE - Production Ready" | Map code exists in `internal/maps` (about 1,500 lines, no tests); the `data/maps/*` modules are scaffolds; not verified further |
+
+These documents describe intentions and individual sessions rather than the
+state of the code; this inventory and the regenerated table are the
+reference until they are updated or removed.
+
+## 5. Module table
 
 | Module | Type | Python lines | Go code lines | Stub markers | Tests | Status |
 |---|---|---:|---:|---:|---:|---|
@@ -276,39 +356,39 @@ the repository's status documents) follow in the next step.
 | `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 44 | 7 | 0 | scaffold |
 | `logic/listModifiers/wordsNeverAnsweredCorrectlyTest` | test | 104 | 46 | 13 | 0 | test suite |
 | `logic/loader` | loader | 109 | 50 | 10 | 0 | scaffold |
-| `logic/loaders/abbyy` | load | 73 | 42 | 6 | 0 | scaffold |
-| `logic/loaders/anki` | load | 81 | 46 | 8 | 0 | in loader.go |
-| `logic/loaders/anki2` | load | 84 | 46 | 8 | 0 | in loader.go |
-| `logic/loaders/apkg` | load | 76 | 46 | 8 | 0 | in loader.go |
-| `logic/loaders/backpack` | load | 59 | 44 | 7 | 0 | in loader.go |
-| `logic/loaders/csv_` | load | 87 | 44 | 7 | 0 | in loader.go |
-| `logic/loaders/cuecard` | load | 74 | 44 | 7 | 0 | scaffold |
+| `logic/loaders/abbyy` | load | 73 | 42 | 6 | 0 | central |
+| `logic/loaders/anki` | load | 81 | 46 | 8 | 0 | central |
+| `logic/loaders/anki2` | load | 84 | 46 | 8 | 0 | central |
+| `logic/loaders/apkg` | load | 76 | 46 | 8 | 0 | scaffold |
+| `logic/loaders/backpack` | load | 59 | 44 | 7 | 0 | central |
+| `logic/loaders/csv_` | load | 87 | 44 | 7 | 0 | central |
+| `logic/loaders/cuecard` | load | 74 | 44 | 7 | 0 | central |
 | `logic/loaders/domingo` | load | 81 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/flashqard` | load | 83 | 46 | 8 | 0 | scaffold |
-| `logic/loaders/fmd` | load | 71 | 42 | 6 | 0 | in loader.go |
-| `logic/loaders/gnuVocabTrain` | load | 81 | 44 | 7 | 0 | scaffold |
+| `logic/loaders/flashqard` | load | 83 | 46 | 8 | 0 | central |
+| `logic/loaders/fmd` | load | 71 | 42 | 6 | 0 | scaffold |
+| `logic/loaders/gnuVocabTrain` | load | 81 | 44 | 7 | 0 | central |
 | `logic/loaders/granule` | load | 70 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/jml` | load | 85 | 46 | 8 | 0 | in loader.go |
-| `logic/loaders/jvlt` | load | 72 | 44 | 7 | 0 | in loader.go |
-| `logic/loaders/kgm` | load | 93 | 42 | 6 | 0 | in loader.go |
-| `logic/loaders/kvtml` | load | 90 | 48 | 9 | 0 | in loader.go |
+| `logic/loaders/jml` | load | 85 | 46 | 8 | 0 | scaffold |
+| `logic/loaders/jvlt` | load | 72 | 44 | 7 | 0 | central |
+| `logic/loaders/kgm` | load | 93 | 42 | 6 | 0 | central |
+| `logic/loaders/kvtml` | load | 90 | 48 | 9 | 0 | central |
 | `logic/loaders/ludem` | load | 57 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/mnemosyne` | load | 79 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/ot` | load | 104 | 42 | 6 | 0 | in loader.go |
-| `logic/loaders/otmd` | load | 68 | 42 | 6 | 0 | in loader.go |
-| `logic/loaders/ottp` | load | 52 | 42 | 6 | 0 | in loader.go |
-| `logic/loaders/otwd` | load | 51 | 42 | 6 | 0 | in loader.go |
+| `logic/loaders/mnemosyne` | load | 79 | 44 | 7 | 0 | central |
+| `logic/loaders/ot` | load | 104 | 42 | 6 | 0 | central |
+| `logic/loaders/otmd` | load | 68 | 42 | 6 | 0 | central |
+| `logic/loaders/ottp` | load | 52 | 42 | 6 | 0 | central |
+| `logic/loaders/otwd` | load | 51 | 42 | 6 | 0 | central |
 | `logic/loaders/overhoor` | load | 84 | 46 | 8 | 0 | scaffold |
-| `logic/loaders/ovr` | load | 93 | 50 | 10 | 0 | in loader.go |
+| `logic/loaders/ovr` | load | 93 | 50 | 10 | 0 | scaffold |
 | `logic/loaders/pauker` | load | 96 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/t2k` | load | 187 | 60 | 15 | 0 | in loader.go |
-| `logic/loaders/teachmaster` | load | 89 | 46 | 8 | 0 | scaffold |
+| `logic/loaders/t2k` | load | 187 | 60 | 15 | 0 | central |
+| `logic/loaders/teachmaster` | load | 89 | 46 | 8 | 0 | central |
 | `logic/loaders/test` | test | 94 | 0 | 0 | 0 | test suite |
 | `logic/loaders/voca` | load | 305 | 84 | 27 | 0 | scaffold |
 | `logic/loaders/vocabularium` | load | 87 | 46 | 8 | 0 | scaffold |
 | `logic/loaders/vokabelTrainer` | load | 75 | 42 | 6 | 0 | scaffold |
-| `logic/loaders/vtrainTxt` | load | 89 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/wrts` | load | 90 | 42 | 6 | 0 | in loader.go |
+| `logic/loaders/vtrainTxt` | load | 89 | 44 | 7 | 0 | central |
+| `logic/loaders/wrts` | load | 90 | 42 | 6 | 0 | scaffold |
 | `logic/mergers/words` | merger | 21 | 38 | 4 | 0 | scaffold |
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
 | `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 38 | 4 | 0 | scaffold |
@@ -349,24 +429,24 @@ the repository's status documents) follow in the next step.
 | `logic/safeHtmlCheckerTest` | test | 81 | 72 | 26 | 0 | test suite |
 | `logic/saver` | saver | 56 | 37 | 3 | 0 | scaffold |
 | `logic/savers/csv_` | save | 71 | 89 | 0 | 0 | untested |
-| `logic/savers/kvtml` | save | 86 | 44 | 7 | 0 | in loader.go |
-| `logic/savers/latex` | save | 69 | 42 | 6 | 0 | scaffold |
+| `logic/savers/kvtml` | save | 86 | 44 | 7 | 0 | central |
+| `logic/savers/latex` | save | 69 | 42 | 6 | 0 | central |
 | `logic/savers/libreofficeFormats` | save | 111 | 42 | 6 | 0 | scaffold |
-| `logic/savers/mediaHtml` | save | 65 | 40 | 5 | 0 | scaffold |
+| `logic/savers/mediaHtml` | save | 65 | 40 | 5 | 0 | central |
 | `logic/savers/odt` | save | 47 | 40 | 5 | 0 | scaffold |
-| `logic/savers/ot` | save | 81 | 42 | 6 | 0 | in loader.go |
-| `logic/savers/otmd` | save | 87 | 37 | 3 | 0 | in loader.go |
-| `logic/savers/ottp` | save | 51 | 40 | 5 | 0 | in loader.go |
-| `logic/savers/otwd` | save | 47 | 40 | 5 | 0 | in loader.go |
-| `logic/savers/pdf` | save | 58 | 42 | 6 | 0 | in saver.go |
+| `logic/savers/ot` | save | 81 | 42 | 6 | 0 | central |
+| `logic/savers/otmd` | save | 87 | 37 | 3 | 0 | central |
+| `logic/savers/ottp` | save | 51 | 40 | 5 | 0 | central |
+| `logic/savers/otwd` | save | 47 | 40 | 5 | 0 | scaffold |
+| `logic/savers/pdf` | save | 58 | 42 | 6 | 0 | scaffold |
 | `logic/savers/png` | save | 44 | 40 | 5 | 0 | scaffold |
 | `logic/savers/sylk` | save | 45 | 40 | 5 | 0 | scaffold |
-| `logic/savers/t2k` | save | 129 | 60 | 15 | 0 | in loader.go |
+| `logic/savers/t2k` | save | 129 | 60 | 15 | 0 | central |
 | `logic/savers/test` | test | 174 | 0 | 0 | 0 | test suite |
-| `logic/savers/topoHtml` | save | 61 | 40 | 5 | 0 | scaffold |
-| `logic/savers/txt` | save | 103 | 37 | 3 | 0 | in loader.go |
-| `logic/savers/wordsHtml` | save | 52 | 40 | 5 | 0 | scaffold |
-| `logic/savers/wrts` | save | 86 | 42 | 6 | 0 | in loader.go |
+| `logic/savers/topoHtml` | save | 61 | 40 | 5 | 0 | central |
+| `logic/savers/txt` | save | 103 | 37 | 3 | 0 | central |
+| `logic/savers/wordsHtml` | save | 52 | 40 | 5 | 0 | central |
+| `logic/savers/wrts` | save | 86 | 42 | 6 | 0 | scaffold |
 | `logic/settings` | settings | 106 | 198 | 0 | 1 | working |
 | `logic/settingsFilterer` | settingsFilterer | 47 | 40 | 5 | 0 | scaffold |
 | `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |

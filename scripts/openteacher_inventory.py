@@ -77,7 +77,7 @@ def code_lines(src):
     return n
 
 
-RANK = ["missing", "scaffold", "partial", "untested", "working"]
+RANK = ["missing", "scaffold", "partial", "untested", "working"]  # "central": see central_format
 
 
 def go_candidates(rel):
@@ -130,16 +130,39 @@ def go_status(all_files):
                 stubs=stubs, tests=len(tests), status=status)
 
 
+EXT = re.compile(r"""["'](\w+)["']\s*:""")
+
+
+def declared_extensions(d, attr):
+    """File extensions a legacy loader/saver declares in self.loads/self.saves."""
+    exts = set()
+    for py in d.glob("*.py"):
+        src = py.read_text(errors="replace")
+        m = re.search(r"self\." + attr + r"\s*=\s*\{(.*?)\n\t\t\}", src, re.S)
+        if m:
+            exts.update(e for e in EXT.findall(m.group(1)) if e not in ("words", "topo", "media"))
+    return exts
+
+
 def central_format(rel):
-    """Loaders/savers are implemented in internal/lesson rather than per module."""
+    """Loaders/savers are implemented in internal/lesson rather than per module.
+    Returns the internal/lesson file handling one of the module's extensions."""
     parts = rel.parts
-    if len(parts) == 3 and parts[:2] in (("logic", "loaders"), ("logic", "savers")):
-        name = parts[2].rstrip("_").lower()
-        for f in LESSON.glob("*.go"):
-            if f.name.endswith("_test.go"):
-                continue
-            if re.search(r'"\.' + re.escape(name) + r'"', f.read_text(errors="replace"), re.I):
-                return f.name
+    if len(parts) != 3 or parts[:2] not in (("logic", "loaders"), ("logic", "savers")):
+        return ""
+    loader = parts[1] == "loaders"
+    exts = declared_extensions(LEGACY / rel, "loads" if loader else "saves")
+    exts.add(parts[2].rstrip("_").lower())
+    target = LESSON / ("loader.go" if loader else "saver.go")
+    src = target.read_text(errors="replace") if target.exists() else ""
+    # only the dispatching function: LoadFile / SaveFile
+    fn = "LoadFile" if loader else "SaveFile"
+    m = re.search(r"\nfunc \([^)]*\) " + fn + r"\(.*?\n}\n", src, re.S)
+    src = m.group(0) if m else ""
+    for e in sorted(exts):
+        # only formats the load/save switch dispatches on, not comments or names
+        if re.search(r'^\s*case [^\n]*"\.' + re.escape(e) + r'"', src, re.I | re.M):
+            return "internal/lesson"
     return ""
 
 
@@ -150,7 +173,7 @@ def rows():
         st = best_status(rel)
         central = central_format(rel)
         if central and st["status"] in ("missing", "scaffold"):
-            st["status"] = "in " + central
+            st["status"] = "central"
         name = rel.parts[-1]
         if name.endswith("Test") or name in ("test", "testRunner", "testserver", "testServer", "testSuite") \
                 or "testserver" in rel.parts:
