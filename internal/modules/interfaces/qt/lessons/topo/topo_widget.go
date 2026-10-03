@@ -3,6 +3,7 @@ package topo
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/resources"
 	"log"
 	"os"
 	"path/filepath"
@@ -156,7 +157,7 @@ func NewTopoLessonWidget(lesson *lesson.Lesson, parent *qt.QWidget) *TopoLessonW
 	}
 
 	// Initialize map manager
-	widget.mapManager = maps.NewMapManager("./")
+	widget.mapManager = maps.NewMapManager(resources.Dir())
 	if err := widget.mapManager.LoadAvailableMaps(); err != nil {
 		log.Printf("Warning: Failed to load available maps: %v", err)
 	}

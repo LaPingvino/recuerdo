@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4fa3bd"/>
+      <stop offset="1" stop-color="#2b6f88"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="120" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="120" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="6"/>
+  <!-- mortarboard -->
+  <g fill="#ffffff">
+    <polygon points="128,34 196,62 128,90 60,62"/>
+    <path d="M92 76 v20 c0 10 16 18 36 18 s36 -8 36 -18 v-20 l-36 15 z"/>
+    <rect x="186" y="62" width="5" height="34" rx="2"/>
+    <circle cx="188.5" cy="100" r="6"/>
+  </g>
+  <!-- R -->
+  <text x="128" y="214" text-anchor="middle" font-family="DejaVu Serif, Georgia, serif" font-weight="bold" font-size="112" fill="#ffffff">R</text>
+</svg>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Recuerdo
+GenericName=Vocabulary Trainer
+Comment=Learn word lists, topography and media lessons (OpenTeacher in Go)
+Exec=recuerdo %F
+Icon=recuerdo
+Terminal=false
+Categories=Education;Languages;
+Keywords=vocabulary;language;learning;flashcards;openteacher;
