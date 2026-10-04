@@ -6,6 +6,12 @@ import (
 	"reflect"
 	"strings"
 	"testing"
+	"time"
+)
+
+var (
+	began    = time.Date(2026, 10, 4, 12, 0, 0, 0, time.UTC)
+	answered = began.Add(3500 * time.Millisecond)
 )
 
 func sampleLesson() *LessonData {
@@ -16,7 +22,7 @@ func sampleLesson() *LessonData {
 		{ID: 0, Questions: []string{"hond"}, Answers: []string{"dog"}},
 		{ID: 1, Questions: []string{"kat"}, Answers: []string{"cat", "puss"}, Comment: "a; b"},
 	}
-	d.List.Tests = []Test{{Results: []TestResult{{ItemID: 0, Result: "right"}}}}
+	d.List.Tests = []Test{{Date: &began, Results: []TestResult{{ItemID: 0, Result: "right", Time: &answered}}}}
 	return d
 }
 
@@ -41,6 +47,12 @@ func TestSaversRoundTrip(t *testing.T) {
 			}
 			if ext == ".otwd" && (len(out.List.Tests) != 1 || out.List.Items[1].Comment != "a; b") {
 				t.Errorf("otwd should keep comments and results: %+v", out.List)
+			}
+			if ext == ".otwd" {
+				r := out.List.Tests[0].Results[0]
+				if r.Time == nil || !r.Time.Equal(answered) || out.List.Tests[0].Date == nil || !out.List.Tests[0].Date.Equal(began) {
+					t.Errorf("otwd should keep answer times: %v, date %v", r.Time, out.List.Tests[0].Date)
+				}
 			}
 		})
 	}

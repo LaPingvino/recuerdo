@@ -10,6 +10,7 @@ import (
 	"io"
 	"os"
 	"strings"
+	"time"
 
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/encoding/unicode"
@@ -48,6 +49,10 @@ func (fl *FileLoader) loadOTWDFile(path string) (*LessonData, error) {
 			Results []struct {
 				ItemID int    `json:"itemId"`
 				Result string `json:"result"`
+				Active struct {
+					Start string `json:"start"`
+					End   string `json:"end"`
+				} `json:"active"`
 			} `json:"results"`
 		} `json:"tests"`
 	}
@@ -72,8 +77,15 @@ func (fl *FileLoader) loadOTWDFile(path string) (*LessonData, error) {
 	}
 	for _, t := range list.Tests {
 		var test Test
-		for _, r := range t.Results {
-			test.Results = append(test.Results, TestResult{ItemID: r.ItemID, Result: r.Result})
+		for i, r := range t.Results {
+			res := TestResult{ItemID: r.ItemID, Result: r.Result}
+			if end, err := time.Parse(otTime, r.Active.End); err == nil {
+				res.Time = &end
+			}
+			if start, err := time.Parse(otTime, r.Active.Start); err == nil && i == 0 {
+				test.Date = &start
+			}
+			test.Results = append(test.Results, res)
 		}
 		data.List.Tests = append(data.List.Tests, test)
 	}

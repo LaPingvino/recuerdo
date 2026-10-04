@@ -46,8 +46,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/website"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/youtube"
 	ocrgui "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrGui"
-	percentnotesviewer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/percentNotesViewer"
-	progressviewer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/progressViewer"
 	qtapp "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/qtApp"
 	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
@@ -445,12 +443,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register ocrgui module: %w", err)
 	}
 
-	// Register percentnotesviewer module
-	percentnotesviewerModule := percentnotesviewer.NewPercentNotesViewerModule()
-	if err := manager.Register(percentnotesviewerModule); err != nil {
-		return fmt.Errorf("failed to register percentnotesviewer module: %w", err)
-	}
-
 	// Register media module - DISABLED (duplicate module name conflict)
 	// printmediaModule := testtypesmedia.NewMediaTestTypeModule()
 	// if err := manager.Register(printmediaModule); err != nil {
@@ -462,12 +454,6 @@ func registerAllModules(manager *core.Manager) error {
 	// if err := manager.Register(printtopoModule); err != nil {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
-
-	// Register progressviewer module
-	progressviewerModule := progressviewer.NewProgressViewerModule()
-	if err := manager.Register(progressviewerModule); err != nil {
-		return fmt.Errorf("failed to register progressviewer module: %w", err)
-	}
 
 	// Register media module - DISABLED (duplicate module name conflict)
 	// teachermediaModule := testtypesmedia.NewMediaTestTypeModule()

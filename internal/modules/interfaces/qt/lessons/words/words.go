@@ -2,6 +2,7 @@ package words
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"path/filepath"
 	"strings"
@@ -1276,6 +1277,9 @@ type ResultsTabWidget struct {
 	// UI components
 	overviewLabel *qt.QLabel
 	notationCombo *qt.QComboBox
+	chartsGroup   *qt.QGroupBox
+	timeline      *charts.TimelineChart
+	grades        *charts.GradesChart
 	settings      Settings
 	resultsTable  *qt.QTableWidget
 
@@ -1327,6 +1331,23 @@ func (w *ResultsTabWidget) setupUI() {
 	overviewLayout.AddWidget(w.overviewLabel.QWidget)
 
 	layout.AddWidget(overviewGroup.QWidget)
+
+	// Charts of the lesson's stored tests
+	w.chartsGroup = qt.NewQGroupBox(w.QWidget)
+	w.chartsGroup.SetTitle("Progress")
+	chartsLayout := qt.NewQVBoxLayout(w.chartsGroup.QWidget)
+	timelineLabel := qt.NewQLabel(w.QWidget)
+	timelineLabel.SetText("Last session:")
+	chartsLayout.AddWidget(timelineLabel.QWidget)
+	w.timeline = charts.NewTimelineChart(w.QWidget)
+	chartsLayout.AddWidget(w.timeline.QWidget)
+	gradesLabel := qt.NewQLabel(w.QWidget)
+	gradesLabel.SetText("Each session:")
+	chartsLayout.AddWidget(gradesLabel.QWidget)
+	w.grades = charts.NewGradesChart(w.QWidget)
+	chartsLayout.AddWidget(w.grades.QWidget)
+	w.chartsGroup.SetVisible(false)
+	layout.AddWidget(w.chartsGroup.QWidget)
 
 	// Detailed results
 	detailsGroup := qt.NewQGroupBox(w.QWidget)
@@ -1397,9 +1418,20 @@ func (w *ResultsTabWidget) updateResultsDisplay() {
 	}
 
 	wordCount := len(w.lesson.Data.List.Items)
+	if tests := w.lesson.Data.List.Tests; len(tests) > 0 {
+		w.timeline.SetTest(tests[len(tests)-1])
+		w.grades.SetTests(tests)
+		w.chartsGroup.SetVisible(true)
+	} else {
+		w.chartsGroup.SetVisible(false)
+	}
 
 	if len(w.sessions) == 0 {
-		w.overviewLabel.SetText(fmt.Sprintf("Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here.", wordCount))
+		text := fmt.Sprintf("Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here.", wordCount)
+		if n := len(charts.Percentages(w.lesson.Data.List.Tests)); n > 0 {
+			text = fmt.Sprintf("Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here.", wordCount, n)
+		}
+		w.overviewLabel.SetText(text)
 		w.resultsTable.SetRowCount(0)
 	} else {
 		// Show statistics from latest session

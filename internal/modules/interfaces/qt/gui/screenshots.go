@@ -1,8 +1,11 @@
 package gui
 
 import (
+	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"os"
 	"path/filepath"
+	"strings"
+	"time"
 
 	"github.com/mappu/miqt/qt"
 )
@@ -37,7 +40,7 @@ func (mod *GuiModule) startScreenshots() {
 	}
 	mod.mainWindow.Resize(1000, 700)
 
-	lessonFile := filepath.Join(dir, "sample-words.csv")
+	lessonFile := filepath.Join(dir, "sample-words.otwd")
 	shoot := func(name string) func() {
 		return func() {
 			path := filepath.Join(dir, name+".png")
@@ -56,8 +59,10 @@ func (mod *GuiModule) startScreenshots() {
 	steps := []func(){
 		shoot("01-start"),
 		func() {
-			if err := os.WriteFile(lessonFile, []byte(sampleLesson), 0o644); err == nil {
+			if err := writeSample(lessonFile); err == nil {
 				mod.loadSelectedFile(lessonFile)
+			} else {
+				mod.logger.Error("screenshots: sample lesson: %v", err)
 			}
 		},
 		shoot("02-enter"),
@@ -123,4 +128,34 @@ func (mod *GuiModule) startScreenshots() {
 		step()
 	})
 	timer.Start(400)
+}
+
+// writeSample saves the tour's lesson: sampleLesson's words with three
+// earlier sessions (the last with answer times), for the results charts.
+func writeSample(path string) error {
+	items, err := lesson.ParseWordList(strings.ReplaceAll(sampleLesson, ",", " = "), true)
+	if err != nil {
+		return err
+	}
+	data := lesson.NewLessonData()
+	data.List.Title = "sample-words"
+	data.List.Items = items
+	start := time.Date(2026, 10, 1, 19, 0, 0, 0, time.UTC)
+	for s, rightUpTo := range []int{3, 5, 7} {
+		t := lesson.Test{}
+		day := start.AddDate(0, 0, s)
+		t.Date = &day
+		at := day
+		for i := range items {
+			at = at.Add(time.Duration(2+i%3*3) * time.Second)
+			when := at
+			r := lesson.TestResult{ItemID: items[i].ID, Result: "wrong", Time: &when}
+			if i < rightUpTo {
+				r.Result = "right"
+			}
+			t.Results = append(t.Results, r)
+		}
+		data.List.Tests = append(data.List.Tests, t)
+	}
+	return lesson.NewFileSaver().SaveFile(data, path)
 }

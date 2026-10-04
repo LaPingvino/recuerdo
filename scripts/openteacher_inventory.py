@@ -280,6 +280,10 @@ COVERED = {
     "interfaces/qt/printer": ("internal/modules/interfaces/qt/export", "Print prints the HTML export on a QPrinter"),
     "interfaces/qt/print/words": ("internal/modules/interfaces/qt/export", "Print: a word list's HTML export, named after "
                                   "the lesson, tested by printing to PDF"),
+    "interfaces/qt/percentNotesViewer": ("internal/modules/interfaces/qt/charts", "GradesChart: a bar per session "
+                                         "with its percentage, on the Results tab"),
+    "interfaces/qt/progressViewer": ("internal/modules/interfaces/qt/charts", "TimelineChart: the last session's "
+                                     "answers over time, on the Results tab"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

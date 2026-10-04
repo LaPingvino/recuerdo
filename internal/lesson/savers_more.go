@@ -12,6 +12,9 @@ import (
 
 // Savers for formats OpenTeacher writes, ported from its logic/savers.
 
+// otTime is how OpenTeacher writes times in .otwd files.
+const otTime = "2006-01-02T15:04:05.999999"
+
 // composeWords joins a word's alternatives as OpenTeacher writes them.
 func composeWords(words []string) string { return strings.Join(words, ", ") }
 
@@ -24,9 +27,14 @@ func (fs *FileSaver) saveOTWDFile(data *LessonData, path string) error {
 		Answers   [][]string `json:"answers"`
 		Comment   string     `json:"comment,omitempty"`
 	}
+	type active struct {
+		Start string `json:"start,omitempty"`
+		End   string `json:"end"`
+	}
 	type result struct {
-		ItemID int    `json:"itemId"`
-		Result string `json:"result"`
+		ItemID int     `json:"itemId"`
+		Result string  `json:"result"`
+		Active *active `json:"active,omitempty"`
 	}
 	type test struct {
 		Results  []result `json:"results"`
@@ -51,8 +59,19 @@ func (fs *FileSaver) saveOTWDFile(data *LessonData, path string) error {
 	}
 	for _, t := range data.List.Tests {
 		ot := test{Finished: true, Results: []result{}}
+		// OpenTeacher's "active" period: from the previous answer (or the
+		// test's start) to this one
+		prev := t.Date
 		for _, r := range t.Results {
-			ot.Results = append(ot.Results, result{ItemID: r.ItemID, Result: r.Result})
+			res := result{ItemID: r.ItemID, Result: r.Result}
+			if r.Time != nil {
+				res.Active = &active{End: r.Time.Format(otTime)}
+				if prev != nil {
+					res.Active.Start = prev.Format(otTime)
+				}
+				prev = r.Time
+			}
+			ot.Results = append(ot.Results, res)
 		}
 		list.Tests = append(list.Tests, ot)
 	}
