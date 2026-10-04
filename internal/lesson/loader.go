@@ -448,9 +448,18 @@ func (fl *FileLoader) loadKVTMLFile(filePath string) (*LessonData, error) {
 		Comment string `xml:"comment"`
 	}
 
+	// KVTML 1 (KVocTrain): <e> entries with the original <o> and the
+	// translation <t>
+	type KVTML1Entry struct {
+		Original    string `xml:"o"`
+		Translation string `xml:"t"`
+	}
+
 	type KVTMLRoot struct {
 		XMLName     xml.Name          `xml:"kvtml"`
 		Version     string            `xml:"version,attr"`
+		Title1      string            `xml:"title,attr"`
+		Entries1    []KVTML1Entry     `xml:"e"`
 		Information KVTMLInformation  `xml:"information"`
 		Identifiers []KVTMLIdentifier `xml:"identifiers>identifier"`
 		Entries     []KVTMLEntry      `xml:"entries>entry"`
@@ -473,6 +482,16 @@ func (fl *FileLoader) loadKVTMLFile(filePath string) (*LessonData, error) {
 	if len(root.Identifiers) >= 2 {
 		lessonData.List.QuestionLanguage = root.Identifiers[0].Name
 		lessonData.List.AnswerLanguage = root.Identifiers[1].Name
+	}
+
+	if lessonData.List.Title == titleFromPath(filePath) && root.Title1 != "" {
+		lessonData.List.Title = root.Title1
+	}
+	for i, e := range root.Entries1 {
+		q, a := fl.parseWordString(strings.TrimSpace(e.Original)), fl.parseWordString(strings.TrimSpace(e.Translation))
+		if len(q) > 0 && len(a) > 0 {
+			lessonData.List.Items = append(lessonData.List.Items, WordItem{ID: i, Questions: q, Answers: a})
+		}
 	}
 
 	// Process entries
@@ -956,12 +975,15 @@ func (fl *FileLoader) loadTeach2000File(filePath string) (*LessonData, error) {
 	}
 
 	type Teach2000Item struct {
-		ID           string             `xml:"id,attr"`
-		Questions    Teach2000Questions `xml:"questions"`
-		Answers      Teach2000Answers   `xml:"answers"`
-		Errors       int                `xml:"errors"`
-		TestCount    int                `xml:"testcount"`
-		CorrectCount int                `xml:"correctcount"`
+		ID        string             `xml:"id,attr"`
+		Questions Teach2000Questions `xml:"questions"`
+		Answers   Teach2000Answers   `xml:"answers"`
+		// WRTS writes the question and answer directly in the item
+		Question     []Teach2000Question `xml:"question"`
+		Answer       []Teach2000Answer   `xml:"answer"`
+		Errors       int                 `xml:"errors"`
+		TestCount    int                 `xml:"testcount"`
+		CorrectCount int                 `xml:"correctcount"`
 	}
 
 	type Teach2000Items struct {
@@ -994,6 +1016,12 @@ func (fl *FileLoader) loadTeach2000File(filePath string) (*LessonData, error) {
 
 	itemID := 0
 	for _, item := range root.MessageData.Items.Items {
+		if len(item.Questions.Questions) == 0 {
+			item.Questions.Questions = item.Question
+		}
+		if len(item.Answers.Answers) == 0 {
+			item.Answers.Answers = item.Answer
+		}
 		if len(item.Questions.Questions) > 0 && len(item.Answers.Answers) > 0 {
 			// Extract question texts
 			var questions []string
@@ -1016,7 +1044,6 @@ func (fl *FileLoader) loadTeach2000File(filePath string) (*LessonData, error) {
 					ID:        itemID,
 					Questions: questions,
 					Answers:   answers,
-					Comment:   fmt.Sprintf("TestCount: %d, Correct: %d, Errors: %d", item.TestCount, item.CorrectCount, item.Errors),
 				}
 				lessonData.List.Items = append(lessonData.List.Items, wordItem)
 				itemID++

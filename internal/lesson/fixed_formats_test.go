@@ -26,6 +26,12 @@ func TestFixedFormatsContent(t *testing.T) {
 	if d := load("application_x-backpack.backpack"); len(d.List.Items) != 2 || len(d.List.Items[0].Answers) != 2 {
 		t.Errorf("backpack: %+v", d.List.Items)
 	}
+	if d := load("application_x-kvtml.kvoctrain.kvtml"); len(d.List.Items) != 1 || d.List.Items[0].Questions[0] != "one" || d.List.Items[0].Answers[0] != "een" {
+		t.Errorf("kvoctrain: %+v", d.List.Items)
+	}
+	if d := load("application_x-teach2000.wrts.t2k"); len(d.List.Items) != 3 || d.List.Items[2].Answers[0] != "three" || d.List.Items[0].Comment != "" {
+		t.Errorf("WRTS-written t2k: %+v", d.List.Items)
+	}
 	if d := load("text_plain.vtrain.txt"); len(d.List.Items) != 3 || d.List.Items[1].Answers[0] != "two" {
 		t.Errorf("vtrain: %+v", d.List.Items)
 	}
