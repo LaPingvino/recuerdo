@@ -46,6 +46,20 @@ func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
 		return fl.loadPauker(filePath)
 	case ".jml":
 		return fl.loadJML(filePath)
+	case ".oh", ".ohw", ".oh4":
+		return fl.loadOverhoor(filePath)
+	case ".ovr":
+		return fl.loadOVR(filePath)
+	case ".dkf":
+		return fl.loadGranule(filePath)
+	case ".fmd":
+		return fl.loadFMD(filePath)
+	case ".voc":
+		// Domingo writes UTF-8 text; Vocabularium's .voc is UTF-16
+		if !isUTF16(filePath) {
+			return fl.loadDomingo(filePath)
+		}
+		return fl.loadAutoDetect(filePath)
 	case ".csv", ".tsv":
 		return fl.loadCSV(filePath)
 	case ".txt":

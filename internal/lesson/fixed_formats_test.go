@@ -47,6 +47,25 @@ func TestFixedFormatsContent(t *testing.T) {
 	if d := load("application_x-jmemorizelesson.jmemorize.jml"); len(d.List.Items) == 0 || d.List.Items[len(d.List.Items)-1].Questions[0] != "c" {
 		t.Errorf("jml (in order of creation, c last): %+v", d.List.Items)
 	}
+	// its font line puts the answers in TekniaGreek, a Greek mimicry font
+	if d := load("application_x-overhoor.overhoorvoorwindows4.5.1.oh"); len(d.List.Items) != 3 || d.List.Items[0].Answers[0] != "ονε" || d.List.Items[2].Questions[0] != "drié" {
+		t.Errorf("overhoor: %+v", d.List.Items)
+	}
+	if d := load("application_x-overhoor.wrts.ohw"); d.List.Items[0].Answers[0] != "one" {
+		t.Errorf("overhoor without fonts: %+v", d.List.Items)
+	}
+	if d := load("application_x-overhoringsprogrammatalen.downloaded-and-edited.ovr"); d.List.QuestionLanguage != "Duits" || len(d.List.Items) != 2 || len(d.List.Items[1].Answers) != 2 {
+		t.Errorf("ovr: %q %+v", d.List.QuestionLanguage, d.List.Items)
+	}
+	if d := load("application_x-granuledeck.granule.dkf"); len(d.List.Items) != 3 || d.List.Items[0].Answers[0] != "one" {
+		t.Errorf("granule: %+v", d.List.Items)
+	}
+	if d := load("application_x-domingo.domingo.voc"); len(d.List.Items) != 3 || d.List.Items[1].Answers[0] != "two" {
+		t.Errorf("domingo: %+v", d.List.Items)
+	}
+	if d := load("application_x-fm-dictionary.fmd"); len(d.List.Items) != 3 || d.List.QuestionLanguage != "" {
+		t.Errorf("fmd: %q %+v", d.List.QuestionLanguage, d.List.Items)
+	}
 	if d := load("text_plain.vtrain.txt"); len(d.List.Items) != 3 || d.List.Items[1].Answers[0] != "two" {
 		t.Errorf("vtrain: %+v", d.List.Items)
 	}

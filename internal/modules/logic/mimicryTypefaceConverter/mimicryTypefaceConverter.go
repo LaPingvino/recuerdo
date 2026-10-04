@@ -1,15 +1,15 @@
-// Package mimicrytypefaceconverter provides functionality ported from Python module
-//
-// Supported mimicry fonts:
-// - Greek
-// - TekniaGreek
-//
-// This is an automated port - implementation may be incomplete.
+// Package mimicrytypefaceconverter converts text typed in a "mimicry
+// typeface" to Unicode. Old programs wrote Greek with fonts such as Symbol
+// or Teach2000's Greek that draw Greek letters in place of Latin ones, so
+// their files hold "abg" where the user saw "αβγ". Port of OpenTeacher's
+// logic/mimicryTypefaceConverter.
 package mimicrytypefaceconverter
 
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
 )
 
@@ -29,9 +29,42 @@ func NewMimicryTypefaceConverterModule() *MimicryTypefaceConverterModule {
 	}
 }
 
-// Convert is the Go port of the Python convert method
-func (mod *MimicryTypefaceConverterModule) Convert() {
-	// TODO: Port Python method logic
+// Convert converts text in font to Unicode (see Convert).
+func (mod *MimicryTypefaceConverterModule) Convert(font, text string) string {
+	return Convert(font, text)
+}
+
+// greekLetters maps the Latin letters of the Symbol, Greek and TekniaGreek
+// fonts to the Greek letters they draw. In OpenTeacher the three fonts
+// share one table (Greek's additions also apply to Symbol), as here.
+var greekLetters = map[rune]rune{
+	'a': 'α', 'b': 'β', 'g': 'γ', 'd': 'δ', 'e': 'ε', 'z': 'ζ', 'h': 'η',
+	'q': 'θ', 'i': 'ι', 'k': 'κ', 'l': 'λ', 'm': 'μ', 'n': 'ν', 'x': 'ξ',
+	'o': 'ο', 'p': 'π', 'r': 'ρ', 's': 'σ', 't': 'τ', 'u': 'υ', 'f': 'φ',
+	'c': 'χ', 'y': 'ψ', 'w': 'ω',
+	'A': 'Α', 'B': 'Β', 'G': 'Γ', 'D': 'Δ', 'E': 'Ε', 'Z': 'Ζ', 'H': 'Η',
+	'Q': 'Θ', 'I': 'Ι', 'K': 'Κ', 'L': 'Λ', 'M': 'Μ', 'N': 'Ν', 'X': 'Ξ',
+	'O': 'Ο', 'P': 'Π', 'R': 'Ρ', 'S': 'Σ', 'T': 'Τ', 'U': 'Υ', 'F': 'Φ',
+	'C': 'Χ', 'Y': 'Ψ', 'W': 'Ω',
+	// added for Teach2000's Greek font
+	'j': 'ς', 'v': 'ᾳ', 'J': 'ῷ', 'V': 'ῃ',
+}
+
+// Convert returns text with each letter replaced by the one it shows in
+// font, if font is a known mimicry typeface (Symbol, Greek, TekniaGreek;
+// case does not matter); other text is returned unchanged.
+func Convert(font, text string) string {
+	switch strings.ToLower(strings.TrimSpace(font)) {
+	case "symbol", "greek", "tekniagreek":
+	default:
+		return text
+	}
+	return strings.Map(func(r rune) rune {
+		if g, ok := greekLetters[r]; ok {
+			return g
+		}
+		return r
+	}, text)
 }
 
 // Enable activates the module

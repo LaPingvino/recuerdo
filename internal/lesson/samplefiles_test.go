@@ -18,21 +18,12 @@ const sampleFiles = "../../legacy/modules/org/openteacher/logic/loaders/test/tes
 // with what goes wrong. TestOpenTeacherSampleFiles fails when one starts
 // working, so the list only shrinks.
 var knownBroken = map[string]string{
-	"application_x-domingo.domingo.voc":                                 "Domingo format not supported",
-	"application_x-fm-dictionary.fmd":                                   "FMD XML read as text",
-	"application_x-granuledeck.granule.dkf":                             "Granule format not supported",
-	"application_x-oriente-voca.voca3.0.wdl":                            "Voca format not supported",
-	"application_x-oriente-voca.voca4.0.wdl":                            "Voca format not supported",
-	"application_x-oriente-voca.vocatude1.0.wdl":                        "Voca format not supported",
-	"application_x-overhoor.overhoorvoorwindows4.5.1.oh":                "Overhoor format read as text",
-	"application_x-overhoor.overhoorvoorwindows4.5.1.oh4":               "Overhoor format read as text",
-	"application_x-overhoor.overhoorvoorwindows4.5.1.ohw":               "Overhoor format read as text",
-	"application_x-overhoor.wrts.oh4":                                   "Overhoor format read as text",
-	"application_x-overhoor.wrts.ohw":                                   "Overhoor format read as text",
-	"application_x-overhoringsprogrammatalen.downloaded-and-edited.ovr": "Overhoringsprogramma Talen format not supported",
-	"application_x-vocabularium.edited(all-files-are).voc":              "UTF-16 Vocabularium format not supported",
-	"application_x-vokabeltrainer.vokabeltrainer-with-comment.vtl3":     "VokabelTrainer format not supported",
-	"application_x-vokabeltrainer.vokabeltrainer.vtl3":                  "VokabelTrainer format not supported",
+	"application_x-oriente-voca.voca3.0.wdl":                        "Voca format not supported",
+	"application_x-oriente-voca.voca4.0.wdl":                        "Voca format not supported",
+	"application_x-oriente-voca.vocatude1.0.wdl":                    "Voca format not supported",
+	"application_x-vocabularium.edited(all-files-are).voc":          "UTF-16 Vocabularium format not supported",
+	"application_x-vokabeltrainer.vokabeltrainer-with-comment.vtl3": "VokabelTrainer format not supported",
+	"application_x-vokabeltrainer.vokabeltrainer.vtl3":              "VokabelTrainer format not supported",
 }
 
 // firstQuestion is the first question of sample files whose content
