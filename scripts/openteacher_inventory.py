@@ -218,14 +218,28 @@ COVERED = {
                                "loaded by MapManager"),
     "data/maps/usa": ("internal/maps", "the map picture and places in data/maps/usa, loaded by MapManager"),
     "data/maps/world": ("internal/maps", "the map picture and places in data/maps/world, loaded by MapManager"),
+    "data/profileDescriptions/all": ("cmd/recuerdo", "Recuerdo always starts with all its features, "
+                                     "which is what OpenTeacher's \"all\" profile chose"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }
 
 
+# Why the modules dropped one by one (beyond the areas in DROPPED) were.
+DROPPED_REASONS = {
+    "data/profileDescriptions/selfstudy": "OpenTeacher's start-up profiles only chose which GUI modules to load "
+                                          "for an audience; Recuerdo has one, smaller feature set",
+    "data/profileDescriptions/studentAtHome": "as selfstudy: an audience profile",
+    "data/profileDescriptions/studentAtSchool": "as selfstudy: an audience profile",
+    "data/profileDescriptions/teacher": "as selfstudy: an audience profile",
+    "data/profileDescriptions/wordsOnly": "as selfstudy (\"just gimme my good old OpenTeacher 2.x\"); a setting "
+                                          "hiding topography and media lessons could do this later",
+}
+
+
 def dropped(rel):
     r = str(rel)
-    return any(r.startswith(d) or "/" + d in "/" + r for d in DROPPED)
+    return r in DROPPED_REASONS or any(r.startswith(d) or "/" + d in "/" + r for d in DROPPED)
 
 
 def rows():

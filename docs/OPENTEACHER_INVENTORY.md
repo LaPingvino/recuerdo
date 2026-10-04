@@ -66,12 +66,12 @@ uses it.
 
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data | 3 |  |  | 10 | 9 |  | 21 | 6 | 49 |
+| data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
 | logic | 8 | 15 |  | 51 | 41 |  | 26 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **13** | **18** | **7** | **61** | **109** | **2** | **77** | **67** | **354** |
+| **all** | **13** | **18** | **7** | **62** | **103** | **2** | **82** | **67** | **354** |
 
 Remarks:
 
@@ -185,6 +185,20 @@ file formats, see **covered** above):
 | `data/maps/usa` | `internal/maps` | the map picture and places in data/maps/usa, loaded by MapManager |
 | `data/maps/world` | `internal/maps` | the map picture and places in data/maps/world, loaded by MapManager |
 | `data/metadata` | `internal/modules/metadata.go` | Recuerdo's own metadata module (name, version, application ID) |
+| `data/profileDescriptions/all` | `cmd/recuerdo` | Recuerdo always starts with all its features, which is what OpenTeacher's "all" profile chose |
+
+## Dropped, and why
+
+Besides the areas dropped as a whole (the web version, packaging and
+generator tooling, test mode, web services; see **dropped** above):
+
+| Module | Why |
+|---|---|
+| `data/profileDescriptions/selfstudy` | OpenTeacher's start-up profiles only chose which GUI modules to load for an audience; Recuerdo has one, smaller feature set |
+| `data/profileDescriptions/studentAtHome` | as selfstudy: an audience profile |
+| `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
+| `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
+| `data/profileDescriptions/wordsOnly` | as selfstudy ("just gimme my good old OpenTeacher 2.x"); a setting hiding topography and media lessons could do this later |
 
 ## 5. Module table
 
@@ -204,7 +218,7 @@ file formats, see **covered** above):
 | `data/maps/world` | map | 27 | 0 | 0 | 0 | covered |
 | `data/metadata` | metadata | 83 | 0 | 0 | 0 | covered |
 | `data/openteacherAuthors` | openteacherAuthors | 151 | 37 | 0 | 1 | working |
-| `data/profileDescriptions/all` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
+| `data/profileDescriptions/all` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/cli` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
 | `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | dropped |
@@ -225,18 +239,18 @@ file formats, see **covered** above):
 | `data/profileDescriptions/packageSourceWithSetup` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/packageWindowsMsi` | profileDescription | 22 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/packageWindowsPortable` | profileDescription | 22 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/selfstudy` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
+| `data/profileDescriptions/selfstudy` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/shell` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
-| `data/profileDescriptions/studentAtHome` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
-| `data/profileDescriptions/studentAtSchool` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
-| `data/profileDescriptions/teacher` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
+| `data/profileDescriptions/studentAtHome` | profileDescription | 41 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/studentAtSchool` | profileDescription | 41 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/teacher` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/test` | test | 24 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testServer` | profileDescription | 41 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testSuite` | profileDescription | 19 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
+| `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 143 | 0 | 0 | untested |

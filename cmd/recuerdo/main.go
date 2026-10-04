@@ -15,15 +15,9 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
 	openteacherauthors "github.com/LaPingvino/recuerdo/internal/modules/data/openteacherAuthors"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/all"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/cli"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/help"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/selfstudy"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/shell"
-	studentathome "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/studentAtHome"
-	studentatschool "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/studentAtSchool"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/teacher"
-	wordsonly "github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/wordsOnly"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	wordslesson "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
@@ -683,12 +677,6 @@ func registerAllModules(manager *core.Manager) error {
 	//	return fmt.Errorf("failed to register words module: %w", err)
 	// }
 
-	// Register teacher module - DISABLED for now (module doesn't exist)
-	// teacherModule := teacher.NewTestModeTeacherModule()
-	// if err := manager.Register(teacherModule); err != nil {
-	// 	return fmt.Errorf("failed to register teacher module: %w", err)
-	// }
-
 	// Register theme module
 	themeModule := theme.NewThemeModule()
 	if err := manager.Register(themeModule); err != nil {
@@ -737,12 +725,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register openteacherauthors module: %w", err)
 	}
 
-	// Register all module
-	allModule := all.NewProfileDescriptionModule()
-	if err := manager.Register(allModule); err != nil {
-		return fmt.Errorf("failed to register all module: %w", err)
-	}
-
 	// Register cli module
 	cliModule := cli.NewProfileDescriptionModule()
 	if err := manager.Register(cliModule); err != nil {
@@ -755,40 +737,10 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register help module: %w", err)
 	}
 
-	// Register selfstudy module
-	selfstudyModule := selfstudy.NewProfileDescriptionModule()
-	if err := manager.Register(selfstudyModule); err != nil {
-		return fmt.Errorf("failed to register selfstudy module: %w", err)
-	}
-
 	// Register shell module
 	shellModule := shell.NewProfileDescriptionModule()
 	if err := manager.Register(shellModule); err != nil {
 		return fmt.Errorf("failed to register shell module: %w", err)
-	}
-
-	// Register studentathome module
-	studentathomeModule := studentathome.NewProfileDescriptionModule()
-	if err := manager.Register(studentathomeModule); err != nil {
-		return fmt.Errorf("failed to register studentathome module: %w", err)
-	}
-
-	// Register studentatschool module
-	studentatschoolModule := studentatschool.NewProfileDescriptionModule()
-	if err := manager.Register(studentatschoolModule); err != nil {
-		return fmt.Errorf("failed to register studentatschool module: %w", err)
-	}
-
-	// Register teacher module
-	teacherModule := teacher.NewProfileDescriptionModule()
-	if err := manager.Register(teacherModule); err != nil {
-		return fmt.Errorf("failed to register teacher module: %w", err)
-	}
-
-	// Register wordsonly module
-	wordsonlyModule := wordsonly.NewProfileDescriptionModule()
-	if err := manager.Register(wordsonlyModule); err != nil {
-		return fmt.Errorf("failed to register wordsonly module: %w", err)
 	}
 
 	// Register userdocumentation module
