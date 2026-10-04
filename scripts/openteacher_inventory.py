@@ -77,7 +77,7 @@ def code_lines(src):
     return n
 
 
-RANK = ["missing", "scaffold", "partial", "untested", "working"]  # plus "central", "dropped", "test suite"  # "central": see central_format
+RANK = ["missing", "scaffold", "partial", "untested", "working"]  # plus "covered", "dropped", "test suite"  # "covered": see central_format and COVERED
 
 
 def go_candidates(rel):
@@ -201,6 +201,28 @@ DROPPED = (
 )
 
 
+# Modules whose job Recuerdo does elsewhere (not in a module of their own),
+# with where and why. Listed in docs/OPENTEACHER_INVENTORY.md.
+COVERED = {
+    "data/chars/greek": ("interfaces/qt/lessons/words/unicode_picker.go",
+                         "OpenTeacher's Greek table is a built-in set of the special characters picker"),
+    "data/chars/cyrillic": ("interfaces/qt/lessons/words/unicode_picker.go",
+                            "OpenTeacher's Cyrillic table is a built-in set of the special characters picker"),
+    "data/chars/symbols": ("interfaces/qt/lessons/words/unicode_picker.go",
+                           "the accented letters of OpenTeacher's symbols table are the picker's Latin Accents "
+                           "set; data/character_sets.json adds per-language sets"),
+    "data/maps/africa": ("internal/maps", "the map picture and places in data/maps/africa, loaded by MapManager"),
+    "data/maps/asia": ("internal/maps", "the map picture and places in data/maps/asia, loaded by MapManager"),
+    "data/maps/europe": ("internal/maps", "the map picture and places in data/maps/europe, loaded by MapManager"),
+    "data/maps/latinamerica": ("internal/maps", "the map picture and places in data/maps/latinamerica, "
+                               "loaded by MapManager"),
+    "data/maps/usa": ("internal/maps", "the map picture and places in data/maps/usa, loaded by MapManager"),
+    "data/maps/world": ("internal/maps", "the map picture and places in data/maps/world, loaded by MapManager"),
+    "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
+                      "application ID)"),
+}
+
+
 def dropped(rel):
     r = str(rel)
     return any(r.startswith(d) or "/" + d in "/" + r for d in DROPPED)
@@ -212,8 +234,8 @@ def rows():
         types, deps, pylines = module_info(d)
         st = best_status(rel)
         central = central_format(rel)
-        if central and st["status"] in ("missing", "scaffold"):
-            st["status"] = "central"
+        if (central or str(rel) in COVERED) and st["status"] in ("missing", "scaffold"):
+            st["status"] = "covered"
         if dropped(rel):
             st["status"] = "dropped"
         name = rel.parts[-1]

@@ -2,6 +2,8 @@ package words
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/resources"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -568,7 +570,7 @@ func NewTeachTabWidget(lesson *lesson.Lesson, parent *qt.QWidget) *TeachTabWidge
 	}
 
 	// Create integrated Unicode picker
-	widget.unicodePicker = NewIntegratedUnicodePicker("", widget.QWidget)
+	widget.unicodePicker = NewIntegratedUnicodePicker(filepath.Join(resources.Dir(), "data", "character_sets.json"), widget.QWidget)
 	widget.logger.Debug("Created integrated Unicode picker widget")
 
 	widget.setupUI()

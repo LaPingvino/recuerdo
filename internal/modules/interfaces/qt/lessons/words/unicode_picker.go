@@ -562,6 +562,17 @@ func (up *IntegratedUnicodePicker) loadCharacterSets() {
 			Category:   "Symbols",
 			Characters: []rune{'←', '↑', '→', '↓', '↔', '↕', '↖', '↗', '↘', '↙', '⇐', '⇑', '⇒', '⇓', '⇔'},
 		},
+		// OpenTeacher's Greek and Cyrillic tables (data/chars), in their order
+		{
+			Name:       "Greek",
+			Category:   "Scripts",
+			Characters: []rune("αΑβΒγΓδΔεΕζΖηΗθΘιΙκΚλΛμΜνΝξΞοΟπΠρΡσΣςτΤυΥφΦχΧψΨωΩ῾᾿"),
+		},
+		{
+			Name:       "Cyrillic",
+			Category:   "Scripts",
+			Characters: []rune("АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя"),
+		},
 		{
 			Name:       "Punctuation",
 			Category:   "Basic",
@@ -575,23 +586,46 @@ func (up *IntegratedUnicodePicker) loadCharacterSets() {
 	}
 }
 
-// loadCharacterSetsFromFile loads character sets from a JSON file
+// loadCharacterSetsFromFile adds the character sets from a JSON file:
+// {"character_sets": [{"name": ..., "characters": ["á", ...]}]}.
 func (up *IntegratedUnicodePicker) loadCharacterSetsFromFile() {
-	data, err := ioutil.ReadFile(up.configPath)
+	sets, err := readCharacterSets(up.configPath)
 	if err != nil {
 		up.logger.Warning("Failed to read character sets file: %v", err)
 		return
 	}
+	up.characterSets = append(up.characterSets, sets...)
+	up.logger.Debug("Loaded %d character sets from file", len(sets))
+}
 
-	var fileSets []CharacterSet
-	if err := json.Unmarshal(data, &fileSets); err != nil {
-		up.logger.Warning("Failed to parse character sets file: %v", err)
-		return
+// readCharacterSets reads a character sets file.
+func readCharacterSets(path string) ([]CharacterSet, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
 	}
-
-	// Append file sets to default sets
-	up.characterSets = append(up.characterSets, fileSets...)
-	up.logger.Debug("Loaded %d character sets from file", len(fileSets))
+	var file struct {
+		Sets []struct {
+			Name       string   `json:"name"`
+			Category   string   `json:"category"`
+			Characters []string `json:"characters"`
+		} `json:"character_sets"`
+	}
+	if err := json.Unmarshal(data, &file); err != nil {
+		return nil, err
+	}
+	var sets []CharacterSet
+	for _, f := range file.Sets {
+		set := CharacterSet{Name: f.Name, Category: f.Category}
+		if set.Category == "" {
+			set.Category = "Languages"
+		}
+		for _, c := range f.Characters {
+			set.Characters = append(set.Characters, []rune(c)...)
+		}
+		sets = append(sets, set)
+	}
+	return sets, nil
 }
 
 // loadUnicodeBlocks loads Unicode block definitions

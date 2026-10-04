@@ -40,7 +40,8 @@ files; most of those files are skeletons):
 - **working**: Go code without stub markers, with tests
 - **untested**: Go code without stub markers, no tests
 - **partial**: substantial Go code (150+ lines, at least 40 per stub marker) that still has TODOs
-- **central**: the file format is dispatched by `FileLoader.LoadFile` or
+- **covered**: done elsewhere in Recuerdo, not in a module of its own: the
+  modules listed under "Covered elsewhere" below, and file formats dispatched by `FileLoader.LoadFile` or
   `FileSaver.SaveFile` in `internal/lesson` rather than by a module of its own.
   All of OpenTeacher's loaders are covered this way (the generated per-format
   loader packages were removed in October 2026): `TestOpenTeacherSampleFiles`
@@ -63,14 +64,14 @@ Where a hand-written implementation exists outside the module's directory
 (`internal/modules/settings.go`, `event.go`, `execute.go`), the script
 uses it.
 
-| Area | working | untested | partial | central | scaffold | missing | dropped | test suite | Total |
+| Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data |  |  |  |  | 22 |  | 21 | 6 | 49 |
+| data |  |  |  | 10 | 12 |  | 21 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
 | logic | 8 | 15 |  | 51 | 41 |  | 26 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **10** | **18** | **7** | **51** | **122** | **2** | **77** | **67** | **354** |
+| **all** | **10** | **18** | **7** | **61** | **112** | **2** | **77** | **67** | **354** |
 
 Remarks:
 
@@ -102,7 +103,7 @@ lessons, printing, speech and the rest come after.
 | Grades and results | `logic/noteCalculators/*` (6), `noteCalculatorChooser`, `percentsCalculator`, `interfaces/qt/dialogs/results`, `testViewer`, `testsViewer`, `progressViewer` | scaffold / missing; the words lesson has a results tab with a percentage | **Yes**: one note calculator (Dutch, the OpenTeacher default, plus American) and the results dialog |
 | Topography lessons | `interfaces/qt/{lessons,enterers,teachers}/topo`, `logic/testTypes/topo`, `data/maps/*`, `interfaces/qt/topoMaps` | lessons/topo partial; testTypes/topo untested; map rendering in `internal/maps` | Later |
 | Media lessons | `interfaces/qt/{lessons,enterers,teachers}/media`, `mediaTypes/*`, `mediaDisplay` | lessons/media partial; media types scaffold | Later |
-| Printing, HTML/ODT output | `interfaces/qt/{print/*,printer,dialogs/print}`, `logic/htmlGenerator/*`, `logic/odtsaver`, `logic/savers/{odt,libreofficeFormats,sylk,png}` | scaffold (HTML and LaTeX saving exist centrally) | Later |
+| Printing, HTML/ODT output | `interfaces/qt/{print/*,printer,dialogs/print}`, `logic/htmlGenerator/*`, `logic/odtsaver`, `logic/savers/{odt,libreofficeFormats,sylk,png}` | savers done (`FileSaver`, `interfaces/qt/export`: PDF, ODT, LibreOffice formats; `savers/png` belongs to topography); print dialogs, `htmlGenerator` and `odtsaver` still scaffold | R14c/R14d |
 | Typing tutor, character keyboard | `interfaces/qt/typingTutor/*`, `charsKeyboard`, `data/chars/*` | charsKeyboard untested; the words lesson has a Unicode picker | Later |
 | Text to speech | `interfaces/textToSpeech/*` | scaffold | Later |
 | Settings UI widgets | `interfaces/qt/settingsWidget/*`, `settingsWidgets`, `dialogs/settings` | settings dialog partial; widgets scaffold | Later (dialog is enough) |
@@ -167,23 +168,41 @@ These documents describe intentions and individual sessions rather than the
 state of the code; this inventory and the regenerated table are the
 reference until they are updated or removed.
 
+## Covered elsewhere
+
+OpenTeacher modules whose job Recuerdo does in other code (besides the
+file formats, see **covered** above):
+
+| Module | Where | Why |
+|---|---|---|
+| `data/chars/cyrillic` | `interfaces/qt/lessons/words/unicode_picker.go` | OpenTeacher's Cyrillic table is a built-in set of the special characters picker |
+| `data/chars/greek` | `interfaces/qt/lessons/words/unicode_picker.go` | OpenTeacher's Greek table is a built-in set of the special characters picker |
+| `data/chars/symbols` | `interfaces/qt/lessons/words/unicode_picker.go` | the accented letters of OpenTeacher's symbols table are the picker's Latin Accents set; data/character_sets.json adds per-language sets |
+| `data/maps/africa` | `internal/maps` | the map picture and places in data/maps/africa, loaded by MapManager |
+| `data/maps/asia` | `internal/maps` | the map picture and places in data/maps/asia, loaded by MapManager |
+| `data/maps/europe` | `internal/maps` | the map picture and places in data/maps/europe, loaded by MapManager |
+| `data/maps/latinamerica` | `internal/maps` | the map picture and places in data/maps/latinamerica, loaded by MapManager |
+| `data/maps/usa` | `internal/maps` | the map picture and places in data/maps/usa, loaded by MapManager |
+| `data/maps/world` | `internal/maps` | the map picture and places in data/maps/world, loaded by MapManager |
+| `data/metadata` | `internal/modules/metadata.go` | Recuerdo's own metadata module (name, version, application ID) |
+
 ## 5. Module table
 
 | Module | Type | Python lines | Go code lines | Stub markers | Tests | Status |
 |---|---|---:|---:|---:|---:|---|
-| `data/chars/cyrillic` | chars | 56 | 38 | 4 | 0 | scaffold |
-| `data/chars/greek` | chars | 54 | 38 | 4 | 0 | scaffold |
-| `data/chars/symbols` | chars | 91 | 40 | 5 | 0 | scaffold |
+| `data/chars/cyrillic` | chars | 56 | 0 | 0 | 0 | covered |
+| `data/chars/greek` | chars | 54 | 0 | 0 | 0 | covered |
+| `data/chars/symbols` | chars | 91 | 0 | 0 | 0 | covered |
 | `data/chars/test` | test | 42 | 0 | 0 | 0 | test suite |
 | `data/dataTypeIcons` | dataTypeIcons | 23 | 38 | 4 | 0 | scaffold |
 | `data/dataTypeIconsTest` | test | 31 | 0 | 0 | 0 | test suite |
-| `data/maps/africa` | map | 27 | 38 | 4 | 0 | scaffold |
-| `data/maps/asia` | map | 27 | 38 | 4 | 0 | scaffold |
-| `data/maps/europe` | map | 27 | 38 | 4 | 0 | scaffold |
-| `data/maps/latinamerica` | map | 27 | 38 | 4 | 0 | scaffold |
-| `data/maps/usa` | map | 27 | 38 | 4 | 0 | scaffold |
-| `data/maps/world` | map | 27 | 38 | 4 | 0 | scaffold |
-| `data/metadata` | metadata | 83 | 38 | 4 | 0 | scaffold |
+| `data/maps/africa` | map | 27 | 0 | 0 | 0 | covered |
+| `data/maps/asia` | map | 27 | 0 | 0 | 0 | covered |
+| `data/maps/europe` | map | 27 | 0 | 0 | 0 | covered |
+| `data/maps/latinamerica` | map | 27 | 0 | 0 | 0 | covered |
+| `data/maps/usa` | map | 27 | 0 | 0 | 0 | covered |
+| `data/maps/world` | map | 27 | 0 | 0 | 0 | covered |
+| `data/metadata` | metadata | 83 | 0 | 0 | 0 | covered |
 | `data/openteacherAuthors` | openteacherAuthors | 151 | 38 | 4 | 0 | scaffold |
 | `data/profileDescriptions/all` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
 | `data/profileDescriptions/cli` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
@@ -245,7 +264,7 @@ reference until they are updated or removed.
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 1942 | 11 | 1 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 1977 | 11 | 2 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -368,40 +387,40 @@ reference until they are updated or removed.
 | `logic/listModifiers/sortTest` | test | 38 | 36 | 8 | 0 | test suite |
 | `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 44 | 7 | 0 | scaffold |
 | `logic/listModifiers/wordsNeverAnsweredCorrectlyTest` | test | 104 | 46 | 13 | 0 | test suite |
-| `logic/loader` | loader | 109 | 0 | 0 | 0 | central |
-| `logic/loaders/abbyy` | load | 73 | 0 | 0 | 0 | central |
-| `logic/loaders/anki` | load | 81 | 0 | 0 | 0 | central |
-| `logic/loaders/anki2` | load | 84 | 0 | 0 | 0 | central |
-| `logic/loaders/apkg` | load | 76 | 0 | 0 | 0 | central |
-| `logic/loaders/backpack` | load | 59 | 0 | 0 | 0 | central |
-| `logic/loaders/csv_` | load | 87 | 0 | 0 | 0 | central |
-| `logic/loaders/cuecard` | load | 74 | 0 | 0 | 0 | central |
-| `logic/loaders/domingo` | load | 81 | 0 | 0 | 0 | central |
-| `logic/loaders/flashqard` | load | 83 | 0 | 0 | 0 | central |
-| `logic/loaders/fmd` | load | 71 | 0 | 0 | 0 | central |
-| `logic/loaders/gnuVocabTrain` | load | 81 | 0 | 0 | 0 | central |
-| `logic/loaders/granule` | load | 70 | 0 | 0 | 0 | central |
-| `logic/loaders/jml` | load | 85 | 0 | 0 | 0 | central |
-| `logic/loaders/jvlt` | load | 72 | 0 | 0 | 0 | central |
-| `logic/loaders/kgm` | load | 93 | 0 | 0 | 0 | central |
-| `logic/loaders/kvtml` | load | 90 | 0 | 0 | 0 | central |
-| `logic/loaders/ludem` | load | 57 | 0 | 0 | 0 | central |
-| `logic/loaders/mnemosyne` | load | 79 | 0 | 0 | 0 | central |
-| `logic/loaders/ot` | load | 104 | 0 | 0 | 0 | central |
-| `logic/loaders/otmd` | load | 68 | 0 | 0 | 0 | central |
-| `logic/loaders/ottp` | load | 52 | 0 | 0 | 0 | central |
-| `logic/loaders/otwd` | load | 51 | 0 | 0 | 0 | central |
-| `logic/loaders/overhoor` | load | 84 | 0 | 0 | 0 | central |
-| `logic/loaders/ovr` | load | 93 | 0 | 0 | 0 | central |
-| `logic/loaders/pauker` | load | 96 | 0 | 0 | 0 | central |
-| `logic/loaders/t2k` | load | 187 | 0 | 0 | 0 | central |
-| `logic/loaders/teachmaster` | load | 89 | 0 | 0 | 0 | central |
+| `logic/loader` | loader | 109 | 0 | 0 | 0 | covered |
+| `logic/loaders/abbyy` | load | 73 | 0 | 0 | 0 | covered |
+| `logic/loaders/anki` | load | 81 | 0 | 0 | 0 | covered |
+| `logic/loaders/anki2` | load | 84 | 0 | 0 | 0 | covered |
+| `logic/loaders/apkg` | load | 76 | 0 | 0 | 0 | covered |
+| `logic/loaders/backpack` | load | 59 | 0 | 0 | 0 | covered |
+| `logic/loaders/csv_` | load | 87 | 0 | 0 | 0 | covered |
+| `logic/loaders/cuecard` | load | 74 | 0 | 0 | 0 | covered |
+| `logic/loaders/domingo` | load | 81 | 0 | 0 | 0 | covered |
+| `logic/loaders/flashqard` | load | 83 | 0 | 0 | 0 | covered |
+| `logic/loaders/fmd` | load | 71 | 0 | 0 | 0 | covered |
+| `logic/loaders/gnuVocabTrain` | load | 81 | 0 | 0 | 0 | covered |
+| `logic/loaders/granule` | load | 70 | 0 | 0 | 0 | covered |
+| `logic/loaders/jml` | load | 85 | 0 | 0 | 0 | covered |
+| `logic/loaders/jvlt` | load | 72 | 0 | 0 | 0 | covered |
+| `logic/loaders/kgm` | load | 93 | 0 | 0 | 0 | covered |
+| `logic/loaders/kvtml` | load | 90 | 0 | 0 | 0 | covered |
+| `logic/loaders/ludem` | load | 57 | 0 | 0 | 0 | covered |
+| `logic/loaders/mnemosyne` | load | 79 | 0 | 0 | 0 | covered |
+| `logic/loaders/ot` | load | 104 | 0 | 0 | 0 | covered |
+| `logic/loaders/otmd` | load | 68 | 0 | 0 | 0 | covered |
+| `logic/loaders/ottp` | load | 52 | 0 | 0 | 0 | covered |
+| `logic/loaders/otwd` | load | 51 | 0 | 0 | 0 | covered |
+| `logic/loaders/overhoor` | load | 84 | 0 | 0 | 0 | covered |
+| `logic/loaders/ovr` | load | 93 | 0 | 0 | 0 | covered |
+| `logic/loaders/pauker` | load | 96 | 0 | 0 | 0 | covered |
+| `logic/loaders/t2k` | load | 187 | 0 | 0 | 0 | covered |
+| `logic/loaders/teachmaster` | load | 89 | 0 | 0 | 0 | covered |
 | `logic/loaders/test` | test | 94 | 0 | 0 | 0 | test suite |
-| `logic/loaders/voca` | load | 305 | 0 | 0 | 0 | central |
-| `logic/loaders/vocabularium` | load | 87 | 0 | 0 | 0 | central |
-| `logic/loaders/vokabelTrainer` | load | 75 | 0 | 0 | 0 | central |
-| `logic/loaders/vtrainTxt` | load | 89 | 0 | 0 | 0 | central |
-| `logic/loaders/wrts` | load | 90 | 0 | 0 | 0 | central |
+| `logic/loaders/voca` | load | 305 | 0 | 0 | 0 | covered |
+| `logic/loaders/vocabularium` | load | 87 | 0 | 0 | 0 | covered |
+| `logic/loaders/vokabelTrainer` | load | 75 | 0 | 0 | 0 | covered |
+| `logic/loaders/vtrainTxt` | load | 89 | 0 | 0 | 0 | covered |
+| `logic/loaders/wrts` | load | 90 | 0 | 0 | 0 | covered |
 | `logic/mergers/words` | merger | 21 | 38 | 4 | 0 | scaffold |
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
 | `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 64 | 0 | 1 | working |
@@ -440,26 +459,26 @@ reference until they are updated or removed.
 | `logic/reversers/wordsTest` | test | 55 | 40 | 10 | 0 | test suite |
 | `logic/safeHtmlChecker` | safeHtmlChecker | 28 | 38 | 4 | 0 | scaffold |
 | `logic/safeHtmlCheckerTest` | test | 81 | 72 | 26 | 0 | test suite |
-| `logic/saver` | saver | 56 | 0 | 0 | 0 | central |
-| `logic/savers/csv_` | save | 71 | 0 | 0 | 0 | central |
-| `logic/savers/kvtml` | save | 86 | 0 | 0 | 0 | central |
-| `logic/savers/latex` | save | 69 | 0 | 0 | 0 | central |
-| `logic/savers/libreofficeFormats` | save | 111 | 0 | 0 | 0 | central |
-| `logic/savers/mediaHtml` | save | 65 | 0 | 0 | 0 | central |
-| `logic/savers/odt` | save | 47 | 0 | 0 | 0 | central |
-| `logic/savers/ot` | save | 81 | 0 | 0 | 0 | central |
-| `logic/savers/otmd` | save | 87 | 0 | 0 | 0 | central |
-| `logic/savers/ottp` | save | 51 | 0 | 0 | 0 | central |
-| `logic/savers/otwd` | save | 47 | 0 | 0 | 0 | central |
-| `logic/savers/pdf` | save | 58 | 0 | 0 | 0 | central |
+| `logic/saver` | saver | 56 | 0 | 0 | 0 | covered |
+| `logic/savers/csv_` | save | 71 | 0 | 0 | 0 | covered |
+| `logic/savers/kvtml` | save | 86 | 0 | 0 | 0 | covered |
+| `logic/savers/latex` | save | 69 | 0 | 0 | 0 | covered |
+| `logic/savers/libreofficeFormats` | save | 111 | 0 | 0 | 0 | covered |
+| `logic/savers/mediaHtml` | save | 65 | 0 | 0 | 0 | covered |
+| `logic/savers/odt` | save | 47 | 0 | 0 | 0 | covered |
+| `logic/savers/ot` | save | 81 | 0 | 0 | 0 | covered |
+| `logic/savers/otmd` | save | 87 | 0 | 0 | 0 | covered |
+| `logic/savers/ottp` | save | 51 | 0 | 0 | 0 | covered |
+| `logic/savers/otwd` | save | 47 | 0 | 0 | 0 | covered |
+| `logic/savers/pdf` | save | 58 | 0 | 0 | 0 | covered |
 | `logic/savers/png` | save | 44 | 40 | 5 | 0 | scaffold |
-| `logic/savers/sylk` | save | 45 | 0 | 0 | 0 | central |
-| `logic/savers/t2k` | save | 129 | 0 | 0 | 0 | central |
+| `logic/savers/sylk` | save | 45 | 0 | 0 | 0 | covered |
+| `logic/savers/t2k` | save | 129 | 0 | 0 | 0 | covered |
 | `logic/savers/test` | test | 174 | 0 | 0 | 0 | test suite |
-| `logic/savers/topoHtml` | save | 61 | 0 | 0 | 0 | central |
-| `logic/savers/txt` | save | 103 | 0 | 0 | 0 | central |
-| `logic/savers/wordsHtml` | save | 52 | 0 | 0 | 0 | central |
-| `logic/savers/wrts` | save | 86 | 0 | 0 | 0 | central |
+| `logic/savers/topoHtml` | save | 61 | 0 | 0 | 0 | covered |
+| `logic/savers/txt` | save | 103 | 0 | 0 | 0 | covered |
+| `logic/savers/wordsHtml` | save | 52 | 0 | 0 | 0 | covered |
+| `logic/savers/wrts` | save | 86 | 0 | 0 | 0 | covered |
 | `logic/settings` | settings | 106 | 264 | 0 | 1 | working |
 | `logic/settingsFilterer` | settingsFilterer | 47 | 40 | 5 | 0 | scaffold |
 | `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |

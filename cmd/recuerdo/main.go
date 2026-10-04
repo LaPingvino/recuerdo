@@ -13,17 +13,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/core"
 	"github.com/LaPingvino/recuerdo/internal/modules"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/cyrillic"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/greek"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/chars/symbols"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/maps/africa"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/maps/asia"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/maps/europe"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/maps/latinamerica"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/maps/usa"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/maps/world"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/metadata"
 	openteacherauthors "github.com/LaPingvino/recuerdo/internal/modules/data/openteacherAuthors"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/all"
 	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/cli"
@@ -272,8 +262,6 @@ func registerAllModules(manager *core.Manager) error {
 	if err := manager.Register(settingsModule); err != nil {
 		return fmt.Errorf("failed to register settings module: %w", err)
 	}
-
-	// Skip duplicate modules.NewMetadataModule - using real metadata module instead
 
 	buttonRegisterModule := modules.NewButtonRegisterModule()
 	if err := manager.Register(buttonRegisterModule); err != nil {
@@ -731,68 +719,14 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register translator module: %w", err)
 	}
 
-	// Register cyrillic module
-	cyrillicModule := cyrillic.NewCyrillicModule()
-	if err := manager.Register(cyrillicModule); err != nil {
-		return fmt.Errorf("failed to register cyrillic module: %w", err)
-	}
-
-	// Register greek module
-	greekModule := greek.NewGreekModule()
-	if err := manager.Register(greekModule); err != nil {
-		return fmt.Errorf("failed to register greek module: %w", err)
-	}
-
-	// Register symbols module
-	symbolsModule := symbols.NewSymbolsModule()
-	if err := manager.Register(symbolsModule); err != nil {
-		return fmt.Errorf("failed to register symbols module: %w", err)
-	}
-
 	// Register datatypeicons module
 	datatypeiconsModule := datatypeicons.NewDataTypeIconsModule()
 	if err := manager.Register(datatypeiconsModule); err != nil {
 		return fmt.Errorf("failed to register datatypeicons module: %w", err)
 	}
 
-	// Register africa module
-	africaModule := africa.NewMapModule()
-	if err := manager.Register(africaModule); err != nil {
-		return fmt.Errorf("failed to register africa module: %w", err)
-	}
-
-	// Register asia module
-	asiaModule := asia.NewMapModule()
-	if err := manager.Register(asiaModule); err != nil {
-		return fmt.Errorf("failed to register asia module: %w", err)
-	}
-
-	// Register europe module
-	europeModule := europe.NewMapModule()
-	if err := manager.Register(europeModule); err != nil {
-		return fmt.Errorf("failed to register europe module: %w", err)
-	}
-
-	// Register latinamerica module
-	latinamericaModule := latinamerica.NewMapModule()
-	if err := manager.Register(latinamericaModule); err != nil {
-		return fmt.Errorf("failed to register latinamerica module: %w", err)
-	}
-
-	// Register usa module
-	usaModule := usa.NewMapModule()
-	if err := manager.Register(usaModule); err != nil {
-		return fmt.Errorf("failed to register usa module: %w", err)
-	}
-
-	// Register world module
-	worldModule := world.NewMapModule()
-	if err := manager.Register(worldModule); err != nil {
-		return fmt.Errorf("failed to register world module: %w", err)
-	}
-
 	// Register metadata module
-	metadataModule := metadata.NewMetadataModule()
+	metadataModule := modules.NewMetadataModule()
 	if err := manager.Register(metadataModule); err != nil {
 		return fmt.Errorf("failed to register metadata module: %w", err)
 	}
