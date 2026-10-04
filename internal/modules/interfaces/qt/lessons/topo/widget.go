@@ -3,8 +3,10 @@ package topo
 import (
 	"bytes"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/tts"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
@@ -51,6 +53,11 @@ type TopoLessonWidget struct {
 	teachMap                             *MapView
 	session                              *teaching.Session
 	order                                string
+	pronounceCheck                       *qt.QCheckBox
+	speaker                              interface {
+		Available() bool
+		Speak(text, language string) error
+	}
 
 	// Results
 	summary  *qt.QLabel
@@ -335,6 +342,15 @@ func (w *TopoLessonWidget) teachTab() *qt.QWidget {
 	w.orderCombo.SetToolTip("Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place.")
 	w.typeCombo = combo("Lesson type:", teaching.LessonTypes)
 	w.sequenceCombo = combo("Order:", teaching.Orders)
+	w.speaker = tts.New(runtime.GOOS)
+	w.pronounceCheck = qt.NewQCheckBox3("Pronounce names")
+	if w.speaker.Available() {
+		w.pronounceCheck.SetToolTip("In Name – Place, say the name of the place to click")
+	} else {
+		w.pronounceCheck.SetEnabled(false)
+		w.pronounceCheck.SetToolTip("Needs a speech program: install espeak-ng")
+	}
+	options.AddWidget(w.pronounceCheck.QWidget)
 	options.AddStretch()
 	w.startBtn = qt.NewQPushButton3("Start")
 	w.startBtn.OnClicked(func() {
@@ -429,6 +445,9 @@ func (w *TopoLessonWidget) ask() {
 	w.teachMap.SetPlaces(w.places(), false)
 	if w.order == NamePlace {
 		w.prompt.SetText("Where is " + item.Name + "?")
+		if w.pronounceCheck.IsChecked() {
+			w.speaker.Speak(item.Name, "")
+		}
 		w.answerRow.SetVisible(false)
 		w.teachMap.Select(-1)
 		return

@@ -27,7 +27,51 @@ func TestMain(m *testing.M) {
 	editErr = checkEditing()
 	wordsErr = checkWordChoice()
 	storedErr = checkSessionStored()
+	pronounceErr = checkPronounce()
 	os.Exit(m.Run())
+}
+
+var pronounceErr error
+
+func TestPronounceQuestions(t *testing.T) {
+	if pronounceErr != nil {
+		t.Fatal(pronounceErr)
+	}
+}
+
+// fakeSpeaker records what is said.
+type fakeSpeaker struct{ said []string }
+
+func (f *fakeSpeaker) Available() bool { return true }
+func (f *fakeSpeaker) Speak(text, language string) error {
+	f.said = append(f.said, language+":"+text)
+	return nil
+}
+
+func checkPronounce() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{
+		QuestionLanguage: "Dutch", AnswerLanguage: "English",
+		Items: []lesson.WordItem{{ID: 1, Questions: []string{"hond"}, Answers: []string{"dog"}}},
+	}}}
+	w := NewWordsLessonWidget(l, nil)
+	t := w.teachWidget
+	speaker := &fakeSpeaker{}
+	t.speaker = speaker
+	t.startButton.Click()
+	t.finishTeaching()
+	if len(speaker.said) != 0 {
+		return fmt.Errorf("spoke without being asked to: %v", speaker.said)
+	}
+	t.pronounceCheck.SetEnabled(true)
+	t.pronounceCheck.SetChecked(true)
+	t.startButton.Click()
+	t.finishTeaching()
+	t.askAnswersCheck.SetChecked(true)
+	t.startButton.Click()
+	if fmt.Sprint(speaker.said) != "[Dutch:hond English:dog]" {
+		return fmt.Errorf("said %v, want the question in its language both ways", speaker.said)
+	}
+	return nil
 }
 
 var teachErr, modesErr, inMindErr, hangmanErr, settingsErr, editErr, wordsErr, storedErr error

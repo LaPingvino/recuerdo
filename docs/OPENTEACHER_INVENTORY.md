@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 4 | 2 | 5 | 49 | 3 |  | 17 | 14 | 94 |
+| interfaces | 4 | 2 | 5 | 52 |  |  | 17 | 14 | 94 |
 | logic | 12 | 15 |  | 76 |  |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **19** | **17** | **5** | **136** | **11** | **0** | **99** | **67** | **354** |
+| **all** | **19** | **17** | **5** | **139** | **8** | **0** | **99** | **67** | **354** |
 
 Remarks:
 
@@ -235,6 +235,9 @@ file formats, see **covered** above):
 | `interfaces/qt/testViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab and results dialog show a session's answers |
 | `interfaces/qt/testsViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab lists the results; charts: see progressViewer |
 | `interfaces/qt/topoMaps` | `internal/modules/interfaces/qt/lessons/topo` | BundledMaps reads data/maps (OpenTeacher's six maps with their known places, all their names); tested |
+| `interfaces/textToSpeech/impl` | `internal/tts` | Speak with espeak-ng/espeak (Linux, BSD), say (macOS) or System.Speech (Windows) instead of pyttsx; command lines tested |
+| `interfaces/textToSpeech/providers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Teach option "Pronounce names": Name – Place says the place to click; tested |
+| `interfaces/textToSpeech/providers/words` | `internal/modules/interfaces/qt/lessons/words` | Teach option "Pronounce questions" (setting kept), in the question language; tested |
 | `logic/authors` | `internal/modules/data/openteacherAuthors` | the credits list in the About dialog |
 | `logic/dataStore` | `internal/modules/settings.go` | the settings module's JSON file is Recuerdo's persistent store |
 | `logic/execute` | `internal/core, internal/modules/execute.go` | start-up and enabling modules |
@@ -368,8 +371,8 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 14 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 585 | 0 | 2 | working |
-| `interfaces/qt/lessons/topo` | lesson | 202 | 680 | 0 | 2 | working |
-| `interfaces/qt/lessons/words` | lesson | 211 | 2032 | 1 | 2 | partial |
+| `interfaces/qt/lessons/topo` | lesson | 202 | 699 | 0 | 2 | working |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2071 | 1 | 2 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 0 | 0 | 0 | covered |
@@ -434,9 +437,9 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/quizletApi` | quizletApi | 236 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/studyStackApi` | studyStackApi | 222 | 0 | 0 | 0 | dropped |
-| `interfaces/textToSpeech/impl` | textToSpeech | 122 | 40 | 5 | 0 | scaffold |
-| `interfaces/textToSpeech/providers/topo` | ttsProvider | 70 | 40 | 5 | 0 | scaffold |
-| `interfaces/textToSpeech/providers/words` | ttsProvider | 79 | 40 | 5 | 0 | scaffold |
+| `interfaces/textToSpeech/impl` | textToSpeech | 122 | 0 | 0 | 0 | covered |
+| `interfaces/textToSpeech/providers/topo` | ttsProvider | 70 | 0 | 0 | 0 | covered |
+| `interfaces/textToSpeech/providers/words` | ttsProvider | 79 | 0 | 0 | 0 | covered |
 | `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | dropped |
 | `logic/authors` | authors | 45 | 0 | 0 | 0 | covered |
 | `logic/authorsTest` | test | 62 | 1 | 0 | 0 | test suite |

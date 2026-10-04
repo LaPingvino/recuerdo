@@ -311,6 +311,12 @@ COVERED = {
     "interfaces/qt/mediaTypes/dailymotion": ("internal/modules/interfaces/qt/lessons/media", "Kind: Dailymotion video; opened in the web browser"),
     "interfaces/qt/print/media": ("internal/modules/interfaces/qt/export", "Print and PDF of a media lesson: a table "
                                   "of medium (pictures as thumbnails), name, question and answer (tested via pdftotext)"),
+    "interfaces/textToSpeech/impl": ("internal/tts", "Speak with espeak-ng/espeak (Linux, BSD), say (macOS) or "
+                                     "System.Speech (Windows) instead of pyttsx; command lines tested"),
+    "interfaces/textToSpeech/providers/words": ("internal/modules/interfaces/qt/lessons/words", "Teach option "
+                                                "\"Pronounce questions\" (setting kept), in the question language; tested"),
+    "interfaces/textToSpeech/providers/topo": ("internal/modules/interfaces/qt/lessons/topo", "Teach option \"Pronounce "
+                                               "names\": Name – Place says the place to click; tested"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

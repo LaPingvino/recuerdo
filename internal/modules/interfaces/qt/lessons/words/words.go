@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
 	"github.com/LaPingvino/recuerdo/internal/resources"
+	"github.com/LaPingvino/recuerdo/internal/tts"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"time"
 
@@ -66,6 +68,7 @@ type Settings interface {
 // milliseconds.
 const (
 	NotationSetting       = "org.openteacher.noteCalculatorChooser.noteCalculator"
+	PronounceSetting      = "org.openteacher.ttsProviders.words.pronounce"
 	RepeatDurationSetting = "org.openteacher.teachTypes.repeatAnswer.fadeDuration"
 )
 
@@ -504,6 +507,12 @@ type TeachingSession struct {
 
 // TeachTabWidget handles the teaching/quiz functionality
 type TeachTabWidget struct {
+	pronounceCheck *qt.QCheckBox
+	// speaker pronounces questions ("Pronounce questions")
+	speaker interface {
+		Available() bool
+		Speak(text, language string) error
+	}
 	*qt.QWidget
 
 	lesson *lesson.Lesson
@@ -645,6 +654,23 @@ func (w *TeachTabWidget) setupUI() {
 	w.askAnswersCheck.SetText("Ask the answers")
 	w.askAnswersCheck.SetToolTip("Practise the other way round: the answers are asked and the questions are the answers")
 	optionsLayout.AddWidget(w.askAnswersCheck.QWidget)
+	if w.speaker == nil {
+		w.speaker = tts.New(runtime.GOOS)
+	}
+	w.pronounceCheck = qt.NewQCheckBox(w.QWidget)
+	w.pronounceCheck.SetText("Pronounce questions")
+	if w.speaker.Available() {
+		w.pronounceCheck.SetToolTip("Say each question aloud, in the question language")
+	} else {
+		w.pronounceCheck.SetEnabled(false)
+		w.pronounceCheck.SetToolTip("Needs a speech program: install espeak-ng")
+	}
+	w.pronounceCheck.OnToggled(func(on bool) {
+		if w.settings != nil {
+			w.settings.SetSetting(PronounceSetting, on)
+		}
+	})
+	optionsLayout.AddWidget(w.pronounceCheck.QWidget)
 	optionsLayout.AddStretch()
 	w.startButton = qt.NewQPushButton(w.QWidget)
 	w.startButton.SetText("Start Teaching")
@@ -902,6 +928,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 
 	question := composer.Compose(checker.StoredAnswers(item.Questions))
 	w.questionLabel.SetText(question)
+	w.pronounce(question)
 	w.showModeExtras()
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
@@ -1008,7 +1035,23 @@ func (w *TeachTabWidget) useSettings(s Settings) {
 		w.repeatSpin.SetValue(ms / 1000) // calls setRepeatSeconds
 		w.RepeatDuration = time.Duration(ms) * time.Millisecond
 	}
+	if on, ok := s.GetSettingWithDefault(PronounceSetting, false).(bool); ok && w.pronounceCheck.IsEnabled() {
+		w.pronounceCheck.SetChecked(on)
+	}
 	w.settings = s
+}
+
+// pronounce says question aloud when "Pronounce questions" is on, in the
+// language of the questions asked (OpenTeacher's words TTS provider).
+func (w *TeachTabWidget) pronounce(question string) {
+	if w.pronounceCheck == nil || !w.pronounceCheck.IsChecked() || w.lesson == nil {
+		return
+	}
+	language := w.lesson.Data.List.QuestionLanguage
+	if w.askAnswersCheck.IsChecked() {
+		language = w.lesson.Data.List.AnswerLanguage
+	}
+	w.speaker.Speak(question, language)
 }
 
 // stopRepeat stops showing Repeat answer's answer, and its fading.

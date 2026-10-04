@@ -101,7 +101,11 @@ func drive() {
 			"results %+v", r)
 	}
 
-	// Name – Place: click the place
+	// Name – Place: click the place (the name is said when asked for)
+	speaker := &fakeSpeaker{}
+	w.speaker = speaker
+	w.pronounceCheck.SetEnabled(true)
+	w.pronounceCheck.SetChecked(true)
 	w.Start(NamePlace)
 	cur, _, _ := w.session.Current()
 	shot(w, 1, "04-name-place.png")
@@ -113,6 +117,7 @@ func drive() {
 	}
 	w.AnswerClick(other.X, other.Y)
 	w.Stop()
+	check("pronounce", len(speaker.said) == 3 && speaker.said[0] == cur.Name, "said %v (each place asked, including the third before Stop)", speaker.said)
 	check("name-place", len(l.Data.List.Tests) == 2 && len(l.Data.List.Tests[1].Results) == 2 &&
 		l.Data.List.Tests[1].Results[0].Result == "right" && l.Data.List.Tests[1].Results[1].Result == "wrong",
 		"tests %+v", l.Data.List.Tests)
@@ -135,6 +140,15 @@ func drive() {
 	} else {
 		check("sample", false, "%v", err)
 	}
+}
+
+// fakeSpeaker records what is said.
+type fakeSpeaker struct{ said []string }
+
+func (f *fakeSpeaker) Available() bool { return true }
+func (f *fakeSpeaker) Speak(text, language string) error {
+	f.said = append(f.said, text)
+	return nil
 }
 
 func TestTopoWidget(t *testing.T) {
