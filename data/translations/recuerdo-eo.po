@@ -1,0 +1,725 @@
+# Recuerdo's own texts in Esperanto (OpenTeacher's translations, data/translations/eo.po, do the rest).
+# The texts to translate are in recuerdo.pot (scripts/extract_strings.py).
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nNoto (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d eroj por ekzerci. Premu Komenci."
+
+msgid "%d of %d"
+msgstr "%d el %d"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d lokoj. Elektu kiel ekzerci kaj premu Komenci."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d ekzercadoj; la lasta %d%% ĝusta."
+
+msgid "&Merge Lesson..."
+msgstr "&Kunfandi lecionon..."
+
+msgid "&Properties..."
+msgstr "&Atributoj..."
+
+msgid "&Tools"
+msgstr "&Iloj"
+
+msgid ", %d tests"
+msgstr ", %d testoj"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Retejo aŭ video de YouTube, Vimeo aŭ Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Pri Recuerdo"
+
+msgid "About dialog not available"
+msgstr "La fenestro Pri ne disponeblas"
+
+msgid "About dialog shown"
+msgstr "Fenestro Pri montrita"
+
+msgid "Add"
+msgstr "Aldoni"
+
+msgid "Add Character"
+msgstr "Aldoni signon"
+
+msgid "Add Word"
+msgstr "Aldoni vorton"
+
+msgid "Add all places"
+msgstr "Aldoni ĉiujn lokojn"
+
+msgid "Add every place this map knows"
+msgstr "Aldoni ĉiun lokon, kiun ĉi tiu mapo konas"
+
+msgid "Add files…"
+msgstr "Aldoni dosierojn…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Aldoni la vortojn kaj rezultojn de alia leciono al ĉi tiu"
+
+msgid "Add web address…"
+msgstr "Aldoni retadreson…"
+
+msgid "All once"
+msgstr "Ĉiuj unufoje"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Ĉiuj unufoje: ĉiu vorto unufoje. Inteligente: malĝustaj vortoj revenas baldaŭ kaj fine. Intervale: vortoj revenas ĝis vi scias ilin."
+
+msgid "All words"
+msgstr "Ĉiuj vortoj"
+
+msgid "Answer"
+msgstr "Respondo"
+
+msgid "Answer Language:"
+msgstr "Lingvo de la respondoj:"
+
+msgid "Answer language"
+msgstr "Lingvo de la respondoj"
+
+msgid "As entered"
+msgstr "Kiel enigite"
+
+msgid "Ask the answers"
+msgstr "Demandi la respondojn"
+
+msgid "Ask this word again later"
+msgstr "Demandi ĉi tiun vorton denove poste"
+
+msgid "Ask:"
+msgstr "Demandi:"
+
+msgid "Browse Unicode"
+msgstr "Foliumi Unikodon"
+
+msgid "Browse..."
+msgstr "Foliumi..."
+
+msgid "Check"
+msgstr "Kontroli"
+
+msgid "Check!"
+msgstr "Kontrolu!"
+
+msgid "Clear List"
+msgstr "Malplenigi liston"
+
+msgid "Clear recent files"
+msgstr "Forigi lastatempajn dosierojn"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Alklaku 'Komenci ekzercadon' por komenci"
+
+msgid "Continue"
+msgstr "Daŭrigi"
+
+msgid "Correct Answer"
+msgstr "Ĝusta respondo"
+
+msgid "Correct anyway"
+msgstr "Tamen ĝusta"
+
+msgid "Count your last answer as right after all"
+msgstr "Kalkuli vian lastan respondon tamen kiel ĝustan"
+
+msgid "Create Lesson"
+msgstr "Krei lecionon"
+
+msgid "Create New Lesson"
+msgstr "Krei novan lecionon"
+
+msgid "Credits"
+msgstr "Dankoj"
+
+msgid "Description:"
+msgstr "Priskribo:"
+
+msgid "Done: %d of %d right."
+msgstr "Finite: %d el %d ĝustaj."
+
+msgid "Each session:"
+msgstr "Ĉiu ekzercado:"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Malplenigi la liston Dosiero > Lastatempe malfermitaj"
+
+msgid "Enter"
+msgstr "Enigi"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unikoda kodpunkto (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Priskribo de la leciono..."
+
+msgid "Enter lesson name..."
+msgstr "Nomo de la leciono..."
+
+msgid "Enter lesson title"
+msgstr "Titolo de la leciono"
+
+msgid "Enter some places first."
+msgstr "Unue enigu kelkajn lokojn."
+
+msgid "Error creating lesson: %v"
+msgstr "Eraro dum kreado de la leciono: %v"
+
+msgid "Error loading file: %v"
+msgstr "Eraro dum ŝargado de la dosiero: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Eraro: la dosierfenestro ne disponeblas"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Eraro: la lecionfenestro ne disponeblas"
+
+msgid "Error: No about dialog modules available"
+msgstr "Eraro: neniu modulo por la fenestro Pri"
+
+msgid "Error: No file dialog modules available"
+msgstr "Eraro: neniu modulo por dosierfenestroj"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Eraro: neniu modulo por lecionfenestroj"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Eraro: neniu modulo por la agordofenestro"
+
+msgid "Error: Properties dialog not available"
+msgstr "Eraro: la fenestro Atributoj ne disponeblas"
+
+msgid "Error: Settings dialog not available"
+msgstr "Eraro: la agordofenestro ne disponeblas"
+
+msgid "Exported %s"
+msgstr "%s eksportita"
+
+msgid "Field separator:"
+msgstr "Kampa apartigilo:"
+
+msgid "File"
+msgstr "Dosiero"
+
+msgid "File encoding:"
+msgstr "Signokodo:"
+
+msgid "Files"
+msgstr "Dosieroj"
+
+msgid "First row contains headers"
+msgstr "La unua vico enhavas titolojn"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Libera programaro laŭ la GNU General Public License,\nversio 3 aŭ posta"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Unuaj paŝoj kun Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Unue donu respondon al la eroj en la langeto Enigi."
+
+msgid "Go on after seeing the right answer"
+msgstr "Daŭrigi post vidi la ĝustan respondon"
+
+msgid "Grades in"
+msgstr "Notoj laŭ"
+
+msgid "Grades in:"
+msgstr "Notoj laŭ:"
+
+msgid "Hard words"
+msgstr "Malfacilaj vortoj"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Malfacilaj vortoj: pli ofte malĝuste ol ĝuste responditaj, aŭ ankoraŭ ne ekzercitaj. Neniam ĝuste responditaj: sen ĝusta respondo en pli fruaj ekzercadoj."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Kiom longe Ripeti respondon montras la respondon antaŭ ol vi tajpas ĝin"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Kiel la langeto Rezultoj taksas viajn ekzercadojn"
+
+msgid "I was right"
+msgstr "Mi pravis"
+
+msgid "I was wrong"
+msgstr "Mi malpravis"
+
+msgid "Import"
+msgstr "Importi"
+
+msgid "Import File"
+msgstr "Importi dosieron"
+
+msgid "Import Lesson"
+msgstr "Importi lecionon"
+
+msgid "Import Options"
+msgstr "Importaj opcioj"
+
+msgid "Import from &Picture..."
+msgstr "Importi el &bildo..."
+
+msgid "Import from Picture"
+msgstr "Importi el bildo"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Ĉe Nomo – Loko, diri la nomon de la klakota loko"
+
+msgid "In mind"
+msgstr "En la menso"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Kiom longe la respondo montriĝas en la reĝimo Ripeti respondon antaŭ ol vi tajpas ĝin"
+
+msgid "Interface"
+msgstr "Fasado"
+
+msgid "Interval"
+msgstr "Intervale"
+
+msgid "Items:"
+msgstr "Eroj:"
+
+msgid "Language"
+msgstr "Lingvo"
+
+msgid "Languages"
+msgstr "Lingvoj"
+
+msgid "Last session:"
+msgstr "Lasta ekzercado:"
+
+msgid "Latest Session Results"
+msgstr "Rezultoj de la lasta ekzercado"
+
+msgid "Learn words, places and more by heart"
+msgstr "Parkerigu vortojn, lokojn kaj pli"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Parkerigu vortojn, lokojn kaj pli:\nla vortprovizon de fremda lingvo, topografion,\naŭ ion ajn alian, kion vi volas memori."
+
+msgid "Lesson Information"
+msgstr "Informoj pri la leciono"
+
+msgid "Lesson Properties"
+msgstr "Atributoj de la leciono"
+
+msgid "Lesson Type"
+msgstr "Speco de leciono"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "La leciono enhavas %d vortparojn\n\nFinu ekzercadon por vidi detalajn rezultojn ĉi tie."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "La leciono enhavas %d vortparojn | %d pli fruajn ekzercadojn (vidu Progreso)\n\nEkzercu por vidi viajn respondojn detale ĉi tie."
+
+msgid "Lesson type:"
+msgstr "Speco de leciono:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Leciono: %d vortparoj | Finitaj ekzercadoj: %d\n\nLasta ekzercado: %d/%d ĝustaj (%d%%), noto %s\nMeza noto: %s (%d%%)\n\nDetalaj rezultoj de la lasta ekzercado:"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' ŝargita: %d vortoj"
+
+msgid "Made a lesson of %d words"
+msgstr "Leciono el %d vortoj kreita"
+
+msgid "Map:"
+msgstr "Mapo:"
+
+msgid "Media"
+msgstr "Aŭdvidaĵoj"
+
+msgid "Merged %d words from %s"
+msgstr "%d vortoj el %s kunfanditaj"
+
+msgid "Mode:"
+msgstr "Reĝimo:"
+
+msgid "Name"
+msgstr "Nomo"
+
+msgid "Name of a place"
+msgstr "Nomo de loko"
+
+msgid "Name of the marked place"
+msgstr "Nomo de la markita loko"
+
+msgid "Name – Place"
+msgstr "Nomo – Loko"
+
+msgid "Name:"
+msgstr "Nomo:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Bezonas parolprogramon: instalu espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Neniam ĝuste responditaj"
+
+msgid "New Lesson"
+msgstr "Nova leciono"
+
+msgid "New from &Text..."
+msgstr "Nova el &teksto..."
+
+msgid "New lesson created successfully"
+msgstr "Nova leciono kreita"
+
+msgid "New lesson dialog created"
+msgstr "Fenestro por nova leciono kreita"
+
+msgid "Next"
+msgstr "Sekva"
+
+msgid "No lesson data available"
+msgstr "Neniuj datumoj de leciono"
+
+msgid "No lesson open to show properties"
+msgstr "Neniu leciono malfermita por montri atributojn"
+
+msgid "No recent lessons"
+msgstr "Neniuj lastatempaj lecionoj"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Ankoraŭ neniuj rezultoj: ekzercu en la langeto Ekzerci."
+
+msgid "No teaching results available yet"
+msgstr "Ankoraŭ neniuj rezultoj de ekzercado"
+
+msgid "No words available for teaching"
+msgstr "Neniuj vortoj por ekzerci"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Neniuj vortoj por ekzerci: neniu estas ankoraŭ \"%s\""
+
+msgid "Now click where %s is on the map."
+msgstr "Nun alklaku, kie %s estas sur la mapo."
+
+msgid "Open"
+msgstr "Malfermi"
+
+msgid "Open &Recent"
+msgstr "Malfermi &lastatempan"
+
+msgid "Open Lesson…"
+msgstr "Malfermi lecionon…"
+
+msgid "Open operation cancelled"
+msgstr "Malfermo nuligita"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' malfermita - %d vortoj"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Malfermas lecionojn de OpenTeacher (.ot, .otwd), vortlistojn (.csv, .txt) kaj dosierojn de KWordQuiz (.kvtml)"
+
+msgid "Order:"
+msgstr "Ordo:"
+
+msgid "Other picture…"
+msgstr "Alia bildo…"
+
+msgid "Page %d of %d"
+msgstr "Paĝo %d el %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Bildoj, sonoj, videoj aŭ tekstoj, konservataj en la leciono"
+
+msgid "Place %d"
+msgstr "Loko %d"
+
+msgid "Place – Name"
+msgstr "Loko – Nomo"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Loko – Nomo: loko estas markita, tajpu ĝian nomon.\nNomo – Loko: nomo estas donita, alklaku la lokon."
+
+msgid "Please add words in the Enter tab"
+msgstr "Bonvolu aldoni vortojn en la langeto Enigi"
+
+msgid "Practice"
+msgstr "Ekzercado"
+
+msgid "Practice sessions:"
+msgstr "Ekzercadoj:"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Ekzercu inverse: la respondoj estas demandataj kaj la demandoj estas la respondoj"
+
+msgid "Preview"
+msgstr "Antaŭrigardo"
+
+msgid "Previous"
+msgstr "Antaŭa"
+
+msgid "Printed %s"
+msgstr "%s presita"
+
+msgid "Progress"
+msgstr "Progreso"
+
+msgid "Pronounce names"
+msgstr "Prononci nomojn"
+
+msgid "Pronounce questions"
+msgstr "Prononci demandojn"
+
+msgid "Properties dialog cancelled"
+msgstr "Atributoj nuligitaj"
+
+msgid "Question"
+msgstr "Demando"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Demando %d el %d (poentoj: %d/%d ĝustaj)"
+
+msgid "Question Language:"
+msgstr "Lingvo de la demandoj:"
+
+msgid "Question language"
+msgstr "Lingvo de la demandoj"
+
+msgid "Quick Access"
+msgstr "Rapida aliro"
+
+msgid "Random"
+msgstr "Hazarde"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "%d vortparoj legitaj el la bildo: kontrolu ilin en la langeto Enigi"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Legi vortliston el skano aŭ foto de presita listo (bezonas Tesseract)"
+
+msgid "Ready"
+msgstr "Preta"
+
+msgid "Ready to start"
+msgstr "Preta por komenci"
+
+msgid "Ready to start teaching"
+msgstr "Preta por ekzerci"
+
+msgid "Remove"
+msgstr "Forigi"
+
+msgid "Remove Word"
+msgstr "Forigi vorton"
+
+msgid "Repeat answer"
+msgstr "Ripeti respondon"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Ripeti respondon montras la respondon dum"
+
+msgid "Result"
+msgstr "Rezulto"
+
+msgid "Results"
+msgstr "Rezultoj"
+
+msgid "Results Overview"
+msgstr "Superrigardo de la rezultoj"
+
+msgid "Reverse"
+msgstr "Inversigi"
+
+msgid "Reversed"
+msgstr "Inverse"
+
+msgid "Rotate 90°"
+msgstr "Turni 90°"
+
+msgid "Saved %s"
+msgstr "%s konservita"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Diri ĉiun demandon laŭte en la lingvo de la demandoj (bezonas espeak-ng aŭ la voĉojn de macOS aŭ Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Diri ĉiun demandon laŭte, en la lingvo de la demandoj"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Elektu supre unikodan blokon por vidi signojn, aŭ enigu kodpunkton rekte."
+
+msgid "Select file to import..."
+msgstr "Elektu importotan dosieron..."
+
+msgid "Selected file: %s"
+msgstr "Elektita dosiero: %s"
+
+msgid "Settings"
+msgstr "Agordoj"
+
+msgid "Settings saved"
+msgstr "Agordoj konservitaj"
+
+msgid "Show answer for:"
+msgstr "Montri la respondon dum:"
+
+msgid "Show or hide special characters"
+msgstr "Montri aŭ kaŝi specialajn signojn"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Montri aŭ kaŝi specialajn signojn: supersignitajn literojn kaj aliajn skribojn"
+
+msgid "Shuffle answer"
+msgstr "Miksi respondon"
+
+msgid "Skip"
+msgstr "Preterlasi"
+
+msgid "Smart"
+msgstr "Inteligente"
+
+msgid "Sort"
+msgstr "Ordigi"
+
+msgid "Sorted"
+msgstr "Ordigite"
+
+msgid "Start"
+msgstr "Komenci"
+
+msgid "Start Again"
+msgstr "Rekomenci"
+
+msgid "Start Teaching"
+msgstr "Komenci ekzercadon"
+
+msgid "Stop"
+msgstr "Ĉesi"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Rektigu la bildon, ke la linioj estu horizontalaj, kaj trenu rektangulon ĉirkaŭ la vortliston, se la bildo montras pli."
+
+msgid "Straighten:"
+msgstr "Rektigi:"
+
+msgid "System language"
+msgstr "Lingvo de la sistemo"
+
+msgid "Teach"
+msgstr "Ekzerci"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Ekzercado finita! Poentoj: %d/%d ĝustaj (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Ekzercado finita"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%[1]s %[2]s mankas en la leciono."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "La lingvo de la menuoj kaj ekranoj de Recuerdo (post restartigo). Tekstoj sen traduko restas anglaj."
+
+msgid "There are no settings to change."
+msgstr "Ne estas agordoj por ŝanĝi."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Pripensu la respondon kaj premu 'Vidi respondon', kiam vi pretas."
+
+msgid "Topology"
+msgstr "Topografio"
+
+msgid "Translation: %s"
+msgstr "Traduko: %s"
+
+msgid "Type a List"
+msgstr "Tajpi liston"
+
+msgid "Type at least one word."
+msgstr "Tajpu almenaŭ unu vorton."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Tajpu aŭ algluu vortliston kiel liniojn \"demando = respondo\""
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Tajpu aŭ algluu la vortojn: po unu en linio, kun egalsigno (=) aŭ tabo inter la demando kaj la respondo, ekzemple \"hond = dog\". Plurajn vortojn ĉe unu flanko apartigu per komoj."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Tajpu aŭ algluu vortojn kiel liniojn \"demando = respondo\""
+
+msgid "Typing"
+msgstr "Tajpado"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Tajpado: tajpu la respondon. Miksi respondon: kun la literoj de la respondo kiel helpo. Ripeti respondon: la respondo unue montriĝas, poste vi tajpas ĝin el memoro."
+
+msgid "Unicode Block:"
+msgstr "Unikoda bloko:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Uzi propran bildon kiel mapon"
+
+msgid "Version %s"
+msgstr "Versio %s"
+
+msgid "View answer"
+msgstr "Vidi respondon"
+
+msgid "Where is %s?"
+msgstr "Kie estas %s?"
+
+msgid "Which place is marked?"
+msgstr "Kiu loko estas markita?"
+
+msgid "Whole picture"
+msgstr "Tuta bildo"
+
+msgid "Word Lesson: %s"
+msgstr "Vortleciono: %s"
+
+msgid "Word Pairs"
+msgstr "Vortparoj"
+
+msgid "Words List"
+msgstr "Vortlisto"
+
+msgid "Words never answered correctly"
+msgstr "Vortoj neniam ĝuste responditaj"
+
+msgid "Words:"
+msgstr "Vortoj:"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Malĝuste. La ĝusta respondo estas: %s"
+
+msgid "Your Answer"
+msgstr "Via respondo"
+
+msgid "Your answer"
+msgstr "Via respondo"
+
+msgid "e.g. Dutch"
+msgstr "ekz. nederlanda"
+
+msgid "e.g. English"
+msgstr "ekz. angla"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nBazita sur OpenTeacher de la teamo de OpenTeacher, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Ĝuste: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Tio estis %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ La respondo estis: %s"
+
