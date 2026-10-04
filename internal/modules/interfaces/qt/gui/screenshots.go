@@ -61,6 +61,17 @@ func (mod *GuiModule) startScreenshots() {
 			}
 		},
 		shoot("02-enter"),
+		func() {
+			// an edit, then saving as OpenTeaching Words and as PDF
+			if mod.lastWords != nil {
+				mod.lastWords.SetTitle("Sample words")
+			}
+			for _, ext := range []string{".otwd", ".pdf"} {
+				if err := mod.SaveCurrentLessonTo(filepath.Join(dir, "saved"+ext)); err != nil {
+					mod.logger.Error("screenshots: saving %s: %v", ext, err)
+				}
+			}
+		},
 		lessonTab(1),
 		shoot("03-teach"),
 		func() {

@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"strings"
 	"testing"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
@@ -98,5 +99,28 @@ func TestLibreOfficeFormats(t *testing.T) {
 		if b, _ := os.ReadFile(paths[ext]); !bytes.HasPrefix(b, []byte("PK")) {
 			t.Errorf("%s is not an Office Open XML file", ext)
 		}
+	}
+}
+
+func TestSaveFilterAndCanSave(t *testing.T) {
+	f := SaveFilter()
+	for _, want := range []string{"(*.otwd)", "(*.csv)", "(*.pdf)", "(*.docx)", "(*.xlsx)"} {
+		if !strings.Contains(f, want) {
+			t.Errorf("filter lacks %s: %s", want, f)
+		}
+	}
+	if !strings.HasPrefix(f, "OpenTeaching Words") {
+		t.Errorf("filter should start with OpenTeaching Words: %s", f)
+	}
+	for path, want := range map[string]bool{"a.otwd": true, "a.PDF": true, "a.xlsx": true, "a.csv": true, "a.apkg": false, "a": false} {
+		if CanSave(path) != want {
+			t.Errorf("CanSave(%q) = %v", path, !want)
+		}
+	}
+	if got := WithExtension("/tmp/dieren", "PDF (*.pdf)"); got != "/tmp/dieren.pdf" {
+		t.Errorf("WithExtension: %q", got)
+	}
+	if got := WithExtension("/tmp/dieren.csv", "PDF (*.pdf)"); got != "/tmp/dieren.csv" {
+		t.Errorf("WithExtension kept extension: %q", got)
 	}
 }

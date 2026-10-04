@@ -160,6 +160,17 @@ func (w *WordsLessonWidget) connectSignals() {
 	w.logger.LegacyReminder("Teaching session completion signals", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "Qt signal implementation needed")
 }
 
+// SetTitle changes the lesson's title as typing it on the Enter tab does.
+func (w *WordsLessonWidget) SetTitle(title string) {
+	w.enterWidget.titleEdit.SetText(title)
+}
+
+// SetOnModified sets a function called after every edit of the lesson on
+// the Enter tab (title, languages, words).
+func (w *WordsLessonWidget) SetOnModified(f func()) {
+	w.enterWidget.onModified = f
+}
+
 // UpdateLesson updates the lesson data and refreshes all tabs
 func (w *WordsLessonWidget) UpdateLesson(newLesson *lesson.Lesson) {
 	w.lesson = newLesson
@@ -219,6 +230,8 @@ type EnterTabWidget struct {
 	qLanguageEdit    *qt.QLineEdit
 	aLanguageEdit    *qt.QLineEdit
 	wordsTable       *qt.QTableWidget
+	filling          bool   // the table is being filled from the lesson
+	onModified       func() // called after every edit of the lesson
 	addWordButton    *qt.QPushButton
 	removeWordButton *qt.QPushButton
 }
@@ -300,6 +313,7 @@ func (w *EnterTabWidget) connectSignals() {
 	w.titleEdit.OnTextChanged(func(text string) {
 		if w.lesson != nil {
 			w.lesson.Data.List.Title = text
+			w.modified()
 			// Qt signal emission - will be implemented with proper Qt bindings
 			w.logger.LegacyReminder("lessonChanged signal emission", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "proper Qt signal emission needed")
 		}
@@ -309,6 +323,7 @@ func (w *EnterTabWidget) connectSignals() {
 	w.qLanguageEdit.OnTextChanged(func(text string) {
 		if w.lesson != nil {
 			w.lesson.Data.List.QuestionLanguage = text
+			w.modified()
 			// Qt signal emission - will be implemented with proper Qt bindings
 			w.logger.LegacyReminder("lessonChanged signal for question language", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "signal emission needed")
 		}
@@ -317,10 +332,14 @@ func (w *EnterTabWidget) connectSignals() {
 	w.aLanguageEdit.OnTextChanged(func(text string) {
 		if w.lesson != nil {
 			w.lesson.Data.List.AnswerLanguage = text
+			w.modified()
 			// Qt signal emission - will be implemented with proper Qt bindings
 			w.logger.LegacyReminder("lessonChanged signal for answer language", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "signal emission needed")
 		}
 	})
+
+	// Edits in the table go into the lesson
+	w.wordsTable.OnCellChanged(w.cellChanged)
 
 	// Button clicks
 	w.addWordButton.OnClicked(func() {
@@ -355,6 +374,8 @@ func (w *EnterTabWidget) updateWordsTable() {
 		return
 	}
 
+	w.filling = true
+	defer func() { w.filling = false }()
 	items := w.lesson.Data.List.Items
 	w.wordsTable.SetRowCount(len(items))
 
@@ -381,7 +402,12 @@ func (w *EnterTabWidget) addNewWord() {
 		return
 	}
 
+	nextID := 0
+	for _, it := range w.lesson.Data.List.Items {
+		nextID = max(nextID, it.ID+1)
+	}
 	newItem := lesson.WordItem{
+		ID:        nextID,
 		Questions: []string{"New Question"},
 		Answers:   []string{"New Answer"},
 		Comment:   "",
@@ -389,9 +415,47 @@ func (w *EnterTabWidget) addNewWord() {
 
 	w.lesson.Data.List.Items = append(w.lesson.Data.List.Items, newItem)
 	w.updateWordsTable()
-	// Qt signal emission - will be implemented with proper Qt bindings
-	w.logger.LegacyReminder("lessonChanged signal for adding word", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "signal emission needed")
+	w.modified()
 	w.logger.Action("Added new word pair")
+}
+
+// modified reports an edit of the lesson.
+func (w *EnterTabWidget) modified() {
+	if w.onModified != nil {
+		w.onModified()
+	}
+}
+
+// cellChanged puts an edited cell into the lesson: questions and answers
+// are separated by ";" as the table shows them.
+func (w *EnterTabWidget) cellChanged(row, column int) {
+	if w.filling || w.lesson == nil || row < 0 || row >= len(w.lesson.Data.List.Items) {
+		return
+	}
+	cell := w.wordsTable.Item(row, column)
+	if cell == nil {
+		return
+	}
+	text := strings.TrimSpace(cell.Text())
+	item := &w.lesson.Data.List.Items[row]
+	split := func(s string) []string {
+		var out []string
+		for _, p := range strings.Split(s, ";") {
+			if p = strings.TrimSpace(p); p != "" {
+				out = append(out, p)
+			}
+		}
+		return out
+	}
+	switch column {
+	case 0:
+		item.Questions = split(text)
+	case 1:
+		item.Answers = split(text)
+	case 2:
+		item.Comment = text
+	}
+	w.modified()
 }
 
 // removeSelectedWord removes the selected word pair
@@ -407,8 +471,7 @@ func (w *EnterTabWidget) removeSelectedWord() {
 		w.lesson.Data.List.Items = append(items[:currentRow], items[currentRow+1:]...)
 
 		w.updateWordsTable()
-		// Qt signal emission - will be implemented with proper Qt bindings
-		w.logger.LegacyReminder("lessonChanged signal for removing word", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "signal emission needed")
+		w.modified()
 		w.logger.Action("Removed word pair at row %d", currentRow)
 	}
 }

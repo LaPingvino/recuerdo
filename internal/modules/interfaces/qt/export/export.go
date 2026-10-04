@@ -144,3 +144,61 @@ func viaLibreOffice(data *lesson.LessonData, path, interimExt, filter string) er
 	}
 	return os.WriteFile(path, b, 0o644)
 }
+
+// formatNames name the formats Save handles itself.
+var formatNames = map[string]string{
+	".pdf": "PDF", ".odt": "OpenDocument Text",
+	".doc": "Word 97", ".docx": "Word", ".rtf": "Rich Text", ".uot": "Uniform Office text",
+	".ods": "OpenDocument Spreadsheet", ".xls": "Excel 97", ".xlsx": "Excel",
+	".dif": "Data Interchange Format", ".uos": "Uniform Office spreadsheet",
+}
+
+// SaveFilter is a file dialog filter with every format Save can write,
+// the lesson formats first (OpenTeaching Words, the default, at the top).
+func SaveFilter() string {
+	fs := lesson.NewFileSaver()
+	exts := append([]string{".otwd"}, fs.GetSupportedSaveExtensions()...)
+	var parts []string
+	seen := map[string]bool{}
+	add := func(name, ext string) {
+		if !seen[ext] {
+			seen[ext] = true
+			parts = append(parts, fmt.Sprintf("%s (*%s)", name, ext))
+		}
+	}
+	for _, e := range exts {
+		add(fs.GetSaveFormatName(e), e)
+	}
+	for _, e := range []string{".pdf", ".odt", ".docx", ".doc", ".rtf", ".uot", ".xlsx", ".xls", ".ods", ".dif", ".uos"} {
+		add(formatNames[e], e)
+	}
+	return strings.Join(parts, ";;")
+}
+
+// CanSave reports whether Save can write a file with path's extension.
+func CanSave(path string) bool {
+	ext := strings.ToLower(filepath.Ext(path))
+	if formatNames[ext] != "" {
+		return true
+	}
+	for _, e := range lesson.NewFileSaver().GetSupportedSaveExtensions() {
+		if e == ext {
+			return true
+		}
+	}
+	return false
+}
+
+// WithExtension adds the extension the chosen filter names when path has
+// none of its own (file dialogs on some systems do not).
+func WithExtension(path, filter string) string {
+	if filepath.Ext(path) != "" {
+		return path
+	}
+	if i := strings.Index(filter, "(*."); i >= 0 {
+		if j := strings.Index(filter[i:], ")"); j > 0 {
+			return path + filter[i+2:i+j]
+		}
+	}
+	return path + ".otwd"
+}

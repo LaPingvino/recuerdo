@@ -9,11 +9,15 @@
 package gui
 
 import (
+	"unsafe"
+
 	"context"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/export"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/icon"
 	"log"
 	"path/filepath"
+	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
 	"github.com/LaPingvino/recuerdo/internal/lesson"
@@ -39,6 +43,10 @@ type GuiModule struct {
 	logger         *logging.Logger
 	addingTab      bool
 	showingDialog  bool
+
+	saveAction, saveAsAction *qt.QAction
+	// tabLessons is the lesson shown in each lesson tab, by tab widget
+	tabLessons map[unsafe.Pointer]*lesson.Lesson
 }
 
 // NewGuiModule creates a new GuiModule instance
@@ -238,17 +246,15 @@ func (mod *GuiModule) createMenuBar() {
 
 	saveAction := fileMenu.AddAction("&Save")
 	saveAction.SetShortcut(qt.NewQKeySequence2("Ctrl+S"))
-	saveAction.SetEnabled(false) // Enable when lesson is loaded
-	saveAction.OnTriggered(func() {
-		mod.logger.Event("Save menu action triggered")
-	})
+	saveAction.SetEnabled(false) // enabled when a lesson is open
+	saveAction.OnTriggered(func() { mod.saveCurrentLesson(false) })
+	mod.saveAction = saveAction
 
 	saveAsAction := fileMenu.AddAction("Save &As...")
 	saveAsAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Shift+S"))
-	saveAsAction.SetEnabled(false) // Enable when lesson is loaded
-	saveAsAction.OnTriggered(func() {
-		mod.logger.Event("Save As menu action triggered")
-	})
+	saveAsAction.SetEnabled(false) // enabled when a lesson is open
+	saveAsAction.OnTriggered(func() { mod.saveCurrentLesson(true) })
+	mod.saveAsAction = saveAsAction
 
 	fileMenu.AddSeparator()
 
@@ -619,6 +625,14 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 	// Add the tab
 	tabIndex := mod.tabWidget.AddTab(lessonWidget, title)
 	mod.tabWidget.SetCurrentIndex(tabIndex)
+	mod.rememberLesson(lessonWidget, lesson)
+	if mod.lastWords != nil && mod.lastWords.QWidget.UnsafePointer() == lessonWidget.UnsafePointer() {
+		mod.lastWords.SetOnModified(func() { mod.markModified(lessonWidget) })
+	}
+	if mod.saveAction != nil {
+		mod.saveAction.SetEnabled(true)
+		mod.saveAsAction.SetEnabled(true)
+	}
 
 	// Update status bar
 	statusMsg := fmt.Sprintf("Opened '%s' - %d words", title, lesson.Data.List.GetWordCount())
@@ -815,4 +829,88 @@ func (mod *GuiModule) updateCurrentLessonData(data map[string]interface{}) {
 // InitGuiModule creates and returns a new GuiModule instance
 func InitGuiModule() core.Module {
 	return NewGuiModule()
+}
+
+// currentLesson is the lesson in the current tab and its tab index.
+func (mod *GuiModule) currentLesson() (*lesson.Lesson, int) {
+	if mod.tabWidget == nil {
+		return nil, -1
+	}
+	i := mod.tabWidget.CurrentIndex()
+	if i < 0 {
+		return nil, -1
+	}
+	return mod.tabLessons[mod.tabWidget.Widget(i).UnsafePointer()], i
+}
+
+// markModified puts a "*" before the title of the tab showing widget.
+func (mod *GuiModule) markModified(widget *qt.QWidget) {
+	i := mod.tabWidget.IndexOf(widget)
+	if i >= 0 && !strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
+		mod.tabWidget.SetTabText(i, "*"+mod.tabWidget.TabText(i))
+	}
+}
+
+// saveCurrentLesson saves the lesson in the current tab: to its own file
+// if that is in a format Recuerdo writes, otherwise (or for Save As) to a
+// file the user chooses.
+func (mod *GuiModule) saveCurrentLesson(as bool) {
+	l, tab := mod.currentLesson()
+	if l == nil {
+		return
+	}
+	path := l.Path
+	if as || path == "" || !export.CanSave(path) {
+		fd, ok := mod.manager.GetDefaultModule("fileDialog")
+		chooser, ok2 := fd.(interface {
+			SaveFile(parent *qt.QWidget, title, filter, defaultName string) string
+		})
+		if !ok || !ok2 {
+			mod.logger.Error("no file dialog to choose where to save")
+			return
+		}
+		name := l.Data.List.Title
+		if name == "" {
+			name = "lesson"
+		}
+		filter := export.SaveFilter()
+		path = chooser.SaveFile(mod.mainWindow.QWidget, "Save Lesson", filter, name+".otwd")
+		if path == "" {
+			return
+		}
+		path = export.WithExtension(path, filter)
+	}
+	if err := mod.SaveCurrentLessonTo(path); err != nil {
+		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Save Lesson", "Could not save the lesson:\n"+err.Error())
+	}
+	_ = tab
+}
+
+// SaveCurrentLessonTo saves the lesson in the current tab to path, in the
+// format its extension names, and makes path the lesson's file.
+func (mod *GuiModule) SaveCurrentLessonTo(path string) error {
+	l, tab := mod.currentLesson()
+	if l == nil {
+		return fmt.Errorf("no lesson is open")
+	}
+	if err := export.Save(&l.Data, path); err != nil {
+		return err
+	}
+	l.Path = path
+	title := l.Data.List.Title
+	if title == "" {
+		title = filepath.Base(path)
+	}
+	mod.tabWidget.SetTabText(tab, title)
+	mod.statusBar.ShowMessage("Saved " + path)
+	mod.logger.Success("Saved lesson to %s", path)
+	return nil
+}
+
+// rememberLesson records which lesson a tab shows.
+func (mod *GuiModule) rememberLesson(tab *qt.QWidget, l *lesson.Lesson) {
+	if mod.tabLessons == nil {
+		mod.tabLessons = map[unsafe.Pointer]*lesson.Lesson{}
+	}
+	mod.tabLessons[tab.UnsafePointer()] = l
 }

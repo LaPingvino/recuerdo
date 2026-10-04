@@ -24,10 +24,17 @@ func TestMain(m *testing.M) {
 	inMindErr = checkInMind()
 	hangmanErr = checkHangman()
 	settingsErr = checkSettings()
+	editErr = checkEditing()
 	os.Exit(m.Run())
 }
 
-var teachErr, modesErr, inMindErr, hangmanErr, settingsErr error
+var teachErr, modesErr, inMindErr, hangmanErr, settingsErr, editErr error
+
+func TestEnterTabEditsTheLesson(t *testing.T) {
+	if editErr != nil {
+		t.Fatal(editErr)
+	}
+}
 
 func TestLessonSettings(t *testing.T) {
 	if settingsErr != nil {
@@ -325,6 +332,41 @@ func checkSettings() error {
 	w.UseSettings(mapSettings{NotationSetting: "Klingon"})
 	if w.resultsWidget.Notation() == "Klingon" || w.teachWidget.RepeatDuration <= 0 {
 		return fmt.Errorf("bad settings: notation %q, duration %v", w.resultsWidget.Notation(), w.teachWidget.RepeatDuration)
+	}
+	return nil
+}
+
+func checkEditing() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"hond"}, Answers: []string{"dog"}},
+		{ID: 1, Questions: []string{"kat"}, Answers: []string{"cat"}},
+	}}}}
+	w := NewWordsLessonWidget(l, nil)
+	edits := 0
+	w.SetOnModified(func() { edits++ })
+	table := w.enterWidget.wordsTable
+
+	table.Item(1, 1).SetText("cat; puss")
+	if got := l.Data.List.Items[1].Answers; len(got) != 2 || got[1] != "puss" {
+		return fmt.Errorf("edited answer not in the lesson: %q", got)
+	}
+	table.Item(0, 2).SetText("a pet")
+	if l.Data.List.Items[0].Comment != "a pet" {
+		return fmt.Errorf("edited comment not in the lesson: %q", l.Data.List.Items[0].Comment)
+	}
+	w.enterWidget.titleEdit.SetText("Dieren")
+	if l.Data.List.Title != "Dieren" || edits != 3 {
+		return fmt.Errorf("title %q, %d edits reported, want 3", l.Data.List.Title, edits)
+	}
+	w.enterWidget.addWordButton.Click()
+	if n := len(l.Data.List.Items); n != 3 || l.Data.List.Items[2].ID != 2 {
+		return fmt.Errorf("added word: %d items, new ID %d", n, l.Data.List.Items[n-1].ID)
+	}
+	// filling the table from the lesson is not an edit
+	before := edits
+	w.enterWidget.updateWordsTable()
+	if edits != before {
+		return fmt.Errorf("refilling the table reported %d edits", edits-before)
 	}
 	return nil
 }
