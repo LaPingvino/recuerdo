@@ -64,6 +64,9 @@ func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
 		return fl.loadVokabelTrainer(filePath)
 	case ".wdl":
 		return fl.loadVoca(filePath)
+	case ".stp":
+		// Ludem lists are plain text word pairs
+		return fl.loadTextFile(filePath)
 	case ".csv", ".tsv":
 		return fl.loadCSV(filePath)
 	case ".txt":

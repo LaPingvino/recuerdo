@@ -112,39 +112,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/reverse"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/sort"
 	wordsneveransweredcorrectly "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/wordsNeverAnsweredCorrectly"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loader"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/abbyy"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/anki"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/anki2"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/apkg"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/backpack"
-	csv "github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/csv_"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/cuecard"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/domingo"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/flashqard"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/fmd"
-	gnuvocabtrain "github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/gnuVocabTrain"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/granule"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/jml"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/jvlt"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/kgm"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/kvtml"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/ludem"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/mnemosyne"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/ot"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/otmd"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/ottp"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/otwd"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/overhoor"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/ovr"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/pauker"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/t2k"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/teachmaster"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/voca"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/vocabularium"
-	vokabeltrainer "github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/vokabelTrainer"
-	vtraintxt "github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/vtrainTxt"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/loaders/wrts"
 	mergerwords "github.com/LaPingvino/recuerdo/internal/modules/logic/mergers/words"
 	mimicrytypefaceconverter "github.com/LaPingvino/recuerdo/internal/modules/logic/mimicryTypefaceConverter"
 	logicmodules "github.com/LaPingvino/recuerdo/internal/modules/logic/modules"
@@ -1015,204 +982,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register wordsneveransweredcorrectly module: %w", err)
 	}
 
-	// Register loader module
-	loaderModule := loader.NewLoaderModule()
-	if err := manager.Register(loaderModule); err != nil {
-		return fmt.Errorf("failed to register loader module: %w", err)
-	}
-
-	// Register abbyy module
-	abbyyModule := abbyy.NewAbbyyLoaderModule()
-	if err := manager.Register(abbyyModule); err != nil {
-		return fmt.Errorf("failed to register abbyy module: %w", err)
-	}
-
-	// Register anki module
-	ankiModule := anki.NewAnkiLoaderModule()
-	if err := manager.Register(ankiModule); err != nil {
-		return fmt.Errorf("failed to register anki module: %w", err)
-	}
-
-	// Register anki2 module
-	anki2Module := anki2.NewAnki2LoaderModule()
-	if err := manager.Register(anki2Module); err != nil {
-		return fmt.Errorf("failed to register anki2 module: %w", err)
-	}
-
-	// Register apkg module
-	apkgModule := apkg.NewAnkiApkgLoaderModule()
-	if err := manager.Register(apkgModule); err != nil {
-		return fmt.Errorf("failed to register apkg module: %w", err)
-	}
-
-	// Register backpack module
-	backpackModule := backpack.NewBackpackLoaderModule()
-	if err := manager.Register(backpackModule); err != nil {
-		return fmt.Errorf("failed to register backpack module: %w", err)
-	}
-
-	// Register csv module
-	csvModule := csv.NewCsvLoaderModule()
-	if err := manager.Register(csvModule); err != nil {
-		return fmt.Errorf("failed to register csv module: %w", err)
-	}
-
-	// Register cuecard module
-	cuecardModule := cuecard.NewCueCardLoaderModule()
-	if err := manager.Register(cuecardModule); err != nil {
-		return fmt.Errorf("failed to register cuecard module: %w", err)
-	}
-
-	// Register domingo module
-	domingoModule := domingo.NewDomingoLoaderModule()
-	if err := manager.Register(domingoModule); err != nil {
-		return fmt.Errorf("failed to register domingo module: %w", err)
-	}
-
-	// Register flashqard module
-	flashqardModule := flashqard.NewFlashQardLoaderModule()
-	if err := manager.Register(flashqardModule); err != nil {
-		return fmt.Errorf("failed to register flashqard module: %w", err)
-	}
-
-	// Register fmd module
-	fmdModule := fmd.NewFmdLoaderModule()
-	if err := manager.Register(fmdModule); err != nil {
-		return fmt.Errorf("failed to register fmd module: %w", err)
-	}
-
-	// Register gnuvocabtrain module
-	gnuvocabtrainModule := gnuvocabtrain.NewGnuVocabTrainLoaderModule()
-	if err := manager.Register(gnuvocabtrainModule); err != nil {
-		return fmt.Errorf("failed to register gnuvocabtrain module: %w", err)
-	}
-
-	// Register granule module
-	granuleModule := granule.NewGranuleLoaderModule()
-	if err := manager.Register(granuleModule); err != nil {
-		return fmt.Errorf("failed to register granule module: %w", err)
-	}
-
-	// Register jml module
-	jmlModule := jml.NewJMemorizeLessonLoaderModule()
-	if err := manager.Register(jmlModule); err != nil {
-		return fmt.Errorf("failed to register jml module: %w", err)
-	}
-
-	// Register jvlt module
-	jvltModule := jvlt.NewJvltLoaderModule()
-	if err := manager.Register(jvltModule); err != nil {
-		return fmt.Errorf("failed to register jvlt module: %w", err)
-	}
-
-	// Register kgm module
-	kgmModule := kgm.NewKGeographyMapLoaderModule()
-	if err := manager.Register(kgmModule); err != nil {
-		return fmt.Errorf("failed to register kgm module: %w", err)
-	}
-
-	// Register kvtml module
-	kvtmlModule := kvtml.NewKvtmlLoaderModule()
-	if err := manager.Register(kvtmlModule); err != nil {
-		return fmt.Errorf("failed to register kvtml module: %w", err)
-	}
-
-	// Register ludem module
-	ludemModule := ludem.NewLudemLoaderModule()
-	if err := manager.Register(ludemModule); err != nil {
-		return fmt.Errorf("failed to register ludem module: %w", err)
-	}
-
-	// Register mnemosyne module
-	mnemosyneModule := mnemosyne.NewMnemosyneLoaderModule()
-	if err := manager.Register(mnemosyneModule); err != nil {
-		return fmt.Errorf("failed to register mnemosyne module: %w", err)
-	}
-
-	// Register ot module
-	otModule := ot.NewOpenTeacherLoaderModule()
-	if err := manager.Register(otModule); err != nil {
-		return fmt.Errorf("failed to register ot module: %w", err)
-	}
-
-	// Register otmd module
-	otmdModule := otmd.NewOpenTeachingMediaLoaderModule()
-	if err := manager.Register(otmdModule); err != nil {
-		return fmt.Errorf("failed to register otmd module: %w", err)
-	}
-
-	// Register ottp module
-	ottpModule := ottp.NewOpenTeachingTopoLoaderModule()
-	if err := manager.Register(ottpModule); err != nil {
-		return fmt.Errorf("failed to register ottp module: %w", err)
-	}
-
-	// Register otwd module
-	otwdModule := otwd.NewOpenTeachingWordsLoaderModule()
-	if err := manager.Register(otwdModule); err != nil {
-		return fmt.Errorf("failed to register otwd module: %w", err)
-	}
-
-	// Register overhoor module
-	overhoorModule := overhoor.NewOverhoorLoaderModule()
-	if err := manager.Register(overhoorModule); err != nil {
-		return fmt.Errorf("failed to register overhoor module: %w", err)
-	}
-
-	// Register ovr module
-	ovrModule := ovr.NewOverhoringsprogrammaTalenLoaderModule()
-	if err := manager.Register(ovrModule); err != nil {
-		return fmt.Errorf("failed to register ovr module: %w", err)
-	}
-
-	// Register pauker module
-	paukerModule := pauker.NewPaukerLoaderModule()
-	if err := manager.Register(paukerModule); err != nil {
-		return fmt.Errorf("failed to register pauker module: %w", err)
-	}
-
-	// Register t2k module
-	t2kModule := t2k.NewTeach2000LoaderModule()
-	if err := manager.Register(t2kModule); err != nil {
-		return fmt.Errorf("failed to register t2k module: %w", err)
-	}
-
-	// Register teachmaster module
-	teachmasterModule := teachmaster.NewTeachmasterLoaderModule()
-	if err := manager.Register(teachmasterModule); err != nil {
-		return fmt.Errorf("failed to register teachmaster module: %w", err)
-	}
-
-	// Register voca module
-	vocaModule := voca.NewVocaLoaderModule()
-	if err := manager.Register(vocaModule); err != nil {
-		return fmt.Errorf("failed to register voca module: %w", err)
-	}
-
-	// Register vocabularium module
-	vocabulariumModule := vocabularium.NewVocabulariumLoaderModule()
-	if err := manager.Register(vocabulariumModule); err != nil {
-		return fmt.Errorf("failed to register vocabularium module: %w", err)
-	}
-
-	// Register vokabeltrainer module
-	vokabeltrainerModule := vokabeltrainer.NewVokabelTrainerLoaderModule()
-	if err := manager.Register(vokabeltrainerModule); err != nil {
-		return fmt.Errorf("failed to register vokabeltrainer module: %w", err)
-	}
-
-	// Register vtraintxt module
-	vtraintxtModule := vtraintxt.NewVTrainTxtLoaderModule()
-	if err := manager.Register(vtraintxtModule); err != nil {
-		return fmt.Errorf("failed to register vtraintxt module: %w", err)
-	}
-
-	// Register wrts module
-	wrtsModule := wrts.NewWrtsLoaderModule()
-	if err := manager.Register(wrtsModule); err != nil {
-		return fmt.Errorf("failed to register wrts module: %w", err)
-	}
-
 	// Register words module
 	mergerwordsModule := mergerwords.NewWordsMergerModule()
 	if err := manager.Register(mergerwordsModule); err != nil {
@@ -1362,18 +1131,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register saver module: %w", err)
 	}
 
-	// Register csv module - DISABLED (module doesn't exist)
-	// csvModule := csv.NewCsvSaverModule()
-	// if err := manager.Register(csvModule); err != nil {
-	//	return fmt.Errorf("failed to register csv module: %w", err)
-	// }
-
-	// Register kvtml module - DISABLED (module doesn't exist)
-	// kvtmlModule := kvtml.NewKvtmlSaverModule()
-	// if err := manager.Register(kvtmlModule); err != nil {
-	//	return fmt.Errorf("failed to register kvtml module: %w", err)
-	// }
-
 	// Register latex module
 	latexModule := latex.NewLaTeXSaverModule()
 	if err := manager.Register(latexModule); err != nil {
@@ -1398,24 +1155,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register odt module: %w", err)
 	}
 
-	// Register ot module - DISABLED (module doesn't exist)
-	// otModule := ot.NewOpenTeacherSaverModule()
-	// if err := manager.Register(otModule); err != nil {
-	//	return fmt.Errorf("failed to register ot module: %w", err)
-	// }
-
-	// Register ottp module - DISABLED (module doesn't exist)
-	// ottpModule := ottp.NewOpenTeachingTopoSaverModule()
-	// if err := manager.Register(ottpModule); err != nil {
-	//	return fmt.Errorf("failed to register ottp module: %w", err)
-	// }
-
-	// Register otwd module - DISABLED (module doesn't exist)
-	// otwdModule := otwd.NewOpenTeachingWordsSaverModule()
-	// if err := manager.Register(otwdModule); err != nil {
-	//	return fmt.Errorf("failed to register otwd module: %w", err)
-	// }
-
 	// Register pdf module
 	pdfModule := pdf.NewPdfSaverModule()
 	if err := manager.Register(pdfModule); err != nil {
@@ -1434,12 +1173,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register sylk module: %w", err)
 	}
 
-	// Register t2k module - DISABLED (module doesn't exist)
-	// t2kModule := t2k.NewTeach2000SaverModule()
-	// if err := manager.Register(t2kModule); err != nil {
-	//	return fmt.Errorf("failed to register t2k module: %w", err)
-	// }
-
 	// Register topohtml module
 	topohtmlModule := topohtml.NewHtmlSaverModule()
 	if err := manager.Register(topohtmlModule); err != nil {
@@ -1451,12 +1184,6 @@ func registerAllModules(manager *core.Manager) error {
 	if err := manager.Register(wordshtmlModule); err != nil {
 		return fmt.Errorf("failed to register wordshtml module: %w", err)
 	}
-
-	// Register wrts module - DISABLED (module doesn't exist)
-	// wrtsModule := wrts.NewWrtsSaverModule()
-	// if err := manager.Register(wrtsModule); err != nil {
-	//	return fmt.Errorf("failed to register wrts module: %w", err)
-	// }
 
 	// Register settings module
 	// Register settings module (priority 1600)

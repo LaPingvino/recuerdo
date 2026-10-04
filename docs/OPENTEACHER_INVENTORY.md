@@ -41,7 +41,11 @@ files; most of those files are skeletons):
 - **untested**: Go code without stub markers, no tests
 - **partial**: substantial Go code (150+ lines, at least 40 per stub marker) that still has TODOs
 - **central**: the file format is dispatched by `FileLoader.LoadFile` or
-  `FileSaver.SaveFile` in `internal/lesson` rather than by a module of its own
+  `FileSaver.SaveFile` in `internal/lesson` rather than by a module of its own.
+  All of OpenTeacher's loaders are covered this way (the generated per-format
+  loader packages were removed in October 2026): `TestOpenTeacherSampleFiles`
+  loads all 58 lesson files OpenTeacher tests its loaders with, checking items,
+  unique IDs and that no markup or binary data ends up as words
 - **scaffold**: generated skeleton; methods are `// TODO: Port Python method logic`
 - **missing**: no Go code
 - **dropped**: removed from the Go port on purpose (October 2026): the
@@ -59,10 +63,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data |  |  |  |  | 22 |  | 21 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 7 | 16 |  | 29 | 63 |  | 26 | 39 | 180 |
+| logic | 8 | 16 |  | 43 | 48 |  | 26 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **9** | **19** | **7** | **29** | **144** | **2** | **77** | **67** | **354** |
+| **all** | **10** | **19** | **7** | **43** | **129** | **2** | **77** | **67** | **354** |
 
 Remarks:
 
@@ -214,7 +218,7 @@ reference until they are updated or removed.
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 143 | 0 | 0 | untested |
 | `interfaces/qt/dialogShower` | dialogShower | 141 | 0 | 0 | 0 | missing |
-| `interfaces/qt/dialogs/about` | about | 247 | 123 | 0 | 0 | untested |
+| `interfaces/qt/dialogs/about` | about | 247 | 127 | 0 | 0 | untested |
 | `interfaces/qt/dialogs/aboutTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/documentation` | documentation | 117 | 43 | 6 | 0 | scaffold |
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
@@ -230,14 +234,14 @@ reference until they are updated or removed.
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 122 | 7 | 0 | scaffold |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 619 | 8 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 726 | 8 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 85 | 6 | 0 | scaffold |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | missing |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
-| `interfaces/qt/lessons/topo` | lesson | 202 | 1316 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 1805 | 10 | 1 | partial |
+| `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 1889 | 11 | 1 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -257,7 +261,7 @@ reference until they are updated or removed.
 | `interfaces/qt/printer` | printer | 51 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/progressViewer` | progressViewer | 150 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/progressViewerTest` | test | 51 | 42 | 11 | 0 | test suite |
-| `interfaces/qt/qtApp` | qtApp | 27 | 75 | 0 | 0 | untested |
+| `interfaces/qt/qtApp` | qtApp | 27 | 79 | 0 | 0 | untested |
 | `interfaces/qt/qtAppTest` | test | 29 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/recentlyOpenedViewer` | recentlyOpenedViewer | 132 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/settingsWidget/boolean` | settingsWidget | 35 | 38 | 4 | 0 | scaffold |
@@ -360,43 +364,43 @@ reference until they are updated or removed.
 | `logic/listModifiers/sortTest` | test | 38 | 36 | 8 | 0 | test suite |
 | `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 44 | 7 | 0 | scaffold |
 | `logic/listModifiers/wordsNeverAnsweredCorrectlyTest` | test | 104 | 46 | 13 | 0 | test suite |
-| `logic/loader` | loader | 109 | 50 | 10 | 0 | scaffold |
-| `logic/loaders/abbyy` | load | 73 | 42 | 6 | 0 | central |
-| `logic/loaders/anki` | load | 81 | 46 | 8 | 0 | central |
-| `logic/loaders/anki2` | load | 84 | 46 | 8 | 0 | central |
-| `logic/loaders/apkg` | load | 76 | 46 | 8 | 0 | scaffold |
-| `logic/loaders/backpack` | load | 59 | 44 | 7 | 0 | central |
-| `logic/loaders/csv_` | load | 87 | 44 | 7 | 0 | central |
-| `logic/loaders/cuecard` | load | 74 | 44 | 7 | 0 | central |
-| `logic/loaders/domingo` | load | 81 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/flashqard` | load | 83 | 46 | 8 | 0 | central |
-| `logic/loaders/fmd` | load | 71 | 42 | 6 | 0 | scaffold |
-| `logic/loaders/gnuVocabTrain` | load | 81 | 44 | 7 | 0 | central |
-| `logic/loaders/granule` | load | 70 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/jml` | load | 85 | 46 | 8 | 0 | scaffold |
-| `logic/loaders/jvlt` | load | 72 | 44 | 7 | 0 | central |
-| `logic/loaders/kgm` | load | 93 | 42 | 6 | 0 | central |
-| `logic/loaders/kvtml` | load | 90 | 48 | 9 | 0 | central |
-| `logic/loaders/ludem` | load | 57 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/mnemosyne` | load | 79 | 44 | 7 | 0 | central |
-| `logic/loaders/ot` | load | 104 | 42 | 6 | 0 | central |
-| `logic/loaders/otmd` | load | 68 | 42 | 6 | 0 | central |
-| `logic/loaders/ottp` | load | 52 | 42 | 6 | 0 | central |
-| `logic/loaders/otwd` | load | 51 | 42 | 6 | 0 | central |
-| `logic/loaders/overhoor` | load | 84 | 46 | 8 | 0 | scaffold |
-| `logic/loaders/ovr` | load | 93 | 50 | 10 | 0 | scaffold |
-| `logic/loaders/pauker` | load | 96 | 44 | 7 | 0 | scaffold |
-| `logic/loaders/t2k` | load | 187 | 60 | 15 | 0 | central |
-| `logic/loaders/teachmaster` | load | 89 | 46 | 8 | 0 | central |
+| `logic/loader` | loader | 109 | 0 | 0 | 0 | central |
+| `logic/loaders/abbyy` | load | 73 | 0 | 0 | 0 | central |
+| `logic/loaders/anki` | load | 81 | 0 | 0 | 0 | central |
+| `logic/loaders/anki2` | load | 84 | 0 | 0 | 0 | central |
+| `logic/loaders/apkg` | load | 76 | 0 | 0 | 0 | central |
+| `logic/loaders/backpack` | load | 59 | 0 | 0 | 0 | central |
+| `logic/loaders/csv_` | load | 87 | 0 | 0 | 0 | central |
+| `logic/loaders/cuecard` | load | 74 | 0 | 0 | 0 | central |
+| `logic/loaders/domingo` | load | 81 | 0 | 0 | 0 | central |
+| `logic/loaders/flashqard` | load | 83 | 0 | 0 | 0 | central |
+| `logic/loaders/fmd` | load | 71 | 0 | 0 | 0 | central |
+| `logic/loaders/gnuVocabTrain` | load | 81 | 0 | 0 | 0 | central |
+| `logic/loaders/granule` | load | 70 | 0 | 0 | 0 | central |
+| `logic/loaders/jml` | load | 85 | 0 | 0 | 0 | central |
+| `logic/loaders/jvlt` | load | 72 | 0 | 0 | 0 | central |
+| `logic/loaders/kgm` | load | 93 | 0 | 0 | 0 | central |
+| `logic/loaders/kvtml` | load | 90 | 0 | 0 | 0 | central |
+| `logic/loaders/ludem` | load | 57 | 0 | 0 | 0 | central |
+| `logic/loaders/mnemosyne` | load | 79 | 0 | 0 | 0 | central |
+| `logic/loaders/ot` | load | 104 | 0 | 0 | 0 | central |
+| `logic/loaders/otmd` | load | 68 | 0 | 0 | 0 | central |
+| `logic/loaders/ottp` | load | 52 | 0 | 0 | 0 | central |
+| `logic/loaders/otwd` | load | 51 | 0 | 0 | 0 | central |
+| `logic/loaders/overhoor` | load | 84 | 0 | 0 | 0 | central |
+| `logic/loaders/ovr` | load | 93 | 0 | 0 | 0 | central |
+| `logic/loaders/pauker` | load | 96 | 0 | 0 | 0 | central |
+| `logic/loaders/t2k` | load | 187 | 0 | 0 | 0 | central |
+| `logic/loaders/teachmaster` | load | 89 | 0 | 0 | 0 | central |
 | `logic/loaders/test` | test | 94 | 0 | 0 | 0 | test suite |
-| `logic/loaders/voca` | load | 305 | 84 | 27 | 0 | scaffold |
-| `logic/loaders/vocabularium` | load | 87 | 46 | 8 | 0 | scaffold |
-| `logic/loaders/vokabelTrainer` | load | 75 | 42 | 6 | 0 | scaffold |
-| `logic/loaders/vtrainTxt` | load | 89 | 44 | 7 | 0 | central |
-| `logic/loaders/wrts` | load | 90 | 42 | 6 | 0 | scaffold |
+| `logic/loaders/voca` | load | 305 | 0 | 0 | 0 | central |
+| `logic/loaders/vocabularium` | load | 87 | 0 | 0 | 0 | central |
+| `logic/loaders/vokabelTrainer` | load | 75 | 0 | 0 | 0 | central |
+| `logic/loaders/vtrainTxt` | load | 89 | 0 | 0 | 0 | central |
+| `logic/loaders/wrts` | load | 90 | 0 | 0 | 0 | central |
 | `logic/mergers/words` | merger | 21 | 38 | 4 | 0 | scaffold |
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
-| `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 38 | 4 | 0 | scaffold |
+| `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 64 | 0 | 1 | working |
 | `logic/mimicryTypefaceConverterTest` | test | 30 | 44 | 12 | 0 | test suite |
 | `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | dropped |
 | `logic/moduleGraphBuilderTest` | test | 33 | 0 | 0 | 0 | test suite |
@@ -404,7 +408,7 @@ reference until they are updated or removed.
 | `logic/modulesTest` | test | 44 | 78 | 14 | 0 | test suite |
 | `logic/noteCalculatorChooser` | noteCalculatorChooser | 67 | 59 | 0 | 1 | working |
 | `logic/noteCalculators/american` | noteCalculator | 57 | 16 | 0 | 0 | untested |
-| `logic/noteCalculators/dutch` | noteCalculator | 52 | 29 | 0 | 0 | untested |
+| `logic/noteCalculators/dutch` | noteCalculator | 52 | 31 | 0 | 0 | untested |
 | `logic/noteCalculators/ects` | noteCalculator | 57 | 16 | 0 | 0 | untested |
 | `logic/noteCalculators/french` | noteCalculator | 51 | 25 | 0 | 0 | untested |
 | `logic/noteCalculators/german` | noteCalculator | 55 | 16 | 0 | 0 | untested |
@@ -452,7 +456,7 @@ reference until they are updated or removed.
 | `logic/savers/txt` | save | 103 | 37 | 3 | 0 | central |
 | `logic/savers/wordsHtml` | save | 52 | 40 | 5 | 0 | central |
 | `logic/savers/wrts` | save | 86 | 42 | 6 | 0 | scaffold |
-| `logic/settings` | settings | 106 | 222 | 0 | 1 | working |
+| `logic/settings` | settings | 106 | 264 | 0 | 1 | working |
 | `logic/settingsFilterer` | settingsFilterer | 47 | 40 | 5 | 0 | scaffold |
 | `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |
 | `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 82 | 26 | 0 | scaffold |

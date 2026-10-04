@@ -138,7 +138,9 @@ def declared_extensions(d, attr):
     exts = set()
     for py in d.glob("*.py"):
         src = py.read_text(errors="replace")
-        m = re.search(r"self\." + attr + r"\s*=\s*\{(.*?)\n\t\t\}", src, re.S)
+        # a multi-line dict, or one on a single line ({"stp": ["words"]})
+        m = re.search(r"self\." + attr + r"\s*=\s*\{(.*?)\n\t\t\}", src, re.S) or \
+            re.search(r"self\." + attr + r"\s*=\s*\{([^\n]*)\}", src)
         if m:
             exts.update(e for e in EXT.findall(m.group(1)) if e not in ("words", "topo", "media"))
     return exts
@@ -148,6 +150,10 @@ def central_format(rel):
     """Loaders/savers are implemented in internal/lesson rather than per module.
     Returns the internal/lesson file handling one of the module's extensions."""
     parts = rel.parts
+    # OpenTeacher's generic loader (choosing the load module for a file) is
+    # FileLoader.LoadFile itself
+    if parts == ("logic", "loader"):
+        return "internal/lesson"
     if len(parts) != 3 or parts[:2] not in (("logic", "loaders"), ("logic", "savers")):
         return ""
     loader = parts[1] == "loaders"
