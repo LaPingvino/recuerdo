@@ -68,10 +68,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 8 | 15 |  | 51 | 41 |  | 26 | 39 | 180 |
+| logic | 8 | 15 |  | 66 | 26 |  | 26 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **13** | **18** | **7** | **62** | **103** | **2** | **82** | **67** | **354** |
+| **all** | **13** | **18** | **7** | **77** | **88** | **2** | **82** | **67** | **354** |
 
 Remarks:
 
@@ -186,6 +186,21 @@ file formats, see **covered** above):
 | `data/maps/world` | `internal/maps` | the map picture and places in data/maps/world, loaded by MapManager |
 | `data/metadata` | `internal/modules/metadata.go` | Recuerdo's own metadata module (name, version, application ID) |
 | `data/profileDescriptions/all` | `cmd/recuerdo` | Recuerdo always starts with all its features, which is what OpenTeacher's "all" profile chose |
+| `logic/authors` | `internal/modules/data/openteacherAuthors` | the credits list in the About dialog |
+| `logic/dataStore` | `internal/modules/settings.go` | the settings module's JSON file is Recuerdo's persistent store |
+| `logic/execute` | `internal/core, internal/modules/execute.go` | start-up and enabling modules |
+| `logic/htmlGenerator/media` | `internal/lesson` | FileSaver's HTML export |
+| `logic/htmlGenerator/topo` | `internal/lesson` | FileSaver's HTML export |
+| `logic/htmlGenerator/words` | `internal/lesson` | FileSaver's HTML export (also the source of PDF/ODT) |
+| `logic/modules` | `internal/core` | Recuerdo's module manager (registration, types, default modules) |
+| `logic/odtsaver` | `internal/modules/interfaces/qt/export` | ODT is written by Qt from the HTML export |
+| `logic/otxxloader` | `internal/lesson` | FileLoader reads .otwd/.ottp/.otmd zips (list.json and resources) |
+| `logic/otxxsaver` | `internal/lesson` | FileSaver writes .otwd/.ottp/.otmd zips |
+| `logic/settingsFilterer` | `internal/modules/interfaces/qt/dialogs/settings` | the settings dialog lays its settings out in fixed tabs instead of grouping them by category |
+| `logic/sylkSaver` | `internal/lesson` | FileSaver.saveSYLKFile |
+| `logic/userDocumentationWrapper` | `internal/modules/interfaces/qt/gui` | Help > Getting Started shows the guide |
+| `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
+| `logic/wordListString/parser` | `internal/lesson` | ParseWordList ("q = a" / tab lines with \= escapes) |
 
 ## Dropped, and why
 
@@ -347,19 +362,19 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/textToSpeech/providers/topo` | ttsProvider | 70 | 40 | 5 | 0 | scaffold |
 | `interfaces/textToSpeech/providers/words` | ttsProvider | 79 | 40 | 5 | 0 | scaffold |
 | `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | dropped |
-| `logic/authors` | authors | 45 | 40 | 5 | 0 | scaffold |
+| `logic/authors` | authors | 45 | 0 | 0 | 0 | covered |
 | `logic/authorsTest` | test | 62 | 1 | 0 | 0 | test suite |
-| `logic/dataStore` | dataStore | 51 | 36 | 3 | 0 | scaffold |
+| `logic/dataStore` | dataStore | 51 | 0 | 0 | 0 | covered |
 | `logic/event` | event | 30 | 159 | 0 | 1 | working |
 | `logic/eventTest` | test | 86 | 56 | 18 | 0 | test suite |
-| `logic/execute` | execute | 115 | 108 | 3 | 1 | scaffold |
+| `logic/execute` | execute | 115 | 108 | 3 | 1 | covered |
 | `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 38 | 4 | 0 | scaffold |
 | `logic/friendlyTranslationNamesTest` | test | 33 | 42 | 11 | 0 | test suite |
 | `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | dropped |
-| `logic/htmlGenerator/media` | htmlGenerator | 25 | 38 | 4 | 0 | scaffold |
+| `logic/htmlGenerator/media` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
 | `logic/htmlGenerator/test` | test | 37 | 0 | 0 | 0 | test suite |
-| `logic/htmlGenerator/topo` | htmlGenerator | 25 | 38 | 4 | 0 | scaffold |
-| `logic/htmlGenerator/words` | htmlGenerator | 51 | 40 | 5 | 0 | scaffold |
+| `logic/htmlGenerator/topo` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
+| `logic/htmlGenerator/words` | htmlGenerator | 51 | 0 | 0 | 0 | covered |
 | `logic/interfaces/buttonRegister` | buttonRegister | 75 | 40 | 5 | 0 | scaffold |
 | `logic/interfaces/buttonRegisterTest` | test | 70 | 54 | 17 | 0 | test suite |
 | `logic/interfaces/inputTypingLogic` | inputTypingLogic | 171 | 40 | 5 | 0 | scaffold |
@@ -441,7 +456,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/mimicryTypefaceConverterTest` | test | 30 | 44 | 12 | 0 | test suite |
 | `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | dropped |
 | `logic/moduleGraphBuilderTest` | test | 33 | 0 | 0 | 0 | test suite |
-| `logic/modules` | modules | 148 | 58 | 14 | 0 | scaffold |
+| `logic/modules` | modules | 148 | 0 | 0 | 0 | covered |
 | `logic/modulesTest` | test | 44 | 78 | 14 | 0 | test suite |
 | `logic/noteCalculatorChooser` | noteCalculatorChooser | 67 | 59 | 0 | 1 | working |
 | `logic/noteCalculators/american` | noteCalculator | 57 | 16 | 0 | 0 | untested |
@@ -460,9 +475,9 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 40 | 5 | 0 | scaffold |
 | `logic/ocr/tesseractRecognizer` | ocrRecognizer | 34 | 40 | 5 | 0 | scaffold |
 | `logic/ocr/wordListLoader` | ocrWordListLoader | 134 | 48 | 9 | 0 | scaffold |
-| `logic/odtsaver` | odtSaver | 32 | 38 | 4 | 0 | scaffold |
-| `logic/otxxloader` | otxxLoader | 64 | 44 | 7 | 0 | scaffold |
-| `logic/otxxsaver` | otxxSaver | 40 | 42 | 6 | 0 | scaffold |
+| `logic/odtsaver` | odtSaver | 32 | 0 | 0 | 0 | covered |
+| `logic/otxxloader` | otxxLoader | 64 | 0 | 0 | 0 | covered |
+| `logic/otxxsaver` | otxxSaver | 40 | 0 | 0 | 0 | covered |
 | `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 0 | untested |
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
 | `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 44 | 7 | 0 | scaffold |
@@ -494,12 +509,12 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/savers/wordsHtml` | save | 52 | 0 | 0 | 0 | covered |
 | `logic/savers/wrts` | save | 86 | 0 | 0 | 0 | covered |
 | `logic/settings` | settings | 106 | 264 | 0 | 1 | working |
-| `logic/settingsFilterer` | settingsFilterer | 47 | 40 | 5 | 0 | scaffold |
+| `logic/settingsFilterer` | settingsFilterer | 47 | 0 | 0 | 0 | covered |
 | `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |
 | `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 82 | 26 | 0 | scaffold |
 | `logic/spellChecker` | spellChecker | 56 | 38 | 4 | 0 | scaffold |
 | `logic/spellCheckerTest` | test | 57 | 58 | 19 | 0 | test suite |
-| `logic/sylkSaver` | sylkSaver | 79 | 44 | 7 | 0 | scaffold |
+| `logic/sylkSaver` | sylkSaver | 79 | 0 | 0 | 0 | covered |
 | `logic/testTypes/media` | testType | 58 | 217 | 0 | 0 | untested |
 | `logic/testTypes/topo` | testType | 57 | 228 | 0 | 0 | untested |
 | `logic/testTypes/words` | testType | 102 | 52 | 11 | 0 | scaffold |
@@ -509,15 +524,15 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/translationIndex/mergerTest` | test | 54 | 44 | 12 | 0 | test suite |
 | `logic/translationTest` | test | 58 | 40 | 10 | 0 | test suite |
 | `logic/translator` | translator | 89 | 37 | 3 | 0 | scaffold |
-| `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 38 | 4 | 0 | scaffold |
+| `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 0 | 0 | 0 | covered |
 | `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | dropped |
 | `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |
-| `logic/wordListString/composer` | wordListStringComposer | 35 | 40 | 5 | 0 | scaffold |
-| `logic/wordListString/composerTest` | test | 145 | 58 | 19 | 0 | test suite |
+| `logic/wordListString/composer` | wordListStringComposer | 35 | 0 | 0 | 0 | covered |
+| `logic/wordListString/composerTest` | test | 145 | 0 | 0 | 0 | test suite |
 | `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 0 | 0 | 0 | dropped |
 | `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 0 | 0 | 0 | dropped |
-| `logic/wordListString/parser` | wordListStringParser | 50 | 38 | 4 | 0 | scaffold |
-| `logic/wordListString/parserTest` | test | 159 | 66 | 23 | 0 | test suite |
+| `logic/wordListString/parser` | wordListStringParser | 50 | 0 | 0 | 0 | covered |
+| `logic/wordListString/parserTest` | test | 159 | 0 | 0 | 0 | test suite |
 | `logic/wordsString/checker` | wordsStringChecker | 59 | 117 | 0 | 1 | working |
 | `logic/wordsString/checkerTest` | test | 78 | 1 | 0 | 0 | test suite |
 | `logic/wordsString/composer` | wordsStringComposer | 33 | 44 | 0 | 1 | working |

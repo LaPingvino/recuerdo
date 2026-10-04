@@ -263,30 +263,23 @@ func readCSV(path string, comma rune) ([][]string, error) {
 	return r.ReadAll()
 }
 
-// loadLines loads files with one word pair per line: Backpack (as WRTS
-// exports it, with old Mac line ends) and similar. Each line is
-// "question<tab>answer" or "question = answer".
+// loadLines loads files with one word pair per line in the word list
+// string format ("question = answer" or question<tab>answer): Backpack as
+// WRTS exports it, with old Mac line ends. Lines without a pair are
+// skipped.
 func (fl *FileLoader) loadLines(path string) (*LessonData, error) {
 	text, err := readText(path)
 	if err != nil {
 		return nil, err
 	}
 	norm := strings.NewReplacer("\r\n", "\n", "\r", "\n").Replace(string(text))
+	items, err := ParseWordList(norm, true)
+	if err != nil {
+		return nil, err
+	}
 	data := NewLessonData()
 	data.List.Title = titleFromPath(path)
-	for _, line := range strings.Split(norm, "\n") {
-		q, a, ok := strings.Cut(line, "\t")
-		if !ok {
-			q, a, ok = strings.Cut(line, " = ")
-		}
-		if !ok {
-			continue
-		}
-		qs, as := fl.parseWordString(strings.TrimSpace(q)), fl.parseWordString(strings.TrimSpace(a))
-		if len(qs) > 0 && len(as) > 0 {
-			data.List.Items = append(data.List.Items, WordItem{ID: len(data.List.Items), Questions: qs, Answers: as})
-		}
-	}
+	data.List.Items = items
 	return data, nil
 }
 

@@ -220,6 +220,22 @@ COVERED = {
     "data/maps/world": ("internal/maps", "the map picture and places in data/maps/world, loaded by MapManager"),
     "data/profileDescriptions/all": ("cmd/recuerdo", "Recuerdo always starts with all its features, "
                                      "which is what OpenTeacher's \"all\" profile chose"),
+    "logic/otxxloader": ("internal/lesson", "FileLoader reads .otwd/.ottp/.otmd zips (list.json and resources)"),
+    "logic/otxxsaver": ("internal/lesson", "FileSaver writes .otwd/.ottp/.otmd zips"),
+    "logic/sylkSaver": ("internal/lesson", "FileSaver.saveSYLKFile"),
+    "logic/odtsaver": ("internal/modules/interfaces/qt/export", "ODT is written by Qt from the HTML export"),
+    "logic/userDocumentationWrapper": ("internal/modules/interfaces/qt/gui", "Help > Getting Started shows the guide"),
+    "logic/htmlGenerator/words": ("internal/lesson", "FileSaver's HTML export (also the source of PDF/ODT)"),
+    "logic/htmlGenerator/topo": ("internal/lesson", "FileSaver's HTML export"),
+    "logic/htmlGenerator/media": ("internal/lesson", "FileSaver's HTML export"),
+    "logic/modules": ("internal/core", "Recuerdo's module manager (registration, types, default modules)"),
+    "logic/execute": ("internal/core, internal/modules/execute.go", "start-up and enabling modules"),
+    "logic/wordListString/parser": ("internal/lesson", "ParseWordList (\"q = a\" / tab lines with \\= escapes)"),
+    "logic/wordListString/composer": ("internal/lesson", "ComposeWordList"),
+    "logic/dataStore": ("internal/modules/settings.go", "the settings module's JSON file is Recuerdo's persistent store"),
+    "logic/settingsFilterer": ("internal/modules/interfaces/qt/dialogs/settings", "the settings dialog lays its "
+                               "settings out in fixed tabs instead of grouping them by category"),
+    "logic/authors": ("internal/modules/data/openteacherAuthors", "the credits list in the About dialog"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

@@ -72,15 +72,10 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/theme"
 	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/typingTutor/keyboard"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/authors"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
 
 	logicevent "github.com/LaPingvino/recuerdo/internal/modules/logic/event"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/execute"
 	friendlytranslationnames "github.com/LaPingvino/recuerdo/internal/modules/logic/friendlyTranslationNames"
-
-	htmltopo "github.com/LaPingvino/recuerdo/internal/modules/logic/htmlGenerator/topo"
-	htmlwords "github.com/LaPingvino/recuerdo/internal/modules/logic/htmlGenerator/words"
 
 	buttonregister "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/buttonRegister"
 	inputtypinglogic "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/inputTypingLogic"
@@ -98,7 +93,6 @@ import (
 	wordsneveransweredcorrectly "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/wordsNeverAnsweredCorrectly"
 	mergerwords "github.com/LaPingvino/recuerdo/internal/modules/logic/mergers/words"
 	mimicrytypefaceconverter "github.com/LaPingvino/recuerdo/internal/modules/logic/mimicryTypefaceConverter"
-	logicmodules "github.com/LaPingvino/recuerdo/internal/modules/logic/modules"
 	notecalculatorchooser "github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculatorChooser"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/american"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/dutch"
@@ -109,9 +103,6 @@ import (
 	cuneiformrecognizer "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/cuneiformRecognizer"
 	tesseractrecognizer "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/tesseractRecognizer"
 	wordlistloader "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/wordListLoader"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/odtsaver"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/otxxloader"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/otxxsaver"
 	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 	pyinstallerinterface "github.com/LaPingvino/recuerdo/internal/modules/logic/pyinstallerInterface"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
@@ -749,12 +740,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register userdocumentation module: %w", err)
 	}
 
-	// Register authors module
-	authorsModule := authors.NewAuthorsModule()
-	if err := manager.Register(authorsModule); err != nil {
-		return fmt.Errorf("failed to register authors module: %w", err)
-	}
-
 	// Register event module
 	logiceventModule := logicevent.NewEventModule()
 	if err := manager.Register(logiceventModule); err != nil {
@@ -762,11 +747,6 @@ func registerAllModules(manager *core.Manager) error {
 	}
 	fmt.Printf("  ✓ Registered event module\n")
 
-	// Register execute module
-	logicExecuteModule := execute.NewExecuteModule()
-	if err := manager.Register(logicExecuteModule); err != nil {
-		return fmt.Errorf("failed to register execute module: %w", err)
-	}
 	fmt.Printf("  ✓ Registered execute module\n")
 
 	// Register friendlytranslationnames module
@@ -780,18 +760,6 @@ func registerAllModules(manager *core.Manager) error {
 	// if err := manager.Register(htmlgenmediaModule); err != nil {
 	//	return fmt.Errorf("failed to register media module: %w", err)
 	// }
-
-	// Register topo module
-	htmltopoModule := htmltopo.NewTopoHtmlGeneratorModule()
-	if err := manager.Register(htmltopoModule); err != nil {
-		return fmt.Errorf("failed to register topo module: %w", err)
-	}
-
-	// Register words module
-	htmlwordsModule := htmlwords.NewWordsHtmlGeneratorModule()
-	if err := manager.Register(htmlwordsModule); err != nil {
-		return fmt.Errorf("failed to register words module: %w", err)
-	}
 
 	// Register foreignknown module
 	foreignknownModule := foreignknown.NewForeignKnownModule()
@@ -871,12 +839,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register mimicrytypefaceconverter module: %w", err)
 	}
 
-	// Register modules module
-	logicModulesModule := logicmodules.NewModulesModule()
-	if err := manager.Register(logicModulesModule); err != nil {
-		return fmt.Errorf("failed to register modules module: %w", err)
-	}
-
 	// Skip modulestestFiletoimport - merged into modulestest package
 	// modulestestfiletoimportModule := modulestestFiletoimport.NewModulestestfiletoimportModule()
 	// if err := manager.Register(modulestestfiletoimportModule); err != nil {
@@ -946,24 +908,6 @@ func registerAllModules(manager *core.Manager) error {
 	wordlistloaderModule := wordlistloader.NewOcrWordListLoaderModule()
 	if err := manager.Register(wordlistloaderModule); err != nil {
 		return fmt.Errorf("failed to register wordlistloader module: %w", err)
-	}
-
-	// Register odtsaver module
-	odtsaverModule := odtsaver.NewOdtSaverModule()
-	if err := manager.Register(odtsaverModule); err != nil {
-		return fmt.Errorf("failed to register odtsaver module: %w", err)
-	}
-
-	// Register otxxloader module
-	otxxloaderModule := otxxloader.NewOtxxLoaderModule()
-	if err := manager.Register(otxxloaderModule); err != nil {
-		return fmt.Errorf("failed to register otxxloader module: %w", err)
-	}
-
-	// Register otxxsaver module
-	otxxsaverModule := otxxsaver.NewOtxxSaverModule()
-	if err := manager.Register(otxxsaverModule); err != nil {
-		return fmt.Errorf("failed to register otxxsaver module: %w", err)
 	}
 
 	// Register percentscalculator module
