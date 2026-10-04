@@ -116,7 +116,7 @@ func (w *MediaLessonWidget) enterTab() *qt.QWidget {
 	body := qt.NewQHBoxLayout2()
 	w.table = qt.NewQTableWidget(tab)
 	w.table.SetColumnCount(4)
-	w.table.SetHorizontalHeaderLabels([]string{"Name", "Question", "Answer", "File"})
+	w.table.SetHorizontalHeaderLabels([]string{i18n.T("Name"), i18n.T("Question"), i18n.T("Answer"), i18n.T("File")})
 	w.table.HorizontalHeader().SetSectionResizeMode(qt.QHeaderView__Stretch)
 	w.table.VerticalHeader().SetVisible(false)
 	w.table.SetSelectionBehavior(qt.QAbstractItemView__SelectRows)
@@ -347,9 +347,9 @@ func (w *MediaLessonWidget) Answer(text string) {
 	}
 	a := w.session.Answer(text)
 	if a.Right {
-		w.feedback.SetText(i18n.T("✔ Right: ") + a.Correct)
+		w.feedback.SetText(i18n.Tf("✔ Right: %s", a.Correct))
 	} else {
-		w.feedback.SetText(i18n.T("✘ The answer was: ") + a.Correct)
+		w.feedback.SetText(i18n.Tf("✘ The answer was: %s", a.Correct))
 	}
 	w.session.Next()
 	w.ask()

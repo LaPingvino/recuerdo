@@ -249,12 +249,13 @@ func (w *TopoLessonWidget) ClickEnter(x, y int) {
 		return
 	}
 	name := strings.TrimSpace(w.nameEdit.Text())
-	if name == "" {
-		name = fmt.Sprintf("Place %d", len(w.places())+1)
+	unnamed := name == ""
+	if unnamed {
+		name = fmt.Sprintf(i18n.T("Place %d"), len(w.places())+1)
 	}
 	w.add(name, x, y)
 	w.nameEdit.Clear()
-	if strings.HasPrefix(name, "Place ") {
+	if unnamed { // let the user name it at once
 		w.placeList.EditItem(w.placeList.Item(w.placeList.Count() - 1))
 	}
 }
@@ -445,7 +446,7 @@ func (w *TopoLessonWidget) ask() {
 	w.progress.SetText(fmt.Sprintf(i18n.T("%d of %d"), asked, total))
 	w.teachMap.SetPlaces(w.places(), false)
 	if w.order == NamePlace {
-		w.prompt.SetText(i18n.T("Where is ") + item.Name + "?")
+		w.prompt.SetText(i18n.Tf("Where is %s?", item.Name))
 		if w.pronounceCheck.IsChecked() {
 			w.speaker.Speak(item.Name, "")
 		}
@@ -487,9 +488,9 @@ func (w *TopoLessonWidget) AnswerClick(x, y int) {
 
 func (w *TopoLessonWidget) answered(right bool, correct string) {
 	if right {
-		w.feedback.SetText(i18n.T("✔ Right: ") + correct)
+		w.feedback.SetText(i18n.Tf("✔ Right: %s", correct))
 	} else {
-		w.feedback.SetText(i18n.T("✘ That was ") + correct)
+		w.feedback.SetText(i18n.Tf("✘ That was %s", correct))
 	}
 	w.session.Next()
 	w.ask()

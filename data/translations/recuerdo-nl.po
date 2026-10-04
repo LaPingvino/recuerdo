@@ -1,0 +1,575 @@
+# Recuerdo's own texts in Dutch (OpenTeacher's translations, data/translations/nl.po, do the rest).
+# The texts to translate are in recuerdo.pot (scripts/extract_strings.py).
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nCijfer (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d onderdelen om te oefenen. Druk op Start."
+
+msgid "%d of %d"
+msgstr "%d van %d"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d plaatsen. Kies hoe je wilt oefenen en druk op Start."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d oefenrondes; de laatste %d%% goed."
+
+msgid "&Merge Lesson..."
+msgstr "Les &samenvoegen..."
+
+msgid "&Properties..."
+msgstr "&Eigenschappen..."
+
+msgid "&Tools"
+msgstr "E&xtra"
+
+msgid ", %d tests"
+msgstr ", %d toetsen"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Een website of een video van YouTube, Vimeo of Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Over Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Het venster Over is niet beschikbaar"
+
+msgid "About dialog shown"
+msgstr "Venster Over getoond"
+
+msgid "Add Character"
+msgstr "Teken toevoegen"
+
+msgid "Add Word"
+msgstr "Woord toevoegen"
+
+msgid "Add all places"
+msgstr "Alle plaatsen toevoegen"
+
+msgid "Add every place this map knows"
+msgstr "Voeg alle plaatsen toe die deze kaart kent"
+
+msgid "Add files…"
+msgstr "Bestanden toevoegen…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Voeg de woorden en resultaten van een andere les aan deze toe"
+
+msgid "Add web address…"
+msgstr "Webadres toevoegen…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Alles één keer: elk woord één keer. Slim: foute woorden komen snel en aan het eind terug. Interval: woorden komen terug tot je ze kent."
+
+msgid "Answer Language:"
+msgstr "Taal van de antwoorden:"
+
+msgid "Answer language"
+msgstr "Taal van de antwoorden"
+
+msgid "Ask the answers"
+msgstr "Vraag de antwoorden"
+
+msgid "Ask this word again later"
+msgstr "Vraag dit woord later nog eens"
+
+msgid "Browse Unicode"
+msgstr "Unicode doorbladeren"
+
+msgid "Browse..."
+msgstr "Bladeren..."
+
+msgid "Clear List"
+msgstr "Lijst wissen"
+
+msgid "Clear recent files"
+msgstr "Recente bestanden wissen"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Klik op 'Begin met oefenen' om te beginnen"
+
+msgid "Continue"
+msgstr "Verder"
+
+msgid "Correct Answer"
+msgstr "Goede antwoord"
+
+msgid "Count your last answer as right after all"
+msgstr "Tel je laatste antwoord toch als goed"
+
+msgid "Create Lesson"
+msgstr "Les maken"
+
+msgid "Create New Lesson"
+msgstr "Nieuwe les maken"
+
+msgid "Description:"
+msgstr "Beschrijving:"
+
+msgid "Done: %d of %d right."
+msgstr "Klaar: %d van %d goed."
+
+msgid "Each session:"
+msgstr "Elke oefenronde:"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Maak de lijst Bestand > Recent geopend leeg"
+
+msgid "Enter"
+msgstr "Invoeren"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode-codepunt (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Beschrijving van de les..."
+
+msgid "Enter lesson name..."
+msgstr "Naam van de les..."
+
+msgid "Enter lesson title"
+msgstr "Titel van de les"
+
+msgid "Enter some places first."
+msgstr "Voer eerst een paar plaatsen in."
+
+msgid "Error creating lesson: %v"
+msgstr "Fout bij het maken van de les: %v"
+
+msgid "Error loading file: %v"
+msgstr "Fout bij het laden van het bestand: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Fout: het bestandsvenster is niet beschikbaar"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Fout: het lesvenster is niet beschikbaar"
+
+msgid "Error: No about dialog modules available"
+msgstr "Fout: geen module voor het venster Over"
+
+msgid "Error: No file dialog modules available"
+msgstr "Fout: geen module voor bestandsvensters"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Fout: geen module voor lesvensters"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Fout: geen module voor het instellingenvenster"
+
+msgid "Error: Properties dialog not available"
+msgstr "Fout: het venster Eigenschappen is niet beschikbaar"
+
+msgid "Error: Settings dialog not available"
+msgstr "Fout: het instellingenvenster is niet beschikbaar"
+
+msgid "Exported %s"
+msgstr "%s geëxporteerd"
+
+msgid "Field separator:"
+msgstr "Scheidingsteken:"
+
+msgid "File"
+msgstr "Bestand"
+
+msgid "File encoding:"
+msgstr "Tekencodering:"
+
+msgid "Files"
+msgstr "Bestanden"
+
+msgid "First row contains headers"
+msgstr "De eerste regel bevat kopjes"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Aan de slag met Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Geef de onderdelen eerst een antwoord op het tabblad Invoeren."
+
+msgid "Go on after seeing the right answer"
+msgstr "Ga verder na het goede antwoord te hebben gezien"
+
+msgid "Grades in:"
+msgstr "Cijfers in:"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Moeilijke woorden: vaker fout dan goed beantwoord, of nog niet geoefend. Nooit goed beantwoord: zonder goed antwoord in eerdere oefenrondes."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Hoe lang Antwoord herhalen het antwoord laat zien voordat je het typt"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Hoe het tabblad Resultaten je oefenrondes beoordeelt"
+
+msgid "Import"
+msgstr "Importeren"
+
+msgid "Import File"
+msgstr "Bestand importeren"
+
+msgid "Import Lesson"
+msgstr "Les importeren"
+
+msgid "Import Options"
+msgstr "Importopties"
+
+msgid "Import from Picture"
+msgstr "Importeren uit afbeelding"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Zeg bij Naam – Plaats de naam van de plaats waarop je moet klikken"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Hoe lang het antwoord in de modus Antwoord herhalen te zien is voordat je het typt"
+
+msgid "Interface"
+msgstr "Weergave"
+
+msgid "Items:"
+msgstr "Onderdelen:"
+
+msgid "Languages"
+msgstr "Talen"
+
+msgid "Last session:"
+msgstr "Laatste oefenronde:"
+
+msgid "Latest Session Results"
+msgstr "Resultaten van de laatste oefenronde"
+
+msgid "Learn words, places and more by heart"
+msgstr "Leer woorden, plaatsen en meer uit je hoofd"
+
+msgid "Lesson Information"
+msgstr "Gegevens van de les"
+
+msgid "Lesson Properties"
+msgstr "Eigenschappen van de les"
+
+msgid "Lesson Type"
+msgstr "Soort les"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "De les bevat %d woordparen\n\nRond een oefenronde af om hier de resultaten in detail te zien."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "De les bevat %d woordparen | %d eerdere oefenrondes (zie Voortgang)\n\nOefen om je antwoorden hier in detail te zien."
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Les: %d woordparen | Afgeronde oefenrondes: %d\n\nLaatste oefenronde: %d/%d goed (%d%%), cijfer %s\nGemiddeld cijfer: %s (%d%%)\n\nResultaten van de laatste oefenronde in detail:"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' geladen: %d woorden"
+
+msgid "Made a lesson of %d words"
+msgstr "Les van %d woorden gemaakt"
+
+msgid "Merged %d words from %s"
+msgstr "%d woorden uit %s samengevoegd"
+
+msgid "Mode:"
+msgstr "Modus:"
+
+msgid "Name of a place"
+msgstr "Naam van een plaats"
+
+msgid "Name of the marked place"
+msgstr "Naam van de gemarkeerde plaats"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Hiervoor is een spraakprogramma nodig: installeer espeak-ng"
+
+msgid "New from &Text..."
+msgstr "Nieuw uit &tekst..."
+
+msgid "New lesson created successfully"
+msgstr "Nieuwe les gemaakt"
+
+msgid "New lesson dialog created"
+msgstr "Venster voor een nieuwe les gemaakt"
+
+msgid "No lesson data available"
+msgstr "Geen lesgegevens beschikbaar"
+
+msgid "No lesson open to show properties"
+msgstr "Er is geen les open om eigenschappen van te tonen"
+
+msgid "No recent lessons"
+msgstr "Geen recente lessen"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Nog geen resultaten: oefen op het tabblad Oefenen."
+
+msgid "No teaching results available yet"
+msgstr "Nog geen oefenresultaten"
+
+msgid "No words available for teaching"
+msgstr "Geen woorden om te oefenen"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Geen woorden om te oefenen: nog geen enkel woord is \"%s\""
+
+msgid "Now click where %s is on the map."
+msgstr "Klik nu op de kaart waar %s ligt."
+
+msgid "Open"
+msgstr "Openen"
+
+msgid "Open Lesson…"
+msgstr "Les openen…"
+
+msgid "Open operation cancelled"
+msgstr "Openen geannuleerd"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' geopend - %d woorden"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Opent OpenTeacher-lessen (.ot, .otwd), woordenlijsten (.csv, .txt) en KWordQuiz-bestanden (.kvtml)"
+
+msgid "Order:"
+msgstr "Volgorde:"
+
+msgid "Other picture…"
+msgstr "Andere afbeelding…"
+
+msgid "Page %d of %d"
+msgstr "Pagina %d van %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Afbeeldingen, geluiden, video's of teksten, bewaard in de les"
+
+msgid "Place %d"
+msgstr "Plaats %d"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Plaats – Naam: een plaats is gemarkeerd, typ de naam.\nNaam – Plaats: een naam wordt gegeven, klik op de plaats."
+
+msgid "Please add words in the Enter tab"
+msgstr "Voeg woorden toe op het tabblad Invoeren"
+
+msgid "Practice"
+msgstr "Oefenen"
+
+msgid "Practice sessions:"
+msgstr "Oefenrondes:"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Oefen andersom: de antwoorden worden gevraagd en de vragen zijn de antwoorden"
+
+msgid "Preview"
+msgstr "Voorbeeld"
+
+msgid "Previous"
+msgstr "Vorige"
+
+msgid "Printed %s"
+msgstr "%s afgedrukt"
+
+msgid "Progress"
+msgstr "Voortgang"
+
+msgid "Pronounce names"
+msgstr "Namen uitspreken"
+
+msgid "Properties dialog cancelled"
+msgstr "Eigenschappen geannuleerd"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Vraag %d van %d (score: %d/%d goed)"
+
+msgid "Question Language:"
+msgstr "Taal van de vragen:"
+
+msgid "Question language"
+msgstr "Taal van de vragen"
+
+msgid "Quick Access"
+msgstr "Snel kiezen"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "%d woordparen uit de afbeelding gelezen: controleer ze op het tabblad Invoeren"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Lees een woordenlijst uit een scan of foto van een gedrukte lijst (hiervoor is Tesseract nodig)"
+
+msgid "Ready"
+msgstr "Klaar"
+
+msgid "Ready to start"
+msgstr "Klaar om te beginnen"
+
+msgid "Ready to start teaching"
+msgstr "Klaar om te oefenen"
+
+msgid "Remove Word"
+msgstr "Woord verwijderen"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Antwoord herhalen toont het antwoord"
+
+msgid "Result"
+msgstr "Resultaat"
+
+msgid "Results Overview"
+msgstr "Overzicht van de resultaten"
+
+msgid "Rotate 90°"
+msgstr "90° draaien"
+
+msgid "Saved %s"
+msgstr "%s opgeslagen"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Spreek elke vraag uit in de taal van de vragen (hiervoor is espeak-ng nodig, of de stemmen van macOS of Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Spreek elke vraag uit, in de taal van de vragen"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Kies hierboven een Unicode-blok om tekens te zien, of voer direct een codepunt in."
+
+msgid "Select file to import..."
+msgstr "Kies een bestand om te importeren..."
+
+msgid "Selected file: %s"
+msgstr "Gekozen bestand: %s"
+
+msgid "Settings saved"
+msgstr "Instellingen opgeslagen"
+
+msgid "Show answer for:"
+msgstr "Antwoord tonen gedurende:"
+
+msgid "Show or hide special characters"
+msgstr "Speciale tekens tonen of verbergen"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Speciale tekens tonen of verbergen: letters met accenten en andere schriften"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Again"
+msgstr "Opnieuw beginnen"
+
+msgid "Start Teaching"
+msgstr "Begin met oefenen"
+
+msgid "Stop"
+msgstr "Stop"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Draai de afbeelding zodat de regels recht liggen, en trek een rechthoek om de woordenlijst als de afbeelding meer laat zien."
+
+msgid "Straighten:"
+msgstr "Rechtzetten:"
+
+msgid "System language"
+msgstr "Taal van het systeem"
+
+msgid "Teach"
+msgstr "Oefenen"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Oefenronde klaar! Score: %d/%d goed (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Oefenronde afgerond"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%[1]s %[2]s ontbreekt in de les."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "De taal van de menu's en schermen van Recuerdo (na opnieuw starten). Teksten zonder vertaling blijven Engels."
+
+msgid "There are no settings to change."
+msgstr "Er zijn geen instellingen om te veranderen."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Bedenk het antwoord en druk op 'Antwoord bekijken' als je klaar bent."
+
+msgid "Topology"
+msgstr "Topografie"
+
+msgid "Translation: %s"
+msgstr "Vertaling: %s"
+
+msgid "Type a List"
+msgstr "Lijst typen"
+
+msgid "Type at least one word."
+msgstr "Typ minstens één woord."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Typ of plak een woordenlijst als regels \"vraag = antwoord\""
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Typ of plak de woorden: één per regel, met een isgelijkteken (=) of een tab tussen de vraag en het antwoord, zoals \"hond = dog\". Meerdere woorden aan één kant scheid je met komma's."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Typ of plak woorden als regels \"vraag = antwoord\""
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Typen: typ het antwoord. Antwoord husselen: met de letters van het antwoord als hint. Antwoord herhalen: het antwoord wordt eerst getoond en daarna uit je hoofd getypt."
+
+msgid "Unicode Block:"
+msgstr "Unicode-blok:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Gebruik een eigen afbeelding als kaart"
+
+msgid "Where is %s?"
+msgstr "Waar ligt %s?"
+
+msgid "Which place is marked?"
+msgstr "Welke plaats is gemarkeerd?"
+
+msgid "Whole picture"
+msgstr "Hele afbeelding"
+
+msgid "Word Lesson: %s"
+msgstr "Woordjesles: %s"
+
+msgid "Word Pairs"
+msgstr "Woordparen"
+
+msgid "Words List"
+msgstr "Woordenlijst"
+
+msgid "Words:"
+msgstr "Woorden:"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Fout. Het goede antwoord is: %s"
+
+msgid "Your Answer"
+msgstr "Jouw antwoord"
+
+msgid "Your answer"
+msgstr "Je antwoord"
+
+msgid "e.g. Dutch"
+msgstr "bijv. Nederlands"
+
+msgid "e.g. English"
+msgstr "bijv. Engels"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "✔ Right: %s"
+msgstr "✔ Goed: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Dat was %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Het antwoord was: %s"
+

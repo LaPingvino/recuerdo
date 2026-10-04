@@ -27,8 +27,8 @@ func New(parent *qt.QWidget) *Dialog {
 	d.SetWindowTitle(i18n.T("Type a List"))
 	d.Resize(520, 420)
 	layout := qt.NewQVBoxLayout(d.QWidget)
-	hint := qt.NewQLabel3(i18n.T("Type or paste the words: one per line, with an equals sign (=) or a tab between ") +
-		"the question and the answer, like \"hond = dog\". Several words on one side are separated by commas.")
+	hint := qt.NewQLabel3(i18n.T("Type or paste the words: one per line, with an equals sign (=) or a tab between " +
+		"the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."))
 	hint.SetWordWrap(true)
 	layout.AddWidget(hint.QWidget)
 	d.edit = qt.NewQPlainTextEdit(d.QWidget)

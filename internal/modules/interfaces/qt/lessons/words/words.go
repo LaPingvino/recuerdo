@@ -301,7 +301,7 @@ func (w *EnterTabWidget) setupUI() {
 	w.wordsTable = qt.NewQTableWidget2()
 	w.wordsTable.SetRowCount(0)
 	w.wordsTable.SetColumnCount(3)
-	w.wordsTable.SetHorizontalHeaderLabels([]string{"Questions", "Answers", "Comment"})
+	w.wordsTable.SetHorizontalHeaderLabels([]string{i18n.T("Questions"), i18n.T("Answers"), i18n.T("Comment")})
 	// questions and answers share the width; the comment column is narrower
 	wh := w.wordsTable.HorizontalHeader()
 	wh.SetSectionResizeMode2(0, qt.QHeaderView__Stretch)
@@ -611,16 +611,16 @@ func (w *TeachTabWidget) setupUI() {
 		optionsLayout.AddWidget(l.QWidget)
 		return l
 	}
-	addLabel("Lesson type:")
+	addLabel(i18n.T("Lesson type:"))
 	w.lessonTypeCombo = qt.NewQComboBox(w.QWidget)
 	w.lessonTypeCombo.AddItems(teaching.LessonTypes)
 	w.lessonTypeCombo.SetToolTip(i18n.T("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."))
 	optionsLayout.AddWidget(w.lessonTypeCombo.QWidget)
-	addLabel("Order:")
+	addLabel(i18n.T("Order:"))
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
 	w.orderCombo.AddItems(teaching.Orders)
 	optionsLayout.AddWidget(w.orderCombo.QWidget)
-	addLabel("Words:")
+	addLabel(i18n.T("Words:"))
 	w.wordsCombo = qt.NewQComboBox(w.QWidget)
 	w.wordsCombo.AddItems(teaching.WordChoices)
 	w.wordsCombo.SetToolTip(i18n.T("Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."))
@@ -629,12 +629,12 @@ func (w *TeachTabWidget) setupUI() {
 	layout.AddLayout2(optionsLayout.QLayout, 0)
 	// second row: how to answer, and the start button
 	optionsLayout = qt.NewQHBoxLayout2()
-	addLabel("Mode:")
+	addLabel(i18n.T("Mode:"))
 	w.modeCombo = qt.NewQComboBox(w.QWidget)
 	w.modeCombo.AddItems(teaching.TeachTypes)
 	w.modeCombo.SetToolTip(i18n.T("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."))
 	optionsLayout.AddWidget(w.modeCombo.QWidget)
-	w.repeatLabel = addLabel("Show answer for:")
+	w.repeatLabel = addLabel(i18n.T("Show answer for:"))
 	w.repeatSpin = qt.NewQDoubleSpinBox(w.QWidget)
 	w.repeatSpin.SetRange(0.5, 30)
 	w.repeatSpin.SetSingleStep(0.5)
@@ -870,7 +870,7 @@ func (w *TeachTabWidget) startTeaching() {
 	if w.totalQuestions == 0 {
 		w.session = nil
 		w.isTeaching = false
-		w.statusLabel.SetText(i18n.T("No words to practise: none are \"") + strings.ToLower(w.wordsCombo.CurrentText()) + "\" yet")
+		w.statusLabel.SetText(i18n.Tf("No words to practise: none are \"%s\" yet", strings.ToLower(w.wordsCombo.CurrentText())))
 		return
 	}
 
@@ -1004,7 +1004,7 @@ func (w *TeachTabWidget) inMindView() {
 	if w.session == nil || w.session.Done() {
 		return
 	}
-	w.hintLabel.SetText(i18n.T("Translation: ") + w.session.ViewAnswer())
+	w.hintLabel.SetText(i18n.Tf("Translation: %s", w.session.ViewAnswer()))
 	w.viewButton.SetVisible(false)
 	w.skipButton.SetEnabled(false)
 	w.rightButton.SetVisible(true)
@@ -1141,7 +1141,7 @@ func (w *TeachTabWidget) SetCorrectAnywayEnabled(on bool) { w.correctButton.SetE
 func (w *TeachTabWidget) LessonDone()                     { w.finishTeaching() }
 
 func (w *TeachTabWidget) ShowCorrection(answer string) {
-	w.feedback(fmt.Sprintf("Wrong. The right answer is: %s", answer), false)
+	w.feedback(fmt.Sprintf(i18n.T("Wrong. The right answer is: %s"), answer), false)
 	w.nextButton.SetEnabled(true)
 	w.nextButton.SetFocus()
 }
@@ -1207,10 +1207,10 @@ func (w *TeachTabWidget) finishTeaching() {
 	}
 	w.setOptionsEnabled(true)
 
-	text := fmt.Sprintf("Teaching completed! Final Score: %d/%d correct (%d%%)",
+	text := fmt.Sprintf(i18n.T("Teaching completed! Final Score: %d/%d correct (%d%%)"),
 		w.correctAnswers, w.totalQuestions, percentage)
 	if grade != "" && notation != "Percents" {
-		text += fmt.Sprintf("\nGrade (%s): %s", notation, grade)
+		text += fmt.Sprintf(i18n.T("\nGrade (%s): %s"), notation, grade)
 	}
 	w.questionLabel.SetText(text)
 
@@ -1401,7 +1401,7 @@ func (w *ResultsTabWidget) setupUI() {
 	w.resultsTable = qt.NewQTableWidget2()
 	w.resultsTable.SetRowCount(0)
 	w.resultsTable.SetColumnCount(4)
-	w.resultsTable.SetHorizontalHeaderLabels([]string{"Question", "Correct Answer", "Your Answer", "Result"})
+	w.resultsTable.SetHorizontalHeaderLabels([]string{i18n.T("Question"), i18n.T("Correct Answer"), i18n.T("Your Answer"), i18n.T("Result")})
 	rh := w.resultsTable.HorizontalHeader()
 	for i := 0; i < 3; i++ {
 		rh.SetSectionResizeMode2(i, qt.QHeaderView__Stretch)
@@ -1471,9 +1471,9 @@ func (w *ResultsTabWidget) updateResultsDisplay() {
 	}
 
 	if len(w.sessions) == 0 {
-		text := fmt.Sprintf("Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here.", wordCount)
+		text := fmt.Sprintf(i18n.T("Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."), wordCount)
 		if n := len(charts.Percentages(w.lesson.Data.List.Tests)); n > 0 {
-			text = fmt.Sprintf("Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here.", wordCount, n)
+			text = fmt.Sprintf(i18n.T("Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."), wordCount, n)
 		}
 		w.overviewLabel.SetText(text)
 		w.resultsTable.SetRowCount(0)
@@ -1489,12 +1489,9 @@ func (w *ResultsTabWidget) updateResultsDisplay() {
 			tests = append(tests, session.Test)
 		}
 
-		overviewText := fmt.Sprintf(`Lesson: %d word pairs | Sessions completed: %d
-
-Latest Session: %d/%d correct (%d%%), grade %s
-Average grade: %s (%d%%)
-
-Detailed results from latest session:`,
+		overviewText := fmt.Sprintf(i18n.T("Lesson: %d word pairs | Sessions completed: %d\n\n"+
+			"Latest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\n"+
+			"Detailed results from latest session:"),
 			wordCount, totalSessions,
 			latestSession.CorrectCount, latestSession.TotalQuestions, latestSession.Score,
 			teaching.Grade(notation, latestSession.Test),

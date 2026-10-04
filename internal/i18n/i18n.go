@@ -229,3 +229,39 @@ func ReadPO(path string) (map[string]string, error) {
 	flush()
 	return out, sc.Err()
 }
+
+// ReadPOT is the set of texts in a .pot template.
+func ReadPOT(path string) (map[string]bool, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	out := map[string]bool{}
+	var cur *string
+	sc := bufio.NewScanner(f)
+	sc.Buffer(make([]byte, 64*1024), 1024*1024)
+	for sc.Scan() {
+		line := strings.TrimSpace(sc.Text())
+		switch {
+		case strings.HasPrefix(line, "msgid "):
+			s, err := strconv.Unquote(line[6:])
+			if err != nil {
+				return nil, err
+			}
+			cur = &s
+		case strings.HasPrefix(line, `"`) && cur != nil:
+			s, err := strconv.Unquote(line)
+			if err != nil {
+				return nil, err
+			}
+			*cur += s
+		case strings.HasPrefix(line, "msgstr"):
+			if cur != nil && *cur != "" {
+				out[*cur] = true
+			}
+			cur = nil
+		}
+	}
+	return out, sc.Err()
+}

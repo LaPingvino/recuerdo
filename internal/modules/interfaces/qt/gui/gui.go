@@ -437,7 +437,7 @@ func (mod *GuiModule) showNewLessonDialog() {
 				newLesson, err := mod.CreateLessonFromDialogData(lessonData)
 				if err != nil {
 					mod.logger.Error("Failed to create lesson from dialog data: %v", err)
-					mod.statusBar.ShowMessage(i18n.T("Error creating lesson: ") + err.Error())
+					mod.statusBar.ShowMessage(i18n.Tf("Error creating lesson: %v", err))
 					return
 				}
 
@@ -549,9 +549,9 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 		title = filepath.Base(fileName)
 	}
 
-	statusMsg := fmt.Sprintf("Loaded '%s': %d words", title, wordCount)
+	statusMsg := fmt.Sprintf(i18n.T("Loaded '%s': %d words"), title, wordCount)
 	if testCount > 0 {
-		statusMsg += fmt.Sprintf(", %d tests", testCount)
+		statusMsg += fmt.Sprintf(i18n.T(", %d tests"), testCount)
 	}
 	mod.statusBar.ShowMessage(statusMsg)
 
@@ -687,7 +687,7 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 	}
 
 	// Update status bar
-	statusMsg := fmt.Sprintf("Opened '%s' - %d words", title, lesson.Data.List.GetWordCount())
+	statusMsg := fmt.Sprintf(i18n.T("Opened '%s' - %d words"), title, lesson.Data.List.GetWordCount())
 	mod.statusBar.ShowMessage(statusMsg)
 
 	mod.logger.Success("Lesson tab created: %s (%d words)", title, lesson.Data.List.GetWordCount())
@@ -949,7 +949,7 @@ func (mod *GuiModule) SaveCurrentLessonTo(path string) error {
 	}
 	if !readable(path) {
 		// an export (PDF, Word, ...): the lesson keeps its own file
-		mod.statusBar.ShowMessage(i18n.T("Exported ") + path)
+		mod.statusBar.ShowMessage(i18n.Tf("Exported %s", path))
 		return nil
 	}
 	l.Path = path
@@ -959,7 +959,7 @@ func (mod *GuiModule) SaveCurrentLessonTo(path string) error {
 		title = filepath.Base(path)
 	}
 	mod.tabWidget.SetTabText(tab, title)
-	mod.statusBar.ShowMessage(i18n.T("Saved ") + path)
+	mod.statusBar.ShowMessage(i18n.Tf("Saved %s", path))
 	mod.logger.Success("Saved lesson to %s", path)
 	return nil
 }
@@ -1116,7 +1116,7 @@ func (mod *GuiModule) printCurrentLesson() {
 		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Print", "Could not print the lesson:\n"+err.Error())
 		return
 	}
-	mod.statusBar.ShowMessage(i18n.T("Printed ") + l.Data.List.Title)
+	mod.statusBar.ShowMessage(i18n.Tf("Printed %s", l.Data.List.Title))
 }
 
 // importFromPicture reads a word list from a picture into a new lesson

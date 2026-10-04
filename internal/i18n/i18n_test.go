@@ -4,6 +4,8 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"regexp"
+	"sort"
 	"testing"
 )
 
@@ -116,4 +118,41 @@ func TestRecuerdoOverOpenTeacher(t *testing.T) {
 		t.Errorf("eo (own file only): %q", T("Teach"))
 	}
 	Use(dir, "")
+}
+
+// Recuerdo's own translations belong to texts in recuerdo.pot and keep
+// their placeholders (%s, %d, %[1]s ...), so fmt never garbles them.
+func TestRecuerdoTranslations(t *testing.T) {
+	dir := filepath.Join("..", "..", "data", "translations")
+	pot, err := ReadPOT(filepath.Join(dir, "recuerdo.pot"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	files, _ := filepath.Glob(filepath.Join(dir, "recuerdo-*.po"))
+	if len(files) == 0 {
+		t.Fatal("no recuerdo-*.po")
+	}
+	verbs := regexp.MustCompile(`%(\[\d+\])?[-+# 0]*\d*(\.\d+)?[a-zA-Z%]`)
+	kinds := func(s string) []string {
+		var out []string
+		for _, v := range verbs.FindAllString(s, -1) {
+			out = append(out, v[len(v)-1:])
+		}
+		sort.Strings(out)
+		return out
+	}
+	for _, f := range files {
+		c, err := ReadPO(f)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for msgid, msgstr := range c {
+			if !pot[msgid] {
+				t.Errorf("%s: %q is not in recuerdo.pot (stale: rerun scripts/extract_strings.py)", filepath.Base(f), msgid)
+			}
+			if !reflect.DeepEqual(kinds(msgid), kinds(msgstr)) {
+				t.Errorf("%s: %q -> %q: placeholders differ", filepath.Base(f), msgid, msgstr)
+			}
+		}
+	}
 }

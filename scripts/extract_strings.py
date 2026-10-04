@@ -32,8 +32,9 @@ def texts():
             continue
         src = open(f, encoding="utf-8").read()
         rel = str(Path(f).relative_to(ROOT))
-        for m in re.finditer(r'i18n\.T\(' + GOSTR, src):
-            found.setdefault(gounquote(m.group(1)), rel)
+        for m in re.finditer(r'i18n\.Tf?\(' + GOSTR + r'((?:\s*\+\s*' + GOSTR + r')*)', src):
+            parts = [m.group(1)] + re.findall(GOSTR, m.group(2))
+            found.setdefault(gounquote("".join(parts)), rel)
         for m in re.finditer(r'settingsdefs\.Def\{(.*?)\n\t\}\)', src, re.S):
             for field in ("Category", "Name", "Help"):
                 fm = re.search(field + r':\s*' + GOSTR + r'((?:\s*\+\s*' + GOSTR + r')*)', m.group(1))
