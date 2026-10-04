@@ -678,8 +678,8 @@ func TestComprehensiveFormatSupport(t *testing.T) {
 		{"application_x-openteacher.openteacher3x.ot", "OpenTeacher 3.x", true, 1},
 
 		// Anki formats (now proper SQLite support)
-		{"application_x-anki2.anki.anki2", "Anki 2.0", true, 3},   // SQLite database parsing
-		{"application_x-apkg.anki.apkg", "Anki Package", true, 3}, // CSV fallback works
+		{"application_x-anki2.anki.anki2", "Anki 2.0", true, 3},    // SQLite database parsing
+		{"application_x-apkg.anki.apkg", "Anki Package", false, 0}, // zip with an Anki database: see knownBroken
 
 		// Text formats
 		{"text_plain.gnuVocabTrain.txt", "GNU VocabTrain", true, 1},

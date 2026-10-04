@@ -14,6 +14,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"unicode/utf8"
 
 	_ "github.com/mattn/go-sqlite3" // SQLite driver
 	"golang.org/x/text/encoding/charmap"
@@ -393,6 +394,14 @@ func (fl *FileLoader) loadJSONFile(filePath string) (*LessonData, error) {
 func (fl *FileLoader) loadAutoDetect(filePath string) (*LessonData, error) {
 	log.Printf("[ACTION] FileLoader.loadAutoDetect() - attempting to auto-detect format")
 
+	// Only text can be a word list here; reading binary files (images,
+	// archives, other programs' formats) as text gives garbage lessons.
+	if ok, err := looksLikeText(filePath); err != nil {
+		return nil, err
+	} else if !ok {
+		return nil, fmt.Errorf("unsupported file format: %s", filepath.Base(filePath))
+	}
+
 	// Try different loaders in order of likelihood
 	loaders := []func(string) (*LessonData, error){
 		fl.loadCSV,
@@ -400,12 +409,14 @@ func (fl *FileLoader) loadAutoDetect(filePath string) (*LessonData, error) {
 		fl.loadJSONFile,
 	}
 
-	var lastErr error
+	lastErr := fmt.Errorf("no word pairs found")
 	for _, loader := range loaders {
-		if data, err := loader(filePath); err == nil {
-			return data, nil
-		} else {
+		data, err := loader(filePath)
+		switch {
+		case err != nil:
 			lastErr = err
+		case len(data.List.Items) > 0:
+			return data, nil
 		}
 	}
 
@@ -1864,4 +1875,38 @@ func titleFromPath(path string) string {
 		return t
 	}
 	return base
+}
+
+// looksLikeText reports whether the start of a file is UTF-8 text without
+// NUL bytes or other control characters (tabs and line breaks aside) that
+// is not XML.
+func looksLikeText(path string) (bool, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return false, err
+	}
+	defer f.Close()
+	buf := make([]byte, 8192)
+	n, err := io.ReadFull(f, buf)
+	if err != nil && err != io.ErrUnexpectedEOF && err != io.EOF {
+		return false, err
+	}
+	buf = buf[:n]
+	// a multi-byte character may be cut off at the end of the sample
+	for i := 0; i < utf8.UTFMax && len(buf) > 0 && !utf8.Valid(buf); i++ {
+		buf = buf[:len(buf)-1]
+	}
+	if !utf8.Valid(buf) {
+		return false, nil
+	}
+	// XML needs the loader for its format; read as lines it gives markup
+	if strings.HasPrefix(strings.TrimSpace(strings.TrimPrefix(string(buf), "\ufeff")), "<") {
+		return false, nil
+	}
+	for _, r := range string(buf) {
+		if r < 0x20 && r != '\t' && r != '\n' && r != '\r' {
+			return false, nil
+		}
+	}
+	return true, nil
 }
