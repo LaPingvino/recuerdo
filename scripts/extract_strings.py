@@ -50,6 +50,12 @@ def texts():
                 if fm:
                     parts = [fm.group(1)] + re.findall(GOSTR, fm.group(2))
                     found.setdefault(gounquote("".join(parts)), rel)
+    # the formula builder's group names and button tips
+    pal = (ROOT / "internal/richtext/palette.go").read_text(encoding="utf-8")
+    for m in re.finditer(r'^\t\{"(\w+)", (?:\[\]PaletteItem\{|greek\(\))', pal, re.M):
+        found.setdefault(m.group(1), "internal/richtext/palette.go")
+    for m in re.finditer(r'\{"\w+", "[^"]*", (?:`[^`]*`|"(?:[^"\\]|\\.)*"), "([^"]+)"\}', pal):
+        found.setdefault(m.group(1), "internal/richtext/palette.go")
     # the web version: texts marked data-i18n / data-i18n-placeholder in
     # web/index.html, and t("...") in web/app.js
     import html as htmlmod

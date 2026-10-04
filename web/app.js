@@ -36,6 +36,52 @@ function html(el, safe) {
 	}
 }
 
+// ---- the formula builder: buttons that insert TeX (Go's richtext.Palette) ----
+// isMath reports whether the cursor in s is inside a $...$ formula.
+function insideMath(s, pos) {
+	let n = 0;
+	for (let i = 0; i < pos; i++) { if (s[i] === "\\") i++; else if (s[i] === "$") n++; }
+	return n % 2 === 1;
+}
+// formulaBuilder makes a palette for input, with a live preview. wrap:
+// the field holds words with formulas in $...$ (the Words tab), so a
+// button outside a formula starts one; otherwise the whole field is TeX
+// (a formula answer).
+function formulaBuilder(input, wrap) {
+	const box = document.createElement("div"); box.className = "formula-builder";
+	const preview = document.createElement("div"); preview.className = "formula-preview";
+	const update = () => {
+		const v = input.value;
+		if (!v.trim()) { preview.replaceChildren(); return; }
+		if (wrap) { text(preview, v); html(preview, preview.innerHTML); return; }
+		if (globalThis.katex) katex.render(v, preview, { throwOnError: false });
+		else text(preview, v);
+	};
+	for (const g of call("palette")) {
+		const row = document.createElement("div"); row.className = "fb-group";
+		const name = document.createElement("span"); name.className = "fb-name"; text(name, t(g.name)); row.append(name);
+		for (const it of g.items) {
+			const b = document.createElement("button"); b.type = "button"; b.className = "fb-button";
+			b.textContent = it.label; b.title = it.tip ? t(it.tip) : it.template.replace("§", "").trim();
+			// keep the focus (and the selection) in the field
+			b.addEventListener("mousedown", (e) => e.preventDefault());
+			b.addEventListener("click", () => {
+				const s = input.selectionStart ?? input.value.length, e = input.selectionEnd ?? s;
+				let { text: ins, cursor } = call("expand", it.id, input.value.slice(s, e));
+				if (wrap && !insideMath(input.value, s)) { ins = "$" + ins + "$"; cursor++; }
+				input.setRangeText(ins, s, e, "end");
+				input.setSelectionRange(s + cursor, s + cursor);
+				input.focus(); update();
+			});
+			row.append(b);
+		}
+		box.append(row);
+	}
+	input.addEventListener("input", update);
+	box.append(preview); update();
+	return box;
+}
+
 // ---- translations (the desktop's, through Go's internal/i18n) ----
 // t translates msgid and fills in %s and %d (%% is a percent sign).
 function t(msgid, ...args) {
@@ -169,7 +215,17 @@ function wordRow(it) {
 	for (const [input, raw, safe] of [[q, it && it.question, it && it.questionHtml], [a, it && it.answer, it && it.answerHtml]]) {
 		input.addEventListener("change", save);
 		input.addEventListener("keydown", (e) => { if (e.key === "Enter") { input.blur(); save(); } });
-		const td = document.createElement("td"); td.append(input);
+		const td = document.createElement("td"); td.className = "word-cell";
+		const field = document.createElement("div"); field.className = "word-field"; field.append(input);
+		const sum = document.createElement("button"); sum.type = "button"; sum.className = "fb-toggle";
+		sum.textContent = "∑"; sum.title = t("Formula builder");
+		sum.addEventListener("click", () => {
+			const open = td.querySelector(".formula-builder");
+			if (open) { open.remove(); sum.classList.remove("on"); td.classList.remove("building"); return; }
+			// the builder's live preview replaces the word's own
+			td.append(formulaBuilder(input, true)); sum.classList.add("on"); td.classList.add("building"); input.focus();
+		});
+		field.append(sum); td.append(field);
 		// words with markup also show how they look
 		if (safe && (safe !== plainHtml(raw) || /\$|\\[(\[]/.test(raw))) {
 			const p = document.createElement("div"); p.className = "preview"; html(p, safe); td.append(p);
@@ -241,6 +297,12 @@ function showState(st) {
 	$("inmind").hidden = mode !== "inmind"; $("judgeRow").hidden = true; $("viewAnswer").hidden = false;
 	$("answerForm").hidden = mode === "inmind";
 	$("answer").value = ""; $("answer").disabled = false;
+	// a formula answer: typed as TeX (no $), with the formula builder
+	const builder = $("answerBuilder");
+	builder.hidden = !st.answerIsMath || mode === "inmind";
+	if (!builder.hidden && !builder.firstChild) builder.append(formulaBuilder($("answer"), false));
+	if (!builder.hidden) builder.querySelector(".formula-preview").replaceChildren();
+	$("answer").placeholder = st.answerIsMath ? t("Formula, e.g. x^2 + 1") : t("Your answer");
 	if (mode === "shuffle") text(hint, st.shuffle);
 	if (mode === "repeat") {
 		// the answer is shown first, then typed from memory

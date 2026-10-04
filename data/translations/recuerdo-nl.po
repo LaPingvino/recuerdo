@@ -729,3 +729,54 @@ msgstr "✘ Dat was %s"
 msgid "✘ The answer was: %s"
 msgstr "✘ Het antwoord was: %s"
 
+
+msgid "Brackets"
+msgstr "Haakjes"
+
+msgid "Degrees"
+msgstr "Graden"
+
+msgid "Formula builder"
+msgstr "Formulebouwer"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formule, bijv. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Breuk"
+
+msgid "Functions"
+msgstr "Functies"
+
+msgid "Index"
+msgstr "Index"
+
+msgid "Integral"
+msgstr "Integraal"
+
+msgid "Limit"
+msgstr "Limiet"
+
+msgid "Operators"
+msgstr "Operatoren"
+
+msgid "Power"
+msgstr "Macht"
+
+msgid "Root"
+msgstr "Wortel"
+
+msgid "Square root"
+msgstr "Vierkantswortel"
+
+msgid "Structure"
+msgstr "Opbouw"
+
+msgid "Sum"
+msgstr "Som"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Greek"
+msgstr "Grieks"

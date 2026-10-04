@@ -74,3 +74,16 @@ header .lesson-title:empty + .language { margin-left: auto; }
 .question img { max-width: min(100%, 22rem); max-height: 14rem; vertical-align: middle; }
 .preview { padding: .1rem .6rem .3rem; font-size: 1.15rem; }
 .preview ruby rt { font-size: .5em; color: var(--muted); }
+/* the formula builder */
+.word-field { display: flex; gap: .2rem; align-items: center; }
+.fb-toggle { border: 1px solid transparent; background: none; color: var(--muted); cursor: pointer; border-radius: 5px; padding: .1rem .4rem; }
+.fb-toggle:hover, .fb-toggle.on { border-color: var(--line); color: var(--accent); }
+#answerBuilder { max-width: 40rem; margin: .8rem auto 0; }
+.formula-builder { border: 1px solid var(--line); border-radius: 8px; padding: .4rem .5rem; margin-top: .3rem; background: var(--bg); text-align: left; }
+.fb-group { display: flex; flex-wrap: wrap; gap: .2rem; align-items: center; margin-bottom: .2rem; }
+.fb-name { color: var(--muted); font-size: .75rem; width: 5.5rem; }
+.fb-button { font: inherit; font-size: .95rem; min-width: 2.1rem; padding: .1rem .35rem; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: var(--text); cursor: pointer; }
+.fb-button:hover { border-color: var(--accent); }
+.formula-preview { min-height: 1.8rem; padding: .3rem .2rem 0; font-size: 1.2rem; text-align: center; border-top: 1px dashed var(--line); margin-top: .3rem; }
+.formula-preview:empty { display: none; }
+.building > .preview { display: none; }

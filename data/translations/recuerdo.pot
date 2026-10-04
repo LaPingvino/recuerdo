@@ -179,6 +179,10 @@ msgstr ""
 msgid "Ask:"
 msgstr ""
 
+#: internal/richtext/palette.go
+msgid "Brackets"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
 msgid "Browse Unicode"
 msgstr ""
@@ -249,6 +253,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/about/about.go
 msgid "Credits"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Degrees"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -383,8 +391,24 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
+#: web/app.js
+msgid "Formula builder"
+msgstr ""
+
+#: web/app.js
+msgid "Formula, e.g. x^2 + 1"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Fraction"
+msgstr ""
+
 #: internal/modules/interfaces/qt/dialogs/about/about.go
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Functions"
 msgstr ""
 
 #: web/index.html
@@ -409,6 +433,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Grades in:"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Greek"
 msgstr ""
 
 #: internal/modules/logic/listModifiers/hardWords/hardWords.go
@@ -469,6 +497,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/settings.go
 msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Index"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Integral"
 msgstr ""
 
 #: internal/i18n/setting.go
@@ -541,6 +577,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Limit"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -695,6 +735,10 @@ msgstr ""
 msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
 msgstr ""
 
+#: internal/richtext/palette.go
+msgid "Operators"
+msgstr ""
+
 #: web/index.html
 msgid "Or type a list"
 msgstr ""
@@ -737,6 +781,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Please add words in the Enter tab"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Power"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/settings.go
@@ -899,6 +947,10 @@ msgstr ""
 msgid "Right: %s"
 msgstr ""
 
+#: internal/richtext/palette.go
+msgid "Root"
+msgstr ""
+
 #: internal/modules/interfaces/qt/ocrimport/ocrimport.go
 msgid "Rotate 90°"
 msgstr ""
@@ -975,6 +1027,10 @@ msgstr ""
 msgid "Sorted"
 msgstr ""
 
+#: internal/richtext/palette.go
+msgid "Square root"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Start"
 msgstr ""
@@ -999,6 +1055,14 @@ msgstr ""
 msgid "Straighten:"
 msgstr ""
 
+#: internal/richtext/palette.go
+msgid "Structure"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Sum"
+msgstr ""
+
 #: internal/settingsdefs
 msgid "System language"
 msgstr ""
@@ -1013,6 +1077,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Teaching session completed"
+msgstr ""
+
+#: internal/richtext/palette.go
+msgid "Text"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/preview.go

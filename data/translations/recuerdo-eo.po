@@ -834,3 +834,54 @@ msgstr "✘ Tio estis %s"
 msgid "✘ The answer was: %s"
 msgstr "✘ La respondo estis: %s"
 
+
+msgid "Brackets"
+msgstr "Krampoj"
+
+msgid "Degrees"
+msgstr "Gradoj"
+
+msgid "Formula builder"
+msgstr "Formulkonstruilo"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formulo, ekz. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Frakcio"
+
+msgid "Functions"
+msgstr "Funkcioj"
+
+msgid "Index"
+msgstr "Indico"
+
+msgid "Integral"
+msgstr "Integralo"
+
+msgid "Limit"
+msgstr "Limeso"
+
+msgid "Operators"
+msgstr "Operatoroj"
+
+msgid "Power"
+msgstr "Potenco"
+
+msgid "Root"
+msgstr "Radiko"
+
+msgid "Square root"
+msgstr "Kvadrata radiko"
+
+msgid "Structure"
+msgstr "Strukturo"
+
+msgid "Sum"
+msgstr "Sumo"
+
+msgid "Text"
+msgstr "Teksto"
+
+msgid "Greek"
+msgstr "Greka"

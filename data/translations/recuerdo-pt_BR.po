@@ -729,3 +729,54 @@ msgstr "✘ Esse era %s"
 msgid "✘ The answer was: %s"
 msgstr "✘ A resposta era: %s"
 
+
+msgid "Brackets"
+msgstr "Parênteses"
+
+msgid "Degrees"
+msgstr "Graus"
+
+msgid "Formula builder"
+msgstr "Construtor de fórmulas"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Fórmula, p. ex. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Fração"
+
+msgid "Functions"
+msgstr "Funções"
+
+msgid "Index"
+msgstr "Índice"
+
+msgid "Integral"
+msgstr "Integral"
+
+msgid "Limit"
+msgstr "Limite"
+
+msgid "Operators"
+msgstr "Operadores"
+
+msgid "Power"
+msgstr "Potência"
+
+msgid "Root"
+msgstr "Raiz"
+
+msgid "Square root"
+msgstr "Raiz quadrada"
+
+msgid "Structure"
+msgstr "Estrutura"
+
+msgid "Sum"
+msgstr "Soma"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Greek"
+msgstr "Grego"
