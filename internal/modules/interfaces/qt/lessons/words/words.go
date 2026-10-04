@@ -515,48 +515,31 @@ func (w *TeachTabWidget) SetSessionCompletedCallback(callback func(*TeachingSess
 // setupUI initializes the Teach tab interface
 func (w *TeachTabWidget) setupUI() {
 	layout := qt.NewQVBoxLayout(w.QWidget)
+	layout.SetSpacing(10)
 
-	// Status section
-	statusGroup := qt.NewQGroupBox(w.QWidget)
-	statusGroup.SetTitle("Teaching Status")
-	statusLayout := qt.NewQVBoxLayout(statusGroup.QWidget)
-
-	w.statusLabel = qt.NewQLabel(w.QWidget)
-	w.statusLabel.SetText("Ready to start")
-	statusLayout.AddWidget(w.statusLabel.QWidget)
-
-	w.progressBar = qt.NewQProgressBar(w.QWidget)
-	statusLayout.AddWidget(w.progressBar.QWidget)
-
-	layout.AddWidget(statusGroup.QWidget)
-
-	// Practice options
-	optionsGroup := qt.NewQGroupBox(w.QWidget)
-	optionsGroup.SetTitle("Practice")
-	optionsLayout := qt.NewQHBoxLayout(optionsGroup.QWidget)
-	lessonTypeLabel := qt.NewQLabel(w.QWidget)
-	lessonTypeLabel.SetText("Lesson type:")
-	optionsLayout.AddWidget(lessonTypeLabel.QWidget)
+	// Practice options and the start button in one row
+	optionsLayout := qt.NewQHBoxLayout2()
+	addLabel := func(text string) *qt.QLabel {
+		l := qt.NewQLabel(w.QWidget)
+		l.SetText(text)
+		optionsLayout.AddWidget(l.QWidget)
+		return l
+	}
+	addLabel("Lesson type:")
 	w.lessonTypeCombo = qt.NewQComboBox(w.QWidget)
 	w.lessonTypeCombo.AddItems(teaching.LessonTypes)
 	w.lessonTypeCombo.SetToolTip("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them.")
 	optionsLayout.AddWidget(w.lessonTypeCombo.QWidget)
-	orderLabel := qt.NewQLabel(w.QWidget)
-	orderLabel.SetText("Order:")
-	optionsLayout.AddWidget(orderLabel.QWidget)
+	addLabel("Order:")
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
 	w.orderCombo.AddItems(teaching.Orders)
 	optionsLayout.AddWidget(w.orderCombo.QWidget)
-	modeLabel := qt.NewQLabel(w.QWidget)
-	modeLabel.SetText("Mode:")
-	optionsLayout.AddWidget(modeLabel.QWidget)
+	addLabel("Mode:")
 	w.modeCombo = qt.NewQComboBox(w.QWidget)
 	w.modeCombo.AddItems(teaching.TeachTypes)
 	w.modeCombo.SetToolTip("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory.")
 	optionsLayout.AddWidget(w.modeCombo.QWidget)
-	w.repeatLabel = qt.NewQLabel(w.QWidget)
-	w.repeatLabel.SetText("Show answer for:")
-	optionsLayout.AddWidget(w.repeatLabel.QWidget)
+	w.repeatLabel = addLabel("Show answer for:")
 	w.repeatSpin = qt.NewQDoubleSpinBox(w.QWidget)
 	w.repeatSpin.SetRange(0.5, 30)
 	w.repeatSpin.SetSingleStep(0.5)
@@ -578,24 +561,39 @@ func (w *TeachTabWidget) setupUI() {
 	w.askAnswersCheck.SetToolTip("Practise the other way round: the answers are asked and the questions are the answers")
 	optionsLayout.AddWidget(w.askAnswersCheck.QWidget)
 	optionsLayout.AddStretch()
-	layout.AddWidget(optionsGroup.QWidget)
+	w.startButton = qt.NewQPushButton(w.QWidget)
+	w.startButton.SetText("Start Teaching")
+	w.startButton.SetMinimumWidth(140)
+	optionsLayout.AddWidget(w.startButton.QWidget)
+	layout.AddLayout2(optionsLayout.QLayout, 0)
 
-	// Question section
-	questionGroup := qt.NewQGroupBox(w.QWidget)
-	questionGroup.SetTitle("Current Question")
-	questionLayout := qt.NewQVBoxLayout(questionGroup.QWidget)
+	// Progress: a line of text and a thin bar
+	w.statusLabel = qt.NewQLabel(w.QWidget)
+	w.statusLabel.SetText("Ready to start")
+	w.statusLabel.SetStyleSheet("color: palette(dark);")
+	layout.AddWidget(w.statusLabel.QWidget)
+	w.progressBar = qt.NewQProgressBar(w.QWidget)
+	w.progressBar.SetTextVisible(false)
+	w.progressBar.SetMaximumHeight(6)
+	layout.AddWidget(w.progressBar.QWidget)
 
+	// The question, large, in the middle
+	layout.AddStretch()
 	w.questionLabel = qt.NewQLabel(w.QWidget)
 	w.questionLabel.SetText("Click 'Start Teaching' to begin")
 	w.questionLabel.SetWordWrap(true)
 	w.questionLabel.SetAlignment(qt.AlignCenter)
-	questionLayout.AddWidget(w.questionLabel.QWidget)
+	qf := w.questionLabel.Font()
+	qf.SetPointSize(20)
+	qf.SetBold(true)
+	w.questionLabel.SetFont(qf)
+	layout.AddWidget(w.questionLabel.QWidget)
 
 	// Shuffle answer's hint / Repeat answer's answer
 	w.hintLabel = qt.NewQLabel(w.QWidget)
 	w.hintLabel.SetAlignment(qt.AlignCenter)
 	w.hintLabel.SetVisible(false)
-	questionLayout.AddWidget(w.hintLabel.QWidget)
+	layout.AddWidget(w.hintLabel.QWidget)
 	w.RepeatDuration = teaching.RepeatFadeDuration
 	w.repeatTimer = qt.NewQTimer()
 	w.repeatTimer.SetSingleShot(true)
@@ -608,99 +606,49 @@ func (w *TeachTabWidget) setupUI() {
 	w.hangmanLabel = qt.NewQLabel(w.QWidget)
 	w.hangmanLabel.SetAlignment(qt.AlignCenter)
 	w.hangmanLabel.SetVisible(false)
-	questionLayout.AddWidget(w.hangmanLabel.QWidget)
+	layout.AddWidget(w.hangmanLabel.QWidget)
 	w.hangmanTimer = qt.NewQTimer()
 	w.hangmanTimer.SetSingleShot(true)
 	w.hangmanTimer.OnTimeout(w.hangmanLost)
+	layout.AddSpacing(8)
 
-	// Answer input with Unicode picker
+	// The answer field, centred, with the special characters button
 	answerLayout := qt.NewQHBoxLayout2()
-	answerLabel := qt.NewQLabel(w.QWidget)
-	answerLabel.SetText("Your Answer:")
-	answerLayout.AddWidget(answerLabel.QWidget)
+	answerLayout.AddStretch()
 	w.answerEdit = qt.NewQLineEdit(w.QWidget)
 	w.answerEdit.SetEnabled(false)
-	answerLayout.AddWidget(w.answerEdit.QWidget)
-
-	// Unicode picker button
-	w.unicodeButton = qt.NewQPushButton(w.QWidget)
-	w.unicodeButton.SetText("🔤")
-	w.unicodeButton.SetToolTip("Special Characters")
-	w.unicodeButton.SetEnabled(false)
-	answerLayout.AddWidget(w.unicodeButton.QWidget)
-
-	questionLayout.AddLayout2(answerLayout.QLayout, 0)
-
-	// Result label
-	w.resultLabel = qt.NewQLabel(w.QWidget)
-	w.resultLabel.SetText("")
-	w.resultLabel.SetWordWrap(true)
-	questionLayout.AddWidget(w.resultLabel.QWidget)
-
-	// Minimal configuration for dead keys and AltGr to work properly
-	// Don't override input method hints - let Qt use system defaults
-	// w.answerEdit.SetInputMethodHints(core.Qt__ImhNone) // REMOVED - was blocking dead keys
-
-	// Don't force input method attributes - let system handle it naturally
-	// w.answerEdit.SetAttribute(core.Qt__WA_InputMethodEnabled, true) // REMOVED
-
-	// Configure font to support international characters
+	w.answerEdit.SetPlaceholderText("Your answer")
+	w.answerEdit.SetMinimumWidth(360)
+	w.answerEdit.SetMaximumWidth(560)
+	// Dead keys and AltGr work with Qt's default input method settings;
+	// the font covers accented letters
 	font := w.answerEdit.Font()
 	font.SetFamily("DejaVu Sans, Liberation Sans, Arial, sans-serif")
-	font.SetPointSize(12)
+	font.SetPointSize(14)
 	w.answerEdit.SetFont(font)
-
 	answerLayout.AddWidget(w.answerEdit.QWidget)
-
-	// Unicode character picker button
 	w.unicodeButton = qt.NewQPushButton(w.QWidget)
-	w.unicodeButton.SetText("⚿ Characters")
-	w.unicodeButton.SetToolTip("Show/hide Unicode character picker for accented letters and special characters")
+	w.unicodeButton.SetText("ä é ß…")
+	w.unicodeButton.SetToolTip("Show or hide special characters: accented letters and other scripts")
 	w.unicodeButton.SetCheckable(true)
 	w.unicodeButton.SetEnabled(false)
-	w.unicodeButton.SetStyleSheet(`
-		QPushButton {
-			background-color: #e8f4fd;
-			border: 1px solid #0078d4;
-			border-radius: 4px;
-			padding: 8px 12px;
-			font-weight: bold;
-			color: #0078d4;
-		}
-		QPushButton:hover {
-			background-color: #deecf9;
-		}
-		QPushButton:pressed {
-			background-color: #c7e0f4;
-		}
-		QPushButton:disabled {
-			background-color: #f3f2f1;
-			border-color: #d2d0ce;
-			color: #a19f9d;
-		}
-	`)
 	answerLayout.AddWidget(w.unicodeButton.QWidget)
+	answerLayout.AddStretch()
+	layout.AddLayout2(answerLayout.QLayout, 0)
 
-	questionLayout.AddLayout2(answerLayout.QLayout, 0)
-
-	// Add integrated Unicode picker (initially hidden)
+	// Integrated special characters picker (initially hidden)
 	w.unicodePicker.Hide()
-	questionLayout.AddWidget(w.unicodePicker.QWidget)
+	layout.AddWidget(w.unicodePicker.QWidget)
 
-	w.logger.Info("Configured answer input field with integrated Unicode character picker")
-	w.logger.Action("Dead keys may not work - use Unicode picker button for accented characters")
-
-	// Result label
-	// Result label was already created earlier, just set it up
+	w.resultLabel = qt.NewQLabel(w.QWidget)
+	w.resultLabel.SetWordWrap(true)
 	w.resultLabel.SetAlignment(qt.AlignCenter)
 	w.resultLabel.SetVisible(false)
+	layout.AddWidget(w.resultLabel.QWidget)
 
-	layout.AddWidget(questionGroup.QWidget)
-
-	// Buttons
+	// Session buttons, centred under the answer
 	buttonLayout := qt.NewQHBoxLayout2()
-	w.startButton = qt.NewQPushButton(w.QWidget)
-	w.startButton.SetText("Start Teaching")
+	buttonLayout.AddStretch()
 	w.submitButton = qt.NewQPushButton(w.QWidget)
 	w.submitButton.SetText("Check")
 	w.submitButton.SetEnabled(false)
@@ -716,12 +664,9 @@ func (w *TeachTabWidget) setupUI() {
 	w.correctButton.SetText("Correct anyway")
 	w.correctButton.SetToolTip("Count your last answer as right after all")
 	w.correctButton.SetEnabled(false)
-
-	buttonLayout.AddWidget(w.startButton.QWidget)
-	buttonLayout.AddWidget(w.submitButton.QWidget)
-	buttonLayout.AddWidget(w.nextButton.QWidget)
-	buttonLayout.AddWidget(w.skipButton.QWidget)
-	buttonLayout.AddWidget(w.correctButton.QWidget)
+	for _, b := range []*qt.QPushButton{w.submitButton, w.nextButton, w.skipButton, w.correctButton} {
+		buttonLayout.AddWidget(b.QWidget)
+	}
 	w.viewButton = qt.NewQPushButton(w.QWidget)
 	w.viewButton.SetText("View answer")
 	w.rightButton = qt.NewQPushButton(w.QWidget)
@@ -733,8 +678,8 @@ func (w *TeachTabWidget) setupUI() {
 		buttonLayout.AddWidget(b.QWidget)
 	}
 	buttonLayout.AddStretch()
-
 	layout.AddLayout2(buttonLayout.QLayout, 0)
+	layout.AddStretch()
 
 	w.logger.Success("Teach tab UI created")
 }
@@ -863,7 +808,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 	w.currentIndex = index
 
 	question := composer.Compose(checker.StoredAnswers(item.Questions))
-	w.questionLabel.SetText(fmt.Sprintf("Question: %s", question))
+	w.questionLabel.SetText(question)
 	w.showModeExtras()
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
