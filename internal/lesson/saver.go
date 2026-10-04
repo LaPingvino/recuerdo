@@ -1230,67 +1230,6 @@ func (fs *FileSaver) GetDefaultFilename(lessonData *LessonData, ext string) stri
 	return fmt.Sprintf("%s%s", title, ext)
 }
 
-// saveOpenTeachingTopoFile saves lesson data as OpenTeaching Topography (.ottp) format
-func (fs *FileSaver) saveOpenTeachingTopoFile(lessonData *LessonData, filePath string) error {
-	log.Printf("[ACTION] FileSaver.saveOpenTeachingTopoFile() - saving OpenTeaching Topo file")
-
-	// Create the JSON structure for OpenTeacher format
-	otData := map[string]interface{}{
-		"file-format-version": "3.1",
-		"items":               make([]map[string]interface{}, 0),
-		"tests":               make([]interface{}, 0),
-	}
-
-	// Convert items to OpenTeacher format
-	for _, item := range lessonData.List.Items {
-		if x, y, hasCoords := item.GetTopoCoordinates(); hasCoords {
-			otItem := map[string]interface{}{
-				"id":   item.ID,
-				"name": item.Name,
-				"x":    x,
-				"y":    y,
-			}
-			if item.Name == "" && len(item.Questions) > 0 {
-				otItem["name"] = item.Questions[0]
-			}
-			otData["items"] = append(otData["items"].([]map[string]interface{}), otItem)
-		}
-	}
-
-	// Create ZIP file
-	zipFile, err := os.Create(filePath)
-	if err != nil {
-		log.Printf("[ERROR] Failed to create OTTP file: %v", err)
-		return err
-	}
-	defer zipFile.Close()
-
-	zipWriter := zip.NewWriter(zipFile)
-	defer zipWriter.Close()
-
-	// Add list.json to ZIP
-	jsonWriter, err := zipWriter.Create("list.json")
-	if err != nil {
-		log.Printf("[ERROR] Failed to create list.json in ZIP: %v", err)
-		return err
-	}
-
-	jsonData, err := json.MarshalIndent(otData, "", "  ")
-	if err != nil {
-		log.Printf("[ERROR] Failed to marshal topo JSON: %v", err)
-		return err
-	}
-
-	_, err = jsonWriter.Write(jsonData)
-	if err != nil {
-		log.Printf("[ERROR] Failed to write JSON to ZIP: %v", err)
-		return err
-	}
-
-	log.Printf("[SUCCESS] FileSaver.saveOpenTeachingTopoFile() - saved %d topo items", len(otData["items"].([]map[string]interface{})))
-	return nil
-}
-
 // saveOpenTeachingMediaFile saves lesson data as OpenTeaching Media (.otmd) format
 func (fs *FileSaver) saveOpenTeachingMediaFile(lessonData *LessonData, filePath string) error {
 	log.Printf("[ACTION] FileSaver.saveOpenTeachingMediaFile() - saving OpenTeaching Media file")

@@ -10,7 +10,6 @@ import (
 	"io"
 	"os"
 	"strings"
-	"time"
 
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/encoding/unicode"
@@ -45,16 +44,7 @@ func (fl *FileLoader) loadOTWDFile(path string) (*LessonData, error) {
 			Comment               string     `json:"comment"`
 			CommentAfterAnswering string     `json:"commentAfterAnswering"`
 		} `json:"items"`
-		Tests []struct {
-			Results []struct {
-				ItemID int    `json:"itemId"`
-				Result string `json:"result"`
-				Active struct {
-					Start string `json:"start"`
-					End   string `json:"end"`
-				} `json:"active"`
-			} `json:"results"`
-		} `json:"tests"`
+		Tests []otTest `json:"tests"`
 	}
 	if err := json.NewDecoder(f).Decode(&list); err != nil {
 		return nil, fmt.Errorf("reading list.json: %w", err)
@@ -75,20 +65,7 @@ func (fl *FileLoader) loadOTWDFile(path string) (*LessonData, error) {
 			Comment:   strings.TrimSpace(it.Comment + " " + it.CommentAfterAnswering),
 		})
 	}
-	for _, t := range list.Tests {
-		var test Test
-		for i, r := range t.Results {
-			res := TestResult{ItemID: r.ItemID, Result: r.Result}
-			if end, err := time.Parse(otTime, r.Active.End); err == nil {
-				res.Time = &end
-			}
-			if start, err := time.Parse(otTime, r.Active.Start); err == nil && i == 0 {
-				test.Date = &start
-			}
-			test.Results = append(test.Results, res)
-		}
-		data.List.Tests = append(data.List.Tests, test)
-	}
+	data.List.Tests = fromOTTests(list.Tests)
 	return data, nil
 }
 
