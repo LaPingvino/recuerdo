@@ -59,7 +59,9 @@ func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
 		if !isUTF16(filePath) {
 			return fl.loadDomingo(filePath)
 		}
-		return fl.loadAutoDetect(filePath)
+		return fl.loadVocabularium(filePath)
+	case ".vtl3":
+		return fl.loadVokabelTrainer(filePath)
 	case ".csv", ".tsv":
 		return fl.loadCSV(filePath)
 	case ".txt":

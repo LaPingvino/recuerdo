@@ -207,3 +207,79 @@ func isUTF16(path string) bool {
 	n, _ := f.Read(head)
 	return n == 2 && (bytes.Equal(head, []byte{0xff, 0xfe}) || bytes.Equal(head, []byte{0xfe, 0xff}))
 }
+
+// loadVocabularium loads Vocabularium lists (.voc, UTF-16): a version
+// line, "question-language answer-language", a "!" line used as the
+// title, then "question<tab>answer" lines.
+func (fl *FileLoader) loadVocabularium(path string) (*LessonData, error) {
+	text, err := readText(path)
+	if err != nil {
+		return nil, err
+	}
+	lines := strings.Split(strings.NewReplacer("\r\n", "\n", "\r", "\n").Replace(string(text)), "\n")
+	data := NewLessonData()
+	for i, line := range lines {
+		switch {
+		case i == 0:
+		case i == 1:
+			q, a, _ := strings.Cut(strings.TrimSpace(line), " ")
+			data.List.QuestionLanguage, data.List.AnswerLanguage = strings.TrimSpace(q), strings.TrimSpace(a)
+		case strings.HasPrefix(line, "!") && data.List.Title == "":
+			data.List.Title = strings.TrimSpace(line[1:])
+		default:
+			q, a, ok := strings.Cut(line, "\t")
+			if !ok {
+				continue
+			}
+			qs, as := fl.parseWordString(strings.TrimSpace(q)), fl.parseWordString(strings.TrimSpace(a))
+			if len(qs) > 0 || len(as) > 0 {
+				data.List.Items = append(data.List.Items, WordItem{ID: len(data.List.Items), Questions: qs, Answers: as})
+			}
+		}
+	}
+	if data.List.Title == "" {
+		data.List.Title = titleFromPath(path)
+	}
+	return data, nil
+}
+
+// loadVokabelTrainer loads VokabelTrainer lists (.vtl3, UTF-16 XML): the
+// words in <Vokabeln>, their translations in <Uebersetzungen> and comments
+// in <Kommentare>. (OpenTeacher's loader took the words as answers too.)
+func (fl *FileLoader) loadVokabelTrainer(path string) (*LessonData, error) {
+	text, err := readText(path)
+	if err != nil {
+		return nil, err
+	}
+	var root struct {
+		Items []struct {
+			Words        []string `xml:"Vokabeln>string"`
+			Translations []string `xml:"Uebersetzungen>string"`
+			Comments     []string `xml:"Kommentare>string"`
+		} `xml:"Vokabeldatensatz>Datensatz"`
+	}
+	if err := decodeXML(bytes.NewReader(text), &root); err != nil {
+		return nil, fmt.Errorf("reading VokabelTrainer list: %w", err)
+	}
+	clean := func(ss []string) []string {
+		var out []string
+		for _, s := range ss {
+			if s = strings.TrimSpace(s); s != "" {
+				out = append(out, s)
+			}
+		}
+		return out
+	}
+	data := NewLessonData()
+	data.List.Title = titleFromPath(path)
+	for _, it := range root.Items {
+		q, a := clean(it.Words), clean(it.Translations)
+		if len(q) > 0 || len(a) > 0 {
+			data.List.Items = append(data.List.Items, WordItem{
+				ID: len(data.List.Items), Questions: q, Answers: a,
+				Comment: strings.Join(clean(it.Comments), "; "),
+			})
+		}
+	}
+	return data, nil
+}

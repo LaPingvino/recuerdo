@@ -2,6 +2,7 @@ package lesson
 
 import (
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -65,6 +66,12 @@ func TestFixedFormatsContent(t *testing.T) {
 	}
 	if d := load("application_x-fm-dictionary.fmd"); len(d.List.Items) != 3 || d.List.QuestionLanguage != "" {
 		t.Errorf("fmd: %q %+v", d.List.QuestionLanguage, d.List.Items)
+	}
+	if d := load("application_x-vocabularium.edited(all-files-are).voc"); d.List.QuestionLanguage != "English" || d.List.AnswerLanguage != "Nederlands" || len(d.List.Items) != 3 || !strings.HasPrefix(d.List.Title, "Title here.") {
+		t.Errorf("vocabularium: %q %q %q %+v", d.List.Title, d.List.QuestionLanguage, d.List.AnswerLanguage, d.List.Items)
+	}
+	if d := load("application_x-vokabeltrainer.vokabeltrainer-with-comment.vtl3"); len(d.List.Items) != 3 || d.List.Items[0].Answers[0] != "one" || d.List.Items[2].Comment != "comment" {
+		t.Errorf("vokabeltrainer: %+v", d.List.Items)
 	}
 	if d := load("text_plain.vtrain.txt"); len(d.List.Items) != 3 || d.List.Items[1].Answers[0] != "two" {
 		t.Errorf("vtrain: %+v", d.List.Items)
