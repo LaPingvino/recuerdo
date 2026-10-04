@@ -19,15 +19,12 @@ const sampleFiles = "../../legacy/modules/org/openteacher/logic/loaders/test/tes
 // working, so the list only shrinks.
 var knownBroken = map[string]string{
 	"application_x-apkg.anki.apkg":                                      "zip with an Anki database; read as text",
-	"application_x-backpack.backpack":                                   "items separated by \\r, read as one item",
 	"application_x-domingo.domingo.voc":                                 "Domingo format not supported",
 	"application_x-fm-dictionary.fmd":                                   "FMD XML read as text",
 	"application_x-granuledeck.granule.dkf":                             "Granule format not supported",
 	"application_x-jmemorizelesson.jmemorize-modified.jml":              "zipped XML not supported",
 	"application_x-jmemorizelesson.jmemorize.jml":                       "zipped XML not supported",
 	"application_x-kvtml.kvoctrain.kvtml":                               "KVocTrain's KVTML 1 not read",
-	"application_x-openteachingwords.openteacher3x.otwd":                "a zip, parsed as XML",
-	"application_x-openteachingwords.ot1converted.otwd":                 "a zip, parsed as XML",
 	"application_x-oriente-voca.voca3.0.wdl":                            "Voca format not supported",
 	"application_x-oriente-voca.voca4.0.wdl":                            "Voca format not supported",
 	"application_x-oriente-voca.vocatude1.0.wdl":                        "Voca format not supported",
@@ -47,17 +44,13 @@ var knownBroken = map[string]string{
 	"application_x-wrts.openteacher2x.wrts":                             "WRTS XML read as text",
 	"application_x-wrts.openteacher3x.wrts":                             "WRTS XML read as text",
 	"application_x-wrts.wrts.wrts":                                      "WRTS XML read as text",
-	"application_xml.abbyylingvotutor_x3-modified.xml":                  "UTF-16 ABBYY XML read as text",
-	"application_xml.abbyylingvotutor_x5.xml":                           "UTF-16 ABBYY XML read as text",
-	"text_csv.openteacher3x.csv":                                        "header row read as a word pair",
-	"text_csv.teach2000.csv":                                            "Teach2000 CSV not read",
-	"text_plain.vtrain.txt":                                             "vTrain format not read",
 }
 
 // firstQuestion is the first question of sample files whose content
 // would otherwise pass the generic checks while being read wrongly.
 var firstQuestion = map[string]string{
 	"text_csv.openteacher3x.csv": "een", // its first row names the languages
+	"text_csv.teach2000.csv":     "een", // its first row is a header in Dutch
 }
 
 // notLessons are sample files that are not word lists.

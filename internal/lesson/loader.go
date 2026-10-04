@@ -4,7 +4,6 @@ import (
 	"archive/zip"
 	"bufio"
 	"database/sql"
-	"encoding/csv"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
@@ -39,9 +38,14 @@ func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
 	case ".csv", ".tsv":
 		return fl.loadCSV(filePath)
 	case ".txt":
+		if raw, err := os.ReadFile(filePath); err == nil && isVTrain(raw) {
+			return fl.loadVTrain(filePath, raw)
+		}
 		return fl.loadTextFile(filePath)
-	case ".ot", ".otwd":
+	case ".ot":
 		return fl.loadOpenTeacherFile(filePath)
+	case ".otwd":
+		return fl.loadOTWDFile(filePath)
 	case ".json":
 		return fl.loadJSONFile(filePath)
 	case ".kvtml":
@@ -100,66 +104,15 @@ func (fl *FileLoader) GetFileType(filePath string) string {
 
 // loadCSV loads CSV or TSV files
 func (fl *FileLoader) loadCSV(filePath string) (*LessonData, error) {
-	log.Printf("[ACTION] FileLoader.loadCSV() - parsing CSV file")
-
-	file, err := os.Open(filePath)
+	comma := ','
+	if strings.HasSuffix(strings.ToLower(filePath), ".tsv") {
+		comma = '\t'
+	}
+	records, err := readCSV(filePath, comma)
 	if err != nil {
-		log.Printf("[ERROR] Failed to open CSV file: %v", err)
 		return nil, err
 	}
-	defer file.Close()
-
-	// Determine delimiter
-	delimiter := ','
-	if strings.HasSuffix(strings.ToLower(filePath), ".tsv") {
-		delimiter = '\t'
-	}
-
-	reader := csv.NewReader(file)
-	reader.Comma = delimiter
-	reader.FieldsPerRecord = -1 // Allow variable number of fields
-
-	lessonData := NewLessonData()
-	lessonData.List.Title = titleFromPath(filePath)
-
-	itemID := 0
-	for {
-		record, err := reader.Read()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			log.Printf("[WARNING] Error reading CSV line: %v", err)
-			continue
-		}
-
-		if len(record) < 2 {
-			continue // Skip lines with insufficient data
-		}
-
-		// Parse questions and answers (may be comma-separated within cells)
-		questions := fl.parseWordString(strings.TrimSpace(record[0]))
-		answers := fl.parseWordString(strings.TrimSpace(record[1]))
-
-		comment := ""
-		if len(record) > 2 {
-			comment = strings.TrimSpace(record[2])
-		}
-
-		if len(questions) > 0 && len(answers) > 0 {
-			item := WordItem{
-				ID:        itemID,
-				Questions: questions,
-				Answers:   answers,
-				Comment:   comment,
-			}
-			lessonData.List.Items = append(lessonData.List.Items, item)
-			itemID++
-		}
-	}
-
-	log.Printf("[SUCCESS] FileLoader.loadCSV() - loaded %d word pairs", len(lessonData.List.Items))
-	return lessonData, nil
+	return fl.loadCSVRecords(filePath, records), nil
 }
 
 // loadTextFile loads simple text files with word pairs
@@ -903,6 +856,9 @@ func (fl *FileLoader) stripHTMLTags(text string) string {
 // loadXMLFile loads XML files (including ABBYY format)
 func (fl *FileLoader) loadXMLFile(filePath string) (*LessonData, error) {
 	log.Printf("[ACTION] FileLoader.loadXMLFile() - parsing XML file")
+	if text, err := readText(filePath); err == nil && isAbbyy(text) {
+		return fl.loadAbbyy(filePath, text)
+	}
 
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -1387,94 +1343,7 @@ func (fl *FileLoader) loadCueCardFile(filePath string) (*LessonData, error) {
 
 // loadBackpackFile parses Backpack (.backpack) text files
 func (fl *FileLoader) loadBackpackFile(filePath string) (*LessonData, error) {
-	log.Printf("[ACTION] FileLoader.loadBackpackFile() - parsing Backpack text file")
-
-	file, err := os.Open(filePath)
-	if err != nil {
-		log.Printf("[ERROR] Failed to open Backpack file: %v", err)
-		return nil, err
-	}
-	defer file.Close()
-
-	lessonData := NewLessonData()
-	lessonData.List.Title = titleFromPath(filePath)
-
-	scanner := bufio.NewScanner(file)
-	itemID := 0
-
-	for scanner.Scan() {
-		line := strings.TrimSpace(scanner.Text())
-		if line == "" {
-			continue
-		}
-
-		// Try to find a separator - Backpack format seems to use various separators
-		// Based on the sample, it looks like question and answer are concatenated
-		// Let's try to split on common patterns or use a simple heuristic
-
-		// Look for Greek/Latin characters followed by lowercase text as a pattern
-		var question, answer string
-
-		// Simple heuristic: if line contains mixed scripts, try to split
-		if len(line) > 10 {
-			// Try to find where Greek/special chars end and Latin chars begin
-			splitPos := -1
-			for i, r := range line {
-				// Look for transition from Greek/special to Latin lowercase
-				if i > 0 && ((r >= 'a' && r <= 'z') || r == ' ') {
-					// Check if previous character was Greek or special
-					prevR := rune(line[i-1])
-					if prevR > 127 || (prevR >= 'A' && prevR <= 'Z') {
-						splitPos = i
-						break
-					}
-				}
-			}
-
-			if splitPos > 0 && splitPos < len(line)-1 {
-				question = strings.TrimSpace(line[:splitPos])
-				answer = strings.TrimSpace(line[splitPos:])
-			}
-		}
-
-		// Fallback: try common separators
-		if question == "" || answer == "" {
-			separators := []string{"\t", "  ", " - ", " = ", ":"}
-			for _, sep := range separators {
-				if strings.Contains(line, sep) {
-					parts := strings.SplitN(line, sep, 2)
-					if len(parts) == 2 {
-						question = strings.TrimSpace(parts[0])
-						answer = strings.TrimSpace(parts[1])
-						break
-					}
-				}
-			}
-		}
-
-		// If still no split found, skip this line or treat as single word
-		if question == "" || answer == "" {
-			log.Printf("[WARNING] Could not parse Backpack line: %s", line)
-			continue
-		}
-
-		if question != "" && answer != "" {
-			lessonData.List.Items = append(lessonData.List.Items, WordItem{
-				ID:        itemID,
-				Questions: []string{question},
-				Answers:   []string{answer},
-			})
-			itemID++
-		}
-	}
-
-	if err := scanner.Err(); err != nil {
-		log.Printf("[ERROR] Error reading Backpack file: %v", err)
-		return nil, err
-	}
-
-	log.Printf("[SUCCESS] FileLoader.loadBackpackFile() - loaded %d word pairs", len(lessonData.List.Items))
-	return lessonData, nil
+	return fl.loadLines(filePath)
 }
 
 // GetSupportedExtensions returns a list of supported file extensions
