@@ -249,6 +249,9 @@ msgstr "Formato"
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
 msgstr "Libera programaro laŭ la GNU General Public License,\nversio 3 aŭ posta"
 
+msgid "Furigana and formulas"
+msgstr "Furigano kaj formuloj"
+
 msgid "Getting Started with Recuerdo"
 msgstr "Unuaj paŝoj kun Recuerdo"
 

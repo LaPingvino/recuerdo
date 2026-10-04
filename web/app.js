@@ -3,6 +3,15 @@
 "use strict";
 const $ = (id) => document.getElementById(id);
 const EXAMPLE = "hond = dog\nkat = cat\nhuis = house, home\nboom = tree\nfiets = bicycle\nkaas = cheese\n";
+// words with markup: furigana (ruby) and formulas; answers are typed plainly
+const RICH_EXAMPLE = [
+	"<ruby>水<rt>みず</rt></ruby> = water",
+	"<ruby>山<rt>やま</rt></ruby> = mountain",
+	"<ruby>日本語<rt>にほんご</rt></ruby> = Japanese",
+	"water = H<sub>2</sub>O",
+	"carbon dioxide = CO<sub>2</sub>",
+	"the area of a circle = πr<sup>2</sup>",
+].join("\n");
 
 let api = null;
 function call(name, ...args) {
@@ -106,6 +115,9 @@ $("useTyped").addEventListener("click", () => {
 	try { showLesson(call("openText", t("Typed list"), $("typed").value)); } catch (e) { showError(e); }
 });
 $("example").addEventListener("click", () => { $("typed").value = EXAMPLE; showLesson(call("openText", t("Example"), EXAMPLE)); });
+$("richExample").addEventListener("click", () => {
+	$("typed").value = RICH_EXAMPLE; showLesson(call("openText", t("Furigana and formulas"), RICH_EXAMPLE));
+});
 
 // ---- the lesson: words, practise, results ----
 let lesson = null;
@@ -137,10 +149,16 @@ function wordRow(it) {
 			}
 		} catch (e) { alert(e.message); }
 	};
-	for (const input of [q, a]) {
+	const plainHtml = (x) => { const d = document.createElement("span"); d.textContent = x; return d.innerHTML; };
+	for (const [input, raw, html] of [[q, it && it.question, it && it.questionHtml], [a, it && it.answer, it && it.answerHtml]]) {
 		input.addEventListener("change", save);
 		input.addEventListener("keydown", (e) => { if (e.key === "Enter") { input.blur(); save(); } });
-		const td = document.createElement("td"); td.append(input); tr.append(td);
+		const td = document.createElement("td"); td.append(input);
+		// words with markup also show how they look
+		if (html && html !== plainHtml(raw)) {
+			const p = document.createElement("div"); p.className = "preview"; p.innerHTML = html; td.append(p);
+		}
+		tr.append(td);
 	}
 	const td = document.createElement("td");
 	if (it) {
@@ -192,11 +210,14 @@ function startPractice() {
 $("startButton").addEventListener("click", startPractice);
 $("again").addEventListener("click", () => { $("done").hidden = true; $("options").hidden = false; });
 
-let repeatTimer = null;
+let repeatTimer = null, currentState = {};
 function showState(st) {
+	currentState = st;
 	if (st.done || !st.active) { finish(st); return; }
 	const mode = $("mode").value;
-	text($("question"), st.question);
+	// the words' safe HTML (furigana, H<sub>2</sub>O, pictures), made by
+	// Go's internal/richtext
+	$("question").innerHTML = st.questionHtml || "";
 	text($("counter"), `${st.asked + 1} / ${st.total}`);
 	$("progressBar").style.width = `${st.total ? (100 * st.asked) / st.total : 0}%`;
 	const hint = $("modeHint"); hint.className = "mode-hint"; text(hint, "");
@@ -207,14 +228,15 @@ function showState(st) {
 	if (mode === "shuffle") text(hint, st.shuffle);
 	if (mode === "repeat") {
 		// the answer is shown first, then typed from memory
-		hint.classList.add("answer-shown"); text(hint, st.answer); $("answer").disabled = true;
+		hint.classList.add("answer-shown"); hint.innerHTML = st.answerHtml || ""; $("answer").disabled = true;
 		repeatTimer = setTimeout(() => { text(hint, ""); $("answer").disabled = false; $("answer").focus(); }, 2500);
 		return;
 	}
 	if (mode !== "inmind") $("answer").focus();
 }
 $("viewAnswer").addEventListener("click", () => {
-	const hint = $("modeHint"); hint.classList.add("answer-shown"); text(hint, call("viewAnswer"));
+	call("viewAnswer");
+	const hint = $("modeHint"); hint.classList.add("answer-shown"); hint.innerHTML = currentState.answerHtml || "";
 	$("viewAnswer").hidden = true; $("judgeRow").hidden = false;
 });
 for (const [id, right] of [["judgeRight", true], ["judgeWrong", false]]) {
@@ -241,7 +263,9 @@ $("answerForm").addEventListener("submit", (e) => {
 		const fb = $("feedback");
 		fb.className = "feedback " + (r.right ? "right" : "wrong");
 		$("correctAnyway").hidden = r.right;
-		text(fb, r.right ? t("Right: %s", r.correct) : t("Wrong: %s → %s", given, r.correct));
+		// the right answer with its markup; what was typed as plain text
+		const esc = (x) => { const d = document.createElement("span"); d.textContent = x; return d.innerHTML; };
+		fb.innerHTML = r.right ? t("Right: %s", r.correctHtml) : t("Wrong: %s → %s", esc(given), r.correctHtml);
 		showState(call("state"));
 		showResults();
 	} catch (err) { text($("feedback"), err.message); }
@@ -294,7 +318,7 @@ $("downloadDialog").addEventListener("close", () => {
 	$("loading").hidden = true; $("start").hidden = false;
 	// ?example opens the example lesson at once (for screenshots and demos)
 	if (new URLSearchParams(location.search).has("example")) {
-		$("example").click();
+		$(new URLSearchParams(location.search).get("example") === "rich" ? "richExample" : "example").click();
 		const tab = new URLSearchParams(location.search).get("tab");
 		if (tab) showTab(tab);
 		const mode = new URLSearchParams(location.search).get("mode");

@@ -387,6 +387,10 @@ msgstr ""
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
 msgstr ""
 
+#: web/index.html
+msgid "Furigana and formulas"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Getting Started with Recuerdo"
 msgstr ""

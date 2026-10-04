@@ -16,6 +16,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
+	"github.com/LaPingvino/recuerdo/internal/richtext"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
 )
 
@@ -25,6 +26,9 @@ type Item struct {
 	Question string `json:"question"`
 	Answer   string `json:"answer"`
 	Comment  string `json:"comment,omitempty"`
+	// the same as safe HTML, for words with markup (richtext)
+	QuestionHTML string `json:"questionHtml"`
+	AnswerHTML   string `json:"answerHtml"`
 }
 
 // Lesson is an opened lesson.
@@ -58,12 +62,16 @@ type State struct {
 	// answer's hint: its letters in another order.
 	Answer  string `json:"answer,omitempty"`
 	Shuffle string `json:"shuffle,omitempty"`
+	// QuestionHTML and AnswerHTML show them with their markup (safe HTML)
+	QuestionHTML string `json:"questionHtml,omitempty"`
+	AnswerHTML   string `json:"answerHtml,omitempty"`
 }
 
 // Result is the outcome of an answer.
 type Result struct {
-	Right   bool   `json:"right"`
-	Correct string `json:"correct"`
+	Right       bool   `json:"right"`
+	Correct     string `json:"correct"`
+	CorrectHTML string `json:"correctHtml"`
 }
 
 // Row is one answer of a finished session.
@@ -143,8 +151,9 @@ func (a *App) Lesson() (Lesson, error) {
 	out := Lesson{Title: l.Title, QuestionLanguage: l.QuestionLanguage, AnswerLanguage: l.AnswerLanguage,
 		Items: []Item{}, Sessions: len(l.Tests)}
 	for _, it := range l.Items {
-		out.Items = append(out.Items, Item{ID: it.ID, Question: compose(it.Questions), Answer: compose(it.Answers),
-			Comment: it.Comment})
+		q, ans := compose(it.Questions), compose(it.Answers)
+		out.Items = append(out.Items, Item{ID: it.ID, Question: q, Answer: ans, Comment: it.Comment,
+			QuestionHTML: richtext.Sanitize(q), AnswerHTML: richtext.Sanitize(ans)})
 	}
 	return out, nil
 }
@@ -169,7 +178,9 @@ func (a *App) Start(o Options) (State, error) {
 		return State{}, ErrNoLesson
 	}
 	a.opts = o
-	a.session = teaching.New(a.data.List, teaching.Options{
+	// answers are checked against the words' plain text (H<sub>2</sub>O
+	// is typed H2O); the page shows the words with their markup
+	a.session = teaching.New(plainList(a.data.List), teaching.Options{
 		LessonType: o.LessonType, Order: o.Order, Words: o.Words, AskAnswers: o.AskAnswers,
 	})
 	a.session.Start()
@@ -185,10 +196,11 @@ func (a *App) State() State {
 	st := State{Active: !s.Done(), Done: s.Done()}
 	st.Asked, st.Total = s.Progress()
 	st.Right, st.Answered = s.Score()
-	if item, _, ok := s.Current(); ok {
+	if item, index, ok := s.Current(); ok {
 		st.Question = compose(item.Questions)
 		st.Answer = s.CurrentAnswer()
 		st.Shuffle = strings.TrimPrefix(teaching.ShuffleHint(st.Answer, nil), "Hint: ")
+		st.QuestionHTML, st.AnswerHTML = a.shown(index)
 	}
 	return st
 }
@@ -201,10 +213,12 @@ func (a *App) Answer(text string) (Result, error) {
 	if strings.TrimSpace(text) == "" {
 		return Result{}, errors.New("type an answer")
 	}
+	_, index, _ := a.session.Current()
+	_, correctHTML := a.shown(index)
 	r := a.session.Answer(text)
 	a.session.Next()
 	a.finishIfDone()
-	return Result{Right: r.Right, Correct: r.Correct}, nil
+	return Result{Right: r.Right, Correct: r.Correct, CorrectHTML: correctHTML}, nil
 }
 
 // Stop ends the session; what was answered is kept as a test.
@@ -383,4 +397,36 @@ func (a *App) CorrectLast() error {
 	}
 	a.session.CorrectLast()
 	return nil
+}
+
+// plainList is list with the words' markup taken out, for checking.
+func plainList(list lesson.WordList) lesson.WordList {
+	out := list
+	out.Items = make([]lesson.WordItem, len(list.Items))
+	plain := func(words []string) []string {
+		out := make([]string, len(words))
+		for i, w := range words {
+			out[i] = richtext.Plain(w)
+		}
+		return out
+	}
+	for i, it := range list.Items {
+		it.Questions, it.Answers = plain(it.Questions), plain(it.Answers)
+		out.Items[i] = it
+	}
+	return out
+}
+
+// shown is the question and answer of the item at index as safe HTML,
+// the way round the session asks them.
+func (a *App) shown(index int) (question, answer string) {
+	if index < 0 || index >= len(a.data.List.Items) {
+		return "", ""
+	}
+	it := a.data.List.Items[index]
+	q, ans := compose(it.Questions), compose(it.Answers)
+	if a.opts.AskAnswers {
+		q, ans = ans, q
+	}
+	return richtext.Sanitize(q), richtext.Sanitize(ans)
 }

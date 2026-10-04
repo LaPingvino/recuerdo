@@ -127,3 +127,30 @@ func TestModes(t *testing.T) {
 		t.Error("judging after the end")
 	}
 }
+
+func TestRichWords(t *testing.T) {
+	var a App
+	a.OpenText("Chemie", "water = H<sub>2</sub>O\n<ruby>漢<rt>かん</rt></ruby> = kan\n")
+	l, _ := a.Lesson()
+	if l.Items[0].AnswerHTML != "H<sub>2</sub>O" || l.Items[1].QuestionHTML != "<ruby>漢<rt>かん</rt></ruby>" {
+		t.Errorf("html: %+v", l.Items)
+	}
+	st, _ := a.Start(Options{})
+	if st.QuestionHTML != "water" || st.AnswerHTML != "H<sub>2</sub>O" {
+		t.Errorf("state: %+v", st)
+	}
+	if r, _ := a.Answer("H2O"); !r.Right || r.CorrectHTML != "H<sub>2</sub>O" {
+		t.Errorf("H2O: %+v", r)
+	}
+	if st = a.State(); st.Question != "漢" || st.QuestionHTML != "<ruby>漢<rt>かん</rt></ruby>" {
+		t.Errorf("furigana question: %+v", st)
+	}
+	// asked the other way round
+	a.Start(Options{AskAnswers: true})
+	if st = a.State(); st.QuestionHTML != "H<sub>2</sub>O" {
+		t.Errorf("reversed: %+v", st)
+	}
+	if r, _ := a.Answer("water"); !r.Right {
+		t.Error("water should be right")
+	}
+}

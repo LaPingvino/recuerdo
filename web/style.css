@@ -69,3 +69,8 @@ h2 { font-size: 1.1rem; margin: 0 0 .3rem; }
 .language { margin-left: .8rem; padding: .2rem .4rem; font-size: .9rem; }
 .lesson-title + .language { margin-left: .8rem; }
 header .lesson-title:empty + .language { margin-left: auto; }
+/* words with markup */
+.question ruby rt, .mode-hint ruby rt { font-size: .45em; color: var(--muted); }
+.question img { max-width: min(100%, 22rem); max-height: 14rem; vertical-align: middle; }
+.preview { padding: .1rem .6rem .3rem; font-size: 1.15rem; }
+.preview ruby rt { font-size: .5em; color: var(--muted); }
