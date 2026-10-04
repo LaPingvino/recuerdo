@@ -771,13 +771,9 @@ func (mod *GuiModule) showSettingsDialog() {
 		// Try to call ShowSettingsDialog method on the module
 		if settingsMod, ok := settingsDialogModules[0].(interface{ ShowSettingsDialog() bool }); ok {
 			mod.logger.Success("Calling ShowSettingsDialog() on settingsDialog module")
-			applied := settingsMod.ShowSettingsDialog()
-			if applied {
-				mod.logger.Success("Settings dialog applied changes")
-				mod.statusBar.ShowMessage("File opened successfully")
-			} else {
-				mod.logger.Info("Settings dialog was cancelled or no changes made")
-				mod.statusBar.ShowMessage("Settings dialog created")
+			if settingsMod.ShowSettingsDialog() {
+				mod.applySettingsToLessons()
+				mod.statusBar.ShowMessage("Settings saved")
 			}
 		} else {
 			mod.logger.DeadEnd("settingsDialog module", "does not implement ShowSettingsDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
@@ -1143,4 +1139,20 @@ func (mod *GuiModule) importFromPicture() {
 		mod.markModified(tab)
 	}
 	mod.statusBar.ShowMessage(fmt.Sprintf("Read %d word pairs from the picture: check them on the Enter tab", len(items)))
+}
+
+// applySettingsToLessons gives the open word lessons the current settings
+// (after the settings dialog changed them).
+func (mod *GuiModule) applySettingsToLessons() {
+	settings, ok := mod.manager.GetDefaultModule("settings")
+	if !ok {
+		return
+	}
+	st, ok := settings.(words.Settings)
+	if !ok {
+		return
+	}
+	for _, w := range mod.tabWords {
+		w.UseSettings(st)
+	}
 }

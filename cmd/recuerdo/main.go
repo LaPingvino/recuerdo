@@ -293,12 +293,6 @@ func registerAllModules(manager *core.Manager) error {
 	// 	return fmt.Errorf("failed to register results module: %w", err)
 	// }
 
-	// Register settings module - DISABLED for now
-	// settingsModule := settings.NewSettingsDialogModule()
-	// if err := manager.Register(settingsModule); err != nil {
-	// 	return fmt.Errorf("failed to register settings module: %w", err)
-	// }
-
 	// Register media module - DISABLED for now
 	// mediaModule := media.NewMediaEntererModule()
 	// if err := manager.Register(mediaModule); err != nil {

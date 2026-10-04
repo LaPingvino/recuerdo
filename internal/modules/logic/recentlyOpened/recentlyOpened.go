@@ -5,6 +5,7 @@ package recentlyopened
 
 import (
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
 )
 
 // SettingKey is the setting with the list, newest first.
@@ -61,3 +62,12 @@ func NewRecentlyOpenedModule() *RecentlyOpenedModule {
 
 // InitRecentlyOpenedModule creates the module.
 func InitRecentlyOpenedModule() core.Module { return NewRecentlyOpenedModule() }
+
+// "Clear recent files" in the settings dialog.
+func init() {
+	settingsdefs.Register(settingsdefs.Def{
+		Key: SettingKey, Category: "Files", Name: "Clear recent files",
+		Help: "Empty the File > Open Recent list", Kind: settingsdefs.Action,
+		Run: func(s settingsdefs.Store) { s.SetSetting(SettingKey, []string{}) },
+	})
+}

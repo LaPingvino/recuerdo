@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 13 |  |  | 27 | 6 | 49 |
-| interfaces | 6 | 2 | 3 | 52 |  |  | 17 | 14 | 94 |
+| interfaces | 7 | 2 | 2 | 52 |  |  | 17 | 14 | 94 |
 | logic | 25 |  |  | 78 |  |  | 38 | 39 | 180 |
 | misc |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 3 |  |  | 19 | 5 | 27 |
-| **all** | **34** | **2** | **3** | **146** | **0** | **0** | **102** | **67** | **354** |
+| **all** | **35** | **2** | **2** | **146** | **0** | **0** | **102** | **67** | **354** |
 
 Remarks:
 
@@ -366,7 +366,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/dialogs/file` | fileDialogs | 91 | 137 | 0 | 1 | working |
 | `interfaces/qt/dialogs/print` | printDialog | 31 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/results` | resultsDialog | 51 | 86 | 0 | 1 | working |
-| `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 210 | 2 | 0 | partial |
+| `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 146 | 0 | 1 | working |
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/enterers/media` | mediaEnterer | 305 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
@@ -375,14 +375,14 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1024 | 3 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1033 | 3 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 415 | 0 | 1 | working |
 | `interfaces/qt/lessons/media` | lesson | 197 | 585 | 0 | 2 | working |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 699 | 0 | 2 | working |
-| `interfaces/qt/lessons/words` | lesson | 211 | 2071 | 0 | 2 | working |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2093 | 0 | 2 | working |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 0 | 0 | 0 | covered |
@@ -570,7 +570,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 1 | working |
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
 | `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 0 | 0 | 0 | dropped |
-| `logic/recentlyOpened` | recentlyOpened | 90 | 41 | 0 | 1 | working |
+| `logic/recentlyOpened` | recentlyOpened | 90 | 49 | 0 | 1 | working |
 | `logic/reversers/media` | reverser | 18 | 27 | 0 | 1 | working |
 | `logic/reversers/mediaTest` | test | 44 | 38 | 9 | 0 | test suite |
 | `logic/reversers/words` | reverser | 19 | 28 | 0 | 1 | working |
