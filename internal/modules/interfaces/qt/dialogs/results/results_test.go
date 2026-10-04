@@ -44,6 +44,13 @@ func checkDialog() error {
 		ThinkingTime:  12 * time.Second,
 	}
 	d := Show(nil, report, "5,5", "Dutch")
+	// close it before the program ends, and let Qt delete it (it deletes
+	// itself on close): Qt 6 on Windows crashed tearing down a dialog
+	// still shown at exit
+	defer func() {
+		d.Close()
+		qt.QCoreApplication_SendPostedEvents2(nil, int(qt.QEvent__DeferredDelete))
+	}()
 	if d.WindowTitle() != "Results" || !d.IsVisible() {
 		return fmt.Errorf("title %q, visible %v", d.WindowTitle(), d.IsVisible())
 	}
