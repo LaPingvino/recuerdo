@@ -46,7 +46,9 @@
 		</nav>
 
 		<div data-panel="words" class="panel">
-			<table class="words"><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody id="wordRows"></tbody></table>
+			<label class="title-edit">Title <input id="titleEdit"></label>
+			<table class="words edit"><thead><tr><th>Question</th><th>Answer</th><th></th></tr></thead><tbody id="wordRows"></tbody></table>
+			<p class="hint">Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it.</p>
 		</div>
 
 		<div data-panel="practise" class="panel">
@@ -54,6 +56,12 @@
 				<label>Lesson type <select id="lessonType"></select></label>
 				<label>Order <select id="order"></select></label>
 				<label>Words <select id="words"></select></label>
+				<label>Mode <select id="mode">
+					<option value="typing">Typing</option>
+					<option value="shuffle">Shuffle answer</option>
+					<option value="repeat">Repeat answer</option>
+					<option value="inmind">In mind</option>
+				</select></label>
 				<label class="check"><input type="checkbox" id="askAnswers"> Ask the answers</label>
 				<button id="startButton" class="button primary">Start</button>
 			</div>
@@ -61,12 +69,24 @@
 				<div class="progress"><div id="progressBar"></div></div>
 				<p class="counter" id="counter"></p>
 				<p class="question" id="question"></p>
+				<p class="mode-hint" id="modeHint"></p>
+				<div class="inmind" id="inmind" hidden>
+					<button id="viewAnswer" class="button primary" type="button">View answer</button>
+					<div id="judgeRow" class="row center" hidden>
+						<button id="judgeRight" class="button" type="button">I was right</button>
+						<button id="judgeWrong" class="button" type="button">I was wrong</button>
+					</div>
+				</div>
 				<form id="answerForm" class="answer">
 					<input id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your answer">
 					<button class="button primary">Check</button>
 				</form>
 				<p id="feedback" class="feedback"></p>
-				<button id="stopButton" class="button">Stop</button>
+				<div class="row center">
+					<button id="correctAnyway" class="button" hidden>Correct anyway</button>
+					<button id="skipButton" class="button">Skip</button>
+					<button id="stopButton" class="button">Stop</button>
+				</div>
 			</div>
 			<div class="done" id="done" hidden>
 				<p id="doneText" class="question"></p>

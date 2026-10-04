@@ -54,3 +54,14 @@ table.words th { color: var(--muted); font-weight: 600; font-size: .9rem; }
 .feedback.wrong { color: var(--wrong); }
 .ok { color: var(--right); } .no { color: var(--wrong); }
 dialog { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--text); }
+.row.center { justify-content: center; }
+.mode-hint { color: var(--muted); font-size: 1.2rem; letter-spacing: .1em; min-height: 1.6rem; margin: -.6rem 0 1rem; }
+.mode-hint.answer-shown { color: var(--accent); letter-spacing: normal; font-weight: 600; }
+.inmind { margin-bottom: 1rem; }
+.title-edit { display: flex; gap: .6rem; align-items: center; color: var(--muted); margin-bottom: .8rem; }
+.title-edit input { flex: 1; font-weight: 600; }
+table.words.edit td { padding: .2rem .3rem; }
+table.words.edit input { width: 100%; border-color: transparent; background: transparent; }
+table.words.edit input:focus, table.words.edit tr.new input { border-color: var(--line); background: var(--bg); }
+.remove { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 1.1rem; }
+.remove:hover { color: var(--wrong); }

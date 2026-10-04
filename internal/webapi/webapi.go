@@ -53,6 +53,11 @@ type State struct {
 	Total    int    `json:"total"`
 	Right    int    `json:"right"`
 	Answered int    `json:"answered"`
+	// Answer is the right answer to the current question (Repeat answer
+	// shows it first, In mind after "View answer"); Shuffle is Shuffle
+	// answer's hint: its letters in another order.
+	Answer  string `json:"answer,omitempty"`
+	Shuffle string `json:"shuffle,omitempty"`
 }
 
 // Result is the outcome of an answer.
@@ -182,6 +187,8 @@ func (a *App) State() State {
 	st.Right, st.Answered = s.Score()
 	if item, _, ok := s.Current(); ok {
 		st.Question = compose(item.Questions)
+		st.Answer = s.CurrentAnswer()
+		st.Shuffle = strings.TrimPrefix(teaching.ShuffleHint(st.Answer, nil), "Hint: ")
 	}
 	return st
 }
@@ -255,3 +262,125 @@ func (a *App) Save(name string) ([]byte, error) {
 
 // SetLanguage translates the choices and messages into lang.
 func SetLanguage(dir, lang string) error { return i18n.Use(dir, lang) }
+
+// ---- editing ----
+
+// item makes an item of a question and an answer as typed ("hond",
+// "dog, puppy"), with OpenTeacher's notation for several words.
+func item(id int, question, answer string) (lesson.WordItem, error) {
+	esc := strings.NewReplacer("\\", "\\\\", "=", "\\=", "\t", " ", "\n", " ")
+	items, err := lesson.ParseWordList(esc.Replace(question)+" = "+esc.Replace(answer), false)
+	if err != nil || len(items) != 1 {
+		return lesson.WordItem{}, fmt.Errorf("%q = %q is not a word pair", question, answer)
+	}
+	it := items[0]
+	it.ID = id
+	return it, nil
+}
+
+// SetTitle renames the lesson.
+func (a *App) SetTitle(title string) error {
+	if a.data == nil {
+		return ErrNoLesson
+	}
+	a.data.List.Title = strings.TrimSpace(title)
+	return nil
+}
+
+// AddItem adds a word pair at the end.
+func (a *App) AddItem(question, answer string) (Item, error) {
+	if a.data == nil {
+		return Item{}, ErrNoLesson
+	}
+	id := 0
+	for _, it := range a.data.List.Items {
+		id = max(id, it.ID+1)
+	}
+	it, err := item(id, question, answer)
+	if err != nil {
+		return Item{}, err
+	}
+	a.data.List.Items = append(a.data.List.Items, it)
+	return Item{ID: id, Question: compose(it.Questions), Answer: compose(it.Answers)}, nil
+}
+
+// UpdateItem changes the question and answer of the item with id.
+func (a *App) UpdateItem(id int, question, answer string) error {
+	if a.data == nil {
+		return ErrNoLesson
+	}
+	for i, old := range a.data.List.Items {
+		if old.ID == id {
+			it, err := item(id, question, answer)
+			if err != nil {
+				return err
+			}
+			it.Comment = old.Comment
+			a.data.List.Items[i] = it
+			return nil
+		}
+	}
+	return fmt.Errorf("no word with id %d", id)
+}
+
+// RemoveItem removes the item with id.
+func (a *App) RemoveItem(id int) error {
+	if a.data == nil {
+		return ErrNoLesson
+	}
+	items := a.data.List.Items
+	for i, it := range items {
+		if it.ID == id {
+			a.data.List.Items = append(items[:i:i], items[i+1:]...)
+			return nil
+		}
+	}
+	return fmt.Errorf("no word with id %d", id)
+}
+
+// ---- the other practice modes ----
+
+func (a *App) asking() error {
+	if a.session == nil || a.session.Done() {
+		return errors.New("no question is being asked")
+	}
+	return nil
+}
+
+// ViewAnswer is In mind's "View answer": the right answer (the thinking
+// time ends now).
+func (a *App) ViewAnswer() (string, error) {
+	if err := a.asking(); err != nil {
+		return "", err
+	}
+	return a.session.ViewAnswer(), nil
+}
+
+// Judge is In mind's "I was right" / "I was wrong"; it moves on.
+func (a *App) Judge(right bool) error {
+	if err := a.asking(); err != nil {
+		return err
+	}
+	a.session.Judge(right)
+	a.finishIfDone()
+	return nil
+}
+
+// Skip asks the current question again later.
+func (a *App) Skip() error {
+	if err := a.asking(); err != nil {
+		return err
+	}
+	a.session.Skip()
+	return nil
+}
+
+// CorrectLast counts the last answer as right after all ("Correct
+// anyway", for a typo).
+func (a *App) CorrectLast() error {
+	if a.session == nil {
+		return errors.New("nothing was answered")
+	}
+	a.session.CorrectLast()
+	return nil
+}

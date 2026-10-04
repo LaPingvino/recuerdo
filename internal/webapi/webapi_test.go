@@ -69,3 +69,61 @@ func TestChoices(t *testing.T) {
 		t.Errorf("%+v", c)
 	}
 }
+
+func TestEditing(t *testing.T) {
+	var a App
+	a.OpenText("Dieren", "hond = dog\n")
+	it, err := a.AddItem("kat", "cat, kitty")
+	if err != nil || it.ID != 1 || it.Answer != "cat, kitty" {
+		t.Fatalf("add: %+v %v", it, err)
+	}
+	if _, err := a.AddItem("a = b", "c"); err != nil {
+		t.Errorf("an equals sign in a word: %v", err)
+	}
+	if err := a.UpdateItem(0, "hond", "dog, puppy"); err != nil {
+		t.Fatal(err)
+	}
+	if err := a.RemoveItem(1); err != nil || a.RemoveItem(1) == nil {
+		t.Errorf("remove: %v", err)
+	}
+	a.SetTitle(" Huisdieren ")
+	l, _ := a.Lesson()
+	if l.Title != "Huisdieren" || len(l.Items) != 2 || l.Items[0].Answer != "dog, puppy" || l.Items[1].Question != "a = b" {
+		t.Errorf("lesson %+v", l)
+	}
+	if a.UpdateItem(9, "x", "y") == nil {
+		t.Error("updated a word that is not there")
+	}
+}
+
+func TestModes(t *testing.T) {
+	var a App
+	a.OpenText("Dieren", "hond = dog\nkat = cat\nmuis = mouse\n")
+	st, _ := a.Start(Options{})
+	if st.Answer != "dog" || len(st.Shuffle) != 3 {
+		t.Errorf("state: %+v", st)
+	}
+	// In mind: view the answer, judge
+	if ans, _ := a.ViewAnswer(); ans != "dog" {
+		t.Errorf("view answer %q", ans)
+	}
+	a.Judge(true)
+	// skip kat: it comes back later
+	a.Skip()
+	if q := a.State().Question; q != "muis" {
+		t.Errorf("after skipping: %q", q)
+	}
+	a.Answer("mice")
+	a.CorrectLast() // a typo, counted as right after all
+	st = a.State()
+	if st.Right != 2 || st.Question != "kat" {
+		t.Errorf("after correcting: %+v", st)
+	}
+	a.Answer("cat")
+	if st = a.State(); !st.Done || st.Right != 3 {
+		t.Errorf("end: %+v", st)
+	}
+	if a.Judge(true) == nil || a.Skip() == nil {
+		t.Error("judging after the end")
+	}
+}

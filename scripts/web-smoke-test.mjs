@@ -38,6 +38,25 @@ st = call("state");
 check(st.done && st.right === 1 && st.answered === 2, "state: " + JSON.stringify(st));
 check(call("report").length === 2, "report");
 
+// editing, and the other modes
+call("openText", "Dieren", "hond = dog\nkat = cat\n");
+check(call("addItem", "muis", "mouse").id === 2, "addItem");
+call("updateItem", 0, "hond", "dog, puppy");
+call("removeItem", 1);
+call("setTitle", "Huisdieren");
+const edited = call("lesson");
+check(edited.title === "Huisdieren" && edited.items.length === 2 && edited.items[0].answer === "dog, puppy", "edited: " + JSON.stringify(edited));
+st = call("start", "{}");
+check(st.answer === "dog, puppy" && st.shuffle.length > 0, "state has the answer and a hint");
+check(call("viewAnswer") === "dog, puppy", "viewAnswer");
+call("judge", true);
+call("answer", "mice");
+call("correctLast");
+check(call("state").right === 2, "judged and corrected");
+call("openText", "Dieren", "hond = dog\nkat = cat\n");
+call("start", JSON.stringify({ lessonType: "All once" }));
+call("answer", "dog"); call("answer", "mouse");
+
 // saved with the session, and opened again
 const saved = r.save("dieren.otwd");
 check(saved instanceof Uint8Array && saved[0] === 0x50 && saved[1] === 0x4b, "save gives a zip");

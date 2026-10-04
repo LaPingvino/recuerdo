@@ -39,16 +39,53 @@ function showLesson(l) {
 	lesson = l;
 	$("start").hidden = true; $("lesson").hidden = false; $("startError").hidden = true;
 	text($("lessonTitle"), l.title);
-	const rows = $("wordRows"); rows.replaceChildren();
-	for (const it of l.items) {
-		const tr = document.createElement("tr");
-		for (const s of [it.question, it.answer]) { const td = document.createElement("td"); text(td, s); tr.append(td); }
-		rows.append(tr);
-	}
+	$("titleEdit").value = l.title;
+	showWords();
 	$("practice").hidden = true; $("done").hidden = true; $("options").hidden = false;
 	showResults();
 	showTab("practise");
 }
+// the Words tab: every word editable, an empty row to add one
+function wordRow(it) {
+	const tr = document.createElement("tr");
+	if (!it) tr.className = "new";
+	const q = document.createElement("input"), a = document.createElement("input");
+	q.value = it ? it.question : ""; a.value = it ? it.answer : "";
+	q.placeholder = it ? "" : "New question"; a.placeholder = it ? "" : "Answer";
+	const save = () => {
+		try {
+			if (it) {
+				call("updateItem", it.id, q.value, a.value);
+			} else if (q.value.trim() && a.value.trim()) {
+				call("addItem", q.value, a.value);
+				lesson = call("lesson"); showWords();
+				const rows = $("wordRows").querySelectorAll("tr.new input"); if (rows[0]) rows[0].focus();
+			}
+		} catch (e) { alert(e.message); }
+	};
+	for (const input of [q, a]) {
+		input.addEventListener("change", save);
+		input.addEventListener("keydown", (e) => { if (e.key === "Enter") { input.blur(); save(); } });
+		const td = document.createElement("td"); td.append(input); tr.append(td);
+	}
+	const td = document.createElement("td");
+	if (it) {
+		const del = document.createElement("button"); del.className = "remove"; del.title = "Remove"; del.textContent = "×";
+		del.addEventListener("click", () => { call("removeItem", it.id); lesson = call("lesson"); showWords(); });
+		td.append(del);
+	}
+	tr.append(td);
+	return tr;
+}
+function showWords() {
+	const rows = $("wordRows"); rows.replaceChildren();
+	for (const it of lesson.items) rows.append(wordRow(it));
+	rows.append(wordRow(null));
+}
+$("titleEdit").addEventListener("change", () => {
+	call("setTitle", $("titleEdit").value); lesson = call("lesson"); text($("lessonTitle"), lesson.title);
+});
+
 function showTab(name) {
 	for (const b of document.querySelectorAll(".tab")) b.classList.toggle("active", b.dataset.tab === name);
 	for (const p of document.querySelectorAll(".panel")) p.hidden = p.dataset.panel !== name;
@@ -73,6 +110,7 @@ function startPractice() {
 			askAnswers: $("askAnswers").checked,
 		}));
 		$("options").hidden = true; $("done").hidden = true; $("practice").hidden = false;
+		$("correctAnyway").hidden = true;
 		text($("feedback"), ""); $("feedback").className = "feedback";
 		showState(st);
 	} catch (e) { text($("feedback"), e.message); }
@@ -80,13 +118,46 @@ function startPractice() {
 $("startButton").addEventListener("click", startPractice);
 $("again").addEventListener("click", () => { $("done").hidden = true; $("options").hidden = false; });
 
+let repeatTimer = null;
 function showState(st) {
 	if (st.done || !st.active) { finish(st); return; }
+	const mode = $("mode").value;
 	text($("question"), st.question);
 	text($("counter"), `${st.asked + 1} / ${st.total}`);
 	$("progressBar").style.width = `${st.total ? (100 * st.asked) / st.total : 0}%`;
-	$("answer").value = ""; $("answer").focus();
+	const hint = $("modeHint"); hint.className = "mode-hint"; text(hint, "");
+	clearTimeout(repeatTimer);
+	$("inmind").hidden = mode !== "inmind"; $("judgeRow").hidden = true; $("viewAnswer").hidden = false;
+	$("answerForm").hidden = mode === "inmind";
+	$("answer").value = ""; $("answer").disabled = false;
+	if (mode === "shuffle") text(hint, st.shuffle);
+	if (mode === "repeat") {
+		// the answer is shown first, then typed from memory
+		hint.classList.add("answer-shown"); text(hint, st.answer); $("answer").disabled = true;
+		repeatTimer = setTimeout(() => { text(hint, ""); $("answer").disabled = false; $("answer").focus(); }, 2500);
+		return;
+	}
+	if (mode !== "inmind") $("answer").focus();
 }
+$("viewAnswer").addEventListener("click", () => {
+	const hint = $("modeHint"); hint.classList.add("answer-shown"); text(hint, call("viewAnswer"));
+	$("viewAnswer").hidden = true; $("judgeRow").hidden = false;
+});
+for (const [id, right] of [["judgeRight", true], ["judgeWrong", false]]) {
+	$(id).addEventListener("click", () => {
+		call("judge", right);
+		$("correctAnyway").hidden = true;
+		text($("feedback"), ""); showState(call("state")); showResults();
+	});
+}
+$("skipButton").addEventListener("click", () => {
+	call("skip"); text($("feedback"), ""); $("correctAnyway").hidden = true; showState(call("state"));
+});
+$("correctAnyway").addEventListener("click", () => {
+	call("correctLast"); $("correctAnyway").hidden = true;
+	const fb = $("feedback"); fb.className = "feedback right"; text(fb, "Counted as right");
+	showState(call("state")); showResults();
+});
 $("answerForm").addEventListener("submit", (e) => {
 	e.preventDefault();
 	const given = $("answer").value;
@@ -95,6 +166,7 @@ $("answerForm").addEventListener("submit", (e) => {
 		const r = call("answer", given);
 		const fb = $("feedback");
 		fb.className = "feedback " + (r.right ? "right" : "wrong");
+		$("correctAnyway").hidden = r.right;
 		text(fb, r.right ? `Right: ${r.correct}` : `Wrong: ${given} → ${r.correct}`);
 		showState(call("state"));
 		showResults();
@@ -151,9 +223,13 @@ $("downloadDialog").addEventListener("close", () => {
 		$("example").click();
 		const tab = new URLSearchParams(location.search).get("tab");
 		if (tab) showTab(tab);
+		const mode = new URLSearchParams(location.search).get("mode");
+		if (mode) $("mode").value = mode;
 		if (new URLSearchParams(location.search).has("practise")) {
 			startPractice();
-			for (const a of ["dog", "kat"]) { $("answer").value = a; $("answerForm").requestSubmit(); }
+			if (!mode || mode === "typing" || mode === "shuffle") {
+				for (const a of ["dog", "kat"]) { $("answer").value = a; $("answerForm").requestSubmit(); }
+			}
 		}
 	}
 })();

@@ -53,8 +53,24 @@ func main() {
 		"answer": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(app.Answer(args[0].String()))
 		}),
-		"stop":   js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Stop(), nil) }),
-		"report": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
+		"stop": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Stop(), nil) }),
+		"setTitle": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(nil, app.SetTitle(args[0].String()))
+		}),
+		"addItem": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(app.AddItem(args[0].String(), args[1].String()))
+		}),
+		"updateItem": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(nil, app.UpdateItem(args[0].Int(), args[1].String(), args[2].String()))
+		}),
+		"removeItem": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(nil, app.RemoveItem(args[0].Int()))
+		}),
+		"viewAnswer":  js.FuncOf(func(js.Value, []js.Value) any { return reply(app.ViewAnswer()) }),
+		"judge":       js.FuncOf(func(_ js.Value, args []js.Value) any { return reply(nil, app.Judge(args[0].Bool())) }),
+		"skip":        js.FuncOf(func(js.Value, []js.Value) any { return reply(nil, app.Skip()) }),
+		"correctLast": js.FuncOf(func(js.Value, []js.Value) any { return reply(nil, app.CorrectLast()) }),
+		"report":      js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
 		"save": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			b, err := app.Save(args[0].String())
 			if err != nil {
