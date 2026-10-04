@@ -281,7 +281,12 @@ func (w *EnterTabWidget) setupUI() {
 	w.wordsTable.SetRowCount(0)
 	w.wordsTable.SetColumnCount(3)
 	w.wordsTable.SetHorizontalHeaderLabels([]string{"Questions", "Answers", "Comment"})
-	w.wordsTable.HorizontalHeader().SetStretchLastSection(true)
+	// questions and answers share the width; the comment column is narrower
+	wh := w.wordsTable.HorizontalHeader()
+	wh.SetSectionResizeMode2(0, qt.QHeaderView__Stretch)
+	wh.SetSectionResizeMode2(1, qt.QHeaderView__Stretch)
+	wh.SetSectionResizeMode2(2, qt.QHeaderView__Interactive)
+	w.wordsTable.SetColumnWidth(2, 200)
 	wordsLayout.AddWidget(w.wordsTable.QWidget)
 
 	layout.AddWidget(wordsGroup.QWidget)
@@ -366,7 +371,8 @@ func (w *EnterTabWidget) updateWordsTable() {
 		w.wordsTable.SetItem(i, 2, commentItem)
 	}
 
-	w.wordsTable.ResizeColumnsToContents()
+	// questions and answers stretch; the comment column keeps a usable width
+	w.wordsTable.SetColumnWidth(2, max(200, w.wordsTable.SizeHintForColumn(2)))
 }
 
 // addNewWord adds a new word pair
@@ -1237,7 +1243,11 @@ func (w *ResultsTabWidget) setupUI() {
 	w.resultsTable.SetRowCount(0)
 	w.resultsTable.SetColumnCount(4)
 	w.resultsTable.SetHorizontalHeaderLabels([]string{"Question", "Correct Answer", "Your Answer", "Result"})
-	w.resultsTable.HorizontalHeader().SetStretchLastSection(true)
+	rh := w.resultsTable.HorizontalHeader()
+	for i := 0; i < 3; i++ {
+		rh.SetSectionResizeMode2(i, qt.QHeaderView__Stretch)
+	}
+	rh.SetSectionResizeMode2(3, qt.QHeaderView__ResizeToContents)
 	w.resultsTable.SetAlternatingRowColors(true)
 	detailsLayout.AddWidget(w.resultsTable.QWidget)
 

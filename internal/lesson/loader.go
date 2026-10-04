@@ -119,7 +119,7 @@ func (fl *FileLoader) loadCSV(filePath string) (*LessonData, error) {
 	reader.FieldsPerRecord = -1 // Allow variable number of fields
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = filepath.Base(filePath)
+	lessonData.List.Title = titleFromPath(filePath)
 
 	itemID := 0
 	for {
@@ -173,7 +173,7 @@ func (fl *FileLoader) loadTextFile(filePath string) (*LessonData, error) {
 	defer file.Close()
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = filepath.Base(filePath)
+	lessonData.List.Title = titleFromPath(filePath)
 
 	scanner := bufio.NewScanner(file)
 	itemID := 0
@@ -502,7 +502,7 @@ func (fl *FileLoader) loadKVTMLFile(filePath string) (*LessonData, error) {
 	lessonData := NewLessonData()
 	lessonData.List.Title = root.Information.Title
 	if lessonData.List.Title == "" {
-		lessonData.List.Title = filepath.Base(filePath)
+		lessonData.List.Title = titleFromPath(filePath)
 	}
 
 	// Set language names if available
@@ -633,7 +633,7 @@ func (fl *FileLoader) loadAnkiDatabase(db *sql.DB, filePath string) (*LessonData
 	log.Printf("[ACTION] FileLoader.loadAnkiDatabase() - parsing Anki SQLite database")
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = fl.extractAnkiDeckName(db, filepath.Base(filePath))
+	lessonData.List.Title = fl.extractAnkiDeckName(db, titleFromPath(filePath))
 
 	// Check if this is Anki 2.x (has notes table)
 	var hasNotes bool
@@ -771,7 +771,7 @@ func (fl *FileLoader) loadMnemosyseDatabase(db *sql.DB, filePath string) (*Lesso
 	log.Printf("[ACTION] FileLoader.loadMnemosyseDatabase() - parsing Mnemosyne SQLite database")
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = fl.extractMnemosyneDeckName(db, filepath.Base(filePath))
+	lessonData.List.Title = fl.extractMnemosyneDeckName(db, titleFromPath(filePath))
 
 	// Query Mnemosyne database - try different schema versions
 	query := `
@@ -844,7 +844,7 @@ func (fl *FileLoader) loadGenericSQLiteDatabase(db *sql.DB, filePath string) (*L
 	log.Printf("[ACTION] FileLoader.loadGenericSQLiteDatabase() - parsing generic SQLite database")
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = filepath.Base(filePath)
+	lessonData.List.Title = titleFromPath(filePath)
 
 	log.Printf("[WARNING] Generic SQLite parsing not implemented - trying CSV fallback")
 	db.Close()
@@ -926,7 +926,7 @@ func (fl *FileLoader) loadXMLFile(filePath string) (*LessonData, error) {
 	lessonData := NewLessonData()
 	lessonData.List.Title = root.Title
 	if lessonData.List.Title == "" {
-		lessonData.List.Title = filepath.Base(filePath)
+		lessonData.List.Title = titleFromPath(filePath)
 	}
 
 	for i, word := range root.Words {
@@ -1022,7 +1022,7 @@ func (fl *FileLoader) loadTeach2000File(filePath string) (*LessonData, error) {
 	lessonData := NewLessonData()
 	lessonData.List.Title = root.Description
 	if lessonData.List.Title == "" {
-		lessonData.List.Title = filepath.Base(filePath)
+		lessonData.List.Title = titleFromPath(filePath)
 	}
 
 	itemID := 0
@@ -1121,7 +1121,7 @@ func (fl *FileLoader) loadJVLTFile(filePath string) (*LessonData, error) {
 	}
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = filepath.Base(filePath)
+	lessonData.List.Title = titleFromPath(filePath)
 
 	itemID := 0
 	for _, entry := range dict.Entries {
@@ -1199,7 +1199,7 @@ func (fl *FileLoader) loadFlashQardFile(filePath string) (*LessonData, error) {
 	lessonData := NewLessonData()
 	lessonData.List.Title = root.Box.Name
 	if lessonData.List.Title == "" {
-		lessonData.List.Title = filepath.Base(filePath)
+		lessonData.List.Title = titleFromPath(filePath)
 	}
 
 	itemID := 0
@@ -1273,7 +1273,7 @@ func (fl *FileLoader) loadTeachMasterFile(filePath string) (*LessonData, error) 
 	lessonData := NewLessonData()
 	lessonData.List.Title = root.Header.Title
 	if lessonData.List.Title == "" {
-		lessonData.List.Title = filepath.Base(filePath)
+		lessonData.List.Title = titleFromPath(filePath)
 	}
 
 	itemID := 0
@@ -1336,7 +1336,7 @@ func (fl *FileLoader) loadCueCardFile(filePath string) (*LessonData, error) {
 	}
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = filepath.Base(filePath)
+	lessonData.List.Title = titleFromPath(filePath)
 
 	itemID := 0
 	for _, card := range root.Cards {
@@ -1386,7 +1386,7 @@ func (fl *FileLoader) loadBackpackFile(filePath string) (*LessonData, error) {
 	defer file.Close()
 
 	lessonData := NewLessonData()
-	lessonData.List.Title = filepath.Base(filePath)
+	lessonData.List.Title = titleFromPath(filePath)
 
 	scanner := bufio.NewScanner(file)
 	itemID := 0
@@ -1587,7 +1587,7 @@ func (fl *FileLoader) loadKGeographyMapFile(filePath string) (*LessonData, error
 	lessonData := NewLessonData()
 	lessonData.List.Title = kgmMap.Name
 	if lessonData.List.Title == "" {
-		lessonData.List.Title = filepath.Base(filePath)
+		lessonData.List.Title = titleFromPath(filePath)
 	}
 
 	itemID := 0
@@ -1854,4 +1854,14 @@ func (fl *FileLoader) loadOpenTeachingMediaFile(filePath string) (*LessonData, e
 
 	log.Printf("[SUCCESS] FileLoader.loadOpenTeachingMediaFile() - loaded %d media items", len(lessonData.List.Items))
 	return lessonData, nil
+}
+
+// titleFromPath is the title of a lesson whose file has none: the file
+// name without its extension ("Dutch verbs" for Dutch verbs.csv).
+func titleFromPath(path string) string {
+	base := filepath.Base(path)
+	if t := strings.TrimSuffix(base, filepath.Ext(base)); t != "" {
+		return t
+	}
+	return base
 }

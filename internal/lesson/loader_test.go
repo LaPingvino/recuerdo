@@ -191,8 +191,8 @@ question_only,
 	}
 
 	// Verify the loaded data
-	if lessonData.List.Title != "test.csv" {
-		t.Errorf("Expected title 'test.csv', got '%s'", lessonData.List.Title)
+	if lessonData.List.Title != "test" {
+		t.Errorf("Expected title 'test', got '%s'", lessonData.List.Title)
 	}
 
 	// Should load valid lines (first two complete lines)
@@ -245,8 +245,8 @@ incomplete=
 	}
 
 	// Verify the loaded data
-	if lessonData.List.Title != "test.txt" {
-		t.Errorf("Expected title 'test.txt', got '%s'", lessonData.List.Title)
+	if lessonData.List.Title != "test" {
+		t.Errorf("Expected title 'test', got '%s'", lessonData.List.Title)
 	}
 
 	// Should load valid lines (first three complete lines)
