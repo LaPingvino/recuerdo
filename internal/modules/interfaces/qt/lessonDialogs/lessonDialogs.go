@@ -423,7 +423,7 @@ func (mod *LessonDialogsModule) getNewLessonData() map[string]interface{} {
 	if mod.wordsRadio != nil && mod.wordsRadio.IsChecked() {
 		data["type"] = "words"
 	} else if mod.topoRadio != nil && mod.topoRadio.IsChecked() {
-		data["type"] = "topology"
+		data["type"] = "topo"
 	} else if mod.mediaRadio != nil && mod.mediaRadio.IsChecked() {
 		data["type"] = "media"
 	} else {

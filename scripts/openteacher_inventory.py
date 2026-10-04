@@ -23,7 +23,8 @@ LEGACY = ROOT / "legacy/modules/org/openteacher"
 GO = ROOT / "internal/modules"
 LESSON = ROOT / "internal/lesson"
 
-STUB = re.compile(r"TODO|FIXME|not (yet )?implemented|\bstub\b|placeholder", re.I)
+# (placeholder as a word: not Qt's SetPlaceholderText)
+STUB = re.compile(r"TODO|FIXME|not (yet )?implemented|\bstub\b|\bplaceholder\b", re.I)
 TYPE = re.compile(r"""self\.type\s*=\s*["'](\w+)["']""")
 DEP = re.compile(r"""mods\([^)]*type\s*=\s*["'](\w+)["']""")
 
@@ -287,6 +288,12 @@ COVERED = {
     "interfaces/qt/ocrGui": ("internal/modules/interfaces/qt/ocrimport", "File > Import from Picture: one dialog "
                              "instead of the wizard (straighten, crop, read with internal/ocr); tested offscreen "
                              "with a real Tesseract run"),
+    "interfaces/qt/enterers/topo": ("internal/modules/interfaces/qt/lessons/topo", "Enter tab: click the map or "
+                                    "type a known place; rename and remove in the list (tested offscreen)"),
+    "interfaces/qt/teachers/topo": ("internal/modules/interfaces/qt/lessons/topo", "Teach tab: Place – Name and "
+                                    "Name – Place on teaching.Session, results kept in the lesson (tested offscreen)"),
+    "interfaces/qt/topoMaps": ("internal/modules/interfaces/qt/lessons/topo", "BundledMaps reads data/maps "
+                               "(OpenTeacher's six maps with their known places, all their names); tested"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

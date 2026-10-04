@@ -73,7 +73,7 @@ func TestCompleteLessonCreationWorkflow(t *testing.T) {
 				"questionLanguage": "English",
 				"answerLanguage":   "English",
 			},
-			expectedType: "topology",
+			expectedType: "topo",
 			shouldWork:   true,
 		},
 		{

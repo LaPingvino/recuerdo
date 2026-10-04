@@ -579,8 +579,11 @@ func (mod *GuiModule) CreateLessonFromDialogData(data map[string]interface{}) (*
 	if name == "" {
 		name = "New Lesson"
 	}
-	if lessonType == "" {
+	switch lessonType {
+	case "":
 		lessonType = "words"
+	case "topology", "topography":
+		lessonType = "topo" // as the lesson files and widgets call it
 	}
 	if questionLang == "" {
 		questionLang = "English"
@@ -680,9 +683,7 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 		mod.logger.Info("Creating topography lesson widget for: %s", lesson.Path)
 		topoWidget := topo.NewTopoLessonWidget(lesson, mod.mainWindow.QWidget)
 		lessonWidget = topoWidget.QWidget
-
-		// Validate layout after creation (will check for overlaps in strict mode)
-		topoWidget.ValidateLayoutAfterShow()
+		topoWidget.SetOnModified(func() { mod.markModified(lessonWidget) })
 	case "media":
 		mod.logger.Info("Creating media lesson widget for: %s", lesson.Path)
 		mediaWidget := media.NewMediaLessonWidget(lesson, mod.mainWindow.QWidget)

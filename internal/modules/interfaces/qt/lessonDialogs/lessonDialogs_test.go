@@ -197,7 +197,7 @@ func TestExpectedDialogFields(t *testing.T) {
 	}
 
 	// Test expected lesson types
-	expectedTypes := []string{"words", "topology", "media"}
+	expectedTypes := []string{"words", "topo", "media"}
 	if len(expectedTypes) == 0 {
 		t.Error("Should have expected lesson types")
 	}

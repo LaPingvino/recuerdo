@@ -57,7 +57,7 @@ func TestCreateLessonFromDialogData(t *testing.T) {
 				"answerLanguage":   "German",
 			},
 			expectedTitle: "New Lesson",
-			expectedType:  "topology",
+			expectedType:  "topo",
 			expectedQLang: "French",
 			expectedALang: "German",
 			shouldError:   false,
@@ -255,7 +255,7 @@ func TestLessonDataValidation(t *testing.T) {
 func TestLessonTypeSupport(t *testing.T) {
 	gui := NewGuiModule()
 
-	supportedTypes := []string{"words", "topology", "media"}
+	supportedTypes := []string{"words", "topo", "media"}
 
 	for _, lessonType := range supportedTypes {
 		t.Run("type_"+lessonType, func(t *testing.T) {

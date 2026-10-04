@@ -46,7 +46,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/website"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/youtube"
 	qtapp "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/qtApp"
-	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
 
 	logicevent "github.com/LaPingvino/recuerdo/internal/modules/logic/event"
@@ -459,12 +458,6 @@ func registerAllModules(manager *core.Manager) error {
 	// if err := manager.Register(teachertopoModule); err != nil {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
-
-	// Register topomaps module
-	topomapsModule := topomaps.NewTopoMapsModule()
-	if err := manager.Register(topomapsModule); err != nil {
-		return fmt.Errorf("failed to register topomaps module: %w", err)
-	}
 
 	// Skip main module - it's a program not a library
 	// mainModule := main.NewTypingTutorModule()

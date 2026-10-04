@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 2 | 2 | 7 | 33 | 20 |  | 16 | 14 | 94 |
+| interfaces | 3 | 2 | 6 | 36 | 17 |  | 16 | 14 | 94 |
 | logic | 11 | 15 |  | 75 | 2 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **16** | **17** | **7** | **119** | **30** | **0** | **98** | **67** | **354** |
+| **all** | **17** | **17** | **6** | **122** | **27** | **0** | **98** | **67** | **354** |
 
 Remarks:
 
@@ -190,6 +190,7 @@ file formats, see **covered** above):
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
 | `interfaces/qt/dialogs/print` | `internal/modules/interfaces/qt/gui` | File > Print shows Qt's print dialog |
+| `interfaces/qt/enterers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Enter tab: click the map or type a known place; rename and remove in the list (tested offscreen) |
 | `interfaces/qt/enterers/words` | `internal/modules/interfaces/qt/lessons/words` | the Enter tab of a word lesson |
 | `interfaces/qt/inputTyping` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab's answer field |
 | `interfaces/qt/loaderGui` | `internal/modules/interfaces/qt/gui` | File > Open and the open dialog |
@@ -216,9 +217,11 @@ file formats, see **covered** above):
 | `interfaces/qt/teachTypes/repeatAnswer` | `internal/modules/interfaces/qt/lessons/words` | Repeat answer mode (with fading) of the Teach tab, tested offscreen |
 | `interfaces/qt/teachTypes/shuffleAnswer` | `internal/modules/interfaces/qt/lessons/words` | Shuffle answer mode of the Teach tab, tested offscreen |
 | `interfaces/qt/teachTypes/typing` | `internal/modules/interfaces/qt/lessons/words` | Typing mode of the Teach tab (internal/teaching), tested offscreen |
+| `interfaces/qt/teachers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Teach tab: Place – Name and Name – Place on teaching.Session, results kept in the lesson (tested offscreen) |
 | `interfaces/qt/teachers/words` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab of a word lesson |
 | `interfaces/qt/testViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab and results dialog show a session's answers |
 | `interfaces/qt/testsViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab lists the results; charts: see progressViewer |
+| `interfaces/qt/topoMaps` | `internal/modules/interfaces/qt/lessons/topo` | BundledMaps reads data/maps (OpenTeacher's six maps with their known places, all their names); tested |
 | `logic/authors` | `internal/modules/data/openteacherAuthors` | the credits list in the About dialog |
 | `logic/dataStore` | `internal/modules/settings.go` | the settings module's JSON file is Recuerdo's persistent store |
 | `logic/execute` | `internal/core, internal/modules/execute.go` | start-up and enabling modules |
@@ -340,18 +343,18 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/media` | mediaEnterer | 305 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/enterers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 354 | 7 | 0 | partial |
-| `interfaces/qt/enterers/topo` | topoEnterer | 251 | 40 | 5 | 0 | scaffold |
+| `interfaces/qt/enterers/topo` | topoEnterer | 251 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1058 | 7 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1061 | 7 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
-| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
-| `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
-| `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 2032 | 11 | 2 | partial |
+| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 14 | 1 | partial |
+| `interfaces/qt/lessons/media` | lesson | 197 | 842 | 5 | 0 | partial |
+| `interfaces/qt/lessons/topo` | lesson | 202 | 680 | 0 | 2 | working |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2032 | 1 | 2 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -394,7 +397,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/teachTypes/typing` | teachType | 46 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/media` | mediaTeacher | 212 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/teachers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/teachers/topo` | topoTeacher | 285 | 42 | 6 | 0 | scaffold |
+| `interfaces/qt/teachers/topo` | topoTeacher | 285 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/teachers/words` | wordsTeacher | 387 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
@@ -410,7 +413,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/testViewerTest` | test | 73 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/testsViewer` | testsViewer | 275 | 0 | 0 | 0 | covered |
 | `interfaces/qt/theme` | theme | 35 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/topoMaps` | topoMaps | 231 | 42 | 6 | 0 | scaffold |
+| `interfaces/qt/topoMaps` | topoMaps | 231 | 0 | 0 | 0 | covered |
 | `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/typingTutor/main` | typingTutor | 358 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 0 | 0 | 0 | dropped |
