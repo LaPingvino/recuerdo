@@ -298,6 +298,17 @@ COVERED = {
                                  "map with the places, fitted to the page (tested by printing to PDF)"),
     "logic/savers/png": ("internal/modules/interfaces/qt/export", "Save as .png writes a topography lesson's map with "
                          "its places (MapPicture; tested), also as PDF"),
+    "interfaces/qt/enterers/media": ("internal/modules/interfaces/qt/lessons/media", "Enter tab: add files (embedded) and web addresses, edit name/question/answer in a table, preview (tested offscreen)"),
+    "interfaces/qt/teachers/media": ("internal/modules/interfaces/qt/lessons/media", "Teach tab: the item and its question, a typed answer on teaching.Session; results kept (tested offscreen)"),
+    "interfaces/qt/mediaDisplay": ("internal/modules/interfaces/qt/lessons/media", "Preview: pictures and texts shown in place, other media opened in the system's player or browser"),
+    "interfaces/qt/mediaTypes/image": ("internal/modules/interfaces/qt/lessons/media", "Kind: picture (OpenTeacher's extensions and more), shown in place"),
+    "interfaces/qt/mediaTypes/text": ("internal/modules/interfaces/qt/lessons/media", "Kind: text (.txt), shown in place"),
+    "interfaces/qt/mediaTypes/audio": ("internal/modules/interfaces/qt/lessons/media", "Kind: sound; played by the system's player (no QtMultimedia dependency)"),
+    "interfaces/qt/mediaTypes/video": ("internal/modules/interfaces/qt/lessons/media", "Kind: video; played by the system's player (no QtMultimedia dependency)"),
+    "interfaces/qt/mediaTypes/website": ("internal/modules/interfaces/qt/lessons/media", "Kind: website (http and https); opened in the web browser"),
+    "interfaces/qt/mediaTypes/youtube": ("internal/modules/interfaces/qt/lessons/media", "Kind: YouTube video (watch and youtu.be links); opened in the web browser"),
+    "interfaces/qt/mediaTypes/vimeo": ("internal/modules/interfaces/qt/lessons/media", "Kind: Vimeo video; opened in the web browser"),
+    "interfaces/qt/mediaTypes/dailymotion": ("internal/modules/interfaces/qt/lessons/media", "Kind: Dailymotion video; opened in the web browser"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }
@@ -305,6 +316,7 @@ COVERED = {
 
 # Why the modules dropped one by one (beyond the areas in DROPPED) were.
 DROPPED_REASONS = {
+    "interfaces/qt/mediaTypes/liveleak": "LiveLeak closed in 2021: its video links no longer work",
     "logic/interfaces/typingTutorModel": "for now: OpenTeacher's touch typing course is a different kind of lesson "
                                          "than Recuerdo's words, topography and media lessons",
     "interfaces/qt/theme": "an optional dark style sheet nothing used; Recuerdo follows the desktop's Qt style (a dark theme could come back as a setting)",

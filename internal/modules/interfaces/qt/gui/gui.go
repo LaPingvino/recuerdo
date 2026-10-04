@@ -688,6 +688,7 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 		mod.logger.Info("Creating media lesson widget for: %s", lesson.Path)
 		mediaWidget := media.NewMediaLessonWidget(lesson, mod.mainWindow.QWidget)
 		lessonWidget = mediaWidget.QWidget
+		mediaWidget.SetOnModified(func() { mod.markModified(lessonWidget) })
 	case "words":
 		fallthrough
 	default:

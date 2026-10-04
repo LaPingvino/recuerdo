@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 3 | 2 | 6 | 37 | 16 |  | 16 | 14 | 94 |
+| interfaces | 4 | 2 | 5 | 48 | 4 |  | 17 | 14 | 94 |
 | logic | 11 | 15 |  | 76 | 1 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **17** | **17** | **6** | **124** | **25** | **0** | **98** | **67** | **354** |
+| **all** | **18** | **17** | **5** | **135** | **13** | **0** | **99** | **67** | **354** |
 
 Remarks:
 
@@ -190,10 +190,20 @@ file formats, see **covered** above):
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
 | `interfaces/qt/dialogs/print` | `internal/modules/interfaces/qt/gui` | File > Print shows Qt's print dialog |
+| `interfaces/qt/enterers/media` | `internal/modules/interfaces/qt/lessons/media` | Enter tab: add files (embedded) and web addresses, edit name/question/answer in a table, preview (tested offscreen) |
 | `interfaces/qt/enterers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Enter tab: click the map or type a known place; rename and remove in the list (tested offscreen) |
 | `interfaces/qt/enterers/words` | `internal/modules/interfaces/qt/lessons/words` | the Enter tab of a word lesson |
 | `interfaces/qt/inputTyping` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab's answer field |
 | `interfaces/qt/loaderGui` | `internal/modules/interfaces/qt/gui` | File > Open and the open dialog |
+| `interfaces/qt/mediaDisplay` | `internal/modules/interfaces/qt/lessons/media` | Preview: pictures and texts shown in place, other media opened in the system's player or browser |
+| `interfaces/qt/mediaTypes/audio` | `internal/modules/interfaces/qt/lessons/media` | Kind: sound; played by the system's player (no QtMultimedia dependency) |
+| `interfaces/qt/mediaTypes/dailymotion` | `internal/modules/interfaces/qt/lessons/media` | Kind: Dailymotion video; opened in the web browser |
+| `interfaces/qt/mediaTypes/image` | `internal/modules/interfaces/qt/lessons/media` | Kind: picture (OpenTeacher's extensions and more), shown in place |
+| `interfaces/qt/mediaTypes/text` | `internal/modules/interfaces/qt/lessons/media` | Kind: text (.txt), shown in place |
+| `interfaces/qt/mediaTypes/video` | `internal/modules/interfaces/qt/lessons/media` | Kind: video; played by the system's player (no QtMultimedia dependency) |
+| `interfaces/qt/mediaTypes/vimeo` | `internal/modules/interfaces/qt/lessons/media` | Kind: Vimeo video; opened in the web browser |
+| `interfaces/qt/mediaTypes/website` | `internal/modules/interfaces/qt/lessons/media` | Kind: website (http and https); opened in the web browser |
+| `interfaces/qt/mediaTypes/youtube` | `internal/modules/interfaces/qt/lessons/media` | Kind: YouTube video (watch and youtu.be links); opened in the web browser |
 | `interfaces/qt/ocrGui` | `internal/modules/interfaces/qt/ocrimport` | File > Import from Picture: one dialog instead of the wizard (straighten, crop, read with internal/ocr); tested offscreen with a real Tesseract run |
 | `interfaces/qt/percentNotesViewer` | `internal/modules/interfaces/qt/charts` | GradesChart: a bar per session with its percentage, on the Results tab |
 | `interfaces/qt/print/topo` | `internal/modules/interfaces/qt/export` | Print of a topography lesson prints its map with the places, fitted to the page (tested by printing to PDF) |
@@ -218,6 +228,7 @@ file formats, see **covered** above):
 | `interfaces/qt/teachTypes/repeatAnswer` | `internal/modules/interfaces/qt/lessons/words` | Repeat answer mode (with fading) of the Teach tab, tested offscreen |
 | `interfaces/qt/teachTypes/shuffleAnswer` | `internal/modules/interfaces/qt/lessons/words` | Shuffle answer mode of the Teach tab, tested offscreen |
 | `interfaces/qt/teachTypes/typing` | `internal/modules/interfaces/qt/lessons/words` | Typing mode of the Teach tab (internal/teaching), tested offscreen |
+| `interfaces/qt/teachers/media` | `internal/modules/interfaces/qt/lessons/media` | Teach tab: the item and its question, a typed answer on teaching.Session; results kept (tested offscreen) |
 | `interfaces/qt/teachers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Teach tab: Place – Name and Name – Place on teaching.Session, results kept in the lesson (tested offscreen) |
 | `interfaces/qt/teachers/words` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab of a word lesson |
 | `interfaces/qt/testViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab and results dialog show a session's answers |
@@ -262,6 +273,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
 | `data/profileDescriptions/wordsOnly` | as selfstudy ("just gimme my good old OpenTeacher 2.x"); a setting hiding topography and media lessons could do this later |
 | `interfaces/qt/hiddenBrowser` | a hidden web browser (an easter egg) nothing else used |
+| `interfaces/qt/mediaTypes/liveleak` | LiveLeak closed in 2021: its video links no longer work |
 | `interfaces/qt/theme` | an optional dark style sheet nothing used; Recuerdo follows the desktop's Qt style (a dark theme could come back as a setting) |
 | `interfaces/qt/typingTutor/keyboard` | for now: the keyboard of the touch typing course; see typingTutorModel |
 | `interfaces/qt/typingTutor/main` | for now: the screen of OpenTeacher's touch typing course; see typingTutorModel |
@@ -342,32 +354,32 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/dialogs/results` | resultsDialog | 51 | 86 | 0 | 1 | working |
 | `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 210 | 2 | 0 | partial |
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
-| `interfaces/qt/enterers/media` | mediaEnterer | 305 | 40 | 5 | 0 | scaffold |
+| `interfaces/qt/enterers/media` | mediaEnterer | 305 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 354 | 7 | 0 | partial |
 | `interfaces/qt/enterers/topo` | topoEnterer | 251 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1061 | 7 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1062 | 7 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 14 | 1 | partial |
-| `interfaces/qt/lessons/media` | lesson | 197 | 842 | 5 | 0 | partial |
+| `interfaces/qt/lessons/media` | lesson | 197 | 585 | 0 | 2 | working |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 680 | 0 | 2 | working |
 | `interfaces/qt/lessons/words` | lesson | 211 | 2032 | 1 | 2 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
-| `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/dailymotion` | mediaType | 37 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/image` | mediaType | 37 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/liveleak` | mediaType | 37 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/text` | mediaType | 37 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/video` | mediaType | 81 | 46 | 8 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/vimeo` | mediaType | 36 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/website` | mediaType | 34 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/mediaTypes/youtube` | mediaType | 39 | 42 | 6 | 0 | scaffold |
+| `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/dailymotion` | mediaType | 37 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/image` | mediaType | 37 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/liveleak` | mediaType | 37 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/mediaTypes/text` | mediaType | 37 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/video` | mediaType | 81 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/vimeo` | mediaType | 36 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/website` | mediaType | 34 | 0 | 0 | 0 | covered |
+| `interfaces/qt/mediaTypes/youtube` | mediaType | 39 | 0 | 0 | 0 | covered |
 | `interfaces/qt/ocrGui` | ocrGui | 273 | 0 | 0 | 0 | covered |
 | `interfaces/qt/percentNotesViewer` | percentNotesViewer | 80 | 0 | 0 | 0 | covered |
 | `interfaces/qt/print/media` | print | 53 | 42 | 6 | 0 | scaffold |
@@ -397,7 +409,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/teachTypes/repeatAnswer` | teachType | 154 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachTypes/shuffleAnswer` | teachType | 106 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachTypes/typing` | teachType | 46 | 0 | 0 | 0 | covered |
-| `interfaces/qt/teachers/media` | mediaTeacher | 212 | 42 | 6 | 0 | scaffold |
+| `interfaces/qt/teachers/media` | mediaTeacher | 212 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/teachers/topo` | topoTeacher | 285 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |

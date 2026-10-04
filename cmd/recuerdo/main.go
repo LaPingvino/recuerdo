@@ -35,16 +35,6 @@ import (
 
 	// "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/documentation" // Disabled due to build constraints
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/gui"
-	mediadisplay "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaDisplay"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/audio"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/dailymotion"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/image"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/liveleak"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/text"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/video"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/vimeo"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/website"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/youtube"
 	qtapp "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/qtApp"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
 
@@ -372,66 +362,6 @@ func registerAllModules(manager *core.Manager) error {
 	teachtopoModule := testtypestopo.NewTopoTestTypeModule()
 	if err := manager.Register(teachtopoModule); err != nil {
 		return fmt.Errorf("failed to register topo module: %w", err)
-	}
-
-	// Register mediadisplay module
-	mediadisplayModule := mediadisplay.NewMediaDisplayModule()
-	if err := manager.Register(mediadisplayModule); err != nil {
-		return fmt.Errorf("failed to register mediadisplay module: %w", err)
-	}
-
-	// Register audio module
-	audioModule := audio.NewMediaTypeModule()
-	if err := manager.Register(audioModule); err != nil {
-		return fmt.Errorf("failed to register audio module: %w", err)
-	}
-
-	// Register dailymotion module
-	dailymotionModule := dailymotion.NewMediaTypeModule()
-	if err := manager.Register(dailymotionModule); err != nil {
-		return fmt.Errorf("failed to register dailymotion module: %w", err)
-	}
-
-	// Register image module
-	imageModule := image.NewMediaTypeModule()
-	if err := manager.Register(imageModule); err != nil {
-		return fmt.Errorf("failed to register image module: %w", err)
-	}
-
-	// Register liveleak module
-	liveleakModule := liveleak.NewMediaTypeModule()
-	if err := manager.Register(liveleakModule); err != nil {
-		return fmt.Errorf("failed to register liveleak module: %w", err)
-	}
-
-	// Register text module
-	textModule := text.NewMediaTypeModule()
-	if err := manager.Register(textModule); err != nil {
-		return fmt.Errorf("failed to register text module: %w", err)
-	}
-
-	// Register video module
-	videoModule := video.NewMediaTypeModule()
-	if err := manager.Register(videoModule); err != nil {
-		return fmt.Errorf("failed to register video module: %w", err)
-	}
-
-	// Register vimeo module
-	vimeoModule := vimeo.NewMediaTypeModule()
-	if err := manager.Register(vimeoModule); err != nil {
-		return fmt.Errorf("failed to register vimeo module: %w", err)
-	}
-
-	// Register website module
-	websiteModule := website.NewMediaTypeModule()
-	if err := manager.Register(websiteModule); err != nil {
-		return fmt.Errorf("failed to register website module: %w", err)
-	}
-
-	// Register youtube module
-	youtubeModule := youtube.NewMediaTypeModule()
-	if err := manager.Register(youtubeModule); err != nil {
-		return fmt.Errorf("failed to register youtube module: %w", err)
 	}
 
 	// Register media module - DISABLED (duplicate module name conflict)
