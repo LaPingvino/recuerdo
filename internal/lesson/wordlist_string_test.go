@@ -26,3 +26,26 @@ func TestWordListString(t *testing.T) {
 		t.Errorf("round trip: %+v, %v", again, err)
 	}
 }
+
+// Formulas and HTML tags keep their commas, semicolons and equals signs.
+func TestParseWordListFormulasAndTags(t *testing.T) {
+	items, err := ParseWordList("a function = $f(x, y)$, $g$\n"+
+		"$a = b$ = an equation\n"+
+		`a dog = <img src="data:image/png;base64,AA,BB" alt="dog">`+"\n"+
+		`price = \$5, five dollars`+"\n", false)
+	if err != nil || len(items) != 4 {
+		t.Fatalf("%+v %v", items, err)
+	}
+	if got := items[0].Answers; len(got) != 2 || got[0] != "$f(x, y)$" || got[1] != "$g$" {
+		t.Errorf("formula with a comma: %q", got)
+	}
+	if items[1].Questions[0] != "$a = b$" || items[1].Answers[0] != "an equation" {
+		t.Errorf("formula with an equals sign: %q = %q", items[1].Questions, items[1].Answers)
+	}
+	if got := items[2].Answers; len(got) != 1 || got[0] != `<img src="data:image/png;base64,AA,BB" alt="dog">` {
+		t.Errorf("tag with commas: %q", got)
+	}
+	if got := items[3].Answers; len(got) != 2 || got[0] != `\$5` {
+		t.Errorf("escaped dollar: %q", got)
+	}
+}

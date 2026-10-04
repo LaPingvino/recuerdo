@@ -17,6 +17,8 @@ func TestSanitize(t *testing.T) {
 		`<audio src="bark.mp3"></audio>`:                           `<audio src="bark.mp3" controls></audio>`,
 		`<div class="x"><span lang="ja" style="c">日本</span></div>`: `<span lang="ja">日本</span>`,
 		`<iframe src="https://evil"></iframe>text`:                 "text",
+		`costs \$5, not \$6`:                                       `costs <span class="dollar">$</span>5, not <span class="dollar">$</span>6`,
+		`$x^2$`:                                                    `$x^2$`,
 	} {
 		if got := Sanitize(in); got != want {
 			t.Errorf("Sanitize(%q) = %q, want %q", in, got, want)

@@ -47,12 +47,57 @@ func ComposeWordList(items []WordItem) string {
 // splitUnescaped splits a line at the first "=" or tab not preceded by a
 // backslash.
 func splitUnescaped(line string) (string, string, bool) {
+	inside := protected(line)
 	for i := 0; i < len(line); i++ {
-		if (line[i] == '=' || line[i] == '\t') && (i == 0 || line[i-1] != '\\') {
+		if (line[i] == '=' || line[i] == '\t') && (i == 0 || line[i-1] != '\\') && !inside[i] {
 			return line[:i], line[i+1:], true
 		}
 	}
 	return "", "", false
+}
+
+// protected marks the bytes of s inside a formula ($...$, $$...$$,
+// \(...\), \[...\]) or an HTML tag (<...>): an equals sign, comma or
+// semicolon there belongs to the formula or tag (f(x, y), a data: URL),
+// not to the word list notation.
+func protected(s string) []bool {
+	in := make([]bool, len(s))
+	mark := func(from, to int) {
+		for k := from; k < to && k < len(s); k++ {
+			in[k] = true
+		}
+	}
+	for i := 0; i < len(s); {
+		switch {
+		case strings.HasPrefix(s[i:], `\$`):
+			i += 2
+			continue
+		case s[i] == '<' && i+1 < len(s) && (s[i+1] == '/' || s[i+1] >= 'a' && s[i+1] <= 'z' || s[i+1] >= 'A' && s[i+1] <= 'Z'):
+			if j := strings.IndexByte(s[i:], '>'); j > 0 {
+				mark(i, i+j+1)
+				i += j + 1
+				continue
+			}
+		case s[i] == '$' || strings.HasPrefix(s[i:], `\(`) || strings.HasPrefix(s[i:], `\[`):
+			open, close := "$", "$"
+			switch {
+			case strings.HasPrefix(s[i:], "$$"):
+				open, close = "$$", "$$"
+			case strings.HasPrefix(s[i:], `\(`):
+				open, close = `\(`, `\)`
+			case strings.HasPrefix(s[i:], `\[`):
+				open, close = `\[`, `\]`
+			}
+			if j := strings.Index(s[i+len(open):], close); j > 0 {
+				end := i + len(open) + j + len(close)
+				mark(i, end)
+				i = end
+				continue
+			}
+		}
+		i++
+	}
+	return in
 }
 
 var wordListUnescaper = strings.NewReplacer(`\=`, "=", `\t`, "\t")
@@ -74,9 +119,14 @@ func escapeWordList(s string) string {
 // does: by commas and semicolons.
 func splitWords(s string) []string {
 	var out []string
-	for _, w := range strings.FieldsFunc(s, func(r rune) bool { return r == ',' || r == ';' }) {
-		if w = strings.TrimSpace(w); w != "" {
-			out = append(out, w)
+	inside := protected(s)
+	start := 0
+	for i := 0; i <= len(s); i++ {
+		if i == len(s) || (s[i] == ',' || s[i] == ';') && !inside[i] {
+			if w := strings.TrimSpace(s[start:i]); w != "" {
+				out = append(out, w)
+			}
+			start = i + 1
 		}
 	}
 	return out

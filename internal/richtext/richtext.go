@@ -48,7 +48,7 @@ func safeURL(u string, link bool) bool {
 // the allowed elements and attributes are kept (others keep their text).
 func Sanitize(s string) string {
 	if !IsRich(s) {
-		return html.EscapeString(s)
+		return escapeText(s)
 	}
 	nodes, err := html.ParseFragment(strings.NewReader(s), &html.Node{Type: html.ElementNode, Data: "div", DataAtom: atom.Div})
 	if err != nil {
@@ -64,7 +64,7 @@ func Sanitize(s string) string {
 func clean(b *bytes.Buffer, n *html.Node) {
 	switch n.Type {
 	case html.TextNode:
-		b.WriteString(html.EscapeString(n.Data))
+		b.WriteString(escapeText(n.Data))
 		return
 	case html.ElementNode:
 	default:
@@ -104,6 +104,13 @@ func clean(b *bytes.Buffer, n *html.Node) {
 	}
 }
 
+// escapeText escapes text for HTML; an escaped dollar (\$) becomes a
+// dollar in an element of its own, so the page's formula renderer
+// (KaTeX, which finds $...$ within one text) leaves it alone.
+func escapeText(s string) string {
+	return strings.ReplaceAll(html.EscapeString(s), `\$`, `<span class="dollar">$</span>`)
+}
+
 func contains(list []string, s string) bool {
 	for _, x := range list {
 		if x == s {
@@ -115,8 +122,10 @@ func contains(list []string, s string) bool {
 
 // Plain is the text of s without markup, as typed: H<sub>2</sub>O gives
 // H2O, and furigana (<rt>, <rp>) are left out; a picture counts as its
-// alt text. Text without markup is returned as it is.
+// alt text; a formula is its TeX without spaces (PlainMath). Text without
+// markup is returned as it is.
 func Plain(s string) string {
+	s = PlainMath(s)
 	if !IsRich(s) {
 		return s
 	}

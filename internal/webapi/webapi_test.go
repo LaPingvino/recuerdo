@@ -154,3 +154,35 @@ func TestRichWords(t *testing.T) {
 		t.Error("water should be right")
 	}
 }
+
+func TestFormulas(t *testing.T) {
+	var a App
+	a.OpenText("Wiskunde", "the area of a circle = $\\pi r^2$\nx squared plus one = $x^2 + 1$\n")
+	l, _ := a.Lesson()
+	if l.Items[0].AnswerHTML != "$\\pi r^2$" {
+		t.Errorf("formulas stay as TeX for KaTeX: %q", l.Items[0].AnswerHTML)
+	}
+	a.Start(Options{})
+	if r, _ := a.Answer("\\pi r^2"); !r.Right {
+		t.Errorf("\\pi r^2: %+v", r)
+	}
+	if r, _ := a.Answer("x^2+1"); !r.Right {
+		t.Errorf("x^2+1 (without spaces): %+v", r)
+	}
+	if rows := a.Report(); len(rows) != 2 || rows[0].AnswerHTML != "$\\pi r^2$" || rows[0].Answer != "\\pir^2" {
+		t.Errorf("report: %+v", rows)
+	}
+	if st := a.State(); !st.Done || st.Right != 2 {
+		t.Errorf("both right: %+v", st)
+	}
+	a.OpenText("f", "a function of two variables = $f(x, y)$\n")
+	a.Start(Options{})
+	if r, _ := a.Answer("f(x,y)"); !r.Right || r.CorrectHTML != "$f(x, y)$" {
+		t.Errorf("f(x,y): %+v", r)
+	}
+	a.OpenText("f", "a function of two variables = $f(x, y)$\n")
+	a.Start(Options{})
+	if r, _ := a.Answer("f(y,x)"); r.Right {
+		t.Error("f(y,x) is not f(x, y)")
+	}
+}

@@ -10,7 +10,8 @@ const RICH_EXAMPLE = [
 	"<ruby>日本語<rt>にほんご</rt></ruby> = Japanese",
 	"water = H<sub>2</sub>O",
 	"carbon dioxide = CO<sub>2</sub>",
-	"the area of a circle = πr<sup>2</sup>",
+	"the area of a circle = $\\pi r^2$",
+	"the roots of ax² + bx + c = $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$",
 ].join("\n");
 
 let api = null;
@@ -20,6 +21,20 @@ function call(name, ...args) {
 	return out;
 }
 function text(el, s) { el.textContent = s; }
+// html shows a word's safe HTML (from Go's internal/richtext) in el, with
+// its formulas ($...$, $$...$$, \(...\), \[...\]) typeset by KaTeX.
+function html(el, safe) {
+	el.innerHTML = safe || "";
+	if (globalThis.renderMathInElement) {
+		renderMathInElement(el, {
+			delimiters: [
+				{ left: "$$", right: "$$", display: true }, { left: "\\[", right: "\\]", display: true },
+				{ left: "\\(", right: "\\)", display: false }, { left: "$", right: "$", display: false },
+			],
+			throwOnError: false,
+		});
+	}
+}
 
 // ---- translations (the desktop's, through Go's internal/i18n) ----
 // t translates msgid and fills in %s and %d (%% is a percent sign).
@@ -94,6 +109,7 @@ async function startLanguages() {
 		await useLanguage(menu.value);
 	});
 }
+function escapeText(x) { const d = document.createElement("span"); d.textContent = x; return d.innerHTML; }
 function showError(e) { const el = $("startError"); text(el, e.message || String(e)); el.hidden = false; }
 
 // ---- start: open a file, type a list or try the example ----
@@ -150,13 +166,13 @@ function wordRow(it) {
 		} catch (e) { alert(e.message); }
 	};
 	const plainHtml = (x) => { const d = document.createElement("span"); d.textContent = x; return d.innerHTML; };
-	for (const [input, raw, html] of [[q, it && it.question, it && it.questionHtml], [a, it && it.answer, it && it.answerHtml]]) {
+	for (const [input, raw, safe] of [[q, it && it.question, it && it.questionHtml], [a, it && it.answer, it && it.answerHtml]]) {
 		input.addEventListener("change", save);
 		input.addEventListener("keydown", (e) => { if (e.key === "Enter") { input.blur(); save(); } });
 		const td = document.createElement("td"); td.append(input);
 		// words with markup also show how they look
-		if (html && html !== plainHtml(raw)) {
-			const p = document.createElement("div"); p.className = "preview"; p.innerHTML = html; td.append(p);
+		if (safe && (safe !== plainHtml(raw) || /\$|\\[(\[]/.test(raw))) {
+			const p = document.createElement("div"); p.className = "preview"; html(p, safe); td.append(p);
 		}
 		tr.append(td);
 	}
@@ -217,7 +233,7 @@ function showState(st) {
 	const mode = $("mode").value;
 	// the words' safe HTML (furigana, H<sub>2</sub>O, pictures), made by
 	// Go's internal/richtext
-	$("question").innerHTML = st.questionHtml || "";
+	html($("question"), st.questionHtml);
 	text($("counter"), `${st.asked + 1} / ${st.total}`);
 	$("progressBar").style.width = `${st.total ? (100 * st.asked) / st.total : 0}%`;
 	const hint = $("modeHint"); hint.className = "mode-hint"; text(hint, "");
@@ -228,7 +244,7 @@ function showState(st) {
 	if (mode === "shuffle") text(hint, st.shuffle);
 	if (mode === "repeat") {
 		// the answer is shown first, then typed from memory
-		hint.classList.add("answer-shown"); hint.innerHTML = st.answerHtml || ""; $("answer").disabled = true;
+		hint.classList.add("answer-shown"); html(hint, st.answerHtml); $("answer").disabled = true;
 		repeatTimer = setTimeout(() => { text(hint, ""); $("answer").disabled = false; $("answer").focus(); }, 2500);
 		return;
 	}
@@ -236,7 +252,7 @@ function showState(st) {
 }
 $("viewAnswer").addEventListener("click", () => {
 	call("viewAnswer");
-	const hint = $("modeHint"); hint.classList.add("answer-shown"); hint.innerHTML = currentState.answerHtml || "";
+	const hint = $("modeHint"); hint.classList.add("answer-shown"); html(hint, currentState.answerHtml);
 	$("viewAnswer").hidden = true; $("judgeRow").hidden = false;
 });
 for (const [id, right] of [["judgeRight", true], ["judgeWrong", false]]) {
@@ -265,7 +281,7 @@ $("answerForm").addEventListener("submit", (e) => {
 		$("correctAnyway").hidden = r.right;
 		// the right answer with its markup; what was typed as plain text
 		const esc = (x) => { const d = document.createElement("span"); d.textContent = x; return d.innerHTML; };
-		fb.innerHTML = r.right ? t("Right: %s", r.correctHtml) : t("Wrong: %s → %s", esc(given), r.correctHtml);
+		html(fb, r.right ? t("Right: %s", r.correctHtml) : t("Wrong: %s → %s", esc(given), r.correctHtml));
 		showState(call("state"));
 		showResults();
 	} catch (err) { text($("feedback"), err.message); }
@@ -288,7 +304,8 @@ function showResults() {
 	const body = $("resultRows"); body.replaceChildren();
 	for (const r of rows) {
 		const tr = document.createElement("tr");
-		for (const s of [r.question, r.answer, r.given]) { const td = document.createElement("td"); text(td, s); tr.append(td); }
+		for (const safe of [r.questionHtml, r.answerHtml]) { const td = document.createElement("td"); html(td, safe); tr.append(td); }
+		{ const td = document.createElement("td"); text(td, r.given); tr.append(td); }
 		const mark = document.createElement("td"); mark.className = r.right ? "ok" : "no"; text(mark, r.right ? t("Right") : t("Wrong")); tr.append(mark);
 		body.append(tr);
 	}

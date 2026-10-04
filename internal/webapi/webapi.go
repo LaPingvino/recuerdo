@@ -14,6 +14,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/lesson"
+	wordsreverser "github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
 	"github.com/LaPingvino/recuerdo/internal/richtext"
@@ -76,10 +77,12 @@ type Result struct {
 
 // Row is one answer of a finished session.
 type Row struct {
-	Question string `json:"question"`
-	Answer   string `json:"answer"`
-	Given    string `json:"given"`
-	Right    bool   `json:"right"`
+	Question     string `json:"question"`
+	Answer       string `json:"answer"`
+	Given        string `json:"given"`
+	Right        bool   `json:"right"`
+	QuestionHTML string `json:"questionHtml"`
+	AnswerHTML   string `json:"answerHtml"`
 }
 
 // Choices are the values the page offers for Options, with their labels
@@ -96,6 +99,9 @@ type App struct {
 	name    string
 	session *teaching.Session
 	opts    Options
+	// mathAnswer marks the items whose answer has a formula: typed answers
+	// to them are compared without spaces
+	mathAnswer map[int]bool
 }
 
 // ErrNoLesson is returned when there is no lesson to work on.
@@ -178,6 +184,16 @@ func (a *App) Start(o Options) (State, error) {
 		return State{}, ErrNoLesson
 	}
 	a.opts = o
+	a.mathAnswer = map[int]bool{}
+	for i, it := range a.data.List.Items {
+		words := it.Answers
+		if o.AskAnswers {
+			words = it.Questions
+		}
+		for _, w := range words {
+			a.mathAnswer[i] = a.mathAnswer[i] || richtext.HasMath(w)
+		}
+	}
 	// answers are checked against the words' plain text (H<sub>2</sub>O
 	// is typed H2O); the page shows the words with their markup
 	a.session = teaching.New(plainList(a.data.List), teaching.Options{
@@ -213,8 +229,20 @@ func (a *App) Answer(text string) (Result, error) {
 	if strings.TrimSpace(text) == "" {
 		return Result{}, errors.New("type an answer")
 	}
-	_, index, _ := a.session.Current()
+	item, index, _ := a.session.Current()
 	_, correctHTML := a.shown(index)
+	if a.mathAnswer[index] {
+		// a formula: its TeX, typed without regard to spaces, not OpenTeacher's
+		// notation (whose commas would split f(x, y))
+		correct := a.session.CurrentAnswer()
+		right := false
+		for _, w := range item.Answers {
+			right = right || richtext.NormalizeAnswer(w) == richtext.NormalizeAnswer(text)
+		}
+		a.session.Record(right, text)
+		a.finishIfDone()
+		return Result{Right: right, Correct: correct, CorrectHTML: correctHTML}, nil
+	}
 	r := a.session.Answer(text)
 	a.session.Next()
 	a.finishIfDone()
@@ -249,9 +277,16 @@ func (a *App) Report() []Row {
 	if a.session == nil {
 		return nil
 	}
+	// the original words (with their markup), the way round they were asked
+	list := a.data.List
+	list.Items = append([]lesson.WordItem(nil), list.Items...)
+	if a.opts.AskAnswers {
+		wordsreverser.Reverse(&list)
+	}
 	var rows []Row
-	for _, r := range a.session.Report().Rows {
-		rows = append(rows, Row{Question: r.Question, Answer: r.Answer, Given: r.Given, Right: r.Right})
+	for _, r := range teaching.NewReport(list, a.session.Test()).Rows {
+		rows = append(rows, Row{Question: richtext.Plain(r.Question), Answer: richtext.Plain(r.Answer), Given: r.Given,
+			Right: r.Right, QuestionHTML: richtext.Sanitize(r.Question), AnswerHTML: richtext.Sanitize(r.Answer)})
 	}
 	return rows
 }
