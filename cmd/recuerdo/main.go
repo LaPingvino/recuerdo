@@ -134,16 +134,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
 	safehtmlchecker "github.com/LaPingvino/recuerdo/internal/modules/logic/safeHtmlChecker"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/saver"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/latex"
-	libreofficeformats "github.com/LaPingvino/recuerdo/internal/modules/logic/savers/libreofficeFormats"
-	mediahtml "github.com/LaPingvino/recuerdo/internal/modules/logic/savers/mediaHtml"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/odt"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/pdf"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/png"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/sylk"
-	topohtml "github.com/LaPingvino/recuerdo/internal/modules/logic/savers/topoHtml"
-	wordshtml "github.com/LaPingvino/recuerdo/internal/modules/logic/savers/wordsHtml"
 
 	testtypesmedia "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/media"
 	testtypestopo "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/topo"
@@ -1125,64 +1116,10 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register safehtmlchecker module: %w", err)
 	}
 
-	// Register saver module
-	saverModule := saver.NewSaverModule()
-	if err := manager.Register(saverModule); err != nil {
-		return fmt.Errorf("failed to register saver module: %w", err)
-	}
-
-	// Register latex module
-	latexModule := latex.NewLaTeXSaverModule()
-	if err := manager.Register(latexModule); err != nil {
-		return fmt.Errorf("failed to register latex module: %w", err)
-	}
-
-	// Register libreofficeformats module
-	libreofficeformatsModule := libreofficeformats.NewLibreofficeFormatsSaverModule()
-	if err := manager.Register(libreofficeformatsModule); err != nil {
-		return fmt.Errorf("failed to register libreofficeformats module: %w", err)
-	}
-
-	// Register mediahtml module
-	mediahtmlModule := mediahtml.NewHtmlSaverModule()
-	if err := manager.Register(mediahtmlModule); err != nil {
-		return fmt.Errorf("failed to register mediahtml module: %w", err)
-	}
-
-	// Register odt module
-	odtModule := odt.NewOdtSaverModule()
-	if err := manager.Register(odtModule); err != nil {
-		return fmt.Errorf("failed to register odt module: %w", err)
-	}
-
-	// Register pdf module
-	pdfModule := pdf.NewPdfSaverModule()
-	if err := manager.Register(pdfModule); err != nil {
-		return fmt.Errorf("failed to register pdf module: %w", err)
-	}
-
 	// Register png module
 	pngModule := png.NewPngSaverModule()
 	if err := manager.Register(pngModule); err != nil {
 		return fmt.Errorf("failed to register png module: %w", err)
-	}
-
-	// Register sylk module
-	sylkModule := sylk.NewSylkSaverModule()
-	if err := manager.Register(sylkModule); err != nil {
-		return fmt.Errorf("failed to register sylk module: %w", err)
-	}
-
-	// Register topohtml module
-	topohtmlModule := topohtml.NewHtmlSaverModule()
-	if err := manager.Register(topohtmlModule); err != nil {
-		return fmt.Errorf("failed to register topohtml module: %w", err)
-	}
-
-	// Register wordshtml module
-	wordshtmlModule := wordshtml.NewHtmlSaverModule()
-	if err := manager.Register(wordshtmlModule); err != nil {
-		return fmt.Errorf("failed to register wordshtml module: %w", err)
 	}
 
 	// Register settings module

@@ -154,6 +154,9 @@ def central_format(rel):
     # FileLoader.LoadFile itself
     if parts == ("logic", "loader"):
         return "internal/lesson"
+    # and the generic saver is FileSaver.SaveFile with export.Save
+    if parts == ("logic", "saver"):
+        return "internal/lesson"
     if len(parts) != 3 or parts[:2] not in (("logic", "loaders"), ("logic", "savers")):
         return ""
     loader = parts[1] == "loaders"
@@ -169,6 +172,13 @@ def central_format(rel):
         # only formats the load/save switch dispatches on, not comments or names
         if re.search(r'^\s*case [^\n]*"\.' + re.escape(e) + r'"', src, re.I | re.M):
             return "internal/lesson"
+    if not loader:
+        # PDF, ODT and LibreOffice formats: the Qt export package
+        export = (ROOT / "internal/modules/interfaces/qt/export/export.go")
+        esrc = export.read_text(errors="replace") if export.exists() else ""
+        for e in sorted(exts):
+            if re.search(r'"\.' + re.escape(e) + r'"', esrc, re.I):
+                return "internal/modules/interfaces/qt/export"
     return ""
 
 

@@ -45,7 +45,11 @@ files; most of those files are skeletons):
   All of OpenTeacher's loaders are covered this way (the generated per-format
   loader packages were removed in October 2026): `TestOpenTeacherSampleFiles`
   loads all 58 lesson files OpenTeacher tests its loaders with, checking items,
-  unique IDs and that no markup or binary data ends up as words
+  unique IDs and that no markup or binary data ends up as words. Savers likewise:
+  `FileSaver.SaveFile`, and for PDF, ODT and (through LibreOffice) Word and
+  Excel formats `internal/modules/interfaces/qt/export`; the generated saver
+  packages were removed too, except `savers/png` (the topography map
+  picture, which belongs with the topography lessons)
 - **scaffold**: generated skeleton; methods are `// TODO: Port Python method logic`
 - **missing**: no Go code
 - **dropped**: removed from the Go port on purpose (October 2026): the
@@ -63,10 +67,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data |  |  |  |  | 22 |  | 21 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 8 | 16 |  | 43 | 48 |  | 26 | 39 | 180 |
+| logic | 8 | 15 |  | 51 | 41 |  | 26 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **10** | **19** | **7** | **43** | **129** | **2** | **77** | **67** | **354** |
+| **all** | **10** | **18** | **7** | **51** | **122** | **2** | **77** | **67** | **354** |
 
 Remarks:
 
@@ -234,14 +238,14 @@ reference until they are updated or removed.
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 122 | 7 | 0 | scaffold |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 726 | 8 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 818 | 8 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 85 | 6 | 0 | scaffold |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | missing |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 1889 | 11 | 1 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 1942 | 11 | 1 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -436,26 +440,26 @@ reference until they are updated or removed.
 | `logic/reversers/wordsTest` | test | 55 | 40 | 10 | 0 | test suite |
 | `logic/safeHtmlChecker` | safeHtmlChecker | 28 | 38 | 4 | 0 | scaffold |
 | `logic/safeHtmlCheckerTest` | test | 81 | 72 | 26 | 0 | test suite |
-| `logic/saver` | saver | 56 | 37 | 3 | 0 | scaffold |
-| `logic/savers/csv_` | save | 71 | 89 | 0 | 0 | untested |
-| `logic/savers/kvtml` | save | 86 | 44 | 7 | 0 | central |
-| `logic/savers/latex` | save | 69 | 42 | 6 | 0 | central |
-| `logic/savers/libreofficeFormats` | save | 111 | 42 | 6 | 0 | scaffold |
-| `logic/savers/mediaHtml` | save | 65 | 40 | 5 | 0 | central |
-| `logic/savers/odt` | save | 47 | 40 | 5 | 0 | scaffold |
-| `logic/savers/ot` | save | 81 | 42 | 6 | 0 | central |
-| `logic/savers/otmd` | save | 87 | 37 | 3 | 0 | central |
-| `logic/savers/ottp` | save | 51 | 40 | 5 | 0 | central |
-| `logic/savers/otwd` | save | 47 | 40 | 5 | 0 | scaffold |
-| `logic/savers/pdf` | save | 58 | 42 | 6 | 0 | scaffold |
+| `logic/saver` | saver | 56 | 0 | 0 | 0 | central |
+| `logic/savers/csv_` | save | 71 | 0 | 0 | 0 | central |
+| `logic/savers/kvtml` | save | 86 | 0 | 0 | 0 | central |
+| `logic/savers/latex` | save | 69 | 0 | 0 | 0 | central |
+| `logic/savers/libreofficeFormats` | save | 111 | 0 | 0 | 0 | central |
+| `logic/savers/mediaHtml` | save | 65 | 0 | 0 | 0 | central |
+| `logic/savers/odt` | save | 47 | 0 | 0 | 0 | central |
+| `logic/savers/ot` | save | 81 | 0 | 0 | 0 | central |
+| `logic/savers/otmd` | save | 87 | 0 | 0 | 0 | central |
+| `logic/savers/ottp` | save | 51 | 0 | 0 | 0 | central |
+| `logic/savers/otwd` | save | 47 | 0 | 0 | 0 | central |
+| `logic/savers/pdf` | save | 58 | 0 | 0 | 0 | central |
 | `logic/savers/png` | save | 44 | 40 | 5 | 0 | scaffold |
-| `logic/savers/sylk` | save | 45 | 40 | 5 | 0 | scaffold |
-| `logic/savers/t2k` | save | 129 | 60 | 15 | 0 | central |
+| `logic/savers/sylk` | save | 45 | 0 | 0 | 0 | central |
+| `logic/savers/t2k` | save | 129 | 0 | 0 | 0 | central |
 | `logic/savers/test` | test | 174 | 0 | 0 | 0 | test suite |
-| `logic/savers/topoHtml` | save | 61 | 40 | 5 | 0 | central |
-| `logic/savers/txt` | save | 103 | 37 | 3 | 0 | central |
-| `logic/savers/wordsHtml` | save | 52 | 40 | 5 | 0 | central |
-| `logic/savers/wrts` | save | 86 | 42 | 6 | 0 | scaffold |
+| `logic/savers/topoHtml` | save | 61 | 0 | 0 | 0 | central |
+| `logic/savers/txt` | save | 103 | 0 | 0 | 0 | central |
+| `logic/savers/wordsHtml` | save | 52 | 0 | 0 | 0 | central |
+| `logic/savers/wrts` | save | 86 | 0 | 0 | 0 | central |
 | `logic/settings` | settings | 106 | 264 | 0 | 1 | working |
 | `logic/settingsFilterer` | settingsFilterer | 47 | 40 | 5 | 0 | scaffold |
 | `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |
