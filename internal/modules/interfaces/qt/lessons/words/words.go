@@ -521,6 +521,7 @@ type TeachTabWidget struct {
 	// Practice options (OpenTeacher's lesson types and list modifiers)
 	lessonTypeCombo *qt.QComboBox
 	orderCombo      *qt.QComboBox
+	wordsCombo      *qt.QComboBox
 	askAnswersCheck *qt.QCheckBox
 	session         *teaching.Session
 	typing          *teaching.Typing
@@ -605,6 +606,15 @@ func (w *TeachTabWidget) setupUI() {
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
 	w.orderCombo.AddItems(teaching.Orders)
 	optionsLayout.AddWidget(w.orderCombo.QWidget)
+	addLabel("Words:")
+	w.wordsCombo = qt.NewQComboBox(w.QWidget)
+	w.wordsCombo.AddItems(teaching.WordChoices)
+	w.wordsCombo.SetToolTip("Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions.")
+	optionsLayout.AddWidget(w.wordsCombo.QWidget)
+	optionsLayout.AddStretch()
+	layout.AddLayout2(optionsLayout.QLayout, 0)
+	// second row: how to answer, and the start button
+	optionsLayout = qt.NewQHBoxLayout2()
 	addLabel("Mode:")
 	w.modeCombo = qt.NewQComboBox(w.QWidget)
 	w.modeCombo.AddItems(teaching.TeachTypes)
@@ -820,11 +830,18 @@ func (w *TeachTabWidget) startTeaching() {
 	w.session = teaching.New(w.lesson.Data.List, teaching.Options{
 		LessonType: w.lessonTypeCombo.CurrentText(),
 		Order:      w.orderCombo.CurrentText(),
+		Words:      w.wordsCombo.CurrentText(),
 		AskAnswers: w.askAnswersCheck.IsChecked(),
 	})
 	w.isTeaching = true
 	w.correctAnswers = 0
 	_, w.totalQuestions = w.session.Progress()
+	if w.totalQuestions == 0 {
+		w.session = nil
+		w.isTeaching = false
+		w.statusLabel.SetText("No words to practise: none are \"" + strings.ToLower(w.wordsCombo.CurrentText()) + "\" yet")
+		return
+	}
 
 	// Initialize new teaching session
 	w.currentSession = &TeachingSession{
@@ -865,6 +882,7 @@ func (w *TeachTabWidget) startTeaching() {
 func (w *TeachTabWidget) setOptionsEnabled(enabled bool) {
 	w.lessonTypeCombo.SetEnabled(enabled)
 	w.orderCombo.SetEnabled(enabled)
+	w.wordsCombo.SetEnabled(enabled)
 	w.modeCombo.SetEnabled(enabled)
 	w.askAnswersCheck.SetEnabled(enabled)
 }

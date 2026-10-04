@@ -114,3 +114,23 @@ func TestEmptyList(t *testing.T) {
 		t.Error("no current item expected")
 	}
 }
+
+func TestWordChoices(t *testing.T) {
+	list := lesson.WordList{
+		Items: []lesson.WordItem{
+			{ID: 0, Questions: []string{"een"}, Answers: []string{"one"}},
+			{ID: 1, Questions: []string{"twee"}, Answers: []string{"two"}},
+			{ID: 2, Questions: []string{"drie"}, Answers: []string{"three"}},
+		},
+		Tests: []lesson.Test{{Results: []lesson.TestResult{
+			{ItemID: 0, Result: "right"}, {ItemID: 1, Result: "wrong"}, {ItemID: 1, Result: "wrong"},
+			{ItemID: 2, Result: "wrong"}, {ItemID: 2, Result: "right"},
+		}}},
+	}
+	for choice, want := range map[string]int{AllWords: 3, HardWords: 1, NeverRight: 1, "": 3} {
+		s := New(list, Options{Words: choice})
+		if _, total := s.Progress(); total != want {
+			t.Errorf("%q: %d words, want %d", choice, total, want)
+		}
+	}
+}

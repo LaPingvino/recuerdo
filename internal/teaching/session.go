@@ -12,9 +12,11 @@ import (
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/smart"
+	hardwords "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/hardWords"
 	random "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/random_"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/reverse"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/sort"
+	neverright "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/wordsNeverAnsweredCorrectly"
 	wordsreverser "github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
@@ -35,16 +37,25 @@ const (
 	Sorted    = "Sorted"
 )
 
-// LessonTypes and Orders list the choices, default first.
+// Which words to practise, as offered to the user.
+const (
+	AllWords   = "All words"
+	HardWords  = "Hard words"
+	NeverRight = "Never answered correctly"
+)
+
+// LessonTypes, Orders and WordChoices list the choices, default first.
 var (
 	LessonTypes = []string{AllOnce, Smart, Interval}
 	Orders      = []string{AsEntered, Random, Reversed, Sorted}
+	WordChoices = []string{AllWords, HardWords, NeverRight}
 )
 
 // Options configure a session.
 type Options struct {
 	LessonType string // one of LessonTypes; AllOnce if unknown
 	Order      string // one of Orders; AsEntered if unknown
+	Words      string // one of WordChoices; AllWords if unknown
 	// AskAnswers practises the other way round: answers become questions.
 	AskAnswers    bool
 	CaseSensitive bool
@@ -91,6 +102,13 @@ func New(list lesson.WordList, opts Options) *Session {
 	indexes := make([]int, len(list.Items))
 	for i := range indexes {
 		indexes[i] = i
+	}
+	// which words, judged by the list's earlier tests
+	switch opts.Words {
+	case HardWords:
+		indexes = hardwords.ModifyList(indexes, list)
+	case NeverRight:
+		indexes = neverright.ModifyList(indexes, list)
 	}
 	switch opts.Order {
 	case Random:

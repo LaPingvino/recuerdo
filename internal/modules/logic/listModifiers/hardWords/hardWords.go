@@ -1,83 +1,53 @@
-// Package hardwords provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package hardwords keeps the words that went wrong more often than right
+// in earlier tests, and words not tested yet. Port of OpenTeacher's
+// logic/listModifiers/hardWords.
 package hardwords
 
 import (
-	"context"
-	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/lesson"
 )
 
-// HardWordsModule is a Go port of the Python HardWordsModule class
+// ModifyList returns the indexes of the hard words in list.
+func ModifyList(indexes []int, list lesson.WordList) []int {
+	right, wrong := map[int]int{}, map[int]int{}
+	for _, t := range list.Tests {
+		for _, r := range t.Results {
+			if r.Result == "wrong" {
+				wrong[r.ItemID]++
+			} else {
+				right[r.ItemID]++
+			}
+		}
+	}
+	var out []int
+	for _, i := range indexes {
+		id := list.Items[i].ID
+		total := right[id] + wrong[id]
+		if total == 0 || float64(wrong[id]) > float64(total)/2 {
+			out = append(out, i)
+		}
+	}
+	return out
+}
+
+// HardWordsModule offers ModifyList as an OpenTeacher list modifier.
 type HardWordsModule struct {
 	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewHardWordsModule creates a new HardWordsModule instance
+// NewHardWordsModule creates the module.
 func NewHardWordsModule() *HardWordsModule {
-	base := core.NewBaseModule("logic", "hardwords-module")
-
-	return &HardWordsModule{
-		BaseModule: base,
-	}
+	return &HardWordsModule{BaseModule: core.NewBaseModule("listModifier", "hardwords-module")}
 }
 
-// Modifylist is the Go port of the Python modifyList method
-func (mod *HardWordsModule) Modifylist() {
-	// TODO: Port Python method logic
+// DisplayName is the modifier's name.
+func (mod *HardWordsModule) DisplayName() string { return "Hard words" }
+
+// ModifyList keeps the hard words.
+func (mod *HardWordsModule) ModifyList(indexes []int, list lesson.WordList) []int {
+	return ModifyList(indexes, list)
 }
 
-// ishardword is the Go port of the Python _isHardWord method
-func (mod *HardWordsModule) ishardword() {
-	// TODO: Port Python method logic
-}
-
-// resultsfor is the Go port of the Python _resultsFor method
-func (mod *HardWordsModule) resultsfor() {
-	// TODO: Port Python method logic
-}
-
-// retranslate is the Go port of the Python _retranslate method
-func (mod *HardWordsModule) retranslate() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *HardWordsModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("HardWordsModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *HardWordsModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("HardWordsModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *HardWordsModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitHardWordsModule creates and returns a new HardWordsModule instance
-// This is the Go equivalent of the Python init function
-func InitHardWordsModule() core.Module {
-	return NewHardWordsModule()
-}
+// InitHardWordsModule creates the module.
+func InitHardWordsModule() core.Module { return NewHardWordsModule() }

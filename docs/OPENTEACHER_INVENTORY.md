@@ -68,10 +68,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 8 | 15 |  | 69 | 12 |  | 37 | 39 | 180 |
+| logic | 10 | 15 |  | 69 | 10 |  | 37 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **13** | **18** | **7** | **80** | **74** | **2** | **93** | **67** | **354** |
+| **all** | **15** | **18** | **7** | **80** | **72** | **2** | **93** | **67** | **354** |
 
 Remarks:
 
@@ -307,7 +307,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 1977 | 11 | 2 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 1994 | 11 | 2 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -420,7 +420,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/lessonTypes/interval` | lessonType | 181 | 102 | 0 | 0 | untested |
 | `logic/lessonTypes/smart` | lessonType | 122 | 80 | 0 | 0 | untested |
 | `logic/lessonTypes/test` | test | 99 | 0 | 0 | 0 | test suite |
-| `logic/listModifiers/hardWords` | listModifier | 61 | 44 | 7 | 0 | scaffold |
+| `logic/listModifiers/hardWords` | listModifier | 61 | 37 | 0 | 1 | working |
 | `logic/listModifiers/hardWordsTest` | test | 138 | 46 | 13 | 0 | test suite |
 | `logic/listModifiers/randomTest` | test | 39 | 36 | 8 | 0 | test suite |
 | `logic/listModifiers/random_` | listModifier | 45 | 29 | 0 | 0 | untested |
@@ -428,7 +428,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/listModifiers/reverseTest` | test | 29 | 36 | 8 | 0 | test suite |
 | `logic/listModifiers/sort` | listModifier | 50 | 53 | 0 | 0 | untested |
 | `logic/listModifiers/sortTest` | test | 38 | 36 | 8 | 0 | test suite |
-| `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 44 | 7 | 0 | scaffold |
+| `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 37 | 0 | 1 | working |
 | `logic/listModifiers/wordsNeverAnsweredCorrectlyTest` | test | 104 | 46 | 13 | 0 | test suite |
 | `logic/loader` | loader | 109 | 0 | 0 | 0 | covered |
 | `logic/loaders/abbyy` | load | 73 | 0 | 0 | 0 | covered |

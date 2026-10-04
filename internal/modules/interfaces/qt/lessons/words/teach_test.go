@@ -25,10 +25,17 @@ func TestMain(m *testing.M) {
 	hangmanErr = checkHangman()
 	settingsErr = checkSettings()
 	editErr = checkEditing()
+	wordsErr = checkWordChoice()
 	os.Exit(m.Run())
 }
 
-var teachErr, modesErr, inMindErr, hangmanErr, settingsErr, editErr error
+var teachErr, modesErr, inMindErr, hangmanErr, settingsErr, editErr, wordsErr error
+
+func TestTeachTabWordChoice(t *testing.T) {
+	if wordsErr != nil {
+		t.Fatal(wordsErr)
+	}
+}
 
 func TestEnterTabEditsTheLesson(t *testing.T) {
 	if editErr != nil {
@@ -367,6 +374,35 @@ func checkEditing() error {
 	w.enterWidget.updateWordsTable()
 	if edits != before {
 		return fmt.Errorf("refilling the table reported %d edits", edits-before)
+	}
+	return nil
+}
+
+func checkWordChoice() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{
+		Items: []lesson.WordItem{
+			{ID: 0, Questions: []string{"een"}, Answers: []string{"one"}},
+			{ID: 1, Questions: []string{"twee"}, Answers: []string{"two"}},
+		},
+		Tests: []lesson.Test{{Results: []lesson.TestResult{{ItemID: 0, Result: "right"}, {ItemID: 1, Result: "wrong"}}}},
+	}}}
+	w := NewTeachTabWidget(l, nil)
+	w.wordsCombo.SetCurrentText("Hard words")
+	w.startButton.Click()
+	if w.totalQuestions != 1 || w.questionLabel.Text() != "twee" {
+		return fmt.Errorf("hard words: %d words, asking %q", w.totalQuestions, w.questionLabel.Text())
+	}
+	if w.wordsCombo.IsEnabled() {
+		return fmt.Errorf("the word choice can be changed during a session")
+	}
+
+	// nothing to practise: a message, no session
+	l.Data.List.Tests[0].Results[1].Result = "right"
+	w = NewTeachTabWidget(l, nil)
+	w.wordsCombo.SetCurrentText("Never answered correctly")
+	w.startButton.Click()
+	if w.isTeaching || !strings.Contains(w.statusLabel.Text(), "No words to practise") {
+		return fmt.Errorf("empty choice: teaching %v, status %q", w.isTeaching, w.statusLabel.Text())
 	}
 	return nil
 }

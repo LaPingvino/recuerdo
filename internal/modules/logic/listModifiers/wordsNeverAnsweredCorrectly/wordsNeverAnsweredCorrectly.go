@@ -1,87 +1,56 @@
-// Package wordsneveransweredcorrectly provides functionality ported from Python module
-//
-// A list modifier that filters out all items that were already
-// answered correctly during a test once. This means it *does*
-// include words which have never been asked yet, too.
-//
-// This is an automated port - implementation may be incomplete.
+// Package wordsneveransweredcorrectly keeps the words never answered
+// right in earlier tests. Port of OpenTeacher's
+// logic/listModifiers/wordsNeverAnsweredCorrectly (which read the tests
+// as plain lists of results, as only its own test used them).
 package wordsneveransweredcorrectly
 
 import (
-	"context"
-	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/lesson"
 )
 
-// WordsNeverAnsweredCorrectlyModule is a Go port of the Python WordsNeverAnsweredCorrectlyModule class
+// ModifyList returns the indexes of words without a right answer in list's
+// tests.
+func ModifyList(indexes []int, list lesson.WordList) []int {
+	right := map[int]bool{}
+	for _, t := range list.Tests {
+		for _, r := range t.Results {
+			if r.Result == "right" {
+				right[r.ItemID] = true
+			}
+		}
+	}
+	var out []int
+	for _, i := range indexes {
+		if !right[list.Items[i].ID] {
+			out = append(out, i)
+		}
+	}
+	return out
+}
+
+// WordsNeverAnsweredCorrectlyModule offers ModifyList as an OpenTeacher
+// list modifier.
 type WordsNeverAnsweredCorrectlyModule struct {
 	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewWordsNeverAnsweredCorrectlyModule creates a new WordsNeverAnsweredCorrectlyModule instance
+// NewWordsNeverAnsweredCorrectlyModule creates the module.
 func NewWordsNeverAnsweredCorrectlyModule() *WordsNeverAnsweredCorrectlyModule {
-	base := core.NewBaseModule("logic", "wordsneveransweredcorrectly-module")
-
-	return &WordsNeverAnsweredCorrectlyModule{
-		BaseModule: base,
-	}
+	return &WordsNeverAnsweredCorrectlyModule{BaseModule: core.NewBaseModule("listModifier", "wordsneveransweredcorrectly-module")}
 }
 
-// Modifylist is the Go port of the Python modifyList method
-func (mod *WordsNeverAnsweredCorrectlyModule) Modifylist() {
-	// TODO: Port Python method logic
+// DisplayName is the modifier's name.
+func (mod *WordsNeverAnsweredCorrectlyModule) DisplayName() string {
+	return "Words never answered correctly"
 }
 
-// isneveransweredcorrectly is the Go port of the Python _isNeverAnsweredCorrectly method
-func (mod *WordsNeverAnsweredCorrectlyModule) isneveransweredcorrectly() {
-	// TODO: Port Python method logic
+// ModifyList keeps the words never answered right.
+func (mod *WordsNeverAnsweredCorrectlyModule) ModifyList(indexes []int, list lesson.WordList) []int {
+	return ModifyList(indexes, list)
 }
 
-// resultsfor is the Go port of the Python _resultsFor method
-func (mod *WordsNeverAnsweredCorrectlyModule) resultsfor() {
-	// TODO: Port Python method logic
-}
-
-// retranslate is the Go port of the Python _retranslate method
-func (mod *WordsNeverAnsweredCorrectlyModule) retranslate() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *WordsNeverAnsweredCorrectlyModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("WordsNeverAnsweredCorrectlyModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *WordsNeverAnsweredCorrectlyModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("WordsNeverAnsweredCorrectlyModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *WordsNeverAnsweredCorrectlyModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitWordsNeverAnsweredCorrectlyModule creates and returns a new WordsNeverAnsweredCorrectlyModule instance
-// This is the Go equivalent of the Python init function
+// InitWordsNeverAnsweredCorrectlyModule creates the module.
 func InitWordsNeverAnsweredCorrectlyModule() core.Module {
 	return NewWordsNeverAnsweredCorrectlyModule()
 }
