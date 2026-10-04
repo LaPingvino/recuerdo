@@ -317,6 +317,13 @@ COVERED = {
                                                 "\"Pronounce questions\" (setting kept), in the question language; tested"),
     "interfaces/textToSpeech/providers/topo": ("internal/modules/interfaces/qt/lessons/topo", "Teach option \"Pronounce "
                                                "names\": Name – Place says the place to click; tested"),
+    "profileRunners/cli": ("internal/cli", "recuerdo <command>: authors, convert, merge, reverse-list, view-word-list, "
+                           "ocr-word-list, new-word-list, practise-word-list (-flags for +flags); tested"),
+    "profileRunners/profilesHelp": ("internal/cli", "recuerdo help lists the commands (and recuerdo -help the options)"),
+    "data/profileDescriptions/cli": ("internal/cli", "the command line is reached with recuerdo <command>, not a profile"),
+    "data/profileDescriptions/help": ("internal/cli", "recuerdo help"),
+    "profileRunners/uiController": ("internal/modules/interfaces/qt/gui", "the GUI module connects the Qt interface to "
+                                    "loading, saving, printing, dialogs and the lessons itself"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }
@@ -324,6 +331,10 @@ COVERED = {
 
 # Why the modules dropped one by one (beyond the areas in DROPPED) were.
 DROPPED_REASONS = {
+    "profileRunners/shell": "an interactive Python shell with OpenTeacher's modules loaded, for developers; "
+                            "Go has no such shell, and Recuerdo's modules are used from Go code and tests",
+    "data/profileDescriptions/shell": "describes the Python shell profile, dropped with it",
+    "misc/testUrllibMock": "a stand-in for Python's urllib in OpenTeacher's tests; Go tests use net/http/httptest",
     "interfaces/qt/mediaTypes/liveleak": "LiveLeak closed in 2021: its video links no longer work",
     "logic/interfaces/typingTutorModel": "for now: OpenTeacher's touch typing course is a different kind of lesson "
                                          "than Recuerdo's words, topography and media lessons",

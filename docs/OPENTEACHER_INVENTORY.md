@@ -66,12 +66,12 @@ uses it.
 
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
+| data | 3 |  |  | 13 |  |  | 27 | 6 | 49 |
 | interfaces | 4 | 2 | 5 | 52 |  |  | 17 | 14 | 94 |
 | logic | 12 | 15 |  | 76 |  |  | 38 | 39 | 180 |
-| misc |  |  |  |  | 1 |  |  | 3 | 4 |
-| profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **19** | **17** | **5** | **139** | **8** | **0** | **99** | **67** | **354** |
+| misc |  |  |  |  |  |  | 1 | 3 | 4 |
+| profileRunners |  |  |  | 3 |  |  | 19 | 5 | 27 |
+| **all** | **19** | **17** | **5** | **144** | **0** | **0** | **102** | **67** | **354** |
 
 Remarks:
 
@@ -186,6 +186,8 @@ file formats, see **covered** above):
 | `data/maps/world` | `internal/maps` | the map picture and places in data/maps/world, loaded by MapManager |
 | `data/metadata` | `internal/modules/metadata.go` | Recuerdo's own metadata module (name, version, application ID) |
 | `data/profileDescriptions/all` | `cmd/recuerdo` | Recuerdo always starts with all its features, which is what OpenTeacher's "all" profile chose |
+| `data/profileDescriptions/cli` | `internal/cli` | the command line is reached with recuerdo <command>, not a profile |
+| `data/profileDescriptions/help` | `internal/cli` | recuerdo help |
 | `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
@@ -263,6 +265,9 @@ file formats, see **covered** above):
 | `logic/userDocumentationWrapper` | `internal/modules/interfaces/qt/gui` | Help > Getting Started shows the guide |
 | `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
 | `logic/wordListString/parser` | `internal/lesson` | ParseWordList ("q = a" / tab lines with \= escapes) |
+| `profileRunners/cli` | `internal/cli` | recuerdo <command>: authors, convert, merge, reverse-list, view-word-list, ocr-word-list, new-word-list, practise-word-list (-flags for +flags); tested |
+| `profileRunners/profilesHelp` | `internal/cli` | recuerdo help lists the commands (and recuerdo -help the options) |
+| `profileRunners/uiController` | `internal/modules/interfaces/qt/gui` | the GUI module connects the Qt interface to loading, saving, printing, dialogs and the lessons itself |
 
 ## Dropped, and why
 
@@ -272,6 +277,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | Module | Why |
 |---|---|
 | `data/profileDescriptions/selfstudy` | OpenTeacher's start-up profiles only chose which GUI modules to load for an audience; Recuerdo has one, smaller feature set |
+| `data/profileDescriptions/shell` | describes the Python shell profile, dropped with it |
 | `data/profileDescriptions/studentAtHome` | as selfstudy: an audience profile |
 | `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
@@ -293,6 +299,8 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/translationIndex/jsonWriter` | OpenTeacher's translation tooling |
 | `logic/translationIndex/merger` | OpenTeacher's translation tooling |
 | `logic/translator` | for now: Recuerdo's interface is English only; OpenTeacher's translations (gettext) could be brought in later |
+| `misc/testUrllibMock` | a stand-in for Python's urllib in OpenTeacher's tests; Go tests use net/http/httptest |
+| `profileRunners/shell` | an interactive Python shell with OpenTeacher's modules loaded, for developers; Go has no such shell, and Recuerdo's modules are used from Go code and tests |
 
 ## 5. Module table
 
@@ -313,7 +321,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/metadata` | metadata | 83 | 0 | 0 | 0 | covered |
 | `data/openteacherAuthors` | openteacherAuthors | 151 | 37 | 0 | 1 | working |
 | `data/profileDescriptions/all` | profileDescription | 41 | 0 | 0 | 0 | covered |
-| `data/profileDescriptions/cli` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
+| `data/profileDescriptions/cli` | profileDescription | 19 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 0 | 0 | 0 | dropped |
@@ -322,7 +330,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/generateWeb` | profileDescription | 24 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/help` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
+| `data/profileDescriptions/help` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/ircBot` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/packageArch` | profileDescription | 22 | 0 | 0 | 0 | dropped |
@@ -334,7 +342,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/packageWindowsMsi` | profileDescription | 22 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/packageWindowsPortable` | profileDescription | 22 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/selfstudy` | profileDescription | 41 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/shell` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
+| `data/profileDescriptions/shell` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/studentAtHome` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/studentAtSchool` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/teacher` | profileDescription | 41 | 0 | 0 | 0 | dropped |
@@ -623,11 +631,11 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/wordsString/parserTest` | test | 115 | 1 | 0 | 0 | test suite |
 | `misc/cliTest` | test | 131 | 1 | 0 | 0 | test suite |
 | `misc/moduleManagerTest` | test | 114 | 1 | 0 | 0 | test suite |
-| `misc/testUrllibMock` |  | 44 | 46 | 13 | 0 | scaffold |
+| `misc/testUrllibMock` |  | 44 | 0 | 0 | 0 | dropped |
 | `misc/testsTest` | test | 34 | 42 | 11 | 0 | test suite |
 | `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 0 | 0 | 0 | dropped |
 | `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 0 | 0 | 0 | dropped |
-| `profileRunners/cli` | cli | 343 | 37 | 3 | 0 | scaffold |
+| `profileRunners/cli` | cli | 343 | 0 | 0 | 0 | covered |
 | `profileRunners/codeComplexity` | codeComplexity | 68 | 0 | 0 | 0 | dropped |
 | `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 0 | 0 | 0 | dropped |
 | `profileRunners/gtkGui` | gtkGui | 136 | 0 | 0 | 0 | dropped |
@@ -641,14 +649,14 @@ generator tooling, test mode, web services; see **dropped** above):
 | `profileRunners/packagers/source` | sourcePackager | 38 | 0 | 0 | 0 | dropped |
 | `profileRunners/packagers/sourceWithSetup` | sourceWithSetupPackager | 35 | 0 | 0 | 0 | dropped |
 | `profileRunners/packagers/windowsPortable` | windowsPortablePackager | 40 | 0 | 0 | 0 | dropped |
-| `profileRunners/profilesHelp` | profilesHelp | 44 | 37 | 3 | 0 | scaffold |
+| `profileRunners/profilesHelp` | profilesHelp | 44 | 0 | 0 | 0 | covered |
 | `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | dropped |
-| `profileRunners/shell` | shell | 81 | 37 | 3 | 0 | scaffold |
+| `profileRunners/shell` | shell | 81 | 0 | 0 | 0 | dropped |
 | `profileRunners/testRunner` | testRunner | 44 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver` | test_server | 65 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/admin_files/js` |  | 40 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/ot_testserver` |  | 119 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/ot_testserver/testserver` |  | 574 | 0 | 0 | 0 | test suite |
 | `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | dropped |
-| `profileRunners/uiController` | uiController | 320 | 37 | 3 | 0 | scaffold |
+| `profileRunners/uiController` | uiController | 320 | 0 | 0 | 0 | covered |
 | `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | dropped |

@@ -4,6 +4,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/cli"
 	"log"
 	"os"
 	"os/signal"
@@ -15,9 +16,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
 	openteacherauthors "github.com/LaPingvino/recuerdo/internal/modules/data/openteacherAuthors"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/cli"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/help"
-	"github.com/LaPingvino/recuerdo/internal/modules/data/profileDescriptions/shell"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	wordslesson "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
@@ -84,6 +82,11 @@ var (
 )
 
 func main() {
+	// recuerdo <command> ...: the command line, without the GUI
+	if len(os.Args) > 1 && cli.IsCommand(os.Args[1]) {
+		os.Exit(cli.Run(os.Args[1:], os.Stdin, os.Stdout, os.Stderr))
+	}
+
 	// Parse command-line arguments
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "%s %s - Language Learning Application\n\n", appName, appVersion)
@@ -96,6 +99,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "  %s lesson.ot --commands=show-properties  # Load file and show properties\n\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "Options:\n")
 		flag.PrintDefaults()
+		fmt.Fprintf(os.Stderr, "\nCommands (recuerdo help lists them with their arguments):\n")
+		fmt.Fprintf(os.Stderr, "  authors, convert, merge, reverse-list, view-word-list, ocr-word-list,\n")
+		fmt.Fprintf(os.Stderr, "  new-word-list, practise-word-list\n")
 	}
 
 	flag.Parse()
@@ -411,24 +417,6 @@ func registerAllModules(manager *core.Manager) error {
 	openteacherauthorsModule := openteacherauthors.NewOpenTeacherAuthorsModule()
 	if err := manager.Register(openteacherauthorsModule); err != nil {
 		return fmt.Errorf("failed to register openteacherauthors module: %w", err)
-	}
-
-	// Register cli module
-	cliModule := cli.NewProfileDescriptionModule()
-	if err := manager.Register(cliModule); err != nil {
-		return fmt.Errorf("failed to register cli module: %w", err)
-	}
-
-	// Register help module
-	helpModule := help.NewProfileDescriptionModule()
-	if err := manager.Register(helpModule); err != nil {
-		return fmt.Errorf("failed to register help module: %w", err)
-	}
-
-	// Register shell module
-	shellModule := shell.NewProfileDescriptionModule()
-	if err := manager.Register(shellModule); err != nil {
-		return fmt.Errorf("failed to register shell module: %w", err)
 	}
 
 	// Register userdocumentation module
