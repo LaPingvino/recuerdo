@@ -245,6 +245,10 @@ COVERED = {
     "logic/mergers/words": ("internal/lesson", "Merge, used by File > Merge Lesson"),
     "logic/testTypes/words": ("internal/teaching", "Report.MostDoneWrong, the \"word most done wrong\" fact in the "
                               "results dialog"),
+    "logic/interfaces/buttonRegister": ("internal/modules/buttonregister.go", "Recuerdo's own button register"),
+    "logic/interfaces/inputTypingLogic": ("internal/teaching", "Typing checks typed answers and shows corrections"),
+    "logic/interfaces/lessonTracker": ("internal/modules/interfaces/qt/gui", "the GUI keeps the lesson of each tab "
+                                       "(tabLessons) and the current one (currentLesson)"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }
@@ -252,6 +256,8 @@ COVERED = {
 
 # Why the modules dropped one by one (beyond the areas in DROPPED) were.
 DROPPED_REASONS = {
+    "logic/interfaces/typingTutorModel": "for now: OpenTeacher's touch typing course is a different kind of lesson "
+                                         "than Recuerdo's words, topography and media lessons",
     "logic/safeHtmlChecker": "only OpenTeacher's web database (dropped) used it",
     "logic/translationIndex/builder": "OpenTeacher's translation tooling (building its translation index)",
     "logic/translationIndex/jsonWriter": "OpenTeacher's translation tooling",

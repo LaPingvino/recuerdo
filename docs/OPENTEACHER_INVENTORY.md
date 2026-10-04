@@ -68,10 +68,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 11 | 15 |  | 72 | 6 |  | 37 | 39 | 180 |
+| logic | 11 | 15 |  | 75 | 2 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **16** | **18** | **7** | **83** | **68** | **2** | **93** | **67** | **354** |
+| **all** | **16** | **18** | **7** | **86** | **64** | **2** | **94** | **67** | **354** |
 
 Remarks:
 
@@ -192,6 +192,9 @@ file formats, see **covered** above):
 | `logic/htmlGenerator/media` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/topo` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/words` | `internal/lesson` | FileSaver's HTML export (also the source of PDF/ODT) |
+| `logic/interfaces/buttonRegister` | `internal/modules/buttonregister.go` | Recuerdo's own button register |
+| `logic/interfaces/inputTypingLogic` | `internal/teaching` | Typing checks typed answers and shows corrections |
+| `logic/interfaces/lessonTracker` | `internal/modules/interfaces/qt/gui` | the GUI keeps the lesson of each tab (tabLessons) and the current one (currentLesson) |
 | `logic/itemModifiers/foreignKnown` | `internal/teaching` | the Teach tab's "Ask the answers" (Options.AskAnswers) swaps questions and answers |
 | `logic/languageCodeGuesser` | `internal/langcode` | Guess and Name map language names and ISO 639-1 codes (CLDR names via golang.org/x/text instead of Babel's tables) |
 | `logic/mergers/words` | `internal/lesson` | Merge, used by File > Merge Lesson |
@@ -221,6 +224,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
 | `data/profileDescriptions/wordsOnly` | as selfstudy ("just gimme my good old OpenTeacher 2.x"); a setting hiding topography and media lessons could do this later |
 | `logic/friendlyTranslationNames` | for now: names of interface translations; see translator |
+| `logic/interfaces/typingTutorModel` | for now: OpenTeacher's touch typing course is a different kind of lesson than Recuerdo's words, topography and media lessons |
 | `logic/ocr/cuneiformRecognizer` | Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR |
 | `logic/pyinstallerInterface` | Python packaging; Recuerdo is built by Go and released by CI |
 | `logic/safeHtmlChecker` | only OpenTeacher's web database (dropped) used it |
@@ -392,14 +396,14 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/htmlGenerator/test` | test | 37 | 0 | 0 | 0 | test suite |
 | `logic/htmlGenerator/topo` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
 | `logic/htmlGenerator/words` | htmlGenerator | 51 | 0 | 0 | 0 | covered |
-| `logic/interfaces/buttonRegister` | buttonRegister | 75 | 40 | 5 | 0 | scaffold |
-| `logic/interfaces/buttonRegisterTest` | test | 70 | 54 | 17 | 0 | test suite |
-| `logic/interfaces/inputTypingLogic` | inputTypingLogic | 171 | 40 | 5 | 0 | scaffold |
+| `logic/interfaces/buttonRegister` | buttonRegister | 75 | 0 | 0 | 0 | covered |
+| `logic/interfaces/buttonRegisterTest` | test | 70 | 0 | 0 | 0 | test suite |
+| `logic/interfaces/inputTypingLogic` | inputTypingLogic | 171 | 0 | 0 | 0 | covered |
 | `logic/interfaces/inputTypingLogicTest` | test | 177 | 0 | 0 | 0 | test suite |
 | `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | dropped |
-| `logic/interfaces/lessonTracker` | lessonTracker | 55 | 44 | 7 | 0 | scaffold |
-| `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 40 | 5 | 0 | scaffold |
-| `logic/interfaces/typingTutorModelTest` | test | 119 | 82 | 31 | 0 | test suite |
+| `logic/interfaces/lessonTracker` | lessonTracker | 55 | 0 | 0 | 0 | covered |
+| `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 0 | 0 | 0 | dropped |
+| `logic/interfaces/typingTutorModelTest` | test | 119 | 0 | 0 | 0 | test suite |
 | `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 0 | 0 | 0 | covered |
 | `logic/itemModifiers/test` | test | 26 | 0 | 0 | 0 | test suite |
 | `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | dropped |

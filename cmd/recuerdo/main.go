@@ -76,10 +76,6 @@ import (
 
 	logicevent "github.com/LaPingvino/recuerdo/internal/modules/logic/event"
 
-	buttonregister "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/buttonRegister"
-	inputtypinglogic "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/inputTypingLogic"
-	lessontracker "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/lessonTracker"
-	typingtutormodel "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/typingTutorModel"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/smart"
@@ -910,31 +906,9 @@ func registerAllModules(manager *core.Manager) error {
 
 	// Register essential interface modules required for dependencies
 
-	// Register buttonRegister module
-	logicButtonRegisterModule := buttonregister.NewButtonRegisterModule()
-	if err := manager.Register(logicButtonRegisterModule); err != nil {
-		return fmt.Errorf("failed to register buttonRegister module: %w", err)
-	}
 	fmt.Printf("  ✓ Registered buttonRegister module\n")
 
-	// Register inputtypinglogic module
-	inputtypinglogicModule := inputtypinglogic.NewInputTypingLogicModule()
-	if err := manager.Register(inputtypinglogicModule); err != nil {
-		return fmt.Errorf("failed to register inputtypinglogic module: %w", err)
-	}
-
-	// Register lessontracker module
-	lessontrackerModule := lessontracker.NewLessonTrackerModule()
-	if err := manager.Register(lessontrackerModule); err != nil {
-		return fmt.Errorf("failed to register lessontracker module: %w", err)
-	}
 	fmt.Printf("  ✓ Registered lessontracker module\n")
-
-	// Register typingtutormodel module
-	typingtutormodelModule := typingtutormodel.NewTypingTutorModelModule()
-	if err := manager.Register(typingtutormodelModule); err != nil {
-		return fmt.Errorf("failed to register typingtutormodel module: %w", err)
-	}
 
 	fmt.Println("✅ Core modules successfully registered!")
 	fmt.Println("Note: Many optional modules are disabled to resolve import conflicts")
