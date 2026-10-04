@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/formulapad"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"github.com/LaPingvino/recuerdo/internal/richtext"
@@ -244,6 +245,7 @@ type EnterTabWidget struct {
 	onModified       func() // called after every edit of the lesson
 	addWordButton    *qt.QPushButton
 	removeWordButton *qt.QPushButton
+	formulaButton    *qt.QPushButton
 }
 
 // NewEnterTabWidget creates a new Enter tab widget
@@ -293,8 +295,13 @@ func (w *EnterTabWidget) setupUI() {
 	w.addWordButton.SetText(i18n.T("Add Word"))
 	w.removeWordButton = qt.NewQPushButton(w.QWidget)
 	w.removeWordButton.SetText(i18n.T("Remove Word"))
+	w.formulaButton = qt.NewQPushButton(w.QWidget)
+	w.formulaButton.SetText("∑ " + i18n.T("Formula builder"))
+	w.formulaButton.SetToolTip(i18n.T("Edit the selected question or answer with the formula builder"))
+	w.formulaButton.SetEnabled(false)
 	buttonLayout.AddWidget(w.addWordButton.QWidget)
 	buttonLayout.AddWidget(w.removeWordButton.QWidget)
+	buttonLayout.AddWidget(w.formulaButton.QWidget)
 	buttonLayout.AddStretch()
 
 	wordsLayout.AddLayout2(buttonLayout.QLayout, 0)
@@ -359,6 +366,12 @@ func (w *EnterTabWidget) connectSignals() {
 	w.removeWordButton.OnClicked(func() {
 		w.removeSelectedWord()
 	})
+
+	// the formula builder edits a question or answer cell
+	w.wordsTable.OnCurrentCellChanged(func(row, col, _, _ int) {
+		w.formulaButton.SetEnabled(row >= 0 && (col == 0 || col == 1))
+	})
+	w.formulaButton.OnClicked(func() { w.editWithFormulaPad(nil) })
 }
 
 // UpdateLesson updates the Enter tab with lesson data
@@ -566,6 +579,7 @@ type TeachTabWidget struct {
 
 	// Unicode character picker
 	unicodePicker *IntegratedUnicodePicker
+	formulaPad    *formulapad.Pad // shown when the answer is a formula
 
 	// Teaching state
 	currentIndex   int
@@ -756,6 +770,16 @@ func (w *TeachTabWidget) setupUI() {
 	w.unicodePicker.Hide()
 	layout.AddWidget(w.unicodePicker.QWidget)
 
+	// The formula builder, for answers that are formulas
+	padRow := qt.NewQHBoxLayout2()
+	padRow.AddStretch()
+	w.formulaPad = formulapad.New(w.answerEdit, false, w.QWidget)
+	w.formulaPad.SetMaximumWidth(760)
+	w.formulaPad.Hide()
+	padRow.AddWidget(w.formulaPad.QWidget)
+	padRow.AddStretch()
+	layout.AddLayout2(padRow.QLayout, 0)
+
 	w.resultLabel = qt.NewQLabel(w.QWidget)
 	w.resultLabel.SetTextFormat(qt.RichText) // words with markup and formulas (richtext)
 	w.resultLabel.SetWordWrap(true)
@@ -938,6 +962,14 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 	w.showModeExtras()
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
+	// a formula answer: typed as TeX (no $), with the formula builder
+	math := richtext.HasMath(w.session.CurrentAnswer()) && valuecombo.Value(w.modeCombo) != teaching.InMind
+	w.formulaPad.SetVisible(math)
+	if math {
+		w.answerEdit.SetPlaceholderText(i18n.T("Formula, e.g. x^2 + 1"))
+	} else {
+		w.answerEdit.SetPlaceholderText(i18n.T("Your answer"))
+	}
 
 	// Update progress (lesson types that repeat words add to the total)
 	asked, total := w.session.Progress()
@@ -1159,6 +1191,8 @@ func (w *TeachTabWidget) HideCorrection() {
 // finishTeaching completes the teaching session
 func (w *TeachTabWidget) finishTeaching() {
 	w.isTeaching = false
+	w.formulaPad.Hide()
+	w.answerEdit.SetPlaceholderText(i18n.T("Your answer"))
 	w.stopRepeat()
 	w.hintLabel.SetVisible(false)
 	w.setInMindLayout(false)
@@ -1555,4 +1589,30 @@ func (w *ResultsTabWidget) populateResultsTable(session *TeachingSession) {
 	}
 
 	w.resultsTable.ResizeColumnsToContents()
+}
+
+// editWithFormulaPad edits the current question or answer cell with the
+// formula builder; dialog (nil: formulapad.Dialog) is replaceable for tests.
+func (w *EnterTabWidget) editWithFormulaPad(dialog func(*qt.QWidget, string) (string, bool)) {
+	row, col := w.wordsTable.CurrentRow(), w.wordsTable.CurrentColumn()
+	if row < 0 || (col != 0 && col != 1) {
+		return
+	}
+	if dialog == nil {
+		dialog = formulapad.Dialog
+	}
+	item := w.wordsTable.Item(row, col)
+	old := ""
+	if item != nil {
+		old = item.Text()
+	}
+	text, ok := dialog(w.QWidget, old)
+	if !ok || text == old {
+		return
+	}
+	if item == nil {
+		w.wordsTable.SetItem(row, col, qt.NewQTableWidgetItem2(text))
+	} else {
+		item.SetText(text) // cellChanged puts it in the lesson
+	}
 }

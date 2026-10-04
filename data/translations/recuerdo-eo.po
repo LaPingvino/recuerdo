@@ -885,3 +885,6 @@ msgstr "Teksto"
 
 msgid "Greek"
 msgstr "Greka"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Redakti la elektitan demandon aŭ respondon per la formulkonstruilo"

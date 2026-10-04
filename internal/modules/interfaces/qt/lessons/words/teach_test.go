@@ -71,6 +71,29 @@ func checkFormulas() error {
 		qt.QCoreApplication_ProcessEvents()
 		w.Grab().Save(dir + "/formula-correction.png")
 	}
+	// the second answer is a formula: the builder is there
+	if !t.formulaPad.IsVisibleTo(t.QWidget) {
+		return fmt.Errorf("no formula builder for a formula answer")
+	}
+	t.nextButton.Click()
+	if !t.formulaPad.IsHidden() {
+		return fmt.Errorf("formula builder left after the lesson")
+	}
+
+	// the Enter tab: the formula builder edits the current cell
+	e := w.enterWidget
+	e.wordsTable.SetCurrentCell(0, 1)
+	if !e.formulaButton.IsEnabled() {
+		return fmt.Errorf("formula button off on an answer cell")
+	}
+	e.editWithFormulaPad(func(_ *qt.QWidget, old string) (string, bool) { return "$" + old + "^2$", true })
+	if got := l.Data.List.Items[0].Answers; len(got) != 1 || got[0] != "$10^2$" {
+		return fmt.Errorf("edited answer: %q", got)
+	}
+	e.wordsTable.SetCurrentCell(0, 2)
+	if e.formulaButton.IsEnabled() {
+		return fmt.Errorf("formula button on for a comment cell")
+	}
 	return nil
 }
 

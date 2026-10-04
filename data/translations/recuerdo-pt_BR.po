@@ -780,3 +780,6 @@ msgstr "Texto"
 
 msgid "Greek"
 msgstr "Grego"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Editar a pergunta ou resposta selecionada com o construtor de fórmulas"

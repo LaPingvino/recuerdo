@@ -291,6 +291,10 @@ msgstr ""
 msgid "Each session:"
 msgstr ""
 
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Edit the selected question or answer with the formula builder"
+msgstr ""
+
 #: internal/modules/logic/recentlyOpened/recentlyOpened.go
 msgid "Empty the File > Open Recent list"
 msgstr ""
@@ -391,11 +395,11 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: web/app.js
+#: internal/modules/interfaces/qt/formulapad/formulapad.go
 msgid "Formula builder"
 msgstr ""
 
-#: web/app.js
+#: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Formula, e.g. x^2 + 1"
 msgstr ""
 

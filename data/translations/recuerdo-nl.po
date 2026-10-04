@@ -780,3 +780,6 @@ msgstr "Tekst"
 
 msgid "Greek"
 msgstr "Grieks"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "De gekozen vraag of het gekozen antwoord bewerken met de formulebouwer"
