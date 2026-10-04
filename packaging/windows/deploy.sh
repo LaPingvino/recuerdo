@@ -12,8 +12,8 @@ cp -r "$root/data" "$out/"
 cp "$root/LICENSE" "$out/LICENSE.txt"
 # Qt DLLs and plugins (platforms, styles, image formats)
 # (MSYS2's Qt uses desktop OpenGL, so there is no ANGLE to deploy)
-deployqt=$(command -v windeployqt-qt5 || command -v windeployqt)
-"$deployqt" --release --no-translations --no-angle --no-system-d3d-compiler --no-opengl-sw "$out/recuerdo.exe"
+deployqt=$(command -v windeployqt6 || command -v windeployqt-qt6 || command -v windeployqt)
+"$deployqt" --release --no-translations --no-system-d3d-compiler --no-opengl-sw "$out/recuerdo.exe"
 # windeployqt leaves out the MinGW runtime and Qt's own dependencies
 # (ICU, zlib, libpng, ...): copy every DLL from the MSYS2 prefix that the
 # program or a plugin loads, until nothing new turns up.

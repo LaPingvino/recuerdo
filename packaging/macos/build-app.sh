@@ -1,7 +1,7 @@
 #!/bin/sh
 # Builds Recuerdo.app around a recuerdo binary and bundles Qt into it:
 #   packaging/macos/build-app.sh <recuerdo binary> <version> <outdir>
-# Needs Homebrew's qt@5 (for macdeployqt).
+# Needs Homebrew's qt (Qt 6, for macdeployqt).
 set -eu
 bin=$1
 version=$2
@@ -41,4 +41,4 @@ cat > "$app/Contents/Info.plist" <<PLIST
 </plist>
 PLIST
 
-"$(brew --prefix qt@5)/bin/macdeployqt" "$app"
+"$(brew --prefix qt)/bin/macdeployqt" "$app"

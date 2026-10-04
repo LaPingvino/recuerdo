@@ -41,7 +41,7 @@ jobs:
       - name: Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qtbase5-dev qtwayland5 build-essential pkg-config libfuse2
+          sudo apt-get install -y qt6-base-dev qt6-base-dev-tools qt6-wayland qt6-wayland-dev qmake6 build-essential pkg-config libfuse2
       - name: Package
         env:
           CGO_ENABLED: "1"
@@ -71,8 +71,8 @@ jobs:
             mingw-w64-ucrt-x86_64-go
             mingw-w64-ucrt-x86_64-gcc
             mingw-w64-ucrt-x86_64-pkgconf
-            mingw-w64-ucrt-x86_64-qt5-base
-            mingw-w64-ucrt-x86_64-qt5-tools
+            mingw-w64-ucrt-x86_64-qt6-base
+            mingw-w64-ucrt-x86_64-qt6-tools
       - name: Build and collect DLLs
         env:
           CGO_ENABLED: "1"
@@ -101,10 +101,12 @@ jobs:
         with:
           go-version-file: go.mod
           cache: true
-      - name: Qt 5
+      - name: Qt 6
         run: |
-          brew install qt@5 pkg-config
-          echo "PKG_CONFIG_PATH=$(brew --prefix qt@5)/lib/pkgconfig" >> "$GITHUB_ENV"
+          brew install qt pkg-config
+          echo "PKG_CONFIG_PATH=$(brew --prefix qt)/lib/pkgconfig" >> "$GITHUB_ENV"
+          # Qt 6 needs C++17, which Apple's clang does not default to
+          echo "CGO_CXXFLAGS=-std=c++17" >> "$GITHUB_ENV"
       - name: Package
         env:
           CGO_ENABLED: "1"

@@ -10,13 +10,14 @@ pkgdesc="Vocabulary, topography and media trainer; OpenTeacher in Go with Qt"
 arch=('x86_64' 'aarch64')
 url="https://github.com/LaPingvino/recuerdo"
 license=('GPL-3.0-or-later')
-depends=('glibc' 'qt5-base')
-optdepends=('qt5-wayland: native Wayland windows'
+depends=('glibc' 'qt6-base')
+optdepends=('qt6-wayland: native Wayland windows'
+            'qt6-translations: the texts of OK, Cancel and the file dialogs in your language'
             'espeak-ng: pronouncing questions'
             'tesseract: reading word lists from pictures'
             'tesseract-data-eng: English for tesseract (other languages: tesseract-data-*)'
             'libreoffice: exporting to Word, Excel and other office formats')
-makedepends=('go' 'git' 'pkgconf' 'qt5-base')
+makedepends=('go' 'git' 'pkgconf' 'qt6-base')
 provides=('recuerdo')
 conflicts=('recuerdo')
 source=("$_pkgname-src::git+https://github.com/LaPingvino/recuerdo.git")

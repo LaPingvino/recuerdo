@@ -54,7 +54,7 @@ Recuerdo follows a clean modular architecture:
 ## System Requirements
 
 - Go 1.19 or later
-- Qt5/Qt6 development libraries
+- Qt 6 development libraries (Qt 6.4 or later)
 - Linux with X11 or Wayland support
 
 ## Contributing

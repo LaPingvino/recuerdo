@@ -1,7 +1,7 @@
 #!/bin/sh
-# Builds Recuerdo-<version>-<arch>.AppImage with Qt 5 bundled.
+# Builds Recuerdo-<version>-<arch>.AppImage with Qt 6 bundled.
 #   packaging/linux/build-appimage.sh <recuerdo binary> <version> [outdir]
-# Needs Qt 5 development files (qmake); QMAKE may point at qmake.
+# Needs Qt 6 development files (qmake6); QMAKE may point at Qt 6's qmake.
 set -eu
 bin=$1
 version=$2
@@ -23,7 +23,7 @@ done
 
 # linuxdeploy's bundled strip is too old for newer distributions' libraries
 export PATH="$tools:$PATH" APPIMAGE_EXTRACT_AND_RUN=1 NO_STRIP=1
-export QMAKE=${QMAKE:-$(command -v qmake-qt5 || command -v qmake)}
+export QMAKE=${QMAKE:-$(command -v qmake6 || command -v qmake-qt6 || ls /usr/lib/qt6/bin/qmake /usr/lib/*/qt6/bin/qmake 2>/dev/null | head -1)}
 # X11 is bundled by default; add Wayland so it runs natively there too
 export EXTRA_PLATFORM_PLUGINS="libqwayland-generic.so;libqwayland-egl.so"
 export EXTRA_QT_PLUGINS="wayland-shell-integration;wayland-graphics-integration-client;wayland-decoration-client"
