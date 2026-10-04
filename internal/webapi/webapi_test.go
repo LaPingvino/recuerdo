@@ -186,3 +186,27 @@ func TestFormulas(t *testing.T) {
 		t.Error("f(y,x) is not f(x, y)")
 	}
 }
+
+func TestFormulaBuilder(t *testing.T) {
+	var a App
+	a.OpenText("Wiskunde", "area of a circle = $\\pi r^2$\nhond = dog\n")
+	if _, err := a.Start(Options{}); err != nil {
+		t.Fatal(err)
+	}
+	if st := a.State(); !st.AnswerIsMath {
+		t.Errorf("a formula answer: AnswerIsMath false (%+v)", st)
+	}
+	a.Answer("\\pi r^2")
+	if st := a.State(); st.AnswerIsMath {
+		t.Errorf("a word answer: AnswerIsMath true (%+v)", st)
+	}
+	if len(a.Palette()) == 0 {
+		t.Error("no palette")
+	}
+	if ins, err := a.Expand("frac", "a"); err != nil || ins.Text != `\frac{a}{}` || ins.Cursor != 9 {
+		t.Errorf("Expand = %+v, %v", ins, err)
+	}
+	if _, err := a.Expand("nope", ""); err == nil {
+		t.Error("an unknown button: no error")
+	}
+}

@@ -79,6 +79,10 @@ func main() {
 		"t":            js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.T(args[0].String()) }),
 		"languageName": js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.Name(args[0].String()) }),
 		"report":       js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
+		"palette":      js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Palette(), nil) }),
+		"expand": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(app.Expand(args[0].String(), args[1].String()))
+		}),
 		"save": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			b, err := app.Save(args[0].String())
 			if err != nil {

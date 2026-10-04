@@ -66,6 +66,9 @@ type State struct {
 	// QuestionHTML and AnswerHTML show them with their markup (safe HTML)
 	QuestionHTML string `json:"questionHtml,omitempty"`
 	AnswerHTML   string `json:"answerHtml,omitempty"`
+	// AnswerIsMath: the answer is a formula, so the page offers the
+	// formula builder in the answer field (typed as TeX, without $).
+	AnswerIsMath bool `json:"answerIsMath,omitempty"`
 }
 
 // Result is the outcome of an answer.
@@ -217,8 +220,29 @@ func (a *App) State() State {
 		st.Answer = s.CurrentAnswer()
 		st.Shuffle = strings.TrimPrefix(teaching.ShuffleHint(st.Answer, nil), "Hint: ")
 		st.QuestionHTML, st.AnswerHTML = a.shown(index)
+		st.AnswerIsMath = a.mathAnswer[index]
 	}
 	return st
+}
+
+// Palette is the formula builder's buttons.
+func (a *App) Palette() []richtext.PaletteGroup { return richtext.Palette }
+
+// Expand is what a formula builder button inserts around selected, and
+// where the cursor goes (UTF-16 units, as JavaScript counts).
+func (a *App) Expand(id, selected string) (Insertion, error) {
+	it, ok := richtext.PaletteItemByID(id)
+	if !ok {
+		return Insertion{}, fmt.Errorf("no formula button %q", id)
+	}
+	text, cursor := richtext.Expand(it, selected)
+	return Insertion{Text: text, Cursor: cursor}, nil
+}
+
+// Insertion is a formula builder button's text and cursor position.
+type Insertion struct {
+	Text   string `json:"text"`
+	Cursor int    `json:"cursor"`
 }
 
 // Answer checks an answer to the current question and moves on.

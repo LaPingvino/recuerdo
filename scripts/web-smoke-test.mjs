@@ -57,6 +57,14 @@ call("openText", "Dieren", "hond = dog\nkat = cat\n");
 call("start", JSON.stringify({ lessonType: "All once" }));
 call("answer", "dog"); call("answer", "mouse");
 
+// the formula builder: shown for formula answers, buttons insert TeX
+call("openText", "Wiskunde", "area of a circle = $\\pi r^2$\n");
+check(call("start", "{}").answerIsMath === true, "answerIsMath");
+check(call("palette").some((g) => g.items.some((i) => i.id === "frac")), "palette");
+const ins = call("expand", "sqrt", "2");
+check(ins.text === "\\sqrt{2}" && ins.cursor === 8, "expand: " + JSON.stringify(ins));
+check(call("answer", "\\pi r^2").right, "a formula answer");
+
 // saved with the session, and opened again
 const saved = r.save("dieren.otwd");
 check(saved instanceof Uint8Array && saved[0] === 0x50 && saved[1] === 0x4b, "save gives a zip");
