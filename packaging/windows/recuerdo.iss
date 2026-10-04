@@ -1,7 +1,7 @@
 ; Inno Setup script for Recuerdo. Built by .github/workflows/release.yml:
 ;   iscc /DAppVersion=0.1.0 /DSourceDir=<deployed folder> packaging\windows\recuerdo.iss
 ; SourceDir holds recuerdo.exe with its Qt and MinGW DLLs, Qt plugins,
-; data\ and config\.
+; and data\.
 
 #ifndef AppVersion
   #define AppVersion "0.0.0"

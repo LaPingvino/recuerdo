@@ -1,5 +1,5 @@
 // Package resources finds Recuerdo's data files (data/maps,
-// data/character_sets.json, config/) wherever Recuerdo is installed.
+// data/character_sets.json) wherever Recuerdo is installed.
 package resources
 
 import (
@@ -10,7 +10,7 @@ import (
 // marker is a file every resource directory has.
 const marker = "data/maps"
 
-// Dir is the directory holding data/ and config/: $RECUERDO_DATA if set,
+// Dir is the directory holding data/: $RECUERDO_DATA if set,
 // else the first of these that has them: next to the executable (Windows
 // install folder, portable zip), ../share/recuerdo (Linux packages and the
 // AppImage), ../Resources (macOS app bundle), the working directory

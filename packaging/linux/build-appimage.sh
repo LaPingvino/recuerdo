@@ -13,7 +13,7 @@ appdir=$(mktemp -d)/AppDir
 
 mkdir -p "$appdir/usr/bin" "$appdir/usr/share/recuerdo"
 install -m755 "$bin" "$appdir/usr/bin/recuerdo"
-cp -r "$root/data" "$root/config" "$appdir/usr/share/recuerdo/"
+cp -r "$root/data" "$appdir/usr/share/recuerdo/"
 install -Dm644 "$root/LICENSE" "$appdir/usr/share/licenses/recuerdo/LICENSE"
 
 for t in linuxdeploy linuxdeploy-plugin-qt; do

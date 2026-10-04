@@ -8,7 +8,7 @@ out=$2
 root=$(cd "$(dirname "$0")/../.." && pwd)
 mkdir -p "$out"
 cp "$exe" "$out/recuerdo.exe"
-cp -r "$root/data" "$root/config" "$out/"
+cp -r "$root/data" "$out/"
 cp "$root/LICENSE" "$out/LICENSE.txt"
 # Qt DLLs and plugins (platforms, styles, image formats)
 # (MSYS2's Qt uses desktop OpenGL, so there is no ANGLE to deploy)
