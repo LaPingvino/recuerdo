@@ -34,11 +34,12 @@ type LessonDialogsModule struct {
 	answerLangCombo   *qt.QComboBox
 
 	// Widget references for properties dialog
-	propNameEdit    *qt.QLineEdit
-	propDescEdit    *qt.QTextEdit
-	propAuthorEdit  *qt.QLineEdit
-	propVersionEdit *qt.QLineEdit
-	itemCountLabel  *qt.QLabel
+	propNameEdit   *qt.QLineEdit
+	propQLangEdit  *qt.QLineEdit
+	propALangEdit  *qt.QLineEdit
+	propLangRows   []*qt.QWidget // hidden for lessons without languages
+	itemCountLabel *qt.QLabel
+	sessionsLabel  *qt.QLabel
 
 	// Widget references for import dialog
 	importFileEdit *qt.QLineEdit
@@ -209,80 +210,36 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 	})
 }
 
-// createPropertiesDialog creates the lesson properties dialog
+// createPropertiesDialog creates the lesson properties dialog: what a
+// lesson file keeps (its title, and a word lesson's languages) and how
+// much it holds.
 func (mod *LessonDialogsModule) createPropertiesDialog(parent *qt.QWidget) {
 	mod.propertiesDialog = qt.NewQDialog(parent)
 	mod.propertiesDialog.SetWindowTitle("Lesson Properties")
-	mod.propertiesDialog.SetFixedSize2(450, 400)
+	mod.propertiesDialog.SetMinimumWidth(380)
 	mod.propertiesDialog.SetWindowModality(qt.ApplicationModal)
 
-	layout := qt.NewQVBoxLayout(mod.propertiesDialog.QWidget)
-
-	// Create tab widget
-	tabWidget := qt.NewQTabWidget(mod.propertiesDialog.QWidget)
-	layout.AddWidget(tabWidget.QWidget)
-
-	// General tab
-	generalTab := qt.NewQWidget2()
-	generalLayout := qt.NewQFormLayout(generalTab)
-
+	form := qt.NewQFormLayout(mod.propertiesDialog.QWidget)
 	mod.propNameEdit = qt.NewQLineEdit(nil)
-	mod.propNameEdit.SetObjectName("propLessonName")
-	generalLayout.AddRow3("Name:", mod.propNameEdit.QWidget)
+	form.AddRow3("Title:", mod.propNameEdit.QWidget)
+	mod.propQLangEdit = qt.NewQLineEdit(nil)
+	mod.propQLangEdit.SetPlaceholderText("e.g. Dutch")
+	form.AddRow3("Question language:", mod.propQLangEdit.QWidget)
+	mod.propALangEdit = qt.NewQLineEdit(nil)
+	mod.propALangEdit.SetPlaceholderText("e.g. English")
+	form.AddRow3("Answer language:", mod.propALangEdit.QWidget)
+	mod.propLangRows = []*qt.QWidget{mod.propQLangEdit.QWidget, form.LabelForField(mod.propQLangEdit.QWidget),
+		mod.propALangEdit.QWidget, form.LabelForField(mod.propALangEdit.QWidget)}
+	mod.itemCountLabel = qt.NewQLabel2()
+	form.AddRow3("Items:", mod.itemCountLabel.QWidget)
+	mod.sessionsLabel = qt.NewQLabel2()
+	form.AddRow3("Practice sessions:", mod.sessionsLabel.QWidget)
 
-	mod.propDescEdit = qt.NewQTextEdit(nil)
-	mod.propDescEdit.SetObjectName("propLessonDescription")
-	mod.propDescEdit.SetMaximumHeight(100)
-	generalLayout.AddRow3("Description:", mod.propDescEdit.QWidget)
-
-	mod.propAuthorEdit = qt.NewQLineEdit(nil)
-	mod.propAuthorEdit.SetObjectName("propAuthor")
-	generalLayout.AddRow3("Author:", mod.propAuthorEdit.QWidget)
-
-	mod.propVersionEdit = qt.NewQLineEdit(nil)
-	mod.propVersionEdit.SetObjectName("propVersion")
-	generalLayout.AddRow3("Version:", mod.propVersionEdit.QWidget)
-
-	tabWidget.AddTab(generalTab, "General")
-
-	// Statistics tab
-	statsTab := qt.NewQWidget2()
-	statsLayout := qt.NewQFormLayout(statsTab)
-
-	itemCountLabel := qt.NewQLabel2()
-	itemCountLabel.SetText("0")
-	itemCountLabel.SetObjectName("itemCount")
-	statsLayout.AddRow3("Number of items:", itemCountLabel.QWidget)
-
-	createdLabel := qt.NewQLabel2()
-	createdLabel.SetText("Unknown")
-	createdLabel.SetObjectName("createdDate")
-	statsLayout.AddRow3("Created:", createdLabel.QWidget)
-
-	modifiedLabel := qt.NewQLabel2()
-	modifiedLabel.SetText("Unknown")
-	modifiedLabel.SetObjectName("modifiedDate")
-	statsLayout.AddRow3("Last modified:", modifiedLabel.QWidget)
-
-	fileSizeLabel := qt.NewQLabel2()
-	fileSizeLabel.SetText("0 KB")
-	fileSizeLabel.SetObjectName("fileSize")
-	statsLayout.AddRow3("File size:", fileSizeLabel.QWidget)
-
-	tabWidget.AddTab(statsTab, "Statistics")
-
-	// Buttons
 	buttonBox := qt.NewQDialogButtonBox(mod.propertiesDialog.QWidget)
 	buttonBox.SetStandardButtons(qt.QDialogButtonBox__Ok | qt.QDialogButtonBox__Cancel)
-	layout.AddWidget(buttonBox.QWidget)
-
-	buttonBox.OnAccepted(func() {
-		mod.propertiesDialog.Accept()
-	})
-
-	buttonBox.OnRejected(func() {
-		mod.propertiesDialog.Reject()
-	})
+	form.AddRowWithWidget(buttonBox.QWidget)
+	buttonBox.OnAccepted(func() { mod.propertiesDialog.Accept() })
+	buttonBox.OnRejected(func() { mod.propertiesDialog.Reject() })
 }
 
 // createImportDialog creates the import dialog
@@ -442,69 +399,39 @@ func (mod *LessonDialogsModule) getNewLessonData() map[string]interface{} {
 	return data
 }
 
-// loadPropertiesData loads lesson data into the properties dialog
+// loadPropertiesData shows a lesson's properties: "name" (its title),
+// "questionLanguage", "answerLanguage", "hasLanguages", "itemCount" and
+// "sessionCount".
 func (mod *LessonDialogsModule) loadPropertiesData(lessonData map[string]interface{}) {
 	if mod.propertiesDialog == nil || lessonData == nil {
 		return
 	}
-
-	if name, ok := lessonData["name"].(string); ok {
-		if mod.propNameEdit != nil {
-			mod.propNameEdit.SetText(name)
+	str := func(k string) string { v, _ := lessonData[k].(string); return v }
+	num := func(k string) int { v, _ := lessonData[k].(int); return v }
+	mod.propNameEdit.SetText(str("name"))
+	mod.propQLangEdit.SetText(str("questionLanguage"))
+	mod.propALangEdit.SetText(str("answerLanguage"))
+	langs, _ := lessonData["hasLanguages"].(bool)
+	for _, w := range mod.propLangRows {
+		if w != nil {
+			w.SetVisible(langs)
 		}
 	}
-
-	if desc, ok := lessonData["description"].(string); ok {
-		if mod.propDescEdit != nil {
-			mod.propDescEdit.SetPlainText(desc)
-		}
-	}
-
-	if author, ok := lessonData["author"].(string); ok {
-		if mod.propAuthorEdit != nil {
-			mod.propAuthorEdit.SetText(author)
-		}
-	}
-
-	if version, ok := lessonData["version"].(string); ok {
-		if mod.propVersionEdit != nil {
-			mod.propVersionEdit.SetText(version)
-		}
-	}
-
-	// Update statistics
-	if itemCount, ok := lessonData["itemCount"].(int); ok {
-		if mod.itemCountLabel != nil {
-			mod.itemCountLabel.SetText(fmt.Sprintf("%d", itemCount))
-		}
-	}
+	mod.itemCountLabel.SetText(fmt.Sprintf("%d", num("itemCount")))
+	mod.sessionsLabel.SetText(fmt.Sprintf("%d", num("sessionCount")))
 }
 
-// getPropertiesData extracts data from the properties dialog
+// getPropertiesData is what the dialog's fields say ("name",
+// "questionLanguage", "answerLanguage").
 func (mod *LessonDialogsModule) getPropertiesData() map[string]interface{} {
 	if mod.propertiesDialog == nil {
 		return nil
 	}
-
-	data := make(map[string]interface{})
-
-	if mod.propNameEdit != nil {
-		data["name"] = strings.TrimSpace(mod.propNameEdit.Text())
+	return map[string]interface{}{
+		"name":             strings.TrimSpace(mod.propNameEdit.Text()),
+		"questionLanguage": strings.TrimSpace(mod.propQLangEdit.Text()),
+		"answerLanguage":   strings.TrimSpace(mod.propALangEdit.Text()),
 	}
-
-	if mod.propDescEdit != nil {
-		data["description"] = strings.TrimSpace(mod.propDescEdit.ToPlainText())
-	}
-
-	if mod.propAuthorEdit != nil {
-		data["author"] = strings.TrimSpace(mod.propAuthorEdit.Text())
-	}
-
-	if mod.propVersionEdit != nil {
-		data["version"] = strings.TrimSpace(mod.propVersionEdit.Text())
-	}
-
-	return data
 }
 
 // getImportData extracts data from the import dialog

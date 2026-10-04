@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 13 |  |  | 27 | 6 | 49 |
-| interfaces | 8 | 2 | 1 | 52 |  |  | 17 | 14 | 94 |
+| interfaces | 11 |  |  | 52 |  |  | 17 | 14 | 94 |
 | logic | 25 |  |  | 78 |  |  | 38 | 39 | 180 |
 | misc |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 3 |  |  | 19 | 5 | 27 |
-| **all** | **36** | **2** | **1** | **146** | **0** | **0** | **102** | **67** | **354** |
+| **all** | **39** | **0** | **0** | **146** | **0** | **0** | **102** | **67** | **354** |
 
 Remarks:
 
@@ -359,7 +359,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogShower` | dialogShower | 141 | 0 | 0 | 0 | covered |
-| `interfaces/qt/dialogs/about` | about | 247 | 142 | 0 | 0 | untested |
+| `interfaces/qt/dialogs/about` | about | 247 | 142 | 0 | 1 | working |
 | `interfaces/qt/dialogs/aboutTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/documentation` | documentation | 117 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
@@ -375,11 +375,11 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1056 | 3 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1065 | 0 | 2 | working |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
-| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 415 | 0 | 1 | working |
+| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 368 | 0 | 2 | working |
 | `interfaces/qt/lessons/media` | lesson | 197 | 585 | 0 | 2 | working |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 699 | 0 | 2 | working |
 | `interfaces/qt/lessons/words` | lesson | 211 | 2093 | 0 | 2 | working |
@@ -402,7 +402,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/printer` | printer | 51 | 0 | 0 | 0 | covered |
 | `interfaces/qt/progressViewer` | progressViewer | 150 | 0 | 0 | 0 | covered |
 | `interfaces/qt/progressViewerTest` | test | 51 | 42 | 11 | 0 | test suite |
-| `interfaces/qt/qtApp` | qtApp | 27 | 79 | 0 | 0 | untested |
+| `interfaces/qt/qtApp` | qtApp | 27 | 79 | 0 | 1 | working |
 | `interfaces/qt/qtAppTest` | test | 29 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/recentlyOpenedViewer` | recentlyOpenedViewer | 132 | 0 | 0 | 0 | covered |
 | `interfaces/qt/settingsWidget/boolean` | settingsWidget | 35 | 0 | 0 | 0 | covered |

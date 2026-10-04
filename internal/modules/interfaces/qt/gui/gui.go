@@ -719,9 +719,6 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 		mod.tabWords[wordsWidget.QWidget.UnsafePointer()] = wordsWidget
 	}
 
-	// TODO: Connect lesson change signal to update window title and status
-	// This will be implemented when proper Qt signal system is in place
-	mod.logger.LegacyReminder("Qt signal connection for lesson changes", "legacy/modules/org/openteacher/interfaces/qt/gui/gui.py", "proper signal handling needed")
 	mod.logger.Info("Created lesson widget for: %s", lesson.Path)
 
 	mod.logger.Success("Created lesson widget with Enter/Teach/Results tabs")
@@ -761,7 +758,6 @@ func (mod *GuiModule) showPropertiesDialog() {
 		if updatedData != nil {
 			mod.logger.Success("Properties dialog returned updated data")
 			mod.updateCurrentLessonData(updatedData)
-			mod.statusBar.ShowMessage("Lesson properties updated successfully")
 		} else {
 			mod.logger.Info("Properties dialog was cancelled or no changes made")
 		}
@@ -820,52 +816,56 @@ func (mod *GuiModule) showAboutDialog() {
 	}
 }
 
-// getCurrentLessonData gets the current lesson data for the properties dialog
+// getCurrentLessonData is the current lesson's properties for the
+// properties dialog.
 func (mod *GuiModule) getCurrentLessonData() map[string]interface{} {
-	if mod.tabWidget == nil {
+	l, _ := mod.currentLesson()
+	if l == nil {
 		return nil
 	}
-
-	currentIndex := mod.tabWidget.CurrentIndex()
-	if currentIndex < 0 {
-		return nil
+	list := l.Data.List
+	return map[string]interface{}{
+		"name":             list.Title,
+		"questionLanguage": list.QuestionLanguage,
+		"answerLanguage":   list.AnswerLanguage,
+		"hasLanguages":     l.DataType != "topo" && l.DataType != "media",
+		"itemCount":        len(list.Items),
+		"sessionCount":     len(list.Tests),
 	}
-
-	tabText := mod.tabWidget.TabText(currentIndex)
-
-	// Extract lesson information from the current tab
-	// This is a simplified implementation - in a full version you'd get the actual lesson data
-	lessonData := make(map[string]interface{})
-	lessonData["name"] = tabText
-	lessonData["description"] = ""
-	lessonData["author"] = ""
-	lessonData["version"] = "1.0"
-	lessonData["itemCount"] = 0 // TODO: Get actual count from lesson
-
-	mod.logger.Debug("Retrieved current lesson data for: %s", tabText)
-
-	return lessonData
 }
 
-// updateCurrentLessonData updates the current lesson with new property data
+// applyProperties puts the properties dialog's title (unless empty) and
+// languages in list, and reports whether that changed anything.
+func applyProperties(list *lesson.WordList, data map[string]interface{}) bool {
+	str := func(k string) string { v, _ := data[k].(string); return v }
+	changed := false
+	set := func(field *string, v string) {
+		if *field != v {
+			*field, changed = v, true
+		}
+	}
+	if name := str("name"); name != "" {
+		set(&list.Title, name)
+	}
+	set(&list.QuestionLanguage, str("questionLanguage"))
+	set(&list.AnswerLanguage, str("answerLanguage"))
+	return changed
+}
+
+// updateCurrentLessonData puts the properties dialog's title and
+// languages in the current lesson, which then needs saving.
 func (mod *GuiModule) updateCurrentLessonData(data map[string]interface{}) {
-	if mod.tabWidget == nil || data == nil {
+	l, _ := mod.currentLesson()
+	if l == nil || data == nil {
 		return
 	}
-
-	currentIndex := mod.tabWidget.CurrentIndex()
-	if currentIndex < 0 {
+	if !applyProperties(&l.Data.List, data) {
 		return
 	}
-
-	// Update tab title if name changed
-	if name, ok := data["name"].(string); ok && name != "" {
-		mod.tabWidget.SetTabText(currentIndex, name)
-		mod.logger.Info("Updated lesson name to: %s", name)
-	}
-
-	// TODO: Update actual lesson data in the lesson widget
-	mod.logger.Info("Lesson properties updated successfully")
+	l.Data.Changed = true
+	tab := mod.tabWidget.CurrentWidget()
+	mod.tabWidget.SetTabText(mod.tabWidget.CurrentIndex(), l.Data.List.Title)
+	mod.markModified(tab)
 }
 
 // InitGuiModule creates and returns a new GuiModule instance
