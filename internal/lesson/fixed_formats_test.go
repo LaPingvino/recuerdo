@@ -73,6 +73,15 @@ func TestFixedFormatsContent(t *testing.T) {
 	if d := load("application_x-vokabeltrainer.vokabeltrainer-with-comment.vtl3"); len(d.List.Items) != 3 || d.List.Items[0].Answers[0] != "one" || d.List.Items[2].Comment != "comment" {
 		t.Errorf("vokabeltrainer: %+v", d.List.Items)
 	}
+	// the three Voca versions hold the same list; its question side uses a
+	// Greek mimicry font, as OpenTeacher converts it too
+	for _, v := range []string{"voca3.0", "voca4.0", "vocatude1.0"} {
+		d := load("application_x-oriente-voca." + v + ".wdl")
+		if len(d.List.Items) != 4 || d.List.QuestionLanguage != "Nederlands" || d.List.AnswerLanguage != "English" ||
+			d.List.Items[0].Questions[0] != "εεν" || d.List.Items[1].Answers[0] != "two" {
+			t.Errorf("%s: %q/%q %+v", v, d.List.QuestionLanguage, d.List.AnswerLanguage, d.List.Items)
+		}
+	}
 	if d := load("text_plain.vtrain.txt"); len(d.List.Items) != 3 || d.List.Items[1].Answers[0] != "two" {
 		t.Errorf("vtrain: %+v", d.List.Items)
 	}

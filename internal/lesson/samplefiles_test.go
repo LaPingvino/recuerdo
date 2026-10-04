@@ -17,11 +17,7 @@ const sampleFiles = "../../legacy/modules/org/openteacher/logic/loaders/test/tes
 // knownBroken lists sample files Recuerdo does not load correctly yet,
 // with what goes wrong. TestOpenTeacherSampleFiles fails when one starts
 // working, so the list only shrinks.
-var knownBroken = map[string]string{
-	"application_x-oriente-voca.voca3.0.wdl":     "Voca format not supported",
-	"application_x-oriente-voca.voca4.0.wdl":     "Voca format not supported",
-	"application_x-oriente-voca.vocatude1.0.wdl": "Voca format not supported",
-}
+var knownBroken = map[string]string{}
 
 // firstQuestion is the first question of sample files whose content
 // would otherwise pass the generic checks while being read wrongly.

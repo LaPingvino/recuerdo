@@ -62,6 +62,8 @@ func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
 		return fl.loadVocabularium(filePath)
 	case ".vtl3":
 		return fl.loadVokabelTrainer(filePath)
+	case ".wdl":
+		return fl.loadVoca(filePath)
 	case ".csv", ".tsv":
 		return fl.loadCSV(filePath)
 	case ".txt":
