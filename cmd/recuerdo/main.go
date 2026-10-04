@@ -35,7 +35,6 @@ import (
 
 	// "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/documentation" // Disabled due to build constraints
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/gui"
-	loadergui "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/loaderGui"
 	mediadisplay "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaDisplay"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/audio"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/dailymotion"
@@ -51,27 +50,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/printer"
 	progressviewer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/progressViewer"
 	qtapp "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/qtApp"
-	recentlyopenedviewer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/recentlyOpenedViewer"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/boolean"
-	charactertable "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/characterTable"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/language"
-	longtext "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/longText"
-	multioption "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/multiOption"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/number"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/option"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/password"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/profile"
-	shorttext "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidget/shortText"
-	settingswidgets "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/settingsWidgets"
-	startwidget "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/startWidget"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/hangman"
-	inmind "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/inMind"
-	repeatanswer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/repeatAnswer"
-	shuffleanswer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/shuffleAnswer"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/teachTypes/typing"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/theme"
 	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/typingTutor/keyboard"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
 
 	logicevent "github.com/LaPingvino/recuerdo/internal/modules/logic/event"
@@ -235,11 +214,6 @@ func registerAllModules(manager *core.Manager) error {
 	buttonRegisterModule := modules.NewButtonRegisterModule()
 	if err := manager.Register(buttonRegisterModule); err != nil {
 		return fmt.Errorf("failed to register button register module: %w", err)
-	}
-
-	startWidgetModule := startwidget.InitStartwidgetModule()
-	if err := manager.Register(startWidgetModule); err != nil {
-		return fmt.Errorf("failed to register start widget module: %w", err)
 	}
 
 	// Register qtApp module first (required by GUI module)
@@ -406,12 +380,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register topo module: %w", err)
 	}
 
-	// Register loadergui module
-	loaderguiModule := loadergui.NewLoaderGuiModule()
-	if err := manager.Register(loaderguiModule); err != nil {
-		return fmt.Errorf("failed to register loadergui module: %w", err)
-	}
-
 	// Register mediadisplay module
 	mediadisplayModule := mediadisplay.NewMediaDisplayModule()
 	if err := manager.Register(mediadisplayModule); err != nil {
@@ -508,120 +476,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register progressviewer module: %w", err)
 	}
 
-	// Register recentlyopenedviewer module
-	recentlyopenedviewerModule := recentlyopenedviewer.NewRecentlyOpenedViewerModule()
-	if err := manager.Register(recentlyopenedviewerModule); err != nil {
-		return fmt.Errorf("failed to register recentlyopenedviewer module: %w", err)
-	}
-
-	// Register boolean module
-	booleanModule := boolean.NewSettingsWidgetModule()
-	if err := manager.Register(booleanModule); err != nil {
-		return fmt.Errorf("failed to register boolean module: %w", err)
-	}
-
-	// Register charactertable module
-	charactertableModule := charactertable.NewSettingsWidgetModule()
-	if err := manager.Register(charactertableModule); err != nil {
-		return fmt.Errorf("failed to register charactertable module: %w", err)
-	}
-
-	// Register language module
-	languageModule := language.NewSettingsWidgetModule()
-	if err := manager.Register(languageModule); err != nil {
-		return fmt.Errorf("failed to register language module: %w", err)
-	}
-
-	// Register longtext module
-	longtextModule := longtext.NewSettingsWidgetModule()
-	if err := manager.Register(longtextModule); err != nil {
-		return fmt.Errorf("failed to register longtext module: %w", err)
-	}
-
-	// Register multioption module
-	multioptionModule := multioption.NewSettingsWidgetModule()
-	if err := manager.Register(multioptionModule); err != nil {
-		return fmt.Errorf("failed to register multioption module: %w", err)
-	}
-
-	// Register number module
-	numberModule := number.NewSettingsWidgetModule()
-	if err := manager.Register(numberModule); err != nil {
-		return fmt.Errorf("failed to register number module: %w", err)
-	}
-
-	// Register option module
-	optionModule := option.NewSettingsWidgetModule()
-	if err := manager.Register(optionModule); err != nil {
-		return fmt.Errorf("failed to register option module: %w", err)
-	}
-
-	// Register password module
-	passwordModule := password.NewSettingsWidgetModule()
-	if err := manager.Register(passwordModule); err != nil {
-		return fmt.Errorf("failed to register password module: %w", err)
-	}
-
-	// Register profile module
-	profileModule := profile.NewSettingsWidgetModule()
-	if err := manager.Register(profileModule); err != nil {
-		return fmt.Errorf("failed to register profile module: %w", err)
-	}
-
-	// Register shorttext module
-	shorttextModule := shorttext.NewSettingsWidgetModule()
-	if err := manager.Register(shorttextModule); err != nil {
-		return fmt.Errorf("failed to register shorttext module: %w", err)
-	}
-
-	// Register settingswidgets module
-	settingswidgetsModule := settingswidgets.NewSettingsWidgetsModule()
-	if err := manager.Register(settingswidgetsModule); err != nil {
-		return fmt.Errorf("failed to register settingswidgets module: %w", err)
-	}
-
-	// Register startwidget module
-	startwidgetModule := startwidget.NewStartwidgetModule()
-	if err := manager.Register(startwidgetModule); err != nil {
-		return fmt.Errorf("failed to register startwidget module: %w", err)
-	}
-
-	// Register hangman graphics module (from hangman package)
-	hangmangraphicsModule := hangman.NewHangmanGraphics()
-	if err := manager.Register(hangmangraphicsModule); err != nil {
-		return fmt.Errorf("failed to register hangman graphics module: %w", err)
-	}
-
-	// Register hangman module
-	hangmanModule := hangman.NewTypingTeachTypeModule()
-	if err := manager.Register(hangmanModule); err != nil {
-		return fmt.Errorf("failed to register hangman module: %w", err)
-	}
-
-	// Register inmind module
-	inmindModule := inmind.NewInMindTeachTypeModule()
-	if err := manager.Register(inmindModule); err != nil {
-		return fmt.Errorf("failed to register inmind module: %w", err)
-	}
-
-	// Register repeatanswer module
-	repeatanswerModule := repeatanswer.NewRepeatAnswerTeachTypeModule()
-	if err := manager.Register(repeatanswerModule); err != nil {
-		return fmt.Errorf("failed to register repeatanswer module: %w", err)
-	}
-
-	// Register shuffleanswer module
-	shuffleanswerModule := shuffleanswer.NewShuffleAnswerTeachTypeModule()
-	if err := manager.Register(shuffleanswerModule); err != nil {
-		return fmt.Errorf("failed to register shuffleanswer module: %w", err)
-	}
-
-	// Register typing module
-	typingModule := typing.NewTypingTeachTypeModule()
-	if err := manager.Register(typingModule); err != nil {
-		return fmt.Errorf("failed to register typing module: %w", err)
-	}
-
 	// Register media module - DISABLED (duplicate module name conflict)
 	// teachermediaModule := testtypesmedia.NewMediaTestTypeModule()
 	// if err := manager.Register(teachermediaModule); err != nil {
@@ -634,22 +488,10 @@ func registerAllModules(manager *core.Manager) error {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
 
-	// Register theme module
-	themeModule := theme.NewThemeModule()
-	if err := manager.Register(themeModule); err != nil {
-		return fmt.Errorf("failed to register theme module: %w", err)
-	}
-
 	// Register topomaps module
 	topomapsModule := topomaps.NewTopoMapsModule()
 	if err := manager.Register(topomapsModule); err != nil {
 		return fmt.Errorf("failed to register topomaps module: %w", err)
-	}
-
-	// Register keyboard module
-	keyboardModule := keyboard.NewTypingTutorKeyboardModule()
-	if err := manager.Register(keyboardModule); err != nil {
-		return fmt.Errorf("failed to register keyboard module: %w", err)
 	}
 
 	// Skip main module - it's a program not a library

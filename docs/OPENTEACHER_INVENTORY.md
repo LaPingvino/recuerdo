@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
+| interfaces | 2 | 2 | 7 | 27 | 26 |  | 16 | 14 | 94 |
 | logic | 11 | 15 |  | 75 | 2 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **16** | **18** | **7** | **86** | **64** | **2** | **94** | **67** | **354** |
+| **all** | **16** | **17** | **7** | **113** | **36** | **0** | **98** | **67** | **354** |
 
 Remarks:
 
@@ -186,6 +186,33 @@ file formats, see **covered** above):
 | `data/maps/world` | `internal/maps` | the map picture and places in data/maps/world, loaded by MapManager |
 | `data/metadata` | `internal/modules/metadata.go` | Recuerdo's own metadata module (name, version, application ID) |
 | `data/profileDescriptions/all` | `cmd/recuerdo` | Recuerdo always starts with all its features, which is what OpenTeacher's "all" profile chose |
+| `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
+| `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
+| `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
+| `interfaces/qt/enterers/words` | `internal/modules/interfaces/qt/lessons/words` | the Enter tab of a word lesson |
+| `interfaces/qt/inputTyping` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab's answer field |
+| `interfaces/qt/loaderGui` | `internal/modules/interfaces/qt/gui` | File > Open and the open dialog |
+| `interfaces/qt/recentlyOpenedViewer` | `internal/modules/interfaces/qt/gui` | File > Open Recent |
+| `interfaces/qt/settingsWidget/boolean` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/characterTable` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/language` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/longText` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/multiOption` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/number` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/option` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/password` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/profile` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidget/shortText` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
+| `interfaces/qt/settingsWidgets` | `internal/modules/interfaces/qt/dialogs/settings` | the settings dialog and Teach tab build their own controls |
+| `interfaces/qt/startWidget` | `internal/modules/interfaces/qt/gui` | the start screen (New Lesson, Open Lesson) |
+| `interfaces/qt/teachTypes/hangman` | `internal/modules/interfaces/qt/lessons/words` | Hangman mode of the Teach tab, tested offscreen |
+| `interfaces/qt/teachTypes/inMind` | `internal/modules/interfaces/qt/lessons/words` | In mind mode of the Teach tab, tested offscreen |
+| `interfaces/qt/teachTypes/repeatAnswer` | `internal/modules/interfaces/qt/lessons/words` | Repeat answer mode (with fading) of the Teach tab, tested offscreen |
+| `interfaces/qt/teachTypes/shuffleAnswer` | `internal/modules/interfaces/qt/lessons/words` | Shuffle answer mode of the Teach tab, tested offscreen |
+| `interfaces/qt/teachTypes/typing` | `internal/modules/interfaces/qt/lessons/words` | Typing mode of the Teach tab (internal/teaching), tested offscreen |
+| `interfaces/qt/teachers/words` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab of a word lesson |
+| `interfaces/qt/testViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab and results dialog show a session's answers |
+| `interfaces/qt/testsViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab lists the results; charts: see progressViewer |
 | `logic/authors` | `internal/modules/data/openteacherAuthors` | the credits list in the About dialog |
 | `logic/dataStore` | `internal/modules/settings.go` | the settings module's JSON file is Recuerdo's persistent store |
 | `logic/execute` | `internal/core, internal/modules/execute.go` | start-up and enabling modules |
@@ -223,6 +250,10 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
 | `data/profileDescriptions/wordsOnly` | as selfstudy ("just gimme my good old OpenTeacher 2.x"); a setting hiding topography and media lessons could do this later |
+| `interfaces/qt/hiddenBrowser` | a hidden web browser (an easter egg) nothing else used |
+| `interfaces/qt/theme` | an optional dark style sheet nothing used; Recuerdo follows the desktop's Qt style (a dark theme could come back as a setting) |
+| `interfaces/qt/typingTutor/keyboard` | for now: the keyboard of the touch typing course; see typingTutorModel |
+| `interfaces/qt/typingTutor/main` | for now: the screen of OpenTeacher's touch typing course; see typingTutorModel |
 | `logic/friendlyTranslationNames` | for now: names of interface translations; see translator |
 | `logic/interfaces/typingTutorModel` | for now: OpenTeacher's touch typing course is a different kind of lesson than Recuerdo's words, topography and media lessons |
 | `logic/ocr/cuneiformRecognizer` | Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR |
@@ -289,11 +320,11 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
-| `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 143 | 0 | 0 | untested |
-| `interfaces/qt/dialogShower` | dialogShower | 141 | 0 | 0 | 0 | missing |
+| `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 0 | 0 | 0 | covered |
+| `interfaces/qt/dialogShower` | dialogShower | 141 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/about` | about | 247 | 142 | 0 | 0 | untested |
 | `interfaces/qt/dialogs/aboutTest` | test | 24 | 36 | 8 | 0 | test suite |
-| `interfaces/qt/dialogs/documentation` | documentation | 117 | 43 | 6 | 0 | scaffold |
+| `interfaces/qt/dialogs/documentation` | documentation | 117 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/file` | fileDialogs | 91 | 137 | 0 | 1 | working |
 | `interfaces/qt/dialogs/print` | printDialog | 31 | 185 | 12 | 0 | scaffold |
@@ -305,17 +336,17 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 354 | 7 | 0 | partial |
 | `interfaces/qt/enterers/topo` | topoEnterer | 251 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/enterers/words` | wordsEnterer | 474 | 122 | 7 | 0 | scaffold |
+| `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/gui` | ui | 607 | 963 | 8 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
-| `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 85 | 6 | 0 | scaffold |
-| `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | missing |
+| `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
 | `interfaces/qt/lessons/words` | lesson | 211 | 1994 | 11 | 2 | partial |
-| `interfaces/qt/loaderGui` | loaderGui | 58 | 40 | 5 | 0 | scaffold |
+| `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/dailymotion` | mediaType | 37 | 42 | 6 | 0 | scaffold |
@@ -336,30 +367,30 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/progressViewerTest` | test | 51 | 42 | 11 | 0 | test suite |
 | `interfaces/qt/qtApp` | qtApp | 27 | 79 | 0 | 0 | untested |
 | `interfaces/qt/qtAppTest` | test | 29 | 36 | 8 | 0 | test suite |
-| `interfaces/qt/recentlyOpenedViewer` | recentlyOpenedViewer | 132 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/boolean` | settingsWidget | 35 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/characterTable` | settingsWidget | 67 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/language` | settingsWidget | 79 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/longText` | settingsWidget | 35 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/multiOption` | settingsWidget | 88 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/number` | settingsWidget | 40 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/option` | settingsWidget | 37 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/password` | settingsWidget | 36 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/profile` | settingsWidget | 47 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/settingsWidget/shortText` | settingsWidget | 35 | 38 | 4 | 0 | scaffold |
+| `interfaces/qt/recentlyOpenedViewer` | recentlyOpenedViewer | 132 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/boolean` | settingsWidget | 35 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/characterTable` | settingsWidget | 67 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/language` | settingsWidget | 79 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/longText` | settingsWidget | 35 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/multiOption` | settingsWidget | 88 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/number` | settingsWidget | 40 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/option` | settingsWidget | 37 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/password` | settingsWidget | 36 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/profile` | settingsWidget | 47 | 0 | 0 | 0 | covered |
+| `interfaces/qt/settingsWidget/shortText` | settingsWidget | 35 | 0 | 0 | 0 | covered |
 | `interfaces/qt/settingsWidget/test` | test | 71 | 0 | 0 | 0 | test suite |
-| `interfaces/qt/settingsWidgets` | settingsWidgets | 18 | 36 | 3 | 0 | scaffold |
-| `interfaces/qt/startWidget` | startWidget | 260 | 37 | 3 | 0 | scaffold |
-| `interfaces/qt/teachTypes/hangman` | teachType | 295 | 125 | 20 | 0 | scaffold |
-| `interfaces/qt/teachTypes/inMind` | teachType | 159 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/teachTypes/repeatAnswer` | teachType | 154 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/teachTypes/shuffleAnswer` | teachType | 106 | 40 | 5 | 0 | scaffold |
-| `interfaces/qt/teachTypes/typing` | teachType | 46 | 40 | 5 | 0 | scaffold |
+| `interfaces/qt/settingsWidgets` | settingsWidgets | 18 | 0 | 0 | 0 | covered |
+| `interfaces/qt/startWidget` | startWidget | 260 | 0 | 0 | 0 | covered |
+| `interfaces/qt/teachTypes/hangman` | teachType | 295 | 0 | 0 | 0 | covered |
+| `interfaces/qt/teachTypes/inMind` | teachType | 159 | 0 | 0 | 0 | covered |
+| `interfaces/qt/teachTypes/repeatAnswer` | teachType | 154 | 0 | 0 | 0 | covered |
+| `interfaces/qt/teachTypes/shuffleAnswer` | teachType | 106 | 0 | 0 | 0 | covered |
+| `interfaces/qt/teachTypes/typing` | teachType | 46 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/media` | mediaTeacher | 212 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/teachers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/teachers/topo` | topoTeacher | 285 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/teachers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/teachers/words` | wordsTeacher | 387 | 48 | 9 | 0 | scaffold |
+| `interfaces/qt/teachers/words` | wordsTeacher | 387 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/testMode/connection` | testModeConnection | 216 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/testMode/menu` | testMenu | 51 | 0 | 0 | 0 | dropped |
@@ -369,13 +400,13 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testViewer` | testViewer | 175 | 62 | 20 | 0 | scaffold |
+| `interfaces/qt/testViewer` | testViewer | 175 | 0 | 0 | 0 | covered |
 | `interfaces/qt/testViewerTest` | test | 73 | 36 | 8 | 0 | test suite |
-| `interfaces/qt/testsViewer` | testsViewer | 275 | 100 | 35 | 0 | scaffold |
-| `interfaces/qt/theme` | theme | 35 | 38 | 4 | 0 | scaffold |
+| `interfaces/qt/testsViewer` | testsViewer | 275 | 0 | 0 | 0 | covered |
+| `interfaces/qt/theme` | theme | 35 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/topoMaps` | topoMaps | 231 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/typingTutor/main` | typingTutor | 358 | 40 | 5 | 0 | scaffold |
+| `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/typingTutor/main` | typingTutor | 358 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/quizletApi` | quizletApi | 236 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/studyStackApi` | studyStackApi | 222 | 0 | 0 | 0 | dropped |
