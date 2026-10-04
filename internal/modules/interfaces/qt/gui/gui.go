@@ -9,6 +9,8 @@
 package gui
 
 import (
+	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
+	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	"unsafe"
 
 	"context"
@@ -299,6 +301,11 @@ func (mod *GuiModule) createMenuBar() {
 	helpMenu := qt.NewQMenu2()
 	helpMenu.SetTitle("&Help")
 	mod.menuBar.AddMenu(helpMenu)
+
+	guideAction := helpMenu.AddAction("&Getting Started")
+	guideAction.SetShortcut(qt.NewQKeySequence2("F1"))
+	guideAction.OnTriggered(mod.showGettingStarted)
+	helpMenu.AddSeparator()
 
 	aboutAction := helpMenu.AddAction("&About...")
 	aboutAction.OnTriggered(func() {
@@ -624,6 +631,9 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 
 	// Add the tab
 	tabIndex := mod.tabWidget.AddTab(lessonWidget, title)
+	if png := datatypeicons.Icon(lesson.DataType); png != nil {
+		mod.tabWidget.SetTabIcon(tabIndex, icon.FromPNG(png))
+	}
 	mod.tabWidget.SetCurrentIndex(tabIndex)
 	mod.rememberLesson(lessonWidget, lesson)
 	if mod.lastWords != nil && mod.lastWords.QWidget.UnsafePointer() == lessonWidget.UnsafePointer() {
@@ -913,4 +923,37 @@ func (mod *GuiModule) rememberLesson(tab *qt.QWidget, l *lesson.Lesson) {
 		mod.tabLessons = map[unsafe.Pointer]*lesson.Lesson{}
 	}
 	mod.tabLessons[tab.UnsafePointer()] = l
+}
+
+// showGettingStarted shows the getting started guide (Help > Getting
+// Started).
+func (mod *GuiModule) showGettingStarted() {
+	dialog, err := mod.gettingStartedDialog()
+	if err != nil {
+		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Getting Started", "The guide could not be found:\n"+err.Error())
+		return
+	}
+	dialog.Show()
+}
+
+// gettingStartedDialog builds the dialog showing the getting started guide.
+func (mod *GuiModule) gettingStartedDialog() (*qt.QDialog, error) {
+	html, err := userdocumentation.GettingStarted()
+	if err != nil {
+		return nil, err
+	}
+	dialog := qt.NewQDialog(mod.mainWindow.QWidget)
+	dialog.SetWindowTitle("Getting Started with Recuerdo")
+	dialog.Resize(640, 720)
+	layout := qt.NewQVBoxLayout(dialog.QWidget)
+	browser := qt.NewQTextBrowser(dialog.QWidget)
+	browser.SetSearchPaths([]string{userdocumentation.Dir()})
+	browser.SetOpenExternalLinks(true)
+	browser.SetHtml(html)
+	layout.AddWidget(browser.QWidget)
+	buttons := qt.NewQDialogButtonBox(dialog.QWidget)
+	buttons.SetStandardButtons(qt.QDialogButtonBox__Close)
+	buttons.OnRejected(func() { dialog.Close() })
+	layout.AddWidget(buttons.QWidget)
+	return dialog, nil
 }

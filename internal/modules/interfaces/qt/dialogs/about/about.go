@@ -6,8 +6,11 @@
 package about
 
 import (
+	"strings"
+
 	"context"
 	"fmt"
+	openteacherauthors "github.com/LaPingvino/recuerdo/internal/modules/data/openteacherAuthors"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/icon"
 	"github.com/LaPingvino/recuerdo/internal/version"
 	"log"
@@ -89,6 +92,10 @@ func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
 	layout.AddSpacing(8)
 	buttonBox := qt.NewQDialogButtonBox(mod.dialog.QWidget)
 	buttonBox.SetStandardButtons(qt.QDialogButtonBox__Close)
+	credits := buttonBox.AddButton2("Credits", qt.QDialogButtonBox__ActionRole)
+	credits.OnClicked(func() {
+		qt.QMessageBox_Information(mod.dialog.QWidget, "Credits", CreditsText())
+	})
 	layout.AddWidget(buttonBox.QWidget)
 	buttonBox.OnRejected(func() {
 		mod.dialog.Close()
@@ -170,4 +177,15 @@ func (mod *AboutDialogModule) ShowAboutDialog() {
 // This is the Go equivalent of the Python init function
 func InitAboutDialogModule() core.Module {
 	return NewAboutDialogModule()
+}
+
+// CreditsText lists who made Recuerdo and OpenTeacher, by role.
+func CreditsText() string {
+	var b strings.Builder
+	b.WriteString("Recuerdo: Joop Kiefte\n\nBased on OpenTeacher by:\n")
+	roles, names := openteacherauthors.ByRole()
+	for _, r := range roles {
+		b.WriteString("\n" + r + ": " + strings.Join(names[r], ", "))
+	}
+	return b.String()
 }

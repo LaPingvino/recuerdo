@@ -66,12 +66,12 @@ uses it.
 
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data |  |  |  | 10 | 12 |  | 21 | 6 | 49 |
+| data | 3 |  |  | 10 | 9 |  | 21 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
 | logic | 8 | 15 |  | 51 | 41 |  | 26 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **10** | **18** | **7** | **61** | **112** | **2** | **77** | **67** | **354** |
+| **all** | **13** | **18** | **7** | **61** | **109** | **2** | **77** | **67** | **354** |
 
 Remarks:
 
@@ -194,7 +194,7 @@ file formats, see **covered** above):
 | `data/chars/greek` | chars | 54 | 0 | 0 | 0 | covered |
 | `data/chars/symbols` | chars | 91 | 0 | 0 | 0 | covered |
 | `data/chars/test` | test | 42 | 0 | 0 | 0 | test suite |
-| `data/dataTypeIcons` | dataTypeIcons | 23 | 38 | 4 | 0 | scaffold |
+| `data/dataTypeIcons` | dataTypeIcons | 23 | 21 | 0 | 1 | working |
 | `data/dataTypeIconsTest` | test | 31 | 0 | 0 | 0 | test suite |
 | `data/maps/africa` | map | 27 | 0 | 0 | 0 | covered |
 | `data/maps/asia` | map | 27 | 0 | 0 | 0 | covered |
@@ -203,7 +203,7 @@ file formats, see **covered** above):
 | `data/maps/usa` | map | 27 | 0 | 0 | 0 | covered |
 | `data/maps/world` | map | 27 | 0 | 0 | 0 | covered |
 | `data/metadata` | metadata | 83 | 0 | 0 | 0 | covered |
-| `data/openteacherAuthors` | openteacherAuthors | 151 | 38 | 4 | 0 | scaffold |
+| `data/openteacherAuthors` | openteacherAuthors | 151 | 37 | 0 | 1 | working |
 | `data/profileDescriptions/all` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
 | `data/profileDescriptions/cli` | profileDescription | 19 | 36 | 3 | 0 | scaffold |
 | `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | dropped |
@@ -237,11 +237,11 @@ file formats, see **covered** above):
 | `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 38 | 4 | 0 | scaffold |
-| `data/userDocumentation` | userDocumentation | 57 | 40 | 5 | 0 | scaffold |
+| `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 143 | 0 | 0 | untested |
 | `interfaces/qt/dialogShower` | dialogShower | 141 | 0 | 0 | 0 | missing |
-| `interfaces/qt/dialogs/about` | about | 247 | 127 | 0 | 0 | untested |
+| `interfaces/qt/dialogs/about` | about | 247 | 142 | 0 | 0 | untested |
 | `interfaces/qt/dialogs/aboutTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/documentation` | documentation | 117 | 43 | 6 | 0 | scaffold |
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
@@ -257,7 +257,7 @@ file formats, see **covered** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 122 | 7 | 0 | scaffold |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 818 | 8 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 862 | 8 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 85 | 6 | 0 | scaffold |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | missing |

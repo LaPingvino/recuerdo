@@ -83,6 +83,13 @@ func (mod *GuiModule) startScreenshots() {
 		lessonTab(2),
 		shoot("05-results"),
 		func() {
+			if d, err := mod.gettingStartedDialog(); err == nil {
+				d.Show()
+				d.Grab().Save(filepath.Join(dir, "07-getting-started.png"))
+				d.Close()
+			}
+		},
+		func() {
 			// the about dialog is modal: a separate timer, running in its
 			// event loop, saves and closes it
 			closer := qt.NewQTimer()

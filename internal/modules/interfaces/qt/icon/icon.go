@@ -20,3 +20,10 @@ func Icon() *qt.QIcon {
 	pm.LoadFromDataWithData(assets.Icon)
 	return qt.NewQIcon2(pm)
 }
+
+// FromPNG makes an icon from PNG data.
+func FromPNG(png []byte) *qt.QIcon {
+	pm := qt.NewQPixmap()
+	pm.LoadFromDataWithData(png)
+	return qt.NewQIcon2(pm)
+}

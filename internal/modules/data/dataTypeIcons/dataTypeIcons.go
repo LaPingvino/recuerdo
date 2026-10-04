@@ -1,71 +1,40 @@
-// Package datatypeicons provides functionality ported from Python module
-//
-// This module provides icons for types of data OpenTeacher can
-// handle, one example is for 'words'.
-//
-// This is an automated port - implementation may be incomplete.
+// Package datatypeicons has an icon for each type of lesson (words,
+// topography, media), from KDE's Oxygen icon theme (see icons/COPYING).
+// Port of OpenTeacher's data/dataTypeIcons.
 package datatypeicons
 
 import (
-	"context"
-	"fmt"
+	"embed"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
 )
 
-// DataTypeIconsModule is a Go port of the Python DataTypeIconsModule class
+//go:embed icons/*.png icons/COPYING
+var icons embed.FS
+
+// Icon returns the PNG icon for a lesson type ("words", "topo", "media"),
+// or nil for other types.
+func Icon(dataType string) []byte {
+	b, err := icons.ReadFile("icons/" + dataType + ".png")
+	if err != nil {
+		return nil
+	}
+	return b
+}
+
+// DataTypeIconsModule offers the icons as an OpenTeacher "dataTypeIcons"
+// module.
 type DataTypeIconsModule struct {
 	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewDataTypeIconsModule creates a new DataTypeIconsModule instance
+// NewDataTypeIconsModule creates the module.
 func NewDataTypeIconsModule() *DataTypeIconsModule {
-	base := core.NewBaseModule("data", "datatypeicons-module")
-
-	return &DataTypeIconsModule{
-		BaseModule: base,
-	}
+	return &DataTypeIconsModule{BaseModule: core.NewBaseModule("data", "datatypeicons-module")}
 }
 
-// Findicon is the Go port of the Python findIcon method
-func (mod *DataTypeIconsModule) Findicon() {
-	// TODO: Port Python method logic
-}
+// FindIcon returns the icon for a lesson type, or nil.
+func (mod *DataTypeIconsModule) FindIcon(dataType string) []byte { return Icon(dataType) }
 
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *DataTypeIconsModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("DataTypeIconsModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *DataTypeIconsModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("DataTypeIconsModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *DataTypeIconsModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitDataTypeIconsModule creates and returns a new DataTypeIconsModule instance
-// This is the Go equivalent of the Python init function
-func InitDataTypeIconsModule() core.Module {
-	return NewDataTypeIconsModule()
-}
+// InitDataTypeIconsModule creates the module.
+func InitDataTypeIconsModule() core.Module { return NewDataTypeIconsModule() }

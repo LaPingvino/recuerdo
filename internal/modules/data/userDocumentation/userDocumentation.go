@@ -1,73 +1,39 @@
-// Package userdocumentation provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package userdocumentation finds Recuerdo's user documentation: a
+// getting started guide in data/documentation (with screenshots), after
+// OpenTeacher's quick start (data/userDocumentation).
 package userdocumentation
 
 import (
-	"context"
-	"fmt"
+	"os"
+	"path/filepath"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/resources"
 )
 
-// UserDocumentationModule is a Go port of the Python UserDocumentationModule class
+// Dir is the directory with the documentation and its pictures.
+func Dir() string { return filepath.Join(resources.Dir(), "data", "documentation") }
+
+// GettingStarted returns the getting started guide as an HTML fragment;
+// its pictures are relative to Dir.
+func GettingStarted() (string, error) {
+	b, err := os.ReadFile(filepath.Join(Dir(), "getting-started.html"))
+	return string(b), err
+}
+
+// UserDocumentationModule offers the documentation as an OpenTeacher
+// "userDocumentation" module.
 type UserDocumentationModule struct {
 	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewUserDocumentationModule creates a new UserDocumentationModule instance
+// NewUserDocumentationModule creates the module.
 func NewUserDocumentationModule() *UserDocumentationModule {
-	base := core.NewBaseModule("data", "userdocumentation-module")
-
-	return &UserDocumentationModule{
-		BaseModule: base,
-	}
+	return &UserDocumentationModule{BaseModule: core.NewBaseModule("data", "userdocumentation-module")}
 }
 
-// Availabletranslations is the Go port of the Python availableTranslations method
-func (mod *UserDocumentationModule) Availabletranslations() {
-	// TODO: Port Python method logic
-}
+// GetHTML returns the getting started guide.
+func (mod *UserDocumentationModule) GetHTML() (string, error) { return GettingStarted() }
 
-// Gethtml is the Go port of the Python getHtml method
-func (mod *UserDocumentationModule) Gethtml() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *UserDocumentationModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("UserDocumentationModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *UserDocumentationModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("UserDocumentationModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *UserDocumentationModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitUserDocumentationModule creates and returns a new UserDocumentationModule instance
-// This is the Go equivalent of the Python init function
-func InitUserDocumentationModule() core.Module {
-	return NewUserDocumentationModule()
-}
+// InitUserDocumentationModule creates the module.
+func InitUserDocumentationModule() core.Module { return NewUserDocumentationModule() }
