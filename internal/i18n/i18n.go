@@ -84,9 +84,19 @@ func Use(dir, lang string) error {
 	if file == "" {
 		return nil
 	}
-	c, err := ReadPO(filepath.Join(dir, file+".po"))
-	if err != nil {
-		return err
+	// OpenTeacher's translations, then Recuerdo's own over them
+	c := map[string]string{}
+	for _, name := range []string{file + ".po", "recuerdo-" + file + ".po"} {
+		part, err := ReadPO(filepath.Join(dir, name))
+		if os.IsNotExist(err) {
+			continue
+		}
+		if err != nil {
+			return err
+		}
+		for k, v := range part {
+			c[k] = v
+		}
 	}
 	catalog, current = c, file
 	return nil
@@ -146,12 +156,18 @@ func SystemLanguage() string {
 	return ""
 }
 
-// Available are the languages with translations in dir, sorted.
+// Available are the languages with translations in dir (OpenTeacher's
+// <lang>.po or Recuerdo's recuerdo-<lang>.po), sorted.
 func Available(dir string) []string {
 	files, _ := filepath.Glob(filepath.Join(dir, "*.po"))
+	seen := map[string]bool{}
 	var out []string
 	for _, f := range files {
-		out = append(out, strings.TrimSuffix(filepath.Base(f), ".po"))
+		l := strings.TrimPrefix(strings.TrimSuffix(filepath.Base(f), ".po"), "recuerdo-")
+		if !seen[l] {
+			seen[l] = true
+			out = append(out, l)
+		}
 	}
 	sort.Strings(out)
 	return out

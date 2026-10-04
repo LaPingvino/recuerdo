@@ -6,6 +6,7 @@
 package about
 
 import (
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"strings"
 
 	"context"
@@ -52,7 +53,7 @@ func (mod *AboutDialogModule) Show() {
 // createDialog creates and configures the about dialog
 func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
 	mod.dialog = qt.NewQDialog(parent)
-	mod.dialog.SetWindowTitle("About Recuerdo")
+	mod.dialog.SetWindowTitle(i18n.T("About Recuerdo"))
 	mod.dialog.SetWindowModality(qt.ApplicationModal)
 	mod.dialog.SetMinimumWidth(440)
 
@@ -108,7 +109,7 @@ func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
 // retranslate updates dialog text for localization
 func (mod *AboutDialogModule) retranslate() {
 	if mod.dialog != nil {
-		mod.dialog.SetWindowTitle("About Recuerdo")
+		mod.dialog.SetWindowTitle(i18n.T("About Recuerdo"))
 	}
 }
 

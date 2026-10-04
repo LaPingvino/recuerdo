@@ -3,6 +3,7 @@ package topo
 import (
 	"bytes"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/tts"
 	"os"
 	"path/filepath"
@@ -73,9 +74,9 @@ func NewTopoLessonWidget(l *lesson.Lesson, parent *qt.QWidget) *TopoLessonWidget
 	layout.SetContentsMargins(0, 0, 0, 0)
 	w.tabs = qt.NewQTabWidget(w.QWidget)
 	layout.AddWidget(w.tabs.QWidget)
-	w.tabs.AddTab(w.enterTab(), "Enter")
-	w.tabs.AddTab(w.teachTab(), "Teach")
-	w.tabs.AddTab(w.resultsTab(), "Results")
+	w.tabs.AddTab(w.enterTab(), i18n.T("Enter"))
+	w.tabs.AddTab(w.teachTab(), i18n.T("Teach"))
+	w.tabs.AddTab(w.resultsTab(), i18n.T("Results"))
 	w.tabs.OnCurrentChanged(func(int) { w.refresh() })
 	w.loadMap()
 	w.refresh()
@@ -101,7 +102,7 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 	layout := qt.NewQVBoxLayout(tab)
 
 	top := qt.NewQHBoxLayout2()
-	mapLabel := qt.NewQLabel3("Map:")
+	mapLabel := qt.NewQLabel3(i18n.T("Map:"))
 	top.AddWidget(mapLabel.QWidget)
 	w.mapCombo = qt.NewQComboBox(tab)
 	w.mapCombo.AddItem("(choose a map)")
@@ -114,8 +115,8 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 		}
 	})
 	top.AddWidget(w.mapCombo.QWidget)
-	other := qt.NewQPushButton3("Other picture…")
-	other.SetToolTip("Use a picture of your own as the map")
+	other := qt.NewQPushButton3(i18n.T("Other picture…"))
+	other.SetToolTip(i18n.T("Use a picture of your own as the map"))
 	other.OnClicked(func() {
 		path := qt.QFileDialog_GetOpenFileName4(w.QWidget, "Choose a map", "",
 			"Pictures (*.png *.jpg *.jpeg *.gif *.bmp *.webp);;All files (*)")
@@ -126,8 +127,8 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 		}
 	})
 	top.AddWidget(other.QWidget)
-	w.addAllBtn = qt.NewQPushButton3("Add all places")
-	w.addAllBtn.SetToolTip("Add every place this map knows")
+	w.addAllBtn = qt.NewQPushButton3(i18n.T("Add all places"))
+	w.addAllBtn.SetToolTip(i18n.T("Add every place this map knows"))
 	w.addAllBtn.OnClicked(w.AddAllKnown)
 	top.AddWidget(w.addAllBtn.QWidget)
 	top.AddStretch()
@@ -141,10 +142,10 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 	side := qt.NewQVBoxLayout2()
 	addRow := qt.NewQHBoxLayout2()
 	w.nameEdit = qt.NewQLineEdit(tab)
-	w.nameEdit.SetPlaceholderText("Name of a place")
+	w.nameEdit.SetPlaceholderText(i18n.T("Name of a place"))
 	w.nameEdit.OnReturnPressed(func() { w.AddByName(w.nameEdit.Text()) })
 	addRow.AddWidget(w.nameEdit.QWidget)
-	add := qt.NewQPushButton3("Add")
+	add := qt.NewQPushButton3(i18n.T("Add"))
 	add.OnClicked(func() { w.AddByName(w.nameEdit.Text()) })
 	addRow.AddWidget(add.QWidget)
 	side.AddLayout(addRow.QLayout)
@@ -164,7 +165,7 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 		}
 	})
 	side.AddWidget(w.placeList.QWidget)
-	w.removeBtn = qt.NewQPushButton3("Remove")
+	w.removeBtn = qt.NewQPushButton3(i18n.T("Remove"))
 	w.removeBtn.SetEnabled(false)
 	w.removeBtn.OnClicked(func() { w.Remove(w.placeList.CurrentRow()) })
 	side.AddWidget(w.removeBtn.QWidget)
@@ -233,7 +234,7 @@ func (w *TopoLessonWidget) AddByName(name string) {
 			return
 		}
 	}
-	w.enterHint.SetText(fmt.Sprintf("Now click where %s is on the map.", name))
+	w.enterHint.SetText(fmt.Sprintf(i18n.T("Now click where %s is on the map."), name))
 }
 
 // ClickEnter handles a click on the map at picture coordinates: it selects
@@ -339,20 +340,20 @@ func (w *TopoLessonWidget) teachTab() *qt.QWidget {
 		return c
 	}
 	w.orderCombo = combo("Ask:", []string{PlaceName, NamePlace})
-	w.orderCombo.SetToolTip("Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place.")
+	w.orderCombo.SetToolTip(i18n.T("Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."))
 	w.typeCombo = combo("Lesson type:", teaching.LessonTypes)
 	w.sequenceCombo = combo("Order:", teaching.Orders)
 	w.speaker = tts.New(runtime.GOOS)
-	w.pronounceCheck = qt.NewQCheckBox3("Pronounce names")
+	w.pronounceCheck = qt.NewQCheckBox3(i18n.T("Pronounce names"))
 	if w.speaker.Available() {
-		w.pronounceCheck.SetToolTip("In Name – Place, say the name of the place to click")
+		w.pronounceCheck.SetToolTip(i18n.T("In Name – Place, say the name of the place to click"))
 	} else {
 		w.pronounceCheck.SetEnabled(false)
-		w.pronounceCheck.SetToolTip("Needs a speech program: install espeak-ng")
+		w.pronounceCheck.SetToolTip(i18n.T("Needs a speech program: install espeak-ng"))
 	}
 	options.AddWidget(w.pronounceCheck.QWidget)
 	options.AddStretch()
-	w.startBtn = qt.NewQPushButton3("Start")
+	w.startBtn = qt.NewQPushButton3(i18n.T("Start"))
 	w.startBtn.OnClicked(func() {
 		if w.session != nil {
 			w.Stop()
@@ -374,10 +375,10 @@ func (w *TopoLessonWidget) teachTab() *qt.QWidget {
 	row := qt.NewQHBoxLayout(w.answerRow)
 	row.SetContentsMargins(0, 0, 0, 0)
 	w.answerEdit = qt.NewQLineEdit(w.answerRow)
-	w.answerEdit.SetPlaceholderText("Name of the marked place")
+	w.answerEdit.SetPlaceholderText(i18n.T("Name of the marked place"))
 	w.answerEdit.OnReturnPressed(func() { w.AnswerName(w.answerEdit.Text()) })
 	row.AddWidget(w.answerEdit.QWidget)
-	check := qt.NewQPushButton3("Check")
+	check := qt.NewQPushButton3(i18n.T("Check"))
 	check.OnClicked(func() { w.AnswerName(w.answerEdit.Text()) })
 	row.AddWidget(check.QWidget)
 	layout.AddWidget(w.answerRow)
@@ -399,7 +400,7 @@ func (w *TopoLessonWidget) teachTab() *qt.QWidget {
 // Start starts practising in order (PlaceName or NamePlace).
 func (w *TopoLessonWidget) Start(order string) {
 	if len(w.places()) == 0 {
-		w.prompt.SetText("Enter some places first.")
+		w.prompt.SetText(i18n.T("Enter some places first."))
 		return
 	}
 	w.order = order
@@ -408,7 +409,7 @@ func (w *TopoLessonWidget) Start(order string) {
 		LessonType: w.typeCombo.CurrentText(), Order: w.sequenceCombo.CurrentText(),
 	})
 	w.session.Start()
-	w.startBtn.SetText("Stop")
+	w.startBtn.SetText(i18n.T("Stop"))
 	w.orderCombo.SetEnabled(false)
 	w.feedback.SetText("")
 	w.ask()
@@ -425,11 +426,11 @@ func (w *TopoLessonWidget) Stop() {
 	}
 	right, answered := w.session.Score()
 	w.session = nil
-	w.startBtn.SetText("Start")
+	w.startBtn.SetText(i18n.T("Start"))
 	w.orderCombo.SetEnabled(true)
 	w.answerRow.SetVisible(false)
 	w.teachMap.Select(-1)
-	w.prompt.SetText(fmt.Sprintf("Done: %d of %d right.", right, answered))
+	w.prompt.SetText(fmt.Sprintf(i18n.T("Done: %d of %d right."), right, answered))
 	w.progress.SetText("")
 	w.refresh()
 }
@@ -441,10 +442,10 @@ func (w *TopoLessonWidget) ask() {
 		return
 	}
 	asked, total := w.session.Progress()
-	w.progress.SetText(fmt.Sprintf("%d of %d", asked, total))
+	w.progress.SetText(fmt.Sprintf(i18n.T("%d of %d"), asked, total))
 	w.teachMap.SetPlaces(w.places(), false)
 	if w.order == NamePlace {
-		w.prompt.SetText("Where is " + item.Name + "?")
+		w.prompt.SetText(i18n.T("Where is ") + item.Name + "?")
 		if w.pronounceCheck.IsChecked() {
 			w.speaker.Speak(item.Name, "")
 		}
@@ -452,7 +453,7 @@ func (w *TopoLessonWidget) ask() {
 		w.teachMap.Select(-1)
 		return
 	}
-	w.prompt.SetText("Which place is marked?")
+	w.prompt.SetText(i18n.T("Which place is marked?"))
 	w.answerRow.SetVisible(true)
 	w.answerEdit.Clear()
 	w.answerEdit.SetFocus()
@@ -486,9 +487,9 @@ func (w *TopoLessonWidget) AnswerClick(x, y int) {
 
 func (w *TopoLessonWidget) answered(right bool, correct string) {
 	if right {
-		w.feedback.SetText("✔ Right: " + correct)
+		w.feedback.SetText(i18n.T("✔ Right: ") + correct)
 	} else {
-		w.feedback.SetText("✘ That was " + correct)
+		w.feedback.SetText(i18n.T("✘ That was ") + correct)
 	}
 	w.session.Next()
 	w.ask()
@@ -502,10 +503,10 @@ func (w *TopoLessonWidget) resultsTab() *qt.QWidget {
 	w.summary = qt.NewQLabel3("")
 	w.summary.SetWordWrap(true)
 	layout.AddWidget(w.summary.QWidget)
-	layout.AddWidget(qt.NewQLabel3("Last session:").QWidget)
+	layout.AddWidget(qt.NewQLabel3(i18n.T("Last session:")).QWidget)
 	w.timeline = charts.NewTimelineChart(tab)
 	layout.AddWidget(w.timeline.QWidget)
-	layout.AddWidget(qt.NewQLabel3("Each session:").QWidget)
+	layout.AddWidget(qt.NewQLabel3(i18n.T("Each session:")).QWidget)
 	w.grades = charts.NewGradesChart(tab)
 	layout.AddWidget(w.grades.QWidget)
 	layout.AddStretch()
@@ -532,7 +533,7 @@ func (w *TopoLessonWidget) refresh() {
 		w.teachMap.SetPlaces(places, true)
 		w.answerRow.SetVisible(false)
 		if w.prompt.Text() == "" || len(places) == 0 {
-			w.prompt.SetText(fmt.Sprintf("%d places. Choose how to practise and press Start.", len(places)))
+			w.prompt.SetText(fmt.Sprintf(i18n.T("%d places. Choose how to practise and press Start."), len(places)))
 		}
 	}
 
@@ -540,9 +541,9 @@ func (w *TopoLessonWidget) refresh() {
 	pct := charts.Percentages(tests)
 	switch {
 	case len(pct) == 0:
-		w.summary.SetText("No results yet: practise on the Teach tab.")
+		w.summary.SetText(i18n.T("No results yet: practise on the Teach tab."))
 	default:
-		w.summary.SetText(fmt.Sprintf("%d sessions; the last one %d%% right.", len(pct), pct[len(pct)-1]))
+		w.summary.SetText(fmt.Sprintf(i18n.T("%d sessions; the last one %d%% right."), len(pct), pct[len(pct)-1]))
 	}
 	if len(tests) > 0 {
 		w.timeline.SetTest(tests[len(tests)-1])

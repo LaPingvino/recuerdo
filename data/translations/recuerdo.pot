@@ -1,0 +1,837 @@
+# Recuerdo's translatable texts, made by scripts/extract_strings.py.
+# Translate them in data/translations/recuerdo-<lang>.po.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "%d items to practise. Press Start."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "%d of %d"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "%d places. Choose how to practise and press Start."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "%d sessions; the last one %d%% right."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&About..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Edit"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&File"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Getting Started"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Help"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Merge Lesson..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&New Lesson..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Open..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Print..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Properties..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Save"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Settings..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Tools"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/about/about.go
+msgid "About Recuerdo"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "About dialog not available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "About dialog shown"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Add"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Add Character"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Add Word"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Add all places"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Add every place this map knows"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Add files…"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Add the words and results of another lesson to this one"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Add web address…"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Answer Language:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Answer language"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Answer language:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Ask the answers"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Ask this word again later"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Browse Unicode"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Browse..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Check"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/hangman.go
+msgid "Check!"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Clear List"
+msgstr ""
+
+#: internal/modules/logic/recentlyOpened/recentlyOpened.go
+msgid "Clear recent files"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Click 'Start Teaching' to begin"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Continue"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Correct anyway"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Count your last answer as right after all"
+msgstr ""
+
+#: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
+msgid "Create Lesson"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Create New Lesson"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Description:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Done: %d of %d right."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "E&xit"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Each session:"
+msgstr ""
+
+#: internal/modules/logic/recentlyOpened/recentlyOpened.go
+msgid "Empty the File > Open Recent list"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Enter"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Enter lesson description..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Enter lesson name..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Enter lesson title"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Enter some places first."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error creating lesson: "
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error loading file: %v"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: File dialog not available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: Lesson dialog not available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: No about dialog modules available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: No file dialog modules available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: No lesson dialog modules available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: No settings dialog modules available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: Properties dialog not available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Error: Settings dialog not available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Exported "
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Field separator:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "File encoding:"
+msgstr ""
+
+#: internal/modules/logic/recentlyOpened/recentlyOpened.go
+msgid "Files"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "First row contains headers"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Getting Started with Recuerdo"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Give the items an answer on the Enter tab first."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Go on after seeing the right answer"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Grades in"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Grades in:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "How the Results tab grades your sessions"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "I was right"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "I was wrong"
+msgstr ""
+
+#: internal/modules/interfaces/qt/ocrimport/ocrimport.go
+msgid "Import"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Import File"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Import Lesson"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Import Options"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Import from &Picture..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/ocrimport/ocrimport.go
+msgid "Import from Picture"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "In Name – Place, say the name of the place to click"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr ""
+
+#: internal/i18n/setting.go
+msgid "Interface"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Items:"
+msgstr ""
+
+#: internal/i18n/setting.go
+msgid "Language"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Languages"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Last session:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Latest Session Results"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Learn words, places and more by heart"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Lesson Information"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Lesson Properties"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Lesson Type"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Made a lesson of %d words"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Map:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Media"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Merged %d words from %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Name of a place"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Name of the marked place"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Name:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Needs a speech program: install espeak-ng"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "New Lesson"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "New from &Text..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "New lesson created successfully"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "New lesson dialog created"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Next"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "No lesson data available"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "No lesson open to show properties"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "No recent lessons"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "No results yet: practise on the Teach tab."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "No teaching results available yet"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "No words available for teaching"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "No words to practise: none are \""
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Now click where %s is on the map."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/preview.go
+msgid "Open"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Open &Recent"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Open Lesson…"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Open operation cancelled"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Other picture…"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Page %d of %d"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Please add words in the Enter tab"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Practice"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Practice sessions:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Preview"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Previous"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Printed "
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Progress"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Pronounce names"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Pronounce questions"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Properties dialog cancelled"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Question Language:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Question language"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Question language:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Quick Access"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Ready"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Ready to start"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Ready to start teaching"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Remove"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Remove Word"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Repeat answer shows the answer for"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Results"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Results Overview"
+msgstr ""
+
+#: internal/modules/interfaces/qt/ocrimport/ocrimport.go
+msgid "Rotate 90°"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Save &As..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Saved "
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Say each question aloud, in the question language"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Select file to import..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Selected file: %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/settings/settings.go
+msgid "Settings"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Settings saved"
+msgstr ""
+
+#: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
+msgid "Show or hide special characters"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Skip"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Start"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Start Again"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Start Teaching"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Stop"
+msgstr ""
+
+#: internal/modules/interfaces/qt/ocrimport/ocrimport.go
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr ""
+
+#: internal/modules/interfaces/qt/ocrimport/ocrimport.go
+msgid "Straighten:"
+msgstr ""
+
+#: internal/settingsdefs
+msgid "System language"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Teach"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Teaching session completed"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/preview.go
+msgid "The %s %s is missing from the lesson."
+msgstr ""
+
+#: internal/i18n/setting.go
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/settings/settings.go
+msgid "There are no settings to change."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Title:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Topology"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Translation: "
+msgstr ""
+
+#: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
+msgid "Type a List"
+msgstr ""
+
+#: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
+msgid "Type at least one word."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr ""
+
+#: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between "
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
+msgid "Unicode Block:"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Use a picture of your own as the map"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "View answer"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Where is "
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Which place is marked?"
+msgstr ""
+
+#: internal/modules/interfaces/qt/ocrimport/ocrimport.go
+msgid "Whole picture"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Word Lesson: %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Word Pairs"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Words List"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "Your answer"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "e.g. Dutch"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "e.g. English"
+msgstr ""
+
+#: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
+msgid "hond = dog\nkat = cat"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "✔ Right: "
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "✘ That was "
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/media/widget.go
+msgid "✘ The answer was: "
+msgstr ""
+

@@ -5,6 +5,7 @@ package settings
 
 import (
 	"context"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
 	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
@@ -28,7 +29,7 @@ type Dialog struct {
 func NewDialog(parent *qt.QWidget, store settingsdefs.Store, defs []settingsdefs.Def) *Dialog {
 	d := &Dialog{QDialog: qt.NewQDialog(parent), store: store, checks: map[string]*qt.QCheckBox{},
 		combos: map[string]*qt.QComboBox{}, spins: map[string]*qt.QDoubleSpinBox{}, buttons: map[string]*qt.QPushButton{}}
-	d.SetWindowTitle("Settings")
+	d.SetWindowTitle(i18n.T("Settings"))
 	d.SetMinimumWidth(460)
 	layout := qt.NewQVBoxLayout(d.QWidget)
 	d.tabs = qt.NewQTabWidget(d.QWidget)
@@ -41,12 +42,12 @@ func NewDialog(parent *qt.QWidget, store settingsdefs.Store, defs []settingsdefs
 			page := qt.NewQWidget(nil)
 			form = qt.NewQFormLayout(page)
 			forms[def.Category] = form
-			d.tabs.AddTab(page, def.Category)
+			d.tabs.AddTab(page, i18n.T(def.Category))
 		}
 		d.addControl(form, def)
 	}
 	if len(defs) == 0 {
-		layout.AddWidget(qt.NewQLabel3("There are no settings to change.").QWidget)
+		layout.AddWidget(qt.NewQLabel3(i18n.T("There are no settings to change.")).QWidget)
 	}
 
 	buttons := qt.NewQDialogButtonBox(d.QWidget)
@@ -64,7 +65,7 @@ func (d *Dialog) addControl(form *qt.QFormLayout, def settingsdefs.Def) {
 	var w *qt.QWidget
 	switch def.Kind {
 	case settingsdefs.Bool:
-		c := qt.NewQCheckBox3(def.Name)
+		c := qt.NewQCheckBox3(i18n.T(def.Name))
 		d.checks[def.Key] = c
 		c.SetChecked(def.Value(d.store).(bool))
 		d.apply = append(d.apply, func() { d.store.SetSetting(def.Key, c.IsChecked()) })
@@ -76,6 +77,10 @@ func (d *Dialog) addControl(form *qt.QFormLayout, def settingsdefs.Def) {
 		labels := def.Labels
 		if len(labels) != len(def.Choices) {
 			labels = def.Choices
+		}
+		labels = append([]string(nil), labels...)
+		for i, l := range labels {
+			labels[i] = i18n.T(l) // "System language"; values such as notations stay as they are
 		}
 		c.AddItems(labels)
 		value := def.Value(d.store).(string)
@@ -89,7 +94,7 @@ func (d *Dialog) addControl(form *qt.QFormLayout, def settingsdefs.Def) {
 				d.store.SetSetting(def.Key, def.Choices[i])
 			}
 		})
-		form.AddRow3(def.Name+":", c.QWidget)
+		form.AddRow3(i18n.T(def.Name)+":", c.QWidget)
 		w = c.QWidget
 	case settingsdefs.Seconds:
 		s := qt.NewQDoubleSpinBox(nil)
@@ -100,17 +105,17 @@ func (d *Dialog) addControl(form *qt.QFormLayout, def settingsdefs.Def) {
 		s.SetSuffix(" s")
 		s.SetValue(def.Value(d.store).(float64) / 1000)
 		d.apply = append(d.apply, func() { d.store.SetSetting(def.Key, int64(s.Value()*1000)) })
-		form.AddRow3(def.Name+":", s.QWidget)
+		form.AddRow3(i18n.T(def.Name)+":", s.QWidget)
 		w = s.QWidget
 	case settingsdefs.Action:
-		b := qt.NewQPushButton3(def.Name)
+		b := qt.NewQPushButton3(i18n.T(def.Name))
 		d.buttons[def.Key] = b
 		b.OnClicked(func() {
 			if def.Run != nil {
 				def.Run(d.store)
 			}
 			b.SetEnabled(false)
-			b.SetText(def.Name + " ✔")
+			b.SetText(i18n.T(def.Name) + " ✔")
 		})
 		row := qt.NewQHBoxLayout2()
 		row.AddWidget(b.QWidget)
@@ -121,8 +126,8 @@ func (d *Dialog) addControl(form *qt.QFormLayout, def settingsdefs.Def) {
 		return
 	}
 	if def.Help != "" {
-		w.SetToolTip(def.Help)
-		help := qt.NewQLabel3(def.Help)
+		w.SetToolTip(i18n.T(def.Help))
+		help := qt.NewQLabel3(i18n.T(def.Help))
 		help.SetWordWrap(true)
 		font := help.Font()
 		font.SetPointSizeF(font.PointSizeF() * 0.9)

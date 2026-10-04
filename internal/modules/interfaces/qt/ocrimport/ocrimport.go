@@ -5,6 +5,7 @@
 package ocrimport
 
 import (
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"os"
 	"path/filepath"
 
@@ -55,10 +56,10 @@ func New(parent *qt.QWidget, path string) (*Dialog, error) {
 		return nil, os.ErrInvalid
 	}
 	d := &Dialog{QDialog: qt.NewQDialog(parent), original: img}
-	d.SetWindowTitle("Import from Picture")
+	d.SetWindowTitle(i18n.T("Import from Picture"))
 	layout := qt.NewQVBoxLayout(d.QWidget)
 	hint := qt.NewQLabel(d.QWidget)
-	hint.SetText("Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more.")
+	hint.SetText(i18n.T("Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."))
 	hint.SetWordWrap(true)
 	layout.AddWidget(hint.QWidget)
 
@@ -84,23 +85,23 @@ func New(parent *qt.QWidget, path string) (*Dialog, error) {
 
 	rotateRow := qt.NewQHBoxLayout2()
 	label := qt.NewQLabel(d.QWidget)
-	label.SetText("Straighten:")
+	label.SetText(i18n.T("Straighten:"))
 	rotateRow.AddWidget(label.QWidget)
 	d.slider = qt.NewQSlider3(qt.Horizontal)
 	d.slider.SetRange(-45, 45)
 	d.slider.OnValueChanged(func(v int) { d.SetRotation(float64(v)) })
 	rotateRow.AddWidget(d.slider.QWidget)
-	turn := qt.NewQPushButton3("Rotate 90°")
+	turn := qt.NewQPushButton3(i18n.T("Rotate 90°"))
 	turn.OnClicked(func() { d.SetRotation(d.rotation + 90) })
 	rotateRow.AddWidget(turn.QWidget)
-	clear := qt.NewQPushButton3("Whole picture")
+	clear := qt.NewQPushButton3(i18n.T("Whole picture"))
 	clear.OnClicked(func() { d.crop = Rect{}; d.updatePreview() })
 	rotateRow.AddWidget(clear.QWidget)
 	layout.AddLayout(rotateRow.QLayout)
 
 	buttons := qt.NewQDialogButtonBox(d.QWidget)
 	buttons.SetStandardButtons(qt.QDialogButtonBox__Ok | qt.QDialogButtonBox__Cancel)
-	buttons.Button(qt.QDialogButtonBox__Ok).SetText("Import")
+	buttons.Button(qt.QDialogButtonBox__Ok).SetText(i18n.T("Import"))
 	buttons.OnAccepted(func() { d.Accept() })
 	buttons.OnRejected(func() { d.Reject() })
 	layout.AddWidget(buttons.QWidget)

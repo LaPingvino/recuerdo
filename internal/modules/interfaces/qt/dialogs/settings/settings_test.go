@@ -2,6 +2,7 @@ package settings
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"os"
 	"path/filepath"
 	"testing"
@@ -27,6 +28,7 @@ var problem error
 // Qt on the main thread: the dialog is driven in TestMain.
 func TestMain(m *testing.M) {
 	os.Setenv("QT_QPA_PLATFORM", "offscreen")
+	os.Setenv("RECUERDO_DATA", filepath.Join("..", "..", "..", "..", "..", "..")) // the translations
 	qt.NewQApplication([]string{"settings-test"})
 	problem = drive()
 	os.Exit(m.Run())
@@ -40,12 +42,13 @@ const (
 
 func drive() error {
 	defs := settingsdefs.All()
-	if len(defs) != 4 {
-		return fmt.Errorf("%d settings registered, want notation, pronounce, repeat and clear recent", len(defs))
+	if len(defs) != 5 {
+		return fmt.Errorf("%d settings registered, want notation, pronounce, repeat, clear recent and language", len(defs))
 	}
 	store := mapStore{repeat: 2500.0, recentlyopened.SettingKey: []string{"/a.otwd"}}
 	d := NewDialog(nil, store, defs)
-	if d.tabs.Count() != 3 || d.tabs.TabText(0) != "Practice" || d.tabs.TabText(1) != "Results" || d.tabs.TabText(2) != "Files" {
+	if d.tabs.Count() != 4 || d.tabs.TabText(0) != "Practice" || d.tabs.TabText(1) != "Results" ||
+		d.tabs.TabText(2) != "Files" || d.tabs.TabText(3) != "Interface" {
 		return fmt.Errorf("tabs: %d", d.tabs.Count())
 	}
 	if dir := os.Getenv("SHOT_DIR"); dir != "" {
@@ -75,6 +78,21 @@ func drive() error {
 	if store[repeat] != int64(4000) || store[pronounce] != true || store[notation] != want {
 		return fmt.Errorf("saved: %v", store)
 	}
+	// the language: shown by name, stored as a code ("" = the system's)
+	lang := d.combos[i18n.LanguageSetting]
+	if lang.ItemText(0) != "System language" || lang.CurrentIndex() != 0 {
+		return fmt.Errorf("language: %q selected %d", lang.ItemText(0), lang.CurrentIndex())
+	}
+	for i := 0; i < lang.Count(); i++ {
+		if lang.ItemText(i) == "Nederlands" {
+			lang.SetCurrentIndex(i)
+		}
+	}
+	d.Apply()
+	if store[i18n.LanguageSetting] != "nl" {
+		return fmt.Errorf("language stored as %v", store[i18n.LanguageSetting])
+	}
+
 	// the action runs at once
 	clear := d.buttons[recentlyopened.SettingKey]
 	clear.Click()

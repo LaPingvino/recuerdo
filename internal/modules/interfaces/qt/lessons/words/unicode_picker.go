@@ -3,6 +3,7 @@ package words
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -127,14 +128,14 @@ func (up *IntegratedUnicodePicker) setupBasicUI() {
 	up.modeButtons = qt.NewQButtonGroup()
 
 	up.quickButton = qt.NewQPushButton(nil)
-	up.quickButton.SetText("Quick Access")
+	up.quickButton.SetText(i18n.T("Quick Access"))
 	up.quickButton.SetCheckable(true)
 	up.quickButton.SetChecked(true)
 	up.modeButtons.AddButton2(up.quickButton.QAbstractButton, 0)
 	modeButtonsLayout.AddWidget(up.quickButton.QWidget)
 
 	up.browseButton = qt.NewQPushButton(nil)
-	up.browseButton.SetText("Browse Unicode")
+	up.browseButton.SetText(i18n.T("Browse Unicode"))
 	up.browseButton.SetCheckable(true)
 	up.modeButtons.AddButton2(up.browseButton.QAbstractButton, 1)
 	modeButtonsLayout.AddWidget(up.browseButton.QWidget)
@@ -218,7 +219,7 @@ func (up *IntegratedUnicodePicker) ensureBrowseUnicodePageLoaded() {
 	// Direct codepoint input
 	codepointLayout := qt.NewQHBoxLayout2()
 	codepointLabel := qt.NewQLabel(up.browseUnicPage)
-	codepointLabel.SetText("Enter Unicode codepoint (U+xxxx):")
+	codepointLabel.SetText(i18n.T("Enter Unicode codepoint (U+xxxx):"))
 	codepointLayout.AddWidget(codepointLabel.QWidget)
 
 	codepointInput := qt.NewQLineEdit(up.browseUnicPage)
@@ -226,7 +227,7 @@ func (up *IntegratedUnicodePicker) ensureBrowseUnicodePageLoaded() {
 	codepointLayout.AddWidget(codepointInput.QWidget)
 
 	addCodepointBtn := qt.NewQPushButton(nil)
-	addCodepointBtn.SetText("Add Character")
+	addCodepointBtn.SetText(i18n.T("Add Character"))
 	addCodepointBtn.OnClicked(func() {
 		text := codepointInput.Text()
 		if strings.HasPrefix(strings.ToUpper(text), "U+") {
@@ -249,7 +250,7 @@ func (up *IntegratedUnicodePicker) ensureBrowseUnicodePageLoaded() {
 	// Unicode block selection
 	blockLayout := qt.NewQHBoxLayout2()
 	blockLabel := qt.NewQLabel(up.browseUnicPage)
-	blockLabel.SetText("Unicode Block:")
+	blockLabel.SetText(i18n.T("Unicode Block:"))
 	blockLayout.AddWidget(blockLabel.QWidget)
 	up.blockComboBox = qt.NewQComboBox(up.browseUnicPage)
 	up.blockComboBox.AddItem("Select a block...")
@@ -306,7 +307,7 @@ func (up *IntegratedUnicodePicker) ensureBrowseUnicodePageLoaded() {
 
 	// Hint shown until a Unicode block is chosen
 	placeholderLabel := qt.NewQLabel(up.browseCharsWidget)
-	placeholderLabel.SetText("Select a Unicode block above to view characters, or enter a codepoint directly.")
+	placeholderLabel.SetText(i18n.T("Select a Unicode block above to view characters, or enter a codepoint directly."))
 	placeholderLabel.SetStyleSheet("color: #666; font-style: italic; padding: 20px; text-align: center;")
 	placeholderLabel.SetAlignment(qt.AlignCenter)
 	up.browseCharsLayout.AddWidget(placeholderLabel.QWidget)
@@ -476,7 +477,7 @@ func (up *IntegratedUnicodePicker) browseUnicodeBlockPaginated(blockName string,
 		paginationLayout := qt.NewQHBoxLayout2()
 
 		prevBtn := qt.NewQPushButton(nil)
-		prevBtn.SetText("Previous")
+		prevBtn.SetText(i18n.T("Previous"))
 		prevBtn.SetEnabled(page > 0)
 		if page > 0 {
 			prevBtn.OnClicked(func() {
@@ -487,12 +488,12 @@ func (up *IntegratedUnicodePicker) browseUnicodeBlockPaginated(blockName string,
 
 		// Page indicator
 		pageLabel := qt.NewQLabel(up.browseCharsWidget)
-		pageLabel.SetText(fmt.Sprintf("Page %d of %d", page+1, totalPages))
+		pageLabel.SetText(fmt.Sprintf(i18n.T("Page %d of %d"), page+1, totalPages))
 		pageLabel.SetAlignment(qt.AlignCenter)
 		paginationLayout.AddWidget(pageLabel.QWidget)
 
 		nextBtn := qt.NewQPushButton(nil)
-		nextBtn.SetText("Next")
+		nextBtn.SetText(i18n.T("Next"))
 		nextBtn.SetEnabled(page < totalPages-1)
 		if page < totalPages-1 {
 			nextBtn.OnClicked(func() {

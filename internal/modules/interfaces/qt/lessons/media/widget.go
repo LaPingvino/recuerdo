@@ -2,6 +2,7 @@ package media
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"os"
 	"path/filepath"
 	"strings"
@@ -57,9 +58,9 @@ func NewMediaLessonWidget(l *lesson.Lesson, parent *qt.QWidget) *MediaLessonWidg
 	layout.SetContentsMargins(0, 0, 0, 0)
 	w.tabs = qt.NewQTabWidget(w.QWidget)
 	layout.AddWidget(w.tabs.QWidget)
-	w.tabs.AddTab(w.enterTab(), "Enter")
-	w.tabs.AddTab(w.teachTab(), "Teach")
-	w.tabs.AddTab(w.resultsTab(), "Results")
+	w.tabs.AddTab(w.enterTab(), i18n.T("Enter"))
+	w.tabs.AddTab(w.teachTab(), i18n.T("Teach"))
+	w.tabs.AddTab(w.resultsTab(), i18n.T("Results"))
 	w.tabs.OnCurrentChanged(func(int) { w.refresh() })
 	w.refresh()
 	return w
@@ -83,8 +84,8 @@ func (w *MediaLessonWidget) enterTab() *qt.QWidget {
 	tab := qt.NewQWidget(nil)
 	layout := qt.NewQVBoxLayout(tab)
 	buttons := qt.NewQHBoxLayout2()
-	addFiles := qt.NewQPushButton3("Add files…")
-	addFiles.SetToolTip("Pictures, sounds, videos or texts, kept inside the lesson")
+	addFiles := qt.NewQPushButton3(i18n.T("Add files…"))
+	addFiles.SetToolTip(i18n.T("Pictures, sounds, videos or texts, kept inside the lesson"))
 	addFiles.OnClicked(func() {
 		paths := qt.QFileDialog_GetOpenFileNames4(w.QWidget, "Add files", "",
 			"Media (*.png *.jpg *.jpeg *.gif *.bmp *.webp *.tif *.tiff *.txt *.mp3 *.wav *.ogg *.flac *.m4a *.mid *.mp4 *.webm *.mkv *.avi *.mov *.mpg);;All files (*)")
@@ -95,8 +96,8 @@ func (w *MediaLessonWidget) enterTab() *qt.QWidget {
 		}
 	})
 	buttons.AddWidget(addFiles.QWidget)
-	addURL := qt.NewQPushButton3("Add web address…")
-	addURL.SetToolTip("A website or a YouTube, Vimeo or Dailymotion video")
+	addURL := qt.NewQPushButton3(i18n.T("Add web address…"))
+	addURL.SetToolTip(i18n.T("A website or a YouTube, Vimeo or Dailymotion video"))
 	addURL.OnClicked(func() {
 		if u := qt.QInputDialog_GetText(w.QWidget, "Add web address", "Web address (https://…):"); u != "" {
 			if err := w.AddAddress(u); err != nil {
@@ -105,7 +106,7 @@ func (w *MediaLessonWidget) enterTab() *qt.QWidget {
 		}
 	})
 	buttons.AddWidget(addURL.QWidget)
-	w.removeBtn = qt.NewQPushButton3("Remove")
+	w.removeBtn = qt.NewQPushButton3(i18n.T("Remove"))
 	w.removeBtn.SetEnabled(false)
 	w.removeBtn.OnClicked(func() { w.Remove(w.table.CurrentRow()) })
 	buttons.AddWidget(w.removeBtn.QWidget)
@@ -241,7 +242,7 @@ func (w *MediaLessonWidget) teachTab() *qt.QWidget {
 	w.typeCombo = combo("Lesson type:", teaching.LessonTypes)
 	w.orderCombo = combo("Order:", teaching.Orders)
 	options.AddStretch()
-	w.startBtn = qt.NewQPushButton3("Start")
+	w.startBtn = qt.NewQPushButton3(i18n.T("Start"))
 	w.startBtn.OnClicked(func() {
 		if w.session != nil {
 			w.Stop()
@@ -266,10 +267,10 @@ func (w *MediaLessonWidget) teachTab() *qt.QWidget {
 	row := qt.NewQHBoxLayout(w.answerRow)
 	row.SetContentsMargins(0, 0, 0, 0)
 	w.answerEdit = qt.NewQLineEdit(w.answerRow)
-	w.answerEdit.SetPlaceholderText("Your answer")
+	w.answerEdit.SetPlaceholderText(i18n.T("Your answer"))
 	w.answerEdit.OnReturnPressed(func() { w.Answer(w.answerEdit.Text()) })
 	row.AddWidget(w.answerEdit.QWidget)
-	check := qt.NewQPushButton3("Check")
+	check := qt.NewQPushButton3(i18n.T("Check"))
 	check.OnClicked(func() { w.Answer(w.answerEdit.Text()) })
 	row.AddWidget(check.QWidget)
 	w.answerRow.SetVisible(false)
@@ -289,14 +290,14 @@ func (w *MediaLessonWidget) teachTab() *qt.QWidget {
 func (w *MediaLessonWidget) Start() {
 	list := Teachable(w.lesson.Data.List)
 	if len(list.Items) == 0 {
-		w.question.SetText("Give the items an answer on the Enter tab first.")
+		w.question.SetText(i18n.T("Give the items an answer on the Enter tab first."))
 		return
 	}
 	w.session = teaching.New(list, teaching.Options{
 		LessonType: w.typeCombo.CurrentText(), Order: w.orderCombo.CurrentText(),
 	})
 	w.session.Start()
-	w.startBtn.SetText("Stop")
+	w.startBtn.SetText(i18n.T("Stop"))
 	w.feedback.SetText("")
 	w.answerRow.SetVisible(true)
 	w.ask()
@@ -313,10 +314,10 @@ func (w *MediaLessonWidget) Stop() {
 	}
 	right, answered := w.session.Score()
 	w.session = nil
-	w.startBtn.SetText("Start")
+	w.startBtn.SetText(i18n.T("Start"))
 	w.answerRow.SetVisible(false)
 	w.teachPreview.Show(nil, nil)
-	w.question.SetText(fmt.Sprintf("Done: %d of %d right.", right, answered))
+	w.question.SetText(fmt.Sprintf(i18n.T("Done: %d of %d right."), right, answered))
 	w.status.SetText("")
 	w.refresh()
 }
@@ -328,7 +329,7 @@ func (w *MediaLessonWidget) ask() {
 		return
 	}
 	asked, total := w.session.Progress()
-	w.status.SetText(fmt.Sprintf("%d of %d", asked, total))
+	w.status.SetText(fmt.Sprintf(i18n.T("%d of %d"), asked, total))
 	w.teachPreview.Show(&item, w.files())
 	q := "What is this?"
 	if len(item.Questions) > 0 {
@@ -346,9 +347,9 @@ func (w *MediaLessonWidget) Answer(text string) {
 	}
 	a := w.session.Answer(text)
 	if a.Right {
-		w.feedback.SetText("✔ Right: " + a.Correct)
+		w.feedback.SetText(i18n.T("✔ Right: ") + a.Correct)
 	} else {
-		w.feedback.SetText("✘ The answer was: " + a.Correct)
+		w.feedback.SetText(i18n.T("✘ The answer was: ") + a.Correct)
 	}
 	w.session.Next()
 	w.ask()
@@ -362,10 +363,10 @@ func (w *MediaLessonWidget) resultsTab() *qt.QWidget {
 	w.summary = qt.NewQLabel3("")
 	w.summary.SetWordWrap(true)
 	layout.AddWidget(w.summary.QWidget)
-	layout.AddWidget(qt.NewQLabel3("Last session:").QWidget)
+	layout.AddWidget(qt.NewQLabel3(i18n.T("Last session:")).QWidget)
 	w.timeline = charts.NewTimelineChart(tab)
 	layout.AddWidget(w.timeline.QWidget)
-	layout.AddWidget(qt.NewQLabel3("Each session:").QWidget)
+	layout.AddWidget(qt.NewQLabel3(i18n.T("Each session:")).QWidget)
 	w.grades = charts.NewGradesChart(tab)
 	layout.AddWidget(w.grades.QWidget)
 	layout.AddStretch()
@@ -406,14 +407,14 @@ func (w *MediaLessonWidget) refresh() {
 	w.showEnterPreview(row)
 	if w.session == nil && w.question.Text() == "" {
 		n := len(Teachable(w.lesson.Data.List).Items)
-		w.question.SetText(fmt.Sprintf("%d items to practise. Press Start.", n))
+		w.question.SetText(fmt.Sprintf(i18n.T("%d items to practise. Press Start."), n))
 	}
 
 	tests := w.lesson.Data.List.Tests
 	if pct := charts.Percentages(tests); len(pct) == 0 {
-		w.summary.SetText("No results yet: practise on the Teach tab.")
+		w.summary.SetText(i18n.T("No results yet: practise on the Teach tab."))
 	} else {
-		w.summary.SetText(fmt.Sprintf("%d sessions; the last one %d%% right.", len(pct), pct[len(pct)-1]))
+		w.summary.SetText(fmt.Sprintf(i18n.T("%d sessions; the last one %d%% right."), len(pct), pct[len(pct)-1]))
 	}
 	if len(tests) > 0 {
 		w.timeline.SetTest(tests[len(tests)-1])

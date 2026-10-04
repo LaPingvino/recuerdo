@@ -114,7 +114,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 
 	// Create status bar
 	mod.statusBar = mod.mainWindow.StatusBar()
-	mod.statusBar.ShowMessage("Ready")
+	mod.statusBar.ShowMessage(i18n.T("Ready"))
 
 	// Create central widget with basic layout
 	centralWidget := qt.NewQWidget(nil)
@@ -437,24 +437,24 @@ func (mod *GuiModule) showNewLessonDialog() {
 				newLesson, err := mod.CreateLessonFromDialogData(lessonData)
 				if err != nil {
 					mod.logger.Error("Failed to create lesson from dialog data: %v", err)
-					mod.statusBar.ShowMessage("Error creating lesson: " + err.Error())
+					mod.statusBar.ShowMessage(i18n.T("Error creating lesson: ") + err.Error())
 					return
 				}
 
 				// Display lesson in new tab
 				mod.displayLessonInTab(newLesson)
-				mod.statusBar.ShowMessage("New lesson created successfully")
+				mod.statusBar.ShowMessage(i18n.T("New lesson created successfully"))
 			} else {
 				log.Printf("[INFO] New lesson dialog was cancelled")
-				mod.statusBar.ShowMessage("New lesson dialog created")
+				mod.statusBar.ShowMessage(i18n.T("New lesson dialog created"))
 			}
 		} else {
 			mod.logger.DeadEnd("lessonDialogs module", "does not implement ShowNewLessonDialog() method", "legacy/modules/org/openteacher/interfaces/qt/lessonDialogs/")
-			mod.statusBar.ShowMessage("Error: Lesson dialog not available")
+			mod.statusBar.ShowMessage(i18n.T("Error: Lesson dialog not available"))
 		}
 	} else {
 		mod.logger.DeadEnd("lessonDialogs system", "No lessonDialogs modules found", "legacy/modules/org/openteacher/interfaces/qt/lessonDialogs/")
-		mod.statusBar.ShowMessage("Error: No lesson dialog modules available")
+		mod.statusBar.ShowMessage(i18n.T("Error: No lesson dialog modules available"))
 	}
 }
 
@@ -491,20 +491,20 @@ func (mod *GuiModule) showOpenDialogFrom(source string) {
 			if fileName != "" {
 				mod.logger.Success("File dialog returned: %s", fileName)
 				mod.logger.Debug("TRACKING: About to call loadSelectedFile() - call stack marker C")
-				mod.statusBar.ShowMessage(fmt.Sprintf("Selected file: %s", fileName))
+				mod.statusBar.ShowMessage(fmt.Sprintf(i18n.T("Selected file: %s"), fileName))
 				mod.loadSelectedFile(fileName)
 				mod.logger.Debug("TRACKING: loadSelectedFile() completed - call stack marker D")
 			} else {
 				mod.logger.Info("File dialog was cancelled")
-				mod.statusBar.ShowMessage("Open operation cancelled")
+				mod.statusBar.ShowMessage(i18n.T("Open operation cancelled"))
 			}
 		} else {
 			mod.logger.DeadEnd("fileDialog module", "does not implement OpenFile() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
-			mod.statusBar.ShowMessage("Error: File dialog not available")
+			mod.statusBar.ShowMessage(i18n.T("Error: File dialog not available"))
 		}
 	} else {
 		mod.logger.DeadEnd("fileDialog system", "No fileDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/")
-		mod.statusBar.ShowMessage("Error: No file dialog modules available")
+		mod.statusBar.ShowMessage(i18n.T("Error: No file dialog modules available"))
 	}
 }
 
@@ -528,7 +528,7 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 	lessonData, err := fileLoader.LoadFile(fileName)
 	if err != nil {
 		mod.logger.Error("Failed to load file '%s': %v", fileName, err)
-		mod.statusBar.ShowMessage(fmt.Sprintf("Error loading file: %v", err))
+		mod.statusBar.ShowMessage(fmt.Sprintf(i18n.T("Error loading file: %v"), err))
 		return
 	}
 
@@ -741,7 +741,7 @@ func (mod *GuiModule) showPropertiesDialog() {
 	currentLessonData := mod.getCurrentLessonData()
 	if currentLessonData == nil {
 		mod.logger.Error("No current lesson to show properties for")
-		mod.statusBar.ShowMessage("No lesson open to show properties")
+		mod.statusBar.ShowMessage(i18n.T("No lesson open to show properties"))
 		return
 	}
 
@@ -749,7 +749,7 @@ func (mod *GuiModule) showPropertiesDialog() {
 	lessonDialogModules := mod.manager.GetModulesByType("lessonDialogs")
 	if len(lessonDialogModules) == 0 {
 		mod.logger.DeadEnd("lessonDialogs system", "No lessonDialogs modules found", "internal/modules/interfaces/qt/lessonDialogs/")
-		mod.statusBar.ShowMessage("Properties dialog cancelled")
+		mod.statusBar.ShowMessage(i18n.T("Properties dialog cancelled"))
 		return
 	}
 
@@ -772,7 +772,7 @@ func (mod *GuiModule) showPropertiesDialog() {
 		}
 	} else {
 		mod.logger.Error("lessonDialogs module doesn't have ShowPropertiesDialog method")
-		mod.statusBar.ShowMessage("Error: Properties dialog not available")
+		mod.statusBar.ShowMessage(i18n.T("Error: Properties dialog not available"))
 	}
 }
 
@@ -789,15 +789,15 @@ func (mod *GuiModule) showSettingsDialog() {
 			mod.logger.Success("Calling ShowSettingsDialog() on settingsDialog module")
 			if settingsMod.ShowSettingsDialog() {
 				mod.applySettingsToLessons()
-				mod.statusBar.ShowMessage("Settings saved")
+				mod.statusBar.ShowMessage(i18n.T("Settings saved"))
 			}
 		} else {
 			mod.logger.DeadEnd("settingsDialog module", "does not implement ShowSettingsDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
-			mod.statusBar.ShowMessage("Error: Settings dialog not available")
+			mod.statusBar.ShowMessage(i18n.T("Error: Settings dialog not available"))
 		}
 	} else {
 		mod.logger.DeadEnd("settingsDialog system", "No settingsDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/settings/")
-		mod.statusBar.ShowMessage("Error: No settings dialog modules available")
+		mod.statusBar.ShowMessage(i18n.T("Error: No settings dialog modules available"))
 	}
 }
 
@@ -814,14 +814,14 @@ func (mod *GuiModule) showAboutDialog() {
 			mod.logger.Success("Calling ShowAboutDialog() on aboutDialog module")
 			aboutMod.ShowAboutDialog()
 			mod.logger.Success("About dialog was shown")
-			mod.statusBar.ShowMessage("About dialog shown")
+			mod.statusBar.ShowMessage(i18n.T("About dialog shown"))
 		} else {
 			mod.logger.DeadEnd("aboutDialog module", "does not implement ShowAboutDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
-			mod.statusBar.ShowMessage("About dialog not available")
+			mod.statusBar.ShowMessage(i18n.T("About dialog not available"))
 		}
 	} else {
 		mod.logger.DeadEnd("aboutDialog system", "No aboutDialog modules found", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
-		mod.statusBar.ShowMessage("Error: No about dialog modules available")
+		mod.statusBar.ShowMessage(i18n.T("Error: No about dialog modules available"))
 	}
 }
 
@@ -949,7 +949,7 @@ func (mod *GuiModule) SaveCurrentLessonTo(path string) error {
 	}
 	if !readable(path) {
 		// an export (PDF, Word, ...): the lesson keeps its own file
-		mod.statusBar.ShowMessage("Exported " + path)
+		mod.statusBar.ShowMessage(i18n.T("Exported ") + path)
 		return nil
 	}
 	l.Path = path
@@ -959,7 +959,7 @@ func (mod *GuiModule) SaveCurrentLessonTo(path string) error {
 		title = filepath.Base(path)
 	}
 	mod.tabWidget.SetTabText(tab, title)
-	mod.statusBar.ShowMessage("Saved " + path)
+	mod.statusBar.ShowMessage(i18n.T("Saved ") + path)
 	mod.logger.Success("Saved lesson to %s", path)
 	return nil
 }
@@ -990,7 +990,7 @@ func (mod *GuiModule) gettingStartedDialog() (*qt.QDialog, error) {
 		return nil, err
 	}
 	dialog := qt.NewQDialog(mod.mainWindow.QWidget)
-	dialog.SetWindowTitle("Getting Started with Recuerdo")
+	dialog.SetWindowTitle(i18n.T("Getting Started with Recuerdo"))
 	dialog.Resize(640, 720)
 	layout := qt.NewQVBoxLayout(dialog.QWidget)
 	browser := qt.NewQTextBrowser(dialog.QWidget)
@@ -1085,7 +1085,7 @@ func (mod *GuiModule) mergeIntoCurrentLesson() {
 		w.UpdateLesson(l)
 	}
 	mod.markModified(widget)
-	mod.statusBar.ShowMessage(fmt.Sprintf("Merged %d words from %s", len(other.List.Items), filepath.Base(path)))
+	mod.statusBar.ShowMessage(fmt.Sprintf(i18n.T("Merged %d words from %s"), len(other.List.Items), filepath.Base(path)))
 }
 
 // readable reports whether Recuerdo can open files like path again, so it
@@ -1116,7 +1116,7 @@ func (mod *GuiModule) printCurrentLesson() {
 		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Print", "Could not print the lesson:\n"+err.Error())
 		return
 	}
-	mod.statusBar.ShowMessage("Printed " + l.Data.List.Title)
+	mod.statusBar.ShowMessage(i18n.T("Printed ") + l.Data.List.Title)
 }
 
 // importFromPicture reads a word list from a picture into a new lesson
@@ -1158,7 +1158,7 @@ func (mod *GuiModule) importFromPicture() {
 	if tab := mod.tabWidget.CurrentWidget(); tab != nil {
 		mod.markModified(tab)
 	}
-	mod.statusBar.ShowMessage(fmt.Sprintf("Read %d word pairs from the picture: check them on the Enter tab", len(items)))
+	mod.statusBar.ShowMessage(fmt.Sprintf(i18n.T("Read %d word pairs from the picture: check them on the Enter tab"), len(items)))
 }
 
 // applySettingsToLessons gives the open word lessons the current settings
@@ -1190,6 +1190,6 @@ func (mod *GuiModule) newLessonFromText() {
 		if tab := mod.tabWidget.CurrentWidget(); tab != nil {
 			mod.markModified(tab)
 		}
-		mod.statusBar.ShowMessage(fmt.Sprintf("Made a lesson of %d words", len(l.Data.List.Items)))
+		mod.statusBar.ShowMessage(fmt.Sprintf(i18n.T("Made a lesson of %d words"), len(l.Data.List.Items)))
 	}
 }

@@ -27,18 +27,21 @@ func Name(code string) string {
 
 // The interface language, in the settings dialog.
 func init() {
-	langs := Available(Dir())
-	choices, labels := []string{""}, []string{"System language"}
-	sort.Slice(langs, func(i, j int) bool { return Name(langs[i]) < Name(langs[j]) })
-	for _, l := range append([]string{"en"}, langs...) {
-		choices = append(choices, l)
-		labels = append(labels, Name(l))
-	}
 	settingsdefs.Register(settingsdefs.Def{
 		Key: LanguageSetting, Category: "Interface", Name: "Language",
 		Help: "The language of Recuerdo's menus and screens (after restarting Recuerdo). " +
-			"Translations come from OpenTeacher; texts it did not have stay English.",
-		Kind: settingsdefs.Choice, Choices: choices, Labels: labels, Default: "",
+			"Texts without a translation stay English.",
+		Kind: settingsdefs.Choice, Default: "",
+		// the installed languages, when the setting is shown
+		Fill: func(d *settingsdefs.Def) {
+			langs := Available(Dir())
+			sort.Slice(langs, func(i, j int) bool { return Name(langs[i]) < Name(langs[j]) })
+			d.Choices, d.Labels = []string{""}, []string{"System language"}
+			for _, l := range append([]string{"en"}, langs...) {
+				d.Choices = append(d.Choices, l)
+				d.Labels = append(d.Labels, Name(l))
+			}
+		},
 	})
 }
 

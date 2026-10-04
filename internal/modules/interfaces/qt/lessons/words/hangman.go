@@ -1,6 +1,7 @@
 package words
 
 import (
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
 	"github.com/mappu/miqt/qt"
 )
@@ -59,9 +60,9 @@ func (w *TeachTabWidget) setHangmanLayout(on bool) {
 	w.correctButton.SetVisible(!on)
 	w.skipButton.SetVisible(!on)
 	if on {
-		w.submitButton.SetText("Check!")
+		w.submitButton.SetText(i18n.T("Check!"))
 	} else {
-		w.submitButton.SetText("Check")
+		w.submitButton.SetText(i18n.T("Check"))
 	}
 }
 

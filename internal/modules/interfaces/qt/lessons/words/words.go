@@ -2,6 +2,7 @@ package words
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"github.com/LaPingvino/recuerdo/internal/tts"
@@ -106,15 +107,15 @@ func (w *WordsLessonWidget) setupUI() {
 
 	// Create Enter tab
 	w.enterWidget = NewEnterTabWidget(w.lesson, w.QWidget)
-	w.tabWidget.AddTab(w.enterWidget.QWidget, "Enter")
+	w.tabWidget.AddTab(w.enterWidget.QWidget, i18n.T("Enter"))
 
 	// Create Teach tab
 	w.teachWidget = NewTeachTabWidget(w.lesson, w.QWidget)
-	w.tabWidget.AddTab(w.teachWidget.QWidget, "Teach")
+	w.tabWidget.AddTab(w.teachWidget.QWidget, i18n.T("Teach"))
 
 	// Create Results tab
 	w.resultsWidget = NewResultsTabWidget(w.lesson, w.QWidget)
-	w.tabWidget.AddTab(w.resultsWidget.QWidget, "Results")
+	w.tabWidget.AddTab(w.resultsWidget.QWidget, i18n.T("Results"))
 
 	// The Teach tab shows grades in the notation chosen on the Results tab
 	w.teachWidget.notation = w.resultsWidget.Notation
@@ -203,7 +204,7 @@ func (w *WordsLessonWidget) updateLesson() {
 	if title == "" {
 		title = "Unnamed Lesson"
 	}
-	w.SetWindowTitle(fmt.Sprintf("Word Lesson: %s", title))
+	w.SetWindowTitle(fmt.Sprintf(i18n.T("Word Lesson: %s"), title))
 }
 
 // GetCurrentTab returns the currently active tab index
@@ -262,34 +263,34 @@ func (w *EnterTabWidget) setupUI() {
 
 	// Lesson properties section
 	propsGroup := qt.NewQGroupBox(w.QWidget)
-	propsGroup.SetTitle("Lesson Properties")
+	propsGroup.SetTitle(i18n.T("Lesson Properties"))
 	propsLayout := qt.NewQFormLayout(propsGroup.QWidget)
 
 	w.titleEdit = qt.NewQLineEdit(w.QWidget)
-	w.titleEdit.SetPlaceholderText("Enter lesson title")
-	propsLayout.AddRow3("Title:", w.titleEdit.QWidget)
+	w.titleEdit.SetPlaceholderText(i18n.T("Enter lesson title"))
+	propsLayout.AddRow3(i18n.T("Title:"), w.titleEdit.QWidget)
 
 	w.qLanguageEdit = qt.NewQLineEdit(w.QWidget)
-	w.qLanguageEdit.SetPlaceholderText("Question language")
-	propsLayout.AddRow3("Question Language:", w.qLanguageEdit.QWidget)
+	w.qLanguageEdit.SetPlaceholderText(i18n.T("Question language"))
+	propsLayout.AddRow3(i18n.T("Question Language:"), w.qLanguageEdit.QWidget)
 
 	w.aLanguageEdit = qt.NewQLineEdit(w.QWidget)
-	w.aLanguageEdit.SetPlaceholderText("Answer language")
-	propsLayout.AddRow3("Answer Language:", w.aLanguageEdit.QWidget)
+	w.aLanguageEdit.SetPlaceholderText(i18n.T("Answer language"))
+	propsLayout.AddRow3(i18n.T("Answer Language:"), w.aLanguageEdit.QWidget)
 
 	layout.AddWidget(propsGroup.QWidget)
 
 	// Word pairs section
 	wordsGroup := qt.NewQGroupBox(w.QWidget)
-	wordsGroup.SetTitle("Word Pairs")
+	wordsGroup.SetTitle(i18n.T("Word Pairs"))
 	wordsLayout := qt.NewQVBoxLayout(wordsGroup.QWidget)
 
 	// Buttons
 	buttonLayout := qt.NewQHBoxLayout2()
 	w.addWordButton = qt.NewQPushButton(w.QWidget)
-	w.addWordButton.SetText("Add Word")
+	w.addWordButton.SetText(i18n.T("Add Word"))
 	w.removeWordButton = qt.NewQPushButton(w.QWidget)
-	w.removeWordButton.SetText("Remove Word")
+	w.removeWordButton.SetText(i18n.T("Remove Word"))
 	buttonLayout.AddWidget(w.addWordButton.QWidget)
 	buttonLayout.AddWidget(w.removeWordButton.QWidget)
 	buttonLayout.AddStretch()
@@ -613,7 +614,7 @@ func (w *TeachTabWidget) setupUI() {
 	addLabel("Lesson type:")
 	w.lessonTypeCombo = qt.NewQComboBox(w.QWidget)
 	w.lessonTypeCombo.AddItems(teaching.LessonTypes)
-	w.lessonTypeCombo.SetToolTip("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them.")
+	w.lessonTypeCombo.SetToolTip(i18n.T("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."))
 	optionsLayout.AddWidget(w.lessonTypeCombo.QWidget)
 	addLabel("Order:")
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
@@ -622,7 +623,7 @@ func (w *TeachTabWidget) setupUI() {
 	addLabel("Words:")
 	w.wordsCombo = qt.NewQComboBox(w.QWidget)
 	w.wordsCombo.AddItems(teaching.WordChoices)
-	w.wordsCombo.SetToolTip("Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions.")
+	w.wordsCombo.SetToolTip(i18n.T("Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."))
 	optionsLayout.AddWidget(w.wordsCombo.QWidget)
 	optionsLayout.AddStretch()
 	layout.AddLayout2(optionsLayout.QLayout, 0)
@@ -631,7 +632,7 @@ func (w *TeachTabWidget) setupUI() {
 	addLabel("Mode:")
 	w.modeCombo = qt.NewQComboBox(w.QWidget)
 	w.modeCombo.AddItems(teaching.TeachTypes)
-	w.modeCombo.SetToolTip("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory.")
+	w.modeCombo.SetToolTip(i18n.T("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."))
 	optionsLayout.AddWidget(w.modeCombo.QWidget)
 	w.repeatLabel = addLabel("Show answer for:")
 	w.repeatSpin = qt.NewQDoubleSpinBox(w.QWidget)
@@ -640,7 +641,7 @@ func (w *TeachTabWidget) setupUI() {
 	w.repeatSpin.SetDecimals(1)
 	w.repeatSpin.SetSuffix(" s")
 	w.repeatSpin.SetValue(teaching.RepeatFadeDuration.Seconds())
-	w.repeatSpin.SetToolTip("How long Repeat answer shows the answer before you type it")
+	w.repeatSpin.SetToolTip(i18n.T("How long Repeat answer shows the answer before you type it"))
 	w.repeatSpin.OnValueChanged(w.setRepeatSeconds)
 	optionsLayout.AddWidget(w.repeatSpin.QWidget)
 	showRepeat := func() {
@@ -651,19 +652,19 @@ func (w *TeachTabWidget) setupUI() {
 	w.modeCombo.OnCurrentTextChanged(func(string) { showRepeat() })
 	showRepeat()
 	w.askAnswersCheck = qt.NewQCheckBox(w.QWidget)
-	w.askAnswersCheck.SetText("Ask the answers")
-	w.askAnswersCheck.SetToolTip("Practise the other way round: the answers are asked and the questions are the answers")
+	w.askAnswersCheck.SetText(i18n.T("Ask the answers"))
+	w.askAnswersCheck.SetToolTip(i18n.T("Practise the other way round: the answers are asked and the questions are the answers"))
 	optionsLayout.AddWidget(w.askAnswersCheck.QWidget)
 	if w.speaker == nil {
 		w.speaker = tts.New(runtime.GOOS)
 	}
 	w.pronounceCheck = qt.NewQCheckBox(w.QWidget)
-	w.pronounceCheck.SetText("Pronounce questions")
+	w.pronounceCheck.SetText(i18n.T("Pronounce questions"))
 	if w.speaker.Available() {
-		w.pronounceCheck.SetToolTip("Say each question aloud, in the question language")
+		w.pronounceCheck.SetToolTip(i18n.T("Say each question aloud, in the question language"))
 	} else {
 		w.pronounceCheck.SetEnabled(false)
-		w.pronounceCheck.SetToolTip("Needs a speech program: install espeak-ng")
+		w.pronounceCheck.SetToolTip(i18n.T("Needs a speech program: install espeak-ng"))
 	}
 	w.pronounceCheck.OnToggled(func(on bool) {
 		if w.settings != nil {
@@ -673,14 +674,14 @@ func (w *TeachTabWidget) setupUI() {
 	optionsLayout.AddWidget(w.pronounceCheck.QWidget)
 	optionsLayout.AddStretch()
 	w.startButton = qt.NewQPushButton(w.QWidget)
-	w.startButton.SetText("Start Teaching")
+	w.startButton.SetText(i18n.T("Start Teaching"))
 	w.startButton.SetMinimumWidth(140)
 	optionsLayout.AddWidget(w.startButton.QWidget)
 	layout.AddLayout2(optionsLayout.QLayout, 0)
 
 	// Progress: a line of text and a thin bar
 	w.statusLabel = qt.NewQLabel(w.QWidget)
-	w.statusLabel.SetText("Ready to start")
+	w.statusLabel.SetText(i18n.T("Ready to start"))
 	w.statusLabel.SetStyleSheet("color: palette(dark);")
 	layout.AddWidget(w.statusLabel.QWidget)
 	w.progressBar = qt.NewQProgressBar(w.QWidget)
@@ -691,7 +692,7 @@ func (w *TeachTabWidget) setupUI() {
 	// The question, large, in the middle
 	layout.AddStretch()
 	w.questionLabel = qt.NewQLabel(w.QWidget)
-	w.questionLabel.SetText("Click 'Start Teaching' to begin")
+	w.questionLabel.SetText(i18n.T("Click 'Start Teaching' to begin"))
 	w.questionLabel.SetWordWrap(true)
 	w.questionLabel.SetAlignment(qt.AlignCenter)
 	qf := w.questionLabel.Font()
@@ -728,7 +729,7 @@ func (w *TeachTabWidget) setupUI() {
 	answerLayout.AddStretch()
 	w.answerEdit = qt.NewQLineEdit(w.QWidget)
 	w.answerEdit.SetEnabled(false)
-	w.answerEdit.SetPlaceholderText("Your answer")
+	w.answerEdit.SetPlaceholderText(i18n.T("Your answer"))
 	w.answerEdit.SetMinimumWidth(360)
 	w.answerEdit.SetMaximumWidth(560)
 	// Dead keys and AltGr work with Qt's default input method settings;
@@ -740,7 +741,7 @@ func (w *TeachTabWidget) setupUI() {
 	answerLayout.AddWidget(w.answerEdit.QWidget)
 	w.unicodeButton = qt.NewQPushButton(w.QWidget)
 	w.unicodeButton.SetText("ä é ß…")
-	w.unicodeButton.SetToolTip("Show or hide special characters: accented letters and other scripts")
+	w.unicodeButton.SetToolTip(i18n.T("Show or hide special characters: accented letters and other scripts"))
 	w.unicodeButton.SetCheckable(true)
 	w.unicodeButton.SetEnabled(false)
 	answerLayout.AddWidget(w.unicodeButton.QWidget)
@@ -761,29 +762,29 @@ func (w *TeachTabWidget) setupUI() {
 	buttonLayout := qt.NewQHBoxLayout2()
 	buttonLayout.AddStretch()
 	w.submitButton = qt.NewQPushButton(w.QWidget)
-	w.submitButton.SetText("Check")
+	w.submitButton.SetText(i18n.T("Check"))
 	w.submitButton.SetEnabled(false)
 	w.nextButton = qt.NewQPushButton(w.QWidget)
-	w.nextButton.SetText("Continue")
-	w.nextButton.SetToolTip("Go on after seeing the right answer")
+	w.nextButton.SetText(i18n.T("Continue"))
+	w.nextButton.SetToolTip(i18n.T("Go on after seeing the right answer"))
 	w.nextButton.SetEnabled(false)
 	w.skipButton = qt.NewQPushButton(w.QWidget)
-	w.skipButton.SetText("Skip")
-	w.skipButton.SetToolTip("Ask this word again later")
+	w.skipButton.SetText(i18n.T("Skip"))
+	w.skipButton.SetToolTip(i18n.T("Ask this word again later"))
 	w.skipButton.SetEnabled(false)
 	w.correctButton = qt.NewQPushButton(w.QWidget)
-	w.correctButton.SetText("Correct anyway")
-	w.correctButton.SetToolTip("Count your last answer as right after all")
+	w.correctButton.SetText(i18n.T("Correct anyway"))
+	w.correctButton.SetToolTip(i18n.T("Count your last answer as right after all"))
 	w.correctButton.SetEnabled(false)
 	for _, b := range []*qt.QPushButton{w.submitButton, w.nextButton, w.skipButton, w.correctButton} {
 		buttonLayout.AddWidget(b.QWidget)
 	}
 	w.viewButton = qt.NewQPushButton(w.QWidget)
-	w.viewButton.SetText("View answer")
+	w.viewButton.SetText(i18n.T("View answer"))
 	w.rightButton = qt.NewQPushButton(w.QWidget)
-	w.rightButton.SetText("I was right")
+	w.rightButton.SetText(i18n.T("I was right"))
 	w.wrongButton = qt.NewQPushButton(w.QWidget)
-	w.wrongButton.SetText("I was wrong")
+	w.wrongButton.SetText(i18n.T("I was wrong"))
 	for _, b := range []*qt.QPushButton{w.viewButton, w.rightButton, w.wrongButton} {
 		b.SetVisible(false)
 		buttonLayout.AddWidget(b.QWidget)
@@ -853,7 +854,7 @@ func (w *TeachTabWidget) UpdateLesson(lesson *lesson.Lesson) {
 // startTeaching begins the teaching session
 func (w *TeachTabWidget) startTeaching() {
 	if w.lesson == nil || len(w.lesson.Data.List.Items) == 0 {
-		w.statusLabel.SetText("No words available for teaching")
+		w.statusLabel.SetText(i18n.T("No words available for teaching"))
 		return
 	}
 
@@ -869,7 +870,7 @@ func (w *TeachTabWidget) startTeaching() {
 	if w.totalQuestions == 0 {
 		w.session = nil
 		w.isTeaching = false
-		w.statusLabel.SetText("No words to practise: none are \"" + strings.ToLower(w.wordsCombo.CurrentText()) + "\" yet")
+		w.statusLabel.SetText(i18n.T("No words to practise: none are \"") + strings.ToLower(w.wordsCombo.CurrentText()) + "\" yet")
 		return
 	}
 
@@ -940,7 +941,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 		w.progressBar.SetValue(asked * 100 / total)
 	}
 	w.correctAnswers, _ = w.session.Score()
-	w.statusLabel.SetText(fmt.Sprintf("Question %d of %d (Score: %d/%d correct)",
+	w.statusLabel.SetText(fmt.Sprintf(i18n.T("Question %d of %d (Score: %d/%d correct)"),
 		asked+1, total, w.correctAnswers, asked))
 }
 
@@ -954,7 +955,7 @@ func (w *TeachTabWidget) showModeExtras() {
 		w.hintLabel.SetVisible(true)
 	case teaching.InMind:
 		w.hintLabel.SetStyleSheet("")
-		w.hintLabel.SetText("Think about the answer, and press 'View answer' when you're done.")
+		w.hintLabel.SetText(i18n.T("Think about the answer, and press 'View answer' when you're done."))
 		w.hintLabel.SetVisible(true)
 	case teaching.RepeatAnswer:
 		// show the answer first; typing starts when it is gone
@@ -1003,7 +1004,7 @@ func (w *TeachTabWidget) inMindView() {
 	if w.session == nil || w.session.Done() {
 		return
 	}
-	w.hintLabel.SetText("Translation: " + w.session.ViewAnswer())
+	w.hintLabel.SetText(i18n.T("Translation: ") + w.session.ViewAnswer())
 	w.viewButton.SetVisible(false)
 	w.skipButton.SetEnabled(false)
 	w.rightButton.SetVisible(true)
@@ -1217,11 +1218,11 @@ func (w *TeachTabWidget) finishTeaching() {
 	w.submitButton.SetEnabled(false)
 	w.nextButton.SetEnabled(false)
 	w.startButton.SetEnabled(true)
-	w.startButton.SetText("Start Again")
+	w.startButton.SetText(i18n.T("Start Again"))
 	w.unicodeButton.SetEnabled(false)
 
 	w.progressBar.SetValue(100)
-	w.statusLabel.SetText("Teaching session completed")
+	w.statusLabel.SetText(i18n.T("Teaching session completed"))
 
 	// Notify parent widget of session completion
 	if w.sessionCompleted != nil && w.currentSession != nil {
@@ -1250,7 +1251,7 @@ func (w *TeachTabWidget) resetTeachingState() {
 	w.totalQuestions = 0
 
 	w.startButton.SetEnabled(true)
-	w.startButton.SetText("Start Teaching")
+	w.startButton.SetText(i18n.T("Start Teaching"))
 	w.answerEdit.SetEnabled(false)
 	w.answerEdit.Clear()
 	w.submitButton.SetEnabled(false)
@@ -1264,11 +1265,11 @@ func (w *TeachTabWidget) resetTeachingState() {
 	w.unicodeButton.SetChecked(false)
 
 	if w.lesson != nil && len(w.lesson.Data.List.Items) > 0 {
-		w.statusLabel.SetText("Ready to start teaching")
-		w.questionLabel.SetText("Click 'Start Teaching' to begin")
+		w.statusLabel.SetText(i18n.T("Ready to start teaching"))
+		w.questionLabel.SetText(i18n.T("Click 'Start Teaching' to begin"))
 	} else {
-		w.statusLabel.SetText("No words available for teaching")
-		w.questionLabel.SetText("Please add words in the Enter tab")
+		w.statusLabel.SetText(i18n.T("No words available for teaching"))
+		w.questionLabel.SetText(i18n.T("Please add words in the Enter tab"))
 	}
 }
 
@@ -1348,12 +1349,12 @@ func (w *ResultsTabWidget) setupUI() {
 
 	// Overview section
 	overviewGroup := qt.NewQGroupBox(w.QWidget)
-	overviewGroup.SetTitle("Results Overview")
+	overviewGroup.SetTitle(i18n.T("Results Overview"))
 	overviewLayout := qt.NewQVBoxLayout(overviewGroup.QWidget)
 
 	notationLayout := qt.NewQHBoxLayout2()
 	notationLabel := qt.NewQLabel(w.QWidget)
-	notationLabel.SetText("Grades in:")
+	notationLabel.SetText(i18n.T("Grades in:"))
 	notationLayout.AddWidget(notationLabel.QWidget)
 	w.notationCombo = qt.NewQComboBox(w.QWidget)
 	w.notationCombo.AddItems(teaching.Notations)
@@ -1369,7 +1370,7 @@ func (w *ResultsTabWidget) setupUI() {
 	overviewLayout.AddLayout2(notationLayout.QLayout, 0)
 
 	w.overviewLabel = qt.NewQLabel(w.QWidget)
-	w.overviewLabel.SetText("No teaching results available yet")
+	w.overviewLabel.SetText(i18n.T("No teaching results available yet"))
 	w.overviewLabel.SetAlignment(qt.AlignCenter)
 	overviewLayout.AddWidget(w.overviewLabel.QWidget)
 
@@ -1377,15 +1378,15 @@ func (w *ResultsTabWidget) setupUI() {
 
 	// Charts of the lesson's stored tests
 	w.chartsGroup = qt.NewQGroupBox(w.QWidget)
-	w.chartsGroup.SetTitle("Progress")
+	w.chartsGroup.SetTitle(i18n.T("Progress"))
 	chartsLayout := qt.NewQVBoxLayout(w.chartsGroup.QWidget)
 	timelineLabel := qt.NewQLabel(w.QWidget)
-	timelineLabel.SetText("Last session:")
+	timelineLabel.SetText(i18n.T("Last session:"))
 	chartsLayout.AddWidget(timelineLabel.QWidget)
 	w.timeline = charts.NewTimelineChart(w.QWidget)
 	chartsLayout.AddWidget(w.timeline.QWidget)
 	gradesLabel := qt.NewQLabel(w.QWidget)
-	gradesLabel.SetText("Each session:")
+	gradesLabel.SetText(i18n.T("Each session:"))
 	chartsLayout.AddWidget(gradesLabel.QWidget)
 	w.grades = charts.NewGradesChart(w.QWidget)
 	chartsLayout.AddWidget(w.grades.QWidget)
@@ -1394,7 +1395,7 @@ func (w *ResultsTabWidget) setupUI() {
 
 	// Detailed results
 	detailsGroup := qt.NewQGroupBox(w.QWidget)
-	detailsGroup.SetTitle("Latest Session Results")
+	detailsGroup.SetTitle(i18n.T("Latest Session Results"))
 	detailsLayout := qt.NewQVBoxLayout(detailsGroup.QWidget)
 
 	w.resultsTable = qt.NewQTableWidget2()
@@ -1456,7 +1457,7 @@ func (w *ResultsTabWidget) AddSession(session *TeachingSession) {
 // updateResultsDisplay updates the results display
 func (w *ResultsTabWidget) updateResultsDisplay() {
 	if w.lesson == nil {
-		w.overviewLabel.SetText("No lesson data available")
+		w.overviewLabel.SetText(i18n.T("No lesson data available"))
 		return
 	}
 

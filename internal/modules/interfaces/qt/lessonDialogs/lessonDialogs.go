@@ -9,6 +9,7 @@ package lessonDialogs
 import (
 	"context"
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"log"
 	"strings"
 
@@ -131,7 +132,7 @@ func (mod *LessonDialogsModule) ShowImportDialog(parent *qt.QWidget) map[string]
 // createNewLessonDialog creates the new lesson dialog
 func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 	mod.newLessonDialog = qt.NewQDialog(parent)
-	mod.newLessonDialog.SetWindowTitle("Create New Lesson")
+	mod.newLessonDialog.SetWindowTitle(i18n.T("Create New Lesson"))
 	mod.newLessonDialog.SetFixedSize2(400, 350)
 	mod.newLessonDialog.SetWindowModality(qt.ApplicationModal)
 
@@ -139,40 +140,40 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 
 	// Lesson name
 	nameGroup := qt.NewQGroupBox(mod.newLessonDialog.QWidget)
-	nameGroup.SetTitle("Lesson Information")
+	nameGroup.SetTitle(i18n.T("Lesson Information"))
 	nameLayout := qt.NewQFormLayout(nameGroup.QWidget)
 
 	mod.nameEdit = qt.NewQLineEdit(nameGroup.QWidget)
 	mod.nameEdit.SetObjectName("lessonName")
-	mod.nameEdit.SetPlaceholderText("Enter lesson name...")
-	nameLayout.AddRow3("Name:", mod.nameEdit.QWidget)
+	mod.nameEdit.SetPlaceholderText(i18n.T("Enter lesson name..."))
+	nameLayout.AddRow3(i18n.T("Name:"), mod.nameEdit.QWidget)
 
 	mod.descEdit = qt.NewQTextEdit(nameGroup.QWidget)
 	mod.descEdit.SetObjectName("lessonDescription")
-	mod.descEdit.SetPlaceholderText("Enter lesson description...")
+	mod.descEdit.SetPlaceholderText(i18n.T("Enter lesson description..."))
 	mod.descEdit.SetMaximumHeight(80)
-	nameLayout.AddRow3("Description:", mod.descEdit.QWidget)
+	nameLayout.AddRow3(i18n.T("Description:"), mod.descEdit.QWidget)
 
 	layout.AddWidget(nameGroup.QWidget)
 
 	// Lesson type
 	typeGroup := qt.NewQGroupBox(mod.newLessonDialog.QWidget)
-	typeGroup.SetTitle("Lesson Type")
+	typeGroup.SetTitle(i18n.T("Lesson Type"))
 	typeLayout := qt.NewQVBoxLayout(typeGroup.QWidget)
 
 	mod.wordsRadio = qt.NewQRadioButton(typeGroup.QWidget)
-	mod.wordsRadio.SetText("Words List")
+	mod.wordsRadio.SetText(i18n.T("Words List"))
 	mod.wordsRadio.SetObjectName("wordsRadio")
 	mod.wordsRadio.SetChecked(true)
 	typeLayout.AddWidget(mod.wordsRadio.QWidget)
 
 	mod.topoRadio = qt.NewQRadioButton(typeGroup.QWidget)
-	mod.topoRadio.SetText("Topology")
+	mod.topoRadio.SetText(i18n.T("Topology"))
 	mod.topoRadio.SetObjectName("topoRadio")
 	typeLayout.AddWidget(mod.topoRadio.QWidget)
 
 	mod.mediaRadio = qt.NewQRadioButton(typeGroup.QWidget)
-	mod.mediaRadio.SetText("Media")
+	mod.mediaRadio.SetText(i18n.T("Media"))
 	mod.mediaRadio.SetObjectName("mediaRadio")
 	typeLayout.AddWidget(mod.mediaRadio.QWidget)
 
@@ -180,19 +181,19 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 
 	// Language settings
 	langGroup := qt.NewQGroupBox(mod.newLessonDialog.QWidget)
-	langGroup.SetTitle("Languages")
+	langGroup.SetTitle(i18n.T("Languages"))
 	langLayout := qt.NewQFormLayout(langGroup.QWidget)
 
 	mod.questionLangCombo = qt.NewQComboBox(langGroup.QWidget)
 	mod.questionLangCombo.SetObjectName("questionLanguage")
 	mod.questionLangCombo.AddItems([]string{"English", "Dutch", "French", "German", "Spanish", "Italian"})
-	langLayout.AddRow3("Question language:", mod.questionLangCombo.QWidget)
+	langLayout.AddRow3(i18n.T("Question language:"), mod.questionLangCombo.QWidget)
 
 	mod.answerLangCombo = qt.NewQComboBox(langGroup.QWidget)
 	mod.answerLangCombo.SetObjectName("answerLanguage")
 	mod.answerLangCombo.AddItems([]string{"English", "Dutch", "French", "German", "Spanish", "Italian"})
 	mod.answerLangCombo.SetCurrentIndex(1) // Default to Dutch
-	langLayout.AddRow3("Answer language:", mod.answerLangCombo.QWidget)
+	langLayout.AddRow3(i18n.T("Answer language:"), mod.answerLangCombo.QWidget)
 
 	layout.AddWidget(langGroup.QWidget)
 
@@ -215,25 +216,25 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 // much it holds.
 func (mod *LessonDialogsModule) createPropertiesDialog(parent *qt.QWidget) {
 	mod.propertiesDialog = qt.NewQDialog(parent)
-	mod.propertiesDialog.SetWindowTitle("Lesson Properties")
+	mod.propertiesDialog.SetWindowTitle(i18n.T("Lesson Properties"))
 	mod.propertiesDialog.SetMinimumWidth(380)
 	mod.propertiesDialog.SetWindowModality(qt.ApplicationModal)
 
 	form := qt.NewQFormLayout(mod.propertiesDialog.QWidget)
 	mod.propNameEdit = qt.NewQLineEdit(nil)
-	form.AddRow3("Title:", mod.propNameEdit.QWidget)
+	form.AddRow3(i18n.T("Title:"), mod.propNameEdit.QWidget)
 	mod.propQLangEdit = qt.NewQLineEdit(nil)
-	mod.propQLangEdit.SetPlaceholderText("e.g. Dutch")
-	form.AddRow3("Question language:", mod.propQLangEdit.QWidget)
+	mod.propQLangEdit.SetPlaceholderText(i18n.T("e.g. Dutch"))
+	form.AddRow3(i18n.T("Question language:"), mod.propQLangEdit.QWidget)
 	mod.propALangEdit = qt.NewQLineEdit(nil)
-	mod.propALangEdit.SetPlaceholderText("e.g. English")
-	form.AddRow3("Answer language:", mod.propALangEdit.QWidget)
+	mod.propALangEdit.SetPlaceholderText(i18n.T("e.g. English"))
+	form.AddRow3(i18n.T("Answer language:"), mod.propALangEdit.QWidget)
 	mod.propLangRows = []*qt.QWidget{mod.propQLangEdit.QWidget, form.LabelForField(mod.propQLangEdit.QWidget),
 		mod.propALangEdit.QWidget, form.LabelForField(mod.propALangEdit.QWidget)}
 	mod.itemCountLabel = qt.NewQLabel2()
-	form.AddRow3("Items:", mod.itemCountLabel.QWidget)
+	form.AddRow3(i18n.T("Items:"), mod.itemCountLabel.QWidget)
 	mod.sessionsLabel = qt.NewQLabel2()
-	form.AddRow3("Practice sessions:", mod.sessionsLabel.QWidget)
+	form.AddRow3(i18n.T("Practice sessions:"), mod.sessionsLabel.QWidget)
 
 	buttonBox := qt.NewQDialogButtonBox(mod.propertiesDialog.QWidget)
 	buttonBox.SetStandardButtons(qt.QDialogButtonBox__Ok | qt.QDialogButtonBox__Cancel)
@@ -245,7 +246,7 @@ func (mod *LessonDialogsModule) createPropertiesDialog(parent *qt.QWidget) {
 // createImportDialog creates the import dialog
 func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 	mod.importDialog = qt.NewQDialog(parent)
-	mod.importDialog.SetWindowTitle("Import Lesson")
+	mod.importDialog.SetWindowTitle(i18n.T("Import Lesson"))
 	mod.importDialog.SetFixedSize2(500, 300)
 	mod.importDialog.SetWindowModality(qt.ApplicationModal)
 
@@ -253,16 +254,16 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 
 	// File selection
 	fileGroup := qt.NewQGroupBox(mod.importDialog.QWidget)
-	fileGroup.SetTitle("Import File")
+	fileGroup.SetTitle(i18n.T("Import File"))
 	fileLayout := qt.NewQHBoxLayout(fileGroup.QWidget)
 
 	mod.importFileEdit = qt.NewQLineEdit(fileGroup.QWidget)
 	mod.importFileEdit.SetObjectName("filePath")
-	mod.importFileEdit.SetPlaceholderText("Select file to import...")
+	mod.importFileEdit.SetPlaceholderText(i18n.T("Select file to import..."))
 	fileLayout.AddWidget(mod.importFileEdit.QWidget)
 
 	browseBtn := qt.NewQPushButton2()
-	browseBtn.SetText("Browse...")
+	browseBtn.SetText(i18n.T("Browse..."))
 	browseBtn.OnClicked(func() {
 		fileName := qt.QFileDialog_GetOpenFileName4(mod.importDialog.QWidget,
 			"Select lesson file",
@@ -278,12 +279,12 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 
 	// Import options
 	optionsGroup := qt.NewQGroupBox(mod.importDialog.QWidget)
-	optionsGroup.SetTitle("Import Options")
+	optionsGroup.SetTitle(i18n.T("Import Options"))
 	optionsLayout := qt.NewQVBoxLayout(optionsGroup.QWidget)
 
 	encodingLayout := qt.NewQHBoxLayout2()
 	encodingLabel := qt.NewQLabel2()
-	encodingLabel.SetText("File encoding:")
+	encodingLabel.SetText(i18n.T("File encoding:"))
 	encodingLayout.AddWidget(encodingLabel.QWidget)
 
 	mod.encodingCombo = qt.NewQComboBox(optionsGroup.QWidget)
@@ -294,7 +295,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 
 	separatorLayout := qt.NewQHBoxLayout2()
 	separatorLabel := qt.NewQLabel2()
-	separatorLabel.SetText("Field separator:")
+	separatorLabel.SetText(i18n.T("Field separator:"))
 	separatorLayout.AddWidget(separatorLabel.QWidget)
 
 	mod.separatorCombo = qt.NewQComboBox(optionsGroup.QWidget)
@@ -304,7 +305,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 	optionsLayout.AddLayout2(separatorLayout.QLayout, 0)
 
 	mod.firstRowCheck = qt.NewQCheckBox2()
-	mod.firstRowCheck.SetText("First row contains headers")
+	mod.firstRowCheck.SetText(i18n.T("First row contains headers"))
 	mod.firstRowCheck.SetObjectName("firstRowHeaders")
 	mod.firstRowCheck.SetChecked(true)
 	optionsLayout.AddWidget(mod.firstRowCheck.QWidget)
@@ -313,7 +314,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 
 	// Preview area
 	previewGroup := qt.NewQGroupBox(mod.importDialog.QWidget)
-	previewGroup.SetTitle("Preview")
+	previewGroup.SetTitle(i18n.T("Preview"))
 	previewLayout := qt.NewQVBoxLayout(previewGroup.QWidget)
 
 	previewText := qt.NewQTextEdit(previewGroup.QWidget)

@@ -2,6 +2,7 @@ package media
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"os"
 	"path/filepath"
 
@@ -40,7 +41,7 @@ func NewPreview(parent *qt.QWidget) *Preview {
 	p.other.SetAlignment(qt.AlignCenter)
 	p.other.SetWordWrap(true)
 	layout.AddWidget2(p.other.QWidget, 1)
-	p.open = qt.NewQPushButton3("Open")
+	p.open = qt.NewQPushButton3(i18n.T("Open"))
 	p.open.OnClicked(p.Open)
 	row := qt.NewQHBoxLayout2()
 	row.AddStretch()
@@ -91,7 +92,7 @@ func (p *Preview) Show(item *lesson.WordItem, files map[string][]byte) {
 	}
 	switch {
 	case p.target == "":
-		p.other.SetText(fmt.Sprintf("The %s %s is missing from the lesson.", kind, filepath.Base(name)))
+		p.other.SetText(fmt.Sprintf(i18n.T("The %s %s is missing from the lesson."), kind, filepath.Base(name)))
 	case remote:
 		p.other.SetText(fmt.Sprintf("A %s:\n%s", kind, name))
 	default:
@@ -100,7 +101,7 @@ func (p *Preview) Show(item *lesson.WordItem, files map[string][]byte) {
 	p.open.SetText(map[string]string{Audio: "▶ Play", Video: "▶ Play", YouTube: "▶ Play", Vimeo: "▶ Play",
 		Dailymotion: "▶ Play"}[kind])
 	if p.open.Text() == "" {
-		p.open.SetText("Open")
+		p.open.SetText(i18n.T("Open"))
 	}
 	p.open.SetVisible(p.target != "")
 	p.files = files

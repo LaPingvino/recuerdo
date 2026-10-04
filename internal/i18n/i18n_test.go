@@ -98,3 +98,22 @@ func TestShippedTranslations(t *testing.T) {
 	}
 	Use(dir, "")
 }
+
+func TestRecuerdoOverOpenTeacher(t *testing.T) {
+	dir := t.TempDir()
+	os.WriteFile(filepath.Join(dir, "nl.po"), []byte("msgid \"&File\"\nmsgstr \"&Bestand\"\n\nmsgid \"Teach\"\nmsgstr \"Leer\"\n"), 0o644)
+	os.WriteFile(filepath.Join(dir, "recuerdo-nl.po"), []byte("msgid \"Teach\"\nmsgstr \"Oefenen\"\n"), 0o644)
+	os.WriteFile(filepath.Join(dir, "recuerdo-eo.po"), []byte("msgid \"Teach\"\nmsgstr \"Ekzerci\"\n"), 0o644)
+	if got := Available(dir); !reflect.DeepEqual(got, []string{"eo", "nl"}) {
+		t.Errorf("available %v", got)
+	}
+	Use(dir, "nl")
+	if T("&File") != "&Bestand" || T("Teach") != "Oefenen" {
+		t.Errorf("nl: %q %q", T("&File"), T("Teach"))
+	}
+	Use(dir, "eo")
+	if T("Teach") != "Ekzerci" {
+		t.Errorf("eo (own file only): %q", T("Teach"))
+	}
+	Use(dir, "")
+}

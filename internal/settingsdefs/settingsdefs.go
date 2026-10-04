@@ -35,7 +35,10 @@ type Def struct {
 	Default  interface{} // bool, string (Choice) or milliseconds (Seconds)
 	Min, Max float64     // Seconds
 	Run      func(Store) // Action
-	order    int
+	// Fill, if set, completes the setting when it is listed (for choices
+	// that depend on what is installed, such as the languages).
+	Fill  func(*Def)
+	order int
 }
 
 var (
@@ -75,6 +78,9 @@ func All() []Def {
 	defer mu.Unlock()
 	out := make([]Def, 0, len(defs))
 	for _, d := range defs {
+		if d.Fill != nil {
+			d.Fill(&d)
+		}
 		out = append(out, d)
 	}
 	sort.Slice(out, func(i, j int) bool {
