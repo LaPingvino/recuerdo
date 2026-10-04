@@ -294,6 +294,10 @@ COVERED = {
                                     "Name – Place on teaching.Session, results kept in the lesson (tested offscreen)"),
     "interfaces/qt/topoMaps": ("internal/modules/interfaces/qt/lessons/topo", "BundledMaps reads data/maps "
                                "(OpenTeacher's six maps with their known places, all their names); tested"),
+    "interfaces/qt/print/topo": ("internal/modules/interfaces/qt/export", "Print of a topography lesson prints its "
+                                 "map with the places, fitted to the page (tested by printing to PDF)"),
+    "logic/savers/png": ("internal/modules/interfaces/qt/export", "Save as .png writes a topography lesson's map with "
+                         "its places (MapPicture; tested), also as PDF"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

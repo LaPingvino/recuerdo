@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 3 | 2 | 6 | 36 | 17 |  | 16 | 14 | 94 |
-| logic | 11 | 15 |  | 75 | 2 |  | 38 | 39 | 180 |
+| interfaces | 3 | 2 | 6 | 37 | 16 |  | 16 | 14 | 94 |
+| logic | 11 | 15 |  | 76 | 1 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **17** | **17** | **6** | **122** | **27** | **0** | **98** | **67** | **354** |
+| **all** | **17** | **17** | **6** | **124** | **25** | **0** | **98** | **67** | **354** |
 
 Remarks:
 
@@ -196,6 +196,7 @@ file formats, see **covered** above):
 | `interfaces/qt/loaderGui` | `internal/modules/interfaces/qt/gui` | File > Open and the open dialog |
 | `interfaces/qt/ocrGui` | `internal/modules/interfaces/qt/ocrimport` | File > Import from Picture: one dialog instead of the wizard (straighten, crop, read with internal/ocr); tested offscreen with a real Tesseract run |
 | `interfaces/qt/percentNotesViewer` | `internal/modules/interfaces/qt/charts` | GradesChart: a bar per session with its percentage, on the Results tab |
+| `interfaces/qt/print/topo` | `internal/modules/interfaces/qt/export` | Print of a topography lesson prints its map with the places, fitted to the page (tested by printing to PDF) |
 | `interfaces/qt/print/words` | `internal/modules/interfaces/qt/export` | Print: a word list's HTML export, named after the lesson, tested by printing to PDF |
 | `interfaces/qt/printer` | `internal/modules/interfaces/qt/export` | Print prints the HTML export on a QPrinter |
 | `interfaces/qt/progressViewer` | `internal/modules/interfaces/qt/charts` | TimelineChart: the last session's answers over time, on the Results tab |
@@ -240,6 +241,7 @@ file formats, see **covered** above):
 | `logic/odtsaver` | `internal/modules/interfaces/qt/export` | ODT is written by Qt from the HTML export |
 | `logic/otxxloader` | `internal/lesson` | FileLoader reads .otwd/.ottp/.otmd zips (list.json and resources) |
 | `logic/otxxsaver` | `internal/lesson` | FileSaver writes .otwd/.ottp/.otmd zips |
+| `logic/savers/png` | `internal/modules/interfaces/qt/export` | Save as .png writes a topography lesson's map with its places (MapPicture; tested), also as PDF |
 | `logic/settingsFilterer` | `internal/modules/interfaces/qt/dialogs/settings` | the settings dialog lays its settings out in fixed tabs instead of grouping them by category |
 | `logic/sylkSaver` | `internal/lesson` | FileSaver.saveSYLKFile |
 | `logic/testTypes/words` | `internal/teaching` | Report.MostDoneWrong, the "word most done wrong" fact in the results dialog |
@@ -369,7 +371,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/ocrGui` | ocrGui | 273 | 0 | 0 | 0 | covered |
 | `interfaces/qt/percentNotesViewer` | percentNotesViewer | 80 | 0 | 0 | 0 | covered |
 | `interfaces/qt/print/media` | print | 53 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/print/topo` | print | 26 | 38 | 4 | 0 | scaffold |
+| `interfaces/qt/print/topo` | print | 26 | 0 | 0 | 0 | covered |
 | `interfaces/qt/print/words` | print | 64 | 0 | 0 | 0 | covered |
 | `interfaces/qt/printer` | printer | 51 | 0 | 0 | 0 | covered |
 | `interfaces/qt/progressViewer` | progressViewer | 150 | 0 | 0 | 0 | covered |
@@ -561,7 +563,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/savers/ottp` | save | 51 | 0 | 0 | 0 | covered |
 | `logic/savers/otwd` | save | 47 | 0 | 0 | 0 | covered |
 | `logic/savers/pdf` | save | 58 | 0 | 0 | 0 | covered |
-| `logic/savers/png` | save | 44 | 40 | 5 | 0 | scaffold |
+| `logic/savers/png` | save | 44 | 0 | 0 | 0 | covered |
 | `logic/savers/sylk` | save | 45 | 0 | 0 | 0 | covered |
 | `logic/savers/t2k` | save | 129 | 0 | 0 | 0 | covered |
 | `logic/savers/test` | test | 174 | 0 | 0 | 0 | test suite |

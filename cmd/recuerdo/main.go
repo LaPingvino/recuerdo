@@ -70,7 +70,6 @@ import (
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
-	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/png"
 
 	testtypesmedia "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/media"
 	testtypestopo "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/topo"
@@ -657,12 +656,6 @@ func registerAllModules(manager *core.Manager) error {
 	wordsModule := words.NewWordsReverserModule()
 	if err := manager.Register(wordsModule); err != nil {
 		return fmt.Errorf("failed to register words module: %w", err)
-	}
-
-	// Register png module
-	pngModule := png.NewPngSaverModule()
-	if err := manager.Register(pngModule); err != nil {
-		return fmt.Errorf("failed to register png module: %w", err)
 	}
 
 	// Register settings module

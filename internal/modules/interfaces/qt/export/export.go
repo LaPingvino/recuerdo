@@ -52,6 +52,10 @@ func Extensions() []string {
 func Save(data *lesson.LessonData, path string) error {
 	ext := strings.ToLower(filepath.Ext(path))
 	switch {
+	case IsTopo(data) && ext == ".png":
+		return saveMapPNG(data, path)
+	case IsTopo(data) && ext == ".pdf":
+		return saveMapPDF(data, path)
 	case ext == ".pdf":
 		return savePDF(data, path)
 	case ext == ".odt":
@@ -154,6 +158,24 @@ var formatNames = map[string]string{
 	".dif": "Data Interchange Format", ".uos": "Uniform Office spreadsheet",
 }
 
+// SaveFilterFor is the file dialog filter for saving data: for a
+// topography lesson its own format, the map as a picture and as PDF; for
+// others SaveFilter.
+func SaveFilterFor(data *lesson.LessonData) string {
+	if IsTopo(data) {
+		return "OpenTeaching Topography (*.ottp);;Map picture (*.png);;Map as PDF (*.pdf)"
+	}
+	return SaveFilter()
+}
+
+// DefaultExtension is the extension a lesson is saved with by default.
+func DefaultExtension(data *lesson.LessonData) string {
+	if IsTopo(data) {
+		return ".ottp"
+	}
+	return ".otwd"
+}
+
 // SaveFilter is a file dialog filter with every format Save can write,
 // the lesson formats first (OpenTeaching Words, the default, at the top).
 func SaveFilter() string {
@@ -207,16 +229,20 @@ func WithExtension(path, filter string) string {
 // Print prints a lesson's HTML export on printer, as OpenTeacher's word
 // list printing does: the document is named after the lesson.
 func Print(data *lesson.LessonData, printer *printsupport.QPrinter) error {
-	doc, err := document(data)
-	if err != nil {
-		return err
-	}
 	name := data.List.Title
 	if name == "" {
 		name = "Untitled word list"
 	}
 	printer.SetDocName(name)
 	printer.SetCreator("Recuerdo")
+	if IsTopo(data) {
+		// a topography lesson prints its map, as OpenTeacher's print/topo
+		return printMap(data, printer)
+	}
+	doc, err := document(data)
+	if err != nil {
+		return err
+	}
 	doc.Print(printer.QPagedPaintDevice)
 	return nil
 }

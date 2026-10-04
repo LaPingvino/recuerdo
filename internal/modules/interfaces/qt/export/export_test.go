@@ -39,6 +39,29 @@ func TestMain(m *testing.M) {
 	results["print"] = Print(sample(), printer)
 	printer.Delete()
 
+	// a topography lesson: its map with the places, as PNG, PDF and print
+	if topo, err := lesson.NewFileLoader().LoadFile(filepath.Join("..", "..", "..", "..", "..", "testdata",
+		"legacy_files", "application_x-openteachingtopography.openteacher3x.ottp")); err != nil {
+		results["topo"] = err
+	} else {
+		topoData = topo
+		for _, ext := range []string{".png", ".pdf"} {
+			paths["topo"+ext] = filepath.Join(dir, "map"+ext)
+			results["topo"+ext] = Save(topo, paths["topo"+ext])
+		}
+		if img := qt.NewQImage8(paths["topo.png"]); !img.IsNull() {
+			topoSize = [2]int{img.Width(), img.Height()}
+			x, y, _ := topo.List.Items[0].GetTopoCoordinates()
+			topoDot = img.Pixel(x, y)
+		}
+		tp := printsupport.NewQPrinter()
+		tp.SetOutputFormat(printsupport.QPrinter__PdfFormat)
+		paths["topo-print"] = filepath.Join(dir, "map-printed.pdf")
+		tp.SetOutputFileName(paths["topo-print"])
+		results["topo-print"] = Print(topo, tp)
+		tp.Delete()
+	}
+
 	code := m.Run()
 	if keep := os.Getenv("EXPORT_KEEP"); keep != "" {
 		for ext, p := range paths {
@@ -51,8 +74,11 @@ func TestMain(m *testing.M) {
 }
 
 var (
-	results map[string]error
-	paths   = map[string]string{}
+	topoData *lesson.LessonData
+	topoSize [2]int
+	topoDot  uint
+	results  map[string]error
+	paths    = map[string]string{}
 )
 
 func sample() *lesson.LessonData {
@@ -155,5 +181,31 @@ func TestPrint(t *testing.T) {
 		if !bytes.Contains(out, []byte(w)) {
 			t.Errorf("printed page lacks %q:\n%s", w, out)
 		}
+	}
+}
+
+func TestTopoExports(t *testing.T) {
+	for _, k := range []string{"topo", "topo.png", "topo.pdf", "topo-print"} {
+		if err := results[k]; err != nil {
+			t.Fatalf("%s: %v", k, err)
+		}
+	}
+	if topoSize != [2]int{757, 785} {
+		t.Errorf("PNG is %v, want the map's 757×785", topoSize)
+	}
+	if r, g, b := topoDot>>16&0xff, topoDot>>8&0xff, topoDot&0xff; r != 33 || g != 102 || b != 172 {
+		t.Errorf("no place dot at the place: pixel %06x", topoDot&0xffffff)
+	}
+	for _, k := range []string{"topo.pdf", "topo-print"} {
+		b, _ := os.ReadFile(paths[k])
+		if !bytes.HasPrefix(b, []byte("%PDF")) || len(b) < 10000 {
+			t.Errorf("%s: %d bytes, not a PDF with the map", k, len(b))
+		}
+	}
+	if f := SaveFilterFor(topoData); !strings.HasPrefix(f, "OpenTeaching Topography (*.ottp)") || DefaultExtension(topoData) != ".ottp" {
+		t.Errorf("topo save filter %q", f)
+	}
+	if !strings.HasPrefix(SaveFilterFor(sample()), "OpenTeaching Words") || DefaultExtension(sample()) != ".otwd" {
+		t.Errorf("words save filter %q", SaveFilterFor(sample()))
 	}
 }

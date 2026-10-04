@@ -907,8 +907,8 @@ func (mod *GuiModule) saveCurrentLesson(as bool) {
 		if name == "" {
 			name = "lesson"
 		}
-		filter := export.SaveFilter()
-		path = chooser.SaveFile(mod.mainWindow.QWidget, "Save Lesson", filter, name+".otwd")
+		filter := export.SaveFilterFor(&l.Data)
+		path = chooser.SaveFile(mod.mainWindow.QWidget, "Save Lesson", filter, name+export.DefaultExtension(&l.Data))
 		if path == "" {
 			return
 		}
