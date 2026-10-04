@@ -32,6 +32,21 @@ func TestFixedFormatsContent(t *testing.T) {
 	if d := load("application_x-teach2000.wrts.t2k"); len(d.List.Items) != 3 || d.List.Items[2].Answers[0] != "three" || d.List.Items[0].Comment != "" {
 		t.Errorf("WRTS-written t2k: %+v", d.List.Items)
 	}
+	if d := load("application_x-apkg.anki.apkg"); len(d.List.Items) != 3 || d.List.Title != "application_x-apkg.anki" {
+		t.Errorf("apkg: title %q, %+v", d.List.Title, d.List.Items)
+	}
+	if d := load("application_x-wrts.wrts.wrts"); d.List.Title != "Test" || d.List.QuestionLanguage != "Dutch" || d.List.Items[0].Answers[0] != "one" {
+		t.Errorf("wrts: %q %q %+v", d.List.Title, d.List.QuestionLanguage, d.List.Items)
+	}
+	if d := load("application_x-pauker.pauker-modified.pau"); d.List.Items[0].Questions[0] != "éen" || d.List.Items[0].Answers[0] != "oné" {
+		t.Errorf("pauker: %+v", d.List.Items)
+	}
+	if d := load("application_x-pauker.pauker.pau.gz"); len(d.List.Items) == 0 {
+		t.Errorf("gzipped pauker: no items")
+	}
+	if d := load("application_x-jmemorizelesson.jmemorize.jml"); len(d.List.Items) == 0 || d.List.Items[len(d.List.Items)-1].Questions[0] != "c" {
+		t.Errorf("jml (in order of creation, c last): %+v", d.List.Items)
+	}
 	if d := load("text_plain.vtrain.txt"); len(d.List.Items) != 3 || d.List.Items[1].Answers[0] != "two" {
 		t.Errorf("vtrain: %+v", d.List.Items)
 	}

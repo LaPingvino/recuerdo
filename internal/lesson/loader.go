@@ -33,8 +33,19 @@ func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
 	log.Printf("[ACTION] FileLoader.LoadFile() - loading file: %s", filePath)
 
 	ext := strings.ToLower(filepath.Ext(filePath))
+	if strings.HasSuffix(strings.ToLower(filePath), ".pau.gz") {
+		ext = ".pau"
+	}
 
 	switch ext {
+	case ".apkg":
+		return fl.loadAPKG(filePath)
+	case ".wrts":
+		return fl.loadWRTS(filePath)
+	case ".pau":
+		return fl.loadPauker(filePath)
+	case ".jml":
+		return fl.loadJML(filePath)
 	case ".csv", ".tsv":
 		return fl.loadCSV(filePath)
 	case ".txt":
