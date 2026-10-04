@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
-	"github.com/mappu/miqt/qt/printsupport"
+	qt "github.com/mappu/miqt/qt6"
+	"github.com/mappu/miqt/qt6/printsupport"
 )
 
 // IsTopo reports whether data is a topography lesson: one with a map.
@@ -93,7 +93,7 @@ func saveMapPDF(data *lesson.LessonData, path string) error {
 	if img.Width() > img.Height() {
 		w.QPagedPaintDevice.SetPageOrientation(qt.QPageLayout__Landscape)
 	}
-	w.QPagedPaintDevice.SetPageMargins2(qt.NewQMarginsF2(15, 15, 15, 15), qt.QPageLayout__Millimeter)
+	w.QPagedPaintDevice.SetPageMargins(qt.NewQMarginsF2(15, 15, 15, 15), qt.QPageLayout__Millimeter)
 	w.SetTitle(data.List.Title)
 	w.SetCreator("Recuerdo")
 	err = paintMap(data, w.QPagedPaintDevice.QPaintDevice)

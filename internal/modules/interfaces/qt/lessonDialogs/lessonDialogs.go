@@ -14,7 +14,7 @@ import (
 	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // LessonDialogsModule is a Go port of the Python LessonDialogsModule class
@@ -144,12 +144,12 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 	nameLayout := qt.NewQFormLayout(nameGroup.QWidget)
 
 	mod.nameEdit = qt.NewQLineEdit(nameGroup.QWidget)
-	mod.nameEdit.SetObjectName("lessonName")
+	mod.nameEdit.SetObjectName(*qt.NewQAnyStringView3("lessonName"))
 	mod.nameEdit.SetPlaceholderText(i18n.T("Enter lesson name..."))
 	nameLayout.AddRow3(i18n.T("Name:"), mod.nameEdit.QWidget)
 
 	mod.descEdit = qt.NewQTextEdit(nameGroup.QWidget)
-	mod.descEdit.SetObjectName("lessonDescription")
+	mod.descEdit.SetObjectName(*qt.NewQAnyStringView3("lessonDescription"))
 	mod.descEdit.SetPlaceholderText(i18n.T("Enter lesson description..."))
 	mod.descEdit.SetMaximumHeight(80)
 	nameLayout.AddRow3(i18n.T("Description:"), mod.descEdit.QWidget)
@@ -163,18 +163,18 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 
 	mod.wordsRadio = qt.NewQRadioButton(typeGroup.QWidget)
 	mod.wordsRadio.SetText(i18n.T("Words List"))
-	mod.wordsRadio.SetObjectName("wordsRadio")
+	mod.wordsRadio.SetObjectName(*qt.NewQAnyStringView3("wordsRadio"))
 	mod.wordsRadio.SetChecked(true)
 	typeLayout.AddWidget(mod.wordsRadio.QWidget)
 
 	mod.topoRadio = qt.NewQRadioButton(typeGroup.QWidget)
 	mod.topoRadio.SetText(i18n.T("Topology"))
-	mod.topoRadio.SetObjectName("topoRadio")
+	mod.topoRadio.SetObjectName(*qt.NewQAnyStringView3("topoRadio"))
 	typeLayout.AddWidget(mod.topoRadio.QWidget)
 
 	mod.mediaRadio = qt.NewQRadioButton(typeGroup.QWidget)
 	mod.mediaRadio.SetText(i18n.T("Media"))
-	mod.mediaRadio.SetObjectName("mediaRadio")
+	mod.mediaRadio.SetObjectName(*qt.NewQAnyStringView3("mediaRadio"))
 	typeLayout.AddWidget(mod.mediaRadio.QWidget)
 
 	layout.AddWidget(typeGroup.QWidget)
@@ -185,12 +185,12 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 	langLayout := qt.NewQFormLayout(langGroup.QWidget)
 
 	mod.questionLangCombo = qt.NewQComboBox(langGroup.QWidget)
-	mod.questionLangCombo.SetObjectName("questionLanguage")
+	mod.questionLangCombo.SetObjectName(*qt.NewQAnyStringView3("questionLanguage"))
 	mod.questionLangCombo.AddItems([]string{"English", "Dutch", "French", "German", "Spanish", "Italian"})
 	langLayout.AddRow3(i18n.T("Question language:"), mod.questionLangCombo.QWidget)
 
 	mod.answerLangCombo = qt.NewQComboBox(langGroup.QWidget)
-	mod.answerLangCombo.SetObjectName("answerLanguage")
+	mod.answerLangCombo.SetObjectName(*qt.NewQAnyStringView3("answerLanguage"))
 	mod.answerLangCombo.AddItems([]string{"English", "Dutch", "French", "German", "Spanish", "Italian"})
 	mod.answerLangCombo.SetCurrentIndex(1) // Default to Dutch
 	langLayout.AddRow3(i18n.T("Answer language:"), mod.answerLangCombo.QWidget)
@@ -258,7 +258,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 	fileLayout := qt.NewQHBoxLayout(fileGroup.QWidget)
 
 	mod.importFileEdit = qt.NewQLineEdit(fileGroup.QWidget)
-	mod.importFileEdit.SetObjectName("filePath")
+	mod.importFileEdit.SetObjectName(*qt.NewQAnyStringView3("filePath"))
 	mod.importFileEdit.SetPlaceholderText(i18n.T("Select file to import..."))
 	fileLayout.AddWidget(mod.importFileEdit.QWidget)
 
@@ -288,7 +288,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 	encodingLayout.AddWidget(encodingLabel.QWidget)
 
 	mod.encodingCombo = qt.NewQComboBox(optionsGroup.QWidget)
-	mod.encodingCombo.SetObjectName("encoding")
+	mod.encodingCombo.SetObjectName(*qt.NewQAnyStringView3("encoding"))
 	mod.encodingCombo.AddItems([]string{"UTF-8", "UTF-16", "ISO-8859-1", "ASCII"})
 	encodingLayout.AddWidget(mod.encodingCombo.QWidget)
 	optionsLayout.AddLayout2(encodingLayout.QLayout, 0)
@@ -299,14 +299,14 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 	separatorLayout.AddWidget(separatorLabel.QWidget)
 
 	mod.separatorCombo = qt.NewQComboBox(optionsGroup.QWidget)
-	mod.separatorCombo.SetObjectName("separator")
+	mod.separatorCombo.SetObjectName(*qt.NewQAnyStringView3("separator"))
 	mod.separatorCombo.AddItems([]string{"Tab", "Comma", "Semicolon", "Space"})
 	separatorLayout.AddWidget(mod.separatorCombo.QWidget)
 	optionsLayout.AddLayout2(separatorLayout.QLayout, 0)
 
 	mod.firstRowCheck = qt.NewQCheckBox2()
 	mod.firstRowCheck.SetText(i18n.T("First row contains headers"))
-	mod.firstRowCheck.SetObjectName("firstRowHeaders")
+	mod.firstRowCheck.SetObjectName(*qt.NewQAnyStringView3("firstRowHeaders"))
 	mod.firstRowCheck.SetChecked(true)
 	optionsLayout.AddWidget(mod.firstRowCheck.QWidget)
 
@@ -318,7 +318,7 @@ func (mod *LessonDialogsModule) createImportDialog(parent *qt.QWidget) {
 	previewLayout := qt.NewQVBoxLayout(previewGroup.QWidget)
 
 	previewText := qt.NewQTextEdit(previewGroup.QWidget)
-	previewText.SetObjectName("previewText")
+	previewText.SetObjectName(*qt.NewQAnyStringView3("previewText"))
 	previewText.SetReadOnly(true)
 	previewText.SetMaximumHeight(150)
 	previewText.SetPlainText("Select a file to see preview...")

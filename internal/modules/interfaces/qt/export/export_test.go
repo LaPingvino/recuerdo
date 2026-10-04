@@ -13,8 +13,8 @@ import (
 	"testing"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
-	"github.com/mappu/miqt/qt/printsupport"
+	qt "github.com/mappu/miqt/qt6"
+	"github.com/mappu/miqt/qt6/printsupport"
 )
 
 func init() { runtime.LockOSThread() }

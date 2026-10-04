@@ -20,8 +20,8 @@ import (
 	resultsdialog "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/results"
 	wordslesson "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
 	"github.com/LaPingvino/recuerdo/internal/version"
-	"github.com/mappu/miqt/qt"
-	"github.com/mappu/miqt/qt/mainthread"
+	qt "github.com/mappu/miqt/qt6"
+	"github.com/mappu/miqt/qt6/mainthread"
 
 	// ALL Qt imports temporarily disabled to get core system working first
 	// TODO: Re-enable Qt modules incrementally once basic system is validated

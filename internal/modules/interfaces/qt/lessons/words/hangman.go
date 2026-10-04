@@ -3,7 +3,7 @@ package words
 import (
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // drawHangman draws the gallows with the man as far as the mistakes go

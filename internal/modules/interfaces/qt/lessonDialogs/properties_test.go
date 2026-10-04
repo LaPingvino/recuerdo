@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 var propertiesErr error

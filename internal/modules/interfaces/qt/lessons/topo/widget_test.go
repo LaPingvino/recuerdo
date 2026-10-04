@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Qt runs on the main thread: the widget is driven in TestMain and the

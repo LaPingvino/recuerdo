@@ -15,7 +15,7 @@ import (
 	"os"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // QtAppModule is a Go port of the Python QtAppModule class

@@ -13,8 +13,8 @@ import (
 	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
-	"github.com/mappu/miqt/qt/printsupport"
+	qt "github.com/mappu/miqt/qt6"
+	"github.com/mappu/miqt/qt6/printsupport"
 )
 
 // libreOfficeText and libreOfficeSheets map the formats LibreOffice

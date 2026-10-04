@@ -15,7 +15,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // The two ways of practising, as in OpenTeacher.

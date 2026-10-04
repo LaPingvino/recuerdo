@@ -10,7 +10,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/core"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Show opens a (non-modal) results window for a report; grade and

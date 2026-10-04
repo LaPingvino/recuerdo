@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Preview shows a media item: pictures and text in place, other media

@@ -3,7 +3,7 @@ package icon
 
 import (
 	"github.com/LaPingvino/recuerdo/assets"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Pixmap returns the icon scaled to size×size pixels (needs a

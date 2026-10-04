@@ -8,7 +8,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/ocr"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 var picture = filepath.Join("..", "..", "..", "..", "ocr", "testdata", "list.png") // 900×420

@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/LaPingvino/recuerdo/internal/version"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 var aboutErr error

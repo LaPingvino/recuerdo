@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/LaPingvino/recuerdo/internal/i18n"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 var shown, value, afterSet string

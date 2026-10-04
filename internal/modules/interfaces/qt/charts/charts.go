@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Percentages is the percentage of right answers in each test (tests

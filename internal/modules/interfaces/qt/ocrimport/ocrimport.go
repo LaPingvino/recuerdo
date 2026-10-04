@@ -11,7 +11,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/ocr"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // previewSize is the largest side of the preview.
@@ -135,7 +135,7 @@ func (d *Dialog) rotated() *qt.QImage {
 	}
 	m := qt.NewQTransform2()
 	m.Rotate(d.rotation)
-	return d.original.Transformed3(m, qt.SmoothTransformation)
+	return d.original.Transformed2(m, qt.SmoothTransformation)
 }
 
 // Prepared is the picture as it will be read: rotated, then cropped.

@@ -10,7 +10,7 @@ import (
 	_ "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words" // registers its settings
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 type mapStore map[string]interface{}

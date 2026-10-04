@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/teaching"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 func init() { runtime.LockOSThread() }

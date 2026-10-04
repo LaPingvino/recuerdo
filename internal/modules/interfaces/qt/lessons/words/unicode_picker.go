@@ -13,7 +13,7 @@ import (
 	"unicode"
 
 	"github.com/LaPingvino/recuerdo/internal/logging"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // CharacterSet represents a named group of characters

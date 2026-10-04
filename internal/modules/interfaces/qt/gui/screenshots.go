@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // ScreenshotsEnv names a directory; when set, Recuerdo saves its main

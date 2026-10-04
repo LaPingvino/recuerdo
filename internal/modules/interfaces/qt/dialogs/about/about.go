@@ -17,7 +17,7 @@ import (
 	"log"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // AboutDialogModule is a Go port of the Python AboutDialogModule class

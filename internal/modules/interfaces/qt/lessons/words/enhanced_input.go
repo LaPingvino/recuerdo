@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/logging"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // EnhancedLineEdit is a QLineEdit that handles keyboard input properly

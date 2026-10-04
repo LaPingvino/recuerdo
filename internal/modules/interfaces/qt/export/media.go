@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // IsMedia reports whether data is a media lesson: its items have files or

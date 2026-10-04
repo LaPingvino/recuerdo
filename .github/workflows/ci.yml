@@ -15,10 +15,10 @@ jobs:
         with:
           go-version-file: go.mod
           cache: true
-      - name: Qt 5
+      - name: Qt 6
         run: |
           sudo apt-get update
-          sudo apt-get install -y qtbase5-dev build-essential pkg-config
+          sudo apt-get install -y qt6-base-dev build-essential pkg-config
       - name: Build, vet and test
         env:
           CGO_ENABLED: "1"
@@ -42,10 +42,10 @@ jobs:
         with:
           go-version-file: go.mod
           cache: true
-      - name: Qt 5
+      - name: Qt 6
         run: |
-          brew install qt@5 pkg-config
-          echo "PKG_CONFIG_PATH=$(brew --prefix qt@5)/lib/pkgconfig" >> "$GITHUB_ENV"
+          brew install qt pkg-config
+          echo "PKG_CONFIG_PATH=$(brew --prefix qt)/lib/pkgconfig" >> "$GITHUB_ENV"
       - name: Build, vet and test
         env:
           CGO_ENABLED: "1"
@@ -63,7 +63,7 @@ jobs:
         shell: msys2 {0}
     steps:
       - uses: actions/checkout@v4
-      # MSYS2's UCRT64 toolchain with Qt 5, as miqt documents for native
+      # MSYS2's UCRT64 toolchain with Qt 6, as miqt documents for native
       # Windows builds
       - uses: msys2/setup-msys2@v2
         with:
@@ -73,7 +73,7 @@ jobs:
             mingw-w64-ucrt-x86_64-go
             mingw-w64-ucrt-x86_64-gcc
             mingw-w64-ucrt-x86_64-pkgconf
-            mingw-w64-ucrt-x86_64-qt5-base
+            mingw-w64-ucrt-x86_64-qt6-base
       - name: Build, vet and test
         env:
           CGO_ENABLED: "1"

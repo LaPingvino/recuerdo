@@ -35,8 +35,8 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/media"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/topo"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
-	"github.com/mappu/miqt/qt"
-	"github.com/mappu/miqt/qt/printsupport"
+	qt "github.com/mappu/miqt/qt6"
+	"github.com/mappu/miqt/qt6/printsupport"
 )
 
 // GuiModule is a Go port of the Python GuiModule class
@@ -251,18 +251,18 @@ func (mod *GuiModule) createMenuBar() {
 	fileMenu.SetTitle(i18n.T("&File"))
 	mod.menuBar.AddMenu(fileMenu)
 
-	newAction := fileMenu.AddAction(i18n.T("&New Lesson..."))
+	newAction := fileMenu.AddActionWithText(i18n.T("&New Lesson..."))
 	newAction.SetShortcut(qt.NewQKeySequence2("Ctrl+N"))
 	newAction.OnTriggered(func() {
 		mod.logger.Event("New Lesson menu action triggered")
 		mod.showNewLessonDialog()
 	})
 
-	textAction := fileMenu.AddAction(i18n.T("New from &Text..."))
+	textAction := fileMenu.AddActionWithText(i18n.T("New from &Text..."))
 	textAction.SetToolTip(i18n.T("Type or paste a word list as \"question = answer\" lines"))
 	textAction.OnTriggered(mod.newLessonFromText)
 
-	openAction := fileMenu.AddAction(i18n.T("&Open..."))
+	openAction := fileMenu.AddActionWithText(i18n.T("&Open..."))
 	openAction.SetShortcut(qt.NewQKeySequence2("Ctrl+O"))
 	openAction.OnTriggered(func() {
 		mod.logger.Event("Open Lesson menu action triggered")
@@ -272,29 +272,29 @@ func (mod *GuiModule) createMenuBar() {
 	recentMenu := fileMenu.AddMenuWithTitle(i18n.T("Open &Recent"))
 	recentMenu.OnAboutToShow(func() { mod.fillRecentMenu(recentMenu) })
 
-	mergeAction := fileMenu.AddAction(i18n.T("&Merge Lesson..."))
+	mergeAction := fileMenu.AddActionWithText(i18n.T("&Merge Lesson..."))
 	mergeAction.SetToolTip(i18n.T("Add the words and results of another lesson to this one"))
 	mergeAction.OnTriggered(mod.mergeIntoCurrentLesson)
 
-	pictureAction := fileMenu.AddAction(i18n.T("Import from &Picture..."))
+	pictureAction := fileMenu.AddActionWithText(i18n.T("Import from &Picture..."))
 	pictureAction.SetToolTip(i18n.T("Read a word list from a scan or photo of a printed list (needs Tesseract)"))
 	pictureAction.OnTriggered(mod.importFromPicture)
 
 	fileMenu.AddSeparator()
 
-	saveAction := fileMenu.AddAction(i18n.T("&Save"))
+	saveAction := fileMenu.AddActionWithText(i18n.T("&Save"))
 	saveAction.SetShortcut(qt.NewQKeySequence2("Ctrl+S"))
 	saveAction.SetEnabled(false) // enabled when a lesson is open
 	saveAction.OnTriggered(func() { mod.saveCurrentLesson(false) })
 	mod.saveAction = saveAction
 
-	saveAsAction := fileMenu.AddAction(i18n.T("Save &As..."))
+	saveAsAction := fileMenu.AddActionWithText(i18n.T("Save &As..."))
 	saveAsAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Shift+S"))
 	saveAsAction.SetEnabled(false) // enabled when a lesson is open
 	saveAsAction.OnTriggered(func() { mod.saveCurrentLesson(true) })
 	mod.saveAsAction = saveAsAction
 
-	printAction := fileMenu.AddAction(i18n.T("&Print..."))
+	printAction := fileMenu.AddActionWithText(i18n.T("&Print..."))
 	printAction.SetShortcut(qt.NewQKeySequence2("Ctrl+P"))
 	printAction.SetEnabled(false) // enabled when a lesson is open
 	printAction.OnTriggered(mod.printCurrentLesson)
@@ -302,7 +302,7 @@ func (mod *GuiModule) createMenuBar() {
 
 	fileMenu.AddSeparator()
 
-	exitAction := fileMenu.AddAction(i18n.T("E&xit"))
+	exitAction := fileMenu.AddActionWithText(i18n.T("E&xit"))
 	exitAction.SetShortcut(qt.NewQKeySequence2("Ctrl+Q"))
 	exitAction.OnTriggered(func() {
 		mod.logger.Event("Exit menu action triggered")
@@ -314,7 +314,7 @@ func (mod *GuiModule) createMenuBar() {
 	editMenu.SetTitle(i18n.T("&Edit"))
 	mod.menuBar.AddMenu(editMenu)
 
-	propertiesAction := editMenu.AddAction(i18n.T("&Properties..."))
+	propertiesAction := editMenu.AddActionWithText(i18n.T("&Properties..."))
 	propertiesAction.OnTriggered(func() {
 		mod.logger.Event("Properties menu action triggered")
 		mod.showPropertiesDialog()
@@ -325,7 +325,7 @@ func (mod *GuiModule) createMenuBar() {
 	toolsMenu.SetTitle(i18n.T("&Tools"))
 	mod.menuBar.AddMenu(toolsMenu)
 
-	settingsAction := toolsMenu.AddAction(i18n.T("&Settings..."))
+	settingsAction := toolsMenu.AddActionWithText(i18n.T("&Settings..."))
 	settingsAction.OnTriggered(func() {
 		mod.logger.Event("Settings menu action triggered")
 		mod.showSettingsDialog()
@@ -336,12 +336,12 @@ func (mod *GuiModule) createMenuBar() {
 	helpMenu.SetTitle(i18n.T("&Help"))
 	mod.menuBar.AddMenu(helpMenu)
 
-	guideAction := helpMenu.AddAction(i18n.T("&Getting Started"))
+	guideAction := helpMenu.AddActionWithText(i18n.T("&Getting Started"))
 	guideAction.SetShortcut(qt.NewQKeySequence2("F1"))
 	guideAction.OnTriggered(mod.showGettingStarted)
 	helpMenu.AddSeparator()
 
-	aboutAction := helpMenu.AddAction(i18n.T("&About..."))
+	aboutAction := helpMenu.AddActionWithText(i18n.T("&About..."))
 	aboutAction.OnTriggered(func() {
 		mod.logger.Event("About menu action triggered")
 		mod.showAboutDialog()
@@ -1041,7 +1041,7 @@ func (mod *GuiModule) fillRecentMenu(menu *qt.QMenu) {
 		}
 	}
 	if len(paths) == 0 {
-		menu.AddAction(i18n.T("No recent lessons")).SetEnabled(false)
+		menu.AddActionWithText(i18n.T("No recent lessons")).SetEnabled(false)
 		return
 	}
 	for i, p := range paths {
@@ -1050,12 +1050,12 @@ func (mod *GuiModule) fillRecentMenu(menu *qt.QMenu) {
 		if i < 9 {
 			label = fmt.Sprintf("&%d  %s", i+1, label)
 		}
-		a := menu.AddAction(label)
+		a := menu.AddActionWithText(label)
 		a.SetToolTip(p)
 		a.OnTriggered(func() { mod.loadSelectedFile(path) })
 	}
 	menu.AddSeparator()
-	menu.AddAction(i18n.T("Clear List")).OnTriggered(func() { recentlyopened.Clear(s) })
+	menu.AddActionWithText(i18n.T("Clear List")).OnTriggered(func() { recentlyopened.Clear(s) })
 }
 
 // mergeIntoCurrentLesson adds the words and results of a lesson the user

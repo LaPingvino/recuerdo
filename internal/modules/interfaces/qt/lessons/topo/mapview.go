@@ -1,7 +1,7 @@
 package topo
 
 import (
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Dot styles of places on a map.

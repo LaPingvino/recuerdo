@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 
 	"github.com/LaPingvino/recuerdo/internal/core"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // FileDialogModule is a Go port of the Python FileDialogModule class

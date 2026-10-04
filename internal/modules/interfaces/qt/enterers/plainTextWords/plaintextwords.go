@@ -10,7 +10,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
 	"github.com/LaPingvino/recuerdo/internal/resources"
-	"github.com/mappu/miqt/qt"
+	qt "github.com/mappu/miqt/qt6"
 )
 
 // Dialog is where the list is typed.
