@@ -9,6 +9,7 @@ import (
 
 // Teach types (practice modes), as offered to the user. All three are
 // OpenTeacher's typing mode; the other two add something on screen.
+// i18n:values (shown translated, see valuecombo)
 const (
 	// Typing: type the answer.
 	TeachTyping = "Typing"

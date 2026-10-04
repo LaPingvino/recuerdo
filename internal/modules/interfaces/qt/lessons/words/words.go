@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"github.com/LaPingvino/recuerdo/internal/tts"
 	"path/filepath"
@@ -613,16 +614,16 @@ func (w *TeachTabWidget) setupUI() {
 	}
 	addLabel(i18n.T("Lesson type:"))
 	w.lessonTypeCombo = qt.NewQComboBox(w.QWidget)
-	w.lessonTypeCombo.AddItems(teaching.LessonTypes)
+	valuecombo.Fill(w.lessonTypeCombo, teaching.LessonTypes)
 	w.lessonTypeCombo.SetToolTip(i18n.T("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."))
 	optionsLayout.AddWidget(w.lessonTypeCombo.QWidget)
 	addLabel(i18n.T("Order:"))
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
-	w.orderCombo.AddItems(teaching.Orders)
+	valuecombo.Fill(w.orderCombo, teaching.Orders)
 	optionsLayout.AddWidget(w.orderCombo.QWidget)
 	addLabel(i18n.T("Words:"))
 	w.wordsCombo = qt.NewQComboBox(w.QWidget)
-	w.wordsCombo.AddItems(teaching.WordChoices)
+	valuecombo.Fill(w.wordsCombo, teaching.WordChoices)
 	w.wordsCombo.SetToolTip(i18n.T("Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."))
 	optionsLayout.AddWidget(w.wordsCombo.QWidget)
 	optionsLayout.AddStretch()
@@ -631,7 +632,7 @@ func (w *TeachTabWidget) setupUI() {
 	optionsLayout = qt.NewQHBoxLayout2()
 	addLabel(i18n.T("Mode:"))
 	w.modeCombo = qt.NewQComboBox(w.QWidget)
-	w.modeCombo.AddItems(teaching.TeachTypes)
+	valuecombo.Fill(w.modeCombo, teaching.TeachTypes)
 	w.modeCombo.SetToolTip(i18n.T("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."))
 	optionsLayout.AddWidget(w.modeCombo.QWidget)
 	w.repeatLabel = addLabel(i18n.T("Show answer for:"))
@@ -645,7 +646,7 @@ func (w *TeachTabWidget) setupUI() {
 	w.repeatSpin.OnValueChanged(w.setRepeatSeconds)
 	optionsLayout.AddWidget(w.repeatSpin.QWidget)
 	showRepeat := func() {
-		on := w.modeCombo.CurrentText() == teaching.RepeatAnswer
+		on := valuecombo.Value(w.modeCombo) == teaching.RepeatAnswer
 		w.repeatLabel.SetVisible(on)
 		w.repeatSpin.SetVisible(on)
 	}
@@ -859,9 +860,9 @@ func (w *TeachTabWidget) startTeaching() {
 	}
 
 	w.session = teaching.New(w.lesson.Data.List, teaching.Options{
-		LessonType: w.lessonTypeCombo.CurrentText(),
-		Order:      w.orderCombo.CurrentText(),
-		Words:      w.wordsCombo.CurrentText(),
+		LessonType: valuecombo.Value(w.lessonTypeCombo),
+		Order:      valuecombo.Value(w.orderCombo),
+		Words:      valuecombo.Value(w.wordsCombo),
 		AskAnswers: w.askAnswersCheck.IsChecked(),
 	})
 	w.isTeaching = true
@@ -890,13 +891,13 @@ func (w *TeachTabWidget) startTeaching() {
 
 	w.typing = nil
 	w.hangman = nil
-	if w.modeCombo.CurrentText() == teaching.Hangman {
+	if valuecombo.Value(w.modeCombo) == teaching.Hangman {
 		w.setHangmanLayout(true)
 		w.session.Start()
 		w.hangmanNext()
 		return
 	}
-	if w.modeCombo.CurrentText() == teaching.InMind {
+	if valuecombo.Value(w.modeCombo) == teaching.InMind {
 		// no typing: think, look, and say whether you knew it
 		w.setInMindLayout(true)
 		w.session.Start()
@@ -907,7 +908,7 @@ func (w *TeachTabWidget) startTeaching() {
 	// OpenTeacher's typing mode drives the tab from here (TypingUI below)
 	w.typing = teaching.NewTyping(w.session, w)
 	w.logger.Action("Started teaching session with %d words (%s, %s)", w.totalQuestions,
-		w.lessonTypeCombo.CurrentText(), w.orderCombo.CurrentText())
+		valuecombo.Value(w.lessonTypeCombo), valuecombo.Value(w.orderCombo))
 }
 
 func (w *TeachTabWidget) setOptionsEnabled(enabled bool) {
@@ -948,7 +949,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 // showModeExtras shows what the practice mode adds to a new question.
 func (w *TeachTabWidget) showModeExtras() {
 	w.stopRepeat()
-	switch w.modeCombo.CurrentText() {
+	switch valuecombo.Value(w.modeCombo) {
 	case teaching.ShuffleAnswer:
 		w.hintLabel.SetStyleSheet("")
 		w.hintLabel.SetText(teaching.ShuffleHint(w.session.CurrentAnswer(), nil))
@@ -1357,9 +1358,10 @@ func (w *ResultsTabWidget) setupUI() {
 	notationLabel.SetText(i18n.T("Grades in:"))
 	notationLayout.AddWidget(notationLabel.QWidget)
 	w.notationCombo = qt.NewQComboBox(w.QWidget)
-	w.notationCombo.AddItems(teaching.Notations)
-	w.notationCombo.SetCurrentText(teaching.DefaultNotation)
-	w.notationCombo.OnCurrentTextChanged(func(name string) {
+	valuecombo.Fill(w.notationCombo, teaching.Notations)
+	valuecombo.Set(w.notationCombo, teaching.DefaultNotation)
+	w.notationCombo.OnCurrentIndexChanged(func(int) {
+		name := valuecombo.Value(w.notationCombo)
 		if w.settings != nil {
 			w.settings.SetSetting(NotationSetting, name)
 		}
@@ -1421,7 +1423,7 @@ func (w *ResultsTabWidget) useSettings(s Settings) {
 	if name, ok := s.GetSettingWithDefault(NotationSetting, nil).(string); ok {
 		for _, n := range teaching.Notations {
 			if n == name {
-				w.notationCombo.SetCurrentText(name)
+				valuecombo.Set(w.notationCombo, name)
 			}
 		}
 	}
@@ -1433,7 +1435,7 @@ func (w *ResultsTabWidget) Notation() string {
 	if w.notationCombo == nil {
 		return teaching.DefaultNotation
 	}
-	return w.notationCombo.CurrentText()
+	return valuecombo.Value(w.notationCombo)
 }
 
 // UpdateLesson updates the Results tab with lesson data

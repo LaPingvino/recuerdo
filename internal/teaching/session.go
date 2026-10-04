@@ -23,6 +23,7 @@ import (
 )
 
 // Lesson types, as offered to the user.
+// i18n:values (shown translated, see valuecombo)
 const (
 	AllOnce  = "All once"
 	Smart    = "Smart"
@@ -30,6 +31,7 @@ const (
 )
 
 // List orders, as offered to the user.
+// i18n:values (shown translated, see valuecombo)
 const (
 	AsEntered = "As entered"
 	Random    = "Random"
@@ -38,6 +40,7 @@ const (
 )
 
 // Which words to practise, as offered to the user.
+// i18n:values (shown translated, see valuecombo)
 const (
 	AllWords   = "All words"
 	HardWords  = "Hard words"

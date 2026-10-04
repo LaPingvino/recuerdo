@@ -35,6 +35,15 @@ def texts():
         for m in re.finditer(r'i18n\.Tf?\(' + GOSTR + r'((?:\s*\+\s*' + GOSTR + r')*)', src):
             parts = [m.group(1)] + re.findall(GOSTR, m.group(2))
             found.setdefault(gounquote("".join(parts)), rel)
+        # values shown translated (valuecombo): marked constant blocks,
+        # and the note calculators' display names
+        for m in re.finditer(r'// i18n:values[^\n]*\n(?:const|var) \((.*?)\n\)', src, re.S):
+            for v in re.findall(r'=\s*' + GOSTR, m.group(1)):
+                found.setdefault(gounquote(v), rel)
+        for m in re.finditer(r'\) DisplayName\(\) string\s*\{\s*return ' + GOSTR, src):
+            found.setdefault(gounquote(m.group(1)), rel)
+        for m in re.finditer(r'\bcombo\(' + GOSTR, src):
+            found.setdefault(gounquote(m.group(1)), rel)
         for m in re.finditer(r'settingsdefs\.Def\{(.*?)\n\t\}\)', src, re.S):
             for field in ("Category", "Name", "Help"):
                 fm = re.search(field + r':\s*' + GOSTR + r'((?:\s*\+\s*' + GOSTR + r')*)', m.group(1))

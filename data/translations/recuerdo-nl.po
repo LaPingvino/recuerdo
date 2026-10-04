@@ -66,17 +66,26 @@ msgstr "Webadres toevoegen…"
 msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
 msgstr "Alles één keer: elk woord één keer. Slim: foute woorden komen snel en aan het eind terug. Interval: woorden komen terug tot je ze kent."
 
+msgid "All words"
+msgstr "Alle woorden"
+
 msgid "Answer Language:"
 msgstr "Taal van de antwoorden:"
 
 msgid "Answer language"
 msgstr "Taal van de antwoorden"
 
+msgid "As entered"
+msgstr "Zoals ingevoerd"
+
 msgid "Ask the answers"
 msgstr "Vraag de antwoorden"
 
 msgid "Ask this word again later"
 msgstr "Vraag dit woord later nog eens"
+
+msgid "Ask:"
+msgstr "Vraag:"
 
 msgid "Browse Unicode"
 msgstr "Unicode doorbladeren"
@@ -107,6 +116,9 @@ msgstr "Les maken"
 
 msgid "Create New Lesson"
 msgstr "Nieuwe les maken"
+
+msgid "Credits"
+msgstr "Met dank aan"
 
 msgid "Description:"
 msgstr "Beschrijving:"
@@ -186,6 +198,9 @@ msgstr "Bestanden"
 msgid "First row contains headers"
 msgstr "De eerste regel bevat kopjes"
 
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Vrije software onder de GNU General Public License,\nversie 3 of later"
+
 msgid "Getting Started with Recuerdo"
 msgstr "Aan de slag met Recuerdo"
 
@@ -197,6 +212,9 @@ msgstr "Ga verder na het goede antwoord te hebben gezien"
 
 msgid "Grades in:"
 msgstr "Cijfers in:"
+
+msgid "Hard words"
+msgstr "Moeilijke woorden"
 
 msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
 msgstr "Moeilijke woorden: vaker fout dan goed beantwoord, of nog niet geoefend. Nooit goed beantwoord: zonder goed antwoord in eerdere oefenrondes."
@@ -225,6 +243,9 @@ msgstr "Importeren uit afbeelding"
 msgid "In Name – Place, say the name of the place to click"
 msgstr "Zeg bij Naam – Plaats de naam van de plaats waarop je moet klikken"
 
+msgid "In mind"
+msgstr "In gedachten"
+
 msgid "In the Repeat answer mode, how long the answer is shown before you type it"
 msgstr "Hoe lang het antwoord in de modus Antwoord herhalen te zien is voordat je het typt"
 
@@ -245,6 +266,9 @@ msgstr "Resultaten van de laatste oefenronde"
 
 msgid "Learn words, places and more by heart"
 msgstr "Leer woorden, plaatsen en meer uit je hoofd"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Leer woorden, plaatsen en meer uit je hoofd:\nde woordenschat van een vreemde taal, topografie,\nof wat je je ook maar wilt herinneren."
 
 msgid "Lesson Information"
 msgstr "Gegevens van de les"
@@ -282,8 +306,14 @@ msgstr "Naam van een plaats"
 msgid "Name of the marked place"
 msgstr "Naam van de gemarkeerde plaats"
 
+msgid "Name – Place"
+msgstr "Naam – Plaats"
+
 msgid "Needs a speech program: install espeak-ng"
 msgstr "Hiervoor is een spraakprogramma nodig: installeer espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Nooit goed beantwoord"
 
 msgid "New from &Text..."
 msgstr "Nieuw uit &tekst..."
@@ -347,6 +377,9 @@ msgstr "Afbeeldingen, geluiden, video's of teksten, bewaard in de les"
 
 msgid "Place %d"
 msgstr "Plaats %d"
+
+msgid "Place – Name"
+msgstr "Plaats – Naam"
 
 msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
 msgstr "Plaats – Naam: een plaats is gemarkeerd, typ de naam.\nNaam – Plaats: een naam wordt gegeven, klik op de plaats."
@@ -420,6 +453,9 @@ msgstr "Resultaat"
 msgid "Results Overview"
 msgstr "Overzicht van de resultaten"
 
+msgid "Reversed"
+msgstr "Omgekeerd"
+
 msgid "Rotate 90°"
 msgstr "90° draaien"
 
@@ -452,6 +488,9 @@ msgstr "Speciale tekens tonen of verbergen"
 
 msgid "Show or hide special characters: accented letters and other scripts"
 msgstr "Speciale tekens tonen of verbergen: letters met accenten en andere schriften"
+
+msgid "Sorted"
+msgstr "Gesorteerd"
 
 msgid "Start"
 msgstr "Start"
@@ -516,6 +555,9 @@ msgstr "Typ of plak de woorden: één per regel, met een isgelijkteken (=) of ee
 msgid "Type or paste words as \"question = answer\" lines"
 msgstr "Typ of plak woorden als regels \"vraag = antwoord\""
 
+msgid "Typing"
+msgstr "Typen"
+
 msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
 msgstr "Typen: typ het antwoord. Antwoord husselen: met de letters van het antwoord als hint. Antwoord herhalen: het antwoord wordt eerst getoond en daarna uit je hoofd getypt."
 
@@ -524,6 +566,9 @@ msgstr "Unicode-blok:"
 
 msgid "Use a picture of your own as the map"
 msgstr "Gebruik een eigen afbeelding als kaart"
+
+msgid "Version %s"
+msgstr "Versie %s"
 
 msgid "Where is %s?"
 msgstr "Waar ligt %s?"
@@ -542,6 +587,9 @@ msgstr "Woordparen"
 
 msgid "Words List"
 msgstr "Woordenlijst"
+
+msgid "Words never answered correctly"
+msgstr "Woorden die nooit goed beantwoord zijn"
 
 msgid "Words:"
 msgstr "Woorden:"
@@ -563,6 +611,9 @@ msgstr "bijv. Engels"
 
 msgid "hond = dog\nkat = cat"
 msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nGebaseerd op OpenTeacher van het OpenTeacher-team, 2010–2023"
 
 msgid "✔ Right: %s"
 msgstr "✔ Goed: %s"

@@ -3,6 +3,7 @@ package media
 import (
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
 	"os"
 	"path/filepath"
 	"strings"
@@ -233,9 +234,9 @@ func (w *MediaLessonWidget) teachTab() *qt.QWidget {
 	layout := qt.NewQVBoxLayout(tab)
 	options := qt.NewQHBoxLayout2()
 	combo := func(label string, items []string) *qt.QComboBox {
-		options.AddWidget(qt.NewQLabel3(label).QWidget)
+		options.AddWidget(qt.NewQLabel3(i18n.T(label)).QWidget)
 		c := qt.NewQComboBox(tab)
-		c.AddItems(items)
+		valuecombo.Fill(c, items)
 		options.AddWidget(c.QWidget)
 		return c
 	}
@@ -294,7 +295,7 @@ func (w *MediaLessonWidget) Start() {
 		return
 	}
 	w.session = teaching.New(list, teaching.Options{
-		LessonType: w.typeCombo.CurrentText(), Order: w.orderCombo.CurrentText(),
+		LessonType: valuecombo.Value(w.typeCombo), Order: valuecombo.Value(w.orderCombo),
 	})
 	w.session.Start()
 	w.startBtn.SetText(i18n.T("Stop"))

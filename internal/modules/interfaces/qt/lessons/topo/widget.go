@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
 	"github.com/LaPingvino/recuerdo/internal/tts"
 	"os"
 	"path/filepath"
@@ -18,6 +19,7 @@ import (
 )
 
 // The two ways of practising, as in OpenTeacher.
+// i18n:values (shown translated, see valuecombo)
 const (
 	PlaceName = "Place – Name" // a place is shown: type its name
 	NamePlace = "Name – Place" // a name is shown: click the place
@@ -334,9 +336,9 @@ func (w *TopoLessonWidget) teachTab() *qt.QWidget {
 	layout := qt.NewQVBoxLayout(tab)
 	options := qt.NewQHBoxLayout2()
 	combo := func(label string, items []string) *qt.QComboBox {
-		options.AddWidget(qt.NewQLabel3(label).QWidget)
+		options.AddWidget(qt.NewQLabel3(i18n.T(label)).QWidget)
 		c := qt.NewQComboBox(tab)
-		c.AddItems(items)
+		valuecombo.Fill(c, items)
 		options.AddWidget(c.QWidget)
 		return c
 	}
@@ -359,7 +361,7 @@ func (w *TopoLessonWidget) teachTab() *qt.QWidget {
 		if w.session != nil {
 			w.Stop()
 		} else {
-			w.Start(w.orderCombo.CurrentText())
+			w.Start(valuecombo.Value(w.orderCombo))
 		}
 	})
 	options.AddWidget(w.startBtn.QWidget)
@@ -405,9 +407,9 @@ func (w *TopoLessonWidget) Start(order string) {
 		return
 	}
 	w.order = order
-	w.orderCombo.SetCurrentText(order)
+	valuecombo.Set(w.orderCombo, order)
 	w.session = teaching.New(w.lesson.Data.List, teaching.Options{
-		LessonType: w.typeCombo.CurrentText(), Order: w.sequenceCombo.CurrentText(),
+		LessonType: valuecombo.Value(w.typeCombo), Order: valuecombo.Value(w.sequenceCombo),
 	})
 	w.session.Start()
 	w.startBtn.SetText(i18n.T("Stop"))

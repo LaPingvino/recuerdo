@@ -80,12 +80,12 @@ func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
 	titleFont.SetBold(true)
 	title.SetFont(titleFont)
 
-	label("Version " + version.Version).SetStyleSheet("color: palette(dark);")
+	label(i18n.Tf("Version %s", version.Version)).SetStyleSheet("color: palette(dark);")
 	layout.AddSpacing(6)
-	label("Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember.")
+	label(i18n.T("Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."))
 	layout.AddSpacing(6)
-	label("© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023")
-	license := label("Free software under the GNU General Public License,\nversion 3 or later")
+	label(i18n.T("© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"))
+	license := label(i18n.T("Free software under the GNU General Public License,\nversion 3 or later"))
 	license.SetStyleSheet("color: palette(dark);")
 	links := label(`<a href="https://github.com/LaPingvino/recuerdo">github.com/LaPingvino/recuerdo</a> · <a href="https://openteacher.org">openteacher.org</a>`)
 	links.SetOpenExternalLinks(true)
@@ -93,9 +93,9 @@ func (mod *AboutDialogModule) createDialog(parent *qt.QWidget) {
 	layout.AddSpacing(8)
 	buttonBox := qt.NewQDialogButtonBox(mod.dialog.QWidget)
 	buttonBox.SetStandardButtons(qt.QDialogButtonBox__Close)
-	credits := buttonBox.AddButton2("Credits", qt.QDialogButtonBox__ActionRole)
+	credits := buttonBox.AddButton2(i18n.T("Credits"), qt.QDialogButtonBox__ActionRole)
 	credits.OnClicked(func() {
-		qt.QMessageBox_Information(mod.dialog.QWidget, "Credits", CreditsText())
+		qt.QMessageBox_Information(mod.dialog.QWidget, i18n.T("Credits"), CreditsText())
 	})
 	layout.AddWidget(buttonBox.QWidget)
 	buttonBox.OnRejected(func() {

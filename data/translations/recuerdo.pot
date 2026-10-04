@@ -127,8 +127,16 @@ msgstr ""
 msgid "Add web address…"
 msgstr ""
 
+#: internal/modules/logic/lessonTypes/allOnce/allOnce.go
+msgid "All once"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr ""
+
+#: internal/teaching/session.go
+msgid "All words"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
@@ -151,12 +159,20 @@ msgstr ""
 msgid "Answers"
 msgstr ""
 
+#: internal/teaching/session.go
+msgid "As entered"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Ask the answers"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Ask this word again later"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Ask:"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
@@ -213,6 +229,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Create New Lesson"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/about/about.go
+msgid "Credits"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -323,6 +343,10 @@ msgstr ""
 msgid "First row contains headers"
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/about/about.go
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Getting Started with Recuerdo"
 msgstr ""
@@ -341,6 +365,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Grades in:"
+msgstr ""
+
+#: internal/modules/logic/listModifiers/hardWords/hardWords.go
+msgid "Hard words"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -391,12 +419,20 @@ msgstr ""
 msgid "In Name – Place, say the name of the place to click"
 msgstr ""
 
+#: internal/teaching/teachtypes.go
+msgid "In mind"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/settings.go
 msgid "In the Repeat answer mode, how long the answer is shown before you type it"
 msgstr ""
 
 #: internal/i18n/setting.go
 msgid "Interface"
+msgstr ""
+
+#: internal/modules/logic/lessonTypes/interval/interval.go
+msgid "Interval"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -423,6 +459,10 @@ msgstr ""
 msgid "Learn words, places and more by heart"
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/about/about.go
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Lesson Information"
 msgstr ""
@@ -443,7 +483,7 @@ msgstr ""
 msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
 msgstr ""
 
-#: internal/modules/interfaces/qt/lessons/words/words.go
+#: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Lesson type:"
 msgstr ""
 
@@ -487,12 +527,20 @@ msgstr ""
 msgid "Name of the marked place"
 msgstr ""
 
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Name – Place"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Name:"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Needs a speech program: install espeak-ng"
+msgstr ""
+
+#: internal/teaching/session.go
+msgid "Never answered correctly"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -571,7 +619,7 @@ msgstr ""
 msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
 msgstr ""
 
-#: internal/modules/interfaces/qt/lessons/words/words.go
+#: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Order:"
 msgstr ""
 
@@ -589,6 +637,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Place %d"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/topo/widget.go
+msgid "Place – Name"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
@@ -667,6 +719,10 @@ msgstr ""
 msgid "Quick Access"
 msgstr ""
 
+#: internal/modules/logic/listModifiers/random_/random_.go
+msgid "Random"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Read %d word pairs from the picture: check them on the Enter tab"
 msgstr ""
@@ -695,6 +751,10 @@ msgstr ""
 msgid "Remove Word"
 msgstr ""
 
+#: internal/teaching/teachtypes.go
+msgid "Repeat answer"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/settings.go
 msgid "Repeat answer shows the answer for"
 msgstr ""
@@ -709,6 +769,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Results Overview"
+msgstr ""
+
+#: internal/modules/logic/listModifiers/reverse/reverse.go
+msgid "Reverse"
+msgstr ""
+
+#: internal/teaching/session.go
+msgid "Reversed"
 msgstr ""
 
 #: internal/modules/interfaces/qt/ocrimport/ocrimport.go
@@ -763,8 +831,24 @@ msgstr ""
 msgid "Show or hide special characters: accented letters and other scripts"
 msgstr ""
 
+#: internal/teaching/teachtypes.go
+msgid "Shuffle answer"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Skip"
+msgstr ""
+
+#: internal/modules/logic/lessonTypes/smart/smart.go
+msgid "Smart"
+msgstr ""
+
+#: internal/modules/logic/listModifiers/sort/sort.go
+msgid "Sort"
+msgstr ""
+
+#: internal/teaching/session.go
+msgid "Sorted"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
@@ -855,6 +939,10 @@ msgstr ""
 msgid "Type or paste words as \"question = answer\" lines"
 msgstr ""
 
+#: internal/teaching/teachtypes.go
+msgid "Typing"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
 msgstr ""
@@ -865,6 +953,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Use a picture of your own as the map"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/about/about.go
+msgid "Version %s"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -895,6 +987,10 @@ msgstr ""
 msgid "Words List"
 msgstr ""
 
+#: internal/modules/logic/listModifiers/wordsNeverAnsweredCorrectly/wordsNeverAnsweredCorrectly.go
+msgid "Words never answered correctly"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Words:"
 msgstr ""
@@ -921,6 +1017,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
 msgid "hond = dog\nkat = cat"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/about/about.go
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go

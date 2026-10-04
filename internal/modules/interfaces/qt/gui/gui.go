@@ -60,6 +60,8 @@ type GuiModule struct {
 	tabLessons map[unsafe.Pointer]*lesson.Lesson
 	// tabWords is the word lesson widget of each word lesson tab
 	tabWords map[unsafe.Pointer]*words.WordsLessonWidget
+	// qtTranslator translates Qt's own texts; kept so it stays alive
+	qtTranslator *qt.QTranslator
 }
 
 // NewGuiModule creates a new GuiModule instance
@@ -102,6 +104,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 			i18n.Start(st)
 		}
 	}
+	mod.installQtTranslator()
 
 	// Create main window
 	mod.mainWindow = qt.NewQMainWindow(nil)
@@ -1191,5 +1194,24 @@ func (mod *GuiModule) newLessonFromText() {
 			mod.markModified(tab)
 		}
 		mod.statusBar.ShowMessage(fmt.Sprintf(i18n.T("Made a lesson of %d words"), len(l.Data.List.Items)))
+	}
+}
+
+// installQtTranslator translates Qt's own texts (standard buttons such as
+// OK, Cancel and Close, file dialogs) into the interface language, with
+// Qt's translations when they are installed (qt5-translations).
+func (mod *GuiModule) installQtTranslator() {
+	lang := i18n.Current()
+	if lang == "" {
+		return
+	}
+	dir := qt.QLibraryInfo_Location(qt.QLibraryInfo__TranslationsPath)
+	tr := qt.NewQTranslator()
+	for _, name := range []string{"qtbase_" + lang, "qtbase_" + strings.SplitN(lang, "_", 2)[0]} {
+		if tr.Load4(name, dir) {
+			qt.QCoreApplication_InstallTranslator(tr)
+			mod.qtTranslator = tr
+			return
+		}
 	}
 }
