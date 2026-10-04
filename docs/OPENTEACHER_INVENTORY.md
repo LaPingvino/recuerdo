@@ -22,151 +22,76 @@ Missing from `legacy/` compared with upstream:
 |---|---|---|
 | `interfaces/qt/webServices/{wrtsApi,cramApi,vocatrainApi}` | Import word lists from WRTS, Cram, VocaTrain | No: these services or their APIs no longer exist in that form |
 | `interfaces/qt/mediaTypes/_megavideo` | Megavideo media type | No: the site is gone |
-| `logic/wordListString/javascript*`, `logic/wordsString/javaScript*` | JavaScript versions of the word list parsers/composers | Only for the web version |
-| `profileRunners/{autoPackager,codeDocs,mobileGenerator,packagers/windowsMsi,webApiServerRunner,webGenerator,websiteGenerator}` | Packaging, code docs, mobile/web/website generators | No: build tooling |
+| `logic/wordListString/javascript*`, `logic/wordsString/javaScript*` | JavaScript versions of the word list parsers/composers | For the planned in-browser version: take them from the upstream mirror |
+| `profileRunners/{autoPackager,codeDocs,packagers/windowsMsi,websiteGenerator}` | Packaging, code docs, website generator | No: build tooling |
+| `profileRunners/{webGenerator,mobileGenerator,webApiServerRunner}` | Build the web and mobile versions; run the web API server | For the planned in-browser version and test mode: in the upstream mirror |
 | `data/developerDocs`, `data/profileDescriptions/{packageAll,webApiServer}` | Developer docs and descriptions for the above | No |
 
 `legacy/` in turn has a few modules the mirror lacks (JavaScript note
 calculators, `logic/savers/latex`, `logic/htmlGenerator/javaScriptWords`),
 so it is from a slightly later OpenTeacher. **Conclusion:** `legacy/` is a
-complete base for the desktop application.
+complete base for the desktop application; the planned in-browser version
+and test mode can take the few pieces it lacks from the upstream mirror.
 
 ## 2. How far the Go port is
 
-Status per module, judged from the Go code rather than from whether a Go file
-exists (`scripts/verify_coverage.py` reports 76% "converted" because it counts
-files; most of those files are skeletons):
+Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
+`scripts/update_inventory_doc.py` regenerates this document's tables):
 
-- **working**: Go code without stub markers, with tests
-- **untested**: Go code without stub markers, no tests
-- **partial**: substantial Go code (150+ lines, at least 40 per stub marker) that still has TODOs
-- **covered**: done elsewhere in Recuerdo, not in a module of its own: the
-  modules listed under "Covered elsewhere" below, and file formats dispatched by `FileLoader.LoadFile` or
-  `FileSaver.SaveFile` in `internal/lesson` rather than by a module of its own.
-  All of OpenTeacher's loaders are covered this way (the generated per-format
-  loader packages were removed in October 2026): `TestOpenTeacherSampleFiles`
-  loads all 58 lesson files OpenTeacher tests its loaders with, checking items,
-  unique IDs and that no markup or binary data ends up as words. Savers likewise:
-  `FileSaver.SaveFile`, and for PDF, ODT and (through LibreOffice) Word and
-  Excel formats `internal/modules/interfaces/qt/export`; the generated saver
-  packages were removed too, except `savers/png` (the topography map
-  picture, which belongs with the topography lessons)
-- **scaffold**: generated skeleton; methods are `// TODO: Port Python method logic`
-- **missing**: no Go code
-- **dropped**: removed from the Go port on purpose (October 2026): the
-  JavaScript/web version, packaging and generator tooling, the classroom
-  test mode and web services; Go's and the distributions' own tooling
-  replace the packagers
+- **working**: Go code without stub markers, with tests (its own, or a
+  parent package's tests that import it)
+- **untested**, **partial**, **scaffold**, **missing**: unfinished; none
+  are left (October 2026: every module was converted or justified)
+- **covered**: done elsewhere in Recuerdo, not in a module of its own: see
+  "Covered elsewhere" below. All of OpenTeacher's loaders and savers are
+  covered by `internal/lesson` (`FileLoader.LoadFile`, `FileSaver.SaveFile`;
+  `TestOpenTeacherSampleFiles` loads all 58 lesson files OpenTeacher tests
+  its loaders with) and `internal/modules/interfaces/qt/export` (PDF, ODT,
+  printing, maps as PNG, LibreOffice formats)
+- **planned**: to port later, with a priority: see "Planned" below
+- **dropped**: not ported, with the reason: see "Dropped, and why" below
 - **test suite**: one of OpenTeacher's own test modules (their Go
   counterpart is `_test.go` files, not a port)
 
-Where a hand-written implementation exists outside the module's directory
-(`internal/modules/settings.go`, `event.go`, `execute.go`), the script
-uses it.
+| Area | working | untested | partial | covered | scaffold | missing | planned | dropped | test suite | Total |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| data | 3 |  |  | 21 |  |  | 14 | 5 | 6 | 49 |
+| interfaces | 11 |  |  | 52 |  |  | 12 | 5 | 14 | 94 |
+| logic | 25 |  |  | 78 |  |  | 30 | 8 | 39 | 180 |
+| misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
+| profileRunners |  |  |  | 10 |  |  | 11 | 1 | 5 | 27 |
+| **all** | **39** | **0** | **0** | **161** | **0** | **0** | **67** | **20** | **67** | **354** |
 
-| Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data | 3 |  |  | 13 |  |  | 27 | 6 | 49 |
-| interfaces | 11 |  |  | 52 |  |  | 17 | 14 | 94 |
-| logic | 25 |  |  | 78 |  |  | 38 | 39 | 180 |
-| misc |  |  |  |  |  |  | 1 | 3 | 4 |
-| profileRunners |  |  |  | 3 |  |  | 19 | 5 | 27 |
-| **all** | **39** | **0** | **0** | **146** | **0** | **0** | **102** | **67** | **354** |
+## 3. Features
 
-Remarks:
+The state in October 2026, by feature:
 
-- The real implementation work is concentrated in a few places: the file
-  formats (`internal/lesson`: 20 extensions loaded, 10 saved), map display
-  (`internal/maps`, outside the module tree), the main Qt lesson screens
-  (`interfaces/qt/lessons/{words,topo,media}`, `lessonDialogs`, `gui`,
-  `enterers/plainTextWords`), and the core module system (`settings.go`,
-  `event.go`, `execute.go`, `internal/core`).
-- `internal/modules/profileRunners` and `internal/modules/profilerunners`,
-  and `data/profileDescriptions` / `data/profiledescriptions`, exist side by
-  side: two generations of generated code.
+| Feature | Recuerdo |
+|---|---|
+| Application core: modules, events, settings, start and clean shutdown | done, tested (`internal/core`, `internal/modules`) |
+| Open and save lessons | all of OpenTeacher's formats load (58 sample files tested); 13 save, plus PDF, ODT, printing and LibreOffice formats |
+| Word lessons: enter, practise, results | done: OpenTeacher's answer syntax, lesson types (all once, smart, interval), word choices, practice modes (typing, repeat, shuffle, hangman, in mind), grades in six notations, sessions kept in the lesson with charts |
+| Type a List | done (plain text enterer) |
+| Topography lessons | done: six bundled maps with their places, both ways of practising, map as PNG/PDF/print |
+| Media lessons | done: pictures and texts shown, sounds, videos and websites opened in the system's player or browser |
+| Import from a picture (OCR) | done, with Tesseract |
+| Speech | done: Pronounce questions (espeak-ng, macOS and Windows voices) |
+| Settings, properties, about | done, made from what Recuerdo really has |
+| Command line | done: `recuerdo <command>` (convert, merge, view, practise, ...) |
+| Interface translations | planned (high): English only for now |
+| In-browser version | planned (medium) |
+| Test mode (classroom server) | planned (medium): convert OpenTeacher's server or build one |
+| Spell checking, touch typing course | planned (medium) |
+| Dark theme, words-only setting, developer tools | planned (low) |
+| Web services import (Quizlet, StudyStack, Course Hero) | dropped: those APIs changed or closed |
 
-## 3. Features, and what a first release needs
+## 4. The repository's older status documents
 
-A first usable release is taken to mean: open or type a word list, practise
-it the way OpenTeacher does, see a grade, and save it. Topography and media
-lessons, printing, speech and the rest come after.
-
-| Feature | OpenTeacher modules | Go state | First release? |
-|---|---|---|---|
-| Application core: module system, events, settings, startup | `logic/{event,settings,execute,modules}`, `interfaces/qt/{qtApp,gui}`, `data/metadata` | event and settings work with tests; execute has 3 stubs; gui partial; app starts | **Yes** (plus clean shutdown, see below) |
-| Open and save word lists | `logic/loaders/*` (32), `logic/savers/*` (18), file dialogs, `logic/{loader,saver}` | 20 extensions loaded and 10 saved in `internal/lesson`; file dialogs work; `.apkg`, `.fmd`, `.wrts` and others only through content auto-detection | **Yes**, mostly there |
-| Enter a word list | `interfaces/qt/enterers/{words,plainTextWords}` | words lesson has its own Enter tab; plain-text enterer partial | **Yes** |
-| Answer syntax: alternatives, optional parts, numbered meanings | `logic/wordsString/{parser,composer,checker}`, `logic/wordListString/{parser,composer}` | **scaffold**; the words lesson compares answers case-insensitively against whole stored answers | **Yes, critical** |
-| Lesson order: all once, interval, smart repetition | `logic/lessonTypes/{allOnce,interval,smart}` | **scaffold**; the words lesson asks every item once in order | **Yes, critical** |
-| Practice modes | `interfaces/qt/teachTypes/{typing,repeatAnswer,shuffleAnswer,hangman,inMind}`, `interfaces/qt/inputTyping`, `logic/interfaces/inputTypingLogic` | **scaffold / missing**; the words lesson has one typing mode of its own | **Yes**: typing first |
-| List modifiers | `logic/listModifiers/{random_,sort,reverse,hardWords,wordsNeverAnsweredCorrectly}`, `logic/itemModifiers/foreignKnown`, `logic/reversers/words` | scaffold | Yes: random, reverse question/answer |
-| Grades and results | `logic/noteCalculators/*` (6), `noteCalculatorChooser`, `percentsCalculator`, `interfaces/qt/dialogs/results`, `testViewer`, `testsViewer`, `progressViewer` | scaffold / missing; the words lesson has a results tab with a percentage | **Yes**: one note calculator (Dutch, the OpenTeacher default, plus American) and the results dialog |
-| Topography lessons | `interfaces/qt/{lessons,enterers,teachers}/topo`, `logic/testTypes/topo`, `data/maps/*`, `interfaces/qt/topoMaps` | lessons/topo partial; testTypes/topo untested; map rendering in `internal/maps` | Later |
-| Media lessons | `interfaces/qt/{lessons,enterers,teachers}/media`, `mediaTypes/*`, `mediaDisplay` | lessons/media partial; media types scaffold | Later |
-| Printing, HTML/ODT output | `interfaces/qt/{print/*,printer,dialogs/print}`, `logic/htmlGenerator/*`, `logic/odtsaver`, `logic/savers/{odt,libreofficeFormats,sylk,png}` | savers done (`FileSaver`, `interfaces/qt/export`: PDF, ODT, LibreOffice formats; `savers/png` belongs to topography); print dialogs, `htmlGenerator` and `odtsaver` still scaffold | R14c/R14d |
-| Typing tutor, character keyboard | `interfaces/qt/typingTutor/*`, `charsKeyboard`, `data/chars/*` | charsKeyboard untested; the words lesson has a Unicode picker | Later |
-| Text to speech | `interfaces/textToSpeech/*` | scaffold | Later |
-| Settings UI widgets | `interfaces/qt/settingsWidget/*`, `settingsWidgets`, `dialogs/settings` | settings dialog partial; widgets scaffold | Later (dialog is enough) |
-| Test mode (classroom server) | `interfaces/qt/testMode/*`, `interfaces/webServicesServer`, `logic/webDatabase` | scaffold | Later / maybe never |
-| Web services import | `interfaces/qt/webServices/{quizletApi,studyStackApi,courseHeroApi}` | scaffold | Probably never: APIs changed or closed |
-| OCR | `logic/ocr/*`, `interfaces/qt/ocrGui` | scaffold | Later |
-| Spell checking, language guessing, translations, documentation | `logic/{spellChecker,languageCodeGuesser,translator,translationIndex/*,userDocumentationWrapper}`, `data/userDocumentation`, `interfaces/qt/dialogs/documentation` | scaffold | Later |
-| JavaScript/web version | `logic/javaScript/*`, `**/javaScript/*` | scaffold | No: not relevant to a Go desktop app |
-| Profiles, packaging, generators, CLI, shell, IRC bot | `profileRunners/*` (22), `data/profileDescriptions/*` (30) | scaffold | No, except a command-line runner later; packaging is done by Go/distro tooling |
-
-### Other findings from building and running
-
-- `cmd/recuerdo` builds and starts the Qt window, but does not stop on
-  SIGTERM or SIGINT: it installs a signal handler that does not end the Qt
-  event loop, so only SIGKILL stops it (a problem at logout and for
-  scripts).
-- `cmd/test-core`, which the README suggests for testing your system, fails
-  with "Event module not found".
-- `go test ./...`: `internal/lesson` fails `TestGetFormatName/.vok2`
-  ("TeachMaster File" vs "Teachmaster File"), and `internal/modules` fails
-  `TestSettingsModuleConcurrency` (settings file corrupted by concurrent
-  save/load). `go vet` reports a non-constant format string in
-  `internal/logging/logger.go`.
-- Settings live in Recuerdo's own config directory
-  (`recuerdo/settings.json` under `os.UserConfigDir()`); on first run an
-  existing `~/.openteacher/settings.json` is copied there and left in place.
-
-### Priority list
-
-1. Clean shutdown on SIGTERM/SIGINT; fix `test-core`; fix the failing tests
-   and the vet warning (small, unblocks trustworthy CI).
-2. Port `logic/wordsString` (parser, composer, checker) with OpenTeacher's
-   tests, and use it for answer checking in the words lesson.
-3. Port `logic/lessonTypes` (allOnce, interval, smart) and the random and
-   reverse list modifiers; use them for question order in the words lesson.
-4. Port the Dutch and American note calculators, the percents calculator
-   and the chooser; show the grade, and add the results dialog.
-5. Typing practice mode as a teach type, with `inputTyping`; then
-   repeatAnswer and shuffleAnswer.
-6. Remove the second generation of generated directories
-   (`profilerunners`, `profiledescriptions`) and decide which scaffold
-   areas to delete outright (JavaScript, packaging, test mode, web
-   services) so the module tree shows what is real.
-7. Topography lessons, then media lessons, then printing.
-
-## 4. Corrections to the repository's status documents
-
-Checked against the code on 3 October 2026:
-
-| Document | Claim | Actually |
-|---|---|---|
-| `scripts/verify_coverage.py` | 76% of files converted | It counts Go files that exist. By content: 3 modules working, 6 untested, 7 partial, 29 formats handled centrally, 239 generated scaffolds (section 2) |
-| `CURRENT_STATUS_SUMMARY.md` | "Ready for Production Use" | The core study flow lacks OpenTeacher's answer checking, lesson order, practice modes and grades (section 3); the app cannot be stopped with SIGTERM |
-| `CURRENT_STATUS_SUMMARY.md` | Export 1/8 formats (CSV only) | `SaveFile` writes 10: csv, ot, txt, json, t2k, kvtml, html, tex, ottp, otmd |
-| `CURRENT_STATUS_SUMMARY.md` | Import 15/15 (100%), incl. Anki package via CSV fallback | `LoadFile` dispatches 20 extensions; `.apkg` is not one of them and only reaches content auto-detection |
-| `EXPORT_IMPLEMENTATION_COMPLETE.md` | 8 formats, 100% test coverage, "enterprise grade" | 10 formats in `SaveFile`; coverage not measured; `internal/lesson` tests currently fail (`.vok2` format name) |
-| `ROADMAP.md` | "Qt GUI Dialog System Complete" | File dialogs work; settings partial; about untested; print and documentation dialogs scaffold; results dialog missing |
-| `README.md` | Media lessons with images, audio, video; clickable geography maps; quizzes with progress tracking; "Test your system" with `test-core` | Media types are scaffolds; topo lessons are partial; the words quiz is basic; `test-core` fails |
-| `EMBEDDED_MAPS_IMPLEMENTATION.md` | "COMPLETE - Production Ready" | Map code exists in `internal/maps` (about 1,500 lines, no tests); the `data/maps/*` modules are scaffolds; not verified further |
-
-These documents describe intentions and individual sessions rather than the
-state of the code; this inventory and the regenerated table are the
-reference until they are updated or removed.
+`CURRENT_STATUS_SUMMARY.md`, `ROADMAP.md`, `EXPORT_IMPLEMENTATION_COMPLETE.md`
+and `EMBEDDED_MAPS_IMPLEMENTATION.md` describe intentions and single
+sessions from before this inventory (the last one describes `internal/maps`,
+which was replaced by the topography lesson in October 2026). This
+inventory and its regenerated tables are the reference.
 
 ## Covered elsewhere
 
@@ -188,6 +113,7 @@ file formats, see **covered** above):
 | `data/profileDescriptions/all` | `cmd/recuerdo` | Recuerdo always starts with all its features, which is what OpenTeacher's "all" profile chose |
 | `data/profileDescriptions/cli` | `internal/cli` | the command line is reached with recuerdo <command>, not a profile |
 | `data/profileDescriptions/help` | `internal/cli` | recuerdo help |
+| `data/profileDescriptions/package (all)` | `packaging/, .github/workflows/release.yml` | the packaging profiles, with the packagers |
 | `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
@@ -268,13 +194,32 @@ file formats, see **covered** above):
 | `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
 | `logic/wordListString/parser` | `internal/lesson` | ParseWordList ("q = a" / tab lines with \= escapes) |
 | `profileRunners/cli` | `internal/cli` | recuerdo <command>: authors, convert, merge, reverse-list, view-word-list, ocr-word-list, new-word-list, practise-word-list (-flags for +flags); tested |
+| `profileRunners/packagers (all)` | `packaging/, .github/workflows/release.yml` | Recuerdo is built by Go and released by CI; the Arch package is a PKGBUILD |
 | `profileRunners/profilesHelp` | `internal/cli` | recuerdo help lists the commands (and recuerdo -help the options) |
 | `profileRunners/uiController` | `internal/modules/interfaces/qt/gui` | the GUI module connects the Qt interface to loading, saving, printing, dialogs and the lessons itself |
 
+## Planned
+
+OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
+
+| Priority | Modules | Count | What |
+|---|---|---:|---|
+| high | `logic/translator` | 1 | interface translations: Recuerdo's interface is English only; OpenTeacher's gettext translations can be brought in |
+| high | `logic/friendlyTranslationNames` | 1 | names of the interface translations, with the translator |
+| medium | `javaScript` | 24 | the in-browser version: lessons and practice in a web browser, which also makes exercises possible that rely on HTML |
+| medium | `interfaces/qt/testMode`, `interfaces/webServicesServer`, `logic/webDatabase`, `profileRunners/webServicesServerRunner`, `data/profileDescriptions/webServicesServer` | 12 | test mode: classroom tests run from a server. OpenTeacher's server is in legacy/ (Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one |
+| medium | `logic/spellChecker` | 1 | spell checking while entering words, with Hunspell (OpenTeacher used Enchant) |
+| medium | `logic/interfaces/typingTutorModel` | 1 | OpenTeacher's touch typing course, a lesson of its own kind |
+| medium | `interfaces/qt/typingTutor` | 2 | the touch typing course's screen and keyboard |
+| low | `interfaces/qt/theme` | 1 | a dark theme, as a setting |
+| low | `data/profileDescriptions/wordsOnly` | 1 | a setting that hides topography and media lessons ("just gimme my good old OpenTeacher 2.x") |
+| low | `logic/moduleGraphBuilder`, `profileRunners/backgroundImageGenerator`, `profileRunners/businessCardGenerator`, `profileRunners/codeComplexity`, `profileRunners/getTranslationAuthors`, `profileRunners/languageCodeGuesserTableGenerator`, `profileRunners/moduleGraph`, `profileRunners/rosettaUpdater`, `profileRunners/translationUpdater`, `profileRunners/ircBot`, `data/profileDescriptions/codeComplexity`, `data/profileDescriptions/codeDocumentation`, `data/profileDescriptions/generate`, `data/profileDescriptions/getTranslationAuthors`, `data/profileDescriptions/ircBot`, `data/profileDescriptions/moduleGraph`, `data/profileDescriptions/update` | 22 | developer tooling: useful later as independent command line tools |
+| low | `profileRunners/gtkGui` | 1 | an alternative GTK interface OpenTeacher experimented with |
+
 ## Dropped, and why
 
-Besides the areas dropped as a whole (the web version, packaging and
-generator tooling, test mode, web services; see **dropped** above):
+Besides OpenTeacher's web services importers (Quizlet, StudyStack and
+Course Hero: those APIs changed or closed):
 
 | Module | Why |
 |---|---|
@@ -283,24 +228,16 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/studentAtHome` | as selfstudy: an audience profile |
 | `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
-| `data/profileDescriptions/wordsOnly` | as selfstudy ("just gimme my good old OpenTeacher 2.x"); a setting hiding topography and media lessons could do this later |
 | `interfaces/qt/hiddenBrowser` | a hidden web browser (an easter egg) nothing else used |
 | `interfaces/qt/mediaTypes/liveleak` | LiveLeak closed in 2021: its video links no longer work |
-| `interfaces/qt/theme` | an optional dark style sheet nothing used; Recuerdo follows the desktop's Qt style (a dark theme could come back as a setting) |
-| `interfaces/qt/typingTutor/keyboard` | for now: the keyboard of the touch typing course; see typingTutorModel |
-| `interfaces/qt/typingTutor/main` | for now: the screen of OpenTeacher's touch typing course; see typingTutorModel |
-| `logic/friendlyTranslationNames` | for now: names of interface translations; see translator |
-| `logic/interfaces/typingTutorModel` | for now: OpenTeacher's touch typing course is a different kind of lesson than Recuerdo's words, topography and media lessons |
 | `logic/ocr/cuneiformRecognizer` | Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR |
 | `logic/pyinstallerInterface` | Python packaging; Recuerdo is built by Go and released by CI |
 | `logic/safeHtmlChecker` | only OpenTeacher's web database (dropped) used it |
 | `logic/sourceSaver` | Python source releases; Recuerdo's source is its Git repository |
 | `logic/sourceWithSetupSaver` | Python source releases with setup.py; see sourceSaver |
-| `logic/spellChecker` | for now: it needs the Enchant spelling library; spell checking while entering words could come back with Hunspell |
 | `logic/translationIndex/builder` | OpenTeacher's translation tooling (building its translation index) |
 | `logic/translationIndex/jsonWriter` | OpenTeacher's translation tooling |
 | `logic/translationIndex/merger` | OpenTeacher's translation tooling |
-| `logic/translator` | for now: Recuerdo's interface is English only; OpenTeacher's translations (gettext) could be brought in later |
 | `misc/testUrllibMock` | a stand-in for Python's urllib in OpenTeacher's tests; Go tests use net/http/httptest |
 | `profileRunners/shell` | an interactive Python shell with OpenTeacher's modules loaded, for developers; Go has no such shell, and Recuerdo's modules are used from Go code and tests |
 
@@ -324,25 +261,25 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/openteacherAuthors` | openteacherAuthors | 151 | 37 | 0 | 1 | working |
 | `data/profileDescriptions/all` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/cli` | profileDescription | 19 | 0 | 0 | 0 | covered |
-| `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/generateLanguageCodeGuesserTable` | profileDescription | 23 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/generateMobile` | profileDescription | 24 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/generateWeb` | profileDescription | 24 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/generateLanguageCodeGuesserTable` | profileDescription | 23 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/generateMobile` | profileDescription | 24 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/generateWeb` | profileDescription | 24 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 0 | 0 | 0 | planned |
 | `data/profileDescriptions/help` | profileDescription | 41 | 0 | 0 | 0 | covered |
-| `data/profileDescriptions/ircBot` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageArch` | profileDescription | 22 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageDebian` | profileDescription | 22 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageMac` | profileDescription | 22 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageRpm` | profileDescription | 22 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageSource` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageSourceWithSetup` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageWindowsMsi` | profileDescription | 22 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/packageWindowsPortable` | profileDescription | 22 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/ircBot` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/packageArch` | profileDescription | 22 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageDebian` | profileDescription | 22 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageMac` | profileDescription | 22 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageRpm` | profileDescription | 22 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageSource` | profileDescription | 19 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageSourceWithSetup` | profileDescription | 19 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageWindowsMsi` | profileDescription | 22 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/packageWindowsPortable` | profileDescription | 22 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/selfstudy` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/shell` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/studentAtHome` | profileDescription | 41 | 0 | 0 | 0 | dropped |
@@ -351,10 +288,10 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/test` | test | 24 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testServer` | profileDescription | 41 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testSuite` | profileDescription | 19 | 0 | 0 | 0 | test suite |
-| `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | planned |
 | `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 0 | 0 | 0 | covered |
@@ -429,37 +366,37 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/teachers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/teachers/words` | wordsTeacher | 387 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/testMode/connection` | testModeConnection | 216 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/menu` | testMenu | 51 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/studentsView` | testModeStudentsView | 74 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/teacher` | wordsTestTeacher | 102 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/teacherPanel` | testModeTeacherPanel | 496 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/testMode/connection` | testModeConnection | 216 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/menu` | testMenu | 51 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/studentsView` | testModeStudentsView | 74 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/teacher` | wordsTestTeacher | 102 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/teacherPanel` | testModeTeacherPanel | 496 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 0 | 0 | 0 | planned |
 | `interfaces/qt/testViewer` | testViewer | 175 | 0 | 0 | 0 | covered |
 | `interfaces/qt/testViewerTest` | test | 73 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/testsViewer` | testsViewer | 275 | 0 | 0 | 0 | covered |
-| `interfaces/qt/theme` | theme | 35 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/theme` | theme | 35 | 0 | 0 | 0 | planned |
 | `interfaces/qt/topoMaps` | topoMaps | 231 | 0 | 0 | 0 | covered |
-| `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 0 | 0 | 0 | dropped |
-| `interfaces/qt/typingTutor/main` | typingTutor | 358 | 0 | 0 | 0 | dropped |
+| `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 0 | 0 | 0 | planned |
+| `interfaces/qt/typingTutor/main` | typingTutor | 358 | 0 | 0 | 0 | planned |
 | `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/quizletApi` | quizletApi | 236 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/studyStackApi` | studyStackApi | 222 | 0 | 0 | 0 | dropped |
 | `interfaces/textToSpeech/impl` | textToSpeech | 122 | 0 | 0 | 0 | covered |
 | `interfaces/textToSpeech/providers/topo` | ttsProvider | 70 | 0 | 0 | 0 | covered |
 | `interfaces/textToSpeech/providers/words` | ttsProvider | 79 | 0 | 0 | 0 | covered |
-| `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | dropped |
+| `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | planned |
 | `logic/authors` | authors | 45 | 0 | 0 | 0 | covered |
 | `logic/authorsTest` | test | 62 | 1 | 0 | 0 | test suite |
 | `logic/dataStore` | dataStore | 51 | 0 | 0 | 0 | covered |
 | `logic/event` | event | 30 | 159 | 0 | 1 | working |
 | `logic/eventTest` | test | 86 | 56 | 18 | 0 | test suite |
 | `logic/execute` | execute | 115 | 108 | 3 | 1 | covered |
-| `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 0 | 0 | 0 | dropped |
+| `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 0 | 0 | 0 | planned |
 | `logic/friendlyTranslationNamesTest` | test | 33 | 42 | 11 | 0 | test suite |
-| `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | dropped |
+| `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | planned |
 | `logic/htmlGenerator/media` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
 | `logic/htmlGenerator/test` | test | 37 | 0 | 0 | 0 | test suite |
 | `logic/htmlGenerator/topo` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
@@ -468,27 +405,27 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/interfaces/buttonRegisterTest` | test | 70 | 0 | 0 | 0 | test suite |
 | `logic/interfaces/inputTypingLogic` | inputTypingLogic | 171 | 0 | 0 | 0 | covered |
 | `logic/interfaces/inputTypingLogicTest` | test | 177 | 0 | 0 | 0 | test suite |
-| `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | dropped |
+| `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | planned |
 | `logic/interfaces/lessonTracker` | lessonTracker | 55 | 0 | 0 | 0 | covered |
-| `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 0 | 0 | 0 | dropped |
+| `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 0 | 0 | 0 | planned |
 | `logic/interfaces/typingTutorModelTest` | test | 119 | 0 | 0 | 0 | test suite |
 | `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 0 | 0 | 0 | covered |
 | `logic/itemModifiers/test` | test | 26 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | planned |
 | `logic/javaScript/bisectTest` | test | 37 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/evaluator` | javaScriptEvaluator | 22 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/evaluator` | javaScriptEvaluator | 22 | 0 | 0 | 0 | planned |
 | `logic/javaScript/evaluatorTest` | testSuite | 26 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/event` | javaScriptEvent | 25 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/event` | javaScriptEvent | 25 | 0 | 0 | 0 | planned |
 | `logic/javaScript/implementationTest` | test | 28 | 0 | 0 | 0 | test suite |
 | `logic/javaScript/jshintTest` | test | 46 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/lessonType` | javaScriptLessonType | 27 | 0 | 0 | 0 | dropped |
-| `logic/javaScript/libraries/jquery` | jsLib | 15 | 0 | 0 | 0 | dropped |
-| `logic/javaScript/libraries/tmpl` | jsLib | 15 | 0 | 0 | 0 | dropped |
-| `logic/javaScript/map` | mapfunc | 15 | 0 | 0 | 0 | dropped |
-| `logic/javaScript/sum` | sumfunc | 15 | 0 | 0 | 0 | dropped |
-| `logic/javaScript/translator` | jsTranslator | 15 | 0 | 0 | 0 | dropped |
-| `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 0 | 0 | 0 | dropped |
-| `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | dropped |
+| `logic/javaScript/lessonType` | javaScriptLessonType | 27 | 0 | 0 | 0 | planned |
+| `logic/javaScript/libraries/jquery` | jsLib | 15 | 0 | 0 | 0 | planned |
+| `logic/javaScript/libraries/tmpl` | jsLib | 15 | 0 | 0 | 0 | planned |
+| `logic/javaScript/map` | mapfunc | 15 | 0 | 0 | 0 | planned |
+| `logic/javaScript/sum` | sumfunc | 15 | 0 | 0 | 0 | planned |
+| `logic/javaScript/translator` | jsTranslator | 15 | 0 | 0 | 0 | planned |
+| `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 0 | 0 | 0 | planned |
+| `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | planned |
 | `logic/languageCodeGuesser` | languageCodeGuesser | 30 | 0 | 0 | 0 | covered |
 | `logic/languageCodeGuesserTest` | test | 45 | 58 | 19 | 0 | test suite |
 | `logic/lessonTypes/allOnce` | lessonType | 108 | 54 | 0 | 1 | working |
@@ -543,7 +480,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
 | `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 64 | 0 | 1 | working |
 | `logic/mimicryTypefaceConverterTest` | test | 30 | 44 | 12 | 0 | test suite |
-| `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | dropped |
+| `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | planned |
 | `logic/moduleGraphBuilderTest` | test | 33 | 0 | 0 | 0 | test suite |
 | `logic/modules` | modules | 148 | 0 | 0 | 0 | covered |
 | `logic/modulesTest` | test | 44 | 78 | 14 | 0 | test suite |
@@ -553,12 +490,12 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/noteCalculators/ects` | noteCalculator | 57 | 16 | 0 | 1 | working |
 | `logic/noteCalculators/french` | noteCalculator | 51 | 25 | 0 | 1 | working |
 | `logic/noteCalculators/german` | noteCalculator | 55 | 16 | 0 | 1 | working |
-| `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
-| `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 0 | 0 | 0 | dropped |
-| `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
-| `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 0 | 0 | 0 | dropped |
-| `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
-| `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | dropped |
+| `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 0 | 0 | 0 | planned |
+| `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 0 | 0 | 0 | planned |
+| `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 0 | 0 | 0 | planned |
+| `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 0 | 0 | 0 | planned |
+| `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 0 | 0 | 0 | planned |
+| `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | planned |
 | `logic/noteCalculators/percents` | noteCalculator | 55 | 13 | 0 | 1 | working |
 | `logic/noteCalculators/test` | test | 444 | 0 | 0 | 0 | test suite |
 | `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 0 | 0 | 0 | dropped |
@@ -601,7 +538,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/settingsFilterer` | settingsFilterer | 47 | 0 | 0 | 0 | covered |
 | `logic/sourceSaver` | sourceSaver | 67 | 0 | 0 | 0 | dropped |
 | `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 0 | 0 | 0 | dropped |
-| `logic/spellChecker` | spellChecker | 56 | 0 | 0 | 0 | dropped |
+| `logic/spellChecker` | spellChecker | 56 | 0 | 0 | 0 | planned |
 | `logic/spellCheckerTest` | test | 57 | 58 | 19 | 0 | test suite |
 | `logic/sylkSaver` | sylkSaver | 79 | 0 | 0 | 0 | covered |
 | `logic/testTypes/media` | testType | 58 | 0 | 0 | 0 | covered |
@@ -612,53 +549,53 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/translationIndex/merger` | translationIndexesMerger | 25 | 0 | 0 | 0 | dropped |
 | `logic/translationIndex/mergerTest` | test | 54 | 0 | 0 | 0 | test suite |
 | `logic/translationTest` | test | 58 | 40 | 10 | 0 | test suite |
-| `logic/translator` | translator | 89 | 0 | 0 | 0 | dropped |
+| `logic/translator` | translator | 89 | 0 | 0 | 0 | planned |
 | `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 0 | 0 | 0 | covered |
-| `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | dropped |
+| `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | planned |
 | `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |
 | `logic/wordListString/composer` | wordListStringComposer | 35 | 0 | 0 | 0 | covered |
 | `logic/wordListString/composerTest` | test | 145 | 0 | 0 | 0 | test suite |
-| `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 0 | 0 | 0 | dropped |
-| `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 0 | 0 | 0 | dropped |
+| `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 0 | 0 | 0 | planned |
+| `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 0 | 0 | 0 | planned |
 | `logic/wordListString/parser` | wordListStringParser | 50 | 0 | 0 | 0 | covered |
 | `logic/wordListString/parserTest` | test | 159 | 0 | 0 | 0 | test suite |
 | `logic/wordsString/checker` | wordsStringChecker | 59 | 117 | 0 | 1 | working |
 | `logic/wordsString/checkerTest` | test | 78 | 1 | 0 | 0 | test suite |
 | `logic/wordsString/composer` | wordsStringComposer | 33 | 44 | 0 | 1 | working |
 | `logic/wordsString/composerTest` | test | 55 | 52 | 16 | 0 | test suite |
-| `logic/wordsString/javaScript/checker` | wordsStringChecker | 31 | 0 | 0 | 0 | dropped |
-| `logic/wordsString/javaScript/composer` | wordsStringComposer | 35 | 0 | 0 | 0 | dropped |
-| `logic/wordsString/javaScript/parser` | wordsStringParser | 34 | 0 | 0 | 0 | dropped |
+| `logic/wordsString/javaScript/checker` | wordsStringChecker | 31 | 0 | 0 | 0 | planned |
+| `logic/wordsString/javaScript/composer` | wordsStringComposer | 35 | 0 | 0 | 0 | planned |
+| `logic/wordsString/javaScript/parser` | wordsStringParser | 34 | 0 | 0 | 0 | planned |
 | `logic/wordsString/parser` | wordsStringParser | 34 | 86 | 0 | 1 | working |
 | `logic/wordsString/parserTest` | test | 115 | 1 | 0 | 0 | test suite |
 | `misc/cliTest` | test | 131 | 1 | 0 | 0 | test suite |
 | `misc/moduleManagerTest` | test | 114 | 1 | 0 | 0 | test suite |
 | `misc/testUrllibMock` |  | 44 | 0 | 0 | 0 | dropped |
 | `misc/testsTest` | test | 34 | 42 | 11 | 0 | test suite |
-| `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 0 | 0 | 0 | dropped |
-| `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 0 | 0 | 0 | dropped |
+| `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 0 | 0 | 0 | planned |
+| `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 0 | 0 | 0 | planned |
 | `profileRunners/cli` | cli | 343 | 0 | 0 | 0 | covered |
-| `profileRunners/codeComplexity` | codeComplexity | 68 | 0 | 0 | 0 | dropped |
-| `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 0 | 0 | 0 | dropped |
-| `profileRunners/gtkGui` | gtkGui | 136 | 0 | 0 | 0 | dropped |
-| `profileRunners/ircBot` | ircBot | 284 | 0 | 0 | 0 | dropped |
-| `profileRunners/languageCodeGuesserTableGenerator` | languageCodeGuesserTableGenerator | 49 | 0 | 0 | 0 | dropped |
-| `profileRunners/moduleGraph` | moduleGraph | 31 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/arch` | archPackager | 68 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/debian` | debianPackager | 77 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/mac` | macPackager | 38 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/rpm` | rpmPackager | 77 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/source` | sourcePackager | 38 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/sourceWithSetup` | sourceWithSetupPackager | 35 | 0 | 0 | 0 | dropped |
-| `profileRunners/packagers/windowsPortable` | windowsPortablePackager | 40 | 0 | 0 | 0 | dropped |
+| `profileRunners/codeComplexity` | codeComplexity | 68 | 0 | 0 | 0 | planned |
+| `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 0 | 0 | 0 | planned |
+| `profileRunners/gtkGui` | gtkGui | 136 | 0 | 0 | 0 | planned |
+| `profileRunners/ircBot` | ircBot | 284 | 0 | 0 | 0 | planned |
+| `profileRunners/languageCodeGuesserTableGenerator` | languageCodeGuesserTableGenerator | 49 | 0 | 0 | 0 | planned |
+| `profileRunners/moduleGraph` | moduleGraph | 31 | 0 | 0 | 0 | planned |
+| `profileRunners/packagers/arch` | archPackager | 68 | 0 | 0 | 0 | covered |
+| `profileRunners/packagers/debian` | debianPackager | 77 | 0 | 0 | 0 | covered |
+| `profileRunners/packagers/mac` | macPackager | 38 | 0 | 0 | 0 | covered |
+| `profileRunners/packagers/rpm` | rpmPackager | 77 | 0 | 0 | 0 | covered |
+| `profileRunners/packagers/source` | sourcePackager | 38 | 0 | 0 | 0 | covered |
+| `profileRunners/packagers/sourceWithSetup` | sourceWithSetupPackager | 35 | 0 | 0 | 0 | covered |
+| `profileRunners/packagers/windowsPortable` | windowsPortablePackager | 40 | 0 | 0 | 0 | covered |
 | `profileRunners/profilesHelp` | profilesHelp | 44 | 0 | 0 | 0 | covered |
-| `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | dropped |
+| `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | planned |
 | `profileRunners/shell` | shell | 81 | 0 | 0 | 0 | dropped |
 | `profileRunners/testRunner` | testRunner | 44 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver` | test_server | 65 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/admin_files/js` |  | 40 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/ot_testserver` |  | 119 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver/ot_testserver/testserver` |  | 574 | 0 | 0 | 0 | test suite |
-| `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | dropped |
+| `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | planned |
 | `profileRunners/uiController` | uiController | 320 | 0 | 0 | 0 | covered |
-| `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | dropped |
+| `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | planned |

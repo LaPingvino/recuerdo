@@ -78,7 +78,7 @@ def code_lines(src):
     return n
 
 
-RANK = ["missing", "scaffold", "partial", "untested", "working"]  # plus "covered", "dropped", "test suite"  # "covered": see central_format and COVERED
+RANK = ["missing", "scaffold", "partial", "untested", "working"]  # plus "covered", "planned", "dropped", "test suite"  # "covered": see central_format and COVERED
 
 
 def ancestor_tests(d):
@@ -201,19 +201,58 @@ def central_format(rel):
 # generator tooling, classroom test mode, web services): see
 # docs/OPENTEACHER_INVENTORY.md.
 DROPPED = (
-    "javaScript", "interfaces/qt/testMode", "interfaces/qt/webServices",
-    "interfaces/webServicesServer", "logic/webDatabase", "logic/moduleGraphBuilder",
-    "profileRunners/packagers", "profileRunners/backgroundImageGenerator",
-    "profileRunners/businessCardGenerator", "profileRunners/codeComplexity",
-    "profileRunners/getTranslationAuthors", "profileRunners/languageCodeGuesserTableGenerator",
-    "profileRunners/moduleGraph", "profileRunners/rosettaUpdater", "profileRunners/translationUpdater",
-    "profileRunners/ircBot", "profileRunners/webServicesServerRunner", "profileRunners/gtkGui",
-    "data/profileDescriptions/codeComplexity", "data/profileDescriptions/codeDocumentation",
-    "data/profileDescriptions/generate", "data/profileDescriptions/getTranslationAuthors",
-    "data/profileDescriptions/ircBot", "data/profileDescriptions/moduleGraph",
-    "data/profileDescriptions/package", "data/profileDescriptions/update",
-    "data/profileDescriptions/webServicesServer",
+    "interfaces/qt/webServices",
 )
+
+# Areas Recuerdo will port later (decided with the user, 2026-10-04):
+# module path prefix -> (priority, what and why).
+TESTMODE = ("medium", "test mode: classroom tests run from a server. OpenTeacher's server is in legacy/ "
+            "(Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one")
+DEVTOOL = ("low", "developer tooling: useful later as independent command line tools")
+PLANNED = {
+    "javaScript": ("medium", "the in-browser version: lessons and practice in a web browser, which also makes "
+                   "exercises possible that rely on HTML"),
+    "interfaces/qt/testMode": TESTMODE,
+    "interfaces/webServicesServer": TESTMODE,
+    "logic/webDatabase": TESTMODE,
+    "profileRunners/webServicesServerRunner": TESTMODE,
+    "data/profileDescriptions/webServicesServer": TESTMODE,
+    "logic/translator": ("high", "interface translations: Recuerdo's interface is English only; OpenTeacher's "
+                         "gettext translations can be brought in"),
+    "logic/friendlyTranslationNames": ("high", "names of the interface translations, with the translator"),
+    "logic/spellChecker": ("medium", "spell checking while entering words, with Hunspell (OpenTeacher used Enchant)"),
+    "logic/interfaces/typingTutorModel": ("medium", "OpenTeacher's touch typing course, a lesson of its own kind"),
+    "interfaces/qt/typingTutor": ("medium", "the touch typing course's screen and keyboard"),
+    "interfaces/qt/theme": ("low", "a dark theme, as a setting"),
+    "data/profileDescriptions/wordsOnly": ("low", "a setting that hides topography and media lessons "
+                                           "(\"just gimme my good old OpenTeacher 2.x\")"),
+    "logic/moduleGraphBuilder": DEVTOOL,
+    "profileRunners/backgroundImageGenerator": DEVTOOL,
+    "profileRunners/businessCardGenerator": DEVTOOL,
+    "profileRunners/codeComplexity": DEVTOOL,
+    "profileRunners/getTranslationAuthors": DEVTOOL,
+    "profileRunners/languageCodeGuesserTableGenerator": DEVTOOL,
+    "profileRunners/moduleGraph": DEVTOOL,
+    "profileRunners/rosettaUpdater": DEVTOOL,
+    "profileRunners/translationUpdater": DEVTOOL,
+    "profileRunners/ircBot": DEVTOOL,
+    "profileRunners/gtkGui": ("low", "an alternative GTK interface OpenTeacher experimented with"),
+    "data/profileDescriptions/codeComplexity": DEVTOOL,
+    "data/profileDescriptions/codeDocumentation": DEVTOOL,
+    "data/profileDescriptions/generate": DEVTOOL,
+    "data/profileDescriptions/getTranslationAuthors": DEVTOOL,
+    "data/profileDescriptions/ircBot": DEVTOOL,
+    "data/profileDescriptions/moduleGraph": DEVTOOL,
+    "data/profileDescriptions/update": DEVTOOL,
+}
+
+# Areas whose job Recuerdo does another way: prefix -> (where, why).
+COVERED_AREAS = {
+    "profileRunners/packagers": ("packaging/, .github/workflows/release.yml", "Recuerdo is built by Go and "
+                                 "released by CI; the Arch package is a PKGBUILD"),
+    "data/profileDescriptions/package": ("packaging/, .github/workflows/release.yml", "the packaging profiles, "
+                                         "with the packagers"),
+}
 
 
 # Modules whose job Recuerdo does elsewhere (not in a module of their own),
@@ -354,12 +393,7 @@ DROPPED_REASONS = {
     "data/profileDescriptions/shell": "describes the Python shell profile, dropped with it",
     "misc/testUrllibMock": "a stand-in for Python's urllib in OpenTeacher's tests; Go tests use net/http/httptest",
     "interfaces/qt/mediaTypes/liveleak": "LiveLeak closed in 2021: its video links no longer work",
-    "logic/interfaces/typingTutorModel": "for now: OpenTeacher's touch typing course is a different kind of lesson "
-                                         "than Recuerdo's words, topography and media lessons",
-    "interfaces/qt/theme": "an optional dark style sheet nothing used; Recuerdo follows the desktop's Qt style (a dark theme could come back as a setting)",
     "interfaces/qt/hiddenBrowser": "a hidden web browser (an easter egg) nothing else used",
-    "interfaces/qt/typingTutor/main": "for now: the screen of OpenTeacher's touch typing course; see typingTutorModel",
-    "interfaces/qt/typingTutor/keyboard": "for now: the keyboard of the touch typing course; see typingTutorModel",
     "logic/safeHtmlChecker": "only OpenTeacher's web database (dropped) used it",
     "logic/translationIndex/builder": "OpenTeacher's translation tooling (building its translation index)",
     "logic/translationIndex/jsonWriter": "OpenTeacher's translation tooling",
@@ -368,19 +402,22 @@ DROPPED_REASONS = {
     "logic/sourceSaver": "Python source releases; Recuerdo's source is its Git repository",
     "logic/sourceWithSetupSaver": "Python source releases with setup.py; see sourceSaver",
     "logic/ocr/cuneiformRecognizer": "Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR",
-    "logic/spellChecker": "for now: it needs the Enchant spelling library; spell checking while entering words "
-                          "could come back with Hunspell",
-    "logic/translator": "for now: Recuerdo's interface is English only; OpenTeacher's translations (gettext) "
-                        "could be brought in later",
-    "logic/friendlyTranslationNames": "for now: names of interface translations; see translator",
     "data/profileDescriptions/selfstudy": "OpenTeacher's start-up profiles only chose which GUI modules to load "
                                           "for an audience; Recuerdo has one, smaller feature set",
     "data/profileDescriptions/studentAtHome": "as selfstudy: an audience profile",
     "data/profileDescriptions/studentAtSchool": "as selfstudy: an audience profile",
     "data/profileDescriptions/teacher": "as selfstudy: an audience profile",
-    "data/profileDescriptions/wordsOnly": "as selfstudy (\"just gimme my good old OpenTeacher 2.x\"); a setting "
-                                          "hiding topography and media lessons could do this later",
 }
+
+
+def prefixed(rel, table):
+    r = str(rel)
+    for p, v in table.items():
+        # as for DROPPED: a prefix of the path or of a name in it
+        # ("package" covers packageArch, "javaScript" javaScriptWords)
+        if r.startswith(p) or "/" + p in "/" + r:
+            return v
+    return None
 
 
 def dropped(rel):
@@ -396,8 +433,12 @@ def rows():
         central = central_format(rel)
         if (central or str(rel) in COVERED) and st["status"] in ("missing", "scaffold"):
             st["status"] = "covered"
+        if prefixed(rel, COVERED_AREAS):
+            st["status"] = "covered"
         if dropped(rel):
             st["status"] = "dropped"
+        if prefixed(rel, PLANNED):
+            st["status"] = "planned"
         name = rel.parts[-1]
         if name.endswith("Test") or name in ("test", "testRunner", "testserver", "testServer", "testSuite") \
                 or "testserver" in rel.parts:
