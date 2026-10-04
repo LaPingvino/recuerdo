@@ -68,10 +68,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 8 | 15 |  | 66 | 26 |  | 26 | 39 | 180 |
+| logic | 8 | 15 |  | 69 | 12 |  | 37 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **13** | **18** | **7** | **77** | **88** | **2** | **82** | **67** | **354** |
+| **all** | **13** | **18** | **7** | **80** | **74** | **2** | **93** | **67** | **354** |
 
 Remarks:
 
@@ -192,7 +192,10 @@ file formats, see **covered** above):
 | `logic/htmlGenerator/media` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/topo` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/words` | `internal/lesson` | FileSaver's HTML export (also the source of PDF/ODT) |
+| `logic/languageCodeGuesser` | `internal/langcode` | Guess and Name map language names and ISO 639-1 codes (CLDR names via golang.org/x/text instead of Babel's tables) |
 | `logic/modules` | `internal/core` | Recuerdo's module manager (registration, types, default modules) |
+| `logic/ocr/tesseractRecognizer` | `internal/ocr` | runs tesseract for hOCR |
+| `logic/ocr/wordListLoader` | `internal/ocr` | LoadWordList: hOCR lines to rows and columns to word pairs |
 | `logic/odtsaver` | `internal/modules/interfaces/qt/export` | ODT is written by Qt from the HTML export |
 | `logic/otxxloader` | `internal/lesson` | FileLoader reads .otwd/.ottp/.otmd zips (list.json and resources) |
 | `logic/otxxsaver` | `internal/lesson` | FileSaver writes .otwd/.ottp/.otmd zips |
@@ -214,6 +217,17 @@ generator tooling, test mode, web services; see **dropped** above):
 | `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
 | `data/profileDescriptions/wordsOnly` | as selfstudy ("just gimme my good old OpenTeacher 2.x"); a setting hiding topography and media lessons could do this later |
+| `logic/friendlyTranslationNames` | for now: names of interface translations; see translator |
+| `logic/ocr/cuneiformRecognizer` | Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR |
+| `logic/pyinstallerInterface` | Python packaging; Recuerdo is built by Go and released by CI |
+| `logic/safeHtmlChecker` | only OpenTeacher's web database (dropped) used it |
+| `logic/sourceSaver` | Python source releases; Recuerdo's source is its Git repository |
+| `logic/sourceWithSetupSaver` | Python source releases with setup.py; see sourceSaver |
+| `logic/spellChecker` | for now: it needs the Enchant spelling library; spell checking while entering words could come back with Hunspell |
+| `logic/translationIndex/builder` | OpenTeacher's translation tooling (building its translation index) |
+| `logic/translationIndex/jsonWriter` | OpenTeacher's translation tooling |
+| `logic/translationIndex/merger` | OpenTeacher's translation tooling |
+| `logic/translator` | for now: Recuerdo's interface is English only; OpenTeacher's translations (gettext) could be brought in later |
 
 ## 5. Module table
 
@@ -368,7 +382,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/event` | event | 30 | 159 | 0 | 1 | working |
 | `logic/eventTest` | test | 86 | 56 | 18 | 0 | test suite |
 | `logic/execute` | execute | 115 | 108 | 3 | 1 | covered |
-| `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 38 | 4 | 0 | scaffold |
+| `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 0 | 0 | 0 | dropped |
 | `logic/friendlyTranslationNamesTest` | test | 33 | 42 | 11 | 0 | test suite |
 | `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | dropped |
 | `logic/htmlGenerator/media` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
@@ -400,7 +414,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/javaScript/translator` | jsTranslator | 15 | 0 | 0 | 0 | dropped |
 | `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 0 | 0 | 0 | dropped |
 | `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | dropped |
-| `logic/languageCodeGuesser` | languageCodeGuesser | 30 | 78 | 9 | 0 | scaffold |
+| `logic/languageCodeGuesser` | languageCodeGuesser | 30 | 0 | 0 | 0 | covered |
 | `logic/languageCodeGuesserTest` | test | 45 | 58 | 19 | 0 | test suite |
 | `logic/lessonTypes/allOnce` | lessonType | 108 | 54 | 0 | 0 | untested |
 | `logic/lessonTypes/interval` | lessonType | 181 | 102 | 0 | 0 | untested |
@@ -472,21 +486,21 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | dropped |
 | `logic/noteCalculators/percents` | noteCalculator | 55 | 13 | 0 | 0 | untested |
 | `logic/noteCalculators/test` | test | 444 | 0 | 0 | 0 | test suite |
-| `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 40 | 5 | 0 | scaffold |
-| `logic/ocr/tesseractRecognizer` | ocrRecognizer | 34 | 40 | 5 | 0 | scaffold |
-| `logic/ocr/wordListLoader` | ocrWordListLoader | 134 | 48 | 9 | 0 | scaffold |
+| `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 0 | 0 | 0 | dropped |
+| `logic/ocr/tesseractRecognizer` | ocrRecognizer | 34 | 0 | 0 | 0 | covered |
+| `logic/ocr/wordListLoader` | ocrWordListLoader | 134 | 0 | 0 | 0 | covered |
 | `logic/odtsaver` | odtSaver | 32 | 0 | 0 | 0 | covered |
 | `logic/otxxloader` | otxxLoader | 64 | 0 | 0 | 0 | covered |
 | `logic/otxxsaver` | otxxSaver | 40 | 0 | 0 | 0 | covered |
 | `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 0 | untested |
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
-| `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 44 | 7 | 0 | scaffold |
+| `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 0 | 0 | 0 | dropped |
 | `logic/recentlyOpened` | recentlyOpened | 90 | 42 | 6 | 0 | scaffold |
 | `logic/reversers/media` | reverser | 18 | 38 | 4 | 0 | scaffold |
 | `logic/reversers/mediaTest` | test | 44 | 38 | 9 | 0 | test suite |
 | `logic/reversers/words` | reverser | 19 | 28 | 0 | 1 | working |
 | `logic/reversers/wordsTest` | test | 55 | 40 | 10 | 0 | test suite |
-| `logic/safeHtmlChecker` | safeHtmlChecker | 28 | 38 | 4 | 0 | scaffold |
+| `logic/safeHtmlChecker` | safeHtmlChecker | 28 | 0 | 0 | 0 | dropped |
 | `logic/safeHtmlCheckerTest` | test | 81 | 72 | 26 | 0 | test suite |
 | `logic/saver` | saver | 56 | 0 | 0 | 0 | covered |
 | `logic/savers/csv_` | save | 71 | 0 | 0 | 0 | covered |
@@ -510,20 +524,20 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/savers/wrts` | save | 86 | 0 | 0 | 0 | covered |
 | `logic/settings` | settings | 106 | 264 | 0 | 1 | working |
 | `logic/settingsFilterer` | settingsFilterer | 47 | 0 | 0 | 0 | covered |
-| `logic/sourceSaver` | sourceSaver | 67 | 36 | 3 | 0 | scaffold |
-| `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 82 | 26 | 0 | scaffold |
-| `logic/spellChecker` | spellChecker | 56 | 38 | 4 | 0 | scaffold |
+| `logic/sourceSaver` | sourceSaver | 67 | 0 | 0 | 0 | dropped |
+| `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 0 | 0 | 0 | dropped |
+| `logic/spellChecker` | spellChecker | 56 | 0 | 0 | 0 | dropped |
 | `logic/spellCheckerTest` | test | 57 | 58 | 19 | 0 | test suite |
 | `logic/sylkSaver` | sylkSaver | 79 | 0 | 0 | 0 | covered |
 | `logic/testTypes/media` | testType | 58 | 217 | 0 | 0 | untested |
 | `logic/testTypes/topo` | testType | 57 | 228 | 0 | 0 | untested |
 | `logic/testTypes/words` | testType | 102 | 52 | 11 | 0 | scaffold |
-| `logic/translationIndex/builder` | translationIndexBuilder | 55 | 42 | 6 | 0 | scaffold |
-| `logic/translationIndex/jsonWriter` | translationIndexJSONWriter | 48 | 40 | 5 | 0 | scaffold |
-| `logic/translationIndex/merger` | translationIndexesMerger | 25 | 38 | 4 | 0 | scaffold |
-| `logic/translationIndex/mergerTest` | test | 54 | 44 | 12 | 0 | test suite |
+| `logic/translationIndex/builder` | translationIndexBuilder | 55 | 0 | 0 | 0 | dropped |
+| `logic/translationIndex/jsonWriter` | translationIndexJSONWriter | 48 | 0 | 0 | 0 | dropped |
+| `logic/translationIndex/merger` | translationIndexesMerger | 25 | 0 | 0 | 0 | dropped |
+| `logic/translationIndex/mergerTest` | test | 54 | 0 | 0 | 0 | test suite |
 | `logic/translationTest` | test | 58 | 40 | 10 | 0 | test suite |
-| `logic/translator` | translator | 89 | 37 | 3 | 0 | scaffold |
+| `logic/translator` | translator | 89 | 0 | 0 | 0 | dropped |
 | `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 0 | 0 | 0 | covered |
 | `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | dropped |
 | `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |

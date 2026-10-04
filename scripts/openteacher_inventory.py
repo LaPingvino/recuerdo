@@ -236,6 +236,10 @@ COVERED = {
     "logic/settingsFilterer": ("internal/modules/interfaces/qt/dialogs/settings", "the settings dialog lays its "
                                "settings out in fixed tabs instead of grouping them by category"),
     "logic/authors": ("internal/modules/data/openteacherAuthors", "the credits list in the About dialog"),
+    "logic/languageCodeGuesser": ("internal/langcode", "Guess and Name map language names and ISO 639-1 codes "
+                                  "(CLDR names via golang.org/x/text instead of Babel's tables)"),
+    "logic/ocr/tesseractRecognizer": ("internal/ocr", "runs tesseract for hOCR"),
+    "logic/ocr/wordListLoader": ("internal/ocr", "LoadWordList: hOCR lines to rows and columns to word pairs"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }
@@ -243,6 +247,19 @@ COVERED = {
 
 # Why the modules dropped one by one (beyond the areas in DROPPED) were.
 DROPPED_REASONS = {
+    "logic/safeHtmlChecker": "only OpenTeacher's web database (dropped) used it",
+    "logic/translationIndex/builder": "OpenTeacher's translation tooling (building its translation index)",
+    "logic/translationIndex/jsonWriter": "OpenTeacher's translation tooling",
+    "logic/translationIndex/merger": "OpenTeacher's translation tooling",
+    "logic/pyinstallerInterface": "Python packaging; Recuerdo is built by Go and released by CI",
+    "logic/sourceSaver": "Python source releases; Recuerdo's source is its Git repository",
+    "logic/sourceWithSetupSaver": "Python source releases with setup.py; see sourceSaver",
+    "logic/ocr/cuneiformRecognizer": "Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR",
+    "logic/spellChecker": "for now: it needs the Enchant spelling library; spell checking while entering words "
+                          "could come back with Hunspell",
+    "logic/translator": "for now: Recuerdo's interface is English only; OpenTeacher's translations (gettext) "
+                        "could be brought in later",
+    "logic/friendlyTranslationNames": "for now: names of interface translations; see translator",
     "data/profileDescriptions/selfstudy": "OpenTeacher's start-up profiles only chose which GUI modules to load "
                                           "for an audience; Recuerdo has one, smaller feature set",
     "data/profileDescriptions/studentAtHome": "as selfstudy: an audience profile",

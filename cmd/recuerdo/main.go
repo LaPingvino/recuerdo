@@ -75,14 +75,12 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
 
 	logicevent "github.com/LaPingvino/recuerdo/internal/modules/logic/event"
-	friendlytranslationnames "github.com/LaPingvino/recuerdo/internal/modules/logic/friendlyTranslationNames"
 
 	buttonregister "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/buttonRegister"
 	inputtypinglogic "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/inputTypingLogic"
 	lessontracker "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/lessonTracker"
 	typingtutormodel "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/typingTutorModel"
 	foreignknown "github.com/LaPingvino/recuerdo/internal/modules/logic/itemModifiers/foreignKnown"
-	languagecodeguesser "github.com/LaPingvino/recuerdo/internal/modules/logic/languageCodeGuesser"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/smart"
@@ -100,22 +98,15 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/french"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/german"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/percents"
-	cuneiformrecognizer "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/cuneiformRecognizer"
-	tesseractrecognizer "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/tesseractRecognizer"
-	wordlistloader "github.com/LaPingvino/recuerdo/internal/modules/logic/ocr/wordListLoader"
 	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
-	pyinstallerinterface "github.com/LaPingvino/recuerdo/internal/modules/logic/pyinstallerInterface"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
-	safehtmlchecker "github.com/LaPingvino/recuerdo/internal/modules/logic/safeHtmlChecker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/savers/png"
 
 	testtypesmedia "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/media"
 	testtypestopo "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/topo"
 	testtypeswords "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/words"
-
-	logictranslator "github.com/LaPingvino/recuerdo/internal/modules/logic/translator"
 	// Removed duplicate auto-converted modules - using manually implemented versions instead
 )
 
@@ -692,12 +683,6 @@ func registerAllModules(manager *core.Manager) error {
 	// 	return fmt.Errorf("failed to register main module: %w", err)
 	// }
 
-	// Register translator module
-	logictranslatorModule := logictranslator.NewTranslatorModule()
-	if err := manager.Register(logictranslatorModule); err != nil {
-		return fmt.Errorf("failed to register translator module: %w", err)
-	}
-
 	// Register datatypeicons module
 	datatypeiconsModule := datatypeicons.NewDataTypeIconsModule()
 	if err := manager.Register(datatypeiconsModule); err != nil {
@@ -749,12 +734,6 @@ func registerAllModules(manager *core.Manager) error {
 
 	fmt.Printf("  ✓ Registered execute module\n")
 
-	// Register friendlytranslationnames module
-	friendlytranslationnamesModule := friendlytranslationnames.NewFriendlyTranslationNamesModule()
-	if err := manager.Register(friendlytranslationnamesModule); err != nil {
-		return fmt.Errorf("failed to register friendlytranslationnames module: %w", err)
-	}
-
 	// Register media module - DISABLED (duplicate module name conflict)
 	// htmlgenmediaModule := testtypesmedia.NewMediaTestTypeModule()
 	// if err := manager.Register(htmlgenmediaModule); err != nil {
@@ -765,12 +744,6 @@ func registerAllModules(manager *core.Manager) error {
 	foreignknownModule := foreignknown.NewForeignKnownModule()
 	if err := manager.Register(foreignknownModule); err != nil {
 		return fmt.Errorf("failed to register foreignknown module: %w", err)
-	}
-
-	// Register languagecodeguesser module
-	languagecodeguesserModule := languagecodeguesser.NewLanguageCodeGuesserModule()
-	if err := manager.Register(languagecodeguesserModule); err != nil {
-		return fmt.Errorf("failed to register languagecodeguesser module: %w", err)
 	}
 
 	// Skip languagecodeguesserTables - merged into languagecodeguesser package
@@ -892,34 +865,10 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register percents module: %w", err)
 	}
 
-	// Register cuneiformrecognizer module
-	cuneiformrecognizerModule := cuneiformrecognizer.NewCuneiformOCRModule()
-	if err := manager.Register(cuneiformrecognizerModule); err != nil {
-		return fmt.Errorf("failed to register cuneiformrecognizer module: %w", err)
-	}
-
-	// Register tesseractrecognizer module
-	tesseractrecognizerModule := tesseractrecognizer.NewTesseractOCRModule()
-	if err := manager.Register(tesseractrecognizerModule); err != nil {
-		return fmt.Errorf("failed to register tesseractrecognizer module: %w", err)
-	}
-
-	// Register wordlistloader module
-	wordlistloaderModule := wordlistloader.NewOcrWordListLoaderModule()
-	if err := manager.Register(wordlistloaderModule); err != nil {
-		return fmt.Errorf("failed to register wordlistloader module: %w", err)
-	}
-
 	// Register percentscalculator module
 	percentscalculatorModule := percentscalculator.NewPercentsCalculatorModule()
 	if err := manager.Register(percentscalculatorModule); err != nil {
 		return fmt.Errorf("failed to register percentscalculator module: %w", err)
-	}
-
-	// Register pyinstallerinterface module
-	pyinstallerinterfaceModule := pyinstallerinterface.NewPyinstallerInterfaceModule()
-	if err := manager.Register(pyinstallerinterfaceModule); err != nil {
-		return fmt.Errorf("failed to register pyinstallerinterface module: %w", err)
 	}
 
 	// Register recentlyopened module
@@ -938,12 +887,6 @@ func registerAllModules(manager *core.Manager) error {
 	wordsModule := words.NewWordsReverserModule()
 	if err := manager.Register(wordsModule); err != nil {
 		return fmt.Errorf("failed to register words module: %w", err)
-	}
-
-	// Register safehtmlchecker module
-	safehtmlcheckerModule := safehtmlchecker.NewSafeHtmlCheckerModule()
-	if err := manager.Register(safehtmlcheckerModule); err != nil {
-		return fmt.Errorf("failed to register safehtmlchecker module: %w", err)
 	}
 
 	// Register png module
