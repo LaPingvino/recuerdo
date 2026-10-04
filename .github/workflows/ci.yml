@@ -31,7 +31,7 @@ jobs:
         run: |
           GOOS=js GOARCH=wasm go vet ./cmd/recuerdo-web ./internal/webapi
           ./scripts/build-web.sh "$RUNNER_TEMP/web"
-          node scripts/test-web.mjs "$RUNNER_TEMP/web/recuerdo.wasm" "$RUNNER_TEMP/web/wasm_exec.js"
+          node scripts/web-smoke-test.mjs "$RUNNER_TEMP/web/recuerdo.wasm" "$RUNNER_TEMP/web/wasm_exec.js"
 
   macos:
     name: Test (macOS)
