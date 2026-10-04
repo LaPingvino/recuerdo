@@ -1,78 +1,63 @@
-// Package recentlyopened provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package recentlyopened keeps the list of recently opened lessons for
+// File > Open Recent, in the settings. Port of OpenTeacher's
+// logic/recentlyOpened (which kept it in its data store).
 package recentlyopened
 
 import (
-	"context"
-	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/core"
 )
 
-// RecentlyOpenedModule is a Go port of the Python RecentlyOpenedModule class
+// SettingKey is the setting with the list, newest first.
+const SettingKey = "org.openteacher.recentlyOpened"
+
+// Max is how many files the list keeps.
+const Max = 10
+
+// Settings is what the list needs from the settings module.
+type Settings interface {
+	GetSettingWithDefault(key string, defaultValue interface{}) interface{}
+	SetSetting(key string, value interface{}) error
+}
+
+// List returns the recently opened files, newest first.
+func List(s Settings) []string {
+	var out []string
+	switch v := s.GetSettingWithDefault(SettingKey, nil).(type) {
+	case []string:
+		out = append(out, v...)
+	case []interface{}: // as read back from the JSON settings file
+		for _, p := range v {
+			if str, ok := p.(string); ok && str != "" {
+				out = append(out, str)
+			}
+		}
+	}
+	return out
+}
+
+// Add puts path at the top of the list (once), keeping at most Max.
+func Add(s Settings, path string) {
+	list := []string{path}
+	for _, p := range List(s) {
+		if p != path && len(list) < Max {
+			list = append(list, p)
+		}
+	}
+	s.SetSetting(SettingKey, list)
+}
+
+// Clear empties the list.
+func Clear(s Settings) { s.SetSetting(SettingKey, []string{}) }
+
+// RecentlyOpenedModule is OpenTeacher's "recentlyOpened" module.
 type RecentlyOpenedModule struct {
 	*core.BaseModule
-	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewRecentlyOpenedModule creates a new RecentlyOpenedModule instance
+// NewRecentlyOpenedModule creates the module.
 func NewRecentlyOpenedModule() *RecentlyOpenedModule {
-	base := core.NewBaseModule("logic", "recentlyopened-module")
-
-	return &RecentlyOpenedModule{
-		BaseModule: base,
-	}
+	return &RecentlyOpenedModule{BaseModule: core.NewBaseModule("recentlyOpened", "recentlyopened-module")}
 }
 
-// Add is the Go port of the Python add method
-func (mod *RecentlyOpenedModule) Add() {
-	// TODO: Port Python method logic
-}
-
-// Getrecentlyopened is the Go port of the Python getRecentlyOpened method
-func (mod *RecentlyOpenedModule) Getrecentlyopened() {
-	// TODO: Port Python method logic
-}
-
-// retranslate is the Go port of the Python _retranslate method
-func (mod *RecentlyOpenedModule) retranslate() {
-	// TODO: Port Python method logic
-}
-
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *RecentlyOpenedModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python enable logic
-
-	fmt.Println("RecentlyOpenedModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
-func (mod *RecentlyOpenedModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("RecentlyOpenedModule disabled")
-	return nil
-}
-
-// SetManager sets the module manager
-func (mod *RecentlyOpenedModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
-
-// InitRecentlyOpenedModule creates and returns a new RecentlyOpenedModule instance
-// This is the Go equivalent of the Python init function
-func InitRecentlyOpenedModule() core.Module {
-	return NewRecentlyOpenedModule()
-}
+// InitRecentlyOpenedModule creates the module.
+func InitRecentlyOpenedModule() core.Module { return NewRecentlyOpenedModule() }

@@ -68,10 +68,10 @@ uses it.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
 | interfaces | 2 | 3 | 7 |  | 54 | 2 | 12 | 14 | 94 |
-| logic | 10 | 15 |  | 69 | 10 |  | 37 | 39 | 180 |
+| logic | 11 | 15 |  | 72 | 6 |  | 37 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **15** | **18** | **7** | **80** | **72** | **2** | **93** | **67** | **354** |
+| **all** | **16** | **18** | **7** | **83** | **68** | **2** | **93** | **67** | **354** |
 
 Remarks:
 
@@ -192,7 +192,9 @@ file formats, see **covered** above):
 | `logic/htmlGenerator/media` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/topo` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/words` | `internal/lesson` | FileSaver's HTML export (also the source of PDF/ODT) |
+| `logic/itemModifiers/foreignKnown` | `internal/teaching` | the Teach tab's "Ask the answers" (Options.AskAnswers) swaps questions and answers |
 | `logic/languageCodeGuesser` | `internal/langcode` | Guess and Name map language names and ISO 639-1 codes (CLDR names via golang.org/x/text instead of Babel's tables) |
+| `logic/mergers/words` | `internal/lesson` | Merge, used by File > Merge Lesson |
 | `logic/modules` | `internal/core` | Recuerdo's module manager (registration, types, default modules) |
 | `logic/ocr/tesseractRecognizer` | `internal/ocr` | runs tesseract for hOCR |
 | `logic/ocr/wordListLoader` | `internal/ocr` | LoadWordList: hOCR lines to rows and columns to word pairs |
@@ -201,6 +203,7 @@ file formats, see **covered** above):
 | `logic/otxxsaver` | `internal/lesson` | FileSaver writes .otwd/.ottp/.otmd zips |
 | `logic/settingsFilterer` | `internal/modules/interfaces/qt/dialogs/settings` | the settings dialog lays its settings out in fixed tabs instead of grouping them by category |
 | `logic/sylkSaver` | `internal/lesson` | FileSaver.saveSYLKFile |
+| `logic/testTypes/words` | `internal/teaching` | Report.MostDoneWrong, the "word most done wrong" fact in the results dialog |
 | `logic/userDocumentationWrapper` | `internal/modules/interfaces/qt/gui` | Help > Getting Started shows the guide |
 | `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
 | `logic/wordListString/parser` | `internal/lesson` | ParseWordList ("q = a" / tab lines with \= escapes) |
@@ -300,7 +303,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 122 | 7 | 0 | scaffold |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 862 | 8 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 963 | 8 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 85 | 6 | 0 | scaffold |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | missing |
@@ -397,7 +400,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/interfaces/lessonTracker` | lessonTracker | 55 | 44 | 7 | 0 | scaffold |
 | `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 40 | 5 | 0 | scaffold |
 | `logic/interfaces/typingTutorModelTest` | test | 119 | 82 | 31 | 0 | test suite |
-| `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 38 | 4 | 0 | scaffold |
+| `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 0 | 0 | 0 | covered |
 | `logic/itemModifiers/test` | test | 26 | 0 | 0 | 0 | test suite |
 | `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | dropped |
 | `logic/javaScript/bisectTest` | test | 37 | 0 | 0 | 0 | test suite |
@@ -464,7 +467,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/loaders/vokabelTrainer` | load | 75 | 0 | 0 | 0 | covered |
 | `logic/loaders/vtrainTxt` | load | 89 | 0 | 0 | 0 | covered |
 | `logic/loaders/wrts` | load | 90 | 0 | 0 | 0 | covered |
-| `logic/mergers/words` | merger | 21 | 38 | 4 | 0 | scaffold |
+| `logic/mergers/words` | merger | 21 | 0 | 0 | 0 | covered |
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
 | `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 64 | 0 | 1 | working |
 | `logic/mimicryTypefaceConverterTest` | test | 30 | 44 | 12 | 0 | test suite |
@@ -495,7 +498,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 0 | untested |
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
 | `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 0 | 0 | 0 | dropped |
-| `logic/recentlyOpened` | recentlyOpened | 90 | 42 | 6 | 0 | scaffold |
+| `logic/recentlyOpened` | recentlyOpened | 90 | 41 | 0 | 1 | working |
 | `logic/reversers/media` | reverser | 18 | 38 | 4 | 0 | scaffold |
 | `logic/reversers/mediaTest` | test | 44 | 38 | 9 | 0 | test suite |
 | `logic/reversers/words` | reverser | 19 | 28 | 0 | 1 | working |
@@ -531,7 +534,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/sylkSaver` | sylkSaver | 79 | 0 | 0 | 0 | covered |
 | `logic/testTypes/media` | testType | 58 | 217 | 0 | 0 | untested |
 | `logic/testTypes/topo` | testType | 57 | 228 | 0 | 0 | untested |
-| `logic/testTypes/words` | testType | 102 | 52 | 11 | 0 | scaffold |
+| `logic/testTypes/words` | testType | 102 | 0 | 0 | 0 | covered |
 | `logic/translationIndex/builder` | translationIndexBuilder | 55 | 0 | 0 | 0 | dropped |
 | `logic/translationIndex/jsonWriter` | translationIndexJSONWriter | 48 | 0 | 0 | 0 | dropped |
 | `logic/translationIndex/merger` | translationIndexesMerger | 25 | 0 | 0 | 0 | dropped |

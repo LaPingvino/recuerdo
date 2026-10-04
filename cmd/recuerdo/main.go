@@ -80,7 +80,6 @@ import (
 	inputtypinglogic "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/inputTypingLogic"
 	lessontracker "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/lessonTracker"
 	typingtutormodel "github.com/LaPingvino/recuerdo/internal/modules/logic/interfaces/typingTutorModel"
-	foreignknown "github.com/LaPingvino/recuerdo/internal/modules/logic/itemModifiers/foreignKnown"
 	allonce "github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/allOnce"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/interval"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/lessonTypes/smart"
@@ -89,7 +88,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/reverse"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/sort"
 	wordsneveransweredcorrectly "github.com/LaPingvino/recuerdo/internal/modules/logic/listModifiers/wordsNeverAnsweredCorrectly"
-	mergerwords "github.com/LaPingvino/recuerdo/internal/modules/logic/mergers/words"
 	mimicrytypefaceconverter "github.com/LaPingvino/recuerdo/internal/modules/logic/mimicryTypefaceConverter"
 	notecalculatorchooser "github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculatorChooser"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/noteCalculators/american"
@@ -106,7 +104,6 @@ import (
 
 	testtypesmedia "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/media"
 	testtypestopo "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/topo"
-	testtypeswords "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/words"
 	// Removed duplicate auto-converted modules - using manually implemented versions instead
 )
 
@@ -413,12 +410,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register topo module: %w", err)
 	}
 
-	// Register words module
-	teachwordsModule := testtypeswords.NewWordsTestTypeModule()
-	if err := manager.Register(teachwordsModule); err != nil {
-		return fmt.Errorf("failed to register words module: %w", err)
-	}
-
 	// Register loadergui module
 	loaderguiModule := loadergui.NewLoaderGuiModule()
 	if err := manager.Register(loaderguiModule); err != nil {
@@ -507,12 +498,6 @@ func registerAllModules(manager *core.Manager) error {
 	// printtopoModule := testtypestopo.NewTopoTestTypeModule()
 	// if err := manager.Register(printtopoModule); err != nil {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
-	// }
-
-	// Register words module - DISABLED (duplicate module name conflict)
-	// printwordsModule := testtypeswords.NewWordsTestTypeModule()
-	// if err := manager.Register(printwordsModule); err != nil {
-	//	return fmt.Errorf("failed to register words module: %w", err)
 	// }
 
 	// Register printer module
@@ -653,12 +638,6 @@ func registerAllModules(manager *core.Manager) error {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
 
-	// Register words module - DISABLED (duplicate module name conflict)
-	// teacherwordsModule := testtypeswords.NewWordsTestTypeModule()
-	// if err := manager.Register(teacherwordsModule); err != nil {
-	//	return fmt.Errorf("failed to register words module: %w", err)
-	// }
-
 	// Register theme module
 	themeModule := theme.NewThemeModule()
 	if err := manager.Register(themeModule); err != nil {
@@ -740,12 +719,6 @@ func registerAllModules(manager *core.Manager) error {
 	//	return fmt.Errorf("failed to register media module: %w", err)
 	// }
 
-	// Register foreignknown module
-	foreignknownModule := foreignknown.NewForeignKnownModule()
-	if err := manager.Register(foreignknownModule); err != nil {
-		return fmt.Errorf("failed to register foreignknown module: %w", err)
-	}
-
 	// Skip languagecodeguesserTables - merged into languagecodeguesser package
 	// languagecodeguessertablesModule := languagecodeguesserTables.NewLanguagecodeguessertablesModule()
 	// if err := manager.Register(languagecodeguessertablesModule); err != nil {
@@ -798,12 +771,6 @@ func registerAllModules(manager *core.Manager) error {
 	wordsneveransweredcorrectlyModule := wordsneveransweredcorrectly.NewWordsNeverAnsweredCorrectlyModule()
 	if err := manager.Register(wordsneveransweredcorrectlyModule); err != nil {
 		return fmt.Errorf("failed to register wordsneveransweredcorrectly module: %w", err)
-	}
-
-	// Register words module
-	mergerwordsModule := mergerwords.NewWordsMergerModule()
-	if err := manager.Register(mergerwordsModule); err != nil {
-		return fmt.Errorf("failed to register words module: %w", err)
 	}
 
 	// Register mimicrytypefaceconverter module
@@ -936,11 +903,6 @@ func registerAllModules(manager *core.Manager) error {
 	// testtypestopoModule := testtypestopo.NewTopoTestTypeModule()
 	// if err := manager.Register(testtypestopoModule); err != nil {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
-	// }
-
-	// testtypeswordsModule := testtypeswords.NewWordsTestTypeModule()
-	// if err := manager.Register(testtypeswordsModule); err != nil {
-	//	return fmt.Errorf("failed to register words module: %w", err)
 	// }
 
 	// Temporarily disable remaining modules that are causing conflicts

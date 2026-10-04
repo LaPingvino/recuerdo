@@ -240,6 +240,11 @@ COVERED = {
                                   "(CLDR names via golang.org/x/text instead of Babel's tables)"),
     "logic/ocr/tesseractRecognizer": ("internal/ocr", "runs tesseract for hOCR"),
     "logic/ocr/wordListLoader": ("internal/ocr", "LoadWordList: hOCR lines to rows and columns to word pairs"),
+    "logic/itemModifiers/foreignKnown": ("internal/teaching", "the Teach tab's \"Ask the answers\" (Options.AskAnswers) "
+                                         "swaps questions and answers"),
+    "logic/mergers/words": ("internal/lesson", "Merge, used by File > Merge Lesson"),
+    "logic/testTypes/words": ("internal/teaching", "Report.MostDoneWrong, the \"word most done wrong\" fact in the "
+                              "results dialog"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

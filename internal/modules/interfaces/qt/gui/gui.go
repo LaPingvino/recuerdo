@@ -11,6 +11,7 @@ package gui
 import (
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
+	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 	"unsafe"
 
 	"context"
@@ -18,6 +19,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/export"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/icon"
 	"log"
+	"os"
 	"path/filepath"
 	"strings"
 
@@ -49,6 +51,8 @@ type GuiModule struct {
 	saveAction, saveAsAction *qt.QAction
 	// tabLessons is the lesson shown in each lesson tab, by tab widget
 	tabLessons map[unsafe.Pointer]*lesson.Lesson
+	// tabWords is the word lesson widget of each word lesson tab
+	tabWords map[unsafe.Pointer]*words.WordsLessonWidget
 }
 
 // NewGuiModule creates a new GuiModule instance
@@ -243,6 +247,13 @@ func (mod *GuiModule) createMenuBar() {
 		mod.logger.Event("Open Lesson menu action triggered")
 		mod.showOpenDialogFrom("MENU")
 	})
+
+	recentMenu := fileMenu.AddMenuWithTitle("Open &Recent")
+	recentMenu.OnAboutToShow(func() { mod.fillRecentMenu(recentMenu) })
+
+	mergeAction := fileMenu.AddAction("&Merge Lesson...")
+	mergeAction.SetToolTip("Add the words and results of another lesson to this one")
+	mergeAction.OnTriggered(mod.mergeIntoCurrentLesson)
 
 	fileMenu.AddSeparator()
 
@@ -544,6 +555,7 @@ func (mod *GuiModule) loadSelectedFile(fileName string) {
 
 	// Create lesson tab and display in main window
 	mod.displayLessonInTab(newLesson)
+	mod.rememberRecent(fileName)
 }
 
 // CreateLessonFromDialogData creates a new lesson from dialog data
@@ -681,6 +693,10 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 		}
 		lessonWidget = wordsWidget.QWidget
 		mod.lastWords = wordsWidget
+		if mod.tabWords == nil {
+			mod.tabWords = map[unsafe.Pointer]*words.WordsLessonWidget{}
+		}
+		mod.tabWords[wordsWidget.QWidget.UnsafePointer()] = wordsWidget
 	}
 
 	// TODO: Connect lesson change signal to update window title and status
@@ -906,7 +922,13 @@ func (mod *GuiModule) SaveCurrentLessonTo(path string) error {
 	if err := export.Save(&l.Data, path); err != nil {
 		return err
 	}
+	if !readable(path) {
+		// an export (PDF, Word, ...): the lesson keeps its own file
+		mod.statusBar.ShowMessage("Exported " + path)
+		return nil
+	}
 	l.Path = path
+	mod.rememberRecent(path)
 	title := l.Data.List.Title
 	if title == "" {
 		title = filepath.Base(path)
@@ -956,4 +978,99 @@ func (mod *GuiModule) gettingStartedDialog() (*qt.QDialog, error) {
 	buttons.OnRejected(func() { dialog.Close() })
 	layout.AddWidget(buttons.QWidget)
 	return dialog, nil
+}
+
+// settings is the settings module, for the recently opened list.
+func (mod *GuiModule) settings() recentlyopened.Settings {
+	m, ok := mod.manager.GetDefaultModule("settings")
+	if !ok {
+		return nil
+	}
+	s, _ := m.(recentlyopened.Settings)
+	return s
+}
+
+// rememberRecent puts path at the top of File > Open Recent.
+func (mod *GuiModule) rememberRecent(path string) {
+	if s := mod.settings(); s != nil {
+		if abs, err := filepath.Abs(path); err == nil {
+			path = abs
+		}
+		recentlyopened.Add(s, path)
+	}
+}
+
+// fillRecentMenu lists the recently opened lessons that still exist.
+func (mod *GuiModule) fillRecentMenu(menu *qt.QMenu) {
+	menu.Clear()
+	s := mod.settings()
+	var paths []string
+	if s != nil {
+		for _, p := range recentlyopened.List(s) {
+			if _, err := os.Stat(p); err == nil {
+				paths = append(paths, p)
+			}
+		}
+	}
+	if len(paths) == 0 {
+		menu.AddAction("No recent lessons").SetEnabled(false)
+		return
+	}
+	for i, p := range paths {
+		path := p
+		label := filepath.Base(p)
+		if i < 9 {
+			label = fmt.Sprintf("&%d  %s", i+1, label)
+		}
+		a := menu.AddAction(label)
+		a.SetToolTip(p)
+		a.OnTriggered(func() { mod.loadSelectedFile(path) })
+	}
+	menu.AddSeparator()
+	menu.AddAction("Clear List").OnTriggered(func() { recentlyopened.Clear(s) })
+}
+
+// mergeIntoCurrentLesson adds the words and results of a lesson the user
+// chooses to the current word lesson (File > Merge Lesson).
+func (mod *GuiModule) mergeIntoCurrentLesson() {
+	l, tab := mod.currentLesson()
+	if l == nil || l.DataType == "topo" || l.DataType == "media" {
+		qt.QMessageBox_Information(mod.mainWindow.QWidget, "Merge Lesson", "Open a word lesson to merge another one into.")
+		return
+	}
+	fd, ok := mod.manager.GetDefaultModule("fileDialog")
+	chooser, ok2 := fd.(interface {
+		OpenFile(parent interface{}, title, filter string) string
+	})
+	if !ok || !ok2 {
+		return
+	}
+	path := chooser.OpenFile(mod.mainWindow.QWidget, "Merge Lesson", "")
+	if path == "" {
+		return
+	}
+	other, err := lesson.NewFileLoader().LoadFile(path)
+	if err != nil {
+		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Merge Lesson", "Could not open "+filepath.Base(path)+":\n"+err.Error())
+		return
+	}
+	lesson.Merge(&l.Data.List, other.List)
+	widget := mod.tabWidget.Widget(tab)
+	if w := mod.tabWords[widget.UnsafePointer()]; w != nil {
+		w.UpdateLesson(l)
+	}
+	mod.markModified(widget)
+	mod.statusBar.ShowMessage(fmt.Sprintf("Merged %d words from %s", len(other.List.Items), filepath.Base(path)))
+}
+
+// readable reports whether Recuerdo can open files like path again, so it
+// can become the lesson's file (a PDF, say, is only an export).
+func readable(path string) bool {
+	ext := strings.ToLower(filepath.Ext(path))
+	for _, e := range lesson.NewFileLoader().GetSupportedExtensions() {
+		if e == ext {
+			return true
+		}
+	}
+	return false
 }
