@@ -1,0 +1,76 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&About"
+
+msgid "&Documentation"
+msgstr "&Documentation"
+
+msgid "&Edit"
+msgstr "&Edit"
+
+msgid "&File"
+msgstr "&File"
+
+msgid "&Help"
+msgstr "&Help"
+
+msgid "&New"
+msgstr "&New"
+
+msgid "&Open"
+msgstr "&Open"
+
+msgid "&Print"
+msgstr "&Print"
+
+msgid "&Quit"
+msgstr "&Quit"
+
+msgid "&Save"
+msgstr "&Save"
+
+msgid "&Settings"
+msgstr "&Settings"
+
+msgid "Create lesson:"
+msgstr "Create lesson:"
+
+msgid "Enter list"
+msgstr "Enter list"
+
+msgid "I speak English"
+msgstr "I speak English"
+
+msgid "Load from the internet"
+msgstr "Load from the internet"
+
+msgid "Load lesson:"
+msgstr "Load lesson:"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher authors"
+
+msgid "Recently opened:"
+msgstr "Recently opened:"
+
+msgid "Save &As"
+msgstr "Save &As"
+
+msgid "Teach me!"
+msgstr "Teach me!"
+
+msgid "Toolbar"
+msgstr "Toolbar"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+

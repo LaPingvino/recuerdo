@@ -1,0 +1,91 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Pri"
+
+msgid "&Documentation"
+msgstr "&Dokumentado"
+
+msgid "&Edit"
+msgstr "R&edakti"
+
+msgid "&File"
+msgstr "&Dosiero"
+
+msgid "&Help"
+msgstr "&Helpo"
+
+msgid "&New"
+msgstr "&Nova"
+
+msgid "&Open"
+msgstr "&Malfermi"
+
+msgid "&Print"
+msgstr "&Presi"
+
+msgid "&Quit"
+msgstr "&Eliri"
+
+msgid "&Save"
+msgstr "Kon&servi"
+
+msgid "&Settings"
+msgstr "&Agordoj"
+
+msgid "Answer language:"
+msgstr "Lingvo de respondo:"
+
+msgid "Answers"
+msgstr "Respondoj"
+
+msgid "Comment"
+msgstr "Komento"
+
+msgid "Create words lesson"
+msgstr "Krei lecionon de vortoj"
+
+msgid "Empty question or answer"
+msgstr "Malplena demando aŭ respondo"
+
+msgid "Enter list"
+msgstr "Enigi liston"
+
+msgid "Open from file"
+msgstr "Mafermi el dosiero"
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Bonvole enmetu almenaŭ unu demandon kaj unu respondon po vorto."
+
+msgid "Question language:"
+msgstr "Lingvo de demando:"
+
+msgid "Questions"
+msgstr "Demandoj"
+
+msgid "Remove selected row(s)"
+msgstr "Forigi elektita(j)n vico(j)n"
+
+msgid "Save &As"
+msgstr "Konservi &kiel"
+
+msgid "Show results"
+msgstr "Montri rezultojn"
+
+msgid "Teach me!"
+msgstr "Lernu al mi!"
+
+msgid "Title:"
+msgstr "Titolo:"
+
+msgid "Toolbar"
+msgstr "Ilobreto"
+
+msgid "Unnamed"
+msgstr "Sennoma"
+
+msgid "Word lesson: %s"
+msgstr "Leciono de vortoj: %s"
+

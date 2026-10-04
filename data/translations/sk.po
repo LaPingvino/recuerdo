@@ -1,0 +1,193 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&O programe"
+
+msgid "&Documentation"
+msgstr "&Dokumentácia"
+
+msgid "&Edit"
+msgstr "&Upraviť"
+
+msgid "&File"
+msgstr "&Súbor"
+
+msgid "&Help"
+msgstr "&Nápoveda"
+
+msgid "&New"
+msgstr "&Nový"
+
+msgid "&Open"
+msgstr "&Otvoriť"
+
+msgid "&Print"
+msgstr "&Tlač"
+
+msgid "&Quit"
+msgstr "&Zavrieť"
+
+msgid "&Save"
+msgstr "&Uložiť"
+
+msgid "&Settings"
+msgstr "&Nastavenia"
+
+msgid "About"
+msgstr "O programe"
+
+msgid "Advanced mode"
+msgstr "Pokročilý mód"
+
+msgid "All once"
+msgstr "Všetky jedenkrát"
+
+msgid "Answer language:"
+msgstr "Odpovede v jazyku:"
+
+msgid "Answers"
+msgstr "Odpovede"
+
+msgid "Authors"
+msgstr "Autori"
+
+msgid "Change lesson settings"
+msgstr "Zmeniť nastavenia lekcie"
+
+msgid "Check!"
+msgstr "Skontroluj!"
+
+msgid "Click the button to start"
+msgstr "Klikni na tlačítko pre spustenie"
+
+msgid "Comment"
+msgstr "Komentár"
+
+msgid "Correct anyway"
+msgstr "Opraviť hocijako"
+
+msgid "Create lesson:"
+msgstr "Vytvor lekciu"
+
+msgid "Create media lesson"
+msgstr "Vytvoriť súbor lekcie"
+
+msgid "Create topography lesson"
+msgstr "Vytvoriť topografickú lekciu"
+
+msgid "Create words lesson"
+msgstr "Vytvoriť slová lekcie"
+
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+msgid "Enter list"
+msgstr "Vstúp do zoznamu"
+
+msgid "Full license text"
+msgstr "Text celej licencie"
+
+msgid "Hint:"
+msgstr "Rada:"
+
+msgid "I was right"
+msgstr "Mal som pravdu"
+
+msgid "I was wrong"
+msgstr "Mýlil som sa"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Som pripravený, začni lekciu!"
+
+msgid "Lesson settings"
+msgstr "Nastavenia lekcie"
+
+msgid "Lesson type"
+msgstr "Typ lekcie"
+
+msgid "License"
+msgstr "Licencia"
+
+msgid "Load lesson:"
+msgstr "Načítaj lekciu"
+
+msgid "Only words you never answered correctly"
+msgstr "Iba slová ktoré ste nezodpovedali správne"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "Project website"
+msgstr "Stránka projektu"
+
+msgid "Question language:"
+msgstr "Otázky v jazyku:"
+
+msgid "Questions"
+msgstr "Otázka"
+
+msgid "Random"
+msgstr "Náhodne"
+
+msgid "Recently opened:"
+msgstr "Nedávno otvorené"
+
+msgid "Remove selected row(s)"
+msgstr "Odstrániť označené riadky"
+
+msgid "Reverse"
+msgstr "Obrátene"
+
+msgid "Save &As"
+msgstr "Uložiť &ako"
+
+msgid "Settings"
+msgstr "Nastavenia"
+
+msgid "Simple mode"
+msgstr "Jednoduchý mód"
+
+msgid "Smart"
+msgstr "Inteligentné"
+
+msgid "Sort"
+msgstr "Triediť"
+
+msgid "Start!"
+msgstr "Štart!"
+
+msgid "Teach me!"
+msgstr "Nauč ma!"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Vďaka všetkým prispievateľom do Launchpadu"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Premysli si odpoveď a keď si hotový stlač tlačítko \"Pozrieť odpoveď\"."
+
+msgid "Title:"
+msgstr "Názov:"
+
+msgid "Toolbar"
+msgstr "Panel nástrojov"
+
+msgid "Translation: "
+msgstr "Preklad: "
+
+msgid "Untitled word list"
+msgstr "Zoznam slov bez názvu"
+
+msgid "View answer"
+msgstr "Pozrieť odpoveď"
+
+msgid "Word:"
+msgstr "Slovo:"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+

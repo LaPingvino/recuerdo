@@ -1,0 +1,760 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "O &aplikaci"
+
+msgid "&Documentation"
+msgstr "&Dokumentace"
+
+msgid "&Edit"
+msgstr "&Editovat"
+
+msgid "&File"
+msgstr "S&oubor"
+
+msgid "&Help"
+msgstr "Ná&pověda"
+
+msgid "&New"
+msgstr "&Nový"
+
+msgid "&Open"
+msgstr "&Otevřít"
+
+msgid "&Print"
+msgstr "Tisk"
+
+msgid "&Quit"
+msgstr "Ukončit"
+
+msgid "&Save"
+msgstr "&Uložit:"
+
+msgid "&Settings"
+msgstr "Na&stavení"
+
+msgid "(Handed in)"
+msgstr "(Odevzdáno)"
+
+msgid "(Re)check answers"
+msgstr "Zkontrolovat odpovědi"
+
+msgid "(Re)publish answers"
+msgstr "Zveřejnit odpovědi"
+
+msgid "(did not participate)"
+msgstr "(nezúčastnil se)"
+
+msgid "-"
+msgstr "-"
+
+msgid "About"
+msgstr "O programu"
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Přidejte místo poklikáním na mapu"
+
+msgid "Add a place by name:"
+msgstr "Přidat místo podle jména:"
+
+msgid "Add lesson"
+msgstr "Vložit lekci"
+
+msgid "Add person"
+msgstr "Přidat osobu"
+
+msgid "Add person/group"
+msgstr "Přidat osobu/skupinu"
+
+msgid "Advanced mode"
+msgstr "Pokročilý režim"
+
+msgid "All features useful for teachers"
+msgstr "Všechny funkce praktické pro učitele"
+
+msgid "All once"
+msgstr "Vše najednou"
+
+msgid "American"
+msgstr "Americké"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Množství nedávno otevřených souborů k pamatování"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Objevila se chyba. Server nenalezen. Zkontrolujte vaše připojení."
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Answer"
+msgstr "Odpověď"
+
+msgid "Answer language:"
+msgstr "Jazyk odpovědí:"
+
+msgid "Answer:"
+msgstr "Odpověď:"
+
+msgid "Answering"
+msgstr "Odpovídám"
+
+msgid "Answers"
+msgstr "Odpovědi"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "Odpovědi tohoto studenta nebyly dosud zkontrolovány. Klikněte na tlačítko \"Zkontrolovat odpovědi\" v druhém sloupci."
+
+msgid "Answers right:"
+msgstr "Správné odpovědi:"
+
+msgid "Answers wrong:"
+msgstr "Špatné odpovědi:"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Opravdu se chcete vrátit na vstupní list? Toto ukončí vaši lekci!"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Jste si jisti, že chcete použít jinou mapu? Všechna vaše místa budou tímto smazána!"
+
+msgid "Artwork"
+msgstr "Grafika"
+
+msgid "Authors"
+msgstr "Autoři"
+
+msgid "Average note:"
+msgstr "Průměrná známka:"
+
+msgid "Back"
+msgstr "Zpět"
+
+msgid "Can't show the result"
+msgstr "Nelze zobrazit výsledek"
+
+msgid "Change lesson settings"
+msgstr "Změnit nastavení lekce"
+
+msgid "Chat channel spammer"
+msgstr "Chat channel spammer"
+
+msgid "Check"
+msgstr "Zkontrolovat"
+
+msgid "Check!"
+msgstr "Ověř!"
+
+msgid "Choose test"
+msgstr "Vyberte si test"
+
+msgid "Click the button to start"
+msgstr "Klikněte pro spuštění"
+
+msgid "Comment"
+msgstr "Poznámka"
+
+msgid "Completed"
+msgstr "Dokončeno"
+
+msgid "Completed: %s"
+msgstr "Dokončeno: %s"
+
+msgid "Connect"
+msgstr "Připojit"
+
+msgid "Core developer"
+msgstr "Hlavní vývojář"
+
+msgid "Correct"
+msgstr "Správná odpověď"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Správná odpověď: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Správná odpověď: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Opravit špatnou odpověď"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "Nelze se připojit k serveru. Pravděpodobně špatný hostname."
+
+msgid "Could not login. Wrong username or password."
+msgstr "Přihlášení se nezdařilo. Špatné uživatelské jméno nebo heslo."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Soubor nelze otevřít, protože jeho formát je neznámý nebo nemůže být zobrazen."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Soubor nebylo možné otevřít, je stále na svém místě a máte oprávnění k jeho otevření?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Soubor nebylo možné otevřít, zdá se být poškozený."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Soubor nebylo možné uložit, je na disku dostatek volného místa a máte oprávnění do této lokace zapisovat?"
+
+msgid "Create lesson:"
+msgstr "Vytvořit lekci:"
+
+msgid "Create media lesson"
+msgstr "Vytvořit lekci médií"
+
+msgid "Create topography lesson"
+msgstr "Vytvořit topografickou lekci"
+
+msgid "Create words lesson"
+msgstr "Vytvořit lekci slovíček"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Vytvořte lekci slovíček vložením neformátovaného textu"
+
+msgid "Cyrillic"
+msgstr "Cyrilice"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Tvůrce balíčku pro Debian/Ubuntu"
+
+msgid "Documentation"
+msgstr "Dokumentace"
+
+msgid "Dutch"
+msgstr "Holandsky"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Prázdná otázka nebo odpověď"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Povolit všechny funkce rozhraní OpenTeacher"
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Vše co potřebujete k používání OpenTeacher při samostudiu."
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Délka zobrazení špatné odpovědi (milisekundy)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Funkce pro studenty používající OpenTeacher doma"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Funkce pro studenty používající OpenTeacher ve škole"
+
+msgid "File URL"
+msgstr "Cesta k souboru"
+
+msgid "File opened succesfully."
+msgstr "Soubor úspěšně otevřen."
+
+msgid "File saved succesfully."
+msgstr "Soubor úspěšně uložen."
+
+msgid "Final mark:"
+msgstr "Konečná známka:"
+
+msgid "French"
+msgstr "Franzouzština"
+
+msgid "From hard disk..."
+msgstr "Z pevného disku..."
+
+msgid "Full license text"
+msgstr "Plné znění licence"
+
+msgid "Fullscreen"
+msgstr "Celá obrazovka"
+
+msgid "General"
+msgstr "Hlavní"
+
+msgid "German"
+msgstr "Němčina"
+
+msgid "Given answer"
+msgstr "Vaše odpověď"
+
+msgid "Greek"
+msgstr "Alfabeta"
+
+msgid "Hand in answers"
+msgstr "Odevzdat odpovědi"
+
+msgid "Highest note:"
+msgstr "Nejvyšší známka:"
+
+msgid "Hint:"
+msgstr "Nápověda:"
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language (HTML)"
+
+msgid "I am a new user"
+msgstr "Jsem nový uživatel"
+
+msgid "I speak English"
+msgstr "Hovořím anglicky"
+
+msgid "I was right"
+msgstr "Měl jsem pravdu"
+
+msgid "I was wrong"
+msgstr "Mýlil jsem se"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Jsem připraven/a, spustit lekci!"
+
+msgid "Interval"
+msgstr "Interval"
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Vraťte mi můj starý dobrý OpenTeacher 2.x!"
+
+msgid "KDE Vocabulary Document"
+msgstr "Dokument Slovníčku KDE"
+
+msgid "Language"
+msgstr "Jazyk:"
+
+msgid "Lesson"
+msgstr "Lekce"
+
+msgid "Lesson order:"
+msgstr "Pořadí lekce:"
+
+msgid "Lesson settings"
+msgstr "Nastavení lekce"
+
+msgid "Lesson type"
+msgstr "Typ lekce"
+
+msgid "Lesson type:"
+msgstr "Typ lekce:"
+
+msgid "License"
+msgstr "Licence"
+
+msgid "Load from the internet"
+msgstr "Načíst z Internetu"
+
+msgid "Load lesson:"
+msgstr "Načíst lekci:"
+
+msgid "Locale"
+msgstr "Místní"
+
+msgid "Login"
+msgstr "Přihlásit se"
+
+msgid "Lowest note:"
+msgstr "Nejnižší známka:"
+
+msgid "Map:"
+msgstr "Mapa:"
+
+msgid "Maximum size of group"
+msgstr "Maximální velikost skupiny"
+
+msgid "Missing equals sign or tab"
+msgstr "Chybějící znak rovnítka nebo tabulátoru"
+
+msgid "Mistakes:  "
+msgstr "Chyby:  "
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Name - Place"
+msgstr "Jméno - Místo"
+
+msgid "Name for this place"
+msgstr "Jméno tohoto místa"
+
+msgid "Name:"
+msgstr "Název:"
+
+msgid "Not enough items"
+msgstr "Nedostatek položek"
+
+msgid "Note"
+msgstr "Známka"
+
+msgid "Note:"
+msgstr "Známka:"
+
+msgid "Only hard words (<50%% right)"
+msgstr "Jen těžká slova (<50%% správně)"
+
+msgid "Only words you never answered correctly"
+msgstr "Nikdy neuhádnutá slova"
+
+msgid "Open Teaching Media"
+msgstr "Otevřít výukové médium"
+
+msgid "Open Teaching Topography"
+msgstr "Otevřít výukovou topografii"
+
+msgid "Open Teaching Words"
+msgstr "Otevřít výuková slovíčka"
+
+msgid "Open from file"
+msgstr "Otevřít ze souboru"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL renderování"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher authors"
+msgstr "Autoři aplikace OpenTeacher"
+
+msgid "Password:"
+msgstr "Heslo:"
+
+msgid "Patches contributor"
+msgstr "Přispěvovatel oprav"
+
+msgid "Pause"
+msgstr "Pozastavit"
+
+msgid "People in this test:"
+msgstr "Lidé v tomto testu:"
+
+msgid "Percents"
+msgstr "Procenta"
+
+msgid "Person"
+msgstr "Osoba"
+
+msgid "Place - Name"
+msgstr "Místo - Jméno"
+
+msgid "Place name"
+msgstr "Název místa"
+
+msgid "Place not found"
+msgstr "Místo nenalezeno"
+
+msgid "Places in your test"
+msgstr "Místa ve vašem testu"
+
+msgid "Plain text"
+msgstr "Neformátovaný text"
+
+msgid "Plain text words enterer"
+msgstr "Vstup neformátovaných slovíček"
+
+msgid "Play hangman"
+msgstr "Hrát šibenici"
+
+msgid "Please click this place:"
+msgstr "Klikněte prosím na toto místo:"
+
+msgid "Please click this place: "
+msgstr "Klikněte prosím na toto místo: "
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Zadejte prosím alespoň jednu otázku a jednu odpověď pro každé slovo."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Vložte prosím do políčka neformátovaný text. Slovíčka oddělujte novým řádkem a otázky od odpovědí rovnítkem nebo tabulátorem."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Ujistěte se, prosím, jestli každý řádek obsahuje znaménko '=' nebo tabulátor mezi otázkami a odpověďmi."
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format (PDF)"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics (PNG)"
+
+msgid "Project website"
+msgstr "Webová stránka projektu"
+
+msgid "Pronounce places"
+msgstr "Vyslovte místa"
+
+msgid "Pronounce words"
+msgstr "Vyslovte slovíčka"
+
+msgid "Pronounciation"
+msgstr "Výslovnost"
+
+msgid "Question"
+msgstr "Otázka"
+
+msgid "Question language:"
+msgstr "Jazyk otázek:"
+
+msgid "Question:"
+msgstr "Otázka:"
+
+msgid "Questions"
+msgstr "Otázky"
+
+msgid "Questions:"
+msgstr "Otázky:"
+
+msgid "Random"
+msgstr "Náhodný"
+
+msgid "Recently opened:"
+msgstr "Nedávno otevřené:"
+
+msgid "Remove"
+msgstr "Odstranit"
+
+msgid "Remove selected place"
+msgstr "Odstranit vybrané místo"
+
+msgid "Remove selected row(s)"
+msgstr "Smazat vybrané řádky"
+
+msgid "Repeat answer"
+msgstr "Zopakovat odpověď"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Délka zobrazení opakování (milisekundy)"
+
+msgid "Results"
+msgstr "Výsledky"
+
+msgid "Reverse"
+msgstr "Obráceně"
+
+msgid "Save &As"
+msgstr "Uložit j&ako"
+
+msgid "Select a student/group:"
+msgstr "Vybrat studenta/skupinu:"
+
+msgid "Select file(s)"
+msgstr "Vybrat soubor(y)"
+
+msgid "Select the test you want to take"
+msgstr "Vyberte test, který chcete absolvovat"
+
+msgid "Server IP or hostname:"
+msgstr "Server IP nebo hostname:"
+
+msgid "Settings"
+msgstr "Nastavení"
+
+msgid "Show results"
+msgstr "Zobrazit výsledky"
+
+msgid "Shuffle answer"
+msgstr "Zamíchat odpovědi"
+
+msgid "Simple mode"
+msgstr "Jednoduchý režim"
+
+msgid "Skip"
+msgstr "Přeskočit"
+
+msgid "Smart"
+msgstr "Inteligentní"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "Omlouváme se, ale toto místo není na seznamu známých míst. Vložte jej prosím ručně poklikáním na správné místo na mapě."
+
+msgid "Sort"
+msgstr "Seřadit"
+
+msgid "Speed"
+msgstr "Rychlost"
+
+msgid "Start exercise"
+msgstr "Začít cvičení"
+
+msgid "Start!"
+msgstr "Spustit!"
+
+msgid "Student's answers have been checked!"
+msgstr "Studentovy odpovědi byly zkontrolovány!"
+
+msgid "Student's results have been (re)published!"
+msgstr "Studentovy odpovědi byly zveřejněny!"
+
+msgid "Symbols"
+msgstr "Znaky"
+
+msgid "System default"
+msgstr "Výchozí pro systém"
+
+msgid "Take test"
+msgstr "Absolvovat test"
+
+msgid "Taking test"
+msgstr "Psaní testu"
+
+msgid "Teach me!"
+msgstr "Uč mě!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Teacher Panel"
+msgstr "Panel učitele"
+
+msgid "Teacher panel"
+msgstr "Panel učitele"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Test mode"
+msgstr "Testovací mód"
+
+msgid "Test server"
+msgstr "Otestovat server"
+
+msgid "Tests"
+msgstr "Testy"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Děkujeme všem přispěvatelům do systému Launchpad!"
+
+msgid "That username is already taken. Please try again."
+msgstr "Tohle uživatelské jméno je už obsazeno. Zkuste to prosím znovu."
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "Tyto snímky obrazovky jsou pořízeny z Ubuntu. Nicméně by to všechno mělo fungovat naprosto stejně ve Windows i v Mac OS X."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Některé položky nebo výsledky nejsou uloženy. Opravu chcete zavřít?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Myslete si odpověď a poté klikněte na \"Zobrazit odpověď\"."
+
+msgid "Think answer"
+msgstr "Myslet si odpověď"
+
+msgid "Thinking"
+msgstr "Přemýšlím"
+
+msgid "This type of file is not supported:\n"
+msgstr "Tento typ souboru není podporován\n"
+
+msgid "Title:"
+msgstr "Název:"
+
+msgid "Toolbar"
+msgstr "Nástrojová lišta"
+
+msgid "Topography"
+msgstr "Topografie"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Celkový čas: %s minut"
+
+msgid "Translation: "
+msgstr "Překlad: "
+
+msgid "Translator (%s)"
+msgstr "Překladatel (%s)"
+
+msgid "Type answer"
+msgstr "Napište odpověď"
+
+msgid "Unnamed"
+msgstr "Bez názvu"
+
+msgid "Unsaved data"
+msgstr "Neuložená data"
+
+msgid "Unsupported file type"
+msgstr "Nepodporovaný typ souboru"
+
+msgid "Untitled word list"
+msgstr "Nepojmenovaný seznam slovíček"
+
+msgid "Upload lesson"
+msgstr "Nahrát lekci"
+
+msgid "Use HTML5 for audio"
+msgstr "Použít HTML5 pro zvuk"
+
+msgid "Use HTML5 for video"
+msgstr "Použít HTML5 pro video"
+
+msgid "Username taken"
+msgstr "Uživatelské jméno vybráno"
+
+msgid "Username:"
+msgstr "Uživatelské jméno:"
+
+msgid "View answer"
+msgstr "Zobrazit odpověď"
+
+msgid "Voice"
+msgstr "Hlas"
+
+msgid "Voice name (language)"
+msgstr "Jméno hlasu"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "Upozornění"
+
+msgid "Welcome, please choose your account by clicking on it."
+msgstr "Vítejte, vyberte si prosím poklikáním účet."
+
+msgid "What's this place's name?"
+msgstr "Jak se toto místo jmenuje?"
+
+msgid "Which place is here?"
+msgstr "Co je to za místo?"
+
+msgid "Word lesson: %s"
+msgstr "Lekce slovíček: %s"
+
+msgid "Word most done wrong:"
+msgstr "Nejčastěji chybně odpovězené slovíčko:"
+
+msgid "Word:"
+msgstr "Slovíčko:"
+
+msgid "You have already tried this character / word"
+msgstr "Tento znak/slovo jste již zkoušel"
+
+msgid "You lose, the answer was: "
+msgstr "Prohrál jste, odpověď byla: "
+
+msgid "You need to add items to your test first"
+msgstr "Nutno přidat položky do vašeho prvního testu"
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Vaše odpovědi byly úspěšně odevzdány!"
+
+msgid "hanged man"
+msgstr "Oběšenec"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "Ne"
+
+msgid "yes"
+msgstr "Ano"
+

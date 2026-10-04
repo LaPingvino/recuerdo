@@ -1,0 +1,94 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Iwwer"
+
+msgid "&Documentation"
+msgstr "&Dokumentatioun"
+
+msgid "&Edit"
+msgstr "&Änneren"
+
+msgid "&File"
+msgstr "&Fichier"
+
+msgid "&Help"
+msgstr "&Hëllef"
+
+msgid "&New"
+msgstr "&Nei"
+
+msgid "&Open"
+msgstr "&Opmaachen"
+
+msgid "&Print"
+msgstr "&Drécken"
+
+msgid "&Quit"
+msgstr "&Ophalen"
+
+msgid "&Reverse list"
+msgstr "&ëmgedréit Lëscht"
+
+msgid "&Save"
+msgstr "&Späicheren"
+
+msgid "&Settings"
+msgstr "&Astellungen"
+
+msgid "&View"
+msgstr "&Usiicht"
+
+msgid "Choose an image"
+msgstr "Grafik wielen"
+
+msgid "Documentation"
+msgstr "Dokumentatioun"
+
+msgid "Enter list"
+msgstr "Lëscht aginn"
+
+msgid "Fullscreen"
+msgstr "Vollbildmodus"
+
+msgid "General"
+msgstr "Allgemenges"
+
+msgid "Images ({extensions})"
+msgstr "Biller ({extensions})"
+
+msgid "Introduction"
+msgstr "Aféierung"
+
+msgid "Language"
+msgstr "Sprooch"
+
+msgid "Locale"
+msgstr "Gebitsschema"
+
+msgid "Location:"
+msgstr "Adress:"
+
+msgid "Make image ready"
+msgstr "Bild fäerdeg maachen"
+
+msgid "Open &into current list"
+msgstr "&An der aktueller Lëscht opmaachen"
+
+msgid "Open from file"
+msgstr "Äus Datei opmaachen"
+
+msgid "Save &As"
+msgstr "Späicheren &ënner"
+
+msgid "Show results"
+msgstr "Resulatater weisen"
+
+msgid "Teach me!"
+msgstr "Bréng mer et bäi!"
+
+msgid "Toolbar"
+msgstr "Geschirleescht"
+

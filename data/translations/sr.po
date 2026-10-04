@@ -1,0 +1,43 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Create lesson:"
+msgstr "Направи лекцију:"
+
+msgid "General"
+msgstr "Опште"
+
+msgid "Help"
+msgstr "Помоћ"
+
+msgid "I speak English"
+msgstr "Ја говорим српски"
+
+msgid "Language"
+msgstr "Језик"
+
+msgid "Load from the internet"
+msgstr "Учитај са интернета"
+
+msgid "Load lesson:"
+msgstr "Учитај лекцију:"
+
+msgid "Locale"
+msgstr "Локализација"
+
+msgid "OpenTeacher"
+msgstr "Слободни уча"
+
+msgid "OpenTeacher authors"
+msgstr "Аутори Слободног уче"
+
+msgid "Recently opened:"
+msgstr "Недавно отворене:"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+

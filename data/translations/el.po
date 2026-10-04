@@ -1,0 +1,406 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Σχετικά"
+
+msgid "&Documentation"
+msgstr "&Τεκμηρίωση"
+
+msgid "&Edit"
+msgstr "&Επεξεργασία"
+
+msgid "&File"
+msgstr "&Αρχείο"
+
+msgid "&Help"
+msgstr "&Βοήθεια"
+
+msgid "&New"
+msgstr "&Νέο"
+
+msgid "&Open"
+msgstr "&Άνοιγμα"
+
+msgid "&Print"
+msgstr "&Εκτύπωση"
+
+msgid "&Quit"
+msgstr "&Έξοδος"
+
+msgid "&Reverse list"
+msgstr "Αντίστροφη λίστα"
+
+msgid "&Save"
+msgstr "&Αποθήκευση"
+
+msgid "&Settings"
+msgstr "&Ρυθμίσεις"
+
+msgid "&View"
+msgstr "&Προβολή"
+
+msgid "-"
+msgstr "-"
+
+msgid "About"
+msgstr "Σχετικά"
+
+msgid "Add local media"
+msgstr "Προσθήκη τοπικού μέσου"
+
+msgid "Add remote media"
+msgstr "Προσθήκη απομακρυσμένου μέσου"
+
+msgid "Advanced mode"
+msgstr "Προχωρημένη λειτουργία"
+
+msgid "All once"
+msgstr "Όλα με μια φορά"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Ποσότητα προσφάτως ανοιγμένων αρχείων που πρέπει να θυμάστε"
+
+msgid "Answer language:"
+msgstr "Γλώσσα απάντησης:"
+
+msgid "Answer:"
+msgstr "Απάντηση:"
+
+msgid "Answers"
+msgstr "Απαντήσεις"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Θέλετε σίγουρα να επιστρέψετε στην καρτέλα εισαγωγής; Αυτό θα τερματίσει το μάθημά σας."
+
+msgid "Authors"
+msgstr "Δημιουργοί"
+
+msgid "Average note:"
+msgstr "Μέση βαθμολογία:"
+
+msgid "Back"
+msgstr "Πίσω"
+
+msgid "Can't show the result"
+msgstr "Δεν εμφανίζεται το αποτέλεσμα"
+
+msgid "Change lesson settings"
+msgstr "Αλλαγή ρυθμίσεων μαθήματος"
+
+msgid "Check!"
+msgstr "Έλεγχος!"
+
+msgid "Click the button to start"
+msgstr "Πατήστε το πλήκτρο για έναρξη"
+
+msgid "Comment"
+msgstr "Σχόλιο"
+
+msgid "Completed"
+msgstr "Ολοκληρώθηκε"
+
+msgid "Completed: %s"
+msgstr "Ολοκληρώθηκε: %s"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Σωστή απάντηση: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Σωστή απάντηση: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Διόρθωση έτσι κι αλλιώς"
+
+msgid "Create lesson:"
+msgstr "Δημιουργία μαθήματος:"
+
+msgid "Create media lesson"
+msgstr "Δημιουργία μαθήματος μέσων"
+
+msgid "Create topography lesson"
+msgstr "Δημιουργία μαθήματος τοπογραφίας"
+
+msgid "Create words lesson"
+msgstr "Δημιουργία μαθήματος λέξεων"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Δημιουργία μαθήματος με εισαγωγή απλού κειμένου"
+
+msgid "Cyrillic"
+msgstr "Κυριλλικά"
+
+msgid "Date"
+msgstr "Ημερομηνία"
+
+msgid "Documentation"
+msgstr "Τεκμηρίωση"
+
+msgid "Dutch"
+msgstr "Ολλανδικά"
+
+msgid "Empty question or answer"
+msgstr "Κενή ερώτηση ή απάντηση"
+
+msgid "Enter list"
+msgstr "Εισαγωγή λίστας"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Εισάγετε το URL της ιστοσελίδας ή αντικειμένου μέσου.\nΥποστηριζόμενες ιστοσελίδες βίντεο: "
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Διάρκεια εξασθένισης όταν υπάρχει λάθος (σε milliseconds)"
+
+msgid "File URL"
+msgstr "Αρχείο URL"
+
+msgid "Full license text"
+msgstr "Πλήρες κείμενο άδειας χρήσης"
+
+msgid "Fullscreen"
+msgstr "Πλήρης οθόνη"
+
+msgid "General"
+msgstr "Γενικά"
+
+msgid "Greek"
+msgstr "Ελληνικά"
+
+msgid "Highest note:"
+msgstr "Υψηλότερη βαθμολογία:"
+
+msgid "Hint:"
+msgstr "Υπόδειξη:"
+
+msgid "I speak English"
+msgstr "Μιλάω Ελληνικά"
+
+msgid "I was right"
+msgstr "Σκέφτηκα σωστά"
+
+msgid "I was wrong"
+msgstr "Σκέφτηκα λάθος"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Είμαι έτοιμος. Ας ξεκινήσει το μάθημα."
+
+msgid "Interval"
+msgstr "Διάστημα"
+
+msgid "Language"
+msgstr "Γλώσσα"
+
+msgid "Lesson"
+msgstr "Μάθημα"
+
+msgid "Lesson settings"
+msgstr "Ρυθμίσεις μαθήματος"
+
+msgid "Lesson type"
+msgstr "Είδος μαθήματος"
+
+msgid "License"
+msgstr "Άδεια χρήσης"
+
+msgid "Load from the internet"
+msgstr "Φόρτωση από το διαδίκτυο"
+
+msgid "Load lesson:"
+msgstr "Φόρτωση μαθήματος:"
+
+msgid "Locale"
+msgstr "Τοπικοποίηση"
+
+msgid "Lowest note:"
+msgstr "Χαμηλότερη βαθμολογία:"
+
+msgid "Media"
+msgstr "Μέσο"
+
+msgid "Missing equals sign or tab"
+msgstr "Λείπει το σύμβολο της ισότητας ή το tab"
+
+msgid "Name:"
+msgstr "Όνομα:"
+
+msgid "Not enough items"
+msgstr "Δεν υπάρχουν αρκετά αντικείμενα"
+
+msgid "Note"
+msgstr "Σημείωση"
+
+msgid "Note:"
+msgstr "Βαθμολογία:"
+
+msgid "Only words you never answered correctly"
+msgstr "Μόνο λέξεις που δεν απαντήσατε ποτέ σωστά"
+
+msgid "Open &into current list"
+msgstr "Άνοιγμα στην τρέχουσα λίστα"
+
+msgid "Open from file"
+msgstr "Άνοιγμα από αρχείο"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "Δημιουργοί του OpenTeacher"
+
+msgid "Plain text words enterer"
+msgstr "Εισαγωγή λέξεων απλού κειμένου"
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Παρακαλώ εισάγετε τουλάχιστον μια ερώτηση και μια απάντηση για κάθε λέξη."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Παρακαλώ εισάγετε τη λίστα των λέξεων στην επεξεργασία κειμένου. Μετά από κάθε καταχώριση πατήστε το πλήκτρο Enter για να διαχωρίσετε τις καταχωρίσεις της λίστας. Κάθε καταχώριση αποτελείται από μια ερώτηση και μια απάντηση που διαχωρίζονται από το σύμβολο της ισότητας (=) ή με το πάτημα του πλήκτρου tab."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Παρακαλώ βεβαιωθείτε ότι κάθε γραμμή περιέχει ένα '='-σύμβολο ή tab μεταξύ ερωτήσεων και απαντήσεων."
+
+msgid "Project website"
+msgstr "Ιστότοπος έργου"
+
+msgid "Question language:"
+msgstr "Γλώσσα ερώτησης:"
+
+msgid "Question:"
+msgstr "Ερώτηση:"
+
+msgid "Questions"
+msgstr "Ερωτήσεις"
+
+msgid "Random"
+msgstr "Τυχαίο"
+
+msgid "Recently opened:"
+msgstr "Ανοίχτηκαν πρόσφατα:"
+
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+msgid "Remove selected row(s)"
+msgstr "Αφαίρεση επιλεγμένης γραμμής/γραμμών"
+
+msgid "Repeat answer"
+msgstr "Επανάληψη απάντησης"
+
+msgid "Results"
+msgstr "Αποτελέσματα"
+
+msgid "Reverse"
+msgstr "Αντιστροφή"
+
+msgid "Save &As"
+msgstr "Αποθήκευση &ως"
+
+msgid "Select file(s)"
+msgstr "Επιλογή αρχείου(ων)"
+
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+msgid "Show results"
+msgstr "Προβολή αποτελεσμάτων"
+
+msgid "Shuffle answer"
+msgstr "Ανακάτωμα απάντησης"
+
+msgid "Simple mode"
+msgstr "Απλή λειτουργία"
+
+msgid "Skip"
+msgstr "Παράβλεψη"
+
+msgid "Smart"
+msgstr "Έξυπνη"
+
+msgid "Sort"
+msgstr "Ταξινόμηση"
+
+msgid "Start!"
+msgstr "Έναρξη"
+
+msgid "Symbols"
+msgstr "Σύμβολα"
+
+msgid "System default"
+msgstr "Προεπιλογή συστήματος"
+
+msgid "Teach me!"
+msgstr "Μάθε μου!"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Ευχαριστούμε όλους όσοι συνεισέφεραν μέσω του Launchpad"
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Υπάρχουν μη αποθηκευμένα αντικείμενα ή αποτελέσματα. Θέλετε σίγουρα να κλείσετε;"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Σκεφτείτε την απάντηση και πατήστε 'Προβολή απάντησης' όταν είστε έτοιμοι."
+
+msgid "Think answer"
+msgstr "Σκέψου την απάντηση"
+
+msgid "This type of file is not supported:\n"
+msgstr "Αυτός ο τύπος αρχείου δεν υποστηρίζεται:\n"
+
+msgid "Title:"
+msgstr "Τίτλος:"
+
+msgid "Toolbar"
+msgstr "Γραμμή Εργαλείων"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Συνολικός χρόνος για σκέψη: %s λεπτά"
+
+msgid "Translation: "
+msgstr "Μετάφραση: "
+
+msgid "Type answer"
+msgstr "Πληκτρολόγηση απάντησης"
+
+msgid "Unnamed"
+msgstr "Ανώνυμο"
+
+msgid "Unsaved data"
+msgstr "Μη αποθηκευμένα δεδομένα"
+
+msgid "Unsupported file type"
+msgstr "Μη υποστηριζόμενος τύπος αρχείου"
+
+msgid "Untitled word list"
+msgstr "Ανώνυμη λίστα λέξεων"
+
+msgid "View answer"
+msgstr "Προβολή απάντησης"
+
+msgid "Warning"
+msgstr "Προειδοποίηση"
+
+msgid "Word lesson: %s"
+msgstr "Μάθημα λέξεων: %s"
+
+msgid "Word:"
+msgstr "Λέξη:"
+
+msgid "Words lesson"
+msgstr "Μάθημα λέξεων"
+
+msgid "You need to add items to your test first"
+msgstr "Πρέπει πρώτα να εισάγετε αντικείμενα στη δοκιμασία σας"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "Όχι"
+
+msgid "yes"
+msgstr "Ναι"
+

@@ -1,0 +1,268 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "情報"
+
+msgid "&Documentation"
+msgstr "ドキュメンテーション"
+
+msgid "&File"
+msgstr "&ファイル"
+
+msgid "&Help"
+msgstr "ヘルプ"
+
+msgid "&Open"
+msgstr "開く"
+
+msgid "&Print"
+msgstr "印刷"
+
+msgid "&Quit"
+msgstr "終了"
+
+msgid "&Save"
+msgstr "保存"
+
+msgid "&Settings"
+msgstr "設定"
+
+msgid "Advanced mode"
+msgstr "上級モード"
+
+msgid "All features useful for teachers"
+msgstr "先生にとってすべての便利な機能"
+
+msgid "All once"
+msgstr "すべて一気に"
+
+msgid "Answer"
+msgstr "答え"
+
+msgid "Answer language:"
+msgstr "答の言語"
+
+msgid "Answering"
+msgstr "答えています"
+
+msgid "Answers"
+msgstr "答"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "Change lesson settings"
+msgstr "レッスン設定の変化"
+
+msgid "Check!"
+msgstr "チェック！"
+
+msgid "Click the button to start"
+msgstr "スタートボッタンを押して"
+
+msgid "Comment"
+msgstr "コメント"
+
+msgid "Completed"
+msgstr "完了"
+
+msgid "Correct"
+msgstr "正解"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "正解：＜b＞{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "正解：＜b＞{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "修正する。"
+
+msgid "Create topography lesson"
+msgstr "地誌レッスンを作って"
+
+msgid "Create words lesson"
+msgstr "単語のレッスン作成"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Enter list"
+msgstr "リストの入力"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "OpenTeacherを家庭で利用する学生の為の機能"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "OpenTeacherを校内で使う学生の為の機能"
+
+msgid "Highest note:"
+msgstr "最高ノート："
+
+msgid "Hint:"
+msgstr "ヒント:"
+
+msgid "I speak English"
+msgstr "日本語を話します"
+
+msgid "I was right"
+msgstr "正解でした"
+
+msgid "I was wrong"
+msgstr "間違えた"
+
+msgid "I'm ready, start the lesson!"
+msgstr "レッスンを始まります！"
+
+msgid "Interval"
+msgstr "期間"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Lesson settings"
+msgstr "レッスン設定"
+
+msgid "Lesson type"
+msgstr "レッスンタイプ"
+
+msgid "Lowest note:"
+msgstr "最低ノート："
+
+msgid "Note"
+msgstr "ノート"
+
+msgid "Note:"
+msgstr "ノート:"
+
+msgid "Only hard words (<50%% right)"
+msgstr "難しい単語だけ(<50%% 正しい)"
+
+msgid "Only words you never answered correctly"
+msgstr "正しく答えてない単語のみ使用"
+
+msgid "Open from file"
+msgstr "ファイルから開く"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher の作者"
+
+msgid "Pause"
+msgstr "休止"
+
+msgid "Place name"
+msgstr "地名"
+
+msgid "Pronounce places"
+msgstr "地名の発音して"
+
+msgid "Pronounce words"
+msgstr "単語の発音して"
+
+msgid "Pronounciation"
+msgstr "発音"
+
+msgid "Question"
+msgstr "質問"
+
+msgid "Question language:"
+msgstr "質問の言語"
+
+msgid "Questions"
+msgstr "質問"
+
+msgid "Remove selected row(s)"
+msgstr "選択された列の削除。"
+
+msgid "Repeat answer"
+msgstr "答えを繰り返す"
+
+msgid "Results"
+msgstr "結果"
+
+msgid "Reverse"
+msgstr "逆順"
+
+msgid "Save &As"
+msgstr "別名で保存"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Show results"
+msgstr "結果を見せて"
+
+msgid "Shuffle answer"
+msgstr "答えをシャッフルする"
+
+msgid "Simple mode"
+msgstr "簡単モード"
+
+msgid "Skip"
+msgstr "スキップ"
+
+msgid "Smart"
+msgstr "賢い"
+
+msgid "Sort"
+msgstr "並び替え"
+
+msgid "Start!"
+msgstr "スタート！"
+
+msgid "Teach me!"
+msgstr "教えて！"
+
+msgid "Test mode"
+msgstr "試験モード"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "答えを考えて、「答えを見る」ボタンを押して下さい。"
+
+msgid "Think answer"
+msgstr "考えて答えます"
+
+msgid "Thinking"
+msgstr "考え中"
+
+msgid "Title:"
+msgstr "タイトル:"
+
+msgid "Toolbar"
+msgstr "ツールバー"
+
+msgid "Translation: "
+msgstr "翻訳： "
+
+msgid "Type answer"
+msgstr "答を入力して"
+
+msgid "Unnamed"
+msgstr "名称未設定"
+
+msgid "Untitled word list"
+msgstr "無名の単語リスト"
+
+msgid "View answer"
+msgstr "答えを見る。"
+
+msgid "Word lesson: %s"
+msgstr "単語レッスン:%s"
+
+msgid "Word most done wrong:"
+msgstr "最も間違った単語"
+
+msgid "Word:"
+msgstr "単語:"
+
+msgid "no"
+msgstr "いいえ"
+
+msgid "yes"
+msgstr "はい"
+

@@ -1,0 +1,181 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "Perih&al"
+
+msgid "&Documentation"
+msgstr "&Dokumentasi"
+
+msgid "&Edit"
+msgstr "S&unting"
+
+msgid "&File"
+msgstr "&Fail"
+
+msgid "&Help"
+msgstr "Bant&uan"
+
+msgid "&New"
+msgstr "&Baru"
+
+msgid "&Open"
+msgstr "B&uka"
+
+msgid "&Print"
+msgstr "&Cetak"
+
+msgid "&Quit"
+msgstr "&Keluar"
+
+msgid "&Reverse list"
+msgstr "S&ongsangkan senarai"
+
+msgid "&Save"
+msgstr "&Simpan"
+
+msgid "&Settings"
+msgstr "&Tetapan"
+
+msgid "&View"
+msgstr "&Lihat"
+
+msgid "All once"
+msgstr "Semua sekali"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Sejumlah fail dibuka baru-baru ini untuk diingati"
+
+msgid "Answering"
+msgstr "Menjawab"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Anda pasti hendak undur untk masukkan tab? Ia akan tamatkan pelajaran anda!"
+
+msgid "Check!"
+msgstr "Semak!"
+
+msgid "Completed: %s"
+msgstr "Selesai: %s"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Jawapan betul: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Jawapan betul: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Betul jua"
+
+msgid "Corrected: %s"
+msgstr "Dibetulkan: %s"
+
+msgid "Create lesson:"
+msgstr "Cipta pelajaran:"
+
+msgid "Enter list"
+msgstr "Masukkan senarai"
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Tempoh lenyap bila salah (milisaat)"
+
+msgid "Fullscreen"
+msgstr "Skrin penuh"
+
+msgid "General"
+msgstr "Am"
+
+msgid "I speak English"
+msgstr "Saya bertutur dalam Bahasa Melayu"
+
+msgid "Language"
+msgstr "Bahasa"
+
+msgid "Lesson"
+msgstr "Pelajaran"
+
+msgid "Load from the internet"
+msgstr "Muat dari internet"
+
+msgid "Load lesson:"
+msgstr "Muat pelajaran:"
+
+msgid "Locale"
+msgstr "Lokal"
+
+msgid "Not enough items"
+msgstr "Item tidak mencukupi"
+
+msgid "Note:"
+msgstr "Perhatian:"
+
+msgid "Open &into current list"
+msgstr "Buka &dalam senarai semasa"
+
+msgid "Open from file"
+msgstr "Buka dari fail"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "Pengarang Open Teacher"
+
+msgid "Pause"
+msgstr "Jeda"
+
+msgid "Recently opened:"
+msgstr "Dibuka baru-baru ini:"
+
+msgid "Results"
+msgstr "Keputusan"
+
+msgid "Save &As"
+msgstr "Simp&an Sebagai"
+
+msgid "Show results"
+msgstr "Tunjuk keputusan"
+
+msgid "Skip"
+msgstr "Langkau"
+
+msgid "Teach me!"
+msgstr "Ajar saya!"
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Terdapat item atau keputusan tidak disimpan. Anda pasti hendak menutupnya?"
+
+msgid "Thinking"
+msgstr "Berfikir"
+
+msgid "Toolbar"
+msgstr "Palang Alat"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Jumlah masa berfikir: %s minit"
+
+msgid "Unsaved data"
+msgstr "Data tidak disimpan"
+
+msgid "Warning"
+msgstr "Amaran"
+
+msgid "Words lesson"
+msgstr "Pelajaran perkataan"
+
+msgid "You need to add items to your test first"
+msgstr "Anda perlu tambah item pada ujian pertama anda"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "tidak"
+
+msgid "yes"
+msgstr "ya"
+

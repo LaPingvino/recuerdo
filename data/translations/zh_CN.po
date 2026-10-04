@@ -1,0 +1,727 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "关于(&A)"
+
+msgid "&Documentation"
+msgstr "文档(&D)"
+
+msgid "&Edit"
+msgstr "编辑(&E)"
+
+msgid "&File"
+msgstr "文件(&F)"
+
+msgid "&Help"
+msgstr "帮助(&H)"
+
+msgid "&New"
+msgstr "新建(&N)"
+
+msgid "&Open"
+msgstr "&打开"
+
+msgid "&Print"
+msgstr "打印(&P)"
+
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+msgid "&Reverse list"
+msgstr "&逆序列表"
+
+msgid "&Save"
+msgstr "保存(&S)"
+
+msgid "&Settings"
+msgstr "设置(&S)"
+
+msgid "&View"
+msgstr "&查看"
+
+msgid "-"
+msgstr "-"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "现在系统会用你的语言问你一个单词的翻译,然后你要输入在文本框输入改单词的翻译.当你完成输入后,按键盘的回车或者点击'Check'按钮"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "双击地图添加一个地方"
+
+msgid "Add a place by name:"
+msgstr "通过名字来添加地点:"
+
+msgid "Add local media"
+msgstr "添加本地媒体"
+
+msgid "Add remote media"
+msgstr "添加远程媒体"
+
+msgid "Advanced mode"
+msgstr "高级模式"
+
+msgid "All features useful for teachers"
+msgstr "适用于教师的所有功能"
+
+msgid "All once"
+msgstr "全部一次"
+
+msgid "American"
+msgstr "美语"
+
+msgid "Amount of recently opened files to remember"
+msgstr "记住最近打开的文件数量"
+
+msgid "Answer"
+msgstr "答案"
+
+msgid "Answer language:"
+msgstr "答案语言："
+
+msgid "Answer:"
+msgstr "回答:"
+
+msgid "Answering"
+msgstr "正在作答"
+
+msgid "Answers"
+msgstr "答案"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "你确定要回到开始页面吗?这样会结束你的课程."
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "你确定要使用另外一副地图吗?这是移除你所有的地点!"
+
+msgid "Artwork"
+msgstr "美工"
+
+msgid "Ask foreign - known"
+msgstr "问外国人 - 已认识的"
+
+msgid "Authors"
+msgstr "作者"
+
+msgid "Average note:"
+msgstr "一般提示："
+
+msgid "Back"
+msgstr "返回"
+
+msgid "Belgian AZERTY"
+msgstr "比利时AZERTY键盘"
+
+msgid "Can't merge files of different file types."
+msgstr "无法合并两个类型不同的文件."
+
+msgid "Change lesson settings"
+msgstr "更改课程设置"
+
+msgid "Check"
+msgstr "核对"
+
+msgid "Check!"
+msgstr "检查！"
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "点击在下放的'Teach me!'开始测试.现在你可以指定OpenTeacher问你问题的方式,没有指定将会按照默认的方式.好的,我们点击'I'm ready, start the lesson!'按钮，开始课程."
+
+msgid "Click the button to start"
+msgstr "点击按钮开始"
+
+msgid "Colemak"
+msgstr "Colemak键盘"
+
+msgid "Comment"
+msgstr "备注"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Completed: %s"
+msgstr "完成量: %s"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "恭喜你,你完成了你的第一个练习."
+
+msgid "Connect"
+msgstr "连接"
+
+msgid "Core developer"
+msgstr "核心开发者"
+
+msgid "Correct"
+msgstr "更正"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "无法连接此服务器.可能主机名有误"
+
+msgid "Could not login. Wrong username or password."
+msgstr "无法登录.错误的用户名或密码"
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "文件无法打开,文件类型未知或者是文件不能访问."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "文件无法打开,你确定有权限打开?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "文件无法打开,此文件似乎已经损坏."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "不能保存此文件,是否有足够的磁盘空间和权限写入指定路径?"
+
+msgid "Create lesson:"
+msgstr "创建课程："
+
+msgid "Create media lesson"
+msgstr "创建媒体课程"
+
+msgid "Create topography lesson"
+msgstr "创建地理课程"
+
+msgid "Create words lesson"
+msgstr "创建单词课程"
+
+msgid "Create words lesson by entering plain text"
+msgstr "输入纯文本创建单词课程"
+
+msgid "Cyrillic"
+msgstr "西里尔语"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Debian/Ubuntu 打包者"
+
+msgid "Documentation"
+msgstr "文档"
+
+msgid "Dutch"
+msgstr "荷兰语"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Dvorak简化键盘"
+
+msgid "ECTS"
+msgstr "学分"
+
+msgid "Empty question or answer"
+msgstr "清空问题或者答案"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "启动 OpenTeacher 的所有图形功能"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "开启隐藏浏览器(滑动滑块隐藏)"
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "输入你想要测试的单词列表标题.并且输入你熟悉的语言,比如,现在我们的例子就是英语,或者其他你想学习的语言."
+
+msgid "Enter list"
+msgstr "输入列表"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "输入网址或者媒体URL.\n支持的视频地址: "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "您需要的就是使用 OpenTeacher 来自学。"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "适于学生在家使用 OpenTeacher 的功能"
+
+msgid "File URL"
+msgstr "文件 URL"
+
+msgid "File opened succesfully."
+msgstr "文件打开成功."
+
+msgid "File saved succesfully."
+msgstr "文件保存成功."
+
+msgid "French"
+msgstr "法语"
+
+msgid "French AZERTY"
+msgstr "法国AZERTY键盘"
+
+msgid "From hard disk..."
+msgstr "从硬盘..."
+
+msgid "Full license text"
+msgstr "完整协议文本"
+
+msgid "Fullscreen"
+msgstr "全屏"
+
+msgid "General"
+msgstr "常规"
+
+msgid "German"
+msgstr "德语"
+
+msgid "Given answer"
+msgstr "给定的答案"
+
+msgid "Greek"
+msgstr "希腊语"
+
+msgid "Hand in answers"
+msgstr "上交答案"
+
+msgid "Hide the browser!"
+msgstr "隐藏这个浏览器!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "隐藏其他,扩大现在的浏览器区域"
+
+msgid "Highest note:"
+msgstr "最多的提示："
+
+msgid "Hint:"
+msgstr "提示："
+
+msgid "Hyper Text Markup Language"
+msgstr "HTML"
+
+msgid "I speak English"
+msgstr "我说中文"
+
+msgid "I was right"
+msgstr "我对了"
+
+msgid "I was wrong"
+msgstr "我错了"
+
+msgid "I'm ready, start the lesson!"
+msgstr "我准备好了，开始课程吧！"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "如果你输入的是正确的翻译,紧接着会有第二个问题问你.如果你没有输入正确的翻译,OpenTeacher会给你显示正确的答案以及两者之间的区别."
+
+msgid "Images"
+msgstr "图像"
+
+msgid "Import source"
+msgstr "导入源"
+
+msgid "Interval"
+msgstr "间隔"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Lesson"
+msgstr "课程"
+
+msgid "Lesson order:"
+msgstr "课程顺序:"
+
+msgid "Lesson settings"
+msgstr "课程设置"
+
+msgid "Lesson type"
+msgstr "课程类型"
+
+msgid "Lesson type:"
+msgstr "课程形式:"
+
+msgid "License"
+msgstr "协议"
+
+msgid "Load from the internet"
+msgstr "从因特网加载"
+
+msgid "Load lesson:"
+msgstr "加载课程："
+
+msgid "Locale"
+msgstr "区域"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "Lowest note:"
+msgstr "最少的提示："
+
+msgid "Map:"
+msgstr "地图:"
+
+msgid "Maximum size of group"
+msgstr "最大组数量"
+
+msgid "Media"
+msgstr "媒体"
+
+msgid "Media lesson: %s"
+msgstr "多媒体课程: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "最少问题数"
+
+msgid "Mistakes:  "
+msgstr "错误:  "
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Name - Place"
+msgstr "名称 - 地点"
+
+msgid "Name for this place"
+msgstr "给这个地方命名"
+
+msgid "Name:"
+msgstr "名字:"
+
+msgid "Not enough items"
+msgstr "没有足够的选项"
+
+msgid "Note"
+msgstr "提示"
+
+msgid "Note notation"
+msgstr "标注符号"
+
+msgid "Note:"
+msgstr "说明:"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "一旦这个测试结束,如果你做的好OpenTeacher会给你一个标识."
+
+msgid "Only hard words (<50%% right)"
+msgstr "只有难词(<50%% 正确)"
+
+msgid "Only words you never answered correctly"
+msgstr "仅您从未正确回答过的单词"
+
+msgid "Open &into current list"
+msgstr "打开&进入当前列表"
+
+msgid "Open Teaching Media"
+msgstr "打开教学媒体"
+
+msgid "Open Teaching Words"
+msgstr "打开正在学习的单词"
+
+msgid "Open from file"
+msgstr "从文件打开"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL渲染中"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher 作者"
+
+msgid "Opened file into the current list succesfully."
+msgstr "成功在当前列表打开文件."
+
+msgid "Password:"
+msgstr "密码："
+
+msgid "Patches contributor"
+msgstr "补丁贡献者"
+
+msgid "Pause"
+msgstr "暂停"
+
+msgid "Percent right before known"
+msgstr "已知前的正确百分比"
+
+msgid "Percents"
+msgstr "百分比"
+
+msgid "Place - Name"
+msgstr "地点 - 名称"
+
+msgid "Place name"
+msgstr "地名"
+
+msgid "Place not found"
+msgstr "地点没有找到"
+
+msgid "Places in your test"
+msgstr "放置到测试"
+
+msgid "Plain text"
+msgstr "普通文本"
+
+msgid "Plain text words enterer"
+msgstr "纯文本单词输入器"
+
+msgid "Play hangman"
+msgstr "玩猜字游戏"
+
+msgid "Please click this place:"
+msgstr "请点击这个地点:"
+
+msgid "Please click this place: "
+msgstr "请点击这个地点: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "请输入至少一个问题和所有项中的一个答案."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "请给每一个单词输入至少一个问题和一个答案."
+
+msgid "Portable Document Format"
+msgstr "PDF"
+
+msgid "Portable Network Graphics"
+msgstr "PNG"
+
+msgid "Profile"
+msgstr "个人配置"
+
+msgid "Project website"
+msgstr "项目网站"
+
+msgid "Pronounciation"
+msgstr "发音"
+
+msgid "QWERTY"
+msgstr "QWERTY键盘"
+
+msgid "QWERTZ"
+msgstr "QWERTZ键盘"
+
+msgid "Question"
+msgstr "问题"
+
+msgid "Question language:"
+msgstr "问题语言："
+
+msgid "Question:"
+msgstr "问题:"
+
+msgid "Questions"
+msgstr "问题"
+
+msgid "Random"
+msgstr "随机"
+
+msgid "Recently opened:"
+msgstr "最近打开的："
+
+msgid "Remove"
+msgstr "删除"
+
+msgid "Remove selected place"
+msgstr "移除已选的地点"
+
+msgid "Remove selected row(s)"
+msgstr "移除选中的行"
+
+msgid "Repeat answer"
+msgstr "重复答案"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "重复模式淡去时长(毫秒)"
+
+msgid "Results"
+msgstr "成绩"
+
+msgid "Reverse"
+msgstr "逆序"
+
+msgid "Save &As"
+msgstr "另存为(&A)"
+
+msgid "Select file(s)"
+msgstr "选择文件"
+
+msgid "Server IP or hostname:"
+msgstr "服务器IP或主机名:"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Show results"
+msgstr "显示结果"
+
+msgid "Shuffle answer"
+msgstr "随机答案"
+
+msgid "Simple mode"
+msgstr "简单模式"
+
+msgid "Skip"
+msgstr "跳过"
+
+msgid "Smart"
+msgstr "智能"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "对不起,这个地点不存在于已知的地点列表中.请通过双击地图右边的位置手动添加该地点."
+
+msgid "Sort"
+msgstr "排序"
+
+msgid "Speed"
+msgstr "速度"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "点击 '创建单词课程' 按钮,即生成了一个新的单词课程。"
+
+msgid "Start!"
+msgstr "开始！"
+
+msgid "Symbols"
+msgstr "符号"
+
+msgid "System default"
+msgstr "系统默认"
+
+msgid "Teach me!"
+msgstr "教教我！"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Test mode"
+msgstr "测试模式"
+
+msgid "Test server"
+msgstr "测试服务器"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "感谢所有的 Launchpad 贡献者！"
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "这些截图都是来自于Ubuntu,但是他们在Windows和Mac OS X也能正确地运行出这样的结果。"
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "接着在单词表输入你想学习的单词,你还可以通过按tab或者'='按键跳到下一个问题或者是答案.请看这个例子的截图."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "还有没有保存的项目或结果.你确定要关闭吗?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "考虑下答案，在您完成后按下“查看答案”按钮。"
+
+msgid "Think answer"
+msgstr "思考答案"
+
+msgid "Thinking"
+msgstr "思考中"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "本入门教程将会给你展示如何使用OpenTeacher去完成一个简单的自我测试.现在我们学习一下如何用法语数到十。对于这个测试，我们假设你已经熟悉英语，而且你想学法语。"
+
+msgid "Title:"
+msgstr "标题："
+
+msgid "To archieve that, you might try slowing down a bit."
+msgstr "要归档,请尝试放慢点速度."
+
+msgid "Toolbar"
+msgstr "工具栏"
+
+msgid "Topo lesson: %s"
+msgstr "Topo课程: %s"
+
+msgid "Topography"
+msgstr "地形学"
+
+msgid "Total thinking time: %s minutes"
+msgstr "总共思考时间: %s 分钟"
+
+msgid "Translation: "
+msgstr "翻译： "
+
+msgid "Translator (%s)"
+msgstr "翻译者(%s)"
+
+msgid "Type answer"
+msgstr "输入答案"
+
+msgid "Unnamed"
+msgstr "未命名"
+
+msgid "Unsaved data"
+msgstr "没有保存的数据"
+
+msgid "Untitled word list"
+msgstr "无标题单词列表"
+
+msgid "Use HTML5 for audio"
+msgstr "使用HTML5音频"
+
+msgid "Use HTML5 for video"
+msgstr "使用HTML5视频"
+
+msgid "Username:"
+msgstr "用户名："
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "使用OpenTeacher 3：快速入门"
+
+msgid "View answer"
+msgstr "查看答案"
+
+msgid "Voice"
+msgstr "语音"
+
+msgid "Voice name (language)"
+msgstr "音色的名称"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "What's this place's name?"
+msgstr "这个地方的名字叫什么?"
+
+msgid "Which place is here?"
+msgstr "这是什么地方?"
+
+msgid "Word lesson: %s"
+msgstr "单词课程：%s"
+
+msgid "Word most done wrong:"
+msgstr "最常错的单词:"
+
+msgid "Word:"
+msgstr "单词："
+
+msgid "You have already tried this character / word"
+msgstr "你已经尝试过这个字符/单词了"
+
+msgid "You lose, the answer was: "
+msgstr "你输了,正确答案是: "
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "你一个错误都没有哦.现在该试试提升你的打字速度了."
+
+msgid "You need to add items to your test first"
+msgstr "你需要先添加选项到你的测试"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "否"
+
+msgid "yes"
+msgstr "是"
+

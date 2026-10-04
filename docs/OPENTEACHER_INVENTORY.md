@@ -57,10 +57,10 @@ Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 21 |  |  | 14 | 5 | 6 | 49 |
 | interfaces | 11 |  |  | 52 |  |  | 12 | 5 | 14 | 94 |
-| logic | 25 |  |  | 78 |  |  | 30 | 8 | 39 | 180 |
+| logic | 25 |  |  | 80 |  |  | 28 | 8 | 39 | 180 |
 | misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 10 |  |  | 11 | 1 | 5 | 27 |
-| **all** | **39** | **0** | **0** | **161** | **0** | **0** | **67** | **20** | **67** | **354** |
+| **all** | **39** | **0** | **0** | **163** | **0** | **0** | **65** | **20** | **67** | **354** |
 
 ## 3. Features
 
@@ -169,6 +169,7 @@ file formats, see **covered** above):
 | `logic/authors` | `internal/modules/data/openteacherAuthors` | the credits list in the About dialog |
 | `logic/dataStore` | `internal/modules/settings.go` | the settings module's JSON file is Recuerdo's persistent store |
 | `logic/execute` | `internal/core, internal/modules/execute.go` | start-up and enabling modules |
+| `logic/friendlyTranslationNames` | `internal/i18n` | Name: each language in its own name (golang.org/x/text display), in the settings dialog's language choice |
 | `logic/htmlGenerator/media` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/topo` | `internal/lesson` | FileSaver's HTML export |
 | `logic/htmlGenerator/words` | `internal/lesson` | FileSaver's HTML export (also the source of PDF/ODT) |
@@ -190,6 +191,7 @@ file formats, see **covered** above):
 | `logic/testTypes/media` | `internal/modules/interfaces/qt/lessons/media` | the Results tab shows a media lesson's sessions (charts); the result table model was not used by anything |
 | `logic/testTypes/topo` | `internal/modules/interfaces/qt/lessons/topo` | the Results tab shows a topography lesson's sessions (charts); the result table model was not used by anything |
 | `logic/testTypes/words` | `internal/teaching` | Report.MostDoneWrong, the "word most done wrong" fact in the results dialog |
+| `logic/translator` | `internal/i18n` | OpenTeacher's gettext translations (29 languages, merged into data/translations by scripts/merge_translations.py) read by a small .po reader; T() with aliases for Recuerdo's wording; the language is a setting, the system's by default |
 | `logic/userDocumentationWrapper` | `internal/modules/interfaces/qt/gui` | Help > Getting Started shows the guide |
 | `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
 | `logic/wordListString/parser` | `internal/lesson` | ParseWordList ("q = a" / tab lines with \= escapes) |
@@ -204,8 +206,6 @@ OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
 
 | Priority | Modules | Count | What |
 |---|---|---:|---|
-| high | `logic/translator` | 1 | interface translations: Recuerdo's interface is English only; OpenTeacher's gettext translations can be brought in |
-| high | `logic/friendlyTranslationNames` | 1 | names of the interface translations, with the translator |
 | medium | `javaScript` | 24 | the in-browser version: lessons and practice in a web browser, which also makes exercises possible that rely on HTML |
 | medium | `interfaces/qt/testMode`, `interfaces/webServicesServer`, `logic/webDatabase`, `profileRunners/webServicesServerRunner`, `data/profileDescriptions/webServicesServer` | 12 | test mode: classroom tests run from a server. OpenTeacher's server is in legacy/ (Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one |
 | medium | `logic/spellChecker` | 1 | spell checking while entering words, with Hunspell (OpenTeacher used Enchant) |
@@ -303,7 +303,7 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/dialogs/file` | fileDialogs | 91 | 137 | 0 | 1 | working |
 | `interfaces/qt/dialogs/print` | printDialog | 31 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/results` | resultsDialog | 51 | 86 | 0 | 1 | working |
-| `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 146 | 0 | 1 | working |
+| `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 159 | 0 | 1 | working |
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/enterers/media` | mediaEnterer | 305 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
@@ -312,7 +312,7 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1065 | 0 | 2 | working |
+| `interfaces/qt/gui` | ui | 607 | 1072 | 0 | 2 | working |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
@@ -394,7 +394,7 @@ Course Hero: those APIs changed or closed):
 | `logic/event` | event | 30 | 159 | 0 | 1 | working |
 | `logic/eventTest` | test | 86 | 56 | 18 | 0 | test suite |
 | `logic/execute` | execute | 115 | 108 | 3 | 1 | covered |
-| `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 0 | 0 | 0 | planned |
+| `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 0 | 0 | 0 | covered |
 | `logic/friendlyTranslationNamesTest` | test | 33 | 42 | 11 | 0 | test suite |
 | `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | planned |
 | `logic/htmlGenerator/media` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
@@ -549,7 +549,7 @@ Course Hero: those APIs changed or closed):
 | `logic/translationIndex/merger` | translationIndexesMerger | 25 | 0 | 0 | 0 | dropped |
 | `logic/translationIndex/mergerTest` | test | 54 | 0 | 0 | 0 | test suite |
 | `logic/translationTest` | test | 58 | 40 | 10 | 0 | test suite |
-| `logic/translator` | translator | 89 | 0 | 0 | 0 | planned |
+| `logic/translator` | translator | 89 | 0 | 0 | 0 | covered |
 | `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 0 | 0 | 0 | covered |
 | `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | planned |
 | `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |

@@ -1,0 +1,103 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Aangaande"
+
+msgid "&Documentation"
+msgstr "&Dokumentasie"
+
+msgid "&Edit"
+msgstr "&Redigeer"
+
+msgid "&File"
+msgstr "&Lêer"
+
+msgid "&Help"
+msgstr "&Hulp"
+
+msgid "&New"
+msgstr "&Nuwe"
+
+msgid "&Open"
+msgstr "&Open"
+
+msgid "&Print"
+msgstr "&Druk"
+
+msgid "&Quit"
+msgstr "&Stop"
+
+msgid "&Save"
+msgstr "&Stoor"
+
+msgid "&Settings"
+msgstr "&Instellings"
+
+msgid "Answer language:"
+msgstr "Antwoord taal:"
+
+msgid "Answers"
+msgstr "Antwoorde"
+
+msgid "Ask foreign - known"
+msgstr "Vraag vreemde - bekende"
+
+msgid "Comment"
+msgstr "Kommentaar"
+
+msgid "Create words lesson"
+msgstr "Maak woord les"
+
+msgid "Documentation"
+msgstr "Dokumentasie"
+
+msgid "Enter list"
+msgstr "Tik lys"
+
+msgid "Hint:"
+msgstr "Leidraad:"
+
+msgid "I speak English"
+msgstr "Ek praat Afrikaans"
+
+msgid "Open from file"
+msgstr "Open van lêer"
+
+msgid "Question language:"
+msgstr "Vraag taal:"
+
+msgid "Questions"
+msgstr "Vrae"
+
+msgid "Save &As"
+msgstr "Stoor &as"
+
+msgid "Show results"
+msgstr "Toon resultate"
+
+msgid "Sort"
+msgstr "Sorteer"
+
+msgid "System default"
+msgstr "Stelselverstek"
+
+msgid "Teach me!"
+msgstr "Leer my!"
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid "Toolbar"
+msgstr "Nutsbalk"
+
+msgid "Type answer"
+msgstr "Tik antwoord"
+
+msgid "Unnamed"
+msgstr "Naamloos"
+
+msgid "Word lesson: %s"
+msgstr "Woord les: %s"
+

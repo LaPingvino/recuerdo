@@ -1,0 +1,1099 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Informacje o programie"
+
+msgid "&Documentation"
+msgstr "&Dokumentacja"
+
+msgid "&Edit"
+msgstr "&Edycja"
+
+msgid "&File"
+msgstr "&Plik"
+
+msgid "&Help"
+msgstr "&Pomoc"
+
+msgid "&New"
+msgstr "&Nowy"
+
+msgid "&Open"
+msgstr "&Otwórz"
+
+msgid "&Print"
+msgstr "&Drukuj"
+
+msgid "&Quit"
+msgstr "&Zakończ"
+
+msgid "&Reverse list"
+msgstr "&Odwróć listę"
+
+msgid "&Save"
+msgstr "&Zapisz"
+
+msgid "&Settings"
+msgstr "&Ustawienia"
+
+msgid "&View"
+msgstr "&Widok"
+
+msgid "(Handed in)"
+msgstr "(Oddane do sprawdzenia)"
+
+msgid "(Re)check answers"
+msgstr "Sprawdź (ponownie) odpowiedzi"
+
+msgid "(Re)publish answers"
+msgstr "Przedstaw (ponownie) odpowiedzi"
+
+msgid "(advanced)"
+msgstr "(zaawansowane)"
+
+msgid "(did not participate)"
+msgstr "(nie brał(-a) udziału)"
+
+msgid "-"
+msgstr "-"
+
+msgid ".txt saving"
+msgstr "zapisywanie .txt"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "Zostanie wyświetlone słowo w twoim języku, a ty musisz wpisać jego tłumaczenie w polu tekstowym. Po wprowadzeniu go naciśnij klawisz Enter lub kliknij \"Sprawdź!\""
+
+msgid "AUTHOR"
+msgstr "AUTOR"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Dodaj miejsce, klikając je dwukrotnie na mapie"
+
+msgid "Add a place by name:"
+msgstr "Dodaj miejsce, podając jego nazwę:"
+
+msgid "Add lesson"
+msgstr "Dodaj lekcję"
+
+msgid "Add local media"
+msgstr "Dodaj lokalne media"
+
+msgid "Add person"
+msgstr "Dodaj osobę"
+
+msgid "Add person/group"
+msgstr "Dodaj osobę/grupę"
+
+msgid "Add remote media"
+msgstr "Dodaj media sieciowe"
+
+msgid "Advanced mode"
+msgstr "Tryb zaawansowany"
+
+msgid "After startup, OpenTeacher allows you to load a lesson or to create one."
+msgstr "Po uruchomieniu programu OpenTeacher możesz załadować lekcję lub utworzyć nową."
+
+msgid "All features useful for teachers"
+msgstr "Wszystkie funkcje przydatne dla nauczycieli"
+
+msgid "All once"
+msgstr "Wszystkie pojedyńczo"
+
+msgid "Also, OpenTeacher has a typing lesson course built in."
+msgstr "Ponadto, OpenTeacher ma wbudowany kurs pisania na klawiaturze."
+
+msgid "Also, it's possible to browse results of older tests."
+msgstr "Jest również możliwe przeglądanie wyników starszych testów."
+
+msgid "American"
+msgstr "Amerykański"
+
+msgid "Amount of mistakes"
+msgstr "Ilość błędów"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Liczba ostatnio otwieranych plików do zapamiętania"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Wystąpił błąd. Brak połączenia z serwerem. Sprawdź połączenia sieciowe."
+
+msgid "Answer"
+msgstr "Odpowiedź"
+
+msgid "Answer language:"
+msgstr "Język odpowiedzi"
+
+msgid "Answer:"
+msgstr "Odpowiedź:"
+
+msgid "Answering"
+msgstr "Odpowiadam"
+
+msgid "Answers"
+msgstr "Odpowiedzi"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "Odpowiedzi tego ucznia nie zostały jeszcze sprawdzone. Kliknij przycisk 'Sprawdź odpowiedzi' w drugiej kolumnie."
+
+msgid "Answers right:"
+msgstr "Odpowiedzi poprawne:"
+
+msgid "Answers wrong:"
+msgstr "Odpowiedzi błędne:"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Czy na pewno chcesz wrócić na kartę wprowadzania? W ten sposób zakończysz lekcję!"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Czy na pewno chcesz użyć innej mapy? Spowoduje to usunięcie wszystkich miejsc!"
+
+msgid "Artwork"
+msgstr "Szata graficzna"
+
+msgid "At the end of the session, you can view your results."
+msgstr "Po zakończeniu sesji można obejrzeć swoje wyniki."
+
+msgid "Authors"
+msgstr "Autorzy"
+
+msgid "Average note:"
+msgstr "Średnia ocena:"
+
+msgid "Back"
+msgstr "Wstecz"
+
+msgid "Belgian AZERTY"
+msgstr "Belgijski układ AZERTY"
+
+msgid "Bug hunter"
+msgstr "Wyszukiwanie błędów"
+
+msgid "Can't merge files of different file types."
+msgstr "Nie można połączyć plików różnych rodzajów."
+
+msgid "Can't open the resultive word list, because it can't be shown."
+msgstr "Nie można otworzyć wynikowej listy słów, ponieważ nie może ona być pokazywana."
+
+msgid "Can't show the result"
+msgstr "Nie można pokazać wyniku"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Change lesson settings"
+msgstr "Zmień ustawienia lekcji"
+
+msgid "Check"
+msgstr "Sprawdź"
+
+msgid "Check!"
+msgstr "Sprawdź!"
+
+msgid "Choose an image"
+msgstr "Wybierz obraz"
+
+msgid "Choose test"
+msgstr "Wybierz test"
+
+msgid "Click here to choose a location"
+msgstr "Kliknij tutaj, aby wybrać lokalizację"
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "Kliknij kartę \"Naucz mnie!\" na dole okna, aby rozpocząć test. Można teraz określić, w jaki sposób program OpenTeacher będzie cię przepytywał, ale w naszym przypadku pozostawimy tryb ustawiony domyślnie. Klikamy więc przycisk \"Jestem gotowy, rozpocznij lekcję!\""
+
+msgid "Click the button to start"
+msgstr "Kliknij przycisk aby rozpocząć"
+
+msgid "Colemak"
+msgstr "Układ Colemaka"
+
+msgid "Comment"
+msgstr "Komentarz"
+
+msgid "Comment after answering"
+msgstr "Komentarz po udzieleniu odpowiedzi"
+
+msgid "Completed"
+msgstr "Ukończone"
+
+msgid "Completed: %s"
+msgstr "Ukończone: %s"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Gratulacje, kurs pisania na klawiaturze został ukończony! Jeśli chcesz kontynuować, możesz to zrobić, jest to już jednak koniec instrukcji. Świetna robota!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Gratulacje, pierwsze ćwiczenie ukończone!"
+
+msgid "Connect"
+msgstr "Połącz"
+
+msgid "Contact: {email}"
+msgstr "Kontakt: {email}"
+
+msgid "Core developer"
+msgstr "Główny autor"
+
+msgid "Correct"
+msgstr "Poprawnie"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Poprawna odpowiedź: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Poprawna odpowiedź: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Popraw mimo wszystko"
+
+msgid "Corrected: %s"
+msgstr "Poprawione: %s"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "Nie udało się połączyć z serwerem. Prawdopodobnie zła nazwa hosta."
+
+msgid "Could not login. Wrong username or password."
+msgstr "Logowanie nieudane. Prawdopodobnie zła nazwa użytkownika lub hasło."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Nie udało się otworzyć pliku, ponieważ typ pliku jest nieznany albo nie może zostać pokazany."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Nie udało się otworzyć pliku. Czy na pewno plik nadal się tam znajduje i czy mamy uprawnienia do otwierania go?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Nie udało się otworzyć pliku, wygląda na uszkodzony."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Nie udało się zapisać pliku. Czy jest wystarczająca ilość miejsca na dysku i czy mamy uprawnienia do zapisywania w wybranej lokalizacji?"
+
+msgid "Create lesson:"
+msgstr "Utwórz lekcję:"
+
+msgid "Create media lesson"
+msgstr "Utwórz lekcję medialną"
+
+msgid "Create topography lesson"
+msgstr "Utwórz lekcję topografii"
+
+msgid "Create words lesson"
+msgstr "Utwórz lekcję słów"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Utwórz lekcję do nauki słów używając zwykłego tekstu"
+
+msgid "Create words lesson from a scan or picture"
+msgstr "Utwórz lekcję słów z obrazu (np. zeskanowanej kartki)"
+
+msgid "Cyrillic"
+msgstr "Cyrylica"
+
+msgid "DESCRIPTION"
+msgstr "OPIS"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Twórca pakietów Debian/Ubuntu"
+
+msgid "Documentation"
+msgstr "Dokumentacja"
+
+msgid "Down here, you can see a preview of the result. There will probably be some wrongly recognized words in there, but the structure of the word list should be recognizable. If not, click 'Back' and try again. Otherwise, click 'Finish'."
+msgstr "Tutaj, w dolnej części możesz zobaczyć podgląd. Prawdopodobnie niektóre słowa będą rozpoznane błędnie, ale struktura listy słów powinna zostać zachowana. Jeśli tak nie jest, kliknij 'Wstecz' i spróbuj ponownie. W przeciwnym razie kliknij 'Zakończ'."
+
+msgid "Dutch"
+msgstr "Holenderski"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Uproszczona klawiatura Dvoraka"
+
+msgid "E.g.: german food vocabulary"
+msgstr "Np.: german food vocabulary"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Puste pytanie lub odpowiedź"
+
+msgid "Enable compression"
+msgstr "Zastosuj kompresję"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Włącz wszystkie funkcje interfejsu użytkownika programu OpenTeacher"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Uaktywnij ukrytą przeglądarkę (schowaj ją przesuwając suwak)"
+
+msgid "Enter a search term and press the search button to search coursehero.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Podaj hasło do wyszukania i naciśnij przycisk Szukaj, aby przeszukać zbiory coursehero.com. Następnie wybierz zbiór lub zbiory do zaimportowania i kliknij OK."
+
+msgid "Enter a search term and press the search button to search quizlet.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Podaj hasło do wyszukania i naciśnij przycisk Szukaj, aby przeszukać zbiory quizlet.com. Następnie wybierz zbiór lub zbiory do zaimportowania i kliknij OK."
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "Wpisz tytuł listy, którą będziesz wpisywać. Podaj również znany język, w naszym przypadku angielski, oraz język obcy (język, którego chcesz się uczyć), w naszym przypadku francuski."
+
+msgid "Enter list"
+msgstr "Wprowadź listę"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Podaj adres URL strony WWW albo źródła mediów.\nObsługiwane strony z filmami: "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Wszystko, czego potrzebujesz do samodzielnej nauki z OpenTeacherem"
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Czas zanikania przy złej odpowiedzi (milisekund)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Funkcje dla uczniów używających OpenTeachera w domu"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Funkcje dla uczniów używających OpenTeachera w szkole"
+
+msgid "File URL"
+msgstr "Adres URL pliku"
+
+msgid "File opened succesfully."
+msgstr "Plik został otwarty."
+
+msgid "File saved succesfully."
+msgstr "Plik został zapisany."
+
+msgid "Final mark:"
+msgstr "Ocena końcowa:"
+
+msgid "French AZERTY"
+msgstr "Francuski układ AZERTY"
+
+msgid "From hard disk..."
+msgstr "Z dysku twardego..."
+
+msgid "Fullscreen"
+msgstr "Pełny ekran"
+
+msgid "General"
+msgstr "Ogólne"
+
+msgid "German"
+msgstr "Niemiecki"
+
+msgid "Given answer"
+msgstr "Podana odpowiedź"
+
+msgid "Greek"
+msgstr "Grecki"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "Hide the browser!"
+msgstr "Ukryj przeglądarkę!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Ukryj pozostałe; zrób miejsce dla przeglądarki"
+
+msgid "Highest note:"
+msgstr "Najwyższa ocena:"
+
+msgid "Hint:"
+msgstr "Podpowiedź:"
+
+msgid "I am a new user"
+msgstr "Jestem nowym użytkownikiem"
+
+msgid "I speak English"
+msgstr "Mówię po polsku"
+
+msgid "I was right"
+msgstr "Miałem rację"
+
+msgid "I was wrong"
+msgstr "Myliłem się"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Wszystko gotowe, możemy zaczynać lekcję!"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "Jeśli twoje tłumaczenie było poprawne, zostanie zadane następne pytanie. Jeśli nie, program OpenTeacher wyświetli poprawną odpowiedź i różnicę w stosunku do twojej odpowiedzi."
+
+msgid "Images"
+msgstr "Obrazy"
+
+msgid "Images ({extensions})"
+msgstr "Obrazy ({rozszerzenia})"
+
+msgid "Import from coursehero.com"
+msgstr "Importuj z coursehero.com"
+
+msgid "Import from quizlet.com"
+msgstr "Importuj z quizlet.com"
+
+msgid "Import from studystack.com"
+msgstr "Importuj ze studystack.com"
+
+msgid "Import source"
+msgstr "Zaimportowane źródło"
+
+msgid "Input and output"
+msgstr "Wejście i wyjście"
+
+msgid "Introduction"
+msgstr "Wprowadzenie"
+
+msgid "Invalid captcha. Please try again."
+msgstr "Nieprawidłowo wpisany kod \"captcha\". Spróbuj jeszcze raz."
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Chcę po prostu mojego starego dobrego OpenTeachera 2.x!"
+
+msgid "Keyboard layout\npreview:"
+msgstr "Podgląd układu\nklawiatury:"
+
+msgid "Keyboard layout:"
+msgstr "Układ klawiatury:"
+
+msgid "Language"
+msgstr "Język"
+
+msgid "Lesson"
+msgstr "Lekcja"
+
+msgid "Lesson order:"
+msgstr "Kolejność:"
+
+msgid "Lesson settings"
+msgstr "Ustawienia lekcji"
+
+msgid "Lesson type"
+msgstr "Rodzaj lekcji"
+
+msgid "Lesson type:"
+msgstr "Rodzaj lekcji:"
+
+msgid "Lessons can be loaded from both files and the internet."
+msgstr "Lekcje można ładować zarówno z plików, jak też z Internetu."
+
+msgid "Level"
+msgstr "Poziom"
+
+msgid "License"
+msgstr "Licencja"
+
+msgid "Load from the internet"
+msgstr "Załaduj z Internetu"
+
+msgid "Load lesson:"
+msgstr "Załaduj lekcję:"
+
+msgid "Locale"
+msgstr "Ustawienia lokalne"
+
+msgid "Location:"
+msgstr "Lokalizacja:"
+
+msgid "Lowest note:"
+msgstr "Najniższa ocena:"
+
+msgid "Make image ready"
+msgstr "Przygotuj obraz"
+
+msgid "Map:"
+msgstr "Mapa:"
+
+msgid "Maximum size of group"
+msgstr "Maksymalna wielkość grupy"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media lesson: %s"
+msgstr "Lekcja medialna: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "Minimalna liczba zadawanych pytań"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Minimalna ilość spacji między słowami"
+
+msgid "Miscellaneous"
+msgstr "Różne"
+
+msgid "Missing equals sign or tab"
+msgstr "Brak znaku równości lub tabulacji"
+
+msgid "Mistakes:  "
+msgstr "Błędy:  "
+
+msgid "Mnemosyne"
+msgstr "Mnemosyne"
+
+msgid "Name"
+msgstr "Imię"
+
+msgid "Name - Place"
+msgstr "Nazwa - Miejsce"
+
+msgid "Name for this place"
+msgstr "Nazwa tego miejsca"
+
+msgid "Name:"
+msgstr "Nazwa:"
+
+msgid "Next"
+msgstr "Dalej"
+
+msgid "No Quizlet connection"
+msgstr "Brak połączenia z Quizlet"
+
+msgid "No Study Stack connection"
+msgstr "Brak połączenia ze Study Stack"
+
+msgid "No coursehero.com connection"
+msgstr "Brak połączenia z coursehero.com"
+
+msgid "No selection was made"
+msgstr "Niczego nie zaznaczono"
+
+msgid "No selection was made. Please try again."
+msgstr "Niczego nie zaznaczono. Spróbuj ponownie."
+
+msgid "Not enough items"
+msgstr "Zbyt mało elementów"
+
+msgid "Note"
+msgstr "Ocena"
+
+msgid "Note:"
+msgstr "Uwaga:"
+
+msgid "OPERATION"
+msgstr "DZIAŁANIE"
+
+msgid "OPTIONS"
+msgstr "OPCJE"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "Po ukończeniu testu program OpenTeacher poinformuje cię, jak ci poszło, wystawiając ci ocenę."
+
+msgid "Only hard words (<50%% right)"
+msgstr "Tylko trudne słowa (<50%% poprawnych)"
+
+msgid "Only words you never answered correctly"
+msgstr "Tylko te słowa, na które nigdy nie została udzielona poprawna odpowiedź"
+
+msgid "Open &into current list"
+msgstr "Otwórz na &aktualnej liście"
+
+msgid "Open from file"
+msgstr "Otwórz z pliku"
+
+msgid "OpenGL rendering"
+msgstr "Renderowanie OpenGL"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher Web"
+msgstr "OpenTeacher Web"
+
+msgid "OpenTeacher Web - sign up"
+msgstr "OpenTeacher Web - zarejestruj się"
+
+msgid "OpenTeacher authors"
+msgstr "Autorzy programu OpenTeacher"
+
+msgid "Password:"
+msgstr "Hasło"
+
+msgid "Patches contributor"
+msgstr "Twórca łat"
+
+msgid "Pause"
+msgstr "Pauza"
+
+msgid "People in this test:"
+msgstr "Osoby na tym teście:"
+
+msgid "Percent right before known"
+msgstr "Procent poprawnych do uznania za poznane"
+
+msgid "Percents"
+msgstr "Procenty"
+
+msgid "Person"
+msgstr "Osoba"
+
+msgid "Place - Name"
+msgstr "Miejsce - Nazwa"
+
+msgid "Place name"
+msgstr "Nazwa miejsca"
+
+msgid "Place not found"
+msgstr "Nie znaleziono miejsca"
+
+msgid "Places in your test"
+msgstr "Miejsca, które obejmuje twój test"
+
+msgid "Plain text"
+msgstr "Czysty tekst"
+
+msgid "Plain text words enterer"
+msgstr "Wpisywanie zwykłego tekstu"
+
+msgid "Play hangman"
+msgstr "Zagraj w \"wisielca\""
+
+msgid "Please choose a user name and the keyboard layout you want to learn."
+msgstr "Wybierz nazwę użytkownika oraz układ klawiatury, którego chcesz się uczyć."
+
+msgid "Please choose the location of the scan or picture of the physical word list on your system below."
+msgstr "Wybierz lokalizację obrazu zawierającego listę słów."
+
+msgid "Please click this place:"
+msgstr "Proszę kliknąć miejsce:"
+
+msgid "Please click this place: "
+msgstr "Proszę kliknąć miejsce: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Proszę wprowadzić przynajmniej po jednym pytaniu i jednej odpowiedzi dla każdego elementu."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Proszę wprowadzić przynajmniej po jednym pytaniu i jednej odpowiedzi dla każdego słowa."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Wprowadź zwykły tekst w polu tekstowym. Kolejne słowa wpisuj od nowego wiersza, a pytania oddzielaj od odpowiedzi znakiem równości (\"=\") lub tabulacji."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Upewnij się, że każda linia zawiera znak \"=\" lub znak tabulacji pomiędzy pytaniem a odpowiedzią."
+
+msgid "Please make sure the image is rotated completely upright with the rotation slider under this text:"
+msgstr "Upewnij się, że obraz jest obrócony całkowicie do pionu, używając poniższego suwaka do obracania obrazu:"
+
+msgid "Please select a category"
+msgstr "Proszę wybrać kategorię"
+
+msgid "Please select a list"
+msgstr "Proszę wybrać listę"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Project website"
+msgstr "Strona WWW projektu"
+
+msgid "Pronounce places"
+msgstr "Wymawiaj miejsca"
+
+msgid "Pronounce words"
+msgstr "Wymawiaj słowa"
+
+msgid "Pronounciation"
+msgstr "Wymowa"
+
+msgid "QWERTY"
+msgstr "Układ QWERTY"
+
+msgid "QWERTZ"
+msgstr "Układ QWERTZ"
+
+msgid "Question"
+msgstr "Pytanie"
+
+msgid "Question language:"
+msgstr "Język pytania:"
+
+msgid "Question:"
+msgstr "Pytanie:"
+
+msgid "Questions"
+msgstr "Pytania"
+
+msgid "Questions:"
+msgstr "Pytania:"
+
+msgid "Quizlet didn't accept the connection. Are you sure that your internet connection works and quizlet.com is online?"
+msgstr "Quizlet nie przyjął połączenia. Czy na pewno twoje połączenie internetowe działa prawidłowo, a serwer quizlet.com jest dostępny online?"
+
+msgid "Random"
+msgstr "Losowe"
+
+msgid "Recently opened:"
+msgstr "Ostatnio otwierane:"
+
+msgid "Recognizing word list..."
+msgstr "Rozpoznawanie listy słów..."
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Remove selected place"
+msgstr "Usuń wybrane miejsce"
+
+msgid "Remove selected row(s)"
+msgstr "Usuń zaznaczone rzędy"
+
+msgid "Repeat answer"
+msgstr "Powtórz odpowiedź"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Okres zaniku w trybie powtarzania (milisekund)"
+
+msgid "Result preview"
+msgstr "Podgląd wyników"
+
+msgid "Results"
+msgstr "Wyniki"
+
+msgid "Reverse"
+msgstr "Odwrotny kierunek"
+
+msgid "SYNOPSIS"
+msgstr "SKŁADNIA"
+
+msgid "Save &As"
+msgstr "Zapisz j&ako"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Search coursehero.com"
+msgstr "Przeszukaj coursehero.com"
+
+msgid "Search quizlet.com"
+msgstr "Przeszukaj quizlet.com"
+
+msgid "Select a student/group:"
+msgstr "Wybierz studenta/grupę:"
+
+msgid "Select category"
+msgstr "Wybierz kategorię"
+
+msgid "Select file(s)"
+msgstr "Wybierz plik(-i)"
+
+msgid "Select list"
+msgstr "Wybierz listę"
+
+msgid "Select the test you want to take"
+msgstr "Wybierz test, który chcesz zdawać"
+
+msgid "Server IP or hostname:"
+msgstr "Numer IP serwera lub nazwa hosta:"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Show results"
+msgstr "Pokaż wyniki"
+
+msgid "Shows an overview of all documented available profiles"
+msgstr "Pokazuje przegląd wszystkich udokumentowanych dostępnych profilów"
+
+msgid "Sign up"
+msgstr "Zarejestruj się"
+
+msgid "Sign up!"
+msgstr "Zarejestruj się!"
+
+msgid "Simple mode"
+msgstr "Tryb uproszczony"
+
+msgid "Skip"
+msgstr "Pomiń"
+
+msgid "Smart"
+msgstr "Inteligentna"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "Niestety, tego miejsca nie ma na liście znanych miejsc. Dodaj je ręcznie, klikając dwukrotnie odpowiednie miejsce na mapie."
+
+msgid "Sort"
+msgstr "Sortuj"
+
+msgid "Speed"
+msgstr "Szybkość"
+
+msgid "Speed (words per minute)"
+msgstr "Szybkość (słów na minutę)"
+
+msgid "Spreadsheet"
+msgstr "Arkusz kalkulacyjny"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "Uruchom program OpenTeacher i kliknij przycisk \"Utwórz lekcję słów\", aby przygotować nową lekcję słów."
+
+msgid "Start exercise"
+msgstr "Rozpocznij ćwiczenie"
+
+msgid "Start!"
+msgstr "Start!"
+
+msgid "Student's answers have been checked!"
+msgstr "Odpowiedzi uczniów zostały sprawdzone!"
+
+msgid "Student's results have been (re)published!"
+msgstr "Wyniki uczniów zostały (ponownie) ogłoszone!"
+
+msgid "Study Stack didn't accept the connection. Are you sure that your internet connection works and http://www.studystack.com/ is online?"
+msgstr "Nie udało się połączyć ze StudyStack. Czy na pewno twoje połączenie internetowe działa, a strona http://www.studystack.com/ jest dostępna?"
+
+msgid "Symbols"
+msgstr "Symbole"
+
+msgid "System default"
+msgstr "Domyślny w systemie"
+
+msgid "Take test"
+msgstr "Zdawaj test"
+
+msgid "Taking test"
+msgstr "Zdawanie testu"
+
+msgid "Teach me!"
+msgstr "Naucz mnie!"
+
+msgid "Teacher Panel"
+msgstr "Panel Nauczyciela"
+
+msgid "Teacher panel"
+msgstr "Panel nauczyciela"
+
+msgid "Tests"
+msgstr "Testy"
+
+msgid "That username is already taken. Please try again."
+msgstr "Ta nazwa użytkonika jest już zajęta. Proszę spróbować jeszcze raz."
+
+msgid "That's a mistake :(."
+msgstr "To jest pomyłka :(."
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "Zrzuty ekranu zostały wykonane w Ubuntu, ale wszystko powinno działać dokładnie tak samo w Windows i Mac OS X."
+
+msgid "The username should not be empty. Please try again."
+msgstr "Nazwa użytkownika nie powinna być pusta. Proszę spróbować jeszcze raz."
+
+msgid "The username you requested is already taken. Please try again."
+msgstr "Wybrana nazwa użytkownika jest już używana. Spróbuj jeszcze raz."
+
+msgid "The word list was imported from Quizlet successfully."
+msgstr "Lista słów została pomyślnie zaimportowana z Quizlet."
+
+msgid "The word list was imported from Study Stack successfully."
+msgstr "Lista słów została zaimportowana ze Study Stack."
+
+msgid "The word list was imported from coursehero.com successfully."
+msgstr "Lista słów została pomyślnie zaimportowana z coursehero.com."
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "Następnie wpisz do tabeli wszystkie słowa, których chcesz się nauczyć; do następnego pytania lub odpowiedzi przechodzi się naciskając Tab lub \"=\". Spójrz na przykładowy zrzut ekranu."
+
+msgid "There are a number of different lesson types: you can use OpenTeacher to learn vocabulary, geography and media."
+msgstr "Istnieje kilka różnych rodzajów lekcji: programu OpenTeacher można używać do nauki słownictwa, geografii i multimediów."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Istnieją niezapisane elementy lub wyniki. Czy na pewno chcesz zamknąć?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Zastanów się nad odpowiedzią, a następnie naciśnij przycisk 'Pokaż odpowiedź'."
+
+msgid "Thinking"
+msgstr "Myślę"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "Skrócona instrukcja pokazuje, jak wykonać prosty test w programie OpenTeacher. Nauczymy się dzisiaj liczyć do dziesięciu po francusku! W tym przykładzie zakładamy, że znasz angielski i chcesz uczyć się francuskiego."
+
+msgid "This type of file is not supported:\n"
+msgstr "Ten typ pliku nie jest obsługiwany:\n"
+
+msgid "This type of media isn't supported on your computer"
+msgstr "Ten rodzaj mediów nie jest obsługiwany na twoim komputerze"
+
+msgid "This wizard will guide you through the process of creating a word list from a scan or picture of a physical word list. Click 'Next' to start."
+msgstr "Ten kreator poprowadzi cię przez proces tworzenia listy słów z obrazu przedstawiającego takiego listę (np. z zeskanowanej kartki ze słowami). Kliknij 'Dalej', aby rozpocząć."
+
+msgid "Title:"
+msgstr "Tytuł:"
+
+msgid "To archieve that, you might try slowing down a bit."
+msgstr "Aby to osiągnąć, możesz spróbować pisać trochę wolniej."
+
+msgid "Toolbar"
+msgstr "Pasek narzędziowy"
+
+msgid "Topo lesson: %s"
+msgstr "Lekcja topografii: %s"
+
+msgid "Topography"
+msgstr "Topografia"
+
+msgid "Topography maps"
+msgstr "Mapy topograficzne"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Całkowity czas zastanawiania się: %s min."
+
+msgid "Translation: "
+msgstr "Tłumaczenie: "
+
+msgid "Translator (%s)"
+msgstr "Tłumacz (%s)"
+
+msgid "Type answer"
+msgstr "Wpisz odpowiedź"
+
+msgid "Typing Tutor"
+msgstr "Nauka pisania na klawiaturze"
+
+msgid "Unnamed"
+msgstr "Bez nazwy"
+
+msgid "Unsaved data"
+msgstr "Niezapisane dane"
+
+msgid "Unsupported file type"
+msgstr "Nieobsługiwany typ pliku"
+
+msgid "Unsupported media"
+msgstr "Nieobsługiwane źródło mediów"
+
+msgid "Use HTML5 for audio"
+msgstr "Używaj HTML5 do odtwarzania dźwięku"
+
+msgid "Use HTML5 for video"
+msgstr "Używaj HTML5 do wyświetlania filmów"
+
+msgid "Username empty"
+msgstr "Pusta nazwa użytkownika"
+
+msgid "Username taken"
+msgstr "Nazwa użytkownika zajęta"
+
+msgid "Username:"
+msgstr "Nazwa użytkownika:"
+
+msgid "View answer"
+msgstr "Pokaż odpowiedź"
+
+msgid "Voice"
+msgstr "Głos"
+
+msgid "Voice name (language)"
+msgstr "Nazwa głosu (język)"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "Ostrzeżenie"
+
+msgid "Welcome to OpenTeacher Web! You can register an account below."
+msgstr "Witaj w OpenTeacher Web! Poniżej możesz zarejestrować konto."
+
+msgid "Welcome, I'm your personal OpenTeacher typing tutor. We'll improve your typing skills by doing simple exercises. Between the exercises, I'll give instructions. Let's get started:\n\nFirst place your fingers on the so-called home row: your fingers, from left to right, should always be on the keys '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}' and '{;}' while not typing another character. When your fingers are in position, press {space} to start the first lesson. Work for accuracy at first, not speed."
+msgstr "Witaj, jestem twoim osobistym nauczycielem pisania na klawiaturze. Poprawimy twoje umiejętności w tym zakresie poprzez wykonanie prostych ćwiczeń. Pomiędzy ćwiczeniami będę cię instruować. Zaczynamy:\n\nNajpierw połóż palce na tzw. rzędzie głównym: twoje palce, patrząc od lewej do prawej, powinny zawsze spoczywać na klawiszach '{a}', '{s}', '{d}', '{f}', '{spacja}', '{spacja}', '{j}', '{k}', '{l}' i '{;}', chyba że wpisujesz znak inny niż wyżej wymienione. Po ułożeniu palców naciśnij {spację} aby rozpocząć pierwszą lekcję. Na początku ćwicz pisanie bez błędów, a nie szybkość pisania."
+
+msgid "Welcome, please choose your account by clicking on it."
+msgstr "Witaj, wybierz swoje konto klikając je."
+
+msgid "What's this place's name?"
+msgstr "Jak nazywa się to miejsce?"
+
+msgid "When the image is completely upright, make a selection on the image with the mouse with in the left top the first question to include and in the right bottom the last answer to include. Click 'Next' when done."
+msgstr "Po obróceniu obrazu całkowicie do pionu zaznacz za pomocą myszy odpowiednią część obrazu, tak aby w lewym górnym rogu znalazło się pierwsze pytanie do uwzględnienia, a w prawym dolnym rogu ostatnie pytanie do uwzględnienia. Po zaznaczeniu odpowiedniego fragmentu obrazu kliknij 'Dalej'."
+
+msgid "When you open a lesson you can view the items in that lesson or enter new ones, and learn those items."
+msgstr "Po otwarciu lekcji można przeglądać jej zawartość, wpisywać nowe elementy lub rozpocząć naukę."
+
+msgid "Which place is here?"
+msgstr "Jakie to miejsce?"
+
+msgid "Word lesson: %s"
+msgstr "Lekcja słów: %s"
+
+msgid "Word list order and filters"
+msgstr "Kolejność na liście słów oraz filtry"
+
+msgid "Word modifications"
+msgstr "Modyfikacje słowa"
+
+msgid "Word most done wrong:"
+msgstr "Słowo z najczęstszą błędną odpowiedzią:"
+
+msgid "Word:"
+msgstr "Słowo:"
+
+msgid "Words lesson"
+msgstr "Lekcja słów"
+
+msgid "Words lesson from picture"
+msgstr "Lekcja słów z obrazu"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Bezbłędnie i szybko! Poćwicz nowe układy liter, żeby osiągnąć jeszcze lepsze wyniki!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Bezbłędnie i szybko! Poćwicz nowe słowa, żeby osiągnąć jeszcze lepsze wyniki!"
+
+msgid "You have already tried this character / word"
+msgstr "Już sprawdzałeś ten znak / to słowo"
+
+msgid "You lose, the answer was: "
+msgstr "Przegrałeś, hasło brzmiało: "
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Popełniono zero błędów, a szybkość pisania jest wystarczająca, więc możesz teraz poćwiczyć nowe układy liter. Oby tak dalej!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Popełniono zero błędów, a szybkość pisania jest wystarczająca, więc możesz teraz poćwiczyć nowe słowa. Oby tak dalej!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Popełniono zero błędów. Teraz spróbuj poprawić trochę szybkość pisania."
+
+msgid "You need to add items to your test first"
+msgstr "Musisz najpierw dodać elementy do testu"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Nauczysz się teraz liter, które nie znajdują się w rzędzie głównym. Aby zorientować się których palców trzeba użyć, spójrz na obraz klawiatury na ekranie. Gdy nie używasz palca do wpisywania litery, połóż go z powrotem na rzędzie głównym."
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Twoje odpowiedzi zostały oddane do sprawdzenia!"
+
+msgid "Your password should at least be %s characters long, and contain special (non alphanumeric) characters. Please try again."
+msgstr "Hasło powinno się składać z co najmniej %s znaków, a także zawierać znaki specjalnie (inne niż litery i cyfry). Spróbuj jeszcze raz."
+
+msgid "coursehero.com didn't accept the connection. Are you sure that your internet connection works and coursehero.com is online?"
+msgstr "coursehero.com nie przyjęło połączenia. Czy na pewno twoje połączenie internetowe działa prawidłowo, a serwer coursehero.com jest dostępny online?"
+
+msgid "hanged man"
+msgstr "wisielec"
+
+msgid "no"
+msgstr "nie"
+
+msgid "run {name} as specified by {profile}, {profile} should be one of:"
+msgstr "uruchom {name} tak jak określono w {profile}, {profile} powinien być jednym z poniższych:"
+
+msgid "show a help message"
+msgstr "wyświetla pomoc"
+
+msgid "yes"
+msgstr "tak"
+

@@ -1,0 +1,385 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Sobre"
+
+msgid "&Documentation"
+msgstr "&Documentación"
+
+msgid "&Edit"
+msgstr "&Editar"
+
+msgid "&File"
+msgstr "&Ficheiro"
+
+msgid "&Help"
+msgstr "&Axuda"
+
+msgid "&New"
+msgstr "&Novo"
+
+msgid "&Open"
+msgstr "&Abrir"
+
+msgid "&Print"
+msgstr "&Imprimir"
+
+msgid "&Quit"
+msgstr "&Saír"
+
+msgid "&Save"
+msgstr "&Gardar"
+
+msgid "&Settings"
+msgstr "&Configuración"
+
+msgid "&View"
+msgstr "&Ver"
+
+msgid "-"
+msgstr "-"
+
+msgid "Add"
+msgstr "Engadir"
+
+msgid "Add person"
+msgstr "Engadir persoa"
+
+msgid "American"
+msgstr "Americano"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Número de ficheiros abertos recentemente que lembrar"
+
+msgid "Answer"
+msgstr "Resposta"
+
+msgid "Answer language:"
+msgstr "Idioma da resposta:"
+
+msgid "Answer:"
+msgstr "Resposta:"
+
+msgid "Answering"
+msgstr "Respondendo"
+
+msgid "Answers"
+msgstr "Respostas"
+
+msgid "Answers right:"
+msgstr "Respostas atinadas:"
+
+msgid "Answers wrong:"
+msgstr "Respostas erradas:"
+
+msgid "Back"
+msgstr "Atrás"
+
+msgid "Can't merge files of different file types."
+msgstr "Non é posíbel fusionar ficheiros de tipos diferentes."
+
+msgid "Change lesson settings"
+msgstr "Cambiar configuración da lección"
+
+msgid "Check!"
+msgstr "Comprobar!"
+
+msgid "Click the button to start"
+msgstr "Preme o botón pra comezar"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Completed: %s"
+msgstr "Completado: %s"
+
+msgid "Correct"
+msgstr "Correcto"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Corrixir resposta: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Corrixir resposta: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Corrixir de todos xeitos"
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Non foi posíbel abrir o ficheiro porque o tipo de ficheiro é descoñecido ou non é posíbel mostralo."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Non foi posíbel abrir o ficheiro; está aínda aí e temos dereito a abrilo?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Non foi posíbel abrir o ficheiro; parece estar estragado."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Non foi posíbel abrir o ficheiro; hai espazo abondo no disco e temos dereito a escribir no lugar que se indica?"
+
+msgid "Create lesson:"
+msgstr "Crear unha lección"
+
+msgid "Create media lesson"
+msgstr "Crear unha lección multimedia"
+
+msgid "Create topography lesson"
+msgstr "Crear unha lección de topografía"
+
+msgid "Create words lesson"
+msgstr "Crear lección de palabras"
+
+msgid "Dutch"
+msgstr "Holandés"
+
+msgid "Empty question or answer"
+msgstr "Pregunta ou resposta baleira"
+
+msgid "Enter list"
+msgstr "Introducir lista"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Escribe a URL da túa web ou elemento multimedia.\nSitios de vídeo soportados: "
+
+msgid "File URL"
+msgstr "URL do arquivo"
+
+msgid "File opened succesfully."
+msgstr "Abriuse o ficheiro satisfactoriamente."
+
+msgid "File saved succesfully."
+msgstr "Gravouse o ficheiro satisfactoriamente."
+
+msgid "French"
+msgstr "Francés"
+
+msgid "From hard disk..."
+msgstr "Do disco duro..."
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "General"
+msgstr "Xeral"
+
+msgid "German"
+msgstr "Alemán"
+
+msgid "Given answer"
+msgstr "Resposta dada"
+
+msgid "I speak English"
+msgstr "Falo Inglés"
+
+msgid "I was right"
+msgstr "Acertei"
+
+msgid "I was wrong"
+msgstr "Fallei"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Estou listo, comeza-la lección!"
+
+msgid "Import source"
+msgstr "Importar a fonte"
+
+msgid "Interval"
+msgstr "Intervalo"
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "Lesson"
+msgstr "Lección"
+
+msgid "Lesson settings"
+msgstr "Configuración da lección"
+
+msgid "Lesson type"
+msgstr "Tipo de lección"
+
+msgid "Load lesson:"
+msgstr "Cargar unha lección:"
+
+msgid "Locale"
+msgstr "Locale"
+
+msgid "Map:"
+msgstr "Mapa:"
+
+msgid "Maximum size of group"
+msgstr "Tamaño máximo do grupo"
+
+msgid "Media lesson: %s"
+msgstr "Lección multimedia: %s"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Name:"
+msgstr "Nome:"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "Open from file"
+msgstr "Abrir desde ficheiro"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "Autores de OpenTeacher"
+
+msgid "Opened file into the current list succesfully."
+msgstr "Abriuse o ficheiro na lista actual satisfactoriamente."
+
+msgid "Pause"
+msgstr "Pausa"
+
+msgid "Percents"
+msgstr "Porcentaxes"
+
+msgid "Person"
+msgstr "Persoa"
+
+msgid "Place name"
+msgstr "Nome de lugar"
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Introduza ao menos unha pregunta e unha resposta para cada elemento."
+
+msgid "Question"
+msgstr "Pregunta"
+
+msgid "Question language:"
+msgstr "Idioma da pregunta:"
+
+msgid "Question:"
+msgstr "Pregunta:"
+
+msgid "Questions"
+msgstr "Preguntas"
+
+msgid "Questions:"
+msgstr "Preguntas:"
+
+msgid "Recently opened:"
+msgstr "Abertas recentemente"
+
+msgid "Remove"
+msgstr "Eliminar"
+
+msgid "Remove selected row(s)"
+msgstr "Eliminar fila(s) seleccionada(s)"
+
+msgid "Repeat answer"
+msgstr "Repetir resposta"
+
+msgid "Results"
+msgstr "Resultados"
+
+msgid "Save &As"
+msgstr "Gardar &como"
+
+msgid "Select file(s)"
+msgstr "Seleccionar arquivo(s)"
+
+msgid "Show results"
+msgstr "Amosar resultados"
+
+msgid "Skip"
+msgstr "Omitir"
+
+msgid "Smart"
+msgstr "Intelixente"
+
+msgid "Start!"
+msgstr "Comezar!"
+
+msgid "System default"
+msgstr "Predeterminado do sistema"
+
+msgid "Teach me!"
+msgstr "Apréndeme!"
+
+msgid "Test"
+msgstr "Proba"
+
+msgid "Tests"
+msgstr "Probas"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Pensa na resposta, e preme o botón 'Ver resposta' cando a saibas."
+
+msgid "Think answer"
+msgstr "Pensar resposta"
+
+msgid "Thinking"
+msgstr "Pensando"
+
+msgid "This type of file is not supported:\n"
+msgstr "Este tipo de arquivo non está soportado:\n"
+
+msgid "Title:"
+msgstr "Título:"
+
+msgid "Toolbar"
+msgstr "Barra de ferramentas"
+
+msgid "Topo lesson: %s"
+msgstr "Lección de topografía: %s"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Tempo total pensando: %s minutos"
+
+msgid "Translation: "
+msgstr "Tradución: "
+
+msgid "Translator (%s)"
+msgstr "Tradutor (%s)"
+
+msgid "Type answer"
+msgstr "Escribe a resposta"
+
+msgid "Unnamed"
+msgstr "Sen nome"
+
+msgid "Unsaved data"
+msgstr "Datos sen salvar"
+
+msgid "Unsupported file type"
+msgstr "Tipo de arquivo non soportado"
+
+msgid "View answer"
+msgstr "Ver resposta"
+
+msgid "WRDS"
+msgstr "oui"
+
+msgid "Warning"
+msgstr "Atención"
+
+msgid "Word lesson: %s"
+msgstr "Lección de palabra: %s"
+
+msgid "Word most done wrong:"
+msgstr "Palabra coa que se produciron máis erros:"
+
+msgid "Word:"
+msgstr "Palabra:"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "non"
+
+msgid "yes"
+msgstr "si"
+

@@ -30,7 +30,8 @@ type Def struct {
 	Name     string
 	Help     string
 	Kind     string
-	Choices  []string    // Choice
+	Choices  []string    // Choice: the values stored
+	Labels   []string    // Choice: what the user sees (default: Choices)
 	Default  interface{} // bool, string (Choice) or milliseconds (Seconds)
 	Min, Max float64     // Seconds
 	Run      func(Store) // Action
@@ -56,7 +57,7 @@ func Register(d Def) {
 
 // CategoryOrder is the order of the dialog's tabs; other categories come
 // after these, alphabetically.
-var CategoryOrder = []string{"Practice", "Results", "Files"}
+var CategoryOrder = []string{"Practice", "Results", "Files", "Interface"}
 
 func rank(category string) int {
 	for i, c := range CategoryOrder {

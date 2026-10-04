@@ -1,0 +1,1285 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Over"
+
+msgid "&Documentation"
+msgstr "&Documentatie"
+
+msgid "&Edit"
+msgstr "B&ewerken"
+
+msgid "&File"
+msgstr "&Bestand"
+
+msgid "&Help"
+msgstr "&Help"
+
+msgid "&New"
+msgstr "&Nieuw"
+
+msgid "&Open"
+msgstr "&Open"
+
+msgid "&Print"
+msgstr "&Print"
+
+msgid "&Quit"
+msgstr "A&fsluiten"
+
+msgid "&Reverse list"
+msgstr "&Lijst omkeren"
+
+msgid "&Save"
+msgstr "&Opslaan"
+
+msgid "&Settings"
+msgstr "&Instellingen"
+
+msgid "&View"
+msgstr "Bee&ld"
+
+msgid "(Handed in)"
+msgstr "(Ingeleverd)"
+
+msgid "(Re)check answers"
+msgstr "Antwoorden (opnieuw) controleren"
+
+msgid "(Re)publish answers"
+msgstr "Antwoorden (opnieuw) publiceren"
+
+msgid "(advanced)"
+msgstr "(geavanceerd)"
+
+msgid "(did not participate)"
+msgstr "(nam niet deel)"
+
+msgid "-"
+msgstr "-"
+
+msgid ".otmd saving"
+msgstr ".otmd opslaan"
+
+msgid ".txt saving"
+msgstr ".txt opslaan"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "Een woord zal nu gevraagd worden in uw eigen taal, en u moet nu de vertaling in het tekstveld invullen. Wanneer u de vertaling heeft ingevuld, drukt u op Enter op u toetsenbord, of klikt u op de 'Controleer!'-knop"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "ABBYY Lingvo Tutor"
+
+msgid "AUTHOR"
+msgstr "AUTEUR"
+
+msgid "About"
+msgstr "Over"
+
+msgid "Add"
+msgstr "Toevoegen"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Voeg een plaats toe door er dubbel op te klikken op de kaart"
+
+msgid "Add a place by name:"
+msgstr "Voeg een plaats toe door de naam te geven"
+
+msgid "Add lesson"
+msgstr "Les toevoegen"
+
+msgid "Add local media"
+msgstr "Voeg lokale media toe"
+
+msgid "Add person"
+msgstr "Persoon toevoegen"
+
+msgid "Add person/group"
+msgstr "Persoon/groep toevoegen"
+
+msgid "Add remote media"
+msgstr "Voeg externe media toe"
+
+msgid "Advanced mode"
+msgstr "Uitgebreide modus"
+
+msgid "After startup, OpenTeacher allows you to load a lesson or to create one."
+msgstr "Na het starten, kunt u met OpenTeacher een les laden of er één aanmaken."
+
+msgid "All features useful for teachers"
+msgstr "Alle functies die handig zijn voor docenten"
+
+msgid "All once"
+msgstr "Vraag alles één keer"
+
+msgid "Also, OpenTeacher has a typing lesson course built in."
+msgstr "Daarnaast zit er in OpenTeacher een typelesprogramma ingebouwd."
+
+msgid "Also, it's possible to browse results of older tests."
+msgstr "Daarnaast is het mogelijk om resultaten van oudere overhoringen te bekijken."
+
+msgid "American"
+msgstr "Amerikaans"
+
+msgid "Amount of mistakes"
+msgstr "Hoeveelheid fouten"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Hoeveelheid te onthouden recent geopende bestanden"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Er trad een fout op. De server kon niet worden bereikt. Kijk uw netwerkverbinding na."
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "Antwoord"
+
+msgid "Answer language:"
+msgstr "Taal van de antwoorden:"
+
+msgid "Answer:"
+msgstr "Antwoord:"
+
+msgid "Answering"
+msgstr "Aan het antwoorden"
+
+msgid "Answers"
+msgstr "Antwoorden"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "De antwoorden van deze leerling zijn nog niet nagekeken. Klik op de 'Nakijken'-knop in de tweede kolom."
+
+msgid "Answers right:"
+msgstr "Goede antwoorden"
+
+msgid "Answers wrong:"
+msgstr "Foute antwoorden"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Weet u zeker dat u terug wilt naar de invoertab? Het zal uw les beëindigen!"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Weet u zeker dat u een andere kaart wilt gebruiken? Het verwijdert al uw plaatsen!"
+
+msgid "Artwork"
+msgstr "Artistieke bijdragen"
+
+msgid "Ask foreign - known"
+msgstr "Vraag onbekend - bekend"
+
+msgid "At the end of the session, you can view your results."
+msgstr "Aan het eind van de sessie, kunt u uw resultaten bekijken."
+
+msgid "Authors"
+msgstr "Auteurs"
+
+msgid "Average note:"
+msgstr "Gemiddelde cijfer:"
+
+msgid "Back"
+msgstr "Terug"
+
+msgid "Backpack"
+msgstr "Backpack"
+
+msgid "Belgian AZERTY"
+msgstr "Belgische AZERTY"
+
+msgid "Bug hunter"
+msgstr "Bugjager"
+
+msgid "Can't merge files of different file types."
+msgstr "Kan bestanden met verschillende types niet samenvoegen."
+
+msgid "Can't open the resultive word list, because it can't be shown."
+msgstr "De resulterende woordenlijst is niet te openen, want deze kan niet weergeven worden."
+
+msgid "Can't show the result"
+msgstr "Kan het resultaat niet weergeven"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Change lesson settings"
+msgstr "Pas lesinstellingen aan"
+
+msgid "Chat channel spammer"
+msgstr "Chatkanaalspammer"
+
+msgid "Check"
+msgstr "Controleer"
+
+msgid "Check!"
+msgstr "Controleer!"
+
+msgid "Choose an image"
+msgstr "Selecteer een afbeelding"
+
+msgid "Choose test"
+msgstr "Kies toets"
+
+msgid "Click here to choose a location"
+msgstr "Klik hier om een locatie te kiezen"
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "Klik op de 'Overhoor me!'-tab aan de onderkant om een overhoring te starten. U kunt nu instellen in welke manier OpenTeacher u moet overhoren, maar de standaardinstellingen voldoen in ons geval. Dus, we klikken op de 'Ik ben klaar, start de les!'-knop."
+
+msgid "Click the button to start"
+msgstr "Klik op de knop om te beginnen"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Comment"
+msgstr "Commentaar"
+
+msgid "Comment after answering"
+msgstr "Commentaar na het antwoorden"
+
+msgid "Completed"
+msgstr "Voltooid"
+
+msgid "Completed: %s"
+msgstr "Voltooid: %s"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Gefeliciteerd, u hebt deze typeles compleet doorlopen! Als u door wilt gaan kan dat, maar dit is wel het eind van de instructies. Geweldig gedaan!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Gefeliciteerd, u hebt uw eerste oefening voltooid!"
+
+msgid "Connect"
+msgstr "Verbinden"
+
+msgid "Contact: {email}"
+msgstr "Contact: {email}"
+
+msgid "Core developer"
+msgstr "Kernontwikkelaar"
+
+msgid "Correct"
+msgstr "Correct"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Goed antwoord: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Goed antwoord: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Toch goed"
+
+msgid "Corrected: %s"
+msgstr "Verbeterd: %s"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "Kon geen verbinding maken met de server. Mogelijk is de hostname fout."
+
+msgid "Could not login. Wrong username or password."
+msgstr "Kon niet aanmelden. Verkeerde gebruikersnaam of wachtwoord."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Kon het bestand niet openen, omdat het bestandstype onbekend is of niet weergeven kan worden."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Kon het bestand niet openen, is het nog steeds aanwezig en hebben we de rechten om het te openen?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Kon het bestand niet openen, het lijkt beschadigd te zijn."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Kon het bestand niet opslaan, is er genoeg vrije ruimte en zijn we gemachtigd te schrijven op de aangewezen locatie?"
+
+msgid "Create lesson:"
+msgstr "Maak een les aan:"
+
+msgid "Create media lesson"
+msgstr "Maak een mediales aan"
+
+msgid "Create topography lesson"
+msgstr "Maak een topografieles aan"
+
+msgid "Create words lesson"
+msgstr "Maak een woordjesles aan"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Maak een woordjesles aan door platte tekst in te voeren"
+
+msgid "Create words lesson from a scan or picture"
+msgstr "Maak een woordjesles van een scan of foto"
+
+msgid "CueCard"
+msgstr "CueCard"
+
+msgid "Cyrillic"
+msgstr "Cyrillisch"
+
+msgid "DESCRIPTION"
+msgstr "BESCHRIJVING"
+
+msgid "Data Interchange Format"
+msgstr "Data Interchange Format"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Debian/Ubuntu packager"
+
+msgid "Documentation"
+msgstr "Documentatie"
+
+msgid "Domingo"
+msgstr "Domingo"
+
+msgid "Down here, you can see a preview of the result. There will probably be some wrongly recognized words in there, but the structure of the word list should be recognizable. If not, click 'Back' and try again. Otherwise, click 'Finish'."
+msgstr "Hieronder hoort u een voorproefje van het resultaat te zien. Er zullen waarschijnlijk wat verkeerd herkende woorden in zijn, maar de structuur van de woordenlijst zou herkenbaar moeten zijn. Indien dat niet het geval is, klik dan op 'Vorige' en probeer het opnieuw. Druk anders of 'Voltooien'."
+
+msgid "Dutch"
+msgstr "Nederlands"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Dvorak versimpeld toetsenbord"
+
+msgid "E.g.: german food vocabulary"
+msgstr "Bijv.: german food vocabulary"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Lege vraag of antwoord"
+
+msgid "Enable compression"
+msgstr "Compressie aanzetten"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Zet iedere OpenTeacherfunctie aan"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Schakel de verborgen browser in (verberg hem door de zijkant te slepen met de muis)"
+
+msgid "Enter a search term and press the search button to search coursehero.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Vul een zoekterm in en druk op de zoekknop of coursehero.com te doorzoeken op sets. Selecteer vervolgens de gewenste set of sets om te importeren en klik Ok."
+
+msgid "Enter a search term and press the search button to search quizlet.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Vul een zoekterm in en druk op de zoekknop om quizlet.com te doorzoeken op sets. Selecteer vervolgens de set of sets die u wilt importeren en klik op OK."
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "Voer een titel in voor de woordjeslijst die u gaat invoeren. Voer ook de al bekende taal in, in ons geval Nederlands, en de onbekende taal (de taal die u wilt leren), in ons geval Frans."
+
+msgid "Enter list"
+msgstr "Voeg toe"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Vul de URL van uw website of media-item in.\nOndersteunde videosites: "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Alles wat u nodig hebt om OpenTeacher voor zelfstudie te gebruiken."
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Duur van het vervagen wanneer fout geantwoord (milliseconden)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Functies voor leerlingen die OpenTeacher thuis gebruiken"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Functies voor leerlingen die OpenTeacher op school gebruiken"
+
+msgid "File URL"
+msgstr "Bestand URL"
+
+msgid "File opened succesfully."
+msgstr "Bestand succesvol geopend"
+
+msgid "File saved succesfully."
+msgstr "Bestand succesvol opgeslagen."
+
+msgid "Final mark:"
+msgstr "Uiteindelijke cijfer:"
+
+msgid "Flashqard"
+msgstr "Flashqard"
+
+msgid "French"
+msgstr "Frans"
+
+msgid "French AZERTY"
+msgstr "Franse AZERTY"
+
+msgid "Fresh Memory"
+msgstr "Fresh Memory"
+
+msgid "From hard disk..."
+msgstr "Van de harde schijf..."
+
+msgid "Full license text"
+msgstr "Volledige licentietekst"
+
+msgid "Fullscreen"
+msgstr "Volledig scherm"
+
+msgid "General"
+msgstr "Algemeen"
+
+msgid "German"
+msgstr "Duits"
+
+msgid "Given answer"
+msgstr "Gegeven antwoord"
+
+msgid "Granule"
+msgstr "Granule"
+
+msgid "Greek"
+msgstr "Grieks"
+
+msgid "Hand in answers"
+msgstr "Antwoorden inleveren"
+
+msgid "Help"
+msgstr "Hulp"
+
+msgid "Hide the browser!"
+msgstr "Verberg de browser!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Verberg al het andere; maak ruimte voor de browser"
+
+msgid "Highest note:"
+msgstr "Hoogste cijfer:"
+
+msgid "Hint:"
+msgstr "Hint:"
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language"
+
+msgid "I am a new user"
+msgstr "Ik ben een nieuwe gebruiker"
+
+msgid "I speak English"
+msgstr "Ik spreek Nederlands"
+
+msgid "I was right"
+msgstr "Ik had het goed"
+
+msgid "I was wrong"
+msgstr "Ik had het fout"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Ik ben klaar, start de les!"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "Als u de juiste vertaling heeft ingevoerd, zal de volgende vraag gesteld worden. Als dat niet het geval was, zal OpenTeacher het correcte antwoord laten zien en het verschil met uw antwoord."
+
+msgid "Images"
+msgstr "Afbeeldingen"
+
+msgid "Images ({extensions})"
+msgstr "Afbeeldingen ({extensions})"
+
+msgid "Import from coursehero.com"
+msgstr "Importeren van coursehero.com"
+
+msgid "Import from quizlet.com"
+msgstr "Importeren van quizlet.com"
+
+msgid "Import from studystack.com"
+msgstr "Importeren van studystack.com"
+
+msgid "Import source"
+msgstr "Importeerbron"
+
+msgid "Input and output"
+msgstr "Invoer en uitvoer"
+
+msgid "Interval"
+msgstr "Interval"
+
+msgid "Introduction"
+msgstr "Introductie"
+
+msgid "Invalid captcha. Please try again."
+msgstr "Ongeldige captcha. Probeer het alstublieft opnieuw."
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Geef mij maar m'n oude vertrouwde OpenTeacher 2.x!"
+
+msgid "KDE Vocabulary Document"
+msgstr "KDE woordenlijstdocument"
+
+msgid "Keyboard layout\npreview:"
+msgstr "Toetsenbord-\nindelingsvoorbeeld"
+
+msgid "Keyboard layout:"
+msgstr "Toetsenbordindeling:"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Lesson"
+msgstr "Les"
+
+msgid "Lesson order:"
+msgstr "Lesvolgorde:"
+
+msgid "Lesson settings"
+msgstr "Lesinstellingen"
+
+msgid "Lesson type"
+msgstr "Lestype"
+
+msgid "Lesson type:"
+msgstr "Lestype:"
+
+msgid "Lessons can be loaded from both files and the internet."
+msgstr "Lessen kunnen geladen worden vanuit zowel bestanden als het internet."
+
+msgid "Level"
+msgstr "Niveau"
+
+msgid "License"
+msgstr "Licentie"
+
+msgid "Load from the internet"
+msgstr "Laden van het internet"
+
+msgid "Load lesson:"
+msgstr "Laad een les:"
+
+msgid "Locale"
+msgstr "Land/taal-instellingen"
+
+msgid "Location:"
+msgstr "Locatie:"
+
+msgid "Login"
+msgstr "Aanmelden"
+
+msgid "Lowest note:"
+msgstr "Laagste cijfer:"
+
+msgid "Ludem"
+msgstr "Ludem"
+
+msgid "Make image ready"
+msgstr "Afbeelding voorbereiden"
+
+msgid "Map:"
+msgstr "Kaart:"
+
+msgid "Maximum size of group"
+msgstr "Maximumgrootte van de groep"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media lesson: %s"
+msgstr "Mediales: %s"
+
+msgid "Microsoft Excel 97/2000/XP/2003"
+msgstr "Microsoft Excel 97/2000/XP/2003"
+
+msgid "Microsoft Word 97/2000/XP/2003"
+msgstr "Microsoft Word 97/2000/XP/2003"
+
+msgid "Minimum amount of questions asked"
+msgstr "Minimumhoeveelheid gevraagde vragen"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Minimumhoeveelheid spaties tussen woorden"
+
+msgid "Miscellaneous"
+msgstr "Overig"
+
+msgid "Missing equals sign or tab"
+msgstr "Missend gelijkheidsteken of tab"
+
+msgid "Mistakes:  "
+msgstr "Fouten:  "
+
+msgid "Mnemosyne"
+msgstr "Mnemosyne"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Name - Place"
+msgstr "Naam - Plaats"
+
+msgid "Name for this place"
+msgstr "Naam voor deze plaats"
+
+msgid "Name:"
+msgstr "Naam:"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "No Quizlet connection"
+msgstr "Geen Quizlet-verbinding"
+
+msgid "No Study Stack connection"
+msgstr "Geen Study Stack-verbinding"
+
+msgid "No coursehero.com connection"
+msgstr "Geen verbinding met coursehero.com"
+
+msgid "No selection was made"
+msgstr "Geen selectie gemaakt"
+
+msgid "No selection was made. Please try again."
+msgstr "Er is geen selectie gemaakt. Probeer het alstublieft opnieuw."
+
+msgid "Not enough items"
+msgstr "Niet genoeg items"
+
+msgid "Note"
+msgstr "Cijfer"
+
+msgid "Note notation"
+msgstr "Cijfernotatie"
+
+msgid "Note:"
+msgstr "Cijfer:"
+
+msgid "OPERATION"
+msgstr "WERKING"
+
+msgid "OPTIONS"
+msgstr "OPTIES"
+
+msgid "Office Open XML Spreadsheet"
+msgstr "Office Open XML-rekenblad"
+
+msgid "Office Open XML Text"
+msgstr "Office Open XML-tekst"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "Zodra de overhoring afgelopen is, zal OpenTeacher u vertellen of u het goed gedaan heeft door een cijfer te geven."
+
+msgid "Only hard words (<50%% right)"
+msgstr "Alleen lastige woorden (<50%% goed)"
+
+msgid "Only words you never answered correctly"
+msgstr "Alleen woorden die u nooit goed had"
+
+msgid "Open &into current list"
+msgstr "&In de huidige lijst openen"
+
+msgid "Open Teaching Media"
+msgstr "Vrij Leren Media"
+
+msgid "Open Teaching Topography"
+msgstr "Vrij Leren Topografie"
+
+msgid "Open Teaching Words"
+msgstr "Vrij Leren Woordjes"
+
+msgid "Open from file"
+msgstr "Open vanuit bestand"
+
+msgid "OpenDocument Spreadsheet"
+msgstr "OpenDocument-rekenblad"
+
+msgid "OpenDocument Text"
+msgstr "OpenDocument-tekst"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL weergave"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher Web"
+msgstr "OpenTeacher Web"
+
+msgid "OpenTeacher Web - sign up"
+msgstr "OpenTeacher Web - aanmelden"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher auteurs"
+
+msgid "Opened file into the current list succesfully."
+msgstr "Het bestand is met succes in de huidige lijst geopend."
+
+msgid "Overhoor/Drill Assistant"
+msgstr "Overhoor/Drill Assistant"
+
+msgid "Overhoringsprogramma Talen"
+msgstr "Overhoringsprogramma Talen"
+
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+msgid "Patches contributor"
+msgstr "Aanleveraar van verbeteringen"
+
+msgid "Pauker"
+msgstr "Pauker"
+
+msgid "Pause"
+msgstr "Pauze"
+
+msgid "People in this test:"
+msgstr "Deelnemers van deze toets"
+
+msgid "Percent right before known"
+msgstr "Procent goed voor bekend verondersteld"
+
+msgid "Percents"
+msgstr "Procenten"
+
+msgid "Person"
+msgstr "Persoon"
+
+msgid "Place - Name"
+msgstr "Plaats - Naam"
+
+msgid "Place name"
+msgstr "Plaatsnaam"
+
+msgid "Place not found"
+msgstr "Plaats niet gevonden"
+
+msgid "Places in your test"
+msgstr "Plaatsen in uw toets"
+
+msgid "Plain text"
+msgstr "Platte tekst"
+
+msgid "Plain text words enterer"
+msgstr "Platte tekst woordeninvoerder"
+
+msgid "Play hangman"
+msgstr "Speel galgje"
+
+msgid "Please choose a user name and the keyboard layout you want to learn."
+msgstr "Kies alstublieft een gebruikersnaam en de toetsenbordindeling die u wilt leren."
+
+msgid "Please choose the location of the scan or picture of the physical word list on your system below."
+msgstr "Kies alstublieft hieronder de locatie van de scan of foto van de fysieke woordjeslijst op uw systeem."
+
+msgid "Please click this place:"
+msgstr "Klik alstublieft deze plaats aan:"
+
+msgid "Please click this place: "
+msgstr "Klik alstublieft deze plaats aan: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Vul voor ieder item ten minste één vraag of één antwoord in."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Vul  bij ieder woord ten minste één vraag en één woord in."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Vul alstublieft de platte tekst in in het tekstinvulvak. Scheid de woorden met een regelafbreking en vragen en antwoorden met een gelijkheidsteken ('=') of een tab."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Zorg er alstublieft voor dat iedere regel een '='-teken of een tab tussen de vragen en de antwoorden bevat."
+
+msgid "Please make sure the image is rotated completely upright with the rotation slider under this text:"
+msgstr "Zorg er alstublieft voor dat de afbeelding precies rechtop gedraaid is met de rotatieschuifregelaar onder deze tekst:"
+
+msgid "Please select a category"
+msgstr "Selecteer alstublieft een categorie"
+
+msgid "Please select a list"
+msgstr "Selecteer alstublieft een lijst"
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Profile"
+msgstr "Profiel"
+
+msgid "Project website"
+msgstr "Projectwebsite"
+
+msgid "Pronounce places"
+msgstr "Spreek plaatsnamen uit"
+
+msgid "Pronounce words"
+msgstr "Spreek woorden uit"
+
+msgid "Pronounciation"
+msgstr "Uitspraak"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Question"
+msgstr "Vraag"
+
+msgid "Question language:"
+msgstr "Taal van de vragen:"
+
+msgid "Question:"
+msgstr "Vraag:"
+
+msgid "Questions"
+msgstr "Vragen"
+
+msgid "Questions:"
+msgstr "Vragen:"
+
+msgid "Quizlet didn't accept the connection. Are you sure that your internet connection works and quizlet.com is online?"
+msgstr "Quizlet accepteerde de verbinding niet. Weet u zeker dat uw internetverbinding werkt en dat quizlet.com online is?"
+
+msgid "Random"
+msgstr "Willekeurig"
+
+msgid "Recently opened:"
+msgstr "Recent geopend:"
+
+msgid "Recognizing word list..."
+msgstr "Woordjeslijst herkennen..."
+
+msgid "Remove"
+msgstr "Verwijder"
+
+msgid "Remove selected place"
+msgstr "Verwijder de geselecteerde plaats"
+
+msgid "Remove selected row(s)"
+msgstr "Verwijder de geselecteerde rij(en)"
+
+msgid "Repeat answer"
+msgstr "Herhaal antwoord"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Duur van het vervagen in de herhaalmodus (milliseconden)"
+
+msgid "Result preview"
+msgstr "Voorproefje van het resultaat"
+
+msgid "Results"
+msgstr "Resultaten"
+
+msgid "Reverse"
+msgstr "Omgedraaid"
+
+msgid "Rich Text Format"
+msgstr "Rich Text Format"
+
+msgid "SYLK"
+msgstr "SYLK"
+
+msgid "SYNOPSIS"
+msgstr "SAMENVATTING"
+
+msgid "Save &As"
+msgstr "Opslaan &als"
+
+msgid "Search"
+msgstr "Zoeken"
+
+msgid "Search coursehero.com"
+msgstr "Doorzoek coursehero.com"
+
+msgid "Search quizlet.com"
+msgstr "Doorzoek quizlet.com"
+
+msgid "Select a student/group:"
+msgstr "Selecteer een leerling/groep:"
+
+msgid "Select category"
+msgstr "Categorie selecteren"
+
+msgid "Select file(s)"
+msgstr "Selecteer bestand(en)"
+
+msgid "Select list"
+msgstr "Lijst selecteren"
+
+msgid "Select the test you want to take"
+msgstr "Selecteer de toets die u wilt maken"
+
+msgid "Server IP or hostname:"
+msgstr "Server IP of hostname:"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Show results"
+msgstr "Laat resultaten zien"
+
+msgid "Shows an overview of all documented available profiles"
+msgstr "Laat een overzicht van alle gedocumenteerde profielen zien"
+
+msgid "Shuffle answer"
+msgstr "Hussel antwoord"
+
+msgid "Sign up"
+msgstr "Aanmelden"
+
+msgid "Sign up!"
+msgstr "Aanmelden!"
+
+msgid "Simple mode"
+msgstr "Simpele modus"
+
+msgid "Skip"
+msgstr "Sla over"
+
+msgid "Smart"
+msgstr "Vraag slim"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "Sorry, deze plaats komt niet voor in de lijst met bekende plaatsen. Voeg haar alstublieft handmatig toe door op de juiste locatie op de kaart te dubbelklikken."
+
+msgid "Sort"
+msgstr "Gesorteerd"
+
+msgid "Speed"
+msgstr "Snelheid"
+
+msgid "Speed (words per minute)"
+msgstr "Snelheid (woorden per minuut)"
+
+msgid "Spreadsheet"
+msgstr "Rekenblad"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "Start OpenTeacher en klik op de 'Maak een woordjesles aan'-knop om een nieuwe woordjesles aan te maken."
+
+msgid "Start exercise"
+msgstr "Begin oefening"
+
+msgid "Start!"
+msgstr "Start!"
+
+msgid "Student's answers have been checked!"
+msgstr "De antwoorden van de leerling zijn al nagekeken!"
+
+msgid "Student's results have been (re)published!"
+msgstr "De resultaten van de leerling zijn gepublicereerd!"
+
+msgid "Study Stack didn't accept the connection. Are you sure that your internet connection works and http://www.studystack.com/ is online?"
+msgstr "Study Stack accepteerde de verbinding niet. Weet u zeker dat uw internetverbinding werkt en dat http://www.studystack.com/ online is?"
+
+msgid "Symbols"
+msgstr "Symbolen"
+
+msgid "System default"
+msgstr "Systeemstandaard"
+
+msgid "Take test"
+msgstr "Maak toets"
+
+msgid "Taking test"
+msgstr "Bezig met het maken van de toets"
+
+msgid "Teach me!"
+msgstr "Overhoor me!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Teacher Panel"
+msgstr "Docentenpaneel"
+
+msgid "Teacher panel"
+msgstr "Docentenpaneel"
+
+msgid "Teachmaster"
+msgstr "Teachmaster"
+
+msgid "Test"
+msgstr "Toets"
+
+msgid "Test mode"
+msgstr "Toetsmodus"
+
+msgid "Test server"
+msgstr "Toetsserver"
+
+msgid "Tests"
+msgstr "Toetsen"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Alle helpers op Launchpad, bedankt!"
+
+msgid "That username is already taken. Please try again."
+msgstr "Die gebruikersnaam is al bezet. Probeer het alstublieft opnieuw."
+
+msgid "That's a mistake :(."
+msgstr "Dat is een foutje :(."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "De toetsen die u gaat oefenen worden getyped met de linker- en rechterwijsvinger en liggen verder weg van deze vingers dan de andere toetsen die we hebben geoefend op de huidige rij. Zorg ervoor dat u uw vinger terugbrengt naar de uitgangspositie op de thuisrij wanneer u een andere letter typt."
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "De schermafbeeldingen zijn gemaakt onder Ubuntu, maar alles zou precies hetzelfde moeten werken onder Windows en Mac OS X."
+
+msgid "The username should not be empty. Please try again."
+msgstr "De gebruikersnaam zou niet leeg moeten zijn. Probeer het alstublieft opnieuw."
+
+msgid "The username you requested is already taken. Please try again."
+msgstr "De gebruikersnaam die u aanvroeg is al bezet. Probeer het alstublieft opnieuw."
+
+msgid "The word list was imported from Quizlet successfully."
+msgstr "De woordjeslijst werd met succes van Quizlet geïmporteerd."
+
+msgid "The word list was imported from Study Stack successfully."
+msgstr "De woordjeslijst werd met succes geïmporteerd van Study Stack."
+
+msgid "The word list was imported from coursehero.com successfully."
+msgstr "De woordjeslijst werd met succes geïmporteerd van coursehero.com"
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "Vul dan alle woorden die u wilt leren in in de woordentabel, u kan naar de volgende vraag- of antwoordkolom gaan door op tab of '=' te drukken. Zie de schermafdruk voor een voorbeeld."
+
+msgid "There are a number of different lesson types: you can use OpenTeacher to learn vocabulary, geography and media."
+msgstr "Er zijn een aantal verschillende lestypes: u kunt OpenTeacher gebruiken om woordjes, topografie en media te leren."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Er zijn onopgeslagen items of resultaten. Weet u zeker dat u dit wilt sluiten?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Denk na over het antwoord en druk op de 'Toon antwoord'-knop wanneer u klaar bent."
+
+msgid "Think answer"
+msgstr "Denk antwoord"
+
+msgid "Thinking"
+msgstr "Aan het nadenken"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "Deze 'snel aan de slag'-handleiding laat u zien hoe u makkelijk zichzelf kunt overhoren met OpenTeacher. We gaan tot tien leren tellen in het Frans vandaag! Voor dit voorbeeld gaan we ervan uit dat je al Nederlands kent, en dat je Frans wilt leren."
+
+msgid "This type of file is not supported:\n"
+msgstr "Dit bestandstype wordt niet ondersteund:\n"
+
+msgid "This type of media isn't supported on your computer"
+msgstr "Dit type media wordt niet ondersteund op uw computer"
+
+msgid "This wizard will guide you through the process of creating a word list from a scan or picture of a physical word list. Click 'Next' to start."
+msgstr "Deze assistent zal je door het proces van het maken van een woordjeslijst van een scan of een foto van een fysieke woordjeslijst voeren. Klik 'Volgende' om te beginnen."
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid "To archieve that, you might try slowing down a bit."
+msgstr "Om dat te bereiken, kunt u proberen wat langzamer te gaan."
+
+msgid "Toolbar"
+msgstr "Toolbar"
+
+msgid "Topo lesson: %s"
+msgstr "Topografieles: %s"
+
+msgid "Topography"
+msgstr "Topografie"
+
+msgid "Topography maps"
+msgstr "Topografiekaarten"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Totale denktijd: %s minuten"
+
+msgid "Translation: "
+msgstr "Vertaling: "
+
+msgid "Translator (%s)"
+msgstr "Vertaler (%s)"
+
+msgid "Type answer"
+msgstr "Typ antwoord"
+
+msgid "Typing Tutor"
+msgstr "Typecursus"
+
+msgid "Unified Office Format spreadsheet"
+msgstr "Unified Office Format-werkblad"
+
+msgid "Unified Office Format text"
+msgstr "Unified Office Format-tekst"
+
+msgid "Unnamed"
+msgstr "Naamloos"
+
+msgid "Unsaved data"
+msgstr "Onopgeslagen data"
+
+msgid "Unsupported file type"
+msgstr "Niet-ondersteund bestandstype"
+
+msgid "Unsupported media"
+msgstr "Niet ondersteunde media"
+
+msgid "Untitled word list"
+msgstr "Naamloze woordjeslijst"
+
+msgid "Upload lesson"
+msgstr "Upload les"
+
+msgid "Use HTML5 for audio"
+msgstr "Gebruik HTML5 voor geluid"
+
+msgid "Use HTML5 for video"
+msgstr "Gebruik HTML5 voor video"
+
+msgid "Username empty"
+msgstr "Gebruikersnaam leeg"
+
+msgid "Username taken"
+msgstr "Gebruikersnaam bezet"
+
+msgid "Username:"
+msgstr "Gebruikersnaam:"
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "OpenTeacher 3 gebruiken: Snel aan de slag"
+
+msgid "VTrain"
+msgstr "VTrain"
+
+msgid "View answer"
+msgstr "Toon antwoord"
+
+msgid "Voca"
+msgstr "Voca"
+
+msgid "Vocabularium"
+msgstr "Vocabularium"
+
+msgid "Voice"
+msgstr "Stem"
+
+msgid "Voice name (language)"
+msgstr "Stemnaam (taal)"
+
+msgid "Vokabel Trainer"
+msgstr "Vokabel Trainer"
+
+msgid "WRDS"
+msgstr "WRTS"
+
+msgid "Warning"
+msgstr "Waarschuwing"
+
+msgid "Welcome to OpenTeacher Web! You can register an account below."
+msgstr "Welkom bij OpenTeacher Web! U kunt hieronder een account registreren."
+
+msgid "Welcome, I'm your personal OpenTeacher typing tutor. We'll improve your typing skills by doing simple exercises. Between the exercises, I'll give instructions. Let's get started:\n\nFirst place your fingers on the so-called home row: your fingers, from left to right, should always be on the keys '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}' and '{;}' while not typing another character. When your fingers are in position, press {space} to start the first lesson. Work for accuracy at first, not speed."
+msgstr "Welkom, ik ben uw persoonlijke OpenTeacher-typeleraar. We zullen uw typevaardigheid verbeteren door simpele oefeningen te doen. Tussen de oefeningen, zal ik instructies geven. Laten we beginnen:\n\nPlaats eerst uw vingers op de zogenoemde thuisrij: uw vingers zouden, van links naar rechts, altijd op de toetsen '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}' en '{;}' moeten zijn als ze geen andere letter typen. Wanner uw vingers op hun plaats staan, drukt u op {space} om uw eerste les te starten. Werk precies, snelheid is ondergeschikt."
+
+msgid "Welcome, please choose your account by clicking on it."
+msgstr "Welkom, kies alstublieft uw account door erop te klikken."
+
+msgid "What's this place's name?"
+msgstr "Wat is de naam van deze plaats?"
+
+msgid "When the image is completely upright, make a selection on the image with the mouse with in the left top the first question to include and in the right bottom the last answer to include. Click 'Next' when done."
+msgstr "Maak een selectie met de muis wanneer de afbeelding precies rechtop staat, met in de linker bovenhoek de eerste vraag en in de rechter onderhoek het laatste antwoord om in te lezen."
+
+msgid "When you open a lesson you can view the items in that lesson or enter new ones, and learn those items."
+msgstr "Wanneer u een les opent, kunt u de items in die les bekijken, nieuwe aanmaken en die items leren."
+
+msgid "Which place is here?"
+msgstr "Welke plaats ligt hier?"
+
+msgid "Word lesson: %s"
+msgstr "Woordjesles: %s"
+
+msgid "Word list order and filters"
+msgstr "Woordjeslijstvolgorde en filters"
+
+msgid "Word modifications"
+msgstr "Woordaanpassingen"
+
+msgid "Word most done wrong:"
+msgstr "Woord dat het vaakst fout ging:"
+
+msgid "Word:"
+msgstr "Woord:"
+
+msgid "Words lesson"
+msgstr "Woordjesles"
+
+msgid "Words lesson from picture"
+msgstr "Woordjesles van afbeelding"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "U deed het foutloos en snel! Ga door met oefenen van enkele nieuwe lettercombinaties om nog beter te worden!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "U typte foutloos en snel! Ga door met het oefenen van nieuwe woorden om nog beter te worden!"
+
+msgid "You have already tried this character / word"
+msgstr "U hebt dit teken / woord al geprobeerd"
+
+msgid "You lose, the answer was: "
+msgstr "U verliest, het antwoord was: "
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "U maakte nul fouten en typt snel genoeg, dus u kunt doorgaan met het oefenen van een paar nieuwe lettercombinaties. Ga zo door!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "U maakte nul fouten en typt snel genoeg, dus kunt u doorgaan met het oefenen van wat nieuwe woorden. Ga zo door!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "U maakte nul fouten. Probeer nu om uw typesnelheid wat omhoog te brengen."
+
+msgid "You need to add items to your test first"
+msgstr "Voeg eerst item toe aan uw toets"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "U gaat nu letters leren die niet op de thuisrij liggen. Om te zien welke vingers u moet gebruiken, kunt u op de toetsenbordafbeelding op uw scherm kijken. Plaats uw vinger terug op de thuisrij wanneer u die niet gebruikt om een letter te typen."
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Uw antwoorden zijn met succes ingeleverd!"
+
+msgid "Your password should at least be %s characters long, and contain special (non alphanumeric) characters. Please try again."
+msgstr "Uw wachtwoord zou tenminste %s tekens lang moeten zijn, en speciale (niet alfanumerieke) tekens moeten bevatten. Probeer het alstublieft opnieuw."
+
+msgid "coursehero.com didn't accept the connection. Are you sure that your internet connection works and coursehero.com is online?"
+msgstr "coursehero.com accepteerde de verbinding niet. Weet u zeker dat uw internetverbinding werkt en dat coursehero.com online is?"
+
+msgid "gnuVocabTrain"
+msgstr "gnuVocabTrain"
+
+msgid "hanged man"
+msgstr "galgje verloren"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "jVLT"
+msgstr "jVLT"
+
+msgid "no"
+msgstr "nee"
+
+msgid "run {name} as specified by {profile}, {profile} should be one of:"
+msgstr "start {name} zoals gespecificeerd door {profile}, {profile} moet één zijn van:"
+
+msgid "show a help message"
+msgstr "laat een hulpboodschap zien"
+
+msgid "yes"
+msgstr "ja"
+
+msgid "{appName} mark:"
+msgstr "{appName}'s cijfer:"
+

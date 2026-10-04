@@ -1,0 +1,1282 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "關於(&A)"
+
+msgid "&Documentation"
+msgstr "說明文件(&D)"
+
+msgid "&Edit"
+msgstr "編輯 (&E)"
+
+msgid "&File"
+msgstr "檔案（&F）"
+
+msgid "&Help"
+msgstr "幫助(&H)"
+
+msgid "&New"
+msgstr "新建(&N)..."
+
+msgid "&Open"
+msgstr "開啟 (&O)"
+
+msgid "&Print"
+msgstr "列印(&P)"
+
+msgid "&Quit"
+msgstr "結束(&Q)"
+
+msgid "&Reverse list"
+msgstr "反向排序列表 (&R)"
+
+msgid "&Save"
+msgstr "儲存(&S)..."
+
+msgid "&Settings"
+msgstr "設置(&S)"
+
+msgid "&View"
+msgstr "檢視(&V)"
+
+msgid "(Handed in)"
+msgstr "(已交出)"
+
+msgid "(Re)check answers"
+msgstr "(重新)檢查答案"
+
+msgid "(Re)publish answers"
+msgstr "(重新)公布答案"
+
+msgid "(advanced)"
+msgstr "（進階）"
+
+msgid "(did not participate)"
+msgstr "(沒有參加)"
+
+msgid "-"
+msgstr "-"
+
+msgid ".otmd saving"
+msgstr "儲存 .otmd 檔"
+
+msgid ".txt saving"
+msgstr "儲存 .txt 檔"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "一個單字會以您的語言來詢問，而您必須輸入他的翻譯於文字欄中。當您輸入翻譯後，按下鍵盤上的 Enter，或點擊 '檢查！' 按鈕。"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "ABBYY Lingvo Tutor"
+
+msgid "AUTHOR"
+msgstr "作者"
+
+msgid "About"
+msgstr "關於本軟體"
+
+msgid "Add"
+msgstr "新增"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "在地圖上雙擊滑鼠來新增地點"
+
+msgid "Add a place by name:"
+msgstr "以名稱來新增地點"
+
+msgid "Add lesson"
+msgstr "新增課程"
+
+msgid "Add local media"
+msgstr "新增本地媒體檔"
+
+msgid "Add person"
+msgstr "新增人員"
+
+msgid "Add person/group"
+msgstr "新增人員/群組"
+
+msgid "Add remote media"
+msgstr "新增遠端媒體連結"
+
+msgid "Advanced mode"
+msgstr "進階模式"
+
+msgid "After startup, OpenTeacher allows you to load a lesson or to create one."
+msgstr "啟動後，OpenTeacher 允許您載入課程或建立新課程。"
+
+msgid "All features useful for teachers"
+msgstr "所有對老師有用的特點"
+
+msgid "All once"
+msgstr "所有問題都問一遍"
+
+msgid "Also, OpenTeacher has a typing lesson course built in."
+msgstr "並且，OpenTeacher 有內建打字課程。"
+
+msgid "Also, it's possible to browse results of older tests."
+msgstr "也可以瀏覽以前測試的成績。"
+
+msgid "American"
+msgstr "美國人"
+
+msgid "Amount of mistakes"
+msgstr "錯誤總數"
+
+msgid "Amount of recently opened files to remember"
+msgstr "記住最近開啟檔案的總數"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "錯誤發生。無法連到伺服器。檢查你的網路連線。"
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "答案"
+
+msgid "Answer language:"
+msgstr "答案的語言："
+
+msgid "Answer:"
+msgstr "答案："
+
+msgid "Answering"
+msgstr "回答"
+
+msgid "Answers"
+msgstr "答案"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "這位學生的答案尚未檢查完成。點擊第二列的“檢查答案“按鈕"
+
+msgid "Answers right:"
+msgstr "答案正確："
+
+msgid "Answers wrong:"
+msgstr "答案錯誤："
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "確定要回到輸入列表分頁？這樣課程會結束。"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "確定要用另一個地圖？這會移除所有地點！"
+
+msgid "Artwork"
+msgstr "美工"
+
+msgid "Ask foreign - known"
+msgstr "要求 \"外國語言 - 已知語言“"
+
+msgid "At the end of the session, you can view your results."
+msgstr "結束這階段後，您可以看您的成績。"
+
+msgid "Authors"
+msgstr "作者群"
+
+msgid "Average note:"
+msgstr "平均評論："
+
+msgid "Back"
+msgstr "返回"
+
+msgid "Backpack"
+msgstr "Backpack"
+
+msgid "Belgian AZERTY"
+msgstr "Belgian AZERTY"
+
+msgid "Bug hunter"
+msgstr "臭蟲獵人"
+
+msgid "Can't merge files of different file types."
+msgstr "無法將不同檔案類型合併"
+
+msgid "Can't open the resultive word list, because it can't be shown."
+msgstr "無法開啟結果的單字列表，因為無法顯示。"
+
+msgid "Can't show the result"
+msgstr "無法顯示結果"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Change lesson settings"
+msgstr "修改課程設定"
+
+msgid "Chat channel spammer"
+msgstr "Chat channel spammer"
+
+msgid "Check"
+msgstr "檢查"
+
+msgid "Check!"
+msgstr "檢查！"
+
+msgid "Choose an image"
+msgstr "選擇一個影像"
+
+msgid "Choose test"
+msgstr "選擇測驗"
+
+msgid "Click here to choose a location"
+msgstr "在這裡點擊以選擇一個地點"
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "點擊下方的 '教我！' 分頁來開始測驗。您現在能指定您想讓 OpenTeacher 以何種方式來詢問您，但是現在我們只使用預設值就好。所以，點擊 '我已準備好，開始課程！' 按鈕。"
+
+msgid "Click the button to start"
+msgstr "點擊按鍵開始"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Comment"
+msgstr "評論"
+
+msgid "Comment after answering"
+msgstr "回答後評論"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Completed: %s"
+msgstr "完成：%s"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "恭禧，您完成了打字課程！如果您想繼續，沒問題，但教學到此結束。您做得真好！"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "恭禧，您完成了第一個練習！"
+
+msgid "Connect"
+msgstr "連接"
+
+msgid "Contact: {email}"
+msgstr "聯絡人：{email}"
+
+msgid "Core developer"
+msgstr "主要開發者"
+
+msgid "Correct"
+msgstr "正確:"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "正確答案：<b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "正確答案：<b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "無論如何都算對"
+
+msgid "Corrected: %s"
+msgstr "正確率: %s"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "無法連線到伺服器。也許主機名稱錯誤"
+
+msgid "Could not login. Wrong username or password."
+msgstr "無法登入。錯誤使用者名稱或密碼"
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "無法開啟檔案，因為檔案種類無法辨試或不能顯示。"
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "無法開啟檔案，檔案還在那裡而且我們有權限開啟它？"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "無法開啟檔案，它似乎已毀損"
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "無法儲存檔案，是否有足夠空間而且我們有權限寫入指定位置？"
+
+msgid "Create lesson:"
+msgstr "建立課程："
+
+msgid "Create media lesson"
+msgstr "建立媒體課程"
+
+msgid "Create topography lesson"
+msgstr "建立地形學課程"
+
+msgid "Create words lesson"
+msgstr "建立單字課程"
+
+msgid "Create words lesson by entering plain text"
+msgstr "輸入文字來建立單字課程"
+
+msgid "Create words lesson from a scan or picture"
+msgstr "從掃描或拍攝來建立單字課程"
+
+msgid "CueCard"
+msgstr "CueCard"
+
+msgid "Cyrillic"
+msgstr "斯拉夫語"
+
+msgid "DESCRIPTION"
+msgstr "描述"
+
+msgid "Data Interchange Format"
+msgstr "Data Interchange Format"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Debian/Ubuntu 打包者"
+
+msgid "Documentation"
+msgstr "說明文件"
+
+msgid "Domingo"
+msgstr "Domingo"
+
+msgid "Down here, you can see a preview of the result. There will probably be some wrongly recognized words in there, but the structure of the word list should be recognizable. If not, click 'Back' and try again. Otherwise, click 'Finish'."
+msgstr "到這，你可以看到預覽的結果。可能會有一些辨識錯誤的字，但是單字列表的結構應該可分辨。假如不是，點擊‘Back' 並重試一次。否則，點擊 'Finish'。"
+
+msgid "Dutch"
+msgstr "荷蘭人"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Dvorak Simplified Keyboard"
+
+msgid "E.g.: german food vocabulary"
+msgstr "例如：德文中食物的字彙"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "空白的問題或答案"
+
+msgid "Enable compression"
+msgstr "啟動壓縮"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "開啟每一個 OpenTeacher 圖形用戶介面"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "將隱藏的瀏覽器打開（再次隱藏則按隱藏瀏覽器開關）"
+
+msgid "Enter a search term and press the search button to search coursehero.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "輸入搜尋條件並按搜尋按鈕來搜尋 coursehero.com 上的組合。然後選擇您要匯入的組合並點擊 OK。"
+
+msgid "Enter a search term and press the search button to search quizlet.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "輸入搜尋條件並按搜尋按鈕來搜尋 quizlet.com 上的組合。然後選擇您要匯入的組合並點擊 OK。"
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "輸入一個標題給即將輸入的單字列表。而且輸入認識語言，在我們的狀況下，是中文，和外國語言（您想要學習的語言），在我們的狀況下是英文。"
+
+msgid "Enter list"
+msgstr "輸入列表"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "輸入網站或媒體項目的網址。\n支援的影片網站： "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "使用 OpenTeacher 能達到自修所需要的每件事"
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "答錯時答案顯示時間(毫秒)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "學生們在家使用 OpenTeacher 的特點"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "學生們在學校使用 OpenTeacher 的特點"
+
+msgid "File URL"
+msgstr "文件網址"
+
+msgid "File opened succesfully."
+msgstr "成功開啟檔案"
+
+msgid "File saved succesfully."
+msgstr "成功儲存檔案"
+
+msgid "Final mark:"
+msgstr "最後分數："
+
+msgid "Flashqard"
+msgstr "Flashqard"
+
+msgid "French"
+msgstr "法國人"
+
+msgid "French AZERTY"
+msgstr "French AZERTY"
+
+msgid "Fresh Memory"
+msgstr "Fresh Memory"
+
+msgid "From hard disk..."
+msgstr "從硬碟..."
+
+msgid "Full license text"
+msgstr "完整的授權條款內容"
+
+msgid "Fullscreen"
+msgstr "全螢幕"
+
+msgid "General"
+msgstr "一般"
+
+msgid "German"
+msgstr "德國人"
+
+msgid "Given answer"
+msgstr "給予答案"
+
+msgid "Granule"
+msgstr "Granule"
+
+msgid "Greek"
+msgstr "希臘語"
+
+msgid "Hand in answers"
+msgstr "交出答案"
+
+msgid "Help"
+msgstr "輔助說明"
+
+msgid "Hide the browser!"
+msgstr "隱藏瀏覽器"
+
+msgid "Hide the others; make space for the browser"
+msgstr "隱藏其他物件，將空間留給瀏覽器"
+
+msgid "Highest note:"
+msgstr "最高評論："
+
+msgid "Hint:"
+msgstr "提示："
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language"
+
+msgid "I am a new user"
+msgstr "我是新的使用者"
+
+msgid "I speak English"
+msgstr "我說中文"
+
+msgid "I was right"
+msgstr "我答對了"
+
+msgid "I was wrong"
+msgstr "我答錯了"
+
+msgid "I'm ready, start the lesson!"
+msgstr "我已準備好，開始課程！"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "假如您輸入正確翻譯，下個題目會直接問您。假如您答錯，OpenTeacher 將會顯示正確答案，並且顯示和您的答案有什麼不一樣。"
+
+msgid "Images"
+msgstr "圖像"
+
+msgid "Images ({extensions})"
+msgstr "圖像({extensions})"
+
+msgid "Import from coursehero.com"
+msgstr "從 coursehero.com 匯入"
+
+msgid "Import from quizlet.com"
+msgstr "從 quizlet.com 匯入"
+
+msgid "Import from studystack.com"
+msgstr "從 studystack.com 匯入"
+
+msgid "Import source"
+msgstr "匯入來源"
+
+msgid "Input and output"
+msgstr "輸入及輸出"
+
+msgid "Interval"
+msgstr "Interval"
+
+msgid "Introduction"
+msgstr "介紹"
+
+msgid "Invalid captcha. Please try again."
+msgstr "無效的驗證碼。請重試一次。"
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "就給我老練好用的 OpenTeacher 2.x!"
+
+msgid "KDE Vocabulary Document"
+msgstr "KDE Vocabulary Document"
+
+msgid "Keyboard layout\npreview:"
+msgstr "鍵盤配置"
+
+msgid "Keyboard layout:"
+msgstr "鍵盤配置："
+
+msgid "Language"
+msgstr "語言"
+
+msgid "Lesson"
+msgstr "課程"
+
+msgid "Lesson order:"
+msgstr "課程順序："
+
+msgid "Lesson settings"
+msgstr "課程設定"
+
+msgid "Lesson type"
+msgstr "課程類型"
+
+msgid "Lesson type:"
+msgstr "課程種類"
+
+msgid "Lessons can be loaded from both files and the internet."
+msgstr "課程能夠從檔案或 internet 載入。"
+
+msgid "Level"
+msgstr "級別"
+
+msgid "License"
+msgstr "授權條款"
+
+msgid "Load from the internet"
+msgstr "從 internet 載入"
+
+msgid "Load lesson:"
+msgstr "載入課程："
+
+msgid "Locale"
+msgstr "語系"
+
+msgid "Location:"
+msgstr "地點："
+
+msgid "Login"
+msgstr "登入"
+
+msgid "Lowest note:"
+msgstr "最低評論："
+
+msgid "Ludem"
+msgstr "Ludem"
+
+msgid "Make image ready"
+msgstr "讓圖像準備好"
+
+msgid "Map:"
+msgstr "地圖："
+
+msgid "Maximum size of group"
+msgstr "群組數量最大值"
+
+msgid "Media"
+msgstr "媒體"
+
+msgid "Media lesson: %s"
+msgstr "媒體課程：%s"
+
+msgid "Microsoft Excel 97/2000/XP/2003"
+msgstr "Microsoft Excel 97/2000/XP/2003"
+
+msgid "Microsoft Word 97/2000/XP/2003"
+msgstr "Microsoft Word 97/2000/XP/2003"
+
+msgid "Minimum amount of questions asked"
+msgstr "最少問題數量"
+
+msgid "Minimum amount of spaces between words"
+msgstr "在單字間最少的空格總數"
+
+msgid "Miscellaneous"
+msgstr "雜項"
+
+msgid "Missing equals sign or tab"
+msgstr "缺少 = 或 tab"
+
+msgid "Mistakes:  "
+msgstr "錯誤：  "
+
+msgid "Mnemosyne"
+msgstr "Mnemosyne"
+
+msgid "Name"
+msgstr "名稱"
+
+msgid "Name - Place"
+msgstr "名稱 - 地點"
+
+msgid "Name for this place"
+msgstr "這地點名稱"
+
+msgid "Name:"
+msgstr "名稱："
+
+msgid "Next"
+msgstr "下一個"
+
+msgid "No Quizlet connection"
+msgstr "沒有連線到 Quizlet"
+
+msgid "No Study Stack connection"
+msgstr "沒有連線到 Study Stack"
+
+msgid "No coursehero.com connection"
+msgstr "沒有 coursehero.com 的連線"
+
+msgid "No selection was made"
+msgstr "尚未選取任何東西"
+
+msgid "No selection was made. Please try again."
+msgstr "尚未選取任何東西。請再試一次。"
+
+msgid "Not enough items"
+msgstr "沒有足夠項目"
+
+msgid "Note"
+msgstr "評論"
+
+msgid "Note notation"
+msgstr "評論表示法"
+
+msgid "Note:"
+msgstr "評論："
+
+msgid "OPERATION"
+msgstr "操作"
+
+msgid "OPTIONS"
+msgstr "選項"
+
+msgid "Office Open XML Spreadsheet"
+msgstr "Office Open XML Spreadsheet"
+
+msgid "Office Open XML Text"
+msgstr "Office Open XML Text"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "一旦測驗完畢，OpenTeacher 將會給您一個評分來告訴您是否做得很好。"
+
+msgid "Only hard words (<50%% right)"
+msgstr "較難的單字（<50%% 正確）"
+
+msgid "Only words you never answered correctly"
+msgstr "只顯示從來沒答對的單字"
+
+msgid "Open &into current list"
+msgstr "開啟到目前列表中 (&i)"
+
+msgid "Open Teaching Media"
+msgstr "開啟教學媒體檔"
+
+msgid "Open Teaching Topography"
+msgstr "開啟教學地形學檔"
+
+msgid "Open Teaching Words"
+msgstr "開啟教學單字檔"
+
+msgid "Open from file"
+msgstr "從檔案開啟"
+
+msgid "OpenDocument Spreadsheet"
+msgstr "OpenDocument Spreadsheet"
+
+msgid "OpenDocument Text"
+msgstr "OpenDocument Text"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL rendering"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher Web"
+msgstr "OpenTeacher Web"
+
+msgid "OpenTeacher Web - sign up"
+msgstr "OpenTeacher Web - 註冊"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher 作者"
+
+msgid "Opened file into the current list succesfully."
+msgstr "開啟檔案至目前列表完成"
+
+msgid "Overhoor/Drill Assistant"
+msgstr "Overhoor/Drill Assistant"
+
+msgid "Overhoringsprogramma Talen"
+msgstr "Overhoringsprogramma Talen"
+
+msgid "Password:"
+msgstr "密碼："
+
+msgid "Patches contributor"
+msgstr "補丁貢獻者"
+
+msgid "Pauker"
+msgstr "Pauker"
+
+msgid "Pause"
+msgstr "暫停"
+
+msgid "People in this test:"
+msgstr "測驗中的人員："
+
+msgid "Percent right before known"
+msgstr "已知單字的正確率"
+
+msgid "Percents"
+msgstr "百分比"
+
+msgid "Person"
+msgstr "人員"
+
+msgid "Place - Name"
+msgstr "地點 - 名稱"
+
+msgid "Place name"
+msgstr "地點名稱"
+
+msgid "Place not found"
+msgstr "找不到地點"
+
+msgid "Places in your test"
+msgstr "測驗中的地點"
+
+msgid "Plain text"
+msgstr "純文字"
+
+msgid "Plain text words enterer"
+msgstr "文字編輯器"
+
+msgid "Play hangman"
+msgstr "玩吊死鬼"
+
+msgid "Please choose a user name and the keyboard layout you want to learn."
+msgstr "請選擇使用者名稱及想要學習的鍵盤配置"
+
+msgid "Please choose the location of the scan or picture of the physical word list on your system below."
+msgstr "請由下方選擇掃描或拍攝的實體單字列表的位置。"
+
+msgid "Please click this place:"
+msgstr "請單擊這個地點："
+
+msgid "Please click this place: "
+msgstr "請單擊這個地點： "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "每個項目請至少輸入一個問題及一個答案"
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "每個單字請至少輸入一個問題及一個答案"
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "請在文字編輯器內輸入文字。以換行來分開單字並以等號（‘＝’）或 tab 來分隔問題和答案。"
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "請確定每行在問題和答案間都有包含 = 或 tab"
+
+msgid "Please make sure the image is rotated completely upright with the rotation slider under this text:"
+msgstr "請確定圖像已用文字下方的轉動器旋轉至完全筆直的："
+
+msgid "Please select a category"
+msgstr "請選擇分類"
+
+msgid "Please select a list"
+msgstr "請選擇列表"
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Profile"
+msgstr "外形"
+
+msgid "Project website"
+msgstr "計劃網站"
+
+msgid "Pronounce places"
+msgstr "唸出地點"
+
+msgid "Pronounce words"
+msgstr "唸出單字"
+
+msgid "Pronounciation"
+msgstr "發音"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Question"
+msgstr "問題"
+
+msgid "Question language:"
+msgstr "問題的語言："
+
+msgid "Question:"
+msgstr "問題："
+
+msgid "Questions"
+msgstr "問題"
+
+msgid "Questions:"
+msgstr "問題："
+
+msgid "Quizlet didn't accept the connection. Are you sure that your internet connection works and quizlet.com is online?"
+msgstr "Quizlet 沒有接受連線。您確定您的網路正常並且 quizlet.com 在線上？"
+
+msgid "Random"
+msgstr "隨機"
+
+msgid "Recently opened:"
+msgstr "最近開啟檔案："
+
+msgid "Recognizing word list..."
+msgstr "辨識單字列表..."
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Remove selected place"
+msgstr "移除點選地點"
+
+msgid "Remove selected row(s)"
+msgstr "刪除所選擇的行"
+
+msgid "Repeat answer"
+msgstr "重覆答案"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "重覆模式淡出的持續時間"
+
+msgid "Result preview"
+msgstr "預覽結果"
+
+msgid "Results"
+msgstr "結果"
+
+msgid "Reverse"
+msgstr "反向"
+
+msgid "Rich Text Format"
+msgstr "Rich Text Format"
+
+msgid "SYLK"
+msgstr "SYLK"
+
+msgid "SYNOPSIS"
+msgstr "概要"
+
+msgid "Save &As"
+msgstr "另存新檔(&A)"
+
+msgid "Search"
+msgstr "搜尋"
+
+msgid "Search coursehero.com"
+msgstr "搜尋 coursehero.com"
+
+msgid "Search quizlet.com"
+msgstr "搜尋 quizlet.com"
+
+msgid "Select a student/group:"
+msgstr "選擇一位學生/群組"
+
+msgid "Select category"
+msgstr "選擇分類"
+
+msgid "Select file(s)"
+msgstr "選擇檔案"
+
+msgid "Select list"
+msgstr "選擇列表"
+
+msgid "Select the test you want to take"
+msgstr "選擇你想做的測驗"
+
+msgid "Server IP or hostname:"
+msgstr "伺服器 IP 或主機名稱："
+
+msgid "Settings"
+msgstr "設置"
+
+msgid "Show results"
+msgstr "顯示結果"
+
+msgid "Shows an overview of all documented available profiles"
+msgstr "顯示可用外形的文件總覽"
+
+msgid "Shuffle answer"
+msgstr "打亂答案順序"
+
+msgid "Sign up"
+msgstr "註冊"
+
+msgid "Sign up!"
+msgstr "註冊！"
+
+msgid "Simple mode"
+msgstr "簡單模式"
+
+msgid "Skip"
+msgstr "跳過"
+
+msgid "Smart"
+msgstr "精明的詢問"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "抱歉，這地點不在已知地點中。請在地圖上正確位置雙擊滑鼠來手動新增。"
+
+msgid "Sort"
+msgstr "排序"
+
+msgid "Speed"
+msgstr "速度"
+
+msgid "Speed (words per minute)"
+msgstr "速度（每分鐘幾個字）"
+
+msgid "Spreadsheet"
+msgstr "Spreadsheet"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "啟動 OpenTeacher 並且點擊 '建立單字課程' 按鈕來建立新的單字課程。"
+
+msgid "Start exercise"
+msgstr "開始練習"
+
+msgid "Start!"
+msgstr "開始！"
+
+msgid "Student's answers have been checked!"
+msgstr "學生的答案已檢查完成！"
+
+msgid "Student's results have been (re)published!"
+msgstr "學生的結果已(重新)公布！"
+
+msgid "Study Stack didn't accept the connection. Are you sure that your internet connection works and http://www.studystack.com/ is online?"
+msgstr "Study Stack 並沒有接受連線。您確定您的網路連線正常並且 http://www.studystack.com 在線上嗎？"
+
+msgid "Symbols"
+msgstr "符號"
+
+msgid "System default"
+msgstr "系統預設"
+
+msgid "Take test"
+msgstr "執行測驗"
+
+msgid "Taking test"
+msgstr "執行測驗中"
+
+msgid "Teach me!"
+msgstr "教我！"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Teacher Panel"
+msgstr "教師面板"
+
+msgid "Teacher panel"
+msgstr "教師面板"
+
+msgid "Teachmaster"
+msgstr "Teachmaster"
+
+msgid "Test"
+msgstr "測驗"
+
+msgid "Test mode"
+msgstr "測試模式"
+
+msgid "Test server"
+msgstr "測試伺服器"
+
+msgid "Tests"
+msgstr "測試"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "感謝所有 Launchpad 頁獻者"
+
+msgid "That username is already taken. Please try again."
+msgstr "使用者名稱已有人使用。請重試。"
+
+msgid "That's a mistake :(."
+msgstr "錯誤了 :("
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "您現在將要練習的按鍵是由左、右手食指來打，並且是比目前熟練的行離得更遠。"
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "這個畫面是從 Ubuntu 中截取下來的，但是應該和 Windows 及 Mac OS X 中的畫面一樣。"
+
+msgid "The username should not be empty. Please try again."
+msgstr "使用者名稱不應為空白，請重試。"
+
+msgid "The username you requested is already taken. Please try again."
+msgstr "你要求的用戶名稱已有人使用。請重試一次。"
+
+msgid "The word list was imported from Quizlet successfully."
+msgstr "從 Quizlet 匯入單字列表成功"
+
+msgid "The word list was imported from Study Stack successfully."
+msgstr "從 Study Stack 匯入單字列表成功。"
+
+msgid "The word list was imported from coursehero.com successfully."
+msgstr "字詞列表已成功從 coursehero.com 匯入。"
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "然後輸入您要學習的所有單字在單字表格中，您能夠按下 tab 或 '=' 來跳到下個問題或答案。看螢幕截圖來當例子。"
+
+msgid "There are a number of different lesson types: you can use OpenTeacher to learn vocabulary, geography and media."
+msgstr "有幾種不同的課程種類：您能用 OpenTeacher 來學習單字、地理學及多媒體。"
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "尚有未儲存項目或結果。確定要關閉嗎？"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "思考答案，當你想好後按 \"顯示答案\""
+
+msgid "Think answer"
+msgstr "思考答案"
+
+msgid "Thinking"
+msgstr "思考"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "這個快速啟動指引告訴您如何使用 OpenTeacher 來做簡單的自我測試。今天我們將要學習如何用英文從一數到十！這個例子中，我們假設您已經會中文，而我們將要學習英文。"
+
+msgid "This type of file is not supported:\n"
+msgstr "不支援這類型檔案：\n"
+
+msgid "This type of media isn't supported on your computer"
+msgstr "你的電腦不支援這種媒體格式"
+
+msgid "This wizard will guide you through the process of creating a word list from a scan or picture of a physical word list. Click 'Next' to start."
+msgstr "精靈將會引導您從掃描或拍攝實體的單字列表來完成建立單字列表的過程。點擊 'Next' 開始。"
+
+msgid "Title:"
+msgstr "標題："
+
+msgid "To archieve that, you might try slowing down a bit."
+msgstr "要達到那，您也許嘗試打慢點。"
+
+msgid "Toolbar"
+msgstr "工具列"
+
+msgid "Topo lesson: %s"
+msgstr "地形學課程: %s"
+
+msgid "Topography"
+msgstr "地形學"
+
+msgid "Topography maps"
+msgstr "地形學地圖"
+
+msgid "Total thinking time: %s minutes"
+msgstr "合計思考時間：%s 分"
+
+msgid "Translation: "
+msgstr "翻譯： "
+
+msgid "Translator (%s)"
+msgstr "翻譯人員 (%s)"
+
+msgid "Type answer"
+msgstr "輸入答案"
+
+msgid "Typing Tutor"
+msgstr "打字助教"
+
+msgid "Unified Office Format spreadsheet"
+msgstr "Unified Office Format spreadsheet"
+
+msgid "Unified Office Format text"
+msgstr "Unified Office Format text"
+
+msgid "Unnamed"
+msgstr "未命名的"
+
+msgid "Unsaved data"
+msgstr "尚未儲存的資料"
+
+msgid "Unsupported file type"
+msgstr "不支援的檔案類型"
+
+msgid "Unsupported media"
+msgstr "不支援的媒體格式"
+
+msgid "Untitled word list"
+msgstr "無標題的單字列表"
+
+msgid "Upload lesson"
+msgstr "上傳課程"
+
+msgid "Use HTML5 for audio"
+msgstr "聲音使用 HTML5 格式"
+
+msgid "Use HTML5 for video"
+msgstr "影片使用 HTML5 格式"
+
+msgid "Username empty"
+msgstr "使用者名稱空白"
+
+msgid "Username taken"
+msgstr "使用者名稱已有人使用"
+
+msgid "Username:"
+msgstr "使用者名稱："
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "使用 OpenTeacher 3: 快速啟動"
+
+msgid "VTrain"
+msgstr "VTrain"
+
+msgid "View answer"
+msgstr "顯示答案"
+
+msgid "Voca"
+msgstr "Voca"
+
+msgid "Vocabularium"
+msgstr "Vocabularium"
+
+msgid "Voice"
+msgstr "語音"
+
+msgid "Voice name (language)"
+msgstr "語音名稱（語言）"
+
+msgid "Vokabel Trainer"
+msgstr "Vokabel Trainer"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Welcome to OpenTeacher Web! You can register an account below."
+msgstr "歡迎來到 OpenTeacher Web! 你可以在下方註冊新帳號。"
+
+msgid "Welcome, I'm your personal OpenTeacher typing tutor. We'll improve your typing skills by doing simple exercises. Between the exercises, I'll give instructions. Let's get started:\n\nFirst place your fingers on the so-called home row: your fingers, from left to right, should always be on the keys '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}' and '{;}' while not typing another character. When your fingers are in position, press {space} to start the first lesson. Work for accuracy at first, not speed."
+msgstr "歡迎，我是您個人的 OpenTeacher 打字助教。我們將會做一些簡單練習來增進您的打字技巧。在練習過程中，我會給您指令。讓我們開始吧：\n\n首先將您的手指放在所謂的 home row: 您的手指，由左至右，在沒有打字時應該一直在按鍵 '{a}','{s}','{d}','{f}','{space}','{space}','{j}','{k}','{l}' 和 '{;}' 上面。當您的手指就位後，按 {space} 來開始第一課。首先要注意的是準確性，而不是速度。"
+
+msgid "Welcome, please choose your account by clicking on it."
+msgstr "歡迎，請點擊來選擇您的帳號"
+
+msgid "What's this place's name?"
+msgstr "這地點名稱是什麼？"
+
+msgid "When the image is completely upright, make a selection on the image with the mouse with in the left top the first question to include and in the right bottom the last answer to include. Click 'Next' when done."
+msgstr "當圖像完全筆直，用滑鼠在圖像上做個選擇將左上角第一題包括進來及右下角最後一題也包括進來。完成時點擊 \"Next\"。"
+
+msgid "When you open a lesson you can view the items in that lesson or enter new ones, and learn those items."
+msgstr "當您打開課程時，您可以檢視課程內的項目或輸入新的，並且學習這些項目。"
+
+msgid "Which place is here?"
+msgstr "哪個地點是在這裡"
+
+msgid "Word lesson: %s"
+msgstr "單字課程：%s"
+
+msgid "Word list order and filters"
+msgstr "單字列表順序及過濾器"
+
+msgid "Word modifications"
+msgstr "單字修改"
+
+msgid "Word most done wrong:"
+msgstr "最常錯誤單字"
+
+msgid "Word:"
+msgstr "單字："
+
+msgid "Words lesson"
+msgstr "單字課程"
+
+msgid "Words lesson from picture"
+msgstr "單字課程從拍攝"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "打字很完美並且快速！繼續練習新的字母組合讓自己更上一層樓！"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "打字很完美並且快速！繼續練習新的字母組合讓自己更上一層樓！"
+
+msgid "You have already tried this character / word"
+msgstr "你已經嚐試這個字母/單字"
+
+msgid "You lose, the answer was: "
+msgstr "你輸了，答案是： "
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "完全正確，並且打字速度夠快，所以您可以繼續練習新的字母組合。保持下去！"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "完全正確，並且打字速度夠快，所以您可以繼續練習新的字母組合。保持下去！"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "完全正確。接著嘗試增加些打字速度。"
+
+msgid "You need to add items to your test first"
+msgstr "首先你必須新增項目到你的測驗"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "您現在將要學的字母不在 home row 上。看螢幕上鍵盤圖像以明白用哪幾支手指。當您手指沒打字時，將他直接放回 home row。"
+
+msgid "Your answers have successfully been handed in!"
+msgstr "你的答案已成功交出！"
+
+msgid "Your password should at least be %s characters long, and contain special (non alphanumeric) characters. Please try again."
+msgstr "你的密碼應該至少有 %s 碼，並且包含特殊（不是數字）字元。請重試一次。"
+
+msgid "coursehero.com didn't accept the connection. Are you sure that your internet connection works and coursehero.com is online?"
+msgstr "coursehero.com 沒有接受這個連線。你確定你的網路連線正常且 coursehero.com 在線上嗎？"
+
+msgid "gnuVocabTrain"
+msgstr "gnuVocabTrain"
+
+msgid "hanged man"
+msgstr "吊死鬼"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "jVLT"
+msgstr "jVLT"
+
+msgid "no"
+msgstr "否"
+
+msgid "run {name} as specified by {profile}, {profile} should be one of:"
+msgstr "由 {profile} 指定執行 {name}，{name} 應該是其中一個："
+
+msgid "show a help message"
+msgstr "顯示求助訊息"
+
+msgid "yes"
+msgstr "是"
+

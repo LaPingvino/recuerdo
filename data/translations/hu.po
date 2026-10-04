@@ -1,0 +1,580 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Névjegy"
+
+msgid "&Documentation"
+msgstr "&Dokumentáció"
+
+msgid "&Edit"
+msgstr "S&zerkesztés"
+
+msgid "&File"
+msgstr "&Fájl"
+
+msgid "&Help"
+msgstr "&Súgó"
+
+msgid "&New"
+msgstr "Ú&j"
+
+msgid "&Open"
+msgstr "&Megnyitás"
+
+msgid "&Print"
+msgstr "&Nyomtatás"
+
+msgid "&Quit"
+msgstr "&Kilépés"
+
+msgid "&Reverse list"
+msgstr "Lista meg&fordítása"
+
+msgid "&Save"
+msgstr "Menté&s"
+
+msgid "&Settings"
+msgstr "&Beállítások"
+
+msgid "&View"
+msgstr "&Nézet"
+
+msgid "-"
+msgstr "-"
+
+msgid ".txt saving"
+msgstr ".txt mentés"
+
+msgid "About"
+msgstr "Névjegy"
+
+msgid "Add local media"
+msgstr "Helyi média hozzáadása"
+
+msgid "Add remote media"
+msgstr "Távoli média hozzáadása"
+
+msgid "Advanced mode"
+msgstr "Haladó mód"
+
+msgid "All once"
+msgstr "Mindegyik egyszer"
+
+msgid "American"
+msgstr "Amerikai"
+
+msgid "Amount of recently opened files to remember"
+msgstr "A megjegyzendő legutóbb megnyitott fájlok mennyisége"
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "Válasz"
+
+msgid "Answer language:"
+msgstr "Válasz nyelve:"
+
+msgid "Answer:"
+msgstr "Válasz:"
+
+msgid "Answering"
+msgstr "Válaszolás"
+
+msgid "Answers"
+msgstr "Válaszok"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Biztosan vissza szeretne menni a beviteli lapra? Ez be fogja fejezni a leckét!"
+
+msgid "Ask foreign - known"
+msgstr "Idegen - ismert kérdezése"
+
+msgid "Authors"
+msgstr "Készítők"
+
+msgid "Average note:"
+msgstr "Átlagos eredmény:"
+
+msgid "Back"
+msgstr "Vissza"
+
+msgid "Change lesson settings"
+msgstr "Lecke beállítások módosítása"
+
+msgid "Check"
+msgstr "Ellenőrzés"
+
+msgid "Check!"
+msgstr "Ellenőrzés!"
+
+msgid "Click the button to start"
+msgstr "Kattintson a gombra a kezdéshez"
+
+msgid "Comment"
+msgstr "Megjegyzés"
+
+msgid "Comment after answering"
+msgstr "Megjegyzés a válaszadás után"
+
+msgid "Completed"
+msgstr "Befejezve"
+
+msgid "Completed: %s"
+msgstr "Teljesítve: %s"
+
+msgid "Correct"
+msgstr "Helyes"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Helyes válasz: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Helyes válasz: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Javítás mindenképp"
+
+msgid "Corrected: %s"
+msgstr "Kijavított: %s"
+
+msgid "Create lesson:"
+msgstr "Lecke készítése:"
+
+msgid "Create media lesson"
+msgstr "Médialecke készítése"
+
+msgid "Create topography lesson"
+msgstr "Topográfiai lecke készítése"
+
+msgid "Create words lesson"
+msgstr "Szólecke készítése"
+
+msgid "Cyrillic"
+msgstr "Cirill"
+
+msgid "Date"
+msgstr "Dátum"
+
+msgid "Documentation"
+msgstr "Dokumentáció"
+
+msgid "Dutch"
+msgstr "holland"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Üres kérdés vagy válasz"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Minden OpenTeacher felhasználói felület szolgáltatás engedélyezése"
+
+msgid "Enter list"
+msgstr "Lista megadása"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Adja meg a weboldalnak vagy médiaelemnek az URL-jét.\nTámogatott videó oldalak: "
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Elhalványulási időtartam hiba esetén (ezredmásodperc)"
+
+msgid "File URL"
+msgstr "Fájl URL"
+
+msgid "French"
+msgstr "Francia"
+
+msgid "Full license text"
+msgstr "A licenc teljes szövege"
+
+msgid "Fullscreen"
+msgstr "Teljes képernyő"
+
+msgid "General"
+msgstr "Általános"
+
+msgid "German"
+msgstr "Német"
+
+msgid "Given answer"
+msgstr "Adott válasz"
+
+msgid "Greek"
+msgstr "görög"
+
+msgid "Highest note:"
+msgstr "Legjobb eredmény:"
+
+msgid "Hint:"
+msgstr "Tipp:"
+
+msgid "I speak English"
+msgstr "Magyarul beszélek"
+
+msgid "I was right"
+msgstr "Jól tudtam"
+
+msgid "I was wrong"
+msgstr "Tévedtem"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Készen állok, kezdjük a leckét!"
+
+msgid "Import source"
+msgstr "Forrás importálása"
+
+msgid "Input and output"
+msgstr "Bemenet és kimenet"
+
+msgid "Interval"
+msgstr "Időtartam"
+
+msgid "KDE Vocabulary Document"
+msgstr "KDE szótárdokumentum"
+
+msgid "Language"
+msgstr "Nyelv"
+
+msgid "Lesson"
+msgstr "Lecke"
+
+msgid "Lesson settings"
+msgstr "Lecke beállítások"
+
+msgid "Lesson type"
+msgstr "Lecke típus"
+
+msgid "Lesson type:"
+msgstr "Lecketípus:"
+
+msgid "License"
+msgstr "Licenc"
+
+msgid "Load from the internet"
+msgstr "Betöltés az internetről"
+
+msgid "Load lesson:"
+msgstr "Lecke betöltése:"
+
+msgid "Locale"
+msgstr "Nyelvi beállítások"
+
+msgid "Lowest note:"
+msgstr "Legrosszabb eredmény:"
+
+msgid "Maximum size of group"
+msgstr "Csoport maximális mérete"
+
+msgid "Media"
+msgstr "Média"
+
+msgid "Media lesson: %s"
+msgstr "Médialecke: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "A feltett kérdések minimális száma"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Szavak közti szóközök minimális mennyisége"
+
+msgid "Miscellaneous"
+msgstr "Egyebek"
+
+msgid "Mistakes:  "
+msgstr "Hibák:  "
+
+msgid "Name"
+msgstr "Név"
+
+msgid "Name:"
+msgstr "Név:"
+
+msgid "Next"
+msgstr "Következő"
+
+msgid "Not enough items"
+msgstr "Nincs elég elem"
+
+msgid "Note"
+msgstr "Megjegyzés"
+
+msgid "Note:"
+msgstr "Megjegyzés:"
+
+msgid "Only hard words (<50%% right)"
+msgstr "Csak a nehéz szavakat (<50%% helyes)"
+
+msgid "Only words you never answered correctly"
+msgstr "Csak az eddig helytelenül megválaszolt szavak"
+
+msgid "Open &into current list"
+msgstr "Megnyitás a &jelenlegi listába"
+
+msgid "Open from file"
+msgstr "Megnyitás fájlból"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "Az OpenTeacher szerzői"
+
+msgid "Pause"
+msgstr "Szünet"
+
+msgid "Percent right before known"
+msgstr "Százalék az ismert előtt"
+
+msgid "Percents"
+msgstr "Százalékok"
+
+msgid "Place name"
+msgstr "Hely neve"
+
+msgid "Plain text"
+msgstr "Egyszerű szöveg"
+
+msgid "Play hangman"
+msgstr "Akasztófa játszása"
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Adjon meg legalább egy kérdést és egy választ minden elemhez."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Adjon meg legalább egy kérdést és egy választ minden szóhoz."
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Project website"
+msgstr "Projekt weboldala"
+
+msgid "Pronounce places"
+msgstr "Helyek kiejtése"
+
+msgid "Pronounce words"
+msgstr "Szavak kiejtése"
+
+msgid "Pronounciation"
+msgstr "Kiejtés"
+
+msgid "Question"
+msgstr "Kérdés"
+
+msgid "Question language:"
+msgstr "Kérdés nyelve:"
+
+msgid "Question:"
+msgstr "Kérdés:"
+
+msgid "Questions"
+msgstr "Kérdések"
+
+msgid "Random"
+msgstr "Véletlenszerű"
+
+msgid "Recently opened:"
+msgstr "Mostanában megnyitott:"
+
+msgid "Remove"
+msgstr "Eltávolítás"
+
+msgid "Remove selected row(s)"
+msgstr "Kijelölt sorok törlése"
+
+msgid "Repeat answer"
+msgstr "Válasz ismétlése"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Ismétlés mód elhalványulás időtartam (ezredmásodperc)"
+
+msgid "Results"
+msgstr "Eredmények"
+
+msgid "Reverse"
+msgstr "Fordított"
+
+msgid "Save &As"
+msgstr "M&entés másként"
+
+msgid "Select file(s)"
+msgstr "Fájlok kiválasztása"
+
+msgid "Settings"
+msgstr "Beállítások"
+
+msgid "Show results"
+msgstr "Eredmények megjelenítése"
+
+msgid "Shuffle answer"
+msgstr "Kevert betűk"
+
+msgid "Simple mode"
+msgstr "Egyszerű mód"
+
+msgid "Skip"
+msgstr "Kihagyás"
+
+msgid "Smart"
+msgstr "Intelligens"
+
+msgid "Sort"
+msgstr "Rendezés"
+
+msgid "Speed"
+msgstr "Sebesség"
+
+msgid "Spreadsheet"
+msgstr "Munkafüzet"
+
+msgid "Start!"
+msgstr "Indulás!"
+
+msgid "Symbols"
+msgstr "Szimbólumok"
+
+msgid "System default"
+msgstr "Alapértelmezett"
+
+msgid "Teach me!"
+msgstr "Tanuljunk!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Test mode"
+msgstr "Teszt mód"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Köszönet minden Launchpad közreműködőnek!"
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Mentetlen elemek vagy eredmények vannak. Biztosan be szeretné zárni?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Gondolja ki a választ, majd nyomja meg a „Válasz megtekintése” gombot, amikor készen van."
+
+msgid "Think answer"
+msgstr "Gondolt válasz"
+
+msgid "Thinking"
+msgstr "Gondolkodás"
+
+msgid "This type of file is not supported:\n"
+msgstr "Ez a fájltípus nem támogatott:\n"
+
+msgid "This type of media isn't supported on your computer"
+msgstr "Ez a típusú média nincs támogatva a számítógépén"
+
+msgid "Title:"
+msgstr "Cím:"
+
+msgid "Toolbar"
+msgstr "Eszköztár"
+
+msgid "Topo lesson: %s"
+msgstr "Topográfiai lecke: %s"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Összes gondolkodási idő: %s perc"
+
+msgid "Translation: "
+msgstr "Fordítás: "
+
+msgid "Type answer"
+msgstr "Gépelje be a választ"
+
+msgid "Unnamed"
+msgstr "Névtelen"
+
+msgid "Unsaved data"
+msgstr "Mentetlen adatok"
+
+msgid "Unsupported file type"
+msgstr "Nem támogatott fájltípus"
+
+msgid "Unsupported media"
+msgstr "Nem támogatott média"
+
+msgid "Untitled word list"
+msgstr "Cím nélküli szólista"
+
+msgid "Upload lesson"
+msgstr "Lecke feltöltése"
+
+msgid "Use HTML5 for audio"
+msgstr "HTML5 használata hanghoz"
+
+msgid "Use HTML5 for video"
+msgstr "HTML5 használata videóhoz"
+
+msgid "View answer"
+msgstr "Válasz megtekintése"
+
+msgid "Voice"
+msgstr "Hang"
+
+msgid "Voice name (language)"
+msgstr "Hang neve (nyelv)"
+
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+msgid "Word lesson: %s"
+msgstr "Szólecke: %s"
+
+msgid "Word list order and filters"
+msgstr "Szó sorrend és szűrők"
+
+msgid "Word modifications"
+msgstr "Szó módosítók"
+
+msgid "Word most done wrong:"
+msgstr "Legtöbbször rosszul csinált szó:"
+
+msgid "Word:"
+msgstr "Szó:"
+
+msgid "Words lesson"
+msgstr "Szólecke"
+
+msgid "You have already tried this character / word"
+msgstr "Már próbálta ezt a karaktert / szót"
+
+msgid "You lose, the answer was: "
+msgstr "Veszített, a válasz ez volt: "
+
+msgid "You need to add items to your test first"
+msgstr "Először hozzá kell adnia elemeket a teszthez"
+
+msgid "hanged man"
+msgstr "akasztott ember"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "jVLT"
+msgstr "jVLT"
+
+msgid "no"
+msgstr "nem"
+
+msgid "yes"
+msgstr "igen"
+

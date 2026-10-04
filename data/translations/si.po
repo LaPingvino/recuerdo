@@ -1,0 +1,244 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "පිළිබඳව (&A)"
+
+msgid "&Edit"
+msgstr "සකසන්න (&E)"
+
+msgid "&File"
+msgstr "ගොනුව (&F)"
+
+msgid "&Help"
+msgstr "සහාය (&H)"
+
+msgid "&New"
+msgstr "නව (&N)"
+
+msgid "&Open"
+msgstr "විවෘත කරන්න (&O)"
+
+msgid "&Print"
+msgstr "මුද්‍රණය කරන්න (&P)"
+
+msgid "&Quit"
+msgstr "ඉවත්වන්න (&Q)"
+
+msgid "&Save"
+msgstr "සුරකින්න (&S)"
+
+msgid "&Settings"
+msgstr "සැකසුම් (&S)"
+
+msgid "-"
+msgstr "-"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "vijee"
+
+msgid "About"
+msgstr "පිළිබඳ"
+
+msgid "All once"
+msgstr "සියල්ල එකවිට"
+
+msgid "American"
+msgstr "ඇමරිකානු"
+
+msgid "Answer"
+msgstr "පිළිතුර"
+
+msgid "Answer language:"
+msgstr "පිළිතුරු භාෂාව:"
+
+msgid "Answers"
+msgstr "පිළිතුරු"
+
+msgid "Authors"
+msgstr "කතෘවරුන්"
+
+msgid "Back"
+msgstr "ආපසු"
+
+msgid "Change lesson settings"
+msgstr "පාඩම් සැකසුම් වෙනස් කරන්න"
+
+msgid "Check!"
+msgstr "පරික්ෂාකරන්න!"
+
+msgid "Comment"
+msgstr "නිදර්ශනය"
+
+msgid "Completed"
+msgstr "අවසන් කරන ලදී"
+
+msgid "Correct"
+msgstr "හරි"
+
+msgid "Create words lesson"
+msgstr "වචන පාඩමක් නිර්මාණය කරන්න"
+
+msgid "Date"
+msgstr "දිනය"
+
+msgid "Documentation"
+msgstr "ප්‍රලේඛනය"
+
+msgid "Dutch"
+msgstr "ලන්දේසි"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Enter list"
+msgstr "ලැයිස්තුව ඇතුලත් කරන්න"
+
+msgid "French"
+msgstr "ප්‍රංශ"
+
+msgid "German"
+msgstr "ජර්මානු"
+
+msgid "Given answer"
+msgstr "දී ඇති පිළිතුර"
+
+msgid "Greek"
+msgstr "ග්‍රීක"
+
+msgid "Hint:"
+msgstr "ඉඟිය:"
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language"
+
+msgid "I was right"
+msgstr "මම හරි"
+
+msgid "I was wrong"
+msgstr "මම වැරදියි"
+
+msgid "I'm ready, start the lesson!"
+msgstr "මම සූදානම්, පාඩම ආරම්භ කරන්න!"
+
+msgid "Interval"
+msgstr "විරාමය"
+
+msgid "Lesson settings"
+msgstr "පාඩම් සැකසුම්"
+
+msgid "Lesson type"
+msgstr "පාඩම් වර්ගය"
+
+msgid "License"
+msgstr "බලපත්‍රය"
+
+msgid "Name"
+msgstr "නම"
+
+msgid "Note"
+msgstr "සටහන"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "Pause"
+msgstr "මදකට නවත්වන්න"
+
+msgid "Percents"
+msgstr "ප්‍රතිශත"
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Project website"
+msgstr "ව්‍යාපෘති වෙබ්අඩිවිය"
+
+msgid "Pronounciation"
+msgstr "උච්චාරණය"
+
+msgid "Question"
+msgstr "ප්‍රශ්නය"
+
+msgid "Question language:"
+msgstr "ප්‍රශ්න භාෂාව:"
+
+msgid "Questions"
+msgstr "ප්‍රශ්න"
+
+msgid "Random"
+msgstr "අහඹු"
+
+msgid "Reverse"
+msgstr "ආපසු"
+
+msgid "Save &As"
+msgstr "ලෙස සුරකින්න (&A)"
+
+msgid "Settings"
+msgstr "සැකසුම්"
+
+msgid "Show results"
+msgstr "ප්‍රතිඑල පෙන්වන්න"
+
+msgid "Skip"
+msgstr "මඟහරින්න"
+
+msgid "Sort"
+msgstr "වර්‍ග කිරීම"
+
+msgid "Start!"
+msgstr "ආරම්භ කරන්න!"
+
+msgid "Symbols"
+msgstr "සංකේත"
+
+msgid "System default"
+msgstr "පද්ධති නිර්දේශය"
+
+msgid "Teach me!"
+msgstr "මට උගන්වන්න!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Title:"
+msgstr "මාතෘකාව:"
+
+msgid "Translation: "
+msgstr "පරිවර්තනය: "
+
+msgid "Type answer"
+msgstr "පිළිතුර ඇතුලත් කරන්න"
+
+msgid "Unnamed"
+msgstr "නිර්ණාමික"
+
+msgid "View answer"
+msgstr "පිළිතුර පෙන්වන්න"
+
+msgid "Voice"
+msgstr "කටහඬ"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Word lesson: %s"
+msgstr "වචන පාඩම: %s"
+
+msgid "Word:"
+msgstr "වචනය:"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+

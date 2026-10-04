@@ -217,9 +217,6 @@ PLANNED = {
     "logic/webDatabase": TESTMODE,
     "profileRunners/webServicesServerRunner": TESTMODE,
     "data/profileDescriptions/webServicesServer": TESTMODE,
-    "logic/translator": ("high", "interface translations: Recuerdo's interface is English only; OpenTeacher's "
-                         "gettext translations can be brought in"),
-    "logic/friendlyTranslationNames": ("high", "names of the interface translations, with the translator"),
     "logic/spellChecker": ("medium", "spell checking while entering words, with Hunspell (OpenTeacher used Enchant)"),
     "logic/interfaces/typingTutorModel": ("medium", "OpenTeacher's touch typing course, a lesson of its own kind"),
     "interfaces/qt/typingTutor": ("medium", "the touch typing course's screen and keyboard"),
@@ -381,6 +378,11 @@ COVERED = {
                              "lesson's sessions (charts); the result table model was not used by anything"),
     "logic/testTypes/media": ("internal/modules/interfaces/qt/lessons/media", "the Results tab shows a media lesson's "
                               "sessions (charts); the result table model was not used by anything"),
+    "logic/translator": ("internal/i18n", "OpenTeacher's gettext translations (29 languages, merged into "
+                         "data/translations by scripts/merge_translations.py) read by a small .po reader; T() with "
+                         "aliases for Recuerdo's wording; the language is a setting, the system's by default"),
+    "logic/friendlyTranslationNames": ("internal/i18n", "Name: each language in its own name (golang.org/x/text "
+                                       "display), in the settings dialog's language choice"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

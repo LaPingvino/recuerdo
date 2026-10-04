@@ -1,0 +1,1285 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&О программе"
+
+msgid "&Documentation"
+msgstr "&Документация"
+
+msgid "&Edit"
+msgstr "&Правка"
+
+msgid "&File"
+msgstr "&Файл"
+
+msgid "&Help"
+msgstr "&Справка"
+
+msgid "&New"
+msgstr "Со&здать"
+
+msgid "&Open"
+msgstr "&Открыть"
+
+msgid "&Print"
+msgstr "&Печать"
+
+msgid "&Quit"
+msgstr "&Выход"
+
+msgid "&Reverse list"
+msgstr "Обратить список"
+
+msgid "&Save"
+msgstr "&Сохранить"
+
+msgid "&Settings"
+msgstr "&Параметры"
+
+msgid "&View"
+msgstr "&Вид"
+
+msgid "(Handed in)"
+msgstr "(Передано)"
+
+msgid "(Re)check answers"
+msgstr "(Пере)проверить ответы"
+
+msgid "(Re)publish answers"
+msgstr "(Пере)опубликовать ответы"
+
+msgid "(advanced)"
+msgstr "(расширенные)"
+
+msgid "(did not participate)"
+msgstr "(не участвовал)"
+
+msgid "-"
+msgstr "-"
+
+msgid ".otmd saving"
+msgstr "сохранение .otmd"
+
+msgid ".txt saving"
+msgstr "сохранение .txt"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "Теперь слова спрашивают на Вашем языке, а вам остается ввести перевод слова в поле ввода текста. Когда вы ввели перевод, нажмите Enter на клавиатуре или кнопку 'Проверить!'"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "ABBYY Lingvo Tutor"
+
+msgid "AUTHOR"
+msgstr "АВТОР"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Добавьте место двойным щелчком по карте"
+
+msgid "Add a place by name:"
+msgstr "Добавить место по названию"
+
+msgid "Add lesson"
+msgstr "Добавить урок:"
+
+msgid "Add local media"
+msgstr "Добавить локальный файл"
+
+msgid "Add person"
+msgstr "Добавить человека"
+
+msgid "Add person/group"
+msgstr "Добавить человека/группу:"
+
+msgid "Add remote media"
+msgstr "Добавить файл с сайта"
+
+msgid "Advanced mode"
+msgstr "Расширенный режим"
+
+msgid "After startup, OpenTeacher allows you to load a lesson or to create one."
+msgstr "После запуска OpenTeacher позволяет загрузить урок или создать его."
+
+msgid "All features useful for teachers"
+msgstr "Все возможности подходящие для преподавателей"
+
+msgid "All once"
+msgstr "Все сразу"
+
+msgid "Also, OpenTeacher has a typing lesson course built in."
+msgstr "Также, OpenTeacher имеет встроенный курс машинописи."
+
+msgid "Also, it's possible to browse results of older tests."
+msgstr "Кроме того, можно просматривать результаты предыдущих тестов."
+
+msgid "American"
+msgstr "Американский"
+
+msgid "Amount of mistakes"
+msgstr "Количество ошибок"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Количество недавно открытых файлов в списке"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Произошла ошибка.Сервер не найден. Проверьте подключение к сети."
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "Ответ"
+
+msgid "Answer language:"
+msgstr "Язык ответов:"
+
+msgid "Answer:"
+msgstr "Ответ:"
+
+msgid "Answering"
+msgstr "Ответ"
+
+msgid "Answers"
+msgstr "Ответы"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "Ответы этого студента не были проверены. Нажмите кнопку \"Проверить ответы\" во второй колонке."
+
+msgid "Answers right:"
+msgstr "Верные ответы:"
+
+msgid "Answers wrong:"
+msgstr "Неверные ответы:"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Вы действительно хотите вернуться к вкладке ввода? Это приведёт к завершению урока!"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Вы действительно хотите использовать другую карту? Это удалит все ваши места!"
+
+msgid "Artwork"
+msgstr "Иллюстрации"
+
+msgid "Ask foreign - known"
+msgstr "Спрашивать иностранное - известное"
+
+msgid "At the end of the session, you can view your results."
+msgstr "В конце занятия, вы можете просмотреть свои результаты."
+
+msgid "Authors"
+msgstr "Авторы"
+
+msgid "Average note:"
+msgstr "Средний результат:"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Backpack"
+msgstr "Backpack"
+
+msgid "Belgian AZERTY"
+msgstr "Бельгийская AZERTY"
+
+msgid "Bug hunter"
+msgstr "Тестировщик"
+
+msgid "Can't merge files of different file types."
+msgstr "Нельзя объединять файлы различных типов."
+
+msgid "Can't open the resultive word list, because it can't be shown."
+msgstr "Не удалось открыть результирующий список  слов, потому что он не может быть показан."
+
+msgid "Can't show the result"
+msgstr "Не удалось показать результат"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Change lesson settings"
+msgstr "Изменить настройки урока"
+
+msgid "Chat channel spammer"
+msgstr "Спамер на чат-канале"
+
+msgid "Check"
+msgstr "Проверить"
+
+msgid "Check!"
+msgstr "Проверить!"
+
+msgid "Choose an image"
+msgstr "Выберите изображение"
+
+msgid "Choose test"
+msgstr "Выберите тест"
+
+msgid "Click here to choose a location"
+msgstr "Выбрать расположение"
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "Нажмите кнопку \"Научи меня!\", чтобы начать проверку. Теперь Вы можете указать, каким образом вы хотите чтобы OpenTeacher спрашивал Вас. Если вы готовы приступить к выполнению заданий, нажмите кнопку \"Я готов, начать урок!\"."
+
+msgid "Click the button to start"
+msgstr "Нажмите на кнопку, чтобы начать"
+
+msgid "Colemak"
+msgstr "Клавиатура Colemak"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Comment after answering"
+msgstr "Комментировать после ответа"
+
+msgid "Completed"
+msgstr "Выполнено"
+
+msgid "Completed: %s"
+msgstr "Выполнено: %s"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Поздравляем, вы закончили этот курс машинописи! Если вы хотите продолжить, вы можете это сделать, но это конец инструкции. Вы проделали огромную работу!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Поздравляем, вы закончили первое упражнение!"
+
+msgid "Connect"
+msgstr "Подключиться"
+
+msgid "Contact: {email}"
+msgstr "Контакты: {email}"
+
+msgid "Core developer"
+msgstr "Ведущий разработчик"
+
+msgid "Correct"
+msgstr "Правильно"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Правильный ответ: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Правильный ответ: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Всё равно верно"
+
+msgid "Corrected: %s"
+msgstr "Исправлено: %s"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "Не удалось подключиться к серверу. Возможно указано неправильное имя сервера."
+
+msgid "Could not login. Wrong username or password."
+msgstr "Не удалось войти в систему. Неверное имя пользователя или пароль."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Не удалось открыть файл, так как тип файла неизвестен или он не может быть показан."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Не удалось открыть файл, он все еще на прежнем месте  и у вас достаточно прав чтобы открыть его?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Не удалось открыть файл, возможно он поврежден."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Не удалось сохранить файл, проверьте есть ли свободное место на диске и есть ли у вас право на запись в указанное место?"
+
+msgid "Create lesson:"
+msgstr "Создать урок:"
+
+msgid "Create media lesson"
+msgstr "Создать мультимедийный урок"
+
+msgid "Create topography lesson"
+msgstr "Создать топографический урок"
+
+msgid "Create words lesson"
+msgstr "Создать словарный урок"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Создать словарный урок введя простой текст"
+
+msgid "Create words lesson from a scan or picture"
+msgstr "Создать список слов из картинки или отсканированного изображения"
+
+msgid "CueCard"
+msgstr "CueCard"
+
+msgid "Cyrillic"
+msgstr "Кириллица"
+
+msgid "DESCRIPTION"
+msgstr "ОПИСАНИЕ"
+
+msgid "Data Interchange Format"
+msgstr "Data Interchange Format"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Сборщик дистрибутивов для Debian/Ubuntu"
+
+msgid "Documentation"
+msgstr "Документация"
+
+msgid "Domingo"
+msgstr "Domingo"
+
+msgid "Down here, you can see a preview of the result. There will probably be some wrongly recognized words in there, but the structure of the word list should be recognizable. If not, click 'Back' and try again. Otherwise, click 'Finish'."
+msgstr "Здесь Вы можете увидеть предварительный результат. Возможно наличие некоторых неправильно распознанных слов, но структура списка слов должна быть узнаваема. Если нет, нажмите 'Назад' и попробуйте снова. Если всё нормально, нажмите 'Завершить'."
+
+msgid "Dutch"
+msgstr "Голландский"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Клавиатура Дворака"
+
+msgid "E.g.: german food vocabulary"
+msgstr "Например: словарь немецкой кухни"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Пустой вопрос или ответ"
+
+msgid "Enable compression"
+msgstr "Включить сжатие"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Включить все функции OpenTeacher GUI"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Включить скрытый браузер (скрыть его путем перемещения ползунка)"
+
+msgid "Enter a search term and press the search button to search coursehero.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Введите поисковый запрос и нажмите на кнопку Поиск, для поиска подборок на coursehero.com. Затем выберите одну или несколько подборок, которые вы хотите импортировать и нажмите OK."
+
+msgid "Enter a search term and press the search button to search quizlet.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Введите слово и нажмите кнопку для поиска на quizlet.com наборов слов. Затем выберите один или несколько наборов, которые вы хотите импортировать и нажмите кнопку OK."
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "Введите заголовок списка для слов которые Вы собираетесь добавить. Вводить следует на известном Вам языке,в данном случае это английский или русский, и иностранном языке (языке, который вы хотите узнать), что, в нашем случае это французский."
+
+msgid "Enter list"
+msgstr "Ввести список"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Введите URL вашего сайта или медиа-элемента.\nПоддерживаемые видео-сайты: "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Все, что нужно для использования OpenTeacher для самостоятельного обучения."
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Продолжительность исчезновения при ошибке (миллисекунд)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Возможности для учащихся, использующих OpenTeacher дома"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Возможности для учащихся, использующих OpenTeacher в школе"
+
+msgid "File URL"
+msgstr "Ссылка на файл"
+
+msgid "File opened succesfully."
+msgstr "Файл успешно открыт."
+
+msgid "File saved succesfully."
+msgstr "Файл успешно сохранён."
+
+msgid "Final mark:"
+msgstr "Финальная оценка:"
+
+msgid "Flashqard"
+msgstr "Flashqard"
+
+msgid "French"
+msgstr "Французский"
+
+msgid "French AZERTY"
+msgstr "Французская AZERTY"
+
+msgid "Fresh Memory"
+msgstr "Fresh Memory"
+
+msgid "From hard disk..."
+msgstr "С жесткого диска..."
+
+msgid "Full license text"
+msgstr "Полный текст лицензии"
+
+msgid "Fullscreen"
+msgstr "Во весь экран"
+
+msgid "General"
+msgstr "Основные"
+
+msgid "German"
+msgstr "Немецкий"
+
+msgid "Given answer"
+msgstr "Данный ответ"
+
+msgid "Granule"
+msgstr "Granule"
+
+msgid "Greek"
+msgstr "Греческий"
+
+msgid "Hand in answers"
+msgstr "Помощь при ответах"
+
+msgid "Help"
+msgstr "Справка"
+
+msgid "Hide the browser!"
+msgstr "Скрыть браузер!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Скрыть остальное, чтобы освободить место для браузера"
+
+msgid "Highest note:"
+msgstr "Наилучший результат:"
+
+msgid "Hint:"
+msgstr "Подсказка:"
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language"
+
+msgid "I am a new user"
+msgstr "Я новый пользователь"
+
+msgid "I speak English"
+msgstr "Я говорю по-русски"
+
+msgid "I was right"
+msgstr "Я был прав"
+
+msgid "I was wrong"
+msgstr "Я ошибался"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Я готов, начнём урок!"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "Если Вы введи правильный перевод,  то следующий вопрос сообщит Вам об этом. Если Вы ввели не правильный перевод, OpenTeacher покажет Вам правильный ответ, и отличие от Вашего ответа."
+
+msgid "Images"
+msgstr "Изображения"
+
+msgid "Images ({extensions})"
+msgstr "Изображения ({extensions})"
+
+msgid "Import from coursehero.com"
+msgstr "Импорт с coursehero.com"
+
+msgid "Import from quizlet.com"
+msgstr "Импорт с quizlet.com"
+
+msgid "Import from studystack.com"
+msgstr "Импорт с studystack.com"
+
+msgid "Import source"
+msgstr "Источник импорта"
+
+msgid "Input and output"
+msgstr "Ввод и вывод"
+
+msgid "Interval"
+msgstr "Интервал"
+
+msgid "Introduction"
+msgstr "Введение"
+
+msgid "Invalid captcha. Please try again."
+msgstr "Неверная капча. Попробуйте ещё раз."
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Верните мне OpenTeacher 2.x!"
+
+msgid "KDE Vocabulary Document"
+msgstr "Словарь KDE"
+
+msgid "Keyboard layout\npreview:"
+msgstr "Просмотр раскладки\nклавиатуры"
+
+msgid "Keyboard layout:"
+msgstr "Раскладка клавиатуры:"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Lesson"
+msgstr "Урок"
+
+msgid "Lesson order:"
+msgstr "Порядок урока:"
+
+msgid "Lesson settings"
+msgstr "Настройки урока"
+
+msgid "Lesson type"
+msgstr "Тип урока"
+
+msgid "Lesson type:"
+msgstr "Тип урока:"
+
+msgid "Lessons can be loaded from both files and the internet."
+msgstr "Уроки могут быть загружены из файлов и интернета."
+
+msgid "Level"
+msgstr "Уровень"
+
+msgid "License"
+msgstr "Лицензия"
+
+msgid "Load from the internet"
+msgstr "Загрузить из интернета"
+
+msgid "Load lesson:"
+msgstr "Открыть урок:"
+
+msgid "Locale"
+msgstr "Язык"
+
+msgid "Location:"
+msgstr "Расположение:"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Lowest note:"
+msgstr "Наихудший результат:"
+
+msgid "Ludem"
+msgstr "Ludem"
+
+msgid "Make image ready"
+msgstr "Подготовка изображения"
+
+msgid "Map:"
+msgstr "Карта:"
+
+msgid "Maximum size of group"
+msgstr "Максимальный размер группы"
+
+msgid "Media"
+msgstr "Мультимедиа"
+
+msgid "Media lesson: %s"
+msgstr "Мультимедийный урок: %s"
+
+msgid "Microsoft Excel 97/2000/XP/2003"
+msgstr "Microsoft Excel 97/2000/XP/2003"
+
+msgid "Microsoft Word 97/2000/XP/2003"
+msgstr "Microsoft Word 97/2000/XP/2003"
+
+msgid "Minimum amount of questions asked"
+msgstr "Минимальное количество вопросов"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Минимальное число пробелов между словами"
+
+msgid "Miscellaneous"
+msgstr "Прочие"
+
+msgid "Missing equals sign or tab"
+msgstr "Пропущен знак равенства или табуляция"
+
+msgid "Mistakes:  "
+msgstr "Ошибки:  "
+
+msgid "Mnemosyne"
+msgstr "Mnemosyne"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Name - Place"
+msgstr "Название - Место"
+
+msgid "Name for this place"
+msgstr "Название этого места"
+
+msgid "Name:"
+msgstr "Название:"
+
+msgid "Next"
+msgstr "Далее"
+
+msgid "No Quizlet connection"
+msgstr "Отсутствует подключение к Quizlet"
+
+msgid "No Study Stack connection"
+msgstr "Отсутствует подключение к Study Stack"
+
+msgid "No coursehero.com connection"
+msgstr "Отсутствует подключение к coursehero.com"
+
+msgid "No selection was made"
+msgstr "Вы ничего не выбрали"
+
+msgid "No selection was made. Please try again."
+msgstr "Вы ничего не выбрали. Повторите выбор."
+
+msgid "Not enough items"
+msgstr "Недостаточно элементов"
+
+msgid "Note"
+msgstr "Примечание"
+
+msgid "Note notation"
+msgstr "Система оценок"
+
+msgid "Note:"
+msgstr "Примечание:"
+
+msgid "OPERATION"
+msgstr "ДЕЙСТВИЕ"
+
+msgid "OPTIONS"
+msgstr "ПАРАМЕТРЫ"
+
+msgid "Office Open XML Spreadsheet"
+msgstr "Эл.таблица Office Open XML"
+
+msgid "Office Open XML Text"
+msgstr "Текстовый документ Office Open XML"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "После завершения теста, OpenTeacher скажет Вам, если вы сделали хорошо, дав Вам запись."
+
+msgid "Only hard words (<50%% right)"
+msgstr "Только трудные слова (<50%% правильных)"
+
+msgid "Only words you never answered correctly"
+msgstr "Только те слова, которые вы не перевели правильно"
+
+msgid "Open &into current list"
+msgstr "Открыть в текущий список"
+
+msgid "Open Teaching Media"
+msgstr "Open Teaching Media"
+
+msgid "Open Teaching Topography"
+msgstr "Open Teaching Topography"
+
+msgid "Open Teaching Words"
+msgstr "Open Teaching Words"
+
+msgid "Open from file"
+msgstr "Открыть из файла"
+
+msgid "OpenDocument Spreadsheet"
+msgstr "Эл.таблица OpenDocument"
+
+msgid "OpenDocument Text"
+msgstr "Текст в формате OpenDocument"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL рендеринг"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher Web"
+msgstr "Сайт OpenTeacher"
+
+msgid "OpenTeacher Web - sign up"
+msgstr "Сайт OpenTeacher - вход"
+
+msgid "OpenTeacher authors"
+msgstr "Авторы OpenTeacher"
+
+msgid "Opened file into the current list succesfully."
+msgstr "Файл успешно загружен в текущий список."
+
+msgid "Overhoor/Drill Assistant"
+msgstr "Overhoor/Drill Assistant"
+
+msgid "Overhoringsprogramma Talen"
+msgstr "Overhoringsprogramma Talen"
+
+msgid "Password:"
+msgstr "Пароль:"
+
+msgid "Patches contributor"
+msgstr "Создатели патчей"
+
+msgid "Pauker"
+msgstr "Pauker"
+
+msgid "Pause"
+msgstr "Пауза"
+
+msgid "People in this test:"
+msgstr "Принимающие участие в тесте:"
+
+msgid "Percent right before known"
+msgstr "Процент правильных ответов для перехода слов в категорию \"Изучено\""
+
+msgid "Percents"
+msgstr "Проценты"
+
+msgid "Person"
+msgstr "Участник"
+
+msgid "Place - Name"
+msgstr "Место - Название"
+
+msgid "Place name"
+msgstr "Название места"
+
+msgid "Place not found"
+msgstr "Место не найдено"
+
+msgid "Places in your test"
+msgstr "Места в вашем тесте"
+
+msgid "Plain text"
+msgstr "Простой текст"
+
+msgid "Plain text words enterer"
+msgstr "Ввод слов простым текстом"
+
+msgid "Play hangman"
+msgstr "Играть в виселиицу"
+
+msgid "Please choose a user name and the keyboard layout you want to learn."
+msgstr "Пожалуйста, выберите имя пользователя и раскладку клавиатуры, которую Вы хотите изучить."
+
+msgid "Please choose the location of the scan or picture of the physical word list on your system below."
+msgstr "Выберите ниже расположение картинки или отсканированного изображения списка слов."
+
+msgid "Please click this place:"
+msgstr "Выберите это место:"
+
+msgid "Please click this place: "
+msgstr "Выберите это место: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Пожалуйста, введите хотя бы один вопрос и один ответ для каждого пункта."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Пожалуйста, введите хотя бы один вопрос и один ответ для каждого слова."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Пожалуйста, введите текст в текстовом редакторе. Отделяйте слова новой строкой,  а ответы от вопросов знаком равенства ('=') или табуляцией."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Пожалуйста, убедитесь, что каждая строка содержит знак '=' или символ табуляции между вопросами и ответами."
+
+msgid "Please make sure the image is rotated completely upright with the rotation slider under this text:"
+msgstr "Убедитесь, что изображение развернуто вертикально. Для вращения используйте ползунок по этим текстом:"
+
+msgid "Please select a category"
+msgstr "Пожалуйста, выберите категорию"
+
+msgid "Please select a list"
+msgstr "Пожалуйста, выберите список"
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Profile"
+msgstr "Профиль"
+
+msgid "Project website"
+msgstr "Веб-сайт проекта"
+
+msgid "Pronounce places"
+msgstr "Произношение мест"
+
+msgid "Pronounce words"
+msgstr "Произношение мест"
+
+msgid "Pronounciation"
+msgstr "Произношение"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Question"
+msgstr "Вопрос"
+
+msgid "Question language:"
+msgstr "Язык вопросов:"
+
+msgid "Question:"
+msgstr "Вопрос:"
+
+msgid "Questions"
+msgstr "Вопросы"
+
+msgid "Questions:"
+msgstr "Вопросы:"
+
+msgid "Quizlet didn't accept the connection. Are you sure that your internet connection works and quizlet.com is online?"
+msgstr "Сайт Quizlet не отвечает. Вы уверены, что ваше интернет-соединение работает и quizlet.com доступен?"
+
+msgid "Random"
+msgstr "Случайно"
+
+msgid "Recently opened:"
+msgstr "Последние файлы:"
+
+msgid "Recognizing word list..."
+msgstr "Распознавание списка слов..."
+
+msgid "Remove"
+msgstr "Убрать"
+
+msgid "Remove selected place"
+msgstr "Удалить выделенные места"
+
+msgid "Remove selected row(s)"
+msgstr "Удалить выделенную строку(и)"
+
+msgid "Repeat answer"
+msgstr "Повторить ответ"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Продолжительность исчезновения в  режима повторения (миллисекунд)"
+
+msgid "Result preview"
+msgstr "Предварительный просмотр"
+
+msgid "Results"
+msgstr "Результаты"
+
+msgid "Reverse"
+msgstr "В обратном порядке"
+
+msgid "Rich Text Format"
+msgstr "Rich Text Format"
+
+msgid "SYLK"
+msgstr "SYLK"
+
+msgid "SYNOPSIS"
+msgstr "РЕЗЮМЕ"
+
+msgid "Save &As"
+msgstr "Сохранить &как"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search coursehero.com"
+msgstr "Поиск на coursehero.com"
+
+msgid "Search quizlet.com"
+msgstr "Поиск на quizlet.com"
+
+msgid "Select a student/group:"
+msgstr "Выбрать учащегося/группу:"
+
+msgid "Select category"
+msgstr "Выберите категорию"
+
+msgid "Select file(s)"
+msgstr "Выберите файл(ы)"
+
+msgid "Select list"
+msgstr "Выберите список"
+
+msgid "Select the test you want to take"
+msgstr "Выберите тест, который вы хотите пройти"
+
+msgid "Server IP or hostname:"
+msgstr "IP-адрес или имя сервера:"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Show results"
+msgstr "Показать результаты"
+
+msgid "Shows an overview of all documented available profiles"
+msgstr "Показывает обзор всех доступных документированных профилей"
+
+msgid "Shuffle answer"
+msgstr "Перемешать ответ"
+
+msgid "Sign up"
+msgstr "Регистрация"
+
+msgid "Sign up!"
+msgstr "Зарегистрироваться!"
+
+msgid "Simple mode"
+msgstr "Простой режим"
+
+msgid "Skip"
+msgstr "Пропустить"
+
+msgid "Smart"
+msgstr "Интеллектуальный"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "К сожалению, этого места нет в списке известных мест. Пожалуйста, добавьте его вручную, дважды щелкнув на нужном месте карты."
+
+msgid "Sort"
+msgstr "Упорядочить"
+
+msgid "Speed"
+msgstr "Скорость"
+
+msgid "Speed (words per minute)"
+msgstr "Скорость (слов в минуту)"
+
+msgid "Spreadsheet"
+msgstr "Электронная таблица"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "Запустите OpenTeacher и нажмите на кнопку \"Создать текстовый урок\" для создания нового текстового урока"
+
+msgid "Start exercise"
+msgstr "Начать занятие"
+
+msgid "Start!"
+msgstr "Начать!"
+
+msgid "Student's answers have been checked!"
+msgstr "Ответы этого студента были проверены."
+
+msgid "Student's results have been (re)published!"
+msgstr "Ответы этого студента были (пере)опубликованы."
+
+msgid "Study Stack didn't accept the connection. Are you sure that your internet connection works and http://www.studystack.com/ is online?"
+msgstr "Сайт Study Stack не отвечает. Вы уверены, что ваше интернет-соединение работает и studystack.com доступен?"
+
+msgid "Symbols"
+msgstr "Символы"
+
+msgid "System default"
+msgstr "Используемый системой"
+
+msgid "Take test"
+msgstr "Пройти тест"
+
+msgid "Taking test"
+msgstr "Получение теста"
+
+msgid "Teach me!"
+msgstr "Научи меня!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Teacher Panel"
+msgstr "Панель преподавателя"
+
+msgid "Teacher panel"
+msgstr "Панель преподавателя"
+
+msgid "Teachmaster"
+msgstr "Teachmaster"
+
+msgid "Test"
+msgstr "Тест"
+
+msgid "Test mode"
+msgstr "Режим тестирования"
+
+msgid "Test server"
+msgstr "Сервер тестирования"
+
+msgid "Tests"
+msgstr "Тесты"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Благодарим всех участников с Launchpad!"
+
+msgid "That username is already taken. Please try again."
+msgstr "Это имя пользователя уже существует. Попробуйте другое."
+
+msgid "That's a mistake :(."
+msgstr "Это ошибка :(."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Сейчас будут задействованы указательные пальцы левой и правой руки: клавиши, которые Вы будете нажимать, расположены дальше, чем те, что уже использовались. Пожалуйста, не забывайте возвращать палец на исходную позицию в домашнем ряду, прежде чем нажать следующую клавишу."
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "Все скриншоты сделаны в Ubuntu, но все должно так же выглядеть и работать в  Windows и Mac OS X."
+
+msgid "The username should not be empty. Please try again."
+msgstr "Имя пользователя не должно быть пустым. Пожалуйста, попробуйте еще раз."
+
+msgid "The username you requested is already taken. Please try again."
+msgstr "Запрашиваемое имя пользователя уже занято. Попробуйте еще раз."
+
+msgid "The word list was imported from Quizlet successfully."
+msgstr "Список слов успешно импортирован с Quizlet."
+
+msgid "The word list was imported from Study Stack successfully."
+msgstr "Список слов успешно импортирован с Study Stack."
+
+msgid "The word list was imported from coursehero.com successfully."
+msgstr "Список слов успешно импортирован с coursehero.com."
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "Затем введите все слова, которые вы хотите узнать в таблицу слов. Вы можете перейти на следующий вопрос или колонуц ответов, нажав таб (tab) или '='. Смотрите на скриншот для примера."
+
+msgid "There are a number of different lesson types: you can use OpenTeacher to learn vocabulary, geography and media."
+msgstr "Есть целый ряд различных типов уроков: вы можете использовать OpenTeacher, чтобы изучать лексику, географию и мультимедиа."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Есть несохраненные элементы или результаты. Вы действительно хотите закрыть?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Подумайте об ответе и нажмите кнопку «Показать ответ», когда закончите."
+
+msgid "Think answer"
+msgstr "Обдумать ответ"
+
+msgid "Thinking"
+msgstr "Обдумывание"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "Данное руководство покажет Вам как сделать простой тест для самопроверки используя OpenTeacher. В этом примере мы будем учиться считать до десяти на французском! Предполагается, что Вы уже знаете английский и готовы учить французский язык."
+
+msgid "This type of file is not supported:\n"
+msgstr "Этот тип файлов не поддерживается:\n"
+
+msgid "This type of media isn't supported on your computer"
+msgstr "Этот тип медиафайлов не поддерживается вашим компьютером"
+
+msgid "This wizard will guide you through the process of creating a word list from a scan or picture of a physical word list. Click 'Next' to start."
+msgstr "Мастер настройки будет подсказывать Вам в процессе создания списка слов из картинки или отсканированного изображения. Чтобы начать, нажмите 'Далее'."
+
+msgid "Title:"
+msgstr "Название"
+
+msgid "To archieve that, you might try slowing down a bit."
+msgstr "Чтобы добиться этого, вы можете попробовать немного снизить скорость."
+
+msgid "Toolbar"
+msgstr "Панель инструментов"
+
+msgid "Topo lesson: %s"
+msgstr "Топографический урок: %s"
+
+msgid "Topography"
+msgstr "Топография"
+
+msgid "Topography maps"
+msgstr "Топографические карты"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Общее время обдумывания: %s минут"
+
+msgid "Translation: "
+msgstr "Перевод: "
+
+msgid "Translator (%s)"
+msgstr "Переводчик (%s)"
+
+msgid "Type answer"
+msgstr "Напечатайте ответ"
+
+msgid "Typing Tutor"
+msgstr "Урок машинописи"
+
+msgid "Unified Office Format spreadsheet"
+msgstr "Эл.таблица Unified Office"
+
+msgid "Unified Office Format text"
+msgstr "Текстовый документ Unified Office"
+
+msgid "Unnamed"
+msgstr "Безымянный"
+
+msgid "Unsaved data"
+msgstr "Несохраненные данные"
+
+msgid "Unsupported file type"
+msgstr "Неподдерживаемый тип файла"
+
+msgid "Unsupported media"
+msgstr "Неподдерживаемый медиафайл"
+
+msgid "Untitled word list"
+msgstr "Безымянный список слов"
+
+msgid "Upload lesson"
+msgstr "Передать урок"
+
+msgid "Use HTML5 for audio"
+msgstr "Использовать HTML5 для аудио"
+
+msgid "Use HTML5 for video"
+msgstr "Использовать HTML5 для видео"
+
+msgid "Username empty"
+msgstr "Пустое имя пользователя"
+
+msgid "Username taken"
+msgstr "Имя пользователя получено"
+
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "Использование OpenTeacher 3: Быстрый старт"
+
+msgid "VTrain"
+msgstr "VTrain"
+
+msgid "View answer"
+msgstr "Показать ответ"
+
+msgid "Voca"
+msgstr "Voca"
+
+msgid "Vocabularium"
+msgstr "Vocabularium"
+
+msgid "Voice"
+msgstr "Голос"
+
+msgid "Voice name (language)"
+msgstr "Название голоса (язык)"
+
+msgid "Vokabel Trainer"
+msgstr "Vokabel Trainer"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "Внимание"
+
+msgid "Welcome to OpenTeacher Web! You can register an account below."
+msgstr "Добро пожаловать на сайт OpenTeacher! Вы можете зарегистрировать учётную запись ниже."
+
+msgid "Welcome, I'm your personal OpenTeacher typing tutor. We'll improve your typing skills by doing simple exercises. Between the exercises, I'll give instructions. Let's get started:\n\nFirst place your fingers on the so-called home row: your fingers, from left to right, should always be on the keys '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}' and '{;}' while not typing another character. When your fingers are in position, press {space} to start the first lesson. Work for accuracy at first, not speed."
+msgstr "Добро пожаловать, я ваш персональный клавиатурный тренажер OpenTeacher. Мы улучшим ваши навыки набора текста, выполняя простые упражнения. Между упражнениями, я буду давать инструкции. Давайте начнем:\n\nСначала поместите пальцы на так называемой домашней строке: пальцы, слева направо, всегда должны быть на клавишах '{a}', '{s}', '{d}', '{f}', '{пробел}', '{пробел}', '{j}', '{k}', '{l}' и '{;}' если только они не вводят другой символ. Когда вы расположите пальцы в данном положении, нажмите {пробел}, чтобы начать первый урок.  Работайте в первую очередь над точностью,  а не над скоростью."
+
+msgid "Welcome, please choose your account by clicking on it."
+msgstr "Добро пожаловать, выберите учетную запись, нажав на нее."
+
+msgid "What's this place's name?"
+msgstr "Как называется это место?"
+
+msgid "When the image is completely upright, make a selection on the image with the mouse with in the left top the first question to include and in the right bottom the last answer to include. Click 'Next' when done."
+msgstr "Когда изображение стало вертикальным, выделите необходимую на нем область с вопросами. Для этого, зажмите клавишу мыши в левом верхнем углу предполагаемого списка вопросов и протяните до правого нижнего угла. Когда закончите, нажмите 'Далее'."
+
+msgid "When you open a lesson you can view the items in that lesson or enter new ones, and learn those items."
+msgstr "Когда вы открываете урок можно просмотреть элементы этого урока или ввести новые и изучать их."
+
+msgid "Which place is here?"
+msgstr "Что здесь за место?"
+
+msgid "Word lesson: %s"
+msgstr "Словарный урок: %s"
+
+msgid "Word list order and filters"
+msgstr "Порядок слов и фильтры"
+
+msgid "Word modifications"
+msgstr "Модификации слов"
+
+msgid "Word most done wrong:"
+msgstr "Слово с наибольшим числом ошибок:"
+
+msgid "Word:"
+msgstr "Слово:"
+
+msgid "Words lesson"
+msgstr "Словарный урок"
+
+msgid "Words lesson from picture"
+msgstr "Список слов из изображения"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Вы сделали это безупречно и быстро! Продолжайте практиковаться на некоторых новых комбинациях букв, чтобы улучшить результаты!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Вы сделали это безупречно и быстро! Продолжайте тренироваться с новыми словами, чтобы улучшить результат!"
+
+msgid "You have already tried this character / word"
+msgstr "Вы уже предлагали эту букву/слово"
+
+msgid "You lose, the answer was: "
+msgstr "Вы проиграли, правильный ответ: "
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Вы не допустили ошибок и печатаете достаточно быстро, так что вы можете продолжать заниматься некоторыми новыми комбинациями букв. Продолжайте в том же духе!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Вы не допустили ошибок и печатаете достаточно быстро, теперь вы можете заниматься с некоторыми новыми словами. Продолжайте в том же духе!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Вы не допустили ошибок. Теперь попробуйте немного улучшить скорость набора текста."
+
+msgid "You need to add items to your test first"
+msgstr "Вам сначала нужно добавить элементы в тест"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Сейчас начнется практика букв, расположенных вне домашнего ряда. Взгляните на картинку с клавиатурой, чтобы понять, какие пальцы придется использовать. Если Вы не используете какой-нибудь палец, верните его назад на домашний ряд."
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Ваши ответы были успешно отправлены!"
+
+msgid "Your password should at least be %s characters long, and contain special (non alphanumeric) characters. Please try again."
+msgstr "Ваш пароль должен быть не менее %s символов и должен содержать специальные (не буквенно-цифровые) символы. Попробуйте еще раз."
+
+msgid "coursehero.com didn't accept the connection. Are you sure that your internet connection works and coursehero.com is online?"
+msgstr "Не удалось подключиться к coursehero.com. Проверьте ваше подключение к интернету и работу coursehero.com."
+
+msgid "gnuVocabTrain"
+msgstr "gnuVocabTrain"
+
+msgid "hanged man"
+msgstr "виселиица"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "jVLT"
+msgstr "jVLT"
+
+msgid "no"
+msgstr "нет"
+
+msgid "run {name} as specified by {profile}, {profile} should be one of:"
+msgstr "запуск {name} как указано в {profile}, {profile} должен быть одним из:"
+
+msgid "show a help message"
+msgstr "показать справку"
+
+msgid "yes"
+msgstr "да"
+
+msgid "{appName} mark:"
+msgstr "Оценка {appName}:"
+

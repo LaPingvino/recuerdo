@@ -1,0 +1,130 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "متعلق"
+
+msgid "&Documentation"
+msgstr "&ڈاکومن ٹیشن"
+
+msgid "&Edit"
+msgstr "&ترمیم"
+
+msgid "&File"
+msgstr "&فائل"
+
+msgid "&Help"
+msgstr "&مدد"
+
+msgid "&New"
+msgstr "&نئی"
+
+msgid "&Open"
+msgstr "&کھولیں"
+
+msgid "&Print"
+msgstr "&چھاپیں"
+
+msgid "&Quit"
+msgstr "بند کریں"
+
+msgid "&Reverse list"
+msgstr "فہرست &پلٹائیں"
+
+msgid "&Save"
+msgstr "&محفوظ کریں"
+
+msgid "&Settings"
+msgstr "&ترتیبات"
+
+msgid "&View"
+msgstr "&منظر"
+
+msgid "Amount of recently opened files to remember"
+msgstr "یاد رکھنے کے لیے حالیہ کھولی گئی فائلوں کی تعداد"
+
+msgid "Completed: %s"
+msgstr "مکمل ہو گیا: %s"
+
+msgid "Corrected: %s"
+msgstr "درست کر دیے گئے: %s"
+
+msgid "Create lesson:"
+msgstr "سبق بنائیں:"
+
+msgid "Documentation"
+msgstr "ڈاکومن ٹیشن"
+
+msgid "Fullscreen"
+msgstr "پوری سکرین"
+
+msgid "General"
+msgstr "عمومی"
+
+msgid "Help"
+msgstr "ہدایات"
+
+msgid "I speak English"
+msgstr "میں اردو بولتا ہوں"
+
+msgid "Language"
+msgstr "زبان"
+
+msgid "Load from the internet"
+msgstr "انٹرنیٹ سے لوڈ کریں"
+
+msgid "Load lesson:"
+msgstr "سبق لوڈ کریں:"
+
+msgid "Locale"
+msgstr "علاقہ"
+
+msgid "Note:"
+msgstr "نوٹ:"
+
+msgid "Open &into current list"
+msgstr "موجودہ فہرست کے &اندر کھولیں"
+
+msgid "Open from file"
+msgstr "فائل سے کھولیں"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "اوپن ٹیچر کے مصنفین"
+
+msgid "Recently opened:"
+msgstr "حالیہ کھولی گئی:"
+
+msgid "Results"
+msgstr "نتائج"
+
+msgid "Save &As"
+msgstr "محفوظ &بنام"
+
+msgid "Show results"
+msgstr "نتائج دکھائیں"
+
+msgid "Teach me!"
+msgstr "مجھے پڑھاؤ"
+
+msgid "Toolbar"
+msgstr "ٹول بار"
+
+msgid "Total thinking time: %s minutes"
+msgstr "سوچنے کا کل وقت: %s منٹ"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "نہیں"
+
+msgid "yes"
+msgstr "یاں"
+

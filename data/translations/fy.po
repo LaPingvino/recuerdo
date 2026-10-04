@@ -1,0 +1,874 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Ynfo oer"
+
+msgid "&Documentation"
+msgstr "&Dokumintaasje"
+
+msgid "&Edit"
+msgstr "Be&wurkje"
+
+msgid "&File"
+msgstr "&Bestân"
+
+msgid "&Help"
+msgstr "&Help"
+
+msgid "&New"
+msgstr "&Nij"
+
+msgid "&Open"
+msgstr "&Iepenje"
+
+msgid "&Print"
+msgstr "&Printsje"
+
+msgid "&Quit"
+msgstr "&Ofslúte"
+
+msgid "&Reverse list"
+msgstr "&List omdraaie"
+
+msgid "&Save"
+msgstr "&Bewarje"
+
+msgid "&Settings"
+msgstr "&Ynstellings"
+
+msgid "&View"
+msgstr "By&ld"
+
+msgid "(Handed in)"
+msgstr "(Ynleverd)"
+
+msgid "(Re)check answers"
+msgstr "Antwurden (opnij) kontrolearje"
+
+msgid "(Re)publish answers"
+msgstr "Antwurden (opnij) publisearje"
+
+msgid "(did not participate)"
+msgstr "(Naam net diel)"
+
+msgid "-"
+msgstr "-"
+
+msgid ".otmd saving"
+msgstr ".otmd bewarring"
+
+msgid ".txt saving"
+msgstr ".txt bewarring"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "ABBYY Lingvo Tutor"
+
+msgid "About"
+msgstr "Oer"
+
+msgid "Add"
+msgstr "Tafoegje"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Foegje in plak ta troch dûbel te klikken op de kaart."
+
+msgid "Add a place by name:"
+msgstr "Foegje in plak ta by namme:"
+
+msgid "Add lesson"
+msgstr "Les tafoegje"
+
+msgid "Add local media"
+msgstr "Foegje lokale media ta."
+
+msgid "Add person"
+msgstr "Persoan tafoegje"
+
+msgid "Add person/group"
+msgstr "Foegje in persoan/groep yn"
+
+msgid "Add remote media"
+msgstr "Foegje ôfstansmedia ta"
+
+msgid "Advanced mode"
+msgstr "Wiedweidiche modus"
+
+msgid "All features useful for teachers"
+msgstr "Alle funksjes handich foar learaarje."
+
+msgid "All once"
+msgstr "Allegearre ien kear"
+
+msgid "American"
+msgstr "Amerikaansk"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Oantal resint iepende bestânnen om te ûnthâlde"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Der wie in flater. De tsjinner koe net berikke wurre. Kontrolearje jo netwurkferbining."
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Answer"
+msgstr "Antwurd"
+
+msgid "Answer language:"
+msgstr "Taal fan de antwurden"
+
+msgid "Answer:"
+msgstr "Antwurd:"
+
+msgid "Answering"
+msgstr "Antwurdzje"
+
+msgid "Answers"
+msgstr "Antwurden"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "De antwurden fan dizze learling binne net kontrollearre. Klik de 'Antwurden kontrolearje'-knop yn de twadde kolom."
+
+msgid "Answers right:"
+msgstr "Goede antwurden:"
+
+msgid "Answers wrong:"
+msgstr "Foute antwurden:"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Witte jo seker dat jo werom gean wolle nei de ynvoegtab? Dat sil jo oerhearring beëindigje."
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Witte jo seker dat jo in oare kaart brûke wolle? Dat smiet al jo plakken fuort!"
+
+msgid "Artwork"
+msgstr "Ôfbyldingsmakker"
+
+msgid "Ask foreign - known"
+msgstr "Freegje unbekend - bekend"
+
+msgid "Authors"
+msgstr "Auteurs"
+
+msgid "Average note:"
+msgstr "Trochsnee sifer:"
+
+msgid "Back"
+msgstr "Werom"
+
+msgid "Can't merge files of different file types."
+msgstr "Kin net de triemen fan ferskate triem types gearfoegje."
+
+msgid "Can't open the resultive word list, because it can't be shown."
+msgstr "Kin de resultearende wurdlist net iepenje, want it kin net sjen litten wurre."
+
+msgid "Can't show the result"
+msgstr "Kin it resultaat net sjen litte."
+
+msgid "Change lesson settings"
+msgstr "Lesynstellings feroarje"
+
+msgid "Chat channel spammer"
+msgstr "Petearkanaal unfeilichmakker"
+
+msgid "Check"
+msgstr "Kontrolearje"
+
+msgid "Check!"
+msgstr "Kontrolearje!"
+
+msgid "Choose test"
+msgstr "Toets kieze"
+
+msgid "Click the button to start"
+msgstr "Klik de knop om te begjinne"
+
+msgid "Comment"
+msgstr "Taljochting"
+
+msgid "Comment after answering"
+msgstr "Kommentaarje nei antwurdzjen"
+
+msgid "Completed"
+msgstr "Foltôge"
+
+msgid "Completed: %s"
+msgstr "Foltôge: %s"
+
+msgid "Connect"
+msgstr "Ferbine"
+
+msgid "Core developer"
+msgstr "Kern-ûntwikkelder"
+
+msgid "Correct"
+msgstr "Korrekt"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Goede antwurd: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Goede antwurd: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Doch goed"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "Koe gjin ferbining meitsje mei de tsjinner."
+
+msgid "Could not login. Wrong username or password."
+msgstr "Koe net oanmelde. Ferkearde brûkersnamme of wachtwurd."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "It bestân koe net iepene wurre, omdat it bestânstype unbekend is of net sjen te litten is."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "It bestân koe net iepene wurre, is it noch dêr en hawwe wy it rjocht it te iepenje?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "It bestân koe net iepene wurre, it liket stikken te wêze."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "It bestân koe net iepene wurre, is der genôch frije skiifromte en hawwe we skriuwrjochten op de oanwiisde lokaasje?"
+
+msgid "Create lesson:"
+msgstr "Les oanmeitsje:"
+
+msgid "Create media lesson"
+msgstr "Meitsje mediales oan"
+
+msgid "Create topography lesson"
+msgstr "Meitje topografyles oan"
+
+msgid "Create words lesson"
+msgstr "Meitsje in wurtsjesles oan"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Meitsje in wurdles oan troch platte tekst yn te fiere"
+
+msgid "Cyrillic"
+msgstr "Cyrillysk"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Debian/Ubuntu pakketmakker"
+
+msgid "Documentation"
+msgstr "Dokumintaasje"
+
+msgid "Dutch"
+msgstr "Nederlânsk"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Gjin fraag of antwurd"
+
+msgid "Enable compression"
+msgstr "Skeakelje kompresje yn"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Skeakelje idere OpenTeacher GUI-funksje yn."
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Set the ferburgen browser oan (ferbergje it troch de slider te bewege)"
+
+msgid "Enter list"
+msgstr "List ynfieren"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Folje de URL fan jo website of media-item yn.\nÛnderstipe video-sites: "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Alles wat jo nedig hawwe om OpenTeacher te brûke foar selsstúdzje."
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Duer fan it ferdizenje by in flater (millisekonde)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Funksjes foar learlingen dy't OpenTeacher thús brûke"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Funksjes foar learlingen dy't OpenTeacher op skoalle brûke"
+
+msgid "File URL"
+msgstr "Bestâns-URL"
+
+msgid "File opened succesfully."
+msgstr "Bestân mei sukses iepene."
+
+msgid "File saved succesfully."
+msgstr "Bestân mei sukses bewarre."
+
+msgid "Final mark:"
+msgstr "Úteinlik sifer:"
+
+msgid "French"
+msgstr "Frânsk"
+
+msgid "From hard disk..."
+msgstr "Fan de fêste skiif..."
+
+msgid "Full license text"
+msgstr "Folsleine lisinsjetekst"
+
+msgid "Fullscreen"
+msgstr "Folslein skerm"
+
+msgid "General"
+msgstr "Algemien"
+
+msgid "German"
+msgstr "Dútsk"
+
+msgid "Given answer"
+msgstr "Antwurd joen"
+
+msgid "Greek"
+msgstr "Gryksk"
+
+msgid "Hand in answers"
+msgstr "Antwurden ynleverje"
+
+msgid "Hide the browser!"
+msgstr "Ferbergje de browser!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Ferbergje de oare dingen; meitsje plak foar de browser"
+
+msgid "Highest note:"
+msgstr "Heechste sifer:"
+
+msgid "Hint:"
+msgstr "Hint:"
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language"
+
+msgid "I am a new user"
+msgstr "Ik bin in nije brûker"
+
+msgid "I speak English"
+msgstr "Ik praat Frysk"
+
+msgid "I was right"
+msgstr "Ik hie 't goed"
+
+msgid "I was wrong"
+msgstr "Ik hie't fout"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Ik bin der klear foar, start de les!"
+
+msgid "Images"
+msgstr "Ôfbyldingen"
+
+msgid "Import source"
+msgstr "Ynvoegboarne"
+
+msgid "Input and output"
+msgstr "Ynfier en útfier"
+
+msgid "Interval"
+msgstr "Ynterval"
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Jou my gewoan myn goede âlde OpenTeacher 2.x werom!"
+
+msgid "KDE Vocabulary Document"
+msgstr "KDE Wurdsjeslistdokumint"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Lesson"
+msgstr "Les"
+
+msgid "Lesson order:"
+msgstr "Lesfolchoarder"
+
+msgid "Lesson settings"
+msgstr "Lesynstellings"
+
+msgid "Lesson type"
+msgstr "Lestype"
+
+msgid "Lesson type:"
+msgstr "Lestype:"
+
+msgid "License"
+msgstr "Lisinsje"
+
+msgid "Load lesson:"
+msgstr "Les lade:"
+
+msgid "Locale"
+msgstr "Lokalisaasje"
+
+msgid "Login"
+msgstr "Oanmelde"
+
+msgid "Lowest note:"
+msgstr "Leechste sifer:"
+
+msgid "Map:"
+msgstr "Kaart:"
+
+msgid "Maximum size of group"
+msgstr "Maksimumgrutte fan de groep"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media lesson: %s"
+msgstr "Mediales: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "Minimumtal fragen om te freegje"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Minimumoantal spaasjes tusken wurden"
+
+msgid "Miscellaneous"
+msgstr "Ferskaat"
+
+msgid "Missing equals sign or tab"
+msgstr "Missend is-gelykteken of tab"
+
+msgid "Mistakes:  "
+msgstr "Flaters:  "
+
+msgid "Name"
+msgstr "Namme"
+
+msgid "Name - Place"
+msgstr "Namme - Plak"
+
+msgid "Name for this place"
+msgstr "Namme foar dit plak"
+
+msgid "Name:"
+msgstr "Namme:"
+
+msgid "Next"
+msgstr "Folgende"
+
+msgid "Not enough items"
+msgstr "Net genôch items"
+
+msgid "Note"
+msgstr "Sifer"
+
+msgid "Note notation"
+msgstr "Sifernotaasje"
+
+msgid "Note:"
+msgstr "Sifer:"
+
+msgid "Only hard words (<50%% right)"
+msgstr "Allinich mar dreeche wurden (<50%% goed)"
+
+msgid "Only words you never answered correctly"
+msgstr "Allinich mar wurden dy't jo nea goed hiene"
+
+msgid "Open &into current list"
+msgstr "Iepenje  &yn hjoeddeistiche lyst"
+
+msgid "Open Teaching Media"
+msgstr "Iepen Lesjaan Media"
+
+msgid "Open Teaching Topography"
+msgstr "Iepen Lesjaan Topografy"
+
+msgid "Open Teaching Words"
+msgstr "Iepen Lesjaan Wurden"
+
+msgid "Open from file"
+msgstr "Iepenje ut in bestân"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL rendering"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher auteurs"
+
+msgid "Password:"
+msgstr "Wachtwurd:"
+
+msgid "Patches contributor"
+msgstr "Oandrager fan ferbetteringen"
+
+msgid "Pauker"
+msgstr "Pauker"
+
+msgid "Pause"
+msgstr "Skoftsje"
+
+msgid "People in this test:"
+msgstr "Persoanen yn dizze toets:"
+
+msgid "Percent right before known"
+msgstr "Prosint goed foar bekend achtsje"
+
+msgid "Percents"
+msgstr "Prosinten"
+
+msgid "Person"
+msgstr "Persoan"
+
+msgid "Place - Name"
+msgstr "Plak - Namme"
+
+msgid "Place name"
+msgstr "Plaknamme"
+
+msgid "Place not found"
+msgstr "Plak net fûn"
+
+msgid "Places in your test"
+msgstr "Plakken yn jo oerhearring"
+
+msgid "Plain text"
+msgstr "Platte tekst"
+
+msgid "Plain text words enterer"
+msgstr "Platte tekst wurdynfierder"
+
+msgid "Play hangman"
+msgstr "Galchje spylje"
+
+msgid "Please click this place:"
+msgstr "Klik alsjebleaft op dit plak:"
+
+msgid "Please click this place: "
+msgstr "Klik alsjebleaft op dit plak: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Foegje alsjebleaft tenminste in fraag en in antwurd yn foar ider item."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Graag tenminste ien fraag of anwurd ynfiere foar ieder wurd."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Fier de platte tekst alsjebleaft yn yn de tekst editor. Skied de wurden my in nije regel en de fragen fan de antwurden my in is-gelykteken ('=') of in tab."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Soargje derfoar dat der yn idere regel in '='-teken of in tab is tusken de fragen en de antwurden."
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Profile"
+msgstr "Profyl"
+
+msgid "Project website"
+msgstr "Projekt webside"
+
+msgid "Pronounce places"
+msgstr "Plakken utsprekke"
+
+msgid "Pronounce words"
+msgstr "Wurden utsprekke"
+
+msgid "Pronounciation"
+msgstr "Utspraak"
+
+msgid "Question"
+msgstr "Fraach"
+
+msgid "Question language:"
+msgstr "Taal fan de fragen"
+
+msgid "Question:"
+msgstr "Fraag:"
+
+msgid "Questions"
+msgstr "Fragen"
+
+msgid "Questions:"
+msgstr "Fragen:"
+
+msgid "Random"
+msgstr "Willekeurig"
+
+msgid "Recently opened:"
+msgstr "Resint iepend:"
+
+msgid "Remove"
+msgstr "Fuortsmite"
+
+msgid "Remove selected place"
+msgstr "Smiet selektearde plak fuort"
+
+msgid "Remove selected row(s)"
+msgstr "Ferwiderje de selektearde rige(n)"
+
+msgid "Repeat answer"
+msgstr "Herhelje antwurd"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Duer fan it ferdizenje yn de herhelje-modus (millisekondes)"
+
+msgid "Results"
+msgstr "Fertuten"
+
+msgid "Reverse"
+msgstr "Omkeard"
+
+msgid "Save &As"
+msgstr "Bewarje &as"
+
+msgid "Select a student/group:"
+msgstr "Selektear in learling/groep"
+
+msgid "Select file(s)"
+msgstr "Selektearje bestân(nen)"
+
+msgid "Select the test you want to take"
+msgstr "Selektear de toets dy't jo meitsje wolle"
+
+msgid "Server IP or hostname:"
+msgstr "Tsjinner IP of hostnamme"
+
+msgid "Settings"
+msgstr "Ynstellings"
+
+msgid "Show results"
+msgstr "Resultaten sjen litte"
+
+msgid "Shows an overview of all documented available profiles"
+msgstr "Lit in oersjoch sjen fan alle dokumenteerde beskikbere profylen"
+
+msgid "Shuffle answer"
+msgstr "Hutselje antwurd"
+
+msgid "Simple mode"
+msgstr "Ienfâldiche modus"
+
+msgid "Skip"
+msgstr "Oerslaan"
+
+msgid "Smart"
+msgstr "Tûk"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "Sorry, dit plak is net yn de list my bekende plakken. Foegje it alsjebleaft sels ta troch dûbel te klikken oan de rjochter kant fan de kaart."
+
+msgid "Sort"
+msgstr "Sortearje"
+
+msgid "Speed"
+msgstr "Fluggens"
+
+msgid "Spreadsheet"
+msgstr "Rekkenblêd"
+
+msgid "Start exercise"
+msgstr "Begjin oefening"
+
+msgid "Start!"
+msgstr "Begjin!"
+
+msgid "Student's answers have been checked!"
+msgstr "De antwurden fan de learling binne net kontrolearre!"
+
+msgid "Student's results have been (re)published!"
+msgstr "De resultaten binne (opnij) publisearre."
+
+msgid "Symbols"
+msgstr "Symboalen"
+
+msgid "System default"
+msgstr "Systeemstandert"
+
+msgid "Take test"
+msgstr "Toets meitsje"
+
+msgid "Taking test"
+msgstr "Toets oan it meitsje"
+
+msgid "Teach me!"
+msgstr "Underwis my!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Teacher Panel"
+msgstr "Leraarpaniel"
+
+msgid "Teacher panel"
+msgstr "Learaarpaniel"
+
+msgid "Test"
+msgstr "Toets"
+
+msgid "Test mode"
+msgstr "Toetsmodus"
+
+msgid "Test server"
+msgstr "Toetsserver"
+
+msgid "Tests"
+msgstr "Toetsen"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Tank foar alle helpers op Launchpad!"
+
+msgid "That username is already taken. Please try again."
+msgstr "Die brûkersnamme is al yn gebrûk. Besykje it alsjebleaft nochris."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Der binne unbewarre items of resultaten. Witte jo seker dat jo ôfslute wolle?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Tink nei oer it antwurd, en druk de 'Lit antwurd sjen'-knop yn wannear't jo klear binne."
+
+msgid "Think answer"
+msgstr "Tinke oer it antwurd"
+
+msgid "Thinking"
+msgstr "Tinke"
+
+msgid "This type of file is not supported:\n"
+msgstr "Dit bestânstype is unûnderstipe:\n"
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid "Toolbar"
+msgstr "Arkbalke"
+
+msgid "Topo lesson: %s"
+msgstr "Topografyles: %s"
+
+msgid "Topography"
+msgstr "Topografy"
+
+msgid "Topography maps"
+msgstr "Topografykaarten"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Totale tinktiid: %s minúten"
+
+msgid "Translation: "
+msgstr "Oersetting: "
+
+msgid "Translator (%s)"
+msgstr "Oersetter (%s)"
+
+msgid "Type answer"
+msgstr "Typ antwurd"
+
+msgid "Typing Tutor"
+msgstr "Typelearaar"
+
+msgid "Unnamed"
+msgstr "Namleas"
+
+msgid "Unsaved data"
+msgstr "Unbewarre data"
+
+msgid "Unsupported file type"
+msgstr "Unûnderstipe bestânstype"
+
+msgid "Untitled word list"
+msgstr "Wurdlist sûnder namme"
+
+msgid "Upload lesson"
+msgstr "Laad les op"
+
+msgid "Use HTML5 for audio"
+msgstr "Brûk HTML5 foar audio"
+
+msgid "Use HTML5 for video"
+msgstr "Brûk HTML foar video"
+
+msgid "Username taken"
+msgstr "Brûkersnamme al yn gebrûk"
+
+msgid "Username:"
+msgstr "Brûkersnamme:"
+
+msgid "View answer"
+msgstr "Lit antwurd sjen"
+
+msgid "Voice"
+msgstr "Stim"
+
+msgid "Voice name (language)"
+msgstr "Stimnamme (taal)"
+
+msgid "WRDS"
+msgstr "WRTS"
+
+msgid "Warning"
+msgstr "Warskôging"
+
+msgid "Welcome, please choose your account by clicking on it."
+msgstr "Wolkom, kies alsjebleaft jo akkount troch derop te klikke."
+
+msgid "What's this place's name?"
+msgstr "Wat is de namme fan dit plak?"
+
+msgid "Which place is here?"
+msgstr "Hokker plak is hjir?"
+
+msgid "Word lesson: %s"
+msgstr "Wurtsjesles: %s"
+
+msgid "Word list order and filters"
+msgstr "Wurdsjeslistfolchoarder en -filters"
+
+msgid "Word modifications"
+msgstr "Wurdoanpassings"
+
+msgid "Word most done wrong:"
+msgstr "Wurd dat it faakst fout gong:"
+
+msgid "Word:"
+msgstr "Wurd:"
+
+msgid "Words lesson"
+msgstr "Wurdsjesles"
+
+msgid "You have already tried this character / word"
+msgstr "Jo hawwe dit teken/wurd al probearre"
+
+msgid "You lose, the answer was: "
+msgstr "Jo hawwe ferlern, it antwurd wie: "
+
+msgid "You need to add items to your test first"
+msgstr "Jo moatte earst items tafoegje oan jo oerhearring"
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Jo antwurden binne mei sukses ynleverd."
+
+msgid "hanged man"
+msgstr "galchje ferlern"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "nee"
+
+msgid "yes"
+msgstr "ja"
+

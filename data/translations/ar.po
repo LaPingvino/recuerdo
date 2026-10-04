@@ -1,0 +1,301 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&حول"
+
+msgid "&Documentation"
+msgstr "&الوثائق"
+
+msgid "&Edit"
+msgstr "&حرّر"
+
+msgid "&File"
+msgstr "&ملف"
+
+msgid "&Help"
+msgstr "&مساعدة"
+
+msgid "&New"
+msgstr "&جديد"
+
+msgid "&Open"
+msgstr "&إفتح"
+
+msgid "&Print"
+msgstr "&طباعة"
+
+msgid "&Quit"
+msgstr "&إنهاء"
+
+msgid "&Save"
+msgstr "&حفظ"
+
+msgid "&Settings"
+msgstr "&إعدادات"
+
+msgid "-"
+msgstr "-"
+
+msgid "About"
+msgstr "معلومات عن البرنامج"
+
+msgid "Advanced mode"
+msgstr "وضع متقدّم"
+
+msgid "All once"
+msgstr "في كل مرّة"
+
+msgid "American"
+msgstr "الأمريكية"
+
+msgid "Answer language:"
+msgstr "لغة الجواب"
+
+msgid "Answers"
+msgstr "الأجوبة"
+
+msgid "Artwork"
+msgstr "عمل فني"
+
+msgid "Authors"
+msgstr "المؤلّفون"
+
+msgid "Average note:"
+msgstr "الدرجة المتوسّطة"
+
+msgid "Back"
+msgstr "إلى الخلف"
+
+msgid "Change lesson settings"
+msgstr "تغيير إعدادات الدرس"
+
+msgid "Check!"
+msgstr "تثبّت"
+
+msgid "Click the button to start"
+msgstr "إضغط على الزر للبدأ"
+
+msgid "Comment"
+msgstr "تعليق"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Completed: %s"
+msgstr "منتهي: %s"
+
+msgid "Core developer"
+msgstr "المطور الأصلي"
+
+msgid "Correct anyway"
+msgstr "صحّح في كل الحالات"
+
+msgid "Create lesson:"
+msgstr "إنشاء درس :"
+
+msgid "Create media lesson"
+msgstr "إنشاء درس بإستعمال الوسائط"
+
+msgid "Create topography lesson"
+msgstr "أنشئ درس حول التّضاريس"
+
+msgid "Create words lesson"
+msgstr "إنشاء كلمات الدرس"
+
+msgid "Create words lesson by entering plain text"
+msgstr "انشئ حصة كلمات بإدخال نص مجرد"
+
+msgid "Cyrillic"
+msgstr "السيريليّة"
+
+msgid "Date"
+msgstr "التّاريخ"
+
+msgid "Documentation"
+msgstr "توثيق"
+
+msgid "Dutch"
+msgstr "الهولندية"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Enter list"
+msgstr "أدخل قائمة"
+
+msgid "French"
+msgstr "اللّغة الفرنسية"
+
+msgid "Full license text"
+msgstr "نص الترخيص الكامل"
+
+msgid "German"
+msgstr "اللغة الألمانية"
+
+msgid "Greek"
+msgstr "اليونانية"
+
+msgid "Highest note:"
+msgstr "أعلى درجة"
+
+msgid "Hint:"
+msgstr "إشارة"
+
+msgid "I speak English"
+msgstr "أنا أتكلّم العربيّة"
+
+msgid "I was right"
+msgstr "لقد كنت على حقّ"
+
+msgid "I was wrong"
+msgstr "لقد كنت على خطأ"
+
+msgid "I'm ready, start the lesson!"
+msgstr "أنا مستعد، إبدأ الدرس"
+
+msgid "Lesson settings"
+msgstr "إعدادات الدرس"
+
+msgid "Lesson type"
+msgstr "نوع الدرس"
+
+msgid "License"
+msgstr "ترخيص"
+
+msgid "Load lesson:"
+msgstr "تحميل درس :"
+
+msgid "Lowest note:"
+msgstr "أقلّ درجة"
+
+msgid "Note"
+msgstr "ملاحظة"
+
+msgid "Note:"
+msgstr "ملاحظة:"
+
+msgid "Only words you never answered correctly"
+msgstr "فقط الكلمات التي لم تجب عليها أبدا بإجابة صحيحة"
+
+msgid "Open from file"
+msgstr "إفتح عن طريق ملف"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "Percents"
+msgstr "بالمائة"
+
+msgid "Plain text words enterer"
+msgstr "مُدخِلُ النص مجرد"
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "رجاءً أدخل النص المجرد في محرر النصوص. إفصل بين الكلمات بسطر جديد والأسئلة عن الأجوبة بعلامة يساوي (=)  أو لسان."
+
+msgid "Project website"
+msgstr "موقع الويب الخاص بالمشروع"
+
+msgid "Question language:"
+msgstr "لغة السّؤال"
+
+msgid "Questions"
+msgstr "الأسئلة"
+
+msgid "Random"
+msgstr "ترتيب عشوائي"
+
+msgid "Recently opened:"
+msgstr "ما فتح مؤخّرا:"
+
+msgid "Remove selected row(s)"
+msgstr "الغاء السط(و)ر المختارة"
+
+msgid "Results"
+msgstr "النتائج"
+
+msgid "Reverse"
+msgstr "عكسي"
+
+msgid "Save &As"
+msgstr "حفظ &تحت"
+
+msgid "Settings"
+msgstr "إعدادات"
+
+msgid "Show results"
+msgstr "عرض النّتائج"
+
+msgid "Simple mode"
+msgstr "وضع بسيط"
+
+msgid "Smart"
+msgstr "ذكي"
+
+msgid "Sort"
+msgstr "فرز"
+
+msgid "Start!"
+msgstr "إبدأ!"
+
+msgid "Symbols"
+msgstr "الرموز"
+
+msgid "System default"
+msgstr "الإعدادات الإفتراضية للنظام"
+
+msgid "Teach me!"
+msgstr "علّمني"
+
+msgid "Test mode"
+msgstr "وضع التجربة"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "شكرا لكل مستعملي Launchpad الذّين ساهموا في تطوير البرنامج"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "فكّر في اﻹجابة، عند اﻹنتهاء إضغط على زر \"معرفة اﻹجابة\""
+
+msgid "Title:"
+msgstr "العنوان :"
+
+msgid "Toolbar"
+msgstr "شريط الأدوات"
+
+msgid "Translation: "
+msgstr "ترجمة "
+
+msgid "Unnamed"
+msgstr "غير مسمّى"
+
+msgid "Untitled word list"
+msgstr "لائحة كلمات غير معنونة"
+
+msgid "View answer"
+msgstr "معرفة اﻹجابة"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Word lesson: %s"
+msgstr "كلمة الدّرس: %s"
+
+msgid "Word:"
+msgstr "كلمة:"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "لا"
+
+msgid "yes"
+msgstr "نعم"
+

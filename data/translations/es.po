@@ -1,0 +1,898 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Acerca de"
+
+msgid "&Documentation"
+msgstr "&Documentación"
+
+msgid "&Edit"
+msgstr "&Editar"
+
+msgid "&File"
+msgstr "&Archivo"
+
+msgid "&Help"
+msgstr "Ay&uda"
+
+msgid "&New"
+msgstr "&Nuevo"
+
+msgid "&Open"
+msgstr "&Abrir"
+
+msgid "&Print"
+msgstr "&Imprimir"
+
+msgid "&Quit"
+msgstr "&Salir"
+
+msgid "&Reverse list"
+msgstr "In&vertir la lista"
+
+msgid "&Save"
+msgstr "&Guardar"
+
+msgid "&Settings"
+msgstr "&Preferencias"
+
+msgid "&View"
+msgstr "&Ver"
+
+msgid "(Handed in)"
+msgstr "(Entregado)"
+
+msgid "(Re)check answers"
+msgstr "(Re)comprobar respuestas"
+
+msgid "(Re)publish answers"
+msgstr "(Re)publicar respuestas"
+
+msgid "(did not participate)"
+msgstr "(no participó)"
+
+msgid "-"
+msgstr "-"
+
+msgid ".otmd saving"
+msgstr "Salvando .otmd"
+
+msgid ".txt saving"
+msgstr "guardando .txt"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "Tutor ABBYY Lingvo"
+
+msgid "About"
+msgstr "Acerca de"
+
+msgid "Add"
+msgstr "Añadir"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Añadir un lugar haciendo doble clic en el mapa"
+
+msgid "Add a place by name:"
+msgstr "Añadir lugar por nombre:"
+
+msgid "Add lesson"
+msgstr "Agregar lección"
+
+msgid "Add local media"
+msgstr "Agregar medios locales"
+
+msgid "Add person"
+msgstr "Agregar persona"
+
+msgid "Add person/group"
+msgstr "Agregar persona/grupo"
+
+msgid "Add remote media"
+msgstr "Agregar repositorios remotos"
+
+msgid "Advanced mode"
+msgstr "Modo avanzado"
+
+msgid "All features useful for teachers"
+msgstr "Todas las características útiles para los profesores"
+
+msgid "All once"
+msgstr "Todos a la vez"
+
+msgid "American"
+msgstr "Americano"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Cantidad de archivos abiertos recientemente a recordar"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Ha ocurrido un error. El servidor no pudo ser localizado. Compruebe su conexión de red."
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "Respuesta"
+
+msgid "Answer language:"
+msgstr "Idioma de la respuesta:"
+
+msgid "Answer:"
+msgstr "Respuesta:"
+
+msgid "Answering"
+msgstr "Respondiendo"
+
+msgid "Answers"
+msgstr "Respuestas"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "Las respuestas de este estudiando no han sido revisadas aún. Haga clic en el botón \"Comprobar respuestas\" en la segunda columna."
+
+msgid "Answers right:"
+msgstr "Respuestas correctas:"
+
+msgid "Answers wrong:"
+msgstr "Respuestas incorrectas:"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "¿Estás seguro de que quieres volver? Esto terminará la lección!"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "¿Está seguro que desea utilizar otro mapa? Esto eliminará todos los lugares!"
+
+msgid "Artwork"
+msgstr "Arte"
+
+msgid "Ask foreign - known"
+msgstr "Pregunta a un extranjero - Conocido"
+
+msgid "Authors"
+msgstr "Autores"
+
+msgid "Average note:"
+msgstr "Nota promedio:"
+
+msgid "Back"
+msgstr "Volver"
+
+msgid "Can't merge files of different file types."
+msgstr "No se pueden combinar archivos con tipos de archivo diferentes."
+
+msgid "Can't open the resultive word list, because it can't be shown."
+msgstr "No se puede abrir la lista de resultados de las palabras,  porque no se puede mostrar."
+
+msgid "Can't show the result"
+msgstr "No se puede mostrar el resultado"
+
+msgid "Change lesson settings"
+msgstr "Cambiar configuración de la lección"
+
+msgid "Chat channel spammer"
+msgstr "Spammer de canal de chat"
+
+msgid "Check"
+msgstr "Comprobar"
+
+msgid "Check!"
+msgstr "¡Revisar!"
+
+msgid "Choose test"
+msgstr "Elija una prueba"
+
+msgid "Click the button to start"
+msgstr "Pulse el botón para comenzar"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Comment after answering"
+msgstr "Comentar después de contestar"
+
+msgid "Completed"
+msgstr "Terminado"
+
+msgid "Completed: %s"
+msgstr "Completado: %s"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Enhorabuena, has terminado este curso de mecanografía! Si desea continuar, se puede, pero este es el final de las instrucciones. Has hecho un gran trabajo!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Enhorabuena, has terminado tú primer ejercicio!"
+
+msgid "Connect"
+msgstr "Conectar"
+
+msgid "Core developer"
+msgstr "Desarrollador de núcleo"
+
+msgid "Correct"
+msgstr "Correcto"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Respuesta correcta: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Respuesta correcta: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Corregir de todas formas"
+
+msgid "Corrected: %s"
+msgstr "Corregido: %s"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "No se pudo conectar con el servidor. Es posible que el nombre del host sea incorrecto."
+
+msgid "Could not login. Wrong username or password."
+msgstr "No se ha podido iniciar sesión. Nombre de usuario o contraseña incorrecta."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "No se pudo abrir el archivo, porque el tipo de archivo es desconocido o no se puede mostrar."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "No se pudo abrir el archivo, ¿se encuentra aún allí o tenemos permisos para abrirlo?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "No se pudo abrir el archivo, parece estar corrupto."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "No se pudo guardar el archivo, ¿hay suficiente espacio libre en disco y tenemos derecho para escribir en esa ubicación especificada?"
+
+msgid "Create lesson:"
+msgstr "Crear lección:"
+
+msgid "Create media lesson"
+msgstr "Crear lección de medios"
+
+msgid "Create topography lesson"
+msgstr "Crear lección topográfico"
+
+msgid "Create words lesson"
+msgstr "Crear lección de palabras"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Crear una lección de palabras introduciendo texto plano"
+
+msgid "Cyrillic"
+msgstr "Cirílico"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Empaquetador Debian/Ubuntu"
+
+msgid "Documentation"
+msgstr "Documentación"
+
+msgid "Dutch"
+msgstr "Neerlandés"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Teclado simplificado Dvorak"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Pregunta o respuesta vacía"
+
+msgid "Enable compression"
+msgstr "Habilitar compresión"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Habilita todas las características de la interfaz gráfica de Open Teacher"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Habilitar navegador oculto (ocultar este moviendo el control deslizante)"
+
+msgid "Enter list"
+msgstr "Introduzca una lista"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Ingrese la dirección URL de su página web o de su item de comunicación.\nSitios de videos soportados: "
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Todo lo que necesita para usar Open Teacher para auto-estudio"
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Duración del fundido cuando incorrecta (milisegundos)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Características para estudiantes usando Open Teacher en casa"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Características para estudiantes usando Open Teacher en la escuela"
+
+msgid "File URL"
+msgstr "URL de Archivo"
+
+msgid "File opened succesfully."
+msgstr "Archivo abierto con éxito."
+
+msgid "File saved succesfully."
+msgstr "Archivo guardado exitosamente."
+
+msgid "Final mark:"
+msgstr "Marca final:"
+
+msgid "French"
+msgstr "Francés"
+
+msgid "From hard disk..."
+msgstr "Desde el disco duro..."
+
+msgid "Full license text"
+msgstr "Texto completo de la licencia"
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "General"
+msgstr "General"
+
+msgid "German"
+msgstr "Alemán"
+
+msgid "Given answer"
+msgstr "Respuesta dada"
+
+msgid "Greek"
+msgstr "Griego"
+
+msgid "Hand in answers"
+msgstr "Entregar respuestas"
+
+msgid "Help"
+msgstr "Ayuda"
+
+msgid "Hide the browser!"
+msgstr "Ocultar el navegador!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Ocultar los demás, hacer espacio para el navegador"
+
+msgid "Highest note:"
+msgstr "Nota más alta:"
+
+msgid "Hint:"
+msgstr "Pista:"
+
+msgid "Hyper Text Markup Language"
+msgstr "HyperText Markup Language"
+
+msgid "I speak English"
+msgstr "Habla Español"
+
+msgid "I was right"
+msgstr "Tenía razón"
+
+msgid "I was wrong"
+msgstr "Estaba equivocado"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Estoy listo, ¡comenzar la lección!"
+
+msgid "Images"
+msgstr "Imágenes"
+
+msgid "Import source"
+msgstr "Importar fuente"
+
+msgid "Input and output"
+msgstr "Entrada y salida"
+
+msgid "Interval"
+msgstr "Intervalo"
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Sólo dame mi bueno y viejo OpenTeacher 2.x!"
+
+msgid "Language"
+msgstr "Idiomas"
+
+msgid "Lesson"
+msgstr "Lección"
+
+msgid "Lesson order:"
+msgstr "Orden de la lección:"
+
+msgid "Lesson settings"
+msgstr "Configuración de lección"
+
+msgid "Lesson type"
+msgstr "Tipo de lección"
+
+msgid "Lesson type:"
+msgstr "Tipo de lección:"
+
+msgid "License"
+msgstr "Licencia"
+
+msgid "Load from the internet"
+msgstr "Cargar de internet"
+
+msgid "Load lesson:"
+msgstr "Cargar lección:"
+
+msgid "Locale"
+msgstr "Lugar"
+
+msgid "Login"
+msgstr "Iniciar Sesión"
+
+msgid "Lowest note:"
+msgstr "Nota más baja:"
+
+msgid "Map:"
+msgstr "Mapa:"
+
+msgid "Maximum size of group"
+msgstr "Tamaño máximo de grupo"
+
+msgid "Media"
+msgstr "Medios"
+
+msgid "Media lesson: %s"
+msgstr "Lección de medios: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "Cantidad mínimo de preguntas"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Mínima cantidad de espacios entre palabras"
+
+msgid "Miscellaneous"
+msgstr "Misceláneos"
+
+msgid "Missing equals sign or tab"
+msgstr "Falta el signo de igualdad o tabulador"
+
+msgid "Mistakes:  "
+msgstr "Errores:  "
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Name - Place"
+msgstr "Nombre - Lugar"
+
+msgid "Name for this place"
+msgstr "Nombre de este lugar"
+
+msgid "Name:"
+msgstr "Nombre:"
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "Not enough items"
+msgstr "No hay demasiados elementos"
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "Note notation"
+msgstr "Nota - notación"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "Una vez que termine la prueba, OpenTeacher le notificará qué tan bien la hizo dándole una nota."
+
+msgid "Only hard words (<50%% right)"
+msgstr "Solo palabras difíciles (<50%% correcto)"
+
+msgid "Only words you never answered correctly"
+msgstr "Solo palabras que nunca respondió correctamente"
+
+msgid "Open &into current list"
+msgstr "Abrir en la l&ista actual"
+
+msgid "Open Teaching Media"
+msgstr "Open Teaching Media"
+
+msgid "Open Teaching Topography"
+msgstr "Open Teaching Topography"
+
+msgid "Open Teaching Words"
+msgstr "Palabras de Enseñanza Abierta"
+
+msgid "Open from file"
+msgstr "Abrir desde archivo"
+
+msgid "OpenGL rendering"
+msgstr "Renderizado OpenGL"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher authors"
+msgstr "Autores de OpenTeacher"
+
+msgid "Opened file into the current list succesfully."
+msgstr "Se abrió correctamente el archivo en la lista actual."
+
+msgid "Password:"
+msgstr "Contraseña"
+
+msgid "Patches contributor"
+msgstr "Contribuidor de parches"
+
+msgid "Pause"
+msgstr "Pausa"
+
+msgid "People in this test:"
+msgstr "Personas en esta prueba:"
+
+msgid "Percent right before known"
+msgstr "Porcentaje correctos previo conocimiento"
+
+msgid "Percents"
+msgstr "Porcentajes"
+
+msgid "Person"
+msgstr "Persona"
+
+msgid "Place - Name"
+msgstr "Lugar - Nombre"
+
+msgid "Place name"
+msgstr "Nombre del lugar"
+
+msgid "Place not found"
+msgstr "Lugar no encontrado"
+
+msgid "Places in your test"
+msgstr "Lugares en su prueba"
+
+msgid "Plain text"
+msgstr "Texto plano"
+
+msgid "Plain text words enterer"
+msgstr "Introductor texto sin formato"
+
+msgid "Play hangman"
+msgstr "Jugar El Ahorcado"
+
+msgid "Please click this place:"
+msgstr "Por favor, haga clic en este lugar:"
+
+msgid "Please click this place: "
+msgstr "Por favor haz click en este lugar: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Por favor, introduzca al menos una pregunta y una respuesta para cada elemento."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Por favor ingrese al menos una pregunta y una respuesta para cada palabra."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Por favor introduzca el texto sin formato en el editor de texto. Separe las palabras con una nueva línea y las preguntas de las respuestas con un signo igual ('=') o con tabulador."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Por favor, asegúrese de que cada línea contiene un signo -'=' o tabulador entre las preguntas y las respuestas."
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Gráficos de Red Portátiles (PNG)"
+
+msgid "Profile"
+msgstr "Perfil"
+
+msgid "Project website"
+msgstr "Sitio web del proyecto"
+
+msgid "Pronounce places"
+msgstr "Pronunciar lugares"
+
+msgid "Pronounce words"
+msgstr "Pronuncia las palabras"
+
+msgid "Pronounciation"
+msgstr "Pronunciación"
+
+msgid "Question"
+msgstr "Pregunta"
+
+msgid "Question language:"
+msgstr "Idioma de la pregunta:"
+
+msgid "Question:"
+msgstr "Pregunta:"
+
+msgid "Questions"
+msgstr "Preguntas"
+
+msgid "Questions:"
+msgstr "Preguntas:"
+
+msgid "Random"
+msgstr "Aleatorio"
+
+msgid "Recently opened:"
+msgstr "Abiertos recientemente:"
+
+msgid "Remove"
+msgstr "Eliminar"
+
+msgid "Remove selected place"
+msgstr "Eliminar lugar seleccionado"
+
+msgid "Remove selected row(s)"
+msgstr "Eliminar fila seleccionada(s)"
+
+msgid "Repeat answer"
+msgstr "Repetir la pregunta"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Duración del fundido Modo repetición (milisegundos)"
+
+msgid "Results"
+msgstr "Resultados"
+
+msgid "Reverse"
+msgstr "Inverso"
+
+msgid "Save &As"
+msgstr "Guardar &como"
+
+msgid "Select a student/group:"
+msgstr "Seleccione un estudiante/grupo:"
+
+msgid "Select file(s)"
+msgstr "Seleccione archivo(s)"
+
+msgid "Select the test you want to take"
+msgstr "Seleccione la prueba que desea tomar"
+
+msgid "Server IP or hostname:"
+msgstr "Servidor IP o nombre de host:"
+
+msgid "Settings"
+msgstr "Configuración"
+
+msgid "Show results"
+msgstr "Mostrar resultados"
+
+msgid "Shows an overview of all documented available profiles"
+msgstr "Muestra una visión general de todos los perfiles documentados disponibles"
+
+msgid "Shuffle answer"
+msgstr "Respuestas desordenadas"
+
+msgid "Simple mode"
+msgstr "Modo simple"
+
+msgid "Skip"
+msgstr "Omitir"
+
+msgid "Smart"
+msgstr "Inteligente"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "Lo sentimos, este lugar no está en la lista de lugares conocidos. Por favor, añada manualmente haciendo doble clic en la ubicación en el mapa."
+
+msgid "Sort"
+msgstr "Ordenar"
+
+msgid "Speed"
+msgstr "Velocidad"
+
+msgid "Start!"
+msgstr "¡Comenzar!"
+
+msgid "Student's answers have been checked!"
+msgstr "Las respuestas de los estudiantes han sido revisadas!"
+
+msgid "Student's results have been (re)published!"
+msgstr "Los resultados de los estudiantes han sido (re)publicados!"
+
+msgid "Symbols"
+msgstr "Símbolos"
+
+msgid "System default"
+msgstr "Predeterminado del sistema"
+
+msgid "Take test"
+msgstr "Tomar una prueba"
+
+msgid "Taking test"
+msgstr "Tomando prueba"
+
+msgid "Teach me!"
+msgstr "¡Enséñeme!"
+
+msgid "Teach2000"
+msgstr "Enseñar2000"
+
+msgid "Teacher Panel"
+msgstr "Panel de Profesor"
+
+msgid "Teacher panel"
+msgstr "Panel de Profesor"
+
+msgid "Test"
+msgstr "Prueba"
+
+msgid "Test mode"
+msgstr "Modo de prueba"
+
+msgid "Test server"
+msgstr "Servidor de prueba"
+
+msgid "Tests"
+msgstr "Pruebas"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "¡Agradecemos a todos quienes contribuyen en Launchpad!"
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Las teclas que se van a practicar ahora se escriben con el dedo índice izquierdo y derecho y más lejos de los dedos sobre las teclas de otros que practican en la fila actual. Asegúrese de devolver su dedo a su posición en la fila cuando estás escribiendo otra carta."
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "Las capturas de pantalla se tomaron en Ubuntu, pero todo debería funcionar igual en Windows y Mac OS X."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Hay artículos o resultados sin guardar . ¿Está seguro que desea cerrar?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Piense en la respuesta, y pulse el botón «Ver respuesta» cuando esté listo."
+
+msgid "Think answer"
+msgstr "Piensa una respuesta"
+
+msgid "Thinking"
+msgstr "Pensando"
+
+msgid "This type of file is not supported:\n"
+msgstr "Este tipo de archivo no es soportado\n"
+
+msgid "This type of media isn't supported on your computer"
+msgstr "Tipo de medios no es soportado en su ordenador"
+
+msgid "Title:"
+msgstr "Título:"
+
+msgid "Toolbar"
+msgstr "Barra de herramientas"
+
+msgid "Topo lesson: %s"
+msgstr "Lección topográfico: % s"
+
+msgid "Topography"
+msgstr "Topografía"
+
+msgid "Topography maps"
+msgstr "Mapas topográficos"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Tiempo total pensando: %s minutos"
+
+msgid "Translation: "
+msgstr "Traducción: "
+
+msgid "Translator (%s)"
+msgstr "Traductor (%s)"
+
+msgid "Type answer"
+msgstr "Ingrese una respuesta"
+
+msgid "Unnamed"
+msgstr "Sin nombre"
+
+msgid "Unsaved data"
+msgstr "Datos sin almacenar"
+
+msgid "Unsupported file type"
+msgstr "Tipo de archivo no soportado"
+
+msgid "Unsupported media"
+msgstr "Media sin soporte"
+
+msgid "Untitled word list"
+msgstr "Lista de palabras sin título"
+
+msgid "Upload lesson"
+msgstr "Añadir lección"
+
+msgid "Use HTML5 for audio"
+msgstr "Utilice HTML5 para audio"
+
+msgid "Use HTML5 for video"
+msgstr "Utilice HTML5 para video"
+
+msgid "Username:"
+msgstr "Nombre de usuario"
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "Uso de OpenTeacher 3: Inicio rápido"
+
+msgid "View answer"
+msgstr "Ver respuesta"
+
+msgid "Voice"
+msgstr "Voz"
+
+msgid "Voice name (language)"
+msgstr "Nombre de voz (lenguaje)"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "Aviso"
+
+msgid "What's this place's name?"
+msgstr "¿Cómo se llama este lugar?"
+
+msgid "Which place is here?"
+msgstr "¿Qué lugar es este?"
+
+msgid "Word lesson: %s"
+msgstr "Lección de palabra: %s"
+
+msgid "Word list order and filters"
+msgstr "Orden de lista de palabras y filtros"
+
+msgid "Word modifications"
+msgstr "Palabras modificadas"
+
+msgid "Word most done wrong:"
+msgstr "Palabra con mayores errores:"
+
+msgid "Word:"
+msgstr "Palabra:"
+
+msgid "Words lesson"
+msgstr "Palabra de lección"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Lo hizo sin problemas y rápido! Seguir practicando algunas combinaciones de letras nuevas para mejorar todavía más!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Lo hizo sin problemas y rápido! Seguir practicando con palabras nuevas para mejorar todavía más!"
+
+msgid "You have already tried this character / word"
+msgstr "Usted ya ha probado este carácter / palabra"
+
+msgid "You lose, the answer was: "
+msgstr "Perdiste, la respuesta era: "
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Usted ha hecho cero errores y está escribiendo bastante rápido, así que usted puede seguir practicando con algunas palabras nuevas. Sigan con el buen trabajo!"
+
+msgid "You need to add items to your test first"
+msgstr "Es necesario añadir items a su primera prueba"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Ahora estás va a aprender las letras que no están en la fila. Para ver los dedos que necesita usar, vea la imagen del teclado en la pantalla. Cuando usted no está usando un dedo para escribir una letra, poner de nuevo en la fila directamente."
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Sus respuestas han sido entregadas con éxito!"
+
+msgid "hanged man"
+msgstr "El Ahorcado"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "no"
+
+msgid "yes"
+msgstr "sí"
+

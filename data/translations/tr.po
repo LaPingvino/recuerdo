@@ -1,0 +1,928 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Hakkında"
+
+msgid "&Documentation"
+msgstr "&Belgeler"
+
+msgid "&Edit"
+msgstr "&Düzenle"
+
+msgid "&File"
+msgstr "&Dosya"
+
+msgid "&Help"
+msgstr "Yard&ım"
+
+msgid "&New"
+msgstr "&Yeni"
+
+msgid "&Open"
+msgstr "&Aç"
+
+msgid "&Print"
+msgstr "&Yazdır"
+
+msgid "&Quit"
+msgstr "&Çıkış"
+
+msgid "&Reverse list"
+msgstr "&Listeyi tersine çevir"
+
+msgid "&Save"
+msgstr "&Kaydet"
+
+msgid "&Settings"
+msgstr "Aya&rlar"
+
+msgid "&View"
+msgstr "&Görünüm"
+
+msgid "(Handed in)"
+msgstr "(Bulundu)"
+
+msgid "(Re)check answers"
+msgstr "Cevapları kontrol et (yeniden)"
+
+msgid "(Re)publish answers"
+msgstr "Cevapları yayınla (yeniden)"
+
+msgid "(did not participate)"
+msgstr "(bulunmadı)"
+
+msgid "-"
+msgstr "-"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "Sizin dilinizde bir kelime sorulacaktır ve kelime giriş alanında o kelimenin çevirisini girmek zorundasınız. Çeviriyi girdiğinizde, 'Kontrol et!' düğmesine ya da klavyenizden Enter tuşuna basın."
+
+msgid "About"
+msgstr "Hakkında"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Harita üzerinde çift tıklayarak bir yer ekle"
+
+msgid "Add a place by name:"
+msgstr "İsim ile bir yer ekle:"
+
+msgid "Add lesson"
+msgstr "Ders ekle"
+
+msgid "Add local media"
+msgstr "Yerel ortam ekle"
+
+msgid "Add person"
+msgstr "Kişi ekle"
+
+msgid "Add person/group"
+msgstr "Kişi/grup ekle"
+
+msgid "Add remote media"
+msgstr "Uzaktan ortam ekle"
+
+msgid "Advanced mode"
+msgstr "Gelişmiş kip"
+
+msgid "All once"
+msgstr "Hepsi bir kerede"
+
+msgid "American"
+msgstr "Amerikan"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Hatırlanacak son açılan dosyaların sayısı"
+
+msgid "An error occured. The server could not be reached. Check your network connection."
+msgstr "Bir hata oluştu. Sunucuya ulaşılamadı. Ağ bağlantınızı kontrol ediniz."
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "Cevap"
+
+msgid "Answer language:"
+msgstr "Cevap dili:"
+
+msgid "Answer:"
+msgstr "Cevap:"
+
+msgid "Answering"
+msgstr "Cevap veriyor"
+
+msgid "Answers"
+msgstr "Cevaplar"
+
+msgid "Answers of this student have not been checked yet. Click the 'Check answers' button in the second column."
+msgstr "Henüz bu öğrencinin cevapları kontrol edilmedi. İkinci sütundaki 'Cevapları kontrol et' düğmesine tıklayın."
+
+msgid "Answers right:"
+msgstr "Doğru cevaplar:"
+
+msgid "Answers wrong:"
+msgstr "Yanlış cevaplar:"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Giriş sekmesine geri dönmek istediğinize emin misiniz? Bu işlem dersinizi sonlandıracaktır!"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Başka bir harita kullanmak istediğinizden emin misiniz? Bu işlem tüm yerlerinizi ortadan kaldıracak!"
+
+msgid "Artwork"
+msgstr "Görsellik"
+
+msgid "Ask foreign - known"
+msgstr "Yabancı - bilinen sor"
+
+msgid "Authors"
+msgstr "Geliştiriciler"
+
+msgid "Average note:"
+msgstr "Ortalama not:"
+
+msgid "Back"
+msgstr "Geri"
+
+msgid "Belgian AZERTY"
+msgstr "Belgian AZERTY"
+
+msgid "Bug hunter"
+msgstr "Hata yakalayıcısı"
+
+msgid "Can't merge files of different file types."
+msgstr "Farklı dosya türlerini birleştirilemez."
+
+msgid "Change lesson settings"
+msgstr "Ders ayarlarını değiştir"
+
+msgid "Check"
+msgstr "Kontrol et"
+
+msgid "Check!"
+msgstr "Kontrol et!"
+
+msgid "Choose an image"
+msgstr "Bir resim seçin"
+
+msgid "Choose test"
+msgstr "Test seç"
+
+msgid "Click here to choose a location"
+msgstr "Konum seçmek için buraya tıklayınız."
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "Teste başlamak için alttaki 'Öğret bana!' sekmesine tıklayınız. Şimdi OpenTeacher'in size soracağı soruları özelleştirebilirsiniz, biz şimdi varsayılan olanları kullanacağız. Bu yüzden 'Hazırım, ders başlasın!' düğmesine tıkladık."
+
+msgid "Click the button to start"
+msgstr "Başlamak için düğmeye tıklayınız"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Comment"
+msgstr "Yorum"
+
+msgid "Completed"
+msgstr "Tamamlandı"
+
+msgid "Completed: %s"
+msgstr "Tamamlanmış: %s"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Tebrikler, yazım kursunu bitirdiniz! Eğer devam etmek istiyorsanız, edebilirsiniz, ama bu kılavuzun sonudur. Büyük iş hallettiniz!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Tebrikler, ilk alıştırmanızı tamamladınız!"
+
+msgid "Connect"
+msgstr "Bağlan"
+
+msgid "Core developer"
+msgstr "Çekirdek Geliştiricisi"
+
+msgid "Correct"
+msgstr "Doğru"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Doğru cevap: <b>{ansvers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Doğru cevap: <b>{ansvers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Her şekilde doğru"
+
+msgid "Could not connect to the server. Possibly wrong hostname."
+msgstr "Sunucuya bağlanılamadı. Muhtemelen yanlış sunucu adı."
+
+msgid "Could not login. Wrong username or password."
+msgstr "Giriş yapılamadı. Yanlış kullanıcı adı veya parola."
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Dosya açılamıyor, çünkü dosya türü bilinmiyor ya da gösterilemiyor."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Dosya açılamıyor, hala orada mı ve onu açmak için doğru şeyi mi yapıyoruz?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Dosya açılamıyor, bozulmuş gibi görünüyor."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Dosya kaydedilemedi, yeterli alan var mı ve belirtilmiş yere kaydetmek için doğru şeyi mi yapıyoruz?"
+
+msgid "Create lesson:"
+msgstr "Ders oluştur:"
+
+msgid "Create media lesson"
+msgstr "Ortam dersi oluştur"
+
+msgid "Create topography lesson"
+msgstr "Topografi dersi oluştur"
+
+msgid "Create words lesson"
+msgstr "Kelimeler dersi oluştur"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Düz metin girerek kelimeler dersi oluştur"
+
+msgid "Create words lesson from a scan or picture"
+msgstr "Normal ya da taranmış resimden kelimeler dersi oluştur"
+
+msgid "Cyrillic"
+msgstr "Kiril"
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Debian/Ubuntu paketçisi"
+
+msgid "Documentation"
+msgstr "Belgeler"
+
+msgid "Dutch"
+msgstr "Hollandaca"
+
+msgid "Dvorak Simplified Keyboard"
+msgstr "Dvorak Simplified Keyboard"
+
+msgid "E.g.: german food vocabulary"
+msgstr "Örnek: alman yemeği kelime listesi"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Boş soru veya cevap"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Gizli tarayıcıyı aç (sürükleyiciyi kullanarak gizle)"
+
+msgid "Enter a search term and press the search button to search quizlet.com for sets. Then select the set or sets you want to import and click OK."
+msgstr "Bir arama metni giriniz ve quizlet.com'da ayarları aramak için ara düğmesine basınız. Sonra içeri aktarmak istediğiniz ayarları seçip 'Tamam'a tıklayınız."
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "Giriş yapmak istediğiniz kelimeler listesi için bir başlık giriniz. Bildiğiniz bir dil ve bilmediğiniz (öğrenmek istediğiniz) bir dil giriniz."
+
+msgid "Enter list"
+msgstr "Liste gir"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "İnternet sitenizin veya ortam öğenizin adresini giriniz.\nDesteklenen video siteleri: "
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Yanlış olduğundaki geçiş süresi (milisaniye)"
+
+msgid "File URL"
+msgstr "Dosyanın adresi"
+
+msgid "File opened succesfully."
+msgstr "Dosya başarılı bir şekilde açıldı."
+
+msgid "File saved succesfully."
+msgstr "Dosya başarılı bir şekilde kaydedildi."
+
+msgid "Final mark:"
+msgstr "Final mark:"
+
+msgid "French"
+msgstr "Fransızca"
+
+msgid "French AZERTY"
+msgstr "French AZERTY"
+
+msgid "From hard disk..."
+msgstr "Hard diskten..."
+
+msgid "Full license text"
+msgstr "Lisans metninin tamamı"
+
+msgid "Fullscreen"
+msgstr "Tam Ekran"
+
+msgid "General"
+msgstr "Genel"
+
+msgid "German"
+msgstr "Almanca"
+
+msgid "Given answer"
+msgstr "Verilen cevap"
+
+msgid "Greek"
+msgstr "Yunanca"
+
+msgid "Hand in answers"
+msgstr "Cevaplar"
+
+msgid "Hide the browser!"
+msgstr "Tarayıcıyı gizle!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Diğerlerini gizle; tarayıcı için boşluk oluştur"
+
+msgid "Highest note:"
+msgstr "En yüksek not:"
+
+msgid "Hint:"
+msgstr "İpucu:"
+
+msgid "I speak English"
+msgstr "Ben Türkçe konuşurum"
+
+msgid "I was right"
+msgstr "Doğruydum"
+
+msgid "I was wrong"
+msgstr "Yanlıştım"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Hazırım, ders başlasın!"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "Eğer doğru çeviriyi girdiyseniz, size bir sonraki soru sorulacak. Eğer doğru çeviriyi giremediyseniz, OpenTeacher size doğru çeviriyi ve sizin çevirinizle arasındaki farkı gösterecektir."
+
+msgid "Images ({extensions})"
+msgstr "Resimler ({extensions})"
+
+msgid "Import from quizlet.com"
+msgstr "quizlet.com'dan içeri aktar"
+
+msgid "Import from studystack.com"
+msgstr "studystack.com'dan içe aktar"
+
+msgid "Import source"
+msgstr "Kaynağı içe aktar"
+
+msgid "Interval"
+msgstr "Aralık"
+
+msgid "Introduction"
+msgstr "Giriş"
+
+msgid "Language"
+msgstr "Lisan"
+
+msgid "Lesson"
+msgstr "Ders"
+
+msgid "Lesson order:"
+msgstr "Ders sırası:"
+
+msgid "Lesson settings"
+msgstr "Ders ayarları"
+
+msgid "Lesson type"
+msgstr "Ders türü"
+
+msgid "Lesson type:"
+msgstr "Ders türü:"
+
+msgid "License"
+msgstr "Lisans"
+
+msgid "Load lesson:"
+msgstr "Ders yükle:"
+
+msgid "Locale"
+msgstr "Yerel"
+
+msgid "Location:"
+msgstr "Konum:"
+
+msgid "Login"
+msgstr "Giriş"
+
+msgid "Lowest note:"
+msgstr "En düşük not:"
+
+msgid "Make image ready"
+msgstr "Resimi hazır hale getir"
+
+msgid "Map:"
+msgstr "Harita:"
+
+msgid "Maximum size of group"
+msgstr "En fazla grup büyüklüğü"
+
+msgid "Media"
+msgstr "Ortam"
+
+msgid "Media lesson: %s"
+msgstr "Ortam dersi: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "Sorulmuş soruların en az miktarı"
+
+msgid "Miscellaneous"
+msgstr "Çeşitli"
+
+msgid "Missing equals sign or tab"
+msgstr "Kayıp eşittir işareti ya da sekme"
+
+msgid "Mistakes:  "
+msgstr "Yanlışlar:  "
+
+msgid "Name"
+msgstr "Adı"
+
+msgid "Name - Place"
+msgstr "İsim - Yer"
+
+msgid "Name for this place"
+msgstr "Bu yer için isim"
+
+msgid "Name:"
+msgstr "İsim:"
+
+msgid "No Quizlet connection"
+msgstr "Quizlet bağlantısı yok"
+
+msgid "No Study Stack connection"
+msgstr "Study Stack bağlantısı yok"
+
+msgid "No selection was made"
+msgstr "Seçim yapılmadı"
+
+msgid "No selection was made. Please try again."
+msgstr "Seçim yapılmadı. Lütfen tekrar deneyin."
+
+msgid "Not enough items"
+msgstr "Yeterli öğe yok"
+
+msgid "Note"
+msgstr "Not"
+
+msgid "Note notation"
+msgstr "Gösterim şeklini not et"
+
+msgid "Note:"
+msgstr "Not:"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "Bir kere testi bitirdiğinizde OpenTeacher size bir not verecektir."
+
+msgid "Only hard words (<50%% right)"
+msgstr "Sadece zor kelimeler (<50%% doğru)"
+
+msgid "Only words you never answered correctly"
+msgstr "Yalnızca hiç doğru yanıtlamadığınız kelimeler"
+
+msgid "Open &into current list"
+msgstr "&Şu anki listeye aç"
+
+msgid "Open from file"
+msgstr "Dosyadan aç"
+
+msgid "OpenGL rendering"
+msgstr "OpenGL oluşturuyor"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacher yetkilileri"
+
+msgid "Opened file into the current list succesfully."
+msgstr "Dosya başarılı bir şekilde şu anki listeye açıldı."
+
+msgid "Password:"
+msgstr "Parola:"
+
+msgid "Patches contributor"
+msgstr "Yama geliştiricisi"
+
+msgid "Pause"
+msgstr "Duraklat"
+
+msgid "People in this test:"
+msgstr "Bu testteki kişiler:"
+
+msgid "Percent right before known"
+msgstr "Bilinmeden önce yüzdeyi doğrulamalısınız"
+
+msgid "Percents"
+msgstr "Yüzdeler"
+
+msgid "Person"
+msgstr "Kişi"
+
+msgid "Place - Name"
+msgstr "Yer - İsim"
+
+msgid "Place name"
+msgstr "İsmi yerleştir"
+
+msgid "Place not found"
+msgstr "Yer bulunamadı"
+
+msgid "Places in your test"
+msgstr "Testinizdeki yerler"
+
+msgid "Plain text words enterer"
+msgstr "Düz metin kelimeleri girişi"
+
+msgid "Play hangman"
+msgstr "Adam asmaca oyna"
+
+msgid "Please choose the location of the scan or picture of the physical word list on your system below."
+msgstr "Lütfen aşağıdan kelime listenizin taranmış ya da resim halinin sisteminizdeki konumunu seçiniz."
+
+msgid "Please click this place:"
+msgstr "Lütfen bu yere tıklayınız:"
+
+msgid "Please click this place: "
+msgstr "Lütfen bu yere tıklayınız: "
+
+msgid "Please enter at least one question and one answer for every item."
+msgstr "Lütfen her öğe için en az bir soru ve bir de cevap giriniz."
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Lütfen her kelime için en az bir soru ve bir de cevap giriniz."
+
+msgid "Please enter the plain text in the text edit. Separate words with a new line and questions from answers with an equals sign ('=') or a tab."
+msgstr "Metin düzenlemede düz bir metin giriniz. Kelimeleri bir satır ile ayırınız ve soruları cevaplardan eşittir işareti ile ('=') ya da sekme ile ayırınız."
+
+msgid "Please make sure every line contains an '='-sign or tab between the questions and answers."
+msgstr "Lütfen soru ve cevapların arasında sekme ya da her satırda '='-işareti olduğundan emin olunuz."
+
+msgid "Please make sure the image is rotated completely upright with the rotation slider under this text:"
+msgstr "Bu metinin altındaki yönlendirme çubuğu ile resmin yönlendirmesinin yukarıya doğru olduğundan emin olunuz."
+
+msgid "Please select a category"
+msgstr "Lütfen bir kategori seşin"
+
+msgid "Please select a list"
+msgstr "Lütfen bir liste seçin"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Project website"
+msgstr "Proje internet sitesi"
+
+msgid "Pronounce places"
+msgstr "Yerleri telaffuz et"
+
+msgid "Pronounciation"
+msgstr "Telaffuz"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Question"
+msgstr "Soru"
+
+msgid "Question language:"
+msgstr "Soru dili:"
+
+msgid "Question:"
+msgstr "Soru:"
+
+msgid "Questions"
+msgstr "Sorular"
+
+msgid "Questions:"
+msgstr "Sorular:"
+
+msgid "Quizlet didn't accept the connection. Are you sure that your internet connection works and quizlet.com is online?"
+msgstr "Quizlet bağlantıyı onaylamadı. İnternet bağlantınızın çalıştığından ve quizlet.com'un çevirim içi olduğundan emin misiniz?"
+
+msgid "Random"
+msgstr "Rastgele"
+
+msgid "Recently opened:"
+msgstr "Son açılanlar:"
+
+msgid "Recognizing word list..."
+msgstr "Kelime listesi tanımlanıyor..."
+
+msgid "Remove"
+msgstr "Kaldır"
+
+msgid "Remove selected place"
+msgstr "Seçilmiş yeri kaldır"
+
+msgid "Remove selected row(s)"
+msgstr "Seçili sırayı/sıraları kaldır"
+
+msgid "Repeat answer"
+msgstr "Cevabı tekrar et"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Tekrar durumu için kapanış süresi (milisaniye)"
+
+msgid "Result preview"
+msgstr "Sonuç ön izlemesi"
+
+msgid "Results"
+msgstr "Sonuçlar"
+
+msgid "Reverse"
+msgstr "Çevir"
+
+msgid "Save &As"
+msgstr "&Farklı Kaydet"
+
+msgid "Search"
+msgstr "Arama"
+
+msgid "Search quizlet.com"
+msgstr "quizlet.com'da ara"
+
+msgid "Select a student/group:"
+msgstr "Öğrenci/grup seç:"
+
+msgid "Select category"
+msgstr "Kategori seç"
+
+msgid "Select file(s)"
+msgstr "Dosya(ları) seç"
+
+msgid "Select list"
+msgstr "Liste seç"
+
+msgid "Select the test you want to take"
+msgstr "Almak istediğiniz testi seçin"
+
+msgid "Server IP or hostname:"
+msgstr "Sunucu IP'si ya da sunucu adı:"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Show results"
+msgstr "Sonuçları göster"
+
+msgid "Shuffle answer"
+msgstr "Karışık cevap"
+
+msgid "Simple mode"
+msgstr "Basit kip"
+
+msgid "Skip"
+msgstr "Atla"
+
+msgid "Smart"
+msgstr "Akıllı"
+
+msgid "Sorry, this place is not in the list of known places. Please add it manually by doubleclicking on the right location in the map."
+msgstr "Üzgünüz, bu yer bilinen yerler listesinde yok.  Lütfen haritanın sağ bölgesine çift tıklayarak ekleyiniz."
+
+msgid "Sort"
+msgstr "Sırala"
+
+msgid "Speed"
+msgstr "Hız"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "OpenTeacher'i başlatın ve yeni bir kelimeler dersi oluşturmak için 'Kelimeler dersi oluştur' düğmesini tıklayın."
+
+msgid "Start!"
+msgstr "Başla!"
+
+msgid "Student's answers have been checked!"
+msgstr "Öğrencilerin cevapları kontrol edildi!"
+
+msgid "Student's results have been (re)published!"
+msgstr "Öğrencilerin sonuçları kontrol edildi (yeniden)!"
+
+msgid "Study Stack didn't accept the connection. Are you sure that your internet connection works and http://www.studystack.com/ is online?"
+msgstr "Study Stack bağlantıyı onaylamadı. İnternet bağlantınızın çalıştığından ve http://www.studystack.com/ sitesinin çevirim içi olduğundan emin misiniz?"
+
+msgid "Symbols"
+msgstr "Semboller"
+
+msgid "System default"
+msgstr "Sistem varsayılanı"
+
+msgid "Take test"
+msgstr "Test al"
+
+msgid "Taking test"
+msgstr "Test alınıyor"
+
+msgid "Teach me!"
+msgstr "Öğret bana!"
+
+msgid "Teacher Panel"
+msgstr "Öğretmen paneli"
+
+msgid "Teacher panel"
+msgstr "Öğretmen paneli"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Test mode"
+msgstr "Test hali"
+
+msgid "Tests"
+msgstr "Testler"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Launchpad'te katkıda bulunan herkese teşekkürler!"
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "Ekran görüntüleri Ubuntu'da çekilmiştir fakat Windows ve Mac OS X'te de yaklaşık olarak aynı şekilde çalışır."
+
+msgid "The word list was imported from Quizlet successfully."
+msgstr "Kelime listesi Quizlet'ten başarılı bir şekilde içe aktarıldı."
+
+msgid "The word list was imported from Study Stack successfully."
+msgstr "Kelime listesi Study Stack'tan başarılı bir şekilde içe aktarıldı."
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "Daha sonra kelimeler tablosundaki öğrenmek istediğiniz tüm kelimeleri giriniz, sekmeye veya '='tıklayarak bir sonraki soruya gidebilirsiniz. Bir örnek için ekran görüntüsüne bakınız."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Kaydedilmemiş veri ya da sonuçlar var. Kapatmak istediğinizden emin misiniz?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Cevap hakkında düşünün ve hazır olduğunuzda 'Cevabı göster' düğmesine basınız."
+
+msgid "Think answer"
+msgstr "Cevabı düşün"
+
+msgid "Thinking"
+msgstr "Düşünüyor"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "Bu hızlı başlangıç kılavuzu size kendinizi OpenTeacher ile nasıl test edeceğinizi gösterir. Bugün Fransızcada 10'a kadar saymayı öğreneceğiz! Bu örnekte sizin İngilizce bildiğinizi ve Fransızca öğrenmek istediğinizi varsayıyoruz."
+
+msgid "This type of file is not supported:\n"
+msgstr "Bu dosya türü desteklenmiyor:\n"
+
+msgid "This wizard will guide you through the process of creating a word list from a scan or picture of a physical word list. Click 'Next' to start."
+msgstr "Bu sihirbaz size bir resminden ya da taranmış halinden kelime listesini nasıl oluşturacağınıza rehberlik edecek. Başlamak için 'İleri'yi tıklayın."
+
+msgid "Title:"
+msgstr "Başlık:"
+
+msgid "To archieve that, you might try slowing down a bit."
+msgstr "Başarmak için, biraz daha yavaş deneyebilirsiniz."
+
+msgid "Toolbar"
+msgstr "Araç Çubuğu"
+
+msgid "Topo lesson: %s"
+msgstr "Topo dersi: %s"
+
+msgid "Topography"
+msgstr "Topografi"
+
+msgid "Topography maps"
+msgstr "Topografi haritaları"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Toplam düşünme süresi: %s dakika"
+
+msgid "Translation: "
+msgstr "Çeviri: "
+
+msgid "Translator (%s)"
+msgstr "Çevirmen (%s)"
+
+msgid "Type answer"
+msgstr "Cevabı yaz"
+
+msgid "Unnamed"
+msgstr "İsimsiz"
+
+msgid "Unsaved data"
+msgstr "Kaydedilmemiş veri"
+
+msgid "Unsupported file type"
+msgstr "Desteklenmeyen dosya türü"
+
+msgid "Untitled word list"
+msgstr "Başlıksız kelime listesi"
+
+msgid "Use HTML5 for audio"
+msgstr "Ses için HTML5 kullan"
+
+msgid "Use HTML5 for video"
+msgstr "Video için HTML5 kullan"
+
+msgid "Username:"
+msgstr "Kullanıcı Adı:"
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "OpenTeacher 3'ü Kullanırken: Hızlı Bir Başlangıç"
+
+msgid "View answer"
+msgstr "Cevabı göster"
+
+msgid "Voice"
+msgstr "Ses"
+
+msgid "Voice name (language)"
+msgstr "Ses ismi (dil)"
+
+msgid "Warning"
+msgstr "Uyarı"
+
+msgid "Welcome, I'm your personal OpenTeacher typing tutor. We'll improve your typing skills by doing simple exercises. Between the exercises, I'll give instructions. Let's get started:\n\nFirst place your fingers on the so-called home row: your fingers, from left to right, should always be on the keys '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}' and '{;}' while not typing another character. When your fingers are in position, press {space} to start the first lesson. Work for accuracy at first, not speed."
+msgstr "Hoş geldiniz, ben sizin kişisel OpenTeacher yazım yardımcınızım. Basit alıştırmalar yaparak sizin yazım yeteneklerinizi geliştireceğiz. Alıştırmalar arası, yönlendirmeler yapacağım. Haydi başlayalım:\n\nİlk olarak parmaklarınızı ev satırı olarak adlandırılan konuma yerleştiriniz, parmaklarınız soldan sağa doğru her zaman '{a}', '{s}', '{d}', '{f}', '{space}', '{space}', '{j}', '{k}', '{l}', '{ş}' üzerinde durmalıdır. Parmaklarınız doğru yerlerde ise ilk ders için {space} tuşuna basarak başlayın. Başlangıç için doğru yazıma önem veriyoruz, hıza değil."
+
+msgid "What's this place's name?"
+msgstr "Bu yerin ismi nedir?"
+
+msgid "Which place is here?"
+msgstr "Burası hangi yerdir?"
+
+msgid "Word lesson: %s"
+msgstr "Kelime dersi: %s"
+
+msgid "Word list order and filters"
+msgstr "Kelime listesi sırası ve filtreleri"
+
+msgid "Word modifications"
+msgstr "Kelime değişiklikleri"
+
+msgid "Word most done wrong:"
+msgstr "En fazla yanlış yapılan kelime:"
+
+msgid "Word:"
+msgstr "Kelime:"
+
+msgid "Words lesson"
+msgstr "Kelimeler dersi"
+
+msgid "Words lesson from picture"
+msgstr "Resimden kelimeler dersi"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Hatasız ve hızlı bir şekilde yaptınız! Daha iyisini yapmak için alıştırma yapmaya yeni harf kombinasyonları deneyerek devam edin!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Kusursuz ve hızlıydı! Daha iyi olmak için yeni kelimelerle denemeye devam edin!"
+
+msgid "You have already tried this character / word"
+msgstr "Bu kelimeyi / karakteri denediniz"
+
+msgid "You lose, the answer was: "
+msgstr "Kaybettiniz, cevap: "
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Hiç hata yapmadınız ve yeterince hızlı yazdınız. Artık yeni harf kombinasyonları denemeye devam edebilirsiniz. İyi iş çıkarmaya devam edin!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Hiç hata yapmadınız ve yeterince hızlı yazdınız. Artık yeni kelimeleri denemeye devam edebilirsiniz. İyi iş çıkarmaya devam edin!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Hiç hata yapmadınız. Şimdi yazım hızınızı biraz arttırmayı deneyin."
+
+msgid "You need to add items to your test first"
+msgstr "Öncelikle testinize öğeler eklemelisiniz"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Ev satırında olmayan harfleri öğreneceksiniz. Hangi parmakları kullanacağınızı görmek için, ekrandaki klavye resmine bakın. Harf yazmak için bir parmağınızı kullanmıyorsanız hemen ev satırı dediğimiz yere koyun."
+
+msgid "Your answers have successfully been handed in!"
+msgstr "Cevaplarınız başarılı bir şekilde tutuldu!"
+
+msgid "hanged man"
+msgstr "adam asıldı"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "no"
+msgstr "hayır"
+
+msgid "yes"
+msgstr "evet"
+

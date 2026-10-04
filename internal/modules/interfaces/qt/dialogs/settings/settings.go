@@ -73,9 +73,22 @@ func (d *Dialog) addControl(form *qt.QFormLayout, def settingsdefs.Def) {
 	case settingsdefs.Choice:
 		c := qt.NewQComboBox(nil)
 		d.combos[def.Key] = c
-		c.AddItems(def.Choices)
-		c.SetCurrentText(def.Value(d.store).(string))
-		d.apply = append(d.apply, func() { d.store.SetSetting(def.Key, c.CurrentText()) })
+		labels := def.Labels
+		if len(labels) != len(def.Choices) {
+			labels = def.Choices
+		}
+		c.AddItems(labels)
+		value := def.Value(d.store).(string)
+		for i, v := range def.Choices {
+			if v == value {
+				c.SetCurrentIndex(i)
+			}
+		}
+		d.apply = append(d.apply, func() {
+			if i := c.CurrentIndex(); i >= 0 && i < len(def.Choices) {
+				d.store.SetSetting(def.Key, def.Choices[i])
+			}
+		})
 		form.AddRow3(def.Name+":", c.QWidget)
 		w = c.QWidget
 	case settingsdefs.Seconds:

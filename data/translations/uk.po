@@ -1,0 +1,712 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Про програму"
+
+msgid "&Documentation"
+msgstr "&Документація"
+
+msgid "&Edit"
+msgstr "&Зміни"
+
+msgid "&File"
+msgstr "&Файл"
+
+msgid "&Help"
+msgstr "&Допомога"
+
+msgid "&New"
+msgstr "&Новий"
+
+msgid "&Open"
+msgstr "&Відкрити"
+
+msgid "&Print"
+msgstr "&Друкувати"
+
+msgid "&Quit"
+msgstr "Ви&йти"
+
+msgid "&Reverse list"
+msgstr "&Обернути список"
+
+msgid "&Save"
+msgstr "&Зберегти"
+
+msgid "&Settings"
+msgstr "&Налаштування"
+
+msgid "&View"
+msgstr "&Вигляд"
+
+msgid "-"
+msgstr "-"
+
+msgid ".otmd saving"
+msgstr "Зберігання в .otmd"
+
+msgid ".txt saving"
+msgstr "Зберігання в .txt"
+
+msgid "A word will now be asked to you in your own language, and you'll have to type the translation of it in the text field. When you have entered the translation, press Enter on your keyboard, or click 'Check!'"
+msgstr "Слово виводиться на вашій рідній мові, а переклад потрібно вводити в текстовому полі. Коли Ви ввели переклад, натисніть Enter на своїй клавіатурі, або клацніть 'Перевірити!'"
+
+msgid "ABBYY Lingvo Tutor"
+msgstr "ABBYY Lingvo Tutor"
+
+msgid "About"
+msgstr "Про програму"
+
+msgid "Add"
+msgstr "Додати"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Додавайте місцини подвійним клацанням по мапі"
+
+msgid "Advanced mode"
+msgstr "Розширений режим"
+
+msgid "All features useful for teachers"
+msgstr "Усі функції, які підходять для вчителів"
+
+msgid "All once"
+msgstr "Усі відразу"
+
+msgid "American"
+msgstr "Американська"
+
+msgid "Amount of recently opened files to remember"
+msgstr "Число недавно відкриваних файлів у списку"
+
+msgid "Anki"
+msgstr "Anki"
+
+msgid "Anki 2.0"
+msgstr "Anki 2.0"
+
+msgid "Answer"
+msgstr "Відповідь"
+
+msgid "Answer language:"
+msgstr "Мова відповідей:"
+
+msgid "Answer:"
+msgstr "Відповідь:"
+
+msgid "Answering"
+msgstr "Відповідь"
+
+msgid "Answers"
+msgstr "Відповіді"
+
+msgid "Are you sure you want to go back to the enter tab? This will end your lesson!"
+msgstr "Ви точно бажаєте повернутися до вкладки введення? Це завершить ваш урок!"
+
+msgid "Artwork"
+msgstr "Оформлення"
+
+msgid "Authors"
+msgstr "Автори"
+
+msgid "Average note:"
+msgstr "Середня позначка:"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Can't merge files of different file types."
+msgstr "Не можливо об’єднати файли різних типів."
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Change lesson settings"
+msgstr "Змінити налаштування уроку"
+
+msgid "Check!"
+msgstr "Перевірити!"
+
+msgid "Click the 'Teach me!' tab on the bottom to start the test. You can now specify in what way you want OpenTeacher to question you, but the defaults will do in our case. So, we click the 'I'm ready, start the lesson!' button."
+msgstr "Натисніть вкладку 'Учи мене!' внизу, щоб розпочати тест. Ви можете вказати, яким чином OpenTeacher має вас запитувати, але типові налаштування нам підходять. Що ж, натискаємо кнопку 'Усе готово, почати урок!'."
+
+msgid "Click the button to start"
+msgstr "Натисніть кнопку, щоб почати"
+
+msgid "Comment"
+msgstr "Коментар"
+
+msgid "Comment after answering"
+msgstr "Коментар після відповіді"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Completed: %s"
+msgstr "Завершено: %s"
+
+msgid "Core developer"
+msgstr "Головний розробник"
+
+msgid "Correct"
+msgstr "Правильно"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Правильна відповідь: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Правильна відповідь: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Вірно в будь-якому разі"
+
+msgid "Couldn't open the file, because the file type is unknown or it can't be shown."
+msgstr "Не вдалося відкрити файл, так як тип файлу невідомий або не може бути відображеним."
+
+msgid "Couldn't open the file, is it still there and do we have the right to open it?"
+msgstr "Не можливо відкрити файл, він ще на місці й у вас достатньо прав, щоб відкрити його?"
+
+msgid "Couldn't open the file, it seems to be corrupted."
+msgstr "Не вдалося відкрити файл. Можливо, він пошкоджений."
+
+msgid "Couldn't save the file, is there enough free disk space and do we have the right to write to the specified location?"
+msgstr "Не вдалося зберегти файл. Можливо, недостатньо місця на диску або у вас немає прав записувати у вказане місце."
+
+msgid "Create lesson:"
+msgstr "Створити урок:"
+
+msgid "Create media lesson"
+msgstr "Створити урок з медія"
+
+msgid "Create topography lesson"
+msgstr "Створити топографічний урок"
+
+msgid "Create words lesson"
+msgstr "Створити урок зі словами"
+
+msgid "Create words lesson by entering plain text"
+msgstr "Створити урок зі словами з введеного простого тексту"
+
+msgid "Cyrillic"
+msgstr "Кирилиця"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Documentation"
+msgstr "Документація"
+
+msgid "Domingo"
+msgstr "Domingo"
+
+msgid "Dutch"
+msgstr "Голландська"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Enable compression"
+msgstr "Дозволити стискання"
+
+msgid "Enable every OpenTeacher GUI feature"
+msgstr "Дозволити всі функції OpenTeacher GUI"
+
+msgid "Enter a title for the word list you are going to enter. Also enter the known language, which, in our case, is English, and the foreign language (the language you want to learn), which, in our case, is French."
+msgstr "Уведіть заголовок для списку слів, які Ви збираєтеся ввести. Також вкажіть мову, ту яку Ви знаєте, у нашому випадку це англійська, і мову, яку Ви збираєтеся вчити, у нас це французька."
+
+msgid "Enter list"
+msgstr "Записати перелік"
+
+msgid "Everything you need for using OpenTeacher for self-study."
+msgstr "Усе, що потрібно для самонавчання через OpenTeacher."
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Тривалість зникання при неправильній відповіді (мілісекунд)"
+
+msgid "Features for students using OpenTeacher at home"
+msgstr "Можливості для учнів, які використовують OpenTeacher вдома"
+
+msgid "Features for students using OpenTeacher at school"
+msgstr "Можливості для учнів, які використовують OpenTeacher у школі"
+
+msgid "File URL"
+msgstr "URL файлу"
+
+msgid "File opened succesfully."
+msgstr "Файл відкрито успішно."
+
+msgid "File saved succesfully."
+msgstr "Файл збережено успішно."
+
+msgid "Flashqard"
+msgstr "Flashqard"
+
+msgid "French"
+msgstr "Французька"
+
+msgid "Fresh Memory"
+msgstr "Fresh Memory"
+
+msgid "From hard disk..."
+msgstr "З жорсткого диску..."
+
+msgid "Fullscreen"
+msgstr "На повний екран"
+
+msgid "General"
+msgstr "Загальні"
+
+msgid "German"
+msgstr "Німецька"
+
+msgid "Given answer"
+msgstr "Дана відповідь"
+
+msgid "Granule"
+msgstr "Granule"
+
+msgid "Greek"
+msgstr "Грецькі"
+
+msgid "Hand in answers"
+msgstr "Допомога при відповідях"
+
+msgid "Help"
+msgstr "Допомога"
+
+msgid "Highest note:"
+msgstr "Найвища позначка:"
+
+msgid "Hint:"
+msgstr "Підказка:"
+
+msgid "Hyper Text Markup Language"
+msgstr "Hyper Text Markup Language"
+
+msgid "I speak English"
+msgstr "Я говорю українською"
+
+msgid "I was right"
+msgstr "Я правий (-ва)"
+
+msgid "I was wrong"
+msgstr "Я помилився (-лася)"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Усе готово, почати урок!"
+
+msgid "If you entered the right translation, the next question will be asked to you. If you did not enter the right translation, OpenTeacher will show you the correct answer, and the difference from your answer."
+msgstr "Коли Ви введете правильний переклад, буде запитане наступне питання. Якщо переклад невірний, OpenTeacher відобразить правильну відповідь і різницю від вашої відповіді."
+
+msgid "Import from coursehero.com"
+msgstr "Імпортувати з coursehero.com"
+
+msgid "Import from quizlet.com"
+msgstr "Імпортувати з quizlet.com"
+
+msgid "Import from studystack.com"
+msgstr "Імпортувати зі studystack.com"
+
+msgid "Input and output"
+msgstr "Ввід та вивід"
+
+msgid "Interval"
+msgstr "Інтервал"
+
+msgid "Just gimme my good old OpenTeacher 2.x!"
+msgstr "Просто, дайте стару добру OpenTeacher 2.x!"
+
+msgid "KDE Vocabulary Document"
+msgstr "Документ KDE Vocabulary"
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Lesson"
+msgstr "Урок"
+
+msgid "Lesson settings"
+msgstr "Налаштування уроку"
+
+msgid "Lesson type"
+msgstr "Тип уроку"
+
+msgid "Level"
+msgstr "Рівень"
+
+msgid "License"
+msgstr "Ліцензія"
+
+msgid "Load from the internet"
+msgstr "Завантажити з інтернету"
+
+msgid "Load lesson:"
+msgstr "Завантажити урок:"
+
+msgid "Locale"
+msgstr "Локалізація"
+
+msgid "Lowest note:"
+msgstr "Найнижча позначка:"
+
+msgid "Ludem"
+msgstr "Ludem"
+
+msgid "Map:"
+msgstr "Мапа:"
+
+msgid "Maximum size of group"
+msgstr "Максимальний розмір групи"
+
+msgid "Media"
+msgstr "Медія"
+
+msgid "Media lesson: %s"
+msgstr "Урок з медія: %s"
+
+msgid "Microsoft Excel 97/2000/XP/2003"
+msgstr "Microsoft Excel 97/2000/XP/2003"
+
+msgid "Microsoft Word 97/2000/XP/2003"
+msgstr "Microsoft Word 97/2000/XP/2003"
+
+msgid "Minimum amount of questions asked"
+msgstr "Найменша кількість задаваних питань"
+
+msgid "Minimum amount of spaces between words"
+msgstr "Найменше число відступів між словами"
+
+msgid "Mistakes:  "
+msgstr "Помилки:  "
+
+msgid "Mnemosyne"
+msgstr "Mnemosyne"
+
+msgid "Next"
+msgstr "Далі"
+
+msgid "No Quizlet connection"
+msgstr "Нема з’єднання з Quizlet"
+
+msgid "No Study Stack connection"
+msgstr "Нема з’єднання зі Study Stack"
+
+msgid "No coursehero.com connection"
+msgstr "Нема з'єднання з coursehero.com"
+
+msgid "Not enough items"
+msgstr "Не достатньо елементів"
+
+msgid "Note"
+msgstr "Позначка"
+
+msgid "Note notation"
+msgstr "Система оцінок"
+
+msgid "Note:"
+msgstr "Позначка:"
+
+msgid "Office Open XML Text"
+msgstr "Текстовий документ Office Open XML"
+
+msgid "Once the test is completed, OpenTeacher will tell you if you did well by giving you a note."
+msgstr "Після завершення тесту, OpenTeacher скаже Вам наскільки висока ваша позначка."
+
+msgid "Only hard words (<50%% right)"
+msgstr "Лише важкі слова (<50%%  правильних)"
+
+msgid "Only words you never answered correctly"
+msgstr "Лише слова, на які ви ніколи не відповідали правильно"
+
+msgid "Open &into current list"
+msgstr "Відкрити в &поточному списку"
+
+msgid "Open Teaching Media"
+msgstr "Медія Open Teacher"
+
+msgid "Open Teaching Topography"
+msgstr "Топографія Open Teacher"
+
+msgid "Open Teaching Words"
+msgstr "Слова Open Teacher"
+
+msgid "Open from file"
+msgstr "Відкрити з файлу"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher authors"
+msgstr "Автори OpenTeacher"
+
+msgid "Opened file into the current list succesfully."
+msgstr "Файл успішно відкрито у поточному списку."
+
+msgid "Overhoor/Drill Assistant"
+msgstr "Overhoor/Drill Assistant"
+
+msgid "Pauker"
+msgstr "Pauker"
+
+msgid "Pause"
+msgstr "Пауза"
+
+msgid "Percents"
+msgstr "У відсотках"
+
+msgid "Place name"
+msgstr "Назва місцини"
+
+msgid "Place not found"
+msgstr "Місцину не знайдено"
+
+msgid "Plain text"
+msgstr "Звичайний текст"
+
+msgid "Play hangman"
+msgstr "Зіграти в шибеницю"
+
+msgid "Portable Document Format"
+msgstr "Portable Document Format"
+
+msgid "Portable Network Graphics"
+msgstr "Portable Network Graphics"
+
+msgid "Profile"
+msgstr "Профіль"
+
+msgid "Pronounciation"
+msgstr "Вимова"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Question"
+msgstr "Запитання"
+
+msgid "Question language:"
+msgstr "Мова запитань:"
+
+msgid "Question:"
+msgstr "Запитання:"
+
+msgid "Questions"
+msgstr "Запитання"
+
+msgid "Recently opened:"
+msgstr "Недавно відкривані:"
+
+msgid "Remove selected place"
+msgstr "Усунути вибрані місцини"
+
+msgid "Remove selected row(s)"
+msgstr "Усунути вибрані рядки"
+
+msgid "Repeat answer"
+msgstr "Повторити відповідь"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Час затухання в режимі повторення (в мілісекундах)"
+
+msgid "Results"
+msgstr "Результати"
+
+msgid "SYLK"
+msgstr "SYLK"
+
+msgid "Save &As"
+msgstr "Зберегти &як"
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Search coursehero.com"
+msgstr "Пошук у coursehero.com"
+
+msgid "Search quizlet.com"
+msgstr "Пошук у quizlet.com"
+
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "Show results"
+msgstr "Показати результати"
+
+msgid "Shuffle answer"
+msgstr "Перемішана відповідь"
+
+msgid "Simple mode"
+msgstr "Простий режим"
+
+msgid "Skip"
+msgstr "Пропустити"
+
+msgid "Smart"
+msgstr "Розумний"
+
+msgid "Speed"
+msgstr "Швидкість"
+
+msgid "Speed (words per minute)"
+msgstr "Швидкість (слів за хвилину)"
+
+msgid "Start OpenTeacher and click the 'Create words lesson' button to make a new word lesson."
+msgstr "Запустіть OpenTeacher і натисніть кнопку 'Створити урок зі словами', щоб створити новий урок зі словами."
+
+msgid "Start!"
+msgstr "Почати!"
+
+msgid "Symbols"
+msgstr "Символи"
+
+msgid "System default"
+msgstr "Звичайна для системи"
+
+msgid "Teach me!"
+msgstr "Учи мене!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Teachmaster"
+msgstr "Teachmaster"
+
+msgid "The screenshots are all taken in Ubuntu, but this should all work exactly the same in Windows and Mac OS X."
+msgstr "Цей скріншот зроблено в Ubuntu, але все має працювати таким же чином і у Windows та Mac OS X."
+
+msgid "Then enter all words you want to learn in the words table, you can go to the next question or answer column by pressing tab or '='. See the screenshot for an example."
+msgstr "Потім уведіть усі слова, які Ви хочете вчити в таблицю для слів. Ви можете користуватися клавішами Tab або '=', для переходу між клітинками запитань і відповідей. Погляньте на знімок для прикладу."
+
+msgid "There are unsaved items or results. Are you sure you want to close?"
+msgstr "Тут є незбережені елементи чи дані. Ви дійсно хочете закрити?"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Подумайте про відповідь, і натисніть кнопку 'Переглянути відповідь' коли будете готові."
+
+msgid "Think answer"
+msgstr "Думати відповідь"
+
+msgid "Thinking"
+msgstr "Роздумування"
+
+msgid "This quick start guide shows you how to do a simple self-test using OpenTeacher. We're going to learn counting to ten in French today! For this example we are assuming that you already know English, and you want to learn French."
+msgstr "Цей підручник швидкого початку покаже як протестувати себе використовуючи OpenTeacher. Ми вчитимемося сьогодні рахувати до десяти по-французьки! У цьому прикладі ми припускаємо, що Ви вже знаєте англійську і хочете вивчити французьку."
+
+msgid "This type of file is not supported:\n"
+msgstr "Цей тип файлу не підтримується:\n"
+
+msgid "Title:"
+msgstr "Назва:"
+
+msgid "Toolbar"
+msgstr "Панель інструментів"
+
+msgid "Topo lesson: %s"
+msgstr "Топографічний урок: %s"
+
+msgid "Topography maps"
+msgstr "Топографічні карти"
+
+msgid "Total thinking time: %s minutes"
+msgstr "Загальний час думання: %s хвилин"
+
+msgid "Translation: "
+msgstr "Переклад: "
+
+msgid "Translator (%s)"
+msgstr "Перекладач (%s)"
+
+msgid "Type answer"
+msgstr "Набрати відповідь"
+
+msgid "Unnamed"
+msgstr "Без назви"
+
+msgid "Unsaved data"
+msgstr "Незбережені дані"
+
+msgid "Unsupported file type"
+msgstr "Непідтримуваний тип файлу"
+
+msgid "Use HTML5 for audio"
+msgstr "Використовувати HTML5 для аудіо"
+
+msgid "Use HTML5 for video"
+msgstr "Використовувати HTML5 для відео"
+
+msgid "Using OpenTeacher 3: A Quick Start"
+msgstr "Використання OpenTeacher 3: Швидкий початок"
+
+msgid "VTrain"
+msgstr "VTrain"
+
+msgid "View answer"
+msgstr "Переглянути відповідь"
+
+msgid "Voca"
+msgstr "Voca"
+
+msgid "Vocabularium"
+msgstr "Vocabularium"
+
+msgid "Voice"
+msgstr "Голос"
+
+msgid "Voice name (language)"
+msgstr "Мова голосу"
+
+msgid "Vokabel Trainer"
+msgstr "Vokabel Trainer"
+
+msgid "WRDS"
+msgstr "WRDS"
+
+msgid "Warning"
+msgstr "Застереження"
+
+msgid "Word lesson: %s"
+msgstr "Урок зі словами: %s"
+
+msgid "Word most done wrong:"
+msgstr "Слово, в якому найчастіше помилялися:"
+
+msgid "Word:"
+msgstr "Слово:"
+
+msgid "Words lesson"
+msgstr "Урок зі словами"
+
+msgid "You have already tried this character / word"
+msgstr "Ви вже пробували цей символ / слово"
+
+msgid "You lose, the answer was: "
+msgstr "Ви програли, відповідь була: "
+
+msgid "You need to add items to your test first"
+msgstr "Вам слід спершу додати елементи"
+
+msgid "gnuVocabTrain"
+msgstr "gnuVocabTrain"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
+msgid "jVLT"
+msgstr "jVLT"
+
+msgid "no"
+msgstr "ні"
+
+msgid "yes"
+msgstr "так"
+

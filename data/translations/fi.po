@@ -1,0 +1,433 @@
+# OpenTeacher's translations, merged by scripts/merge_translations.py.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "&About"
+msgstr "&Tietoja"
+
+msgid "&Documentation"
+msgstr "&Dokumentointi"
+
+msgid "&Edit"
+msgstr "&Muokkaa"
+
+msgid "&File"
+msgstr "&Tiedosto"
+
+msgid "&Help"
+msgstr "&Ohje"
+
+msgid "&New"
+msgstr "Uusi"
+
+msgid "&Open"
+msgstr "&Avaa"
+
+msgid "&Print"
+msgstr "T&ulosta"
+
+msgid "&Quit"
+msgstr "&Lopeta"
+
+msgid "&Save"
+msgstr "Tallenna"
+
+msgid "&Settings"
+msgstr "&Asetukset"
+
+msgid "About"
+msgstr "Tietoja"
+
+msgid "Add"
+msgstr "Lisää"
+
+msgid "Add a place by doubleclicking it on the map"
+msgstr "Lisää paikka kaksoisklikkaamalla sitä kartalla"
+
+msgid "Add a place by name:"
+msgstr "Lisää paikka nimen mukaan:"
+
+msgid "Add local media"
+msgstr "Lisää paikallista mediaa"
+
+msgid "Add remote media"
+msgstr "Lisää etämediaa"
+
+msgid "Advanced mode"
+msgstr "Kehittynyt tila"
+
+msgid "All once"
+msgstr "Kaikki kerran"
+
+msgid "American"
+msgstr "Amerikkalainen"
+
+msgid "Answer language:"
+msgstr "Vastauksen kieli:"
+
+msgid "Answer:"
+msgstr "Vastaus:"
+
+msgid "Answers"
+msgstr "Vastauksia"
+
+msgid "Are you sure you want to use another map? This will remove all your places!"
+msgstr "Oletko varma, että haluat käyttää muuta karttaa? Tämä toiminto poistaa kaikki paikkasi"
+
+msgid "Artwork"
+msgstr "Graafinen ilme"
+
+msgid "Ask foreign - known"
+msgstr "Kysy vieraita - tunnettuja"
+
+msgid "Authors"
+msgstr "Kirjoittajat"
+
+msgid "Change lesson settings"
+msgstr "Vaihda opetteluasetuksia"
+
+msgid "Chat channel spammer"
+msgstr "Keskustelukanavan spämmääjä"
+
+msgid "Check!"
+msgstr "Tarkista!"
+
+msgid "Click the button to start"
+msgstr "Paina nappia aloittaaksesi"
+
+msgid "Comment"
+msgstr "Huomautus"
+
+msgid "Core developer"
+msgstr "Pääkehittäjä"
+
+msgid "Correct answer: <b>{answers}</b>"
+msgstr "Oikea vastaus: <b>{answers}</b>"
+
+msgid "Correct answer: <b>{answers}</b> [{diff}]"
+msgstr "Oikea vastaus: <b>{answers}</b> [{diff}]"
+
+msgid "Correct anyway"
+msgstr "Korjaa joka tapauksessa"
+
+msgid "Create topography lesson"
+msgstr "Luo pinnallinen opettelu"
+
+msgid "Create words lesson"
+msgstr "Luo sanalista"
+
+msgid "Cyrillic"
+msgstr "Kyrillinen"
+
+msgid "Debian/Ubuntu packager"
+msgstr "Debianin/Ubuntun pakkaaja"
+
+msgid "Documentation"
+msgstr "Dokumentointi"
+
+msgid "Dutch"
+msgstr "Hollantilainen"
+
+msgid "ECTS"
+msgstr "ECTS"
+
+msgid "Empty question or answer"
+msgstr "Tyhjä kysymys tai vastaus"
+
+msgid "Enable hidden browser (hide it by moving the slider)"
+msgstr "Salli piilotettu selain (piilota se liikuttamalla liukusäädintä)"
+
+msgid "Enter list"
+msgstr "Anna lista"
+
+msgid "Enter the URL of your website or media item.\nSupported video sites: "
+msgstr "Anna linkki nettisivuillesi tai mediakohteelle.\nTuetut videosivut: "
+
+msgid "Fade duration when wrong (milliseconds)"
+msgstr "Häivytyksen kesto kun menee väärin (millisekunteja)"
+
+msgid "File URL"
+msgstr "Tiedoston URL"
+
+msgid "French"
+msgstr "Ranskalainen"
+
+msgid "Full license text"
+msgstr "Koko lisensointiteksti"
+
+msgid "General"
+msgstr "Yleinen"
+
+msgid "German"
+msgstr "Saksalainen"
+
+msgid "Greek"
+msgstr "Kreikkalaiset kirjaimet"
+
+msgid "Hide the browser!"
+msgstr "Piilota selain!"
+
+msgid "Hide the others; make space for the browser"
+msgstr "Piilota kaikki muut; tee tilaa selaimelle"
+
+msgid "Hint:"
+msgstr "Vinkki:"
+
+msgid "I speak English"
+msgstr "Puhun suomea"
+
+msgid "I was right"
+msgstr "Olin oikeassa"
+
+msgid "I was wrong"
+msgstr "Olin väärässä"
+
+msgid "I'm ready, start the lesson!"
+msgstr "Olen valmis, aloitetaan opettelu!"
+
+msgid "Import source"
+msgstr "Tuo lähdetiedosto"
+
+msgid "Interval"
+msgstr "Aikaväli"
+
+msgid "Lesson"
+msgstr "Oppitunti"
+
+msgid "Lesson settings"
+msgstr "Opettelun asetukset"
+
+msgid "Lesson type"
+msgstr "Opettelun tyyppi"
+
+msgid "License"
+msgstr "Lisenssi"
+
+msgid "Map:"
+msgstr "Kartta:"
+
+msgid "Maximum size of group"
+msgstr "Ryhmän maksimikoko"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Media lesson: %s"
+msgstr "Mediaopettelu: %s"
+
+msgid "Minimum amount of questions asked"
+msgstr "Minimimäärä kysymyksiä, mitä kysytään"
+
+msgid "Name:"
+msgstr "Nimi:"
+
+msgid "Not enough items"
+msgstr "Kohteita ei ole tarpeeksi"
+
+msgid "Only hard words (<50%% right)"
+msgstr "Vain vaikeita sanoja (<50%% oikein)"
+
+msgid "Only words you never answered correctly"
+msgstr "Vain sanoja, joihin et ole koskaan vastannut oikein"
+
+msgid "Open Teaching Media"
+msgstr "Avoin opettava media"
+
+msgid "Open Teaching Topography"
+msgstr "Avaa opettelun topografia"
+
+msgid "Open Teaching Words"
+msgstr "Avaa opetetut sanat"
+
+msgid "Open from file"
+msgstr "Avaa tiedostosta"
+
+msgid "OpenTeacher"
+msgstr "OpenTeacher"
+
+msgid "OpenTeacher 2.x"
+msgstr "OpenTeacher 2.x"
+
+msgid "OpenTeacher authors"
+msgstr "OpenTeacherin laatijat"
+
+msgid "Patches contributor"
+msgstr "Paikkojen avustaja"
+
+msgid "Percent right before known"
+msgstr "Prosenttia tiedetty, kunnes lasketaan tiedetyksi"
+
+msgid "Percents"
+msgstr "Prosenttia"
+
+msgid "Places in your test"
+msgstr "Paikat kokeilussasi"
+
+msgid "Please enter at least one question and one answer for every word."
+msgstr "Anna vähintään yksi kysymys tai vastaus jokaiselle sanalle"
+
+msgid "Profile"
+msgstr "Profiili"
+
+msgid "Project website"
+msgstr "Projektin nettisivu"
+
+msgid "Pronounciation"
+msgstr "Ääntäminen"
+
+msgid "Question language:"
+msgstr "Kysymyksen kieli:"
+
+msgid "Question:"
+msgstr "Kysymys:"
+
+msgid "Questions"
+msgstr "Kysymyksiä"
+
+msgid "Random"
+msgstr "Satunnainen"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Remove selected place"
+msgstr "Poista valitut paikat"
+
+msgid "Remove selected row(s)"
+msgstr "Poista valittu/valitut rivi(t)"
+
+msgid "Repeat answer"
+msgstr "Toista vastaus"
+
+msgid "Repeat mode fade duration (milliseconds)"
+msgstr "Toistotilan häivytyksen kesto (millisekunteja)"
+
+msgid "Reverse"
+msgstr "Käänteinen"
+
+msgid "Save &As"
+msgstr "Tallenna &nimellä"
+
+msgid "Select file(s)"
+msgstr "Valitse tiedosto(t)"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "Show results"
+msgstr "Näytä tulokset"
+
+msgid "Shuffle answer"
+msgstr "Arvo vastaus"
+
+msgid "Simple mode"
+msgstr "Yksinkertainen tila"
+
+msgid "Skip"
+msgstr "Ohita"
+
+msgid "Smart"
+msgstr "Viisas"
+
+msgid "Sort"
+msgstr "Lajittele"
+
+msgid "Speed"
+msgstr "Nopeus"
+
+msgid "Start!"
+msgstr "Aloita!"
+
+msgid "Symbols"
+msgstr "Symbolit"
+
+msgid "System default"
+msgstr "Järjestelmän oletus"
+
+msgid "Teach me!"
+msgstr "Opeta minua!"
+
+msgid "Teach2000"
+msgstr "Teach2000"
+
+msgid "Thanks to all Launchpad contributors!"
+msgstr "Kiitoksia kaikille Launchpadin edistäjille"
+
+msgid "Think about the answer, and press the 'View answer' button when you're done."
+msgstr "Mieti vastausta ja paina 'Katso vastaus' nappia, kun olet valmis"
+
+msgid "Think answer"
+msgstr "Mieti vastausta"
+
+msgid "This type of file is not supported:\n"
+msgstr "Tämä tiedostotyyppi ei ole tuettu:\n"
+
+msgid "Title:"
+msgstr "Otsikko:"
+
+msgid "Toolbar"
+msgstr "Työkalupalkki"
+
+msgid "Topo lesson: %s"
+msgstr "Pinnallinen opettelu: %s"
+
+msgid "Topography maps"
+msgstr "Topografiset kartat"
+
+msgid "Translation: "
+msgstr "Käännös: "
+
+msgid "Translator (%s)"
+msgstr "Kääntäjä (%s)"
+
+msgid "Type answer"
+msgstr "Anna vastauksesi"
+
+msgid "Unnamed"
+msgstr "Nimeämätön"
+
+msgid "Unsupported file type"
+msgstr "Tiedostomuoto ei ole tuettu"
+
+msgid "Untitled word list"
+msgstr "Nimeämätön sanalista"
+
+msgid "View answer"
+msgstr "Katso vastaus"
+
+msgid "Voice"
+msgstr "Puheääni"
+
+msgid "Voice name (language)"
+msgstr "Puheääni (kieli)"
+
+msgid "WRDS"
+msgstr "Sanoja"
+
+msgid "Warning"
+msgstr "Varoitus"
+
+msgid "Word lesson: %s"
+msgstr "Sanojen opettelu: %s"
+
+msgid "Word list order and filters"
+msgstr "Sanalistan järjestys ja suodattimet"
+
+msgid "Word modifications"
+msgstr "Sanamuutokset"
+
+msgid "Word:"
+msgstr "Sana:"
+
+msgid "Words lesson"
+msgstr "Sanojen opettelu"
+
+msgid "You need to add items to your test first"
+msgstr "Sinun täytyy lisätä kohteita testiisi ensiksi"
+
+msgid "http://openteacher.org/"
+msgstr "http://openteacher.org/"
+
+msgid "http://openteacher.org/documentation.html"
+msgstr "http://openteacher.org/documentation.html"
+
