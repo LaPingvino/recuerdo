@@ -1,68 +1,49 @@
-// Package media provides functionality ported from Python module
-//
-// This is an automated port - implementation may be incomplete.
+// Package media reverses a media list: each item's question becomes its
+// answer and the other way round. Port of OpenTeacher's
+// logic/reversers/media, which swaps "question" and "answer"; Recuerdo
+// keeps those as an item's Questions and Answers, as for words.
 package media
 
 import (
 	"context"
-	"fmt"
+
 	"github.com/LaPingvino/recuerdo/internal/core"
+	"github.com/LaPingvino/recuerdo/internal/lesson"
 )
 
-// MediaReverserModule is a Go port of the Python MediaReverserModule class
+// Reverse swaps the question and answer of every item in place; the
+// media files, names and results stay as they are.
+func Reverse(list *lesson.WordList) {
+	for i := range list.Items {
+		item := &list.Items[i]
+		item.Questions, item.Answers = item.Answers, item.Questions
+	}
+}
+
+// MediaReverserModule offers Reverse as an OpenTeacher "reverser" module.
 type MediaReverserModule struct {
 	*core.BaseModule
 	manager *core.Manager
-	// TODO: Add module-specific fields
 }
 
-// NewMediaReverserModule creates a new MediaReverserModule instance
+// NewMediaReverserModule creates the module.
 func NewMediaReverserModule() *MediaReverserModule {
-	base := core.NewBaseModule("logic", "media-module")
-
-	return &MediaReverserModule{
-		BaseModule: base,
-	}
+	return &MediaReverserModule{BaseModule: core.NewBaseModule("reverser", "media-reverser")}
 }
 
-// Reverse is the Go port of the Python reverse method
-func (mod *MediaReverserModule) Reverse() {
-	// TODO: Port Python method logic
-}
+// DataType is the kind of list this reverser handles.
+func (mod *MediaReverserModule) DataType() string { return "media" }
 
-// Enable activates the module
-// This is the Go equivalent of the Python enable method
-func (mod *MediaReverserModule) Enable(ctx context.Context) error {
-	if err := mod.BaseModule.Enable(ctx); err != nil {
-		return err
-	}
+// Reverse reverses the list in place.
+func (mod *MediaReverserModule) Reverse(list *lesson.WordList) { Reverse(list) }
 
-	// TODO: Port Python enable logic
-
-	fmt.Println("MediaReverserModule enabled")
-	return nil
-}
-
-// Disable deactivates the module
-// This is the Go equivalent of the Python disable method
+func (mod *MediaReverserModule) Enable(ctx context.Context) error { return mod.BaseModule.Enable(ctx) }
 func (mod *MediaReverserModule) Disable(ctx context.Context) error {
-	if err := mod.BaseModule.Disable(ctx); err != nil {
-		return err
-	}
-
-	// TODO: Port Python disable logic
-
-	fmt.Println("MediaReverserModule disabled")
-	return nil
+	return mod.BaseModule.Disable(ctx)
 }
 
-// SetManager sets the module manager
-func (mod *MediaReverserModule) SetManager(manager *core.Manager) {
-	mod.manager = manager
-}
+// SetManager sets the module manager reference.
+func (mod *MediaReverserModule) SetManager(manager *core.Manager) { mod.manager = manager }
 
-// InitMediaReverserModule creates and returns a new MediaReverserModule instance
-// This is the Go equivalent of the Python init function
-func InitMediaReverserModule() core.Module {
-	return NewMediaReverserModule()
-}
+// InitMediaReverserModule creates and returns the module.
+func InitMediaReverserModule() core.Module { return NewMediaReverserModule() }

@@ -70,6 +70,9 @@ func Save(data *lesson.LessonData, path string) error {
 
 // document is the lesson's HTML export as a Qt text document.
 func document(data *lesson.LessonData) (*qt.QTextDocument, error) {
+	if IsMedia(data) {
+		return mediaDocument(data), nil
+	}
 	tmp, err := os.MkdirTemp("", "recuerdo-export-")
 	if err != nil {
 		return nil, err
@@ -94,11 +97,17 @@ func savePDF(data *lesson.LessonData, path string) error {
 	if err != nil {
 		return err
 	}
-	w := qt.NewQPdfWriter(path)
-	w.QPagedPaintDevice.SetPageSize(qt.NewQPageSize2(qt.QPageSize__A4))
-	w.QPagedPaintDevice.SetPageMargins2(qt.NewQMarginsF2(25, 25, 25, 25), qt.QPageLayout__Millimeter)
-	doc.Print(w.QPagedPaintDevice)
-	w.Delete()
+	// through a PDF printer with its own margins, as printing does: with
+	// margins set (on a QPdfWriter or here) QTextDocument.Print lays the
+	// document out at about half the page's width
+	printer := printsupport.NewQPrinter()
+	defer printer.Delete()
+	printer.SetOutputFormat(printsupport.QPrinter__PdfFormat)
+	printer.SetOutputFileName(path)
+	printer.QPagedPaintDevice.SetPageSize(qt.NewQPageSize2(qt.QPageSize__A4))
+	printer.SetDocName(data.List.Title)
+	printer.SetCreator("Recuerdo")
+	doc.Print(printer.QPagedPaintDevice)
 	if st, err := os.Stat(path); err != nil || st.Size() == 0 {
 		return fmt.Errorf("could not write PDF %s", path)
 	}
@@ -159,19 +168,25 @@ var formatNames = map[string]string{
 }
 
 // SaveFilterFor is the file dialog filter for saving data: for a
-// topography lesson its own format, the map as a picture and as PDF; for
-// others SaveFilter.
+// topography lesson its own format, the map as a picture and as PDF; for a
+// media lesson its own format and PDF; for others SaveFilter.
 func SaveFilterFor(data *lesson.LessonData) string {
-	if IsTopo(data) {
+	switch {
+	case IsTopo(data):
 		return "OpenTeaching Topography (*.ottp);;Map picture (*.png);;Map as PDF (*.pdf)"
+	case IsMedia(data):
+		return "OpenTeaching Media (*.otmd);;PDF (*.pdf)"
 	}
 	return SaveFilter()
 }
 
 // DefaultExtension is the extension a lesson is saved with by default.
 func DefaultExtension(data *lesson.LessonData) string {
-	if IsTopo(data) {
+	switch {
+	case IsTopo(data):
 		return ".ottp"
+	case IsMedia(data):
+		return ".otmd"
 	}
 	return ".otwd"
 }

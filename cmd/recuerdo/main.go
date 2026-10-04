@@ -59,6 +59,7 @@ import (
 	percentscalculator "github.com/LaPingvino/recuerdo/internal/modules/logic/percentsCalculator"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 
+	reversermedia "github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/media"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
 
 	testtypesmedia "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/media"
@@ -576,11 +577,11 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register recentlyopened module: %w", err)
 	}
 
-	// Register media module - DISABLED (import removed)
-	// reversermediaModule := reversermedia.NewMediaReverserModule()
-	// if err := manager.Register(reversermediaModule); err != nil {
-	//	return fmt.Errorf("failed to register media module: %w", err)
-	// }
+	// Register the media reverser
+	reversermediaModule := reversermedia.NewMediaReverserModule()
+	if err := manager.Register(reversermediaModule); err != nil {
+		return fmt.Errorf("failed to register media reverser module: %w", err)
+	}
 
 	// Register words module
 	wordsModule := words.NewWordsReverserModule()

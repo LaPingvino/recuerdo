@@ -62,6 +62,24 @@ func TestMain(m *testing.M) {
 		tp.Delete()
 	}
 
+	// a media lesson: a table with a thumbnail, as PDF and printed
+	if media, err := lesson.NewFileLoader().LoadFile(filepath.Join("..", "..", "..", "..", "..", "testdata",
+		"legacy_files", "application_x-openteachingmedia.openteacher3x.otmd")); err != nil {
+		results["media"] = err
+	} else {
+		mediaData = media
+		media.List.Items[1].Questions = []string{"Whose logo?"}
+		media.List.Items[1].Answers = []string{"OpenTeacher"}
+		paths["media.pdf"] = filepath.Join(dir, "media.pdf")
+		results["media.pdf"] = Save(media, paths["media.pdf"])
+		mp := printsupport.NewQPrinter()
+		mp.SetOutputFormat(printsupport.QPrinter__PdfFormat)
+		paths["media-print"] = filepath.Join(dir, "media-printed.pdf")
+		mp.SetOutputFileName(paths["media-print"])
+		results["media-print"] = Print(media, mp)
+		mp.Delete()
+	}
+
 	code := m.Run()
 	if keep := os.Getenv("EXPORT_KEEP"); keep != "" {
 		for ext, p := range paths {
@@ -74,11 +92,12 @@ func TestMain(m *testing.M) {
 }
 
 var (
-	topoData *lesson.LessonData
-	topoSize [2]int
-	topoDot  uint
-	results  map[string]error
-	paths    = map[string]string{}
+	topoData  *lesson.LessonData
+	mediaData *lesson.LessonData
+	topoSize  [2]int
+	topoDot   uint
+	results   map[string]error
+	paths     = map[string]string{}
 )
 
 func sample() *lesson.LessonData {
@@ -207,5 +226,34 @@ func TestTopoExports(t *testing.T) {
 	}
 	if !strings.HasPrefix(SaveFilterFor(sample()), "OpenTeaching Words") || DefaultExtension(sample()) != ".otwd" {
 		t.Errorf("words save filter %q", SaveFilterFor(sample()))
+	}
+}
+
+func TestMediaExports(t *testing.T) {
+	for _, k := range []string{"media", "media.pdf", "media-print"} {
+		if err := results[k]; err != nil {
+			t.Fatalf("%s: %v", k, err)
+		}
+	}
+	if f := SaveFilterFor(mediaData); !strings.HasPrefix(f, "OpenTeaching Media (*.otmd)") || DefaultExtension(mediaData) != ".otmd" {
+		t.Errorf("media save filter %q", f)
+	}
+	if _, err := exec.LookPath("pdftotext"); err != nil {
+		t.Skip("pdftotext not installed: PDFs written, content not checked")
+	}
+	for _, k := range []string{"media.pdf", "media-print"} {
+		out, err := exec.Command("pdftotext", paths[k], "-").Output()
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, w := range []string{"openteacher-icon.png", "http://openteacher.org/", "Whose logo?", "OpenTeacher", "Question"} {
+			if !bytes.Contains(out, []byte(w)) {
+				t.Errorf("%s lacks %q:\n%s", k, w, out)
+			}
+		}
+		// the picture is shown, so its file name is not printed in the Medium column
+		if bytes.Count(out, []byte("openteacher-icon.png")) != 1 {
+			t.Errorf("%s: the picture's name should appear once (as its name), not as its medium", k)
+		}
 	}
 }

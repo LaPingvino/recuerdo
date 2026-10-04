@@ -309,6 +309,8 @@ COVERED = {
     "interfaces/qt/mediaTypes/youtube": ("internal/modules/interfaces/qt/lessons/media", "Kind: YouTube video (watch and youtu.be links); opened in the web browser"),
     "interfaces/qt/mediaTypes/vimeo": ("internal/modules/interfaces/qt/lessons/media", "Kind: Vimeo video; opened in the web browser"),
     "interfaces/qt/mediaTypes/dailymotion": ("internal/modules/interfaces/qt/lessons/media", "Kind: Dailymotion video; opened in the web browser"),
+    "interfaces/qt/print/media": ("internal/modules/interfaces/qt/export", "Print and PDF of a media lesson: a table "
+                                  "of medium (pictures as thumbnails), name, question and answer (tested via pdftotext)"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

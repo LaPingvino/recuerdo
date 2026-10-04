@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 4 | 2 | 5 | 48 | 4 |  | 17 | 14 | 94 |
-| logic | 11 | 15 |  | 76 | 1 |  | 38 | 39 | 180 |
+| interfaces | 4 | 2 | 5 | 49 | 3 |  | 17 | 14 | 94 |
+| logic | 12 | 15 |  | 76 |  |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **18** | **17** | **5** | **135** | **13** | **0** | **99** | **67** | **354** |
+| **all** | **19** | **17** | **5** | **136** | **11** | **0** | **99** | **67** | **354** |
 
 Remarks:
 
@@ -206,6 +206,7 @@ file formats, see **covered** above):
 | `interfaces/qt/mediaTypes/youtube` | `internal/modules/interfaces/qt/lessons/media` | Kind: YouTube video (watch and youtu.be links); opened in the web browser |
 | `interfaces/qt/ocrGui` | `internal/modules/interfaces/qt/ocrimport` | File > Import from Picture: one dialog instead of the wizard (straighten, crop, read with internal/ocr); tested offscreen with a real Tesseract run |
 | `interfaces/qt/percentNotesViewer` | `internal/modules/interfaces/qt/charts` | GradesChart: a bar per session with its percentage, on the Results tab |
+| `interfaces/qt/print/media` | `internal/modules/interfaces/qt/export` | Print and PDF of a media lesson: a table of medium (pictures as thumbnails), name, question and answer (tested via pdftotext) |
 | `interfaces/qt/print/topo` | `internal/modules/interfaces/qt/export` | Print of a topography lesson prints its map with the places, fitted to the page (tested by printing to PDF) |
 | `interfaces/qt/print/words` | `internal/modules/interfaces/qt/export` | Print: a word list's HTML export, named after the lesson, tested by printing to PDF |
 | `interfaces/qt/printer` | `internal/modules/interfaces/qt/export` | Print prints the HTML export on a QPrinter |
@@ -382,7 +383,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/mediaTypes/youtube` | mediaType | 39 | 0 | 0 | 0 | covered |
 | `interfaces/qt/ocrGui` | ocrGui | 273 | 0 | 0 | 0 | covered |
 | `interfaces/qt/percentNotesViewer` | percentNotesViewer | 80 | 0 | 0 | 0 | covered |
-| `interfaces/qt/print/media` | print | 53 | 42 | 6 | 0 | scaffold |
+| `interfaces/qt/print/media` | print | 53 | 0 | 0 | 0 | covered |
 | `interfaces/qt/print/topo` | print | 26 | 0 | 0 | 0 | covered |
 | `interfaces/qt/print/words` | print | 64 | 0 | 0 | 0 | covered |
 | `interfaces/qt/printer` | printer | 51 | 0 | 0 | 0 | covered |
@@ -557,7 +558,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
 | `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 0 | 0 | 0 | dropped |
 | `logic/recentlyOpened` | recentlyOpened | 90 | 41 | 0 | 1 | working |
-| `logic/reversers/media` | reverser | 18 | 38 | 4 | 0 | scaffold |
+| `logic/reversers/media` | reverser | 18 | 27 | 0 | 1 | working |
 | `logic/reversers/mediaTest` | test | 44 | 38 | 9 | 0 | test suite |
 | `logic/reversers/words` | reverser | 19 | 28 | 0 | 1 | working |
 | `logic/reversers/wordsTest` | test | 55 | 40 | 10 | 0 | test suite |
