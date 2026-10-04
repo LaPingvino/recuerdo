@@ -52,6 +52,12 @@ func (fs *FileSaver) SaveFile(lessonData *LessonData, filePath string) error {
 		return fs.saveOpenTeachingTopoFile(lessonData, filePath)
 	case ".otmd":
 		return fs.saveOpenTeachingMediaFile(lessonData, filePath)
+	case ".otwd":
+		return fs.saveOTWDFile(lessonData, filePath)
+	case ".wrts":
+		return fs.saveWRTSFile(lessonData, filePath)
+	case ".slk":
+		return fs.saveSYLKFile(lessonData, filePath)
 	default:
 		return fmt.Errorf("unsupported save format: %s", ext)
 	}
@@ -1083,6 +1089,9 @@ func (fs *FileSaver) GetSupportedSaveExtensions() []string {
 		".kvtml", // KDE Vocabulary Document
 		".html",  // HTML export
 		".tex",   // LaTeX export
+		".otwd",  // OpenTeaching Words (OpenTeacher 3)
+		".wrts",  // WRTS
+		".slk",   // SYLK spreadsheet
 		// Future formats to be implemented:
 		// ".xml",   // Generic XML
 		// ".pdf",   // PDF export (requires additional libraries)
@@ -1112,6 +1121,12 @@ func (fs *FileSaver) GetSaveFormatName(ext string) string {
 		return "PDF Document"
 	case ".tex":
 		return "LaTeX Document"
+	case ".otwd":
+		return "OpenTeaching Words (OpenTeacher 3)"
+	case ".wrts":
+		return "WRTS List"
+	case ".slk":
+		return "SYLK Spreadsheet"
 	default:
 		return "Unknown Format"
 	}
