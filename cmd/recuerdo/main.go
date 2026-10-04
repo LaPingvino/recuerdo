@@ -59,9 +59,6 @@ import (
 
 	reversermedia "github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/media"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
-
-	testtypesmedia "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/media"
-	testtypestopo "github.com/LaPingvino/recuerdo/internal/modules/logic/testTypes/topo"
 	// Removed duplicate auto-converted modules - using manually implemented versions instead
 )
 
@@ -335,12 +332,6 @@ func registerAllModules(manager *core.Manager) error {
 	// 	return fmt.Errorf("failed to register gui module: %w", err)
 	// }
 
-	// Register gui ui module (second function from gui package) - DISABLED for now
-	// guiuiModule := gui.NewLessonTabWidget()
-	// if err := manager.Register(guiuiModule); err != nil {
-	// 	return fmt.Errorf("failed to register gui ui module: %w", err)
-	// }
-
 	// Register hiddenbrowser module - DISABLED for now
 	// hiddenbrowserModule := hiddenbrowser.NewHiddenBrowserModule()
 	// if err := manager.Register(hiddenbrowserModule); err != nil {
@@ -357,42 +348,6 @@ func registerAllModules(manager *core.Manager) error {
 	// lessondialogsModule := lessondialogs.NewLessonDialogsModule()
 	// if err := manager.Register(lessondialogsModule); err != nil {
 	// 	return fmt.Errorf("failed to register lessondialogs module: %w", err)
-	// }
-
-	// Register media module
-	mediaModule := testtypesmedia.NewMediaTestTypeModule()
-	if err := manager.Register(mediaModule); err != nil {
-		return fmt.Errorf("failed to register media module: %w", err)
-	}
-
-	// Register topo module
-	teachtopoModule := testtypestopo.NewTopoTestTypeModule()
-	if err := manager.Register(teachtopoModule); err != nil {
-		return fmt.Errorf("failed to register topo module: %w", err)
-	}
-
-	// Register media module - DISABLED (duplicate module name conflict)
-	// printmediaModule := testtypesmedia.NewMediaTestTypeModule()
-	// if err := manager.Register(printmediaModule); err != nil {
-	//	return fmt.Errorf("failed to register media module: %w", err)
-	// }
-
-	// Register topo module - DISABLED (duplicate module name conflict)
-	// printtopoModule := testtypestopo.NewTopoTestTypeModule()
-	// if err := manager.Register(printtopoModule); err != nil {
-	//	return fmt.Errorf("failed to register topo module: %w", err)
-	// }
-
-	// Register media module - DISABLED (duplicate module name conflict)
-	// teachermediaModule := testtypesmedia.NewMediaTestTypeModule()
-	// if err := manager.Register(teachermediaModule); err != nil {
-	//	return fmt.Errorf("failed to register media module: %w", err)
-	// }
-
-	// Register topo module - DISABLED (duplicate module name conflict)
-	// teachertopoModule := testtypestopo.NewTopoTestTypeModule()
-	// if err := manager.Register(teachertopoModule); err != nil {
-	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
 
 	// Skip main module - it's a program not a library
@@ -433,12 +388,6 @@ func registerAllModules(manager *core.Manager) error {
 	fmt.Printf("  ✓ Registered event module\n")
 
 	fmt.Printf("  ✓ Registered execute module\n")
-
-	// Register media module - DISABLED (duplicate module name conflict)
-	// htmlgenmediaModule := testtypesmedia.NewMediaTestTypeModule()
-	// if err := manager.Register(htmlgenmediaModule); err != nil {
-	//	return fmt.Errorf("failed to register media module: %w", err)
-	// }
 
 	// Skip languagecodeguesserTables - merged into languagecodeguesser package
 	// languagecodeguessertablesModule := languagecodeguesserTables.NewLanguagecodeguessertablesModule()
@@ -607,17 +556,6 @@ func registerAllModules(manager *core.Manager) error {
 	// sylksaverModule := sylksaver.NewSylkSaverModule()
 	// if err := manager.Register(sylksaverModule); err != nil {
 	//	return fmt.Errorf("failed to register sylksaver module: %w", err)
-	// }
-
-	// Register test type modules - DISABLED (causes conflicts)
-	// testtypesmediaModule := testtypesmedia.NewMediaTestTypeModule()
-	// if err := manager.Register(testtypesmediaModule); err != nil {
-	//	return fmt.Errorf("failed to register media module: %w", err)
-	// }
-
-	// testtypestopoModule := testtypestopo.NewTopoTestTypeModule()
-	// if err := manager.Register(testtypestopoModule); err != nil {
-	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
 
 	// Temporarily disable remaining modules that are causing conflicts

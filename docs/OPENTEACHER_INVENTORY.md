@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 13 |  |  | 27 | 6 | 49 |
-| interfaces | 4 | 2 | 5 | 52 |  |  | 17 | 14 | 94 |
-| logic | 12 | 15 |  | 76 |  |  | 38 | 39 | 180 |
+| interfaces | 6 | 2 | 3 | 52 |  |  | 17 | 14 | 94 |
+| logic | 25 |  |  | 78 |  |  | 38 | 39 | 180 |
 | misc |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 3 |  |  | 19 | 5 | 27 |
-| **all** | **19** | **17** | **5** | **144** | **0** | **0** | **102** | **67** | **354** |
+| **all** | **34** | **2** | **3** | **146** | **0** | **0** | **102** | **67** | **354** |
 
 Remarks:
 
@@ -261,6 +261,8 @@ file formats, see **covered** above):
 | `logic/savers/png` | `internal/modules/interfaces/qt/export` | Save as .png writes a topography lesson's map with its places (MapPicture; tested), also as PDF |
 | `logic/settingsFilterer` | `internal/modules/interfaces/qt/dialogs/settings` | the settings dialog lays its settings out in fixed tabs instead of grouping them by category |
 | `logic/sylkSaver` | `internal/lesson` | FileSaver.saveSYLKFile |
+| `logic/testTypes/media` | `internal/modules/interfaces/qt/lessons/media` | the Results tab shows a media lesson's sessions (charts); the result table model was not used by anything |
+| `logic/testTypes/topo` | `internal/modules/interfaces/qt/lessons/topo` | the Results tab shows a topography lesson's sessions (charts); the result table model was not used by anything |
 | `logic/testTypes/words` | `internal/teaching` | Report.MostDoneWrong, the "word most done wrong" fact in the results dialog |
 | `logic/userDocumentationWrapper` | `internal/modules/interfaces/qt/gui` | Help > Getting Started shows the guide |
 | `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
@@ -373,14 +375,14 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1062 | 7 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1024 | 3 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
-| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 14 | 1 | partial |
+| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 415 | 0 | 1 | working |
 | `interfaces/qt/lessons/media` | lesson | 197 | 585 | 0 | 2 | working |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 699 | 0 | 2 | working |
-| `interfaces/qt/lessons/words` | lesson | 211 | 2071 | 1 | 2 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2071 | 0 | 2 | working |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 0 | 0 | 0 | covered |
@@ -489,17 +491,17 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | dropped |
 | `logic/languageCodeGuesser` | languageCodeGuesser | 30 | 0 | 0 | 0 | covered |
 | `logic/languageCodeGuesserTest` | test | 45 | 58 | 19 | 0 | test suite |
-| `logic/lessonTypes/allOnce` | lessonType | 108 | 54 | 0 | 0 | untested |
-| `logic/lessonTypes/interval` | lessonType | 181 | 102 | 0 | 0 | untested |
-| `logic/lessonTypes/smart` | lessonType | 122 | 80 | 0 | 0 | untested |
+| `logic/lessonTypes/allOnce` | lessonType | 108 | 54 | 0 | 1 | working |
+| `logic/lessonTypes/interval` | lessonType | 181 | 102 | 0 | 1 | working |
+| `logic/lessonTypes/smart` | lessonType | 122 | 80 | 0 | 1 | working |
 | `logic/lessonTypes/test` | test | 99 | 0 | 0 | 0 | test suite |
 | `logic/listModifiers/hardWords` | listModifier | 61 | 37 | 0 | 1 | working |
 | `logic/listModifiers/hardWordsTest` | test | 138 | 46 | 13 | 0 | test suite |
 | `logic/listModifiers/randomTest` | test | 39 | 36 | 8 | 0 | test suite |
-| `logic/listModifiers/random_` | listModifier | 45 | 29 | 0 | 0 | untested |
-| `logic/listModifiers/reverse` | listModifier | 47 | 27 | 0 | 0 | untested |
+| `logic/listModifiers/random_` | listModifier | 45 | 29 | 0 | 1 | working |
+| `logic/listModifiers/reverse` | listModifier | 47 | 27 | 0 | 1 | working |
 | `logic/listModifiers/reverseTest` | test | 29 | 36 | 8 | 0 | test suite |
-| `logic/listModifiers/sort` | listModifier | 50 | 53 | 0 | 0 | untested |
+| `logic/listModifiers/sort` | listModifier | 50 | 53 | 0 | 1 | working |
 | `logic/listModifiers/sortTest` | test | 38 | 36 | 8 | 0 | test suite |
 | `logic/listModifiers/wordsNeverAnsweredCorrectly` | listModifier | 61 | 37 | 0 | 1 | working |
 | `logic/listModifiers/wordsNeverAnsweredCorrectlyTest` | test | 104 | 46 | 13 | 0 | test suite |
@@ -546,18 +548,18 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/modules` | modules | 148 | 0 | 0 | 0 | covered |
 | `logic/modulesTest` | test | 44 | 78 | 14 | 0 | test suite |
 | `logic/noteCalculatorChooser` | noteCalculatorChooser | 67 | 59 | 0 | 1 | working |
-| `logic/noteCalculators/american` | noteCalculator | 57 | 16 | 0 | 0 | untested |
-| `logic/noteCalculators/dutch` | noteCalculator | 52 | 31 | 0 | 0 | untested |
-| `logic/noteCalculators/ects` | noteCalculator | 57 | 16 | 0 | 0 | untested |
-| `logic/noteCalculators/french` | noteCalculator | 51 | 25 | 0 | 0 | untested |
-| `logic/noteCalculators/german` | noteCalculator | 55 | 16 | 0 | 0 | untested |
+| `logic/noteCalculators/american` | noteCalculator | 57 | 16 | 0 | 1 | working |
+| `logic/noteCalculators/dutch` | noteCalculator | 52 | 31 | 0 | 1 | working |
+| `logic/noteCalculators/ects` | noteCalculator | 57 | 16 | 0 | 1 | working |
+| `logic/noteCalculators/french` | noteCalculator | 51 | 25 | 0 | 1 | working |
+| `logic/noteCalculators/german` | noteCalculator | 55 | 16 | 0 | 1 | working |
 | `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
 | `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 0 | 0 | 0 | dropped |
 | `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
 | `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 0 | 0 | 0 | dropped |
 | `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 0 | 0 | 0 | dropped |
 | `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | dropped |
-| `logic/noteCalculators/percents` | noteCalculator | 55 | 13 | 0 | 0 | untested |
+| `logic/noteCalculators/percents` | noteCalculator | 55 | 13 | 0 | 1 | working |
 | `logic/noteCalculators/test` | test | 444 | 0 | 0 | 0 | test suite |
 | `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 0 | 0 | 0 | dropped |
 | `logic/ocr/tesseractRecognizer` | ocrRecognizer | 34 | 0 | 0 | 0 | covered |
@@ -565,7 +567,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/odtsaver` | odtSaver | 32 | 0 | 0 | 0 | covered |
 | `logic/otxxloader` | otxxLoader | 64 | 0 | 0 | 0 | covered |
 | `logic/otxxsaver` | otxxSaver | 40 | 0 | 0 | 0 | covered |
-| `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 0 | untested |
+| `logic/percentsCalculator` | percentsCalculator | 24 | 54 | 0 | 1 | working |
 | `logic/percentsCalculatorTest` | test | 68 | 1 | 0 | 0 | test suite |
 | `logic/pyinstallerInterface` | pyinstallerInterface | 126 | 0 | 0 | 0 | dropped |
 | `logic/recentlyOpened` | recentlyOpened | 90 | 41 | 0 | 1 | working |
@@ -602,8 +604,8 @@ generator tooling, test mode, web services; see **dropped** above):
 | `logic/spellChecker` | spellChecker | 56 | 0 | 0 | 0 | dropped |
 | `logic/spellCheckerTest` | test | 57 | 58 | 19 | 0 | test suite |
 | `logic/sylkSaver` | sylkSaver | 79 | 0 | 0 | 0 | covered |
-| `logic/testTypes/media` | testType | 58 | 217 | 0 | 0 | untested |
-| `logic/testTypes/topo` | testType | 57 | 228 | 0 | 0 | untested |
+| `logic/testTypes/media` | testType | 58 | 0 | 0 | 0 | covered |
+| `logic/testTypes/topo` | testType | 57 | 0 | 0 | 0 | covered |
 | `logic/testTypes/words` | testType | 102 | 0 | 0 | 0 | covered |
 | `logic/translationIndex/builder` | translationIndexBuilder | 55 | 0 | 0 | 0 | dropped |
 | `logic/translationIndex/jsonWriter` | translationIndexJSONWriter | 48 | 0 | 0 | 0 | dropped |

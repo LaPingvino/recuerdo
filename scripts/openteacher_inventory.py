@@ -81,6 +81,20 @@ def code_lines(src):
 RANK = ["missing", "scaffold", "partial", "untested", "working"]  # plus "covered", "dropped", "test suite"  # "covered": see central_format and COVERED
 
 
+def ancestor_tests(d):
+    """Tests in a parent package that import d's package: the lesson
+    types, list modifiers and note calculators are tested together that
+    way."""
+    if any(d.glob("*_test.go")):
+        return []
+    imp = '"github.com/LaPingvino/recuerdo/' + str(d.relative_to(ROOT)) + '"'
+    found, p = [], d.parent
+    while p != GO.parent:
+        found += [t for t in p.glob("*_test.go") if imp in t.read_text(errors="replace")]
+        p = p.parent
+    return found
+
+
 def go_candidates(rel):
     """Where a module's Go code may live: its own directory, or a file
     named after it at the top of internal/modules (the hand-written core
@@ -88,7 +102,7 @@ def go_candidates(rel):
     cands = []
     d = go_dir(rel)
     if d is not None:
-        cands.append(sorted(d.glob("*.go")))
+        cands.append(sorted(d.glob("*.go")) + ancestor_tests(d))
     if len(rel.parts) == 2 and rel.parts[0] in ("logic", "misc"):
         base = rel.parts[-1].lower()
         top = [f for f in GO.glob("*.go") if f.stem.lower() in (base, base + "_test")]
@@ -324,6 +338,10 @@ COVERED = {
     "data/profileDescriptions/help": ("internal/cli", "recuerdo help"),
     "profileRunners/uiController": ("internal/modules/interfaces/qt/gui", "the GUI module connects the Qt interface to "
                                     "loading, saving, printing, dialogs and the lessons itself"),
+    "logic/testTypes/topo": ("internal/modules/interfaces/qt/lessons/topo", "the Results tab shows a topography "
+                             "lesson's sessions (charts); the result table model was not used by anything"),
+    "logic/testTypes/media": ("internal/modules/interfaces/qt/lessons/media", "the Results tab shows a media lesson's "
+                              "sessions (charts); the result table model was not used by anything"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

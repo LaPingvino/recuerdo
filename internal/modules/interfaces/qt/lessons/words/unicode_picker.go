@@ -304,7 +304,7 @@ func (up *IntegratedUnicodePicker) ensureBrowseUnicodePageLoaded() {
 	up.browseCharsLayout.SetSpacing(2)
 	up.browseScrollArea.SetWidget(up.browseCharsWidget)
 
-	// Add placeholder text
+	// Hint shown until a Unicode block is chosen
 	placeholderLabel := qt.NewQLabel(up.browseCharsWidget)
 	placeholderLabel.SetText("Select a Unicode block above to view characters, or enter a codepoint directly.")
 	placeholderLabel.SetStyleSheet("color: #666; font-style: italic; padding: 20px; text-align: center;")
