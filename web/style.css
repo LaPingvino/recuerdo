@@ -65,3 +65,7 @@ table.words.edit input { width: 100%; border-color: transparent; background: tra
 table.words.edit input:focus, table.words.edit tr.new input { border-color: var(--line); background: var(--bg); }
 .remove { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 1.1rem; }
 .remove:hover { color: var(--wrong); }
+h2 { font-size: 1.1rem; margin: 0 0 .3rem; }
+.language { margin-left: .8rem; padding: .2rem .4rem; font-size: .9rem; }
+.lesson-title + .language { margin-left: .8rem; }
+header .lesson-title:empty + .language { margin-left: auto; }

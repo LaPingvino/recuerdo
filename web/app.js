@@ -11,6 +11,80 @@ function call(name, ...args) {
 	return out;
 }
 function text(el, s) { el.textContent = s; }
+
+// ---- translations (the desktop's, through Go's internal/i18n) ----
+// t translates msgid and fills in %s and %d (%% is a percent sign).
+function t(msgid, ...args) {
+	let s = api && api.t ? api.t(msgid) : msgid;
+	let i = 0;
+	return s.replace(/%(\[\d+\])?[sd%]/g, (m, n) => {
+		if (m === "%%") return "%";
+		const k = n ? Number(n.slice(1, -1)) - 1 : i++;
+		return String(args[k]);
+	});
+}
+// applyTranslations translates the page's marked texts (data-i18n: the
+// element's English text, kept in data-msgid; data-i18n-placeholder).
+function applyTranslations() {
+	for (const el of document.querySelectorAll("[data-i18n]")) {
+		if (!el.dataset.msgid) el.dataset.msgid = el.textContent.trim();
+		el.textContent = t(el.dataset.msgid);
+	}
+	for (const el of document.querySelectorAll("[data-i18n-placeholder]")) {
+		el.placeholder = t(el.dataset.i18nPlaceholder);
+	}
+	document.documentElement.lang = (currentLanguage || "en").replace("_", "-");
+}
+let currentLanguage = "";
+async function useLanguage(lang) {
+	currentLanguage = "";
+	if (lang && lang !== "en") {
+		// the language's translations (OpenTeacher's and Recuerdo's own)
+		// go into the memory file system, where Go reads them
+		for (const name of [lang + ".po", "recuerdo-" + lang + ".po"]) {
+			const r = await fetch("translations/" + name);
+			if (r.ok) globalThis.fs.writeFile("/translations/" + name, new Uint8Array(await r.arrayBuffer()));
+		}
+		const out = JSON.parse(api.setLanguage("/translations", lang));
+		if (!(out && out.error)) currentLanguage = lang;
+	} else {
+		api.setLanguage("/translations", "");
+	}
+	applyTranslations();
+	fillChoices();
+	if (lesson) { showWords(); showResults(); }
+}
+// the language: chosen before (kept in this browser), or the browser's
+async function startLanguages() {
+	let langs = [];
+	try { langs = await (await fetch("languages.json")).json(); } catch (e) { /* no menu */ }
+	const menu = $("language");
+	const add = (code, label) => { const o = document.createElement("option"); o.value = code; o.textContent = label; menu.append(o); };
+	add("en", "English");
+	for (const code of langs.sort((a, b) => api.languageName(a).localeCompare(api.languageName(b)))) add(code, api.languageName(code));
+	const pick = (wanted) => {
+		for (const w of wanted) {
+			const n = (w || "").replace("-", "_");
+			if (n === "en" || n.startsWith("en_") && !langs.includes(n)) return "en";
+			if (langs.includes(n)) return n;
+			const base = n.split("_")[0];
+			if (langs.includes(base)) return base;
+			const regional = langs.find((l) => l.startsWith(base + "_"));
+			if (regional) return regional;
+		}
+		return "en";
+	};
+	let stored = null;
+	try { stored = localStorage.getItem("recuerdo.language"); } catch (e) { /* private window */ }
+	const param = new URLSearchParams(location.search).get("lang");
+	const lang = pick([param, stored, ...(navigator.languages || [navigator.language])].filter(Boolean));
+	menu.value = lang;
+	await useLanguage(lang);
+	menu.addEventListener("change", async () => {
+		try { localStorage.setItem("recuerdo.language", menu.value); } catch (e) { /* not kept */ }
+		await useLanguage(menu.value);
+	});
+}
 function showError(e) { const el = $("startError"); text(el, e.message || String(e)); el.hidden = false; }
 
 // ---- start: open a file, type a list or try the example ----
@@ -29,9 +103,9 @@ drop.addEventListener("drop", (e) => {
 	if (e.dataTransfer.files[0]) openFile(e.dataTransfer.files[0]);
 });
 $("useTyped").addEventListener("click", () => {
-	try { showLesson(call("openText", "Typed list", $("typed").value)); } catch (e) { showError(e); }
+	try { showLesson(call("openText", t("Typed list"), $("typed").value)); } catch (e) { showError(e); }
 });
-$("example").addEventListener("click", () => { $("typed").value = EXAMPLE; showLesson(call("openText", "Example", EXAMPLE)); });
+$("example").addEventListener("click", () => { $("typed").value = EXAMPLE; showLesson(call("openText", t("Example"), EXAMPLE)); });
 
 // ---- the lesson: words, practise, results ----
 let lesson = null;
@@ -51,7 +125,7 @@ function wordRow(it) {
 	if (!it) tr.className = "new";
 	const q = document.createElement("input"), a = document.createElement("input");
 	q.value = it ? it.question : ""; a.value = it ? it.answer : "";
-	q.placeholder = it ? "" : "New question"; a.placeholder = it ? "" : "Answer";
+	q.placeholder = it ? "" : t("New question"); a.placeholder = it ? "" : t("Answer");
 	const save = () => {
 		try {
 			if (it) {
@@ -70,7 +144,7 @@ function wordRow(it) {
 	}
 	const td = document.createElement("td");
 	if (it) {
-		const del = document.createElement("button"); del.className = "remove"; del.title = "Remove"; del.textContent = "×";
+		const del = document.createElement("button"); del.className = "remove"; del.title = t("Remove"); del.textContent = "×";
 		del.addEventListener("click", () => { call("removeItem", it.id); lesson = call("lesson"); showWords(); });
 		td.append(del);
 	}
@@ -155,7 +229,7 @@ $("skipButton").addEventListener("click", () => {
 });
 $("correctAnyway").addEventListener("click", () => {
 	call("correctLast"); $("correctAnyway").hidden = true;
-	const fb = $("feedback"); fb.className = "feedback right"; text(fb, "Counted as right");
+	const fb = $("feedback"); fb.className = "feedback right"; text(fb, t("Counted as right"));
 	showState(call("state")); showResults();
 });
 $("answerForm").addEventListener("submit", (e) => {
@@ -167,7 +241,7 @@ $("answerForm").addEventListener("submit", (e) => {
 		const fb = $("feedback");
 		fb.className = "feedback " + (r.right ? "right" : "wrong");
 		$("correctAnyway").hidden = r.right;
-		text(fb, r.right ? `Right: ${r.correct}` : `Wrong: ${given} → ${r.correct}`);
+		text(fb, r.right ? t("Right: %s", r.correct) : t("Wrong: %s → %s", given, r.correct));
 		showState(call("state"));
 		showResults();
 	} catch (err) { text($("feedback"), err.message); }
@@ -177,7 +251,7 @@ $("stopButton").addEventListener("click", () => finish(call("stop")));
 function finish(st) {
 	$("practice").hidden = true; $("done").hidden = false;
 	const pct = st.answered ? Math.round((100 * st.right) / st.answered) : 0;
-	text($("doneText"), `${st.right} of ${st.answered} right (${pct}%)`);
+	text($("doneText"), t("%d of %d right (%d%%)", st.right, st.answered, pct));
 	lesson = call("lesson");
 	showResults();
 }
@@ -185,13 +259,13 @@ function finish(st) {
 function showResults() {
 	const rows = call("report") || [];
 	text($("resultsSummary"), rows.length
-		? `Last session: ${rows.filter((r) => r.right).length} of ${rows.length} right. Sessions in this lesson: ${lesson.sessions}.`
-		: "Practise to see your answers here.");
+		? t("Last session: %d of %d right. Sessions in this lesson: %d.", rows.filter((r) => r.right).length, rows.length, lesson.sessions)
+		: t("Practise to see your answers here."));
 	const body = $("resultRows"); body.replaceChildren();
 	for (const r of rows) {
 		const tr = document.createElement("tr");
 		for (const s of [r.question, r.answer, r.given]) { const td = document.createElement("td"); text(td, s); tr.append(td); }
-		const mark = document.createElement("td"); mark.className = r.right ? "ok" : "no"; text(mark, r.right ? "right" : "wrong"); tr.append(mark);
+		const mark = document.createElement("td"); mark.className = r.right ? "ok" : "no"; text(mark, r.right ? t("Right") : t("Wrong")); tr.append(mark);
 		body.append(tr);
 	}
 }
@@ -216,7 +290,7 @@ $("downloadDialog").addEventListener("close", () => {
 		.catch(async () => WebAssembly.instantiate(await (await fetch("recuerdo.wasm")).arrayBuffer(), go.importObject));
 	go.run(wasm.instance);
 	api = globalThis.recuerdo;
-	fillChoices();
+	await startLanguages();
 	$("loading").hidden = true; $("start").hidden = false;
 	// ?example opens the example lesson at once (for screenshots and demos)
 	if (new URLSearchParams(location.search).has("example")) {

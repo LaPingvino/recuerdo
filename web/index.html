@@ -8,28 +8,33 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Texts with data-i18n (and data-i18n-placeholder) are translated by
+     app.js; scripts/extract_strings.py collects them into recuerdo.pot. -->
 <header>
 	<img src="recuerdo.svg" alt="" class="logo">
 	<h1>Recuerdo</h1>
-	<span class="tagline">Learn words, places and more by heart</span>
+	<span class="tagline" data-i18n>Learn words, places and more by heart</span>
 	<span id="lessonTitle" class="lesson-title"></span>
+	<select id="language" class="language" aria-label="Language"></select>
 </header>
 
 <main>
-	<p id="loading" class="loading">Loading…</p>
+	<p id="loading" class="loading" data-i18n>Loading…</p>
 
 	<section id="start" hidden>
 		<div class="drop" id="drop">
-			<p><strong>Open a lesson</strong>: drop a file here, or</p>
-			<label class="button primary">Choose a file…<input type="file" id="file" hidden></label>
-			<p class="hint">OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more</p>
+			<h2 data-i18n>Open a lesson</h2>
+			<p data-i18n>Drop a lesson file here, or choose one.</p>
+			<label class="button primary"><span data-i18n>Choose a file…</span><input type="file" id="file" hidden></label>
+			<p class="hint" data-i18n>OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more</p>
 		</div>
 		<div class="type-list">
-			<p><strong>Or type a list</strong>: one word per line, like <code>hond = dog</code></p>
+			<h2 data-i18n>Or type a list</h2>
+			<p data-i18n>One word per line, with an equals sign between the question and the answer.</p>
 			<textarea id="typed" rows="6" placeholder="hond = dog&#10;kat = cat"></textarea>
 			<div class="row">
-				<button id="useTyped" class="button primary">Practise these words</button>
-				<button id="example" class="button">Try an example</button>
+				<button id="useTyped" class="button primary" data-i18n>Practise these words</button>
+				<button id="example" class="button" data-i18n>Try an example</button>
 			</div>
 		</div>
 		<p id="startError" class="error" hidden></p>
@@ -37,33 +42,33 @@
 
 	<section id="lesson" hidden>
 		<nav class="tabs">
-			<button data-tab="words" class="tab">Words</button>
-			<button data-tab="practise" class="tab">Practise</button>
-			<button data-tab="results" class="tab">Results</button>
+			<button data-tab="words" class="tab" data-i18n>Words</button>
+			<button data-tab="practise" class="tab" data-i18n>Practise</button>
+			<button data-tab="results" class="tab" data-i18n>Results</button>
 			<span class="spacer"></span>
-			<button id="download" class="button">Download…</button>
-			<button id="close" class="button">Other lesson</button>
+			<button id="download" class="button" data-i18n>Download…</button>
+			<button id="close" class="button" data-i18n>Other lesson</button>
 		</nav>
 
 		<div data-panel="words" class="panel">
-			<label class="title-edit">Title <input id="titleEdit"></label>
-			<table class="words edit"><thead><tr><th>Question</th><th>Answer</th><th></th></tr></thead><tbody id="wordRows"></tbody></table>
-			<p class="hint">Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it.</p>
+			<label class="title-edit"><span data-i18n>Title</span> <input id="titleEdit"></label>
+			<table class="words edit"><thead><tr><th data-i18n>Question</th><th data-i18n>Answer</th><th></th></tr></thead><tbody id="wordRows"></tbody></table>
+			<p class="hint" data-i18n>Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it.</p>
 		</div>
 
 		<div data-panel="practise" class="panel">
 			<div class="options" id="options">
-				<label>Lesson type <select id="lessonType"></select></label>
-				<label>Order <select id="order"></select></label>
-				<label>Words <select id="words"></select></label>
-				<label>Mode <select id="mode">
-					<option value="typing">Typing</option>
-					<option value="shuffle">Shuffle answer</option>
-					<option value="repeat">Repeat answer</option>
-					<option value="inmind">In mind</option>
+				<label><span data-i18n>Lesson type</span> <select id="lessonType"></select></label>
+				<label><span data-i18n>Order</span> <select id="order"></select></label>
+				<label><span data-i18n>Words</span> <select id="words"></select></label>
+				<label><span data-i18n>Mode</span> <select id="mode">
+					<option value="typing" data-i18n>Typing</option>
+					<option value="shuffle" data-i18n>Shuffle answer</option>
+					<option value="repeat" data-i18n>Repeat answer</option>
+					<option value="inmind" data-i18n>In mind</option>
 				</select></label>
-				<label class="check"><input type="checkbox" id="askAnswers"> Ask the answers</label>
-				<button id="startButton" class="button primary">Start</button>
+				<label class="check"><input type="checkbox" id="askAnswers"> <span data-i18n>Ask the answers</span></label>
+				<button id="startButton" class="button primary" data-i18n>Start</button>
 			</div>
 			<div class="practice" id="practice" hidden>
 				<div class="progress"><div id="progressBar"></div></div>
@@ -71,50 +76,50 @@
 				<p class="question" id="question"></p>
 				<p class="mode-hint" id="modeHint"></p>
 				<div class="inmind" id="inmind" hidden>
-					<button id="viewAnswer" class="button primary" type="button">View answer</button>
+					<button id="viewAnswer" class="button primary" type="button" data-i18n>View answer</button>
 					<div id="judgeRow" class="row center" hidden>
-						<button id="judgeRight" class="button" type="button">I was right</button>
-						<button id="judgeWrong" class="button" type="button">I was wrong</button>
+						<button id="judgeRight" class="button" type="button" data-i18n>I was right</button>
+						<button id="judgeWrong" class="button" type="button" data-i18n>I was wrong</button>
 					</div>
 				</div>
 				<form id="answerForm" class="answer">
-					<input id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your answer">
-					<button class="button primary">Check</button>
+					<input id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" data-i18n-placeholder="Your answer">
+					<button class="button primary" data-i18n>Check</button>
 				</form>
 				<p id="feedback" class="feedback"></p>
 				<div class="row center">
-					<button id="correctAnyway" class="button" hidden>Correct anyway</button>
-					<button id="skipButton" class="button">Skip</button>
-					<button id="stopButton" class="button">Stop</button>
+					<button id="correctAnyway" class="button" hidden data-i18n>Correct anyway</button>
+					<button id="skipButton" class="button" data-i18n>Skip</button>
+					<button id="stopButton" class="button" data-i18n>Stop</button>
 				</div>
 			</div>
 			<div class="done" id="done" hidden>
 				<p id="doneText" class="question"></p>
-				<button id="again" class="button primary">Practise again</button>
+				<button id="again" class="button primary" data-i18n>Practise again</button>
 			</div>
 		</div>
 
 		<div data-panel="results" class="panel">
 			<p id="resultsSummary"></p>
-			<table class="words"><thead><tr><th>Question</th><th>Right answer</th><th>Your answer</th><th></th></tr></thead><tbody id="resultRows"></tbody></table>
+			<table class="words"><thead><tr><th data-i18n>Question</th><th data-i18n>Right answer</th><th data-i18n>Your answer</th><th></th></tr></thead><tbody id="resultRows"></tbody></table>
 		</div>
 	</section>
 </main>
 
 <dialog id="downloadDialog">
 	<form method="dialog">
-		<p><strong>Download the lesson</strong> (with your results)</p>
-		<p><label>Format <select id="format">
+		<p data-i18n>Download the lesson, with your results</p>
+		<p><label><span data-i18n>Format</span> <select id="format">
 			<option value="otwd">OpenTeaching Words (.otwd)</option>
 			<option value="csv">CSV (.csv)</option>
 			<option value="txt">Text (.txt)</option>
 			<option value="kvtml">KWordQuiz (.kvtml)</option>
 		</select></label></p>
-		<div class="row"><button value="ok" class="button primary">Download</button><button value="cancel" class="button">Cancel</button></div>
+		<div class="row"><button value="ok" class="button primary" data-i18n>Download</button><button value="cancel" class="button" data-i18n>Cancel</button></div>
 	</form>
 </dialog>
 
-<footer>Recuerdo runs in your browser: your lessons stay on your computer. <a href="https://github.com/LaPingvino/recuerdo">github.com/LaPingvino/recuerdo</a></footer>
+<footer><span data-i18n>Recuerdo runs in your browser: your lessons stay on your computer.</span> <a href="https://github.com/LaPingvino/recuerdo">github.com/LaPingvino/recuerdo</a></footer>
 
 <script src="memfs.js"></script>
 <script src="wasm_exec.js"></script>

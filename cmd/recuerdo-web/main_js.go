@@ -13,6 +13,7 @@ import (
 	"log"
 	"syscall/js"
 
+	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/webapi"
 )
 
@@ -70,7 +71,14 @@ func main() {
 		"judge":       js.FuncOf(func(_ js.Value, args []js.Value) any { return reply(nil, app.Judge(args[0].Bool())) }),
 		"skip":        js.FuncOf(func(js.Value, []js.Value) any { return reply(nil, app.Skip()) }),
 		"correctLast": js.FuncOf(func(js.Value, []js.Value) any { return reply(nil, app.CorrectLast()) }),
-		"report":      js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
+		// translations: the page puts <lang>.po files in the memory file
+		// system first; t returns a plain string
+		"setLanguage": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(nil, webapi.SetLanguage(args[0].String(), args[1].String()))
+		}),
+		"t":            js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.T(args[0].String()) }),
+		"languageName": js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.Name(args[0].String()) }),
+		"report":       js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
 		"save": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			b, err := app.Save(args[0].String())
 			if err != nil {

@@ -12,6 +12,9 @@ msgstr "%d itens para praticar. Clique em Iniciar."
 msgid "%d of %d"
 msgstr "%d de %d"
 
+msgid "%d of %d right (%d%%)"
+msgstr "%d de %d certas (%d%%)"
+
 msgid "%d places. Choose how to practise and press Start."
 msgstr "%d lugares. Escolha como praticar e clique em Iniciar."
 
@@ -93,6 +96,9 @@ msgstr "Navegar no Unicode"
 msgid "Browse..."
 msgstr "Procurar..."
 
+msgid "Choose a file…"
+msgstr "Escolher um arquivo…"
+
 msgid "Clear List"
 msgstr "Limpar lista"
 
@@ -111,6 +117,9 @@ msgstr "Resposta correta"
 msgid "Count your last answer as right after all"
 msgstr "Contar sua última resposta como certa"
 
+msgid "Counted as right"
+msgstr "Contada como certa"
+
 msgid "Create Lesson"
 msgstr "Criar lição"
 
@@ -125,6 +134,18 @@ msgstr "Descrição:"
 
 msgid "Done: %d of %d right."
 msgstr "Pronto: %d de %d certas."
+
+msgid "Download"
+msgstr "Baixar"
+
+msgid "Download the lesson, with your results"
+msgstr "Baixe a lição, com seus resultados"
+
+msgid "Download…"
+msgstr "Baixar…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Solte um arquivo de lição aqui, ou escolha um."
 
 msgid "Each session:"
 msgstr "Cada sessão:"
@@ -180,6 +201,9 @@ msgstr "Erro: a janela Propriedades não está disponível"
 msgid "Error: Settings dialog not available"
 msgstr "Erro: a janela de configurações não está disponível"
 
+msgid "Example"
+msgstr "Exemplo"
+
 msgid "Exported %s"
 msgstr "%s exportado"
 
@@ -197,6 +221,9 @@ msgstr "Arquivos"
 
 msgid "First row contains headers"
 msgstr "A primeira linha contém cabeçalhos"
+
+msgid "Format"
+msgstr "Formato"
 
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
 msgstr "Software livre sob a GNU General Public License,\nversão 3 ou posterior"
@@ -261,6 +288,9 @@ msgstr "Idiomas"
 msgid "Last session:"
 msgstr "Última sessão:"
 
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Última sessão: %d de %d certas. Sessões nesta lição: %d."
+
 msgid "Latest Session Results"
 msgstr "Resultados da última sessão"
 
@@ -291,11 +321,17 @@ msgstr "Lição: %d pares de palavras | Sessões concluídas: %d\n\nÚltima sess
 msgid "Loaded '%s': %d words"
 msgstr "'%s' carregado: %d palavras"
 
+msgid "Loading…"
+msgstr "Carregando…"
+
 msgid "Made a lesson of %d words"
 msgstr "Lição de %d palavras criada"
 
 msgid "Merged %d words from %s"
 msgstr "%d palavras de %s mescladas"
+
+msgid "Mode"
+msgstr "Modo"
 
 msgid "Mode:"
 msgstr "Modo:"
@@ -324,6 +360,9 @@ msgstr "Nova lição criada"
 msgid "New lesson dialog created"
 msgstr "Janela de nova lição criada"
 
+msgid "New question"
+msgstr "Nova pergunta"
+
 msgid "No lesson data available"
 msgstr "Nenhum dado de lição disponível"
 
@@ -348,14 +387,23 @@ msgstr "Nenhuma palavra para praticar: nenhuma é \"%s\" ainda"
 msgid "Now click where %s is on the map."
 msgstr "Agora clique onde fica %s no mapa."
 
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Uma palavra por linha, com um sinal de igual entre a pergunta e a resposta."
+
 msgid "Open"
 msgstr "Abrir"
 
 msgid "Open Lesson…"
 msgstr "Abrir lição…"
 
+msgid "Open a lesson"
+msgstr "Abrir uma lição"
+
 msgid "Open operation cancelled"
 msgstr "Abertura cancelada"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "Lições do OpenTeacher (.ot, .otwd), listas de palavras (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS e mais"
 
 msgid "Opened '%s' - %d words"
 msgstr "'%s' aberto - %d palavras"
@@ -363,8 +411,17 @@ msgstr "'%s' aberto - %d palavras"
 msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
 msgstr "Abre lições do OpenTeacher (.ot, .otwd), listas de palavras (.csv, .txt) e arquivos do KWordQuiz (.kvtml)"
 
+msgid "Or type a list"
+msgstr "Ou digite uma lista"
+
+msgid "Order"
+msgstr "Ordem"
+
 msgid "Order:"
 msgstr "Ordem:"
+
+msgid "Other lesson"
+msgstr "Outra lição"
 
 msgid "Other picture…"
 msgstr "Outra imagem…"
@@ -393,8 +450,20 @@ msgstr "Prática"
 msgid "Practice sessions:"
 msgstr "Sessões de prática:"
 
+msgid "Practise"
+msgstr "Praticar"
+
+msgid "Practise again"
+msgstr "Praticar de novo"
+
 msgid "Practise the other way round: the answers are asked and the questions are the answers"
 msgstr "Praticar ao contrário: as respostas são perguntadas e as perguntas são as respostas"
+
+msgid "Practise these words"
+msgstr "Praticar estas palavras"
+
+msgid "Practise to see your answers here."
+msgstr "Pratique para ver suas respostas aqui."
 
 msgid "Preview"
 msgstr "Pré-visualização"
@@ -441,6 +510,9 @@ msgstr "Pronto para começar"
 msgid "Ready to start teaching"
 msgstr "Pronto para praticar"
 
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "O Recuerdo roda no seu navegador: suas lições ficam no seu computador."
+
 msgid "Remove Word"
 msgstr "Remover palavra"
 
@@ -455,6 +527,15 @@ msgstr "Visão geral dos resultados"
 
 msgid "Reversed"
 msgstr "Invertida"
+
+msgid "Right"
+msgstr "Certo"
+
+msgid "Right answer"
+msgstr "Resposta certa"
+
+msgid "Right: %s"
+msgstr "Certo: %s"
 
 msgid "Rotate 90°"
 msgstr "Girar 90°"
@@ -479,6 +560,9 @@ msgstr "Arquivo escolhido: %s"
 
 msgid "Settings saved"
 msgstr "Configurações salvas"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Várias palavras para uma pergunta: separe-as com vírgulas. As alterações ficam até você sair da página: baixe a lição para guardá-las."
 
 msgid "Show answer for:"
 msgstr "Mostrar a resposta por:"
@@ -534,11 +618,17 @@ msgstr "Não há configurações para alterar."
 msgid "Think about the answer, and press 'View answer' when you're done."
 msgstr "Pense na resposta e clique em 'Ver resposta' quando terminar."
 
+msgid "Title"
+msgstr "Título"
+
 msgid "Topology"
 msgstr "Topografia"
 
 msgid "Translation: %s"
 msgstr "Tradução: %s"
+
+msgid "Try an example"
+msgstr "Experimentar um exemplo"
 
 msgid "Type a List"
 msgstr "Digitar lista"
@@ -554,6 +644,9 @@ msgstr "Digite ou cole as palavras: uma por linha, com um sinal de igual (=) ou 
 
 msgid "Type or paste words as \"question = answer\" lines"
 msgstr "Digite ou cole palavras em linhas \"pergunta = resposta\""
+
+msgid "Typed list"
+msgstr "Lista digitada"
 
 msgid "Typing"
 msgstr "Digitação"
@@ -585,6 +678,9 @@ msgstr "Lição de palavras: %s"
 msgid "Word Pairs"
 msgstr "Pares de palavras"
 
+msgid "Words"
+msgstr "Palavras"
+
 msgid "Words List"
 msgstr "Lista de palavras"
 
@@ -594,8 +690,14 @@ msgstr "Palavras nunca respondidas corretamente"
 msgid "Words:"
 msgstr "Palavras:"
 
+msgid "Wrong"
+msgstr "Errado"
+
 msgid "Wrong. The right answer is: %s"
 msgstr "Errado. A resposta certa é: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Errado: %s → %s"
 
 msgid "Your Answer"
 msgstr "Sua resposta"

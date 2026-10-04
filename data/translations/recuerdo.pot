@@ -15,6 +15,10 @@ msgstr ""
 msgid "%d of %d"
 msgstr ""
 
+#: web/app.js
+msgid "%d of %d right (%d%%)"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "%d places. Choose how to practise and press Start."
 msgstr ""
@@ -183,12 +187,20 @@ msgstr ""
 msgid "Browse..."
 msgstr ""
 
+#: web/index.html
+msgid "Cancel"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Check"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/hangman.go
 msgid "Check!"
+msgstr ""
+
+#: web/index.html
+msgid "Choose a file…"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -223,6 +235,10 @@ msgstr ""
 msgid "Count your last answer as right after all"
 msgstr ""
 
+#: web/app.js
+msgid "Counted as right"
+msgstr ""
+
 #: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
 msgid "Create Lesson"
 msgstr ""
@@ -241,6 +257,22 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Done: %d of %d right."
+msgstr ""
+
+#: web/index.html
+msgid "Download"
+msgstr ""
+
+#: web/index.html
+msgid "Download the lesson, with your results"
+msgstr ""
+
+#: web/index.html
+msgid "Download…"
+msgstr ""
+
+#: web/index.html
+msgid "Drop a lesson file here, or choose one."
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -319,6 +351,10 @@ msgstr ""
 msgid "Error: Settings dialog not available"
 msgstr ""
 
+#: web/app.js
+msgid "Example"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Exported %s"
 msgstr ""
@@ -341,6 +377,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "First row contains headers"
+msgstr ""
+
+#: web/index.html
+msgid "Format"
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/about/about.go
@@ -451,6 +491,10 @@ msgstr ""
 msgid "Last session:"
 msgstr ""
 
+#: web/app.js
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Latest Session Results"
 msgstr ""
@@ -483,6 +527,10 @@ msgstr ""
 msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
 msgstr ""
 
+#: web/index.html
+msgid "Lesson type"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Lesson type:"
 msgstr ""
@@ -493,6 +541,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Loaded '%s': %d words"
+msgstr ""
+
+#: web/index.html
+msgid "Loading…"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -509,6 +561,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Merged %d words from %s"
+msgstr ""
+
+#: web/index.html
+msgid "Mode"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -559,6 +615,10 @@ msgstr ""
 msgid "New lesson dialog created"
 msgstr ""
 
+#: web/app.js
+msgid "New question"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
 msgid "Next"
 msgstr ""
@@ -595,6 +655,10 @@ msgstr ""
 msgid "Now click where %s is on the map."
 msgstr ""
 
+#: web/index.html
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/preview.go
 msgid "Open"
 msgstr ""
@@ -607,8 +671,16 @@ msgstr ""
 msgid "Open Lesson…"
 msgstr ""
 
+#: web/index.html
+msgid "Open a lesson"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Open operation cancelled"
+msgstr ""
+
+#: web/index.html
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -619,8 +691,20 @@ msgstr ""
 msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
 msgstr ""
 
+#: web/index.html
+msgid "Or type a list"
+msgstr ""
+
+#: web/index.html
+msgid "Order"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Order:"
+msgstr ""
+
+#: web/index.html
+msgid "Other lesson"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
@@ -659,8 +743,24 @@ msgstr ""
 msgid "Practice sessions:"
 msgstr ""
 
+#: web/index.html
+msgid "Practise"
+msgstr ""
+
+#: web/index.html
+msgid "Practise again"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr ""
+
+#: web/index.html
+msgid "Practise these words"
+msgstr ""
+
+#: web/app.js
+msgid "Practise to see your answers here."
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -743,6 +843,10 @@ msgstr ""
 msgid "Ready to start teaching"
 msgstr ""
 
+#: web/index.html
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Remove"
 msgstr ""
@@ -777,6 +881,18 @@ msgstr ""
 
 #: internal/teaching/session.go
 msgid "Reversed"
+msgstr ""
+
+#: web/app.js
+msgid "Right"
+msgstr ""
+
+#: web/index.html
+msgid "Right answer"
+msgstr ""
+
+#: web/app.js
+msgid "Right: %s"
 msgstr ""
 
 #: internal/modules/interfaces/qt/ocrimport/ocrimport.go
@@ -817,6 +933,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Settings saved"
+msgstr ""
+
+#: web/index.html
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -907,6 +1027,10 @@ msgstr ""
 msgid "Think about the answer, and press 'View answer' when you're done."
 msgstr ""
 
+#: web/index.html
+msgid "Title"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Title:"
 msgstr ""
@@ -917,6 +1041,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Translation: %s"
+msgstr ""
+
+#: web/index.html
+msgid "Try an example"
 msgstr ""
 
 #: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
@@ -937,6 +1065,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Type or paste words as \"question = answer\" lines"
+msgstr ""
+
+#: web/app.js
+msgid "Typed list"
 msgstr ""
 
 #: internal/teaching/teachtypes.go
@@ -983,6 +1115,10 @@ msgstr ""
 msgid "Word Pairs"
 msgstr ""
 
+#: web/index.html
+msgid "Words"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Words List"
 msgstr ""
@@ -995,8 +1131,16 @@ msgstr ""
 msgid "Words:"
 msgstr ""
 
+#: web/app.js
+msgid "Wrong"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Wrong. The right answer is: %s"
+msgstr ""
+
+#: web/app.js
+msgid "Wrong: %s → %s"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go

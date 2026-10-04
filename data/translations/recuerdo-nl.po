@@ -12,6 +12,9 @@ msgstr "%d onderdelen om te oefenen. Druk op Start."
 msgid "%d of %d"
 msgstr "%d van %d"
 
+msgid "%d of %d right (%d%%)"
+msgstr "%d van %d goed (%d%%)"
+
 msgid "%d places. Choose how to practise and press Start."
 msgstr "%d plaatsen. Kies hoe je wilt oefenen en druk op Start."
 
@@ -93,6 +96,9 @@ msgstr "Unicode doorbladeren"
 msgid "Browse..."
 msgstr "Bladeren..."
 
+msgid "Choose a file…"
+msgstr "Kies een bestand…"
+
 msgid "Clear List"
 msgstr "Lijst wissen"
 
@@ -111,6 +117,9 @@ msgstr "Goede antwoord"
 msgid "Count your last answer as right after all"
 msgstr "Tel je laatste antwoord toch als goed"
 
+msgid "Counted as right"
+msgstr "Als goed geteld"
+
 msgid "Create Lesson"
 msgstr "Les maken"
 
@@ -125,6 +134,18 @@ msgstr "Beschrijving:"
 
 msgid "Done: %d of %d right."
 msgstr "Klaar: %d van %d goed."
+
+msgid "Download"
+msgstr "Downloaden"
+
+msgid "Download the lesson, with your results"
+msgstr "Download de les, met je resultaten"
+
+msgid "Download…"
+msgstr "Downloaden…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Sleep een lesbestand hierheen, of kies er een."
 
 msgid "Each session:"
 msgstr "Elke oefenronde:"
@@ -180,6 +201,9 @@ msgstr "Fout: het venster Eigenschappen is niet beschikbaar"
 msgid "Error: Settings dialog not available"
 msgstr "Fout: het instellingenvenster is niet beschikbaar"
 
+msgid "Example"
+msgstr "Voorbeeld"
+
 msgid "Exported %s"
 msgstr "%s geëxporteerd"
 
@@ -197,6 +221,9 @@ msgstr "Bestanden"
 
 msgid "First row contains headers"
 msgstr "De eerste regel bevat kopjes"
+
+msgid "Format"
+msgstr "Formaat"
 
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
 msgstr "Vrije software onder de GNU General Public License,\nversie 3 of later"
@@ -261,6 +288,9 @@ msgstr "Talen"
 msgid "Last session:"
 msgstr "Laatste oefenronde:"
 
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Laatste oefenronde: %d van %d goed. Oefenrondes in deze les: %d."
+
 msgid "Latest Session Results"
 msgstr "Resultaten van de laatste oefenronde"
 
@@ -291,11 +321,17 @@ msgstr "Les: %d woordparen | Afgeronde oefenrondes: %d\n\nLaatste oefenronde: %d
 msgid "Loaded '%s': %d words"
 msgstr "'%s' geladen: %d woorden"
 
+msgid "Loading…"
+msgstr "Laden…"
+
 msgid "Made a lesson of %d words"
 msgstr "Les van %d woorden gemaakt"
 
 msgid "Merged %d words from %s"
 msgstr "%d woorden uit %s samengevoegd"
+
+msgid "Mode"
+msgstr "Modus"
 
 msgid "Mode:"
 msgstr "Modus:"
@@ -324,6 +360,9 @@ msgstr "Nieuwe les gemaakt"
 msgid "New lesson dialog created"
 msgstr "Venster voor een nieuwe les gemaakt"
 
+msgid "New question"
+msgstr "Nieuwe vraag"
+
 msgid "No lesson data available"
 msgstr "Geen lesgegevens beschikbaar"
 
@@ -348,14 +387,23 @@ msgstr "Geen woorden om te oefenen: nog geen enkel woord is \"%s\""
 msgid "Now click where %s is on the map."
 msgstr "Klik nu op de kaart waar %s ligt."
 
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Eén woord per regel, met een isgelijkteken tussen de vraag en het antwoord."
+
 msgid "Open"
 msgstr "Openen"
 
 msgid "Open Lesson…"
 msgstr "Les openen…"
 
+msgid "Open a lesson"
+msgstr "Een les openen"
+
 msgid "Open operation cancelled"
 msgstr "Openen geannuleerd"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher-lessen (.ot, .otwd), woordenlijsten (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS en meer"
 
 msgid "Opened '%s' - %d words"
 msgstr "'%s' geopend - %d woorden"
@@ -363,8 +411,17 @@ msgstr "'%s' geopend - %d woorden"
 msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
 msgstr "Opent OpenTeacher-lessen (.ot, .otwd), woordenlijsten (.csv, .txt) en KWordQuiz-bestanden (.kvtml)"
 
+msgid "Or type a list"
+msgstr "Of typ een lijst"
+
+msgid "Order"
+msgstr "Volgorde"
+
 msgid "Order:"
 msgstr "Volgorde:"
+
+msgid "Other lesson"
+msgstr "Andere les"
 
 msgid "Other picture…"
 msgstr "Andere afbeelding…"
@@ -393,8 +450,20 @@ msgstr "Oefenen"
 msgid "Practice sessions:"
 msgstr "Oefenrondes:"
 
+msgid "Practise"
+msgstr "Oefenen"
+
+msgid "Practise again"
+msgstr "Opnieuw oefenen"
+
 msgid "Practise the other way round: the answers are asked and the questions are the answers"
 msgstr "Oefen andersom: de antwoorden worden gevraagd en de vragen zijn de antwoorden"
+
+msgid "Practise these words"
+msgstr "Oefen deze woorden"
+
+msgid "Practise to see your answers here."
+msgstr "Oefen om je antwoorden hier te zien."
 
 msgid "Preview"
 msgstr "Voorbeeld"
@@ -441,6 +510,9 @@ msgstr "Klaar om te beginnen"
 msgid "Ready to start teaching"
 msgstr "Klaar om te oefenen"
 
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo draait in je browser: je lessen blijven op je computer."
+
 msgid "Remove Word"
 msgstr "Woord verwijderen"
 
@@ -455,6 +527,15 @@ msgstr "Overzicht van de resultaten"
 
 msgid "Reversed"
 msgstr "Omgekeerd"
+
+msgid "Right"
+msgstr "Goed"
+
+msgid "Right answer"
+msgstr "Goede antwoord"
+
+msgid "Right: %s"
+msgstr "Goed: %s"
 
 msgid "Rotate 90°"
 msgstr "90° draaien"
@@ -479,6 +560,9 @@ msgstr "Gekozen bestand: %s"
 
 msgid "Settings saved"
 msgstr "Instellingen opgeslagen"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Meerdere woorden bij één vraag: scheid ze met komma's. Wijzigingen blijven bewaard tot je de pagina verlaat: download de les om ze te houden."
 
 msgid "Show answer for:"
 msgstr "Antwoord tonen gedurende:"
@@ -534,11 +618,17 @@ msgstr "Er zijn geen instellingen om te veranderen."
 msgid "Think about the answer, and press 'View answer' when you're done."
 msgstr "Bedenk het antwoord en druk op 'Antwoord bekijken' als je klaar bent."
 
+msgid "Title"
+msgstr "Titel"
+
 msgid "Topology"
 msgstr "Topografie"
 
 msgid "Translation: %s"
 msgstr "Vertaling: %s"
+
+msgid "Try an example"
+msgstr "Probeer een voorbeeld"
 
 msgid "Type a List"
 msgstr "Lijst typen"
@@ -554,6 +644,9 @@ msgstr "Typ of plak de woorden: één per regel, met een isgelijkteken (=) of ee
 
 msgid "Type or paste words as \"question = answer\" lines"
 msgstr "Typ of plak woorden als regels \"vraag = antwoord\""
+
+msgid "Typed list"
+msgstr "Getypte lijst"
 
 msgid "Typing"
 msgstr "Typen"
@@ -585,6 +678,9 @@ msgstr "Woordjesles: %s"
 msgid "Word Pairs"
 msgstr "Woordparen"
 
+msgid "Words"
+msgstr "Woorden"
+
 msgid "Words List"
 msgstr "Woordenlijst"
 
@@ -594,8 +690,14 @@ msgstr "Woorden die nooit goed beantwoord zijn"
 msgid "Words:"
 msgstr "Woorden:"
 
+msgid "Wrong"
+msgstr "Fout"
+
 msgid "Wrong. The right answer is: %s"
 msgstr "Fout. Het goede antwoord is: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Fout: %s → %s"
 
 msgid "Your Answer"
 msgstr "Jouw antwoord"

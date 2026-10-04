@@ -12,6 +12,9 @@ msgstr "%d eroj por ekzerci. Premu Komenci."
 msgid "%d of %d"
 msgstr "%d el %d"
 
+msgid "%d of %d right (%d%%)"
+msgstr "%d el %d ĝustaj (%d%%)"
+
 msgid "%d places. Choose how to practise and press Start."
 msgstr "%d lokoj. Elektu kiel ekzerci kaj premu Komenci."
 
@@ -102,11 +105,17 @@ msgstr "Foliumi Unikodon"
 msgid "Browse..."
 msgstr "Foliumi..."
 
+msgid "Cancel"
+msgstr "Nuligi"
+
 msgid "Check"
 msgstr "Kontroli"
 
 msgid "Check!"
 msgstr "Kontrolu!"
+
+msgid "Choose a file…"
+msgstr "Elekti dosieron…"
 
 msgid "Clear List"
 msgstr "Malplenigi liston"
@@ -129,6 +138,9 @@ msgstr "Tamen ĝusta"
 msgid "Count your last answer as right after all"
 msgstr "Kalkuli vian lastan respondon tamen kiel ĝustan"
 
+msgid "Counted as right"
+msgstr "Kalkulita kiel ĝusta"
+
 msgid "Create Lesson"
 msgstr "Krei lecionon"
 
@@ -143,6 +155,18 @@ msgstr "Priskribo:"
 
 msgid "Done: %d of %d right."
 msgstr "Finite: %d el %d ĝustaj."
+
+msgid "Download"
+msgstr "Elŝuti"
+
+msgid "Download the lesson, with your results"
+msgstr "Elŝuti la lecionon, kun viaj rezultoj"
+
+msgid "Download…"
+msgstr "Elŝuti…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Demetu lecionan dosieron ĉi tien, aŭ elektu unu."
 
 msgid "Each session:"
 msgstr "Ĉiu ekzercado:"
@@ -198,6 +222,9 @@ msgstr "Eraro: la fenestro Atributoj ne disponeblas"
 msgid "Error: Settings dialog not available"
 msgstr "Eraro: la agordofenestro ne disponeblas"
 
+msgid "Example"
+msgstr "Ekzemplo"
+
 msgid "Exported %s"
 msgstr "%s eksportita"
 
@@ -215,6 +242,9 @@ msgstr "Dosieroj"
 
 msgid "First row contains headers"
 msgstr "La unua vico enhavas titolojn"
+
+msgid "Format"
+msgstr "Formato"
 
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
 msgstr "Libera programaro laŭ la GNU General Public License,\nversio 3 aŭ posta"
@@ -297,6 +327,9 @@ msgstr "Lingvoj"
 msgid "Last session:"
 msgstr "Lasta ekzercado:"
 
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Lasta ekzercado: %d el %d ĝustaj. Ekzercadoj en ĉi tiu leciono: %d."
+
 msgid "Latest Session Results"
 msgstr "Rezultoj de la lasta ekzercado"
 
@@ -321,6 +354,9 @@ msgstr "La leciono enhavas %d vortparojn\n\nFinu ekzercadon por vidi detalajn re
 msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
 msgstr "La leciono enhavas %d vortparojn | %d pli fruajn ekzercadojn (vidu Progreso)\n\nEkzercu por vidi viajn respondojn detale ĉi tie."
 
+msgid "Lesson type"
+msgstr "Speco de leciono"
+
 msgid "Lesson type:"
 msgstr "Speco de leciono:"
 
@@ -329,6 +365,9 @@ msgstr "Leciono: %d vortparoj | Finitaj ekzercadoj: %d\n\nLasta ekzercado: %d/%d
 
 msgid "Loaded '%s': %d words"
 msgstr "'%s' ŝargita: %d vortoj"
+
+msgid "Loading…"
+msgstr "Ŝargante…"
 
 msgid "Made a lesson of %d words"
 msgstr "Leciono el %d vortoj kreita"
@@ -341,6 +380,9 @@ msgstr "Aŭdvidaĵoj"
 
 msgid "Merged %d words from %s"
 msgstr "%d vortoj el %s kunfanditaj"
+
+msgid "Mode"
+msgstr "Reĝimo"
 
 msgid "Mode:"
 msgstr "Reĝimo:"
@@ -378,6 +420,9 @@ msgstr "Nova leciono kreita"
 msgid "New lesson dialog created"
 msgstr "Fenestro por nova leciono kreita"
 
+msgid "New question"
+msgstr "Nova demando"
+
 msgid "Next"
 msgstr "Sekva"
 
@@ -405,6 +450,9 @@ msgstr "Neniuj vortoj por ekzerci: neniu estas ankoraŭ \"%s\""
 msgid "Now click where %s is on the map."
 msgstr "Nun alklaku, kie %s estas sur la mapo."
 
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Po unu vorto en linio, kun egalsigno inter la demando kaj la respondo."
+
 msgid "Open"
 msgstr "Malfermi"
 
@@ -414,8 +462,14 @@ msgstr "Malfermi &lastatempan"
 msgid "Open Lesson…"
 msgstr "Malfermi lecionon…"
 
+msgid "Open a lesson"
+msgstr "Malfermi lecionon"
+
 msgid "Open operation cancelled"
 msgstr "Malfermo nuligita"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "Lecionoj de OpenTeacher (.ot, .otwd), vortlistoj (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS kaj pli"
 
 msgid "Opened '%s' - %d words"
 msgstr "'%s' malfermita - %d vortoj"
@@ -423,8 +477,17 @@ msgstr "'%s' malfermita - %d vortoj"
 msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
 msgstr "Malfermas lecionojn de OpenTeacher (.ot, .otwd), vortlistojn (.csv, .txt) kaj dosierojn de KWordQuiz (.kvtml)"
 
+msgid "Or type a list"
+msgstr "Aŭ tajpu liston"
+
+msgid "Order"
+msgstr "Ordo"
+
 msgid "Order:"
 msgstr "Ordo:"
+
+msgid "Other lesson"
+msgstr "Alia leciono"
 
 msgid "Other picture…"
 msgstr "Alia bildo…"
@@ -453,8 +516,20 @@ msgstr "Ekzercado"
 msgid "Practice sessions:"
 msgstr "Ekzercadoj:"
 
+msgid "Practise"
+msgstr "Ekzerci"
+
+msgid "Practise again"
+msgstr "Ekzerci denove"
+
 msgid "Practise the other way round: the answers are asked and the questions are the answers"
 msgstr "Ekzercu inverse: la respondoj estas demandataj kaj la demandoj estas la respondoj"
+
+msgid "Practise these words"
+msgstr "Ekzerci ĉi tiujn vortojn"
+
+msgid "Practise to see your answers here."
+msgstr "Ekzercu por vidi viajn respondojn ĉi tie."
 
 msgid "Preview"
 msgstr "Antaŭrigardo"
@@ -510,6 +585,9 @@ msgstr "Preta por komenci"
 msgid "Ready to start teaching"
 msgstr "Preta por ekzerci"
 
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo funkcias en via retumilo: viaj lecionoj restas en via komputilo."
+
 msgid "Remove"
 msgstr "Forigi"
 
@@ -537,6 +615,15 @@ msgstr "Inversigi"
 msgid "Reversed"
 msgstr "Inverse"
 
+msgid "Right"
+msgstr "Ĝuste"
+
+msgid "Right answer"
+msgstr "Ĝusta respondo"
+
+msgid "Right: %s"
+msgstr "Ĝuste: %s"
+
 msgid "Rotate 90°"
 msgstr "Turni 90°"
 
@@ -563,6 +650,9 @@ msgstr "Agordoj"
 
 msgid "Settings saved"
 msgstr "Agordoj konservitaj"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Pluraj vortoj por unu demando: apartigu ilin per komoj. Ŝanĝoj restas ĝis vi forlasas la paĝon: elŝutu la lecionon por konservi ilin."
 
 msgid "Show answer for:"
 msgstr "Montri la respondon dum:"
@@ -630,11 +720,17 @@ msgstr "Ne estas agordoj por ŝanĝi."
 msgid "Think about the answer, and press 'View answer' when you're done."
 msgstr "Pripensu la respondon kaj premu 'Vidi respondon', kiam vi pretas."
 
+msgid "Title"
+msgstr "Titolo"
+
 msgid "Topology"
 msgstr "Topografio"
 
 msgid "Translation: %s"
 msgstr "Traduko: %s"
+
+msgid "Try an example"
+msgstr "Provi ekzemplon"
 
 msgid "Type a List"
 msgstr "Tajpi liston"
@@ -650,6 +746,9 @@ msgstr "Tajpu aŭ algluu la vortojn: po unu en linio, kun egalsigno (=) aŭ tabo
 
 msgid "Type or paste words as \"question = answer\" lines"
 msgstr "Tajpu aŭ algluu vortojn kiel liniojn \"demando = respondo\""
+
+msgid "Typed list"
+msgstr "Tajpita listo"
 
 msgid "Typing"
 msgstr "Tajpado"
@@ -684,6 +783,9 @@ msgstr "Vortleciono: %s"
 msgid "Word Pairs"
 msgstr "Vortparoj"
 
+msgid "Words"
+msgstr "Vortoj"
+
 msgid "Words List"
 msgstr "Vortlisto"
 
@@ -693,8 +795,14 @@ msgstr "Vortoj neniam ĝuste responditaj"
 msgid "Words:"
 msgstr "Vortoj:"
 
+msgid "Wrong"
+msgstr "Malĝuste"
+
 msgid "Wrong. The right answer is: %s"
 msgstr "Malĝuste. La ĝusta respondo estas: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Malĝuste: %s → %s"
 
 msgid "Your Answer"
 msgstr "Via respondo"

@@ -13,7 +13,6 @@ var aliases = map[string]string{
 	"Open &Recent":         "Recently opened:",
 	"Grades in":            "Note:",
 	"Pronounce questions":  "Pronounce words",
-	"Words":                "Words lesson",
 	"Lesson type":          "Lesson type:",
 	"Question":             "Question:",
 	"Answer":               "Answer:",
