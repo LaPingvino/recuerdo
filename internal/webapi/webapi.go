@@ -1,0 +1,257 @@
+// Package webapi is what Recuerdo's web version (cmd/recuerdo-web, Go
+// compiled to WebAssembly) offers its page: open a lesson from a file's
+// bytes, practise it with the same session as the desktop, and save it
+// again. Everything goes in and out as JSON-friendly values, so it is
+// tested here without a browser.
+package webapi
+
+import (
+	"errors"
+	"fmt"
+	"os"
+	"path/filepath"
+	"strings"
+
+	"github.com/LaPingvino/recuerdo/internal/i18n"
+	"github.com/LaPingvino/recuerdo/internal/lesson"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
+	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
+	"github.com/LaPingvino/recuerdo/internal/teaching"
+)
+
+// Item is a word pair as the page shows it.
+type Item struct {
+	ID       int    `json:"id"`
+	Question string `json:"question"`
+	Answer   string `json:"answer"`
+	Comment  string `json:"comment,omitempty"`
+}
+
+// Lesson is an opened lesson.
+type Lesson struct {
+	Title            string `json:"title"`
+	QuestionLanguage string `json:"questionLanguage"`
+	AnswerLanguage   string `json:"answerLanguage"`
+	Items            []Item `json:"items"`
+	Sessions         int    `json:"sessions"`
+}
+
+// Options start a practice session (empty values: the defaults).
+type Options struct {
+	LessonType string `json:"lessonType"`
+	Order      string `json:"order"`
+	Words      string `json:"words"`
+	AskAnswers bool   `json:"askAnswers"`
+}
+
+// State is where a practice session is.
+type State struct {
+	Active   bool   `json:"active"`
+	Done     bool   `json:"done"`
+	Question string `json:"question,omitempty"`
+	Asked    int    `json:"asked"`
+	Total    int    `json:"total"`
+	Right    int    `json:"right"`
+	Answered int    `json:"answered"`
+}
+
+// Result is the outcome of an answer.
+type Result struct {
+	Right   bool   `json:"right"`
+	Correct string `json:"correct"`
+}
+
+// Row is one answer of a finished session.
+type Row struct {
+	Question string `json:"question"`
+	Answer   string `json:"answer"`
+	Given    string `json:"given"`
+	Right    bool   `json:"right"`
+}
+
+// Choices are the values the page offers for Options, with their labels
+// in the current language.
+type Choices struct {
+	LessonTypes [][2]string `json:"lessonTypes"`
+	Orders      [][2]string `json:"orders"`
+	Words       [][2]string `json:"words"`
+}
+
+// App is the web version's state: one open lesson and its session.
+type App struct {
+	data    *lesson.LessonData
+	name    string
+	session *teaching.Session
+	opts    Options
+}
+
+// ErrNoLesson is returned when there is no lesson to work on.
+var ErrNoLesson = errors.New("open a lesson first")
+
+// workDir is where files are put to load and save them (an in-memory file
+// system in the browser).
+func workDir() (string, error) { return os.MkdirTemp("", "recuerdo-web-") }
+
+// Open opens a lesson file from its name (for the format) and contents.
+func (a *App) Open(name string, data []byte) (Lesson, error) {
+	dir, err := workDir()
+	if err != nil {
+		return Lesson{}, err
+	}
+	defer os.RemoveAll(dir)
+	path := filepath.Join(dir, filepath.Base(name))
+	if err := os.WriteFile(path, data, 0o644); err != nil {
+		return Lesson{}, err
+	}
+	d, err := lesson.NewFileLoader().LoadFile(path)
+	if err != nil {
+		return Lesson{}, err
+	}
+	if len(d.List.Items) == 0 {
+		return Lesson{}, fmt.Errorf("%s has no words", name)
+	}
+	a.data, a.name, a.session = d, name, nil
+	return a.Lesson()
+}
+
+// OpenText makes a lesson of "question = answer" lines.
+func (a *App) OpenText(title, text string) (Lesson, error) {
+	items, err := lesson.ParseWordList(text, false)
+	if err != nil {
+		return Lesson{}, err
+	}
+	if len(items) == 0 {
+		return Lesson{}, errors.New("type at least one word")
+	}
+	d := lesson.NewLessonData()
+	d.List.Title, d.List.Items = title, items
+	a.data, a.name, a.session = d, title+".otwd", nil
+	return a.Lesson()
+}
+
+// Lesson is the open lesson.
+func (a *App) Lesson() (Lesson, error) {
+	if a.data == nil {
+		return Lesson{}, ErrNoLesson
+	}
+	l := a.data.List
+	out := Lesson{Title: l.Title, QuestionLanguage: l.QuestionLanguage, AnswerLanguage: l.AnswerLanguage,
+		Items: []Item{}, Sessions: len(l.Tests)}
+	for _, it := range l.Items {
+		out.Items = append(out.Items, Item{ID: it.ID, Question: compose(it.Questions), Answer: compose(it.Answers),
+			Comment: it.Comment})
+	}
+	return out, nil
+}
+
+func compose(words []string) string { return composer.Compose(checker.StoredAnswers(words)) }
+
+// Choices are the options a session can have.
+func (a *App) Choices() Choices {
+	pairs := func(values []string) [][2]string {
+		var out [][2]string
+		for _, v := range values {
+			out = append(out, [2]string{v, i18n.T(v)})
+		}
+		return out
+	}
+	return Choices{pairs(teaching.LessonTypes), pairs(teaching.Orders), pairs(teaching.WordChoices)}
+}
+
+// Start starts practising the open lesson.
+func (a *App) Start(o Options) (State, error) {
+	if a.data == nil {
+		return State{}, ErrNoLesson
+	}
+	a.opts = o
+	a.session = teaching.New(a.data.List, teaching.Options{
+		LessonType: o.LessonType, Order: o.Order, Words: o.Words, AskAnswers: o.AskAnswers,
+	})
+	a.session.Start()
+	return a.State(), nil
+}
+
+// State is where the session is.
+func (a *App) State() State {
+	s := a.session
+	if s == nil {
+		return State{}
+	}
+	st := State{Active: !s.Done(), Done: s.Done()}
+	st.Asked, st.Total = s.Progress()
+	st.Right, st.Answered = s.Score()
+	if item, _, ok := s.Current(); ok {
+		st.Question = compose(item.Questions)
+	}
+	return st
+}
+
+// Answer checks an answer to the current question and moves on.
+func (a *App) Answer(text string) (Result, error) {
+	if a.session == nil || a.session.Done() {
+		return Result{}, errors.New("no question is being asked")
+	}
+	if strings.TrimSpace(text) == "" {
+		return Result{}, errors.New("type an answer")
+	}
+	r := a.session.Answer(text)
+	a.session.Next()
+	a.finishIfDone()
+	return Result{Right: r.Right, Correct: r.Correct}, nil
+}
+
+// Stop ends the session; what was answered is kept as a test.
+func (a *App) Stop() State {
+	if a.session != nil && !a.session.Done() {
+		a.keep()
+	}
+	st := a.State()
+	st.Active = false
+	return st
+}
+
+func (a *App) finishIfDone() {
+	if a.session.Done() {
+		a.keep()
+	}
+}
+
+// keep stores the session's answers in the lesson, as the desktop does.
+func (a *App) keep() {
+	if t := a.session.LessonTest(); len(t.Results) > 0 {
+		a.data.List.Tests = append(a.data.List.Tests, t)
+	}
+}
+
+// Report lists the answers of the session.
+func (a *App) Report() []Row {
+	if a.session == nil {
+		return nil
+	}
+	var rows []Row
+	for _, r := range a.session.Report().Rows {
+		rows = append(rows, Row{Question: r.Question, Answer: r.Answer, Given: r.Given, Right: r.Right})
+	}
+	return rows
+}
+
+// Save writes the lesson (with its sessions) in the format of name's
+// extension, as the file's bytes.
+func (a *App) Save(name string) ([]byte, error) {
+	if a.data == nil {
+		return nil, ErrNoLesson
+	}
+	dir, err := workDir()
+	if err != nil {
+		return nil, err
+	}
+	defer os.RemoveAll(dir)
+	path := filepath.Join(dir, filepath.Base(name))
+	if err := lesson.NewFileSaver().SaveFile(a.data, path); err != nil {
+		return nil, err
+	}
+	return os.ReadFile(path)
+}
+
+// SetLanguage translates the choices and messages into lang.
+func SetLanguage(dir, lang string) error { return i18n.Use(dir, lang) }
