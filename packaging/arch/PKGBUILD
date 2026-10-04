@@ -35,6 +35,8 @@ build() {
   export CGO_LDFLAGS="${LDFLAGS}"
   export GOFLAGS="-buildmode=pie -trimpath -modcacherw"
   go build -ldflags="-s -w -X main.appVersion=$pkgver" -o recuerdo ./cmd/recuerdo
+  # the web version (recuerdo serve): WebAssembly has no PIE builds
+  GOOS=js GOARCH=wasm GOFLAGS="-trimpath -modcacherw" go build -ldflags="-s -w" -o recuerdo.wasm ./cmd/recuerdo-web
 }
 
 package() {
@@ -43,6 +45,9 @@ package() {
   # data/ is found in ../share/recuerdo relative to the binary
   install -dm755 "$pkgdir/usr/share/recuerdo"
   cp -r data "$pkgdir/usr/share/recuerdo/"
+  install -dm755 "$pkgdir/usr/share/recuerdo/web"
+  cp -r web/. "$pkgdir/usr/share/recuerdo/web/"
+  install -Dm644 recuerdo.wasm "$(go env GOROOT)/lib/wasm/wasm_exec.js" -t "$pkgdir/usr/share/recuerdo/web/"
   install -Dm644 packaging/recuerdo.desktop "$pkgdir/usr/share/applications/eu.kiefte.Recuerdo.desktop"
   install -Dm644 assets/recuerdo.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/recuerdo.svg"
   install -Dm644 assets/recuerdo.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/recuerdo.png"

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recuerdo</title>
+<link rel="icon" href="recuerdo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+	<img src="recuerdo.svg" alt="" class="logo">
+	<h1>Recuerdo</h1>
+	<span class="tagline">Learn words, places and more by heart</span>
+	<span id="lessonTitle" class="lesson-title"></span>
+</header>
+
+<main>
+	<p id="loading" class="loading">Loading…</p>
+
+	<section id="start" hidden>
+		<div class="drop" id="drop">
+			<p><strong>Open a lesson</strong>: drop a file here, or</p>
+			<label class="button primary">Choose a file…<input type="file" id="file" hidden></label>
+			<p class="hint">OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more</p>
+		</div>
+		<div class="type-list">
+			<p><strong>Or type a list</strong>: one word per line, like <code>hond = dog</code></p>
+			<textarea id="typed" rows="6" placeholder="hond = dog&#10;kat = cat"></textarea>
+			<div class="row">
+				<button id="useTyped" class="button primary">Practise these words</button>
+				<button id="example" class="button">Try an example</button>
+			</div>
+		</div>
+		<p id="startError" class="error" hidden></p>
+	</section>
+
+	<section id="lesson" hidden>
+		<nav class="tabs">
+			<button data-tab="words" class="tab">Words</button>
+			<button data-tab="practise" class="tab">Practise</button>
+			<button data-tab="results" class="tab">Results</button>
+			<span class="spacer"></span>
+			<button id="download" class="button">Download…</button>
+			<button id="close" class="button">Other lesson</button>
+		</nav>
+
+		<div data-panel="words" class="panel">
+			<table class="words"><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody id="wordRows"></tbody></table>
+		</div>
+
+		<div data-panel="practise" class="panel">
+			<div class="options" id="options">
+				<label>Lesson type <select id="lessonType"></select></label>
+				<label>Order <select id="order"></select></label>
+				<label>Words <select id="words"></select></label>
+				<label class="check"><input type="checkbox" id="askAnswers"> Ask the answers</label>
+				<button id="startButton" class="button primary">Start</button>
+			</div>
+			<div class="practice" id="practice" hidden>
+				<div class="progress"><div id="progressBar"></div></div>
+				<p class="counter" id="counter"></p>
+				<p class="question" id="question"></p>
+				<form id="answerForm" class="answer">
+					<input id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your answer">
+					<button class="button primary">Check</button>
+				</form>
+				<p id="feedback" class="feedback"></p>
+				<button id="stopButton" class="button">Stop</button>
+			</div>
+			<div class="done" id="done" hidden>
+				<p id="doneText" class="question"></p>
+				<button id="again" class="button primary">Practise again</button>
+			</div>
+		</div>
+
+		<div data-panel="results" class="panel">
+			<p id="resultsSummary"></p>
+			<table class="words"><thead><tr><th>Question</th><th>Right answer</th><th>Your answer</th><th></th></tr></thead><tbody id="resultRows"></tbody></table>
+		</div>
+	</section>
+</main>
+
+<dialog id="downloadDialog">
+	<form method="dialog">
+		<p><strong>Download the lesson</strong> (with your results)</p>
+		<p><label>Format <select id="format">
+			<option value="otwd">OpenTeaching Words (.otwd)</option>
+			<option value="csv">CSV (.csv)</option>
+			<option value="txt">Text (.txt)</option>
+			<option value="kvtml">KWordQuiz (.kvtml)</option>
+		</select></label></p>
+		<div class="row"><button value="ok" class="button primary">Download</button><button value="cancel" class="button">Cancel</button></div>
+	</form>
+</dialog>
+
+<footer>Recuerdo runs in your browser: your lessons stay on your computer. <a href="https://github.com/LaPingvino/recuerdo">github.com/LaPingvino/recuerdo</a></footer>
+
+<script src="memfs.js"></script>
+<script src="wasm_exec.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

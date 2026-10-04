@@ -47,6 +47,7 @@ func init() {
 		"ocr-word-list":      {"picture output", "read a word list from a scan or photo (needs Tesseract)", ocrWordList},
 		"new-word-list":      {"[-t title] [-q lang] [-a lang] output [input|-]", "make a word list from lines like \"question = answer\" (default: standard input)", newWordList},
 		"practise-word-list": {"[-l lesson type] file", "practise a word list in the terminal", practise},
+		"serve":              {"[-addr host:port] [dir]", "serve the web version (built with scripts/build-web.sh) to use in a browser", serve},
 	}
 }
 
@@ -89,7 +90,7 @@ func Help(w io.Writer) {
 	fmt.Fprintln(w, "Usage: recuerdo [lesson file]        start the program")
 	fmt.Fprintln(w, "       recuerdo <command> [arguments]")
 	fmt.Fprintln(w, "\nCommands:")
-	for _, name := range []string{"authors", "convert", "merge", "reverse-list", "view-word-list", "ocr-word-list", "new-word-list", "practise-word-list"} {
+	for _, name := range []string{"authors", "convert", "merge", "reverse-list", "view-word-list", "ocr-word-list", "new-word-list", "practise-word-list", "serve"} {
 		c := commands[name]
 		fmt.Fprintf(w, "  %s %s\n      %s\n", name, c.usage, c.help)
 	}
