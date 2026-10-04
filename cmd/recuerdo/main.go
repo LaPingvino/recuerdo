@@ -299,12 +299,6 @@ func registerAllModules(manager *core.Manager) error {
 	// 	return fmt.Errorf("failed to register media module: %w", err)
 	// }
 
-	// Register plaintextwords module - DISABLED for now
-	// plaintextwordsModule := plaintextwords.NewPlainTextWordsEntererModule()
-	// if err := manager.Register(plaintextwordsModule); err != nil {
-	// 	return fmt.Errorf("failed to register plaintextwords module: %w", err)
-	// }
-
 	// Register topo module - DISABLED for now
 	// topoModule := topo.NewTopoEntererModule()
 	// if err := manager.Register(topoModule); err != nil {

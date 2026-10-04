@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 13 |  |  | 27 | 6 | 49 |
-| interfaces | 7 | 2 | 2 | 52 |  |  | 17 | 14 | 94 |
+| interfaces | 8 | 2 | 1 | 52 |  |  | 17 | 14 | 94 |
 | logic | 25 |  |  | 78 |  |  | 38 | 39 | 180 |
 | misc |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 3 |  |  | 19 | 5 | 27 |
-| **all** | **35** | **2** | **2** | **146** | **0** | **0** | **102** | **67** | **354** |
+| **all** | **36** | **2** | **1** | **146** | **0** | **0** | **102** | **67** | **354** |
 
 Remarks:
 
@@ -370,12 +370,12 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/enterers/media` | mediaEnterer | 305 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 354 | 7 | 0 | partial |
+| `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 86 | 0 | 1 | working |
 | `interfaces/qt/enterers/topo` | topoEnterer | 251 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1033 | 3 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1056 | 3 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |

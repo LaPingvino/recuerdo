@@ -12,6 +12,7 @@ import (
 	"errors"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
+	plaintextwords "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/enterers/plainTextWords"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrimport"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 	"github.com/LaPingvino/recuerdo/internal/ocr"
@@ -245,6 +246,10 @@ func (mod *GuiModule) createMenuBar() {
 		mod.showNewLessonDialog()
 	})
 
+	textAction := fileMenu.AddAction("New from &Text...")
+	textAction.SetToolTip("Type or paste a word list as \"question = answer\" lines")
+	textAction.OnTriggered(mod.newLessonFromText)
+
 	openAction := fileMenu.AddAction("&Open...")
 	openAction.SetShortcut(qt.NewQKeySequence2("Ctrl+O"))
 	openAction.OnTriggered(func() {
@@ -373,6 +378,12 @@ func (mod *GuiModule) createWelcomeWidget() *qt.QWidget {
 		mod.showNewLessonDialog()
 	})
 	buttonsLayout.AddWidget(newLessonBtn.QWidget)
+
+	typeListBtn := qt.NewQPushButton3("Type a List")
+	typeListBtn.SetMinimumSize2(180, 44)
+	typeListBtn.SetToolTip("Type or paste words as \"question = answer\" lines")
+	typeListBtn.OnClicked(mod.newLessonFromText)
+	buttonsLayout.AddWidget(typeListBtn.QWidget)
 	buttonsLayout.AddSpacing(16)
 	openLessonBtn := qt.NewQPushButton(nil)
 	openLessonBtn.SetText("Open Lesson…")
@@ -1154,5 +1165,22 @@ func (mod *GuiModule) applySettingsToLessons() {
 	}
 	for _, w := range mod.tabWords {
 		w.UseSettings(st)
+	}
+}
+
+// newLessonFromText makes a word lesson from a typed or pasted list
+// (OpenTeacher's plain text enterer).
+func (mod *GuiModule) newLessonFromText() {
+	d := plaintextwords.New(mod.mainWindow.QWidget)
+	defer d.Delete()
+	if d.Exec() != int(qt.QDialog__Accepted) {
+		return
+	}
+	if l := d.Lesson(); l != nil {
+		mod.displayLessonInTab(l)
+		if tab := mod.tabWidget.CurrentWidget(); tab != nil {
+			mod.markModified(tab)
+		}
+		mod.statusBar.ShowMessage(fmt.Sprintf("Made a lesson of %d words", len(l.Data.List.Items)))
 	}
 }
