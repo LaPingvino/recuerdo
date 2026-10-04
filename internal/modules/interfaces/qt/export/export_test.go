@@ -6,6 +6,7 @@ import (
 	"errors"
 	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -13,6 +14,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/mappu/miqt/qt"
+	"github.com/mappu/miqt/qt/printsupport"
 )
 
 func init() { runtime.LockOSThread() }
@@ -29,6 +31,14 @@ func TestMain(m *testing.M) {
 		results[ext] = Save(sample(), p)
 		paths[ext] = p
 	}
+	// printing, to a PDF printer
+	printer := printsupport.NewQPrinter()
+	printer.SetOutputFormat(printsupport.QPrinter__PdfFormat)
+	paths["print"] = filepath.Join(dir, "printed.pdf")
+	printer.SetOutputFileName(paths["print"])
+	results["print"] = Print(sample(), printer)
+	printer.Delete()
+
 	code := m.Run()
 	if keep := os.Getenv("EXPORT_KEEP"); keep != "" {
 		for ext, p := range paths {
@@ -122,5 +132,28 @@ func TestSaveFilterAndCanSave(t *testing.T) {
 	}
 	if got := WithExtension("/tmp/dieren.csv", "PDF (*.pdf)"); got != "/tmp/dieren.csv" {
 		t.Errorf("WithExtension kept extension: %q", got)
+	}
+}
+
+func TestPrint(t *testing.T) {
+	if err := results["print"]; err != nil {
+		t.Fatal(err)
+	}
+	b, _ := os.ReadFile(paths["print"])
+	if !bytes.HasPrefix(b, []byte("%PDF")) {
+		t.Fatalf("not a PDF: %d bytes", len(b))
+	}
+	// the text is in compressed font streams: read it with pdftotext
+	if _, err := exec.LookPath("pdftotext"); err != nil {
+		t.Skip("pdftotext not installed: PDF written, content not checked")
+	}
+	out, err := exec.Command("pdftotext", paths["print"], "-").Output()
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, w := range []string{"Dieren", "hond", "dog", "kat", "cat"} {
+		if !bytes.Contains(out, []byte(w)) {
+			t.Errorf("printed page lacks %q:\n%s", w, out)
+		}
 	}
 }

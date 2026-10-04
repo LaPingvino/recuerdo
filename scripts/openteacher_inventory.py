@@ -276,6 +276,10 @@ COVERED = {
     "interfaces/qt/settingsWidget/password": ("internal/modules/interfaces/qt/dialogs/settings", "see settingsWidgets"),
     "interfaces/qt/settingsWidget/profile": ("internal/modules/interfaces/qt/dialogs/settings", "see settingsWidgets"),
     "interfaces/qt/settingsWidget/shortText": ("internal/modules/interfaces/qt/dialogs/settings", "see settingsWidgets"),
+    "interfaces/qt/dialogs/print": ("internal/modules/interfaces/qt/gui", "File > Print shows Qt's print dialog"),
+    "interfaces/qt/printer": ("internal/modules/interfaces/qt/export", "Print prints the HTML export on a QPrinter"),
+    "interfaces/qt/print/words": ("internal/modules/interfaces/qt/export", "Print: a word list's HTML export, named after "
+                                  "the lesson, tested by printing to PDF"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

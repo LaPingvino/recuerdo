@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 2 | 2 | 7 | 27 | 26 |  | 16 | 14 | 94 |
+| interfaces | 2 | 2 | 7 | 30 | 23 |  | 16 | 14 | 94 |
 | logic | 11 | 15 |  | 75 | 2 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **16** | **17** | **7** | **113** | **36** | **0** | **98** | **67** | **354** |
+| **all** | **16** | **17** | **7** | **116** | **33** | **0** | **98** | **67** | **354** |
 
 Remarks:
 
@@ -189,9 +189,12 @@ file formats, see **covered** above):
 | `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
+| `interfaces/qt/dialogs/print` | `internal/modules/interfaces/qt/gui` | File > Print shows Qt's print dialog |
 | `interfaces/qt/enterers/words` | `internal/modules/interfaces/qt/lessons/words` | the Enter tab of a word lesson |
 | `interfaces/qt/inputTyping` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab's answer field |
 | `interfaces/qt/loaderGui` | `internal/modules/interfaces/qt/gui` | File > Open and the open dialog |
+| `interfaces/qt/print/words` | `internal/modules/interfaces/qt/export` | Print: a word list's HTML export, named after the lesson, tested by printing to PDF |
+| `interfaces/qt/printer` | `internal/modules/interfaces/qt/export` | Print prints the HTML export on a QPrinter |
 | `interfaces/qt/recentlyOpenedViewer` | `internal/modules/interfaces/qt/gui` | File > Open Recent |
 | `interfaces/qt/settingsWidget/boolean` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
 | `interfaces/qt/settingsWidget/characterTable` | `internal/modules/interfaces/qt/dialogs/settings` | see settingsWidgets |
@@ -327,7 +330,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/dialogs/documentation` | documentation | 117 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/file` | fileDialogs | 91 | 137 | 0 | 1 | working |
-| `interfaces/qt/dialogs/print` | printDialog | 31 | 185 | 12 | 0 | scaffold |
+| `interfaces/qt/dialogs/print` | printDialog | 31 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/results` | resultsDialog | 51 | 86 | 0 | 1 | working |
 | `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 210 | 2 | 0 | partial |
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
@@ -338,14 +341,14 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 963 | 8 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 987 | 8 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 798 | 17 | 1 | partial |
 | `interfaces/qt/lessons/media` | lesson | 197 | 842 | 10 | 0 | partial |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 1317 | 8 | 0 | partial |
-| `interfaces/qt/lessons/words` | lesson | 211 | 1994 | 11 | 2 | partial |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2002 | 11 | 2 | partial |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 46 | 8 | 0 | scaffold |
@@ -361,8 +364,8 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/percentNotesViewer` | percentNotesViewer | 80 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/print/media` | print | 53 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/print/topo` | print | 26 | 38 | 4 | 0 | scaffold |
-| `interfaces/qt/print/words` | print | 64 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/printer` | printer | 51 | 40 | 5 | 0 | scaffold |
+| `interfaces/qt/print/words` | print | 64 | 0 | 0 | 0 | covered |
+| `interfaces/qt/printer` | printer | 51 | 0 | 0 | 0 | covered |
 | `interfaces/qt/progressViewer` | progressViewer | 150 | 40 | 5 | 0 | scaffold |
 | `interfaces/qt/progressViewerTest` | test | 51 | 42 | 11 | 0 | test suite |
 | `interfaces/qt/qtApp` | qtApp | 27 | 79 | 0 | 0 | untested |

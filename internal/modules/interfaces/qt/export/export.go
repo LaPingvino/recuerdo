@@ -14,6 +14,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 	"github.com/mappu/miqt/qt"
+	"github.com/mappu/miqt/qt/printsupport"
 )
 
 // libreOfficeText and libreOfficeSheets map the formats LibreOffice
@@ -201,4 +202,21 @@ func WithExtension(path, filter string) string {
 		}
 	}
 	return path + ".otwd"
+}
+
+// Print prints a lesson's HTML export on printer, as OpenTeacher's word
+// list printing does: the document is named after the lesson.
+func Print(data *lesson.LessonData, printer *printsupport.QPrinter) error {
+	doc, err := document(data)
+	if err != nil {
+		return err
+	}
+	name := data.List.Title
+	if name == "" {
+		name = "Untitled word list"
+	}
+	printer.SetDocName(name)
+	printer.SetCreator("Recuerdo")
+	doc.Print(printer.QPagedPaintDevice)
+	return nil
 }

@@ -47,7 +47,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/youtube"
 	ocrgui "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrGui"
 	percentnotesviewer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/percentNotesViewer"
-	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/printer"
 	progressviewer "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/progressViewer"
 	qtapp "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/qtApp"
 	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
@@ -463,12 +462,6 @@ func registerAllModules(manager *core.Manager) error {
 	// if err := manager.Register(printtopoModule); err != nil {
 	//	return fmt.Errorf("failed to register topo module: %w", err)
 	// }
-
-	// Register printer module
-	printerModule := printer.NewPrinterModule()
-	if err := manager.Register(printerModule); err != nil {
-		return fmt.Errorf("failed to register printer module: %w", err)
-	}
 
 	// Register progressviewer module
 	progressviewerModule := progressviewer.NewProgressViewerModule()

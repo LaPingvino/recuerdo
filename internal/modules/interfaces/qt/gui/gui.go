@@ -30,6 +30,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/topo"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words"
 	"github.com/mappu/miqt/qt"
+	"github.com/mappu/miqt/qt/printsupport"
 )
 
 // GuiModule is a Go port of the Python GuiModule class
@@ -48,7 +49,7 @@ type GuiModule struct {
 	addingTab      bool
 	showingDialog  bool
 
-	saveAction, saveAsAction *qt.QAction
+	saveAction, saveAsAction, printAction *qt.QAction
 	// tabLessons is the lesson shown in each lesson tab, by tab widget
 	tabLessons map[unsafe.Pointer]*lesson.Lesson
 	// tabWords is the word lesson widget of each word lesson tab
@@ -268,6 +269,12 @@ func (mod *GuiModule) createMenuBar() {
 	saveAsAction.SetEnabled(false) // enabled when a lesson is open
 	saveAsAction.OnTriggered(func() { mod.saveCurrentLesson(true) })
 	mod.saveAsAction = saveAsAction
+
+	printAction := fileMenu.AddAction("&Print...")
+	printAction.SetShortcut(qt.NewQKeySequence2("Ctrl+P"))
+	printAction.SetEnabled(false) // enabled when a lesson is open
+	printAction.OnTriggered(mod.printCurrentLesson)
+	mod.printAction = printAction
 
 	fileMenu.AddSeparator()
 
@@ -654,6 +661,7 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 	if mod.saveAction != nil {
 		mod.saveAction.SetEnabled(true)
 		mod.saveAsAction.SetEnabled(true)
+		mod.printAction.SetEnabled(true)
 	}
 
 	// Update status bar
@@ -1073,4 +1081,23 @@ func readable(path string) bool {
 		}
 	}
 	return false
+}
+
+// printCurrentLesson prints the current lesson (File > Print).
+func (mod *GuiModule) printCurrentLesson() {
+	l, _ := mod.currentLesson()
+	if l == nil {
+		return
+	}
+	printer := printsupport.NewQPrinter()
+	defer printer.Delete()
+	dialog := printsupport.NewQPrintDialog4(printer, mod.mainWindow.QWidget)
+	if dialog.Exec() != int(qt.QDialog__Accepted) {
+		return
+	}
+	if err := export.Print(&l.Data, printer); err != nil {
+		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Print", "Could not print the lesson:\n"+err.Error())
+		return
+	}
+	mod.statusBar.ShowMessage("Printed " + l.Data.List.Title)
 }
