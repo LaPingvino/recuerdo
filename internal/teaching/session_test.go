@@ -3,6 +3,7 @@ package teaching
 import (
 	"reflect"
 	"testing"
+	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
 )
@@ -132,5 +133,30 @@ func TestWordChoices(t *testing.T) {
 		if _, total := s.Progress(); total != want {
 			t.Errorf("%q: %d words, want %d", choice, total, want)
 		}
+	}
+}
+
+func TestLessonTest(t *testing.T) {
+	l := lesson.WordList{Items: []lesson.WordItem{
+		{ID: 10, Questions: []string{"een"}, Answers: []string{"one"}},
+		{ID: 20, Questions: []string{"twee"}, Answers: []string{"two"}},
+	}}
+	now := time.Date(2026, 10, 4, 11, 0, 0, 0, time.UTC)
+	s := New(l, Options{Now: func() time.Time { now = now.Add(time.Second); return now }})
+	s.Start()
+	s.Answer("one")
+	s.Next()
+	s.Answer("three")
+	s.Next()
+	got := s.LessonTest()
+	if len(got.Results) != 2 || got.Results[0].ItemID != 10 || got.Results[0].Result != "right" ||
+		got.Results[1].ItemID != 20 || got.Results[1].Result != "wrong" {
+		t.Fatalf("results %+v", got.Results)
+	}
+	if got.Date == nil || got.Results[1].Time == nil || !got.Results[1].Time.After(*got.Date) {
+		t.Errorf("times: date %v, answer %v", got.Date, got.Results[1].Time)
+	}
+	if empty := New(l, Options{}).LessonTest(); len(empty.Results) != 0 {
+		t.Errorf("nothing answered: %+v", empty)
 	}
 }

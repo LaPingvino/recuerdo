@@ -26,10 +26,17 @@ func TestMain(m *testing.M) {
 	settingsErr = checkSettings()
 	editErr = checkEditing()
 	wordsErr = checkWordChoice()
+	storedErr = checkSessionStored()
 	os.Exit(m.Run())
 }
 
-var teachErr, modesErr, inMindErr, hangmanErr, settingsErr, editErr, wordsErr error
+var teachErr, modesErr, inMindErr, hangmanErr, settingsErr, editErr, wordsErr, storedErr error
+
+func TestFinishedSessionIsStored(t *testing.T) {
+	if storedErr != nil {
+		t.Fatal(storedErr)
+	}
+}
 
 func TestTeachTabWordChoice(t *testing.T) {
 	if wordsErr != nil {
@@ -403,6 +410,34 @@ func checkWordChoice() error {
 	w.startButton.Click()
 	if w.isTeaching || !strings.Contains(w.statusLabel.Text(), "No words to practise") {
 		return fmt.Errorf("empty choice: teaching %v, status %q", w.isTeaching, w.statusLabel.Text())
+	}
+	return nil
+}
+
+func checkSessionStored() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 7, Questions: []string{"een"}, Answers: []string{"one"}},
+		{ID: 9, Questions: []string{"twee"}, Answers: []string{"two"}},
+	}}}}
+	w := NewWordsLessonWidget(l, nil)
+	modified := 0
+	w.SetOnModified(func() { modified++ })
+	t := w.teachWidget
+	t.startButton.Click()
+	for _, answer := range []string{"one", "wrong"} {
+		t.answerEdit.SetText(answer)
+		t.submitButton.Click()
+		if t.nextButton.IsEnabled() {
+			t.nextButton.Click() // after a wrong answer: continue
+		}
+	}
+	tests := l.Data.List.Tests
+	if len(tests) != 1 || len(tests[0].Results) != 2 || tests[0].Results[0].ItemID != 7 ||
+		tests[0].Results[0].Result != "right" || tests[0].Results[1].Result != "wrong" {
+		return fmt.Errorf("stored tests %+v", tests)
+	}
+	if modified != 1 {
+		return fmt.Errorf("lesson reported modified %d times, want 1", modified)
 	}
 	return nil
 }

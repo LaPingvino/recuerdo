@@ -171,6 +171,7 @@ func (w *WordsLessonWidget) SetTitle(title string) {
 // the Enter tab (title, languages, words).
 func (w *WordsLessonWidget) SetOnModified(f func()) {
 	w.enterWidget.onModified = f
+	w.teachWidget.onModified = f
 }
 
 // UpdateLesson updates the lesson data and refreshes all tabs
@@ -545,6 +546,8 @@ type TeachTabWidget struct {
 	hangman      *teaching.HangmanWord
 	hangmanLabel *qt.QLabel
 	hangmanTimer *qt.QTimer
+	// onModified is called when a finished session is added to the lesson
+	onModified func()
 	// notation returns the grade notation to show; set by the lesson widget
 	notation func() string
 
@@ -1114,6 +1117,14 @@ func (w *TeachTabWidget) finishTeaching() {
 	w.skipButton.SetEnabled(false)
 	if w.session != nil {
 		w.correctAnswers, w.totalQuestions = w.session.Score()
+		// keep the results in the lesson, as OpenTeacher does: they are
+		// saved with it and used by the Results tab and "Hard words"
+		if t := w.session.LessonTest(); len(t.Results) > 0 && w.lesson != nil {
+			w.lesson.Data.List.Tests = append(w.lesson.Data.List.Tests, t)
+			if w.onModified != nil {
+				w.onModified()
+			}
+		}
 	}
 	percentage := 0
 	if w.totalQuestions > 0 {

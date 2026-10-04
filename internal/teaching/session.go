@@ -214,6 +214,33 @@ func (s *Session) Test() lessontypes.Test {
 	return lessontypes.Test{}
 }
 
+// LessonTest is the session's results as a test to store in the lesson,
+// as OpenTeacher keeps every test in the list: each result refers to its
+// word by ID, with the time it was answered; the test's date is when the
+// first question was asked. Empty if nothing was answered.
+func (s *Session) LessonTest() lesson.Test {
+	var t lesson.Test
+	for _, r := range s.Test().Results {
+		if r.ItemID < 0 || r.ItemID >= len(s.list.Items) {
+			continue
+		}
+		res := lesson.TestResult{ItemID: s.list.Items[r.ItemID].ID, Result: "wrong"}
+		if r.Right {
+			res.Result = "right"
+		}
+		if !r.End.IsZero() {
+			end := r.End
+			res.Time = &end
+		}
+		if t.Date == nil && !r.Start.IsZero() {
+			start := r.Start
+			t.Date = &start
+		}
+		t.Results = append(t.Results, res)
+	}
+	return t
+}
+
 // List is the list being practised (questions and answers swapped when
 // practising the other way round); result ItemIDs index its items.
 func (s *Session) List() lesson.WordList { return s.list }
