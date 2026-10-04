@@ -1,7 +1,6 @@
 package lesson
 
 import (
-	"archive/zip"
 	"bufio"
 	"encoding/csv"
 	"encoding/json"
@@ -1228,79 +1227,4 @@ func (fs *FileSaver) GetDefaultFilename(lessonData *LessonData, ext string) stri
 	}
 
 	return fmt.Sprintf("%s%s", title, ext)
-}
-
-// saveOpenTeachingMediaFile saves lesson data as OpenTeaching Media (.otmd) format
-func (fs *FileSaver) saveOpenTeachingMediaFile(lessonData *LessonData, filePath string) error {
-	log.Printf("[ACTION] FileSaver.saveOpenTeachingMediaFile() - saving OpenTeaching Media file")
-
-	// Create the JSON structure for OpenTeacher format
-	otData := map[string]interface{}{
-		"file-format-version": "3.1",
-		"items":               make([]map[string]interface{}, 0),
-		"tests":               make([]interface{}, 0),
-	}
-
-	// Convert items to OpenTeacher format
-	for _, item := range lessonData.List.Items {
-		if filename, remote, hasMedia := item.GetMediaInfo(); hasMedia || item.Name != "" {
-			otItem := map[string]interface{}{
-				"id":     item.ID,
-				"name":   item.Name,
-				"remote": remote,
-			}
-
-			if hasMedia {
-				otItem["filename"] = filename
-			}
-
-			// Add questions and answers
-			if len(item.Questions) > 0 {
-				otItem["question"] = item.Questions[0]
-			} else {
-				otItem["question"] = ""
-			}
-
-			if len(item.Answers) > 0 {
-				otItem["answer"] = item.Answers[0]
-			} else {
-				otItem["answer"] = ""
-			}
-
-			otData["items"] = append(otData["items"].([]map[string]interface{}), otItem)
-		}
-	}
-
-	// Create ZIP file
-	zipFile, err := os.Create(filePath)
-	if err != nil {
-		log.Printf("[ERROR] Failed to create OTMD file: %v", err)
-		return err
-	}
-	defer zipFile.Close()
-
-	zipWriter := zip.NewWriter(zipFile)
-	defer zipWriter.Close()
-
-	// Add list.json to ZIP
-	jsonWriter, err := zipWriter.Create("list.json")
-	if err != nil {
-		log.Printf("[ERROR] Failed to create list.json in ZIP: %v", err)
-		return err
-	}
-
-	jsonData, err := json.MarshalIndent(otData, "", "  ")
-	if err != nil {
-		log.Printf("[ERROR] Failed to marshal media JSON: %v", err)
-		return err
-	}
-
-	_, err = jsonWriter.Write(jsonData)
-	if err != nil {
-		log.Printf("[ERROR] Failed to write JSON to ZIP: %v", err)
-		return err
-	}
-
-	log.Printf("[SUCCESS] FileSaver.saveOpenTeachingMediaFile() - saved %d media items", len(otData["items"].([]map[string]interface{})))
-	return nil
 }

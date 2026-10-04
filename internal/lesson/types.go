@@ -19,26 +19,6 @@ type WordItem struct {
 	Remote   *bool   `json:"remote,omitempty"`
 }
 
-// TopoItem represents a single topography item with coordinates
-type TopoItem struct {
-	ID        int      `json:"id"`
-	Name      string   `json:"name"`
-	X         int      `json:"x"`
-	Y         int      `json:"y"`
-	Questions []string `json:"questions,omitempty"`
-	Answers   []string `json:"answers,omitempty"`
-}
-
-// MediaItem represents a single media item with file information
-type MediaItem struct {
-	ID        int      `json:"id"`
-	Name      string   `json:"name"`
-	Questions []string `json:"questions"`
-	Answers   []string `json:"answers"`
-	Filename  string   `json:"filename,omitempty"`
-	Remote    bool     `json:"remote,omitempty"`
-}
-
 // TestResult represents a single test result for an item
 type TestResult struct {
 	Result string     `json:"result"` // "right" or "wrong"

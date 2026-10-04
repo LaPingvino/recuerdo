@@ -63,7 +63,8 @@ func checkSample(path string) string {
 			return "duplicate item ID"
 		}
 		ids[item.ID] = true
-		if len(item.Questions) == 0 && len(item.Answers) == 0 {
+		// (a media item can be just its file: a picture without words)
+		if len(item.Questions) == 0 && len(item.Answers) == 0 && item.Filename == nil {
 			return "empty item"
 		}
 		for _, s := range append(append([]string{}, item.Questions...), item.Answers...) {
