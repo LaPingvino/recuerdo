@@ -6,6 +6,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/charts"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
 	"github.com/LaPingvino/recuerdo/internal/resources"
+	"github.com/LaPingvino/recuerdo/internal/richtext"
 	"github.com/LaPingvino/recuerdo/internal/tts"
 	"path/filepath"
 	"runtime"
@@ -693,6 +694,7 @@ func (w *TeachTabWidget) setupUI() {
 	// The question, large, in the middle
 	layout.AddStretch()
 	w.questionLabel = qt.NewQLabel(w.QWidget)
+	w.questionLabel.SetTextFormat(qt.RichText) // words with markup and formulas (richtext)
 	w.questionLabel.SetText(i18n.T("Click 'Start Teaching' to begin"))
 	w.questionLabel.SetWordWrap(true)
 	w.questionLabel.SetAlignment(qt.AlignCenter)
@@ -704,6 +706,7 @@ func (w *TeachTabWidget) setupUI() {
 
 	// Shuffle answer's hint / Repeat answer's answer
 	w.hintLabel = qt.NewQLabel(w.QWidget)
+	w.hintLabel.SetTextFormat(qt.RichText) // words with markup and formulas (richtext)
 	w.hintLabel.SetAlignment(qt.AlignCenter)
 	w.hintLabel.SetVisible(false)
 	layout.AddWidget(w.hintLabel.QWidget)
@@ -754,6 +757,7 @@ func (w *TeachTabWidget) setupUI() {
 	layout.AddWidget(w.unicodePicker.QWidget)
 
 	w.resultLabel = qt.NewQLabel(w.QWidget)
+	w.resultLabel.SetTextFormat(qt.RichText) // words with markup and formulas (richtext)
 	w.resultLabel.SetWordWrap(true)
 	w.resultLabel.SetAlignment(qt.AlignCenter)
 	w.resultLabel.SetVisible(false)
@@ -929,7 +933,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 	w.currentIndex = index
 
 	question := composer.Compose(checker.StoredAnswers(item.Questions))
-	w.questionLabel.SetText(question)
+	w.questionLabel.SetText(richtext.RichWithMath(question))
 	w.pronounce(question)
 	w.showModeExtras()
 	w.answerEdit.Clear()
@@ -961,7 +965,7 @@ func (w *TeachTabWidget) showModeExtras() {
 	case teaching.RepeatAnswer:
 		// show the answer first; typing starts when it is gone
 		w.hintLabel.SetStyleSheet("font-size: 20px; font-weight: bold;")
-		w.hintLabel.SetText(w.session.CurrentAnswer())
+		w.hintLabel.SetText(richtext.RichWithMath(w.session.CurrentAnswer()))
 		w.hintLabel.SetVisible(true)
 		w.SetInputEnabled(false)
 		w.SetCheckEnabled(false)
@@ -1005,7 +1009,7 @@ func (w *TeachTabWidget) inMindView() {
 	if w.session == nil || w.session.Done() {
 		return
 	}
-	w.hintLabel.SetText(i18n.Tf("Translation: %s", w.session.ViewAnswer()))
+	w.hintLabel.SetText(i18n.Tf("Translation: %s", richtext.RichWithMath(w.session.ViewAnswer())))
 	w.viewButton.SetVisible(false)
 	w.skipButton.SetEnabled(false)
 	w.rightButton.SetVisible(true)
@@ -1142,7 +1146,7 @@ func (w *TeachTabWidget) SetCorrectAnywayEnabled(on bool) { w.correctButton.SetE
 func (w *TeachTabWidget) LessonDone()                     { w.finishTeaching() }
 
 func (w *TeachTabWidget) ShowCorrection(answer string) {
-	w.feedback(fmt.Sprintf(i18n.T("Wrong. The right answer is: %s"), answer), false)
+	w.feedback(fmt.Sprintf(i18n.T("Wrong. The right answer is: %s"), richtext.RichWithMath(answer)), false)
 	w.nextButton.SetEnabled(true)
 	w.nextButton.SetFocus()
 }

@@ -160,3 +160,23 @@ func TestLessonTest(t *testing.T) {
 		t.Errorf("nothing answered: %+v", empty)
 	}
 }
+
+func TestCorrectRichAndFormulas(t *testing.T) {
+	for _, c := range []struct {
+		typed  string
+		stored []string
+		want   bool
+	}{
+		{"H2O", []string{"H<sub>2</sub>O"}, true},
+		{"x^2+1", []string{"$x^2 + 1$"}, true},
+		{"f(x,y)", []string{"$f(x, y)$"}, true},
+		{"f(y,x)", []string{"$f(x, y)$"}, false},
+		{"漢字", []string{"<ruby>漢<rt>かん</rt>字<rt>じ</rt></ruby>"}, true},
+		{"dog", []string{"dog"}, true},
+		{"Dog", []string{"dog"}, true},
+	} {
+		if got := Correct(c.typed, c.stored, false); got != c.want {
+			t.Errorf("Correct(%q, %q) = %v", c.typed, c.stored, got)
+		}
+	}
+}

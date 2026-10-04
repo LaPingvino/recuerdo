@@ -28,10 +28,51 @@ func TestMain(m *testing.M) {
 	wordsErr = checkWordChoice()
 	storedErr = checkSessionStored()
 	pronounceErr = checkPronounce()
+	formulaErr = checkFormulas()
 	os.Exit(m.Run())
 }
 
-var pronounceErr error
+var pronounceErr, formulaErr error
+
+func TestFormulasInTeach(t *testing.T) {
+	if formulaErr != nil {
+		t.Fatal(formulaErr)
+	}
+}
+
+// Words with formulas and markup are shown rendered and checked by their
+// plain form (teaching.Correct).
+func checkFormulas() error {
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{Items: []lesson.WordItem{
+		{ID: 1, Questions: []string{"$x^2 + 1$ when $x = 3$"}, Answers: []string{"10"}},
+		{ID: 2, Questions: []string{"the area of a circle"}, Answers: []string{"$\\pi r^2$"}},
+	}}}}
+	w := NewWordsLessonWidget(l, nil)
+	t := w.teachWidget
+	w.Resize(900, 600)
+	w.tabWidget.SetCurrentIndex(1) // Teach
+	t.startButton.Click()
+	if q := t.questionLabel.Text(); q != "x<sup>2</sup> + 1 when x = 3" {
+		return fmt.Errorf("question shown as %q", q)
+	}
+	if dir := os.Getenv("SHOT_DIR"); dir != "" {
+		w.Show()
+		qt.QCoreApplication_ProcessEvents()
+		w.Grab().Save(dir + "/formula-question.png")
+	}
+	t.answerEdit.SetText("10")
+	t.submitButton.Click()
+	t.answerEdit.SetText("pi r^2") // wrong: \pi
+	t.submitButton.Click()
+	if r := t.resultLabel.Text(); !strings.Contains(r, "πr<sup>2</sup>") {
+		return fmt.Errorf("correction shown as %q", r)
+	}
+	if dir := os.Getenv("SHOT_DIR"); dir != "" {
+		qt.QCoreApplication_ProcessEvents()
+		w.Grab().Save(dir + "/formula-correction.png")
+	}
+	return nil
+}
 
 func TestPronounceQuestions(t *testing.T) {
 	if pronounceErr != nil {

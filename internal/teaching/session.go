@@ -5,6 +5,7 @@
 package teaching
 
 import (
+	"github.com/LaPingvino/recuerdo/internal/richtext"
 	"time"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
@@ -165,7 +166,7 @@ func (s *Session) Answer(text string) Answer {
 	if !ok {
 		return Answer{}
 	}
-	right := checker.CorrectText(text, item.Answers, s.opts.CaseSensitive)
+	right := Correct(text, item.Answers, s.opts.CaseSensitive)
 	s.pending = &lessontypes.Result{ItemID: index, Right: right, GivenAnswer: text, Start: s.asked, End: s.opts.Now()}
 	return Answer{Right: right, Correct: composer.Compose(checker.StoredAnswers(item.Answers))}
 }
@@ -261,4 +262,29 @@ func (s *Session) CorrectLast() {
 	s.last = &r
 	s.right++
 	s.lt.CorrectLastAnswer(r)
+}
+
+// Correct reports whether typed is a right answer to stored, as
+// OpenTeacher checks it, for words with markup and formulas too (shared
+// by the desktop and the web version):
+//   - a formula answer ($x^2 + 1$) is right when typed is its TeX, spaces
+//     not counting (x^2+1), not split at OpenTeacher's commas (f(x, y));
+//   - other answers are compared by their plain text (H<sub>2</sub>O is
+//     typed H2O; furigana left out), with OpenTeacher's notation.
+func Correct(typed string, stored []string, caseSensitive bool) bool {
+	plain := make([]string, len(stored))
+	math := false
+	for i, w := range stored {
+		plain[i] = richtext.Plain(w)
+		math = math || richtext.HasMath(w)
+	}
+	if math {
+		for _, w := range plain {
+			if richtext.NormalizeAnswer(w) == richtext.NormalizeAnswer(typed) {
+				return true
+			}
+		}
+		return false
+	}
+	return checker.CorrectText(typed, plain, caseSensitive)
 }
