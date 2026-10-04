@@ -45,7 +45,6 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/vimeo"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/website"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/mediaTypes/youtube"
-	ocrgui "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrGui"
 	qtapp "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/qtApp"
 	topomaps "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/topoMaps"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/settings"
@@ -435,12 +434,6 @@ func registerAllModules(manager *core.Manager) error {
 	youtubeModule := youtube.NewMediaTypeModule()
 	if err := manager.Register(youtubeModule); err != nil {
 		return fmt.Errorf("failed to register youtube module: %w", err)
-	}
-
-	// Register ocrgui module
-	ocrguiModule := ocrgui.NewOcrGuiModule()
-	if err := manager.Register(ocrguiModule); err != nil {
-		return fmt.Errorf("failed to register ocrgui module: %w", err)
 	}
 
 	// Register media module - DISABLED (duplicate module name conflict)

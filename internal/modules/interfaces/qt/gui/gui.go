@@ -9,9 +9,12 @@
 package gui
 
 import (
+	"errors"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrimport"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
+	"github.com/LaPingvino/recuerdo/internal/ocr"
 	"unsafe"
 
 	"context"
@@ -256,6 +259,10 @@ func (mod *GuiModule) createMenuBar() {
 	mergeAction.SetToolTip("Add the words and results of another lesson to this one")
 	mergeAction.OnTriggered(mod.mergeIntoCurrentLesson)
 
+	pictureAction := fileMenu.AddAction("Import from &Picture...")
+	pictureAction.SetToolTip("Read a word list from a scan or photo of a printed list (needs Tesseract)")
+	pictureAction.OnTriggered(mod.importFromPicture)
+
 	fileMenu.AddSeparator()
 
 	saveAction := fileMenu.AddAction("&Save")
@@ -305,14 +312,6 @@ func (mod *GuiModule) createMenuBar() {
 	settingsAction.OnTriggered(func() {
 		mod.logger.Event("Settings menu action triggered")
 		mod.showSettingsDialog()
-	})
-
-	toolsMenu.AddSeparator()
-
-	importAction := toolsMenu.AddAction("&Import...")
-	importAction.OnTriggered(func() {
-		mod.logger.Event("Import menu action triggered")
-		mod.logger.Warning("Import functionality not yet implemented")
 	})
 
 	// Help menu
@@ -801,7 +800,7 @@ func (mod *GuiModule) showAboutDialog() {
 			mod.logger.Success("Calling ShowAboutDialog() on aboutDialog module")
 			aboutMod.ShowAboutDialog()
 			mod.logger.Success("About dialog was shown")
-			mod.statusBar.ShowMessage("Import dialog created")
+			mod.statusBar.ShowMessage("About dialog shown")
 		} else {
 			mod.logger.DeadEnd("aboutDialog module", "does not implement ShowAboutDialog() method", "legacy/modules/org/openteacher/interfaces/qt/dialogs/about/")
 			mod.statusBar.ShowMessage("About dialog not available")
@@ -1100,4 +1099,46 @@ func (mod *GuiModule) printCurrentLesson() {
 		return
 	}
 	mod.statusBar.ShowMessage("Printed " + l.Data.List.Title)
+}
+
+// importFromPicture reads a word list from a picture into a new lesson
+// (File > Import from Picture), as OpenTeacher's OCR wizard did.
+func (mod *GuiModule) importFromPicture() {
+	path := qt.QFileDialog_GetOpenFileName4(mod.mainWindow.QWidget, "Import from Picture", "",
+		"Pictures (*.png *.jpg *.jpeg *.tif *.tiff *.bmp *.gif *.webp);;All files (*)")
+	if path == "" {
+		return
+	}
+	dialog, err := ocrimport.New(mod.mainWindow.QWidget, path)
+	if err != nil {
+		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Import from Picture", "Could not open the picture "+path)
+		return
+	}
+	defer dialog.Delete()
+	if dialog.Exec() != int(qt.QDialog__Accepted) {
+		return
+	}
+	items, err := dialog.Words()
+	switch {
+	case errors.Is(err, ocr.ErrNoTesseract):
+		qt.QMessageBox_Information(mod.mainWindow.QWidget, "Import from Picture",
+			"Reading pictures needs Tesseract, a free text recognition program. Install it "+
+				"(on Arch: pacman -S tesseract tesseract-data-eng) and try again.")
+		return
+	case err != nil:
+		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Import from Picture", "Could not read the picture:\n"+err.Error())
+		return
+	case len(items) == 0:
+		qt.QMessageBox_Information(mod.mainWindow.QWidget, "Import from Picture",
+			"No word pairs were found. Straighten the picture or crop it to the list, and try again.")
+		return
+	}
+	l := lesson.NewLesson("words")
+	l.Data.List.Title = strings.TrimSuffix(filepath.Base(path), filepath.Ext(path))
+	l.Data.List.Items = items
+	mod.displayLessonInTab(l)
+	if tab := mod.tabWidget.CurrentWidget(); tab != nil {
+		mod.markModified(tab)
+	}
+	mod.statusBar.ShowMessage(fmt.Sprintf("Read %d word pairs from the picture: check them on the Enter tab", len(items)))
 }

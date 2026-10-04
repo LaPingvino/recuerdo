@@ -284,6 +284,9 @@ COVERED = {
                                          "with its percentage, on the Results tab"),
     "interfaces/qt/progressViewer": ("internal/modules/interfaces/qt/charts", "TimelineChart: the last session's "
                                      "answers over time, on the Results tab"),
+    "interfaces/qt/ocrGui": ("internal/modules/interfaces/qt/ocrimport", "File > Import from Picture: one dialog "
+                             "instead of the wizard (straighten, crop, read with internal/ocr); tested offscreen "
+                             "with a real Tesseract run"),
     "data/metadata": ("internal/modules/metadata.go", "Recuerdo's own metadata module (name, version, "
                       "application ID)"),
 }

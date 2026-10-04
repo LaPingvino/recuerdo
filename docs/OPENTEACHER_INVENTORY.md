@@ -67,11 +67,11 @@ uses it.
 | Area | working | untested | partial | covered | scaffold | missing | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 11 | 3 |  | 26 | 6 | 49 |
-| interfaces | 2 | 2 | 7 | 32 | 21 |  | 16 | 14 | 94 |
+| interfaces | 2 | 2 | 7 | 33 | 20 |  | 16 | 14 | 94 |
 | logic | 11 | 15 |  | 75 | 2 |  | 38 | 39 | 180 |
 | misc |  |  |  |  | 1 |  |  | 3 | 4 |
 | profileRunners |  |  |  |  | 4 |  | 18 | 5 | 27 |
-| **all** | **16** | **17** | **7** | **118** | **31** | **0** | **98** | **67** | **354** |
+| **all** | **16** | **17** | **7** | **119** | **30** | **0** | **98** | **67** | **354** |
 
 Remarks:
 
@@ -193,6 +193,7 @@ file formats, see **covered** above):
 | `interfaces/qt/enterers/words` | `internal/modules/interfaces/qt/lessons/words` | the Enter tab of a word lesson |
 | `interfaces/qt/inputTyping` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab's answer field |
 | `interfaces/qt/loaderGui` | `internal/modules/interfaces/qt/gui` | File > Open and the open dialog |
+| `interfaces/qt/ocrGui` | `internal/modules/interfaces/qt/ocrimport` | File > Import from Picture: one dialog instead of the wizard (straighten, crop, read with internal/ocr); tested offscreen with a real Tesseract run |
 | `interfaces/qt/percentNotesViewer` | `internal/modules/interfaces/qt/charts` | GradesChart: a bar per session with its percentage, on the Results tab |
 | `interfaces/qt/print/words` | `internal/modules/interfaces/qt/export` | Print: a word list's HTML export, named after the lesson, tested by printing to PDF |
 | `interfaces/qt/printer` | `internal/modules/interfaces/qt/export` | Print prints the HTML export on a QPrinter |
@@ -343,7 +344,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1019 | 8 | 1 | partial |
+| `interfaces/qt/gui` | ui | 607 | 1058 | 7 | 1 | partial |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
@@ -362,7 +363,7 @@ generator tooling, test mode, web services; see **dropped** above):
 | `interfaces/qt/mediaTypes/vimeo` | mediaType | 36 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/website` | mediaType | 34 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/mediaTypes/youtube` | mediaType | 39 | 42 | 6 | 0 | scaffold |
-| `interfaces/qt/ocrGui` | ocrGui | 273 | 42 | 6 | 0 | scaffold |
+| `interfaces/qt/ocrGui` | ocrGui | 273 | 0 | 0 | 0 | covered |
 | `interfaces/qt/percentNotesViewer` | percentNotesViewer | 80 | 0 | 0 | 0 | covered |
 | `interfaces/qt/print/media` | print | 53 | 42 | 6 | 0 | scaffold |
 | `interfaces/qt/print/topo` | print | 26 | 38 | 4 | 0 | scaffold |
