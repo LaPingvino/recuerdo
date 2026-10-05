@@ -1,0 +1,822 @@
+# Recuerdo's own texts in Ukrainian (OpenTeacher's translations, data/translations/uk.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Ukrainian terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nПозначка (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "Елементів для вправи: %d. Натисніть «Почати»."
+
+msgid "%d of %d"
+msgstr "%d з %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d з %d правильно (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "Місцин: %d. Виберіть спосіб вправи й натисніть «Почати»."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "Сеансів: %d; останній — %d%% правильно."
+
+msgid "&Merge Lesson..."
+msgstr "&Об’єднати урок..."
+
+msgid "&Properties..."
+msgstr "&Властивості..."
+
+msgid "&Tools"
+msgstr "&Інструменти"
+
+msgid ", %d tests"
+msgstr ", тестів: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Вебсайт або відео з YouTube, Vimeo чи Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Про Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Вікно «Про програму» недоступне"
+
+msgid "About dialog shown"
+msgstr "Показано вікно «Про програму»"
+
+msgid "Add Character"
+msgstr "Додати символ"
+
+msgid "Add Word"
+msgstr "Додати слово"
+
+msgid "Add all places"
+msgstr "Додати всі місцини"
+
+msgid "Add every place this map knows"
+msgstr "Додати всі місцини, відомі цій мапі"
+
+msgid "Add files…"
+msgstr "Додати файли…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Додати до цього уроку слова й результати іншого уроку"
+
+msgid "Add web address…"
+msgstr "Додати вебадресу…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Усі відразу: кожне слово один раз. Розумний: неправильні слова повертаються невдовзі й наприкінці. Інтервал: слова повертаються, доки Ви їх не вивчите."
+
+msgid "All words"
+msgstr "Усі слова"
+
+msgid "Answer Language:"
+msgstr "Мова відповідей:"
+
+msgid "Answer language"
+msgstr "Мова відповідей"
+
+msgid "As entered"
+msgstr "Як введено"
+
+msgid "Ask the answers"
+msgstr "Запитувати відповіді"
+
+msgid "Ask this word again later"
+msgstr "Запитати це слово пізніше ще раз"
+
+msgid "Ask:"
+msgstr "Запитувати:"
+
+msgid "Brackets"
+msgstr "Дужки"
+
+msgid "Browse Unicode"
+msgstr "Переглянути Unicode"
+
+msgid "Browse..."
+msgstr "Огляд..."
+
+msgid "Check"
+msgstr "Перевірити"
+
+msgid "Choose a file…"
+msgstr "Виберіть файл…"
+
+msgid "Clear List"
+msgstr "Очистити список"
+
+msgid "Clear recent files"
+msgstr "Очистити недавні файли"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Натисніть «Почати навчання», щоб розпочати"
+
+msgid "Continue"
+msgstr "Продовжити"
+
+msgid "Correct Answer"
+msgstr "Правильна відповідь"
+
+msgid "Count your last answer as right after all"
+msgstr "Зарахувати Вашу останню відповідь як правильну"
+
+msgid "Counted as right"
+msgstr "Зараховано як правильну"
+
+msgid "Create Lesson"
+msgstr "Створити урок"
+
+msgid "Create New Lesson"
+msgstr "Створити новий урок"
+
+msgid "Credits"
+msgstr "Подяки"
+
+msgid "Degrees"
+msgstr "Градуси"
+
+msgid "Description:"
+msgstr "Опис:"
+
+msgid "Done: %d of %d right."
+msgstr "Готово: %d з %d правильно."
+
+msgid "Download"
+msgstr "Завантажити"
+
+msgid "Download the lesson, with your results"
+msgstr "Завантажити урок разом з Вашими результатами"
+
+msgid "Download…"
+msgstr "Завантажити…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Перетягніть сюди файл уроку або виберіть його."
+
+msgid "Each session:"
+msgstr "Кожен сеанс:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Редагувати вибране запитання чи відповідь у конструкторі формул"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Очистити список Файл > Недавно відкривані"
+
+msgid "Enter"
+msgstr "Введення"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Введіть код символу Unicode (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Введіть опис уроку..."
+
+msgid "Enter lesson name..."
+msgstr "Введіть назву уроку..."
+
+msgid "Enter lesson title"
+msgstr "Введіть назву уроку"
+
+msgid "Enter some places first."
+msgstr "Спершу введіть кілька місцин."
+
+msgid "Error creating lesson: %v"
+msgstr "Помилка під час створення уроку: %v"
+
+msgid "Error loading file: %v"
+msgstr "Помилка під час завантаження файлу: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Помилка: вікно вибору файлу недоступне"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Помилка: вікно уроку недоступне"
+
+msgid "Error: No about dialog modules available"
+msgstr "Помилка: немає модулів вікна «Про програму»"
+
+msgid "Error: No file dialog modules available"
+msgstr "Помилка: немає модулів вікна вибору файлу"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Помилка: немає модулів вікна уроку"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Помилка: немає модулів вікна налаштувань"
+
+msgid "Error: Properties dialog not available"
+msgstr "Помилка: вікно властивостей недоступне"
+
+msgid "Error: Settings dialog not available"
+msgstr "Помилка: вікно налаштувань недоступне"
+
+msgid "Example"
+msgstr "Приклад"
+
+msgid "Exported %s"
+msgstr "Експортовано %s"
+
+msgid "Field separator:"
+msgstr "Роздільник полів:"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "File encoding:"
+msgstr "Кодування файлу:"
+
+msgid "Files"
+msgstr "Файли"
+
+msgid "First row contains headers"
+msgstr "Перший рядок містить заголовки"
+
+msgid "Format"
+msgstr "Формат"
+
+msgid "Formula builder"
+msgstr "Конструктор формул"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Формула, напр. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Дріб"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Вільне програмне забезпечення за ліцензією GNU General Public License,\nверсії 3 або новішої"
+
+msgid "Functions"
+msgstr "Функції"
+
+msgid "Furigana and formulas"
+msgstr "Фурігана й формули"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Початок роботи з Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Спершу вкажіть відповіді для елементів на вкладці «Введення»."
+
+msgid "Go on after seeing the right answer"
+msgstr "Продовжити після перегляду правильної відповіді"
+
+msgid "Grades in:"
+msgstr "Позначки в:"
+
+msgid "Hard words"
+msgstr "Важкі слова"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Важкі слова: ті, на які частіше відповідали неправильно, ніж правильно, або ще не вправлялися. Жодного разу не відповідали правильно: ті, на які не було правильної відповіді в попередніх сеансах."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Як довго режим «Повторити відповідь» показує відповідь, перш ніж Ви її наберете"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Як вкладка «Результати» оцінює Ваші сеанси"
+
+msgid "Import"
+msgstr "Імпорт"
+
+msgid "Import File"
+msgstr "Імпортувати файл"
+
+msgid "Import Lesson"
+msgstr "Імпортувати урок"
+
+msgid "Import Options"
+msgstr "Параметри імпорту"
+
+msgid "Import from &Picture..."
+msgstr "Імпортувати із &зображення..."
+
+msgid "Import from Picture"
+msgstr "Імпортувати із зображення"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "У режимі «Назва – Місцина» вимовляти назву місцини, яку треба клацнути"
+
+msgid "In mind"
+msgstr "Подумки"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "У режимі «Повторити відповідь»: як довго показується відповідь, перш ніж Ви її наберете"
+
+msgid "Index"
+msgstr "Нижній індекс"
+
+msgid "Integral"
+msgstr "Інтеграл"
+
+msgid "Interface"
+msgstr "Інтерфейс"
+
+msgid "Items:"
+msgstr "Елементи:"
+
+msgid "Languages"
+msgstr "Мови"
+
+msgid "Last session:"
+msgstr "Останній сеанс:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Останній сеанс: %d з %d правильно. Сеансів у цьому уроці: %d."
+
+msgid "Latest Session Results"
+msgstr "Результати останнього сеансу"
+
+msgid "Learn words, places and more by heart"
+msgstr "Вивчайте напам’ять слова, місцини та інше"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Вивчайте напам’ять слова, місцини та інше:\nслова іноземної мови, топографію\nчи будь-що інше, що хочете запам’ятати."
+
+msgid "Lesson Information"
+msgstr "Інформація про урок"
+
+msgid "Lesson Properties"
+msgstr "Властивості уроку"
+
+msgid "Lesson Type"
+msgstr "Тип уроку"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Пар слів в уроці: %d\n\nЗавершіть сеанс навчання, щоб побачити тут докладні результати."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Пар слів в уроці: %d | попередніх сеансів: %d (див. «Прогрес»)\n\nВправляйтеся, щоб побачити тут Ваші відповіді докладно."
+
+msgid "Lesson type:"
+msgstr "Тип уроку:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Урок: пар слів: %d | завершених сеансів: %d\n\nОстанній сеанс: %d/%d правильно (%d%%), позначка %s\nСередня позначка: %s (%d%%)\n\nДокладні результати останнього сеансу:"
+
+msgid "Limit"
+msgstr "Границя"
+
+msgid "Loaded '%s': %d words"
+msgstr "Завантажено «%s»: слів: %d"
+
+msgid "Loading…"
+msgstr "Завантаження…"
+
+msgid "Made a lesson of %d words"
+msgstr "Створено урок, слів: %d"
+
+msgid "Merged %d words from %s"
+msgstr "Об’єднано слів: %d з %s"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "Mode:"
+msgstr "Режим:"
+
+msgid "Name"
+msgstr "Назва"
+
+msgid "Name of a place"
+msgstr "Назва місцини"
+
+msgid "Name of the marked place"
+msgstr "Назва позначеної місцини"
+
+msgid "Name – Place"
+msgstr "Назва – Місцина"
+
+msgid "Name:"
+msgstr "Назва:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Потрібна програма мовлення: установіть espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Жодного разу не відповідали правильно"
+
+msgid "New Lesson"
+msgstr "Новий урок"
+
+msgid "New from &Text..."
+msgstr "Новий з &тексту..."
+
+msgid "New lesson created successfully"
+msgstr "Новий урок успішно створено"
+
+msgid "New lesson dialog created"
+msgstr "Створено вікно нового уроку"
+
+msgid "New question"
+msgstr "Нове запитання"
+
+msgid "No lesson data available"
+msgstr "Немає даних уроку"
+
+msgid "No lesson open to show properties"
+msgstr "Немає відкритого уроку, щоб показати властивості"
+
+msgid "No recent lessons"
+msgstr "Немає недавніх уроків"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Результатів ще немає: вправляйтеся на вкладці «Навчання»."
+
+msgid "No teaching results available yet"
+msgstr "Результатів навчання ще немає"
+
+msgid "No words available for teaching"
+msgstr "Немає слів для навчання"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Немає слів для вправи: у категорії «%s» поки нічого немає"
+
+msgid "Now click where %s is on the map."
+msgstr "Тепер клацніть на мапі, де знаходиться %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Одне слово на рядок, зі знаком рівності між запитанням і відповіддю."
+
+msgid "Open"
+msgstr "Відкрити"
+
+msgid "Open Lesson…"
+msgstr "Відкрити урок…"
+
+msgid "Open a lesson"
+msgstr "Відкрити урок"
+
+msgid "Open operation cancelled"
+msgstr "Відкриття скасовано"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "Уроки OpenTeacher (.ot, .otwd), списки слів (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS та інше"
+
+msgid "Opened '%s' - %d words"
+msgstr "Відкрито «%s» — слів: %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Відкриває уроки OpenTeacher (.ot, .otwd), списки слів (.csv, .txt) і файли KWordQuiz (.kvtml)"
+
+msgid "Operators"
+msgstr "Оператори"
+
+msgid "Or type a list"
+msgstr "Або наберіть список"
+
+msgid "Order"
+msgstr "Порядок"
+
+msgid "Order:"
+msgstr "Порядок:"
+
+msgid "Other lesson"
+msgstr "Інший урок"
+
+msgid "Other picture…"
+msgstr "Інше зображення…"
+
+msgid "Page %d of %d"
+msgstr "Сторінка %d з %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Зображення, звуки, відео чи тексти, збережені в уроці"
+
+msgid "Place %d"
+msgstr "Місцина %d"
+
+msgid "Place – Name"
+msgstr "Місцина – Назва"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Місцина – Назва: місцину позначено, наберіть її назву.\nНазва – Місцина: дано назву, клацніть місцину."
+
+msgid "Please add words in the Enter tab"
+msgstr "Додайте слова на вкладці «Введення»"
+
+msgid "Power"
+msgstr "Степінь"
+
+msgid "Practice"
+msgstr "Вправа"
+
+msgid "Practice sessions:"
+msgstr "Сеанси вправ:"
+
+msgid "Practise"
+msgstr "Вправлятися"
+
+msgid "Practise again"
+msgstr "Вправлятися знову"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Вправлятися навпаки: запитуються відповіді, а запитання стають відповідями"
+
+msgid "Practise these words"
+msgstr "Вправлятися з цими словами"
+
+msgid "Practise to see your answers here."
+msgstr "Вправляйтеся, щоб побачити тут Ваші відповіді."
+
+msgid "Preview"
+msgstr "Попередній перегляд"
+
+msgid "Previous"
+msgstr "Назад"
+
+msgid "Printed %s"
+msgstr "Надруковано %s"
+
+msgid "Progress"
+msgstr "Прогрес"
+
+msgid "Pronounce names"
+msgstr "Вимовляти назви"
+
+msgid "Pronounce questions"
+msgstr "Вимовляти запитання"
+
+msgid "Properties dialog cancelled"
+msgstr "Вікно властивостей скасовано"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Запитання %d з %d (рахунок: %d/%d правильно)"
+
+msgid "Question Language:"
+msgstr "Мова запитань:"
+
+msgid "Question language"
+msgstr "Мова запитань"
+
+msgid "Quick Access"
+msgstr "Швидкий доступ"
+
+msgid "Random"
+msgstr "Випадково"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Прочитано пар слів із зображення: %d. Перевірте їх на вкладці «Введення»"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Прочитати список слів зі скану чи фото надрукованого списку (потрібен Tesseract)"
+
+msgid "Ready"
+msgstr "Готово"
+
+msgid "Ready to start"
+msgstr "Готово до початку"
+
+msgid "Ready to start teaching"
+msgstr "Готово до початку навчання"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo працює у Вашому браузері: Ваші уроки залишаються на Вашому комп’ютері."
+
+msgid "Remove"
+msgstr "Усунути"
+
+msgid "Remove Word"
+msgstr "Усунути слово"
+
+msgid "Repeat answer shows the answer for"
+msgstr "«Повторити відповідь» показує відповідь протягом"
+
+msgid "Result"
+msgstr "Результат"
+
+msgid "Results Overview"
+msgstr "Огляд результатів"
+
+msgid "Reverse"
+msgstr "Обернути"
+
+msgid "Reversed"
+msgstr "Обернено"
+
+msgid "Right"
+msgstr "Правильно"
+
+msgid "Right answer"
+msgstr "Правильна відповідь"
+
+msgid "Right: %s"
+msgstr "Правильно: %s"
+
+msgid "Root"
+msgstr "Корінь"
+
+msgid "Rotate 90°"
+msgstr "Повернути на 90°"
+
+msgid "Saved %s"
+msgstr "Збережено %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Вимовляти кожне запитання вголос мовою запитань (потрібен espeak-ng або голоси macOS чи Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Вимовляти кожне запитання вголос мовою запитань"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Виберіть угорі блок Unicode, щоб переглянути символи, або введіть код символу напряму."
+
+msgid "Select file to import..."
+msgstr "Виберіть файл для імпорту..."
+
+msgid "Selected file: %s"
+msgstr "Вибраний файл: %s"
+
+msgid "Settings saved"
+msgstr "Налаштування збережено"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Кілька слів для одного запитання: розділяйте їх комами. Зміни зберігаються, доки Ви не покинете сторінку: завантажте урок, щоб зберегти його."
+
+msgid "Show answer for:"
+msgstr "Показувати відповідь:"
+
+msgid "Show or hide special characters"
+msgstr "Показати або сховати спеціальні символи"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Показати або сховати спеціальні символи: літери з діакритикою та інші писемності"
+
+msgid "Sort"
+msgstr "Сортувати"
+
+msgid "Sorted"
+msgstr "Відсортовано"
+
+msgid "Square root"
+msgstr "Квадратний корінь"
+
+msgid "Start"
+msgstr "Почати"
+
+msgid "Start Again"
+msgstr "Почати знову"
+
+msgid "Start Teaching"
+msgstr "Почати навчання"
+
+msgid "Stop"
+msgstr "Зупинити"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Вирівняйте зображення, щоб рядки були горизонтальними, і обведіть прямокутником список слів, якщо на зображенні є щось іще."
+
+msgid "Straighten:"
+msgstr "Вирівняти:"
+
+msgid "Structure"
+msgstr "Структура"
+
+msgid "Sum"
+msgstr "Сума"
+
+msgid "System language"
+msgstr "Мова системи"
+
+msgid "Teach"
+msgstr "Навчання"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Навчання завершено! Підсумок: %d/%d правильно (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Сеанс навчання завершено"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "Файл (%s) «%s» відсутній в уроці."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Мова меню та вікон Recuerdo (після перезапуску Recuerdo). Тексти без перекладу залишаються англійською."
+
+msgid "There are no settings to change."
+msgstr "Немає налаштувань для зміни."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Подумайте про відповідь і натисніть «Переглянути відповідь», коли будете готові."
+
+msgid "Title"
+msgstr "Назва"
+
+msgid "Topology"
+msgstr "Топографія"
+
+msgid "Translation: %s"
+msgstr "Переклад: %s"
+
+msgid "Try an example"
+msgstr "Спробувати приклад"
+
+msgid "Type a List"
+msgstr "Набрати список"
+
+msgid "Type at least one word."
+msgstr "Наберіть хоча б одне слово."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Наберіть або вставте список слів рядками «запитання = відповідь»"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Наберіть або вставте слова: по одному на рядок, зі знаком рівності (=) або табуляцією між запитанням і відповіддю, як-от «hond = dog». Кілька слів з одного боку розділяються комами."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Наберіть або вставте слова рядками «запитання = відповідь»"
+
+msgid "Typed list"
+msgstr "Набраний список"
+
+msgid "Typing"
+msgstr "Набрати відповідь"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Набрати відповідь: наберіть відповідь. Перемішана відповідь: з літерами відповіді як підказкою. Повторити відповідь: спершу показується відповідь, потім Ви набираєте її з пам’яті."
+
+msgid "Unicode Block:"
+msgstr "Блок Unicode:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Використати власне зображення як мапу"
+
+msgid "Version %s"
+msgstr "Версія %s"
+
+msgid "Where is %s?"
+msgstr "Де знаходиться %s?"
+
+msgid "Which place is marked?"
+msgstr "Яку місцину позначено?"
+
+msgid "Whole picture"
+msgstr "Усе зображення"
+
+msgid "Word Lesson: %s"
+msgstr "Урок зі словами: %s"
+
+msgid "Word Pairs"
+msgstr "Пари слів"
+
+msgid "Words"
+msgstr "Слова"
+
+msgid "Words List"
+msgstr "Список слів"
+
+msgid "Words never answered correctly"
+msgstr "Слова, на які жодного разу не відповіли правильно"
+
+msgid "Words:"
+msgstr "Слів:"
+
+msgid "Wrong"
+msgstr "Неправильно"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Неправильно. Правильна відповідь: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Неправильно: %s → %s"
+
+msgid "Your Answer"
+msgstr "Ваша відповідь"
+
+msgid "Your answer"
+msgstr "Ваша відповідь"
+
+msgid "e.g. Dutch"
+msgstr "напр. голландська"
+
+msgid "e.g. English"
+msgstr "напр. англійська"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nНа основі OpenTeacher від команди OpenTeacher, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Правильно: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Це було %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Відповідь була: %s"
+
+# corrects OpenTeacher's uk.po: "&Зміни" (changes)
+msgid "&Edit"
+msgstr "&Редагування"
+
+# corrects OpenTeacher's uk.po: "Вірно в будь-якому разі"
+msgid "Correct anyway"
+msgstr "Все одно правильно"

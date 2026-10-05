@@ -1,0 +1,862 @@
+# Recuerdo's own texts in Slovak (OpenTeacher's translations, data/translations/sk.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Slovak terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nZnámka (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "Položky na precvičenie: %d. Stlač Štart."
+
+msgid "%d of %d"
+msgstr "%d z %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d z %d správne (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "Miesta: %d. Vyber, ako chceš precvičovať, a stlač Štart."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "Kolá: %d; posledné %d%% správne."
+
+msgid "&Merge Lesson..."
+msgstr "&Zlúčiť lekciu..."
+
+msgid "&Properties..."
+msgstr "&Vlastnosti..."
+
+msgid "&Tools"
+msgstr "&Nástroje"
+
+msgid ", %d tests"
+msgstr ", testy: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Webová stránka alebo video z YouTube, Vimeo či Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "O programe Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Okno O programe nie je k dispozícii"
+
+msgid "About dialog shown"
+msgstr "Okno O programe zobrazené"
+
+msgid "Add"
+msgstr "Pridať"
+
+msgid "Add Character"
+msgstr "Pridať znak"
+
+msgid "Add Word"
+msgstr "Pridať slovo"
+
+msgid "Add all places"
+msgstr "Pridať všetky miesta"
+
+msgid "Add every place this map knows"
+msgstr "Pridať všetky miesta, ktoré táto mapa pozná"
+
+msgid "Add files…"
+msgstr "Pridať súbory…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Pridať do tejto lekcie slová a výsledky inej lekcie"
+
+msgid "Add web address…"
+msgstr "Pridať webovú adresu…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Všetky jedenkrát: každé slovo raz. Inteligentné: nesprávne slová sa vrátia čoskoro a na konci. Interval: slová sa vracajú, kým ich nevieš."
+
+msgid "All words"
+msgstr "Všetky slová"
+
+msgid "Answer"
+msgstr "Odpoveď"
+
+msgid "Answer Language:"
+msgstr "Odpovede v jazyku:"
+
+msgid "Answer language"
+msgstr "Odpovede v jazyku"
+
+msgid "As entered"
+msgstr "Ako boli zadané"
+
+msgid "Ask the answers"
+msgstr "Pýtať sa na odpovede"
+
+msgid "Ask this word again later"
+msgstr "Spýtať sa na toto slovo neskôr znova"
+
+msgid "Ask:"
+msgstr "Pýtať sa:"
+
+msgid "Brackets"
+msgstr "Zátvorky"
+
+msgid "Browse Unicode"
+msgstr "Prehliadať Unicode"
+
+msgid "Browse..."
+msgstr "Prehliadať..."
+
+msgid "Cancel"
+msgstr "Zrušiť"
+
+msgid "Check"
+msgstr "Skontrolovať"
+
+msgid "Choose a file…"
+msgstr "Vybrať súbor…"
+
+msgid "Clear List"
+msgstr "Vyprázdniť zoznam"
+
+msgid "Clear recent files"
+msgstr "Vymazať nedávne súbory"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Klikni na „Začať učenie“ a začni"
+
+msgid "Continue"
+msgstr "Pokračovať"
+
+msgid "Correct Answer"
+msgstr "Správna odpoveď"
+
+msgid "Count your last answer as right after all"
+msgstr "Uznať tvoju poslednú odpoveď predsa za správnu"
+
+msgid "Counted as right"
+msgstr "Uznané ako správne"
+
+msgid "Create Lesson"
+msgstr "Vytvoriť lekciu"
+
+msgid "Create New Lesson"
+msgstr "Vytvoriť novú lekciu"
+
+msgid "Credits"
+msgstr "Poďakovanie"
+
+msgid "Degrees"
+msgstr "Stupne"
+
+msgid "Description:"
+msgstr "Popis:"
+
+msgid "Done: %d of %d right."
+msgstr "Hotovo: %d z %d správne."
+
+msgid "Download"
+msgstr "Stiahnuť"
+
+msgid "Download the lesson, with your results"
+msgstr "Stiahnuť lekciu aj s tvojimi výsledkami"
+
+msgid "Download…"
+msgstr "Stiahnuť…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Pusti sem súbor lekcie alebo nejaký vyber."
+
+msgid "Each session:"
+msgstr "Každé kolo:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Upraviť vybranú otázku alebo odpoveď v editore vzorcov"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Vyprázdniť zoznam Súbor > Nedávno otvorené"
+
+msgid "Enter"
+msgstr "Zadávanie"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Zadaj kódový bod Unicode (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Zadaj popis lekcie..."
+
+msgid "Enter lesson name..."
+msgstr "Zadaj názov lekcie..."
+
+msgid "Enter lesson title"
+msgstr "Zadaj názov lekcie"
+
+msgid "Enter some places first."
+msgstr "Najprv zadaj nejaké miesta."
+
+msgid "Error creating lesson: %v"
+msgstr "Chyba pri vytváraní lekcie: %v"
+
+msgid "Error loading file: %v"
+msgstr "Chyba pri načítaní súboru: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Chyba: Okno súborov nie je k dispozícii"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Chyba: Okno lekcie nie je k dispozícii"
+
+msgid "Error: No about dialog modules available"
+msgstr "Chyba: Nie sú k dispozícii moduly okna O programe"
+
+msgid "Error: No file dialog modules available"
+msgstr "Chyba: Nie sú k dispozícii moduly okna súborov"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Chyba: Nie sú k dispozícii moduly okna lekcie"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Chyba: Nie sú k dispozícii moduly okna nastavení"
+
+msgid "Error: Properties dialog not available"
+msgstr "Chyba: Okno vlastností nie je k dispozícii"
+
+msgid "Error: Settings dialog not available"
+msgstr "Chyba: Okno nastavení nie je k dispozícii"
+
+msgid "Example"
+msgstr "Príklad"
+
+msgid "Exported %s"
+msgstr "Exportované: %s"
+
+msgid "Field separator:"
+msgstr "Oddeľovač polí:"
+
+msgid "File"
+msgstr "Súbor"
+
+msgid "File encoding:"
+msgstr "Kódovanie súboru:"
+
+msgid "Files"
+msgstr "Súbory"
+
+msgid "First row contains headers"
+msgstr "Prvý riadok obsahuje hlavičky"
+
+msgid "Format"
+msgstr "Formát"
+
+msgid "Formula builder"
+msgstr "Editor vzorcov"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Vzorec, napr. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Zlomok"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Slobodný softvér pod licenciou GNU General Public License,\nverzia 3 alebo novšia"
+
+msgid "Functions"
+msgstr "Funkcie"
+
+msgid "Furigana and formulas"
+msgstr "Furigana a vzorce"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Začíname s programom Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Najprv položkám daj odpoveď na karte Zadávanie."
+
+msgid "Go on after seeing the right answer"
+msgstr "Pokračovať po zobrazení správnej odpovede"
+
+msgid "Grades in"
+msgstr "Známky v"
+
+msgid "Grades in:"
+msgstr "Známky v:"
+
+msgid "Greek"
+msgstr "Grécke písmená"
+
+msgid "Hard words"
+msgstr "Ťažké slová"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Ťažké slová: častejšie zodpovedané nesprávne než správne alebo ešte neprecvičené. Nikdy nezodpovedané správne: bez správnej odpovede v predošlých kolách."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Ako dlho Zopakovať odpoveď ukazuje odpoveď, kým ju napíšeš"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Ako karta Výsledky známkuje tvoje kolá"
+
+msgid "Import"
+msgstr "Importovať"
+
+msgid "Import File"
+msgstr "Importovať súbor"
+
+msgid "Import Lesson"
+msgstr "Importovať lekciu"
+
+msgid "Import Options"
+msgstr "Možnosti importu"
+
+msgid "Import from &Picture..."
+msgstr "Importovať z &obrázka..."
+
+msgid "Import from Picture"
+msgstr "Importovať z obrázka"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "V režime Názov – Miesto vysloviť názov miesta, na ktoré treba kliknúť"
+
+msgid "In mind"
+msgstr "V duchu"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Ako dlho sa v režime Zopakovať odpoveď ukazuje odpoveď, kým ju napíšeš"
+
+msgid "Index"
+msgstr "Dolný index"
+
+msgid "Integral"
+msgstr "Integrál"
+
+msgid "Interface"
+msgstr "Rozhranie"
+
+msgid "Interval"
+msgstr "Interval"
+
+msgid "Items:"
+msgstr "Položky:"
+
+msgid "Language"
+msgstr "Jazyk"
+
+msgid "Languages"
+msgstr "Jazyky"
+
+msgid "Last session:"
+msgstr "Posledné kolo:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Posledné kolo: %d z %d správne. Kolá v tejto lekcii: %d."
+
+msgid "Latest Session Results"
+msgstr "Výsledky posledného kola"
+
+msgid "Learn words, places and more by heart"
+msgstr "Nauč sa naspamäť slová, miesta a ďalšie"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Nauč sa naspamäť slová, miesta a ďalšie:\nslovnú zásobu cudzieho jazyka, topografiu\nalebo čokoľvek iné, čo si chceš zapamätať."
+
+msgid "Lesson Information"
+msgstr "Informácie o lekcii"
+
+msgid "Lesson Properties"
+msgstr "Vlastnosti lekcie"
+
+msgid "Lesson Type"
+msgstr "Typ lekcie"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Dvojice slov v lekcii: %d\n\nDokonči kolo učenia a uvidíš tu podrobné výsledky."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Dvojice slov v lekcii: %d | Predošlé kolá: %d (pozri Pokrok)\n\nPrecvičuj a uvidíš tu podrobne svoje odpovede."
+
+msgid "Lesson type:"
+msgstr "Typ lekcie:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Lekcia: dvojice slov: %d | Dokončené kolá: %d\n\nPosledné kolo: %d/%d správne (%d%%), známka %s\nPriemerná známka: %s (%d%%)\n\nPodrobné výsledky posledného kola:"
+
+msgid "Limit"
+msgstr "Limita"
+
+msgid "Loaded '%s': %d words"
+msgstr "Načítané „%s“: slová: %d"
+
+msgid "Loading…"
+msgstr "Načítava sa…"
+
+msgid "Made a lesson of %d words"
+msgstr "Vytvorená lekcia, slová: %d"
+
+msgid "Map:"
+msgstr "Mapa:"
+
+msgid "Media"
+msgstr "Médiá"
+
+msgid "Merged %d words from %s"
+msgstr "Zlúčené slová: %d z %s"
+
+msgid "Mode"
+msgstr "Režim"
+
+msgid "Mode:"
+msgstr "Režim:"
+
+msgid "Name"
+msgstr "Názov"
+
+msgid "Name of a place"
+msgstr "Názov miesta"
+
+msgid "Name of the marked place"
+msgstr "Názov označeného miesta"
+
+msgid "Name – Place"
+msgstr "Názov – Miesto"
+
+msgid "Name:"
+msgstr "Názov:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Vyžaduje program na reč: nainštaluj espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Nikdy nezodpovedané správne"
+
+msgid "New Lesson"
+msgstr "Nová lekcia"
+
+msgid "New from &Text..."
+msgstr "Nová z &textu..."
+
+msgid "New lesson created successfully"
+msgstr "Nová lekcia bola úspešne vytvorená"
+
+msgid "New lesson dialog created"
+msgstr "Okno novej lekcie vytvorené"
+
+msgid "New question"
+msgstr "Nová otázka"
+
+msgid "Next"
+msgstr "Ďalej"
+
+msgid "No lesson data available"
+msgstr "Žiadne údaje lekcie nie sú k dispozícii"
+
+msgid "No lesson open to show properties"
+msgstr "Nie je otvorená žiadna lekcia, ktorej vlastnosti by sa dali zobraziť"
+
+msgid "No recent lessons"
+msgstr "Žiadne nedávne lekcie"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Zatiaľ žiadne výsledky: precvičuj na karte Učenie."
+
+msgid "No teaching results available yet"
+msgstr "Zatiaľ nie sú k dispozícii žiadne výsledky učenia"
+
+msgid "No words available for teaching"
+msgstr "Nie sú k dispozícii žiadne slová na učenie"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Žiadne slová na precvičenie: zatiaľ žiadne nie je „%s“"
+
+msgid "Now click where %s is on the map."
+msgstr "Teraz klikni na mape tam, kde je %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Jedno slovo na riadok, so znakom rovnosti medzi otázkou a odpoveďou."
+
+msgid "Open"
+msgstr "Otvoriť"
+
+msgid "Open Lesson…"
+msgstr "Otvoriť lekciu…"
+
+msgid "Open a lesson"
+msgstr "Otvoriť lekciu"
+
+msgid "Open operation cancelled"
+msgstr "Otváranie zrušené"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "Lekcie OpenTeacher (.ot, .otwd), zoznamy slov (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS a ďalšie"
+
+msgid "Opened '%s' - %d words"
+msgstr "Otvorené „%s“ – slová: %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Otvára lekcie OpenTeacher (.ot, .otwd), zoznamy slov (.csv, .txt) a súbory KWordQuiz (.kvtml)"
+
+msgid "Operators"
+msgstr "Operátory"
+
+msgid "Or type a list"
+msgstr "Alebo napíš zoznam"
+
+msgid "Order"
+msgstr "Poradie"
+
+msgid "Order:"
+msgstr "Poradie:"
+
+msgid "Other lesson"
+msgstr "Iná lekcia"
+
+msgid "Other picture…"
+msgstr "Iný obrázok…"
+
+msgid "Page %d of %d"
+msgstr "Strana %d z %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Obrázky, zvuky, videá alebo texty uložené priamo v lekcii"
+
+msgid "Place %d"
+msgstr "Miesto %d"
+
+msgid "Place – Name"
+msgstr "Miesto – Názov"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Miesto – Názov: miesto je označené, napíš jeho názov.\nNázov – Miesto: názov je zadaný, klikni na miesto."
+
+msgid "Please add words in the Enter tab"
+msgstr "Pridaj slová na karte Zadávanie"
+
+msgid "Power"
+msgstr "Mocnina"
+
+msgid "Practice"
+msgstr "Precvičovanie"
+
+msgid "Practice sessions:"
+msgstr "Kolá precvičovania:"
+
+msgid "Practise"
+msgstr "Precvičovať"
+
+msgid "Practise again"
+msgstr "Precvičovať znova"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Precvičovať obrátene: pýta sa na odpovede a otázky sú odpoveďami"
+
+msgid "Practise these words"
+msgstr "Precvičovať tieto slová"
+
+msgid "Practise to see your answers here."
+msgstr "Precvičuj a uvidíš tu svoje odpovede."
+
+msgid "Preview"
+msgstr "Náhľad"
+
+msgid "Previous"
+msgstr "Späť"
+
+msgid "Printed %s"
+msgstr "Vytlačené: %s"
+
+msgid "Progress"
+msgstr "Pokrok"
+
+msgid "Pronounce names"
+msgstr "Vyslovovať názvy"
+
+msgid "Pronounce questions"
+msgstr "Vyslovovať otázky"
+
+msgid "Properties dialog cancelled"
+msgstr "Okno vlastností zrušené"
+
+msgid "Question"
+msgstr "Otázka"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Otázka %d z %d (skóre: %d/%d správne)"
+
+msgid "Question Language:"
+msgstr "Otázky v jazyku:"
+
+msgid "Question language"
+msgstr "Otázky v jazyku"
+
+msgid "Quick Access"
+msgstr "Rýchly prístup"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Z obrázka načítané dvojice slov: %d. Skontroluj ich na karte Zadávanie"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Načítať zoznam slov zo skenu alebo fotky vytlačeného zoznamu (vyžaduje Tesseract)"
+
+msgid "Ready"
+msgstr "Pripravené"
+
+msgid "Ready to start"
+msgstr "Pripravené na štart"
+
+msgid "Ready to start teaching"
+msgstr "Pripravené na učenie"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo beží v tvojom prehliadači: tvoje lekcie zostávajú v tvojom počítači."
+
+msgid "Remove"
+msgstr "Odstrániť"
+
+msgid "Remove Word"
+msgstr "Odstrániť slovo"
+
+msgid "Repeat answer"
+msgstr "Zopakovať odpoveď"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Zopakovať odpoveď ukazuje odpoveď počas"
+
+msgid "Result"
+msgstr "Výsledok"
+
+msgid "Results"
+msgstr "Výsledky"
+
+msgid "Results Overview"
+msgstr "Prehľad výsledkov"
+
+msgid "Reversed"
+msgstr "Obrátene"
+
+msgid "Right"
+msgstr "Správne"
+
+msgid "Right answer"
+msgstr "Správna odpoveď"
+
+msgid "Right: %s"
+msgstr "Správne: %s"
+
+msgid "Root"
+msgstr "Odmocnina"
+
+msgid "Rotate 90°"
+msgstr "Otočiť o 90°"
+
+msgid "Saved %s"
+msgstr "Uložené: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Čítať každú otázku nahlas v jazyku otázok (vyžaduje espeak-ng alebo hlasy macOS či Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Čítať každú otázku nahlas v jazyku otázok"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Vyber hore blok Unicode a zobrazia sa znaky, alebo priamo zadaj kódový bod."
+
+msgid "Select file to import..."
+msgstr "Vyber súbor na import..."
+
+msgid "Selected file: %s"
+msgstr "Vybraný súbor: %s"
+
+msgid "Settings saved"
+msgstr "Nastavenia uložené"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Viac slov k jednej otázke oddeľ čiarkami. Zmeny vydržia, kým neopustíš stránku: lekciu si stiahni, ak si ju chceš ponechať."
+
+msgid "Show answer for:"
+msgstr "Ukázať odpoveď počas:"
+
+msgid "Show or hide special characters"
+msgstr "Zobraziť alebo skryť špeciálne znaky"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Zobraziť alebo skryť špeciálne znaky: písmená s diakritikou a iné písma"
+
+msgid "Shuffle answer"
+msgstr "Zamiešať odpoveď"
+
+msgid "Skip"
+msgstr "Preskočiť"
+
+msgid "Sorted"
+msgstr "Triedené"
+
+msgid "Square root"
+msgstr "Druhá odmocnina"
+
+msgid "Start"
+msgstr "Štart"
+
+msgid "Start Again"
+msgstr "Začať znova"
+
+msgid "Start Teaching"
+msgstr "Začať učenie"
+
+msgid "Stop"
+msgstr "Zastaviť"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Vyrovnaj obrázok tak, aby boli riadky vodorovné, a ak obrázok ukazuje viac, natiahni obdĺžnik okolo zoznamu slov."
+
+msgid "Straighten:"
+msgstr "Vyrovnať:"
+
+msgid "Structure"
+msgstr "Štruktúra"
+
+msgid "Sum"
+msgstr "Súčet"
+
+msgid "System language"
+msgstr "Jazyk systému"
+
+msgid "Teach"
+msgstr "Učenie"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Učenie dokončené! Konečné skóre: %d/%d správne (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Kolo učenia dokončené"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "V lekcii chýba %s %s."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Jazyk ponúk a obrazoviek programu Recuerdo (po reštarte programu Recuerdo). Texty bez prekladu zostanú v angličtine."
+
+msgid "There are no settings to change."
+msgstr "Nie sú tu žiadne nastavenia na zmenu."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Premysli si odpoveď a keď si hotový, stlač „Pozrieť odpoveď“."
+
+msgid "Title"
+msgstr "Názov"
+
+msgid "Topology"
+msgstr "Topografia"
+
+msgid "Translation: %s"
+msgstr "Preklad: %s"
+
+msgid "Try an example"
+msgstr "Vyskúšať príklad"
+
+msgid "Type a List"
+msgstr "Napísať zoznam"
+
+msgid "Type at least one word."
+msgstr "Napíš aspoň jedno slovo."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Napíš alebo vlož zoznam slov ako riadky „otázka = odpoveď“"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Napíš alebo vlož slová: jedno na riadok, so znakom rovnosti (=) alebo tabulátorom medzi otázkou a odpoveďou, napríklad „hond = dog“. Viac slov na jednej strane sa oddeľuje čiarkami."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Napíš alebo vlož slová ako riadky „otázka = odpoveď“"
+
+msgid "Typed list"
+msgstr "Napísaný zoznam"
+
+msgid "Typing"
+msgstr "Písanie"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Písanie: napíš odpoveď. Zamiešať odpoveď: s písmenami odpovede ako nápovedou. Zopakovať odpoveď: odpoveď sa najprv ukáže, potom ju napíšeš spamäti."
+
+msgid "Unicode Block:"
+msgstr "Blok Unicode:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Použiť vlastný obrázok ako mapu"
+
+msgid "Version %s"
+msgstr "Verzia %s"
+
+msgid "Where is %s?"
+msgstr "Kde je %s?"
+
+msgid "Which place is marked?"
+msgstr "Ktoré miesto je označené?"
+
+msgid "Whole picture"
+msgstr "Celý obrázok"
+
+msgid "Word Lesson: %s"
+msgstr "Lekcia slov: %s"
+
+msgid "Word Pairs"
+msgstr "Dvojice slov"
+
+msgid "Words"
+msgstr "Slová"
+
+msgid "Words List"
+msgstr "Zoznam slov"
+
+msgid "Words never answered correctly"
+msgstr "Slová nikdy nezodpovedané správne"
+
+msgid "Words:"
+msgstr "Slová:"
+
+msgid "Wrong"
+msgstr "Nesprávne"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Nesprávne. Správna odpoveď je: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Nesprávne: %s → %s"
+
+msgid "Your Answer"
+msgstr "Tvoja odpoveď"
+
+msgid "Your answer"
+msgstr "Tvoja odpoveď"
+
+msgid "e.g. Dutch"
+msgstr "napr. holandčina"
+
+msgid "e.g. English"
+msgstr "napr. angličtina"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nZaložené na programe OpenTeacher od tímu OpenTeacher, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Správne: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Bolo to %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Odpoveď bola: %s"
+
+# corrects OpenTeacher's sk.po: "Opraviť hocijako" (fix it any old way)
+msgid "Correct anyway"
+msgstr "Uznať aj tak"
+
+# corrects OpenTeacher's sk.po: singular "Otázka"
+msgid "Questions"
+msgstr "Otázky"
+
+# corrects OpenTeacher's sk.po: Czech "&Nápoveda"
+msgid "&Help"
+msgstr "&Pomocník"
