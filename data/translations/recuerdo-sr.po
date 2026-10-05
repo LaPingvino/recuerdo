@@ -1,0 +1,937 @@
+# Recuerdo's own texts in Serbian (OpenTeacher's translations, data/translations/sr.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Serbian terms where it has them. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nОцена (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "За вежбање: %d. Притисни „Почни“."
+
+msgid "%d of %d"
+msgstr "%d од %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "Тачно: %d од %d (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "Места: %d. Изабери начин вежбања и притисни „Почни“."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "Сесије: %d; последња %d%% тачно."
+
+msgid "&About..."
+msgstr "&О програму..."
+
+msgid "&Edit"
+msgstr "&Уређивање"
+
+msgid "&File"
+msgstr "&Датотека"
+
+msgid "&Getting Started"
+msgstr "&Први кораци"
+
+msgid "&Help"
+msgstr "&Помоћ"
+
+msgid "&Merge Lesson..."
+msgstr "&Споји лекцију..."
+
+msgid "&New Lesson..."
+msgstr "&Нова лекција..."
+
+msgid "&Open..."
+msgstr "&Отвори..."
+
+msgid "&Print..."
+msgstr "&Штампај..."
+
+msgid "&Properties..."
+msgstr "Сво&јства..."
+
+msgid "&Save"
+msgstr "&Сачувај"
+
+msgid "&Settings..."
+msgstr "&Подешавања..."
+
+msgid "&Tools"
+msgstr "&Алатке"
+
+msgid ", %d tests"
+msgstr ", тестова: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Веб-страница или видео са YouTube, Vimeo или Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "О програму Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Прозор „О програму“ није доступан"
+
+msgid "About dialog shown"
+msgstr "Приказан прозор „О програму“"
+
+msgid "Add"
+msgstr "Додај"
+
+msgid "Add Character"
+msgstr "Додај знак"
+
+msgid "Add Word"
+msgstr "Додај реч"
+
+msgid "Add all places"
+msgstr "Додај сва места"
+
+msgid "Add every place this map knows"
+msgstr "Додај сва места са ове карте"
+
+msgid "Add files…"
+msgstr "Додај датотеке…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Додај речи и резултате друге лекције у ову"
+
+msgid "Add web address…"
+msgstr "Додај веб-адресу…"
+
+msgid "All once"
+msgstr "Све једном"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "„Све једном“: свака реч једном. „Паметно“: погрешне речи се враћају ускоро и на крају. „Интервал“: речи се враћају док их не научиш."
+
+msgid "All words"
+msgstr "Све речи"
+
+msgid "Answer"
+msgstr "Одговор"
+
+msgid "Answer Language:"
+msgstr "Језик одговора:"
+
+msgid "Answer language"
+msgstr "Језик одговора"
+
+msgid "Answer language:"
+msgstr "Језик одговора:"
+
+msgid "Answers"
+msgstr "Одговори"
+
+msgid "As entered"
+msgstr "Како је унето"
+
+msgid "Ask the answers"
+msgstr "Питај одговоре"
+
+msgid "Ask this word again later"
+msgstr "Питај ову реч поново касније"
+
+msgid "Ask:"
+msgstr "Питај:"
+
+msgid "Brackets"
+msgstr "Заграде"
+
+msgid "Browse Unicode"
+msgstr "Прегледај Unicode"
+
+msgid "Browse..."
+msgstr "Прегледај..."
+
+msgid "Cancel"
+msgstr "Откажи"
+
+msgid "Check"
+msgstr "Провери"
+
+msgid "Check!"
+msgstr "Провери!"
+
+msgid "Choose a file…"
+msgstr "Изабери датотеку…"
+
+msgid "Clear List"
+msgstr "Очисти списак"
+
+msgid "Clear recent files"
+msgstr "Очисти недавне датотеке"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Кликни „Почни учење“ за почетак"
+
+msgid "Comment"
+msgstr "Коментар"
+
+msgid "Continue"
+msgstr "Настави"
+
+msgid "Correct Answer"
+msgstr "Тачан одговор"
+
+msgid "Correct anyway"
+msgstr "Ипак тачно"
+
+msgid "Count your last answer as right after all"
+msgstr "Ипак рачунај последњи одговор као тачан"
+
+msgid "Counted as right"
+msgstr "Урачунато као тачно"
+
+msgid "Create Lesson"
+msgstr "Направи лекцију"
+
+msgid "Create New Lesson"
+msgstr "Направи нову лекцију"
+
+msgid "Credits"
+msgstr "Заслуге"
+
+msgid "Degrees"
+msgstr "Степени"
+
+msgid "Description:"
+msgstr "Опис:"
+
+msgid "Done: %d of %d right."
+msgstr "Готово: тачно %d од %d."
+
+msgid "Download"
+msgstr "Преузми"
+
+msgid "Download the lesson, with your results"
+msgstr "Преузми лекцију са својим резултатима"
+
+msgid "Download…"
+msgstr "Преузми…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Превуци датотеку лекције овде или је изабери."
+
+msgid "E&xit"
+msgstr "&Излаз"
+
+msgid "Each session:"
+msgstr "Свака сесија:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Уреди изабрано питање или одговор у уређивачу формула"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Испразни списак Датотека > Недавно отворене"
+
+msgid "Enter"
+msgstr "Унос"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Унеси Unicode кодну тачку (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Унеси опис лекције..."
+
+msgid "Enter lesson name..."
+msgstr "Унеси назив лекције..."
+
+msgid "Enter lesson title"
+msgstr "Унеси наслов лекције"
+
+msgid "Enter some places first."
+msgstr "Прво унеси нека места."
+
+msgid "Error creating lesson: %v"
+msgstr "Грешка при прављењу лекције: %v"
+
+msgid "Error loading file: %v"
+msgstr "Грешка при учитавању датотеке: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Грешка: прозор за датотеке није доступан"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Грешка: прозор за лекције није доступан"
+
+msgid "Error: No about dialog modules available"
+msgstr "Грешка: нема доступних модула за прозор „О програму“"
+
+msgid "Error: No file dialog modules available"
+msgstr "Грешка: нема доступних модула за прозор за датотеке"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Грешка: нема доступних модула за прозор за лекције"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Грешка: нема доступних модула за прозор подешавања"
+
+msgid "Error: Properties dialog not available"
+msgstr "Грешка: прозор својстава није доступан"
+
+msgid "Error: Settings dialog not available"
+msgstr "Грешка: прозор подешавања није доступан"
+
+msgid "Example"
+msgstr "Пример"
+
+msgid "Exported %s"
+msgstr "Извезено: %s"
+
+msgid "Field separator:"
+msgstr "Раздвајач поља:"
+
+msgid "File"
+msgstr "Датотека"
+
+msgid "File encoding:"
+msgstr "Кодирање датотеке:"
+
+msgid "Files"
+msgstr "Датотеке"
+
+msgid "First row contains headers"
+msgstr "Први ред садржи заглавља"
+
+msgid "Format"
+msgstr "Формат"
+
+msgid "Formula builder"
+msgstr "Уређивач формула"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Формула, нпр. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Разломак"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Слободан софтвер под лиценцом GNU General Public License,\nверзија 3 или новија"
+
+msgid "Functions"
+msgstr "Функције"
+
+msgid "Furigana and formulas"
+msgstr "Фуригана и формуле"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Први кораци са програмом Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Прво унеси одговоре за ставке на картици „Унос“."
+
+msgid "Go on after seeing the right answer"
+msgstr "Настави када видиш тачан одговор"
+
+msgid "Grades in"
+msgstr "Систем оцењивања"
+
+msgid "Grades in:"
+msgstr "Систем оцењивања:"
+
+msgid "Greek"
+msgstr "Грчки"
+
+msgid "Hard words"
+msgstr "Тешке речи"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "„Тешке речи“: оне на које је чешће одговорено погрешно него тачно или које још нису вежбане. „Никад тачно одговорене“: оне без тачног одговора у ранијим сесијама."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Колико дуго „Понови одговор“ приказује одговор пре него што га откуцаш"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Како картица „Резултати“ оцењује твоје сесије"
+
+msgid "I was right"
+msgstr "Мој одговор је тачан"
+
+msgid "I was wrong"
+msgstr "Мој одговор је погрешан"
+
+msgid "Import"
+msgstr "Увези"
+
+msgid "Import File"
+msgstr "Увези датотеку"
+
+msgid "Import Lesson"
+msgstr "Увези лекцију"
+
+msgid "Import Options"
+msgstr "Опције увоза"
+
+msgid "Import from &Picture..."
+msgstr "Увези са &слике..."
+
+msgid "Import from Picture"
+msgstr "Увези са слике"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "У режиму „Назив – место“ изговори назив места на које треба кликнути"
+
+msgid "In mind"
+msgstr "У мислима"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "У режиму „Понови одговор“: колико дуго се одговор приказује пре него што га откуцаш"
+
+msgid "Index"
+msgstr "Индекс"
+
+msgid "Integral"
+msgstr "Интеграл"
+
+msgid "Interface"
+msgstr "Интерфејс"
+
+msgid "Interval"
+msgstr "Интервал"
+
+msgid "Items:"
+msgstr "Ставке:"
+
+msgid "Languages"
+msgstr "Језици"
+
+msgid "Last session:"
+msgstr "Последња сесија:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Последња сесија: тачно %d од %d. Сесије у овој лекцији: %d."
+
+msgid "Latest Session Results"
+msgstr "Резултати последње сесије"
+
+msgid "Learn words, places and more by heart"
+msgstr "Научи напамет речи, места и још много тога"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Научи напамет речи, места и још много тога:\nречник страног језика, топографију\nили било шта друго што желиш да запамтиш."
+
+msgid "Lesson Information"
+msgstr "Подаци о лекцији"
+
+msgid "Lesson Properties"
+msgstr "Својства лекције"
+
+msgid "Lesson Type"
+msgstr "Врста лекције"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Парови речи у лекцији: %d\n\nЗаврши сесију учења да би се овде приказали детаљни резултати."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Парови речи у лекцији: %d | Раније сесије: %d (види „Напредак“)\n\nВежбај да би се овде детаљно приказали твоји одговори."
+
+msgid "Lesson type"
+msgstr "Врста лекције"
+
+msgid "Lesson type:"
+msgstr "Врста лекције:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Парови речи у лекцији: %d | Завршене сесије: %d\n\nПоследња сесија: тачно %d/%d (%d%%), оцена %s\nПросечна оцена: %s (%d%%)\n\nДетаљни резултати последње сесије:"
+
+msgid "Limit"
+msgstr "Гранична вредност"
+
+msgid "Loaded '%s': %d words"
+msgstr "Учитано „%s“ (речи: %d)"
+
+msgid "Loading…"
+msgstr "Учитавање…"
+
+msgid "Made a lesson of %d words"
+msgstr "Направљена је лекција (речи: %d)"
+
+msgid "Map:"
+msgstr "Карта:"
+
+msgid "Media"
+msgstr "Медији"
+
+msgid "Merged %d words from %s"
+msgstr "Спојено речи: %d из %s"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "Mode:"
+msgstr "Режим:"
+
+msgid "Name"
+msgstr "Назив"
+
+msgid "Name of a place"
+msgstr "Назив места"
+
+msgid "Name of the marked place"
+msgstr "Назив означеног места"
+
+msgid "Name – Place"
+msgstr "Назив – место"
+
+msgid "Name:"
+msgstr "Назив:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Потребан је програм за говор: инсталирај espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Никад тачно одговорене"
+
+msgid "New Lesson"
+msgstr "Нова лекција"
+
+msgid "New from &Text..."
+msgstr "Нова из &текста..."
+
+msgid "New lesson created successfully"
+msgstr "Нова лекција је успешно направљена"
+
+msgid "New lesson dialog created"
+msgstr "Направљен је прозор за нову лекцију"
+
+msgid "New question"
+msgstr "Ново питање"
+
+msgid "Next"
+msgstr "Следеће"
+
+msgid "No lesson data available"
+msgstr "Нема података о лекцији"
+
+msgid "No lesson open to show properties"
+msgstr "Нема отворене лекције чија би се својства приказала"
+
+msgid "No recent lessons"
+msgstr "Нема недавних лекција"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Још нема резултата: вежбај на картици „Учење“."
+
+msgid "No teaching results available yet"
+msgstr "Још нема резултата учења"
+
+msgid "No words available for teaching"
+msgstr "Нема речи за учење"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Нема речи за вежбање: још ниједна није у избору „%s“"
+
+msgid "Now click where %s is on the map."
+msgstr "Сада кликни на карти где се налази %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Једна реч по реду, са знаком једнакости између питања и одговора."
+
+msgid "Open"
+msgstr "Отвори"
+
+msgid "Open Lesson…"
+msgstr "Отвори лекцију…"
+
+msgid "Open a lesson"
+msgstr "Отвори лекцију"
+
+msgid "Open operation cancelled"
+msgstr "Отварање је отказано"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher лекције (.ot, .otwd), спискови речи (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS и друго"
+
+msgid "Opened '%s' - %d words"
+msgstr "Отворено „%s“ – речи: %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Отвара OpenTeacher лекције (.ot, .otwd), спискове речи (.csv, .txt) и KWordQuiz (.kvtml) датотеке"
+
+msgid "Operators"
+msgstr "Оператори"
+
+msgid "Or type a list"
+msgstr "Или откуцај списак"
+
+msgid "Order"
+msgstr "Редослед"
+
+msgid "Order:"
+msgstr "Редослед:"
+
+msgid "Other lesson"
+msgstr "Друга лекција"
+
+msgid "Other picture…"
+msgstr "Друга слика…"
+
+msgid "Page %d of %d"
+msgstr "Страна %d од %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Слике, звуци, видео-снимци или текстови, сачувани у лекцији"
+
+msgid "Place %d"
+msgstr "Место %d"
+
+msgid "Place – Name"
+msgstr "Место – назив"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "„Место – назив“: место је означено, откуцај његов назив.\n„Назив – место“: дат је назив, кликни на место."
+
+msgid "Please add words in the Enter tab"
+msgstr "Додај речи на картици „Унос“"
+
+msgid "Power"
+msgstr "Степеновање"
+
+msgid "Practice"
+msgstr "Вежбање"
+
+msgid "Practice sessions:"
+msgstr "Сесије вежбања:"
+
+msgid "Practise"
+msgstr "Вежбај"
+
+msgid "Practise again"
+msgstr "Вежбај поново"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Вежбај обрнуто: питају се одговори, а питања су одговори"
+
+msgid "Practise these words"
+msgstr "Вежбај ове речи"
+
+msgid "Practise to see your answers here."
+msgstr "Вежбај да би се овде приказали твоји одговори."
+
+msgid "Preview"
+msgstr "Преглед"
+
+msgid "Previous"
+msgstr "Претходно"
+
+msgid "Printed %s"
+msgstr "Одштампано: %s"
+
+msgid "Progress"
+msgstr "Напредак"
+
+msgid "Pronounce names"
+msgstr "Изговарај називе"
+
+msgid "Pronounce questions"
+msgstr "Изговарај питања"
+
+msgid "Properties dialog cancelled"
+msgstr "Прозор својстава је отказан"
+
+msgid "Question"
+msgstr "Питање"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Питање %d од %d (резултат: тачно %d/%d)"
+
+msgid "Question Language:"
+msgstr "Језик питања:"
+
+msgid "Question language"
+msgstr "Језик питања"
+
+msgid "Question language:"
+msgstr "Језик питања:"
+
+msgid "Questions"
+msgstr "Питања"
+
+msgid "Quick Access"
+msgstr "Брзи приступ"
+
+msgid "Random"
+msgstr "Насумично"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Са слике је прочитано парова речи: %d; провери их на картици „Унос“"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Прочитај списак речи са скена или фотографије одштампаног списка (потребан је Tesseract)"
+
+msgid "Ready"
+msgstr "Спремно"
+
+msgid "Ready to start"
+msgstr "Спремно за почетак"
+
+msgid "Ready to start teaching"
+msgstr "Спремно за почетак учења"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo ради у твом прегледачу: твоје лекције остају на твом рачунару."
+
+msgid "Remove"
+msgstr "Уклони"
+
+msgid "Remove Word"
+msgstr "Уклони реч"
+
+msgid "Repeat answer"
+msgstr "Понови одговор"
+
+msgid "Repeat answer shows the answer for"
+msgstr "„Понови одговор“ приказује одговор током"
+
+msgid "Result"
+msgstr "Резултат"
+
+msgid "Results"
+msgstr "Резултати"
+
+msgid "Results Overview"
+msgstr "Преглед резултата"
+
+msgid "Reverse"
+msgstr "Обрни"
+
+msgid "Reversed"
+msgstr "Обрнуто"
+
+msgid "Right"
+msgstr "Тачно"
+
+msgid "Right answer"
+msgstr "Тачан одговор"
+
+msgid "Right: %s"
+msgstr "Тачно: %s"
+
+msgid "Root"
+msgstr "Корен"
+
+msgid "Rotate 90°"
+msgstr "Ротирај за 90°"
+
+msgid "Save &As..."
+msgstr "Сачувај &као..."
+
+msgid "Saved %s"
+msgstr "Сачувано: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Изговори свако питање наглас на језику питања (потребан је espeak-ng или гласови система macOS или Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Изговори свако питање наглас, на језику питања"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Изабери Unicode блок изнад да видиш знакове или директно унеси кодну тачку."
+
+msgid "Select file to import..."
+msgstr "Изабери датотеку за увоз..."
+
+msgid "Selected file: %s"
+msgstr "Изабрана датотека: %s"
+
+msgid "Settings"
+msgstr "Подешавања"
+
+msgid "Settings saved"
+msgstr "Подешавања су сачувана"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Више речи за једно питање раздвој зарезима. Измене се чувају док не напустиш страницу: преузми лекцију да је сачуваш."
+
+msgid "Show answer for:"
+msgstr "Прикажи одговор током:"
+
+msgid "Show or hide special characters"
+msgstr "Прикажи или сакриј посебне знакове"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Прикажи или сакриј посебне знакове: слова са акцентима и друга писма"
+
+msgid "Shuffle answer"
+msgstr "Измешај одговор"
+
+msgid "Skip"
+msgstr "Прескочи"
+
+msgid "Smart"
+msgstr "Паметно"
+
+msgid "Sort"
+msgstr "Сортирај"
+
+msgid "Sorted"
+msgstr "Сортирано"
+
+msgid "Square root"
+msgstr "Квадратни корен"
+
+msgid "Start"
+msgstr "Почни"
+
+msgid "Start Again"
+msgstr "Почни поново"
+
+msgid "Start Teaching"
+msgstr "Почни учење"
+
+msgid "Stop"
+msgstr "Заустави"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Исправи слику тако да редови буду водоравни и превуци правоугаоник око списка речи ако слика приказује више од тога."
+
+msgid "Straighten:"
+msgstr "Исправи:"
+
+msgid "Structure"
+msgstr "Структура"
+
+msgid "Sum"
+msgstr "Збир"
+
+msgid "System language"
+msgstr "Језик система"
+
+msgid "Teach"
+msgstr "Учење"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Учење је завршено! Коначни резултат: тачно %d/%d (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Сесија учења је завршена"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "У лекцији недостаје %s %s."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Језик менија и екрана програма Recuerdo (након поновног покретања програма Recuerdo). Текстови без превода остају на енглеском."
+
+msgid "There are no settings to change."
+msgstr "Нема подешавања за промену."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Размисли о одговору и притисни „Прикажи одговор“ када завршиш."
+
+msgid "Title"
+msgstr "Наслов"
+
+msgid "Title:"
+msgstr "Наслов:"
+
+msgid "Topology"
+msgstr "Топографија"
+
+msgid "Translation: %s"
+msgstr "Превод: %s"
+
+msgid "Try an example"
+msgstr "Испробај пример"
+
+msgid "Type a List"
+msgstr "Откуцај списак"
+
+msgid "Type at least one word."
+msgstr "Откуцај бар једну реч."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Откуцај или налепи списак речи као редове „питање = одговор“"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Откуцај или налепи речи: једну по реду, са знаком једнакости (=) или табулатором између питања и одговора, нпр. „hond = dog“. Више речи на једној страни раздваја се зарезима."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Откуцај или налепи речи као редове „питање = одговор“"
+
+msgid "Typed list"
+msgstr "Откуцани списак"
+
+msgid "Typing"
+msgstr "Куцање"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "„Куцање“: откуцај одговор. „Измешај одговор“: са словима одговора као наговештајем. „Понови одговор“: одговор се прво прикаже, а затим се куца по сећању."
+
+msgid "Unicode Block:"
+msgstr "Unicode блок:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Користи сопствену слику као карту"
+
+msgid "Version %s"
+msgstr "Верзија %s"
+
+msgid "View answer"
+msgstr "Прикажи одговор"
+
+msgid "Where is %s?"
+msgstr "Где је %s?"
+
+msgid "Which place is marked?"
+msgstr "Које место је означено?"
+
+msgid "Whole picture"
+msgstr "Цела слика"
+
+msgid "Word Lesson: %s"
+msgstr "Лекција речи: %s"
+
+msgid "Word Pairs"
+msgstr "Парови речи"
+
+msgid "Words"
+msgstr "Речи"
+
+msgid "Words List"
+msgstr "Списак речи"
+
+msgid "Words never answered correctly"
+msgstr "Речи никад тачно одговорене"
+
+msgid "Words:"
+msgstr "Речи:"
+
+msgid "Wrong"
+msgstr "Погрешно"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Погрешно. Тачан одговор је: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Погрешно: %s → %s"
+
+msgid "Your Answer"
+msgstr "Твој одговор"
+
+msgid "Your answer"
+msgstr "Твој одговор"
+
+msgid "e.g. Dutch"
+msgstr "нпр. холандски"
+
+msgid "e.g. English"
+msgstr "нпр. енглески"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nЗасновано на програму OpenTeacher тима OpenTeacher, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Тачно: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ То је било %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Одговор је био: %s"

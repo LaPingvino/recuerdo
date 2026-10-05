@@ -85,7 +85,8 @@
 					</div>
 				</div>
 				<form id="answerForm" class="answer">
-					<input id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" data-i18n-placeholder="Your answer">
+					<!-- dir="auto": a formula (TeX) runs left to right on a right-to-left page too -->
+					<input id="answer" dir="auto" autocomplete="off" autocapitalize="off" spellcheck="false" data-i18n-placeholder="Your answer">
 					<button class="button primary" data-i18n>Check</button>
 				</form>
 				<div id="answerBuilder" hidden></div>

@@ -79,7 +79,7 @@ The state in October 2026, by feature:
 | Speech | done: Pronounce questions (espeak-ng, macOS and Windows voices) |
 | Settings, properties, about | done, made from what Recuerdo really has |
 | Command line | done: `recuerdo <command>` (convert, merge, view, practise, ...) |
-| Interface translations | done: OpenTeacher's translations in 30 languages, Recuerdo's own texts complete in Dutch, Esperanto and Brazilian Portuguese; the other languages planned (high) |
+| Interface translations | done: all 30 of OpenTeacher's languages, OpenTeacher's translations with Recuerdo's own texts on top (machine-translated with OpenTeacher's terms; mistakes in OpenTeacher's translations of the labels Recuerdo shows corrected); right-to-left layout for Arabic and Urdu on the desktop and the web |
 | In-browser version | done: the Go logic as WebAssembly (`web/`, `recuerdo serve`): open, enter and edit words, practise in all modes, results, download; formulas (KaTeX) with a formula builder, also on the desktop |
 | Test mode (classroom server) | planned (medium): convert OpenTeacher's server or build one |
 | Spell checking, touch typing course | planned (medium) |
@@ -313,7 +313,7 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1089 | 0 | 2 | working |
+| `interfaces/qt/gui` | ui | 607 | 1092 | 0 | 2 | working |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |

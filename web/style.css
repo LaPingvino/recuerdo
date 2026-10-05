@@ -13,7 +13,7 @@ header { display: flex; align-items: center; gap: .6rem; padding: .8rem 1.2rem; 
 .logo { width: 36px; height: 36px; }
 header h1 { margin: 0; font-size: 1.3rem; }
 .tagline { color: var(--muted); }
-.lesson-title { margin-left: auto; font-weight: 600; }
+.lesson-title { margin-inline-start: auto; font-weight: 600; }
 main { max-width: 860px; margin: 1.5rem auto; padding: 0 1rem; }
 footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2rem 1rem; }
 footer a { color: var(--accent); }
@@ -36,12 +36,12 @@ textarea { width: 100%; resize: vertical; }
 .tabs .button { margin-bottom: .4rem; }
 .panel { border-radius: 0 10px 10px 10px; min-height: 18rem; }
 table.words { width: 100%; border-collapse: collapse; }
-table.words th, table.words td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.words th, table.words td { text-align: start; padding: .4rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 table.words th { color: var(--muted); font-weight: 600; font-size: .9rem; }
 .options { display: flex; gap: .8rem 1.2rem; flex-wrap: wrap; align-items: end; }
 .options label { display: flex; flex-direction: column; gap: .2rem; color: var(--muted); font-size: .9rem; }
 .options label.check { flex-direction: row; align-items: center; gap: .4rem; color: var(--text); font-size: 1rem; }
-.options .button { margin-left: auto; }
+.options .button { margin-inline-start: auto; }
 .practice, .done { text-align: center; margin-top: 1.4rem; }
 .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
 #progressBar { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
@@ -66,9 +66,9 @@ table.words.edit input:focus, table.words.edit tr.new input { border-color: var(
 .remove { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 1.1rem; }
 .remove:hover { color: var(--wrong); }
 h2 { font-size: 1.1rem; margin: 0 0 .3rem; }
-.language { margin-left: .8rem; padding: .2rem .4rem; font-size: .9rem; }
-.lesson-title + .language { margin-left: .8rem; }
-header .lesson-title:empty + .language { margin-left: auto; }
+.language { margin-inline-start: .8rem; padding: .2rem .4rem; font-size: .9rem; }
+.lesson-title + .language { margin-inline-start: .8rem; }
+header .lesson-title:empty + .language { margin-inline-start: auto; }
 /* words with markup */
 .question ruby rt, .mode-hint ruby rt { font-size: .45em; color: var(--muted); }
 .question img { max-width: min(100%, 22rem); max-height: 14rem; vertical-align: middle; }
@@ -79,7 +79,7 @@ header .lesson-title:empty + .language { margin-left: auto; }
 .fb-toggle { border: 1px solid transparent; background: none; color: var(--muted); cursor: pointer; border-radius: 5px; padding: .1rem .4rem; }
 .fb-toggle:hover, .fb-toggle.on { border-color: var(--line); color: var(--accent); }
 #answerBuilder { max-width: 40rem; margin: .8rem auto 0; }
-.formula-builder { border: 1px solid var(--line); border-radius: 8px; padding: .4rem .5rem; margin-top: .3rem; background: var(--bg); text-align: left; }
+.formula-builder { border: 1px solid var(--line); border-radius: 8px; padding: .4rem .5rem; margin-top: .3rem; background: var(--bg); text-align: start; }
 .fb-group { display: flex; flex-wrap: wrap; gap: .2rem; align-items: center; margin-bottom: .2rem; }
 .fb-name { color: var(--muted); font-size: .75rem; width: 5.5rem; }
 .fb-button { font: inherit; font-size: .95rem; min-width: 2.1rem; padding: .1rem .35rem; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: var(--text); cursor: pointer; }
@@ -87,3 +87,5 @@ header .lesson-title:empty + .language { margin-left: auto; }
 .formula-preview { min-height: 1.8rem; padding: .3rem .2rem 0; font-size: 1.2rem; text-align: center; border-top: 1px dashed var(--line); margin-top: .3rem; }
 .formula-preview:empty { display: none; }
 .building > .preview { display: none; }
+.formula-preview { direction: ltr; }
+.fb-button { direction: ltr; unicode-bidi: isolate; }

@@ -1,0 +1,873 @@
+# Recuerdo's own texts in Arabic (OpenTeacher's translations, data/translations/ar.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Arabic terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nالدرجة (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "عناصر للتدرّب: %d. اضغط «ابدأ»."
+
+msgid "%d of %d"
+msgstr "%d من %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d من %d صحيحة (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "الأماكن: %d. اختر طريقة التدرّب واضغط «ابدأ»."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "الجلسات: %d؛ الأخيرة صحيحة بنسبة %d%%."
+
+msgid "&Merge Lesson..."
+msgstr "&دمج درس..."
+
+msgid "&Properties..."
+msgstr "&الخصائص..."
+
+msgid "&Tools"
+msgstr "&أدوات"
+
+msgid ", %d tests"
+msgstr "، الاختبارات: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "موقع ويب أو فيديو من YouTube أو Vimeo أو Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "حول Recuerdo"
+
+msgid "About dialog not available"
+msgstr "نافذة «حول» غير متوفرة"
+
+msgid "About dialog shown"
+msgstr "عُرضت نافذة «حول»"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Add Character"
+msgstr "إضافة حرف"
+
+msgid "Add Word"
+msgstr "إضافة كلمة"
+
+msgid "Add all places"
+msgstr "إضافة كل الأماكن"
+
+msgid "Add every place this map knows"
+msgstr "إضافة كل مكان تعرفه هذه الخريطة"
+
+msgid "Add files…"
+msgstr "إضافة ملفات…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "إضافة كلمات ونتائج درس آخر إلى هذا الدرس"
+
+msgid "Add web address…"
+msgstr "إضافة عنوان ويب…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "الكل مرة واحدة: كل كلمة مرة واحدة. ذكي: الكلمات الخاطئة تعود قريبًا وفي النهاية. فاصل زمني: الكلمات تعود حتى تحفظها."
+
+msgid "All words"
+msgstr "كل الكلمات"
+
+msgid "Answer"
+msgstr "الجواب"
+
+msgid "Answer Language:"
+msgstr "لغة الجواب:"
+
+msgid "Answer language"
+msgstr "لغة الجواب"
+
+msgid "As entered"
+msgstr "كما أُدخلت"
+
+msgid "Ask the answers"
+msgstr "اسأل عن الأجوبة"
+
+msgid "Ask this word again later"
+msgstr "اسأل عن هذه الكلمة لاحقًا مرة أخرى"
+
+msgid "Ask:"
+msgstr "اسأل:"
+
+msgid "Brackets"
+msgstr "أقواس"
+
+msgid "Browse Unicode"
+msgstr "تصفّح Unicode"
+
+msgid "Browse..."
+msgstr "تصفّح..."
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Check"
+msgstr "تحقّق"
+
+msgid "Choose a file…"
+msgstr "اختر ملفًا…"
+
+msgid "Clear List"
+msgstr "مسح القائمة"
+
+msgid "Clear recent files"
+msgstr "مسح الملفات الأخيرة"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "اضغط «ابدأ التعليم» للبدء"
+
+msgid "Continue"
+msgstr "متابعة"
+
+msgid "Correct Answer"
+msgstr "الجواب الصحيح"
+
+msgid "Count your last answer as right after all"
+msgstr "احتساب جوابك الأخير صحيحًا رغم ذلك"
+
+msgid "Counted as right"
+msgstr "احتُسب صحيحًا"
+
+msgid "Create Lesson"
+msgstr "إنشاء درس"
+
+msgid "Create New Lesson"
+msgstr "إنشاء درس جديد"
+
+msgid "Credits"
+msgstr "شكر وتقدير"
+
+msgid "Degrees"
+msgstr "درجات الزاوية"
+
+msgid "Description:"
+msgstr "الوصف:"
+
+msgid "Done: %d of %d right."
+msgstr "انتهى: %d من %d صحيحة."
+
+msgid "Download"
+msgstr "تنزيل"
+
+msgid "Download the lesson, with your results"
+msgstr "تنزيل الدرس مع نتائجك"
+
+msgid "Download…"
+msgstr "تنزيل…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "أفلت ملف درس هنا، أو اختر ملفًا."
+
+msgid "Each session:"
+msgstr "كل جلسة:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "تحرير السؤال أو الجواب المحدد بمنشئ الصيغ"
+
+msgid "Empty the File > Open Recent list"
+msgstr "إفراغ قائمة ملف > الملفات الأخيرة"
+
+msgid "Enter"
+msgstr "إدخال"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "أدخل نقطة رمز Unicode (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "أدخل وصف الدرس..."
+
+msgid "Enter lesson name..."
+msgstr "أدخل اسم الدرس..."
+
+msgid "Enter lesson title"
+msgstr "أدخل عنوان الدرس"
+
+msgid "Enter some places first."
+msgstr "أدخل بعض الأماكن أولًا."
+
+msgid "Error creating lesson: %v"
+msgstr "خطأ في إنشاء الدرس: %v"
+
+msgid "Error loading file: %v"
+msgstr "خطأ في تحميل الملف: %v"
+
+msgid "Error: File dialog not available"
+msgstr "خطأ: نافذة الملفات غير متوفرة"
+
+msgid "Error: Lesson dialog not available"
+msgstr "خطأ: نافذة الدرس غير متوفرة"
+
+msgid "Error: No about dialog modules available"
+msgstr "خطأ: لا توجد وحدات لنافذة «حول»"
+
+msgid "Error: No file dialog modules available"
+msgstr "خطأ: لا توجد وحدات لنافذة الملفات"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "خطأ: لا توجد وحدات لنافذة الدرس"
+
+msgid "Error: No settings dialog modules available"
+msgstr "خطأ: لا توجد وحدات لنافذة الإعدادات"
+
+msgid "Error: Properties dialog not available"
+msgstr "خطأ: نافذة الخصائص غير متوفرة"
+
+msgid "Error: Settings dialog not available"
+msgstr "خطأ: نافذة الإعدادات غير متوفرة"
+
+msgid "Example"
+msgstr "مثال"
+
+msgid "Exported %s"
+msgstr "صُدِّر %s"
+
+msgid "Field separator:"
+msgstr "فاصل الحقول:"
+
+msgid "File"
+msgstr "ملف"
+
+msgid "File encoding:"
+msgstr "ترميز الملف:"
+
+msgid "Files"
+msgstr "الملفات"
+
+msgid "First row contains headers"
+msgstr "الصف الأول يحتوي على العناوين"
+
+msgid "Format"
+msgstr "الصيغة"
+
+msgid "Formula builder"
+msgstr "منشئ الصيغ"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "صيغة، مثلًا x^2 + 1"
+
+msgid "Fraction"
+msgstr "كسر"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "برنامج حر بموجب رخصة جنو العمومية (GNU General Public License)،\nالإصدار 3 أو أحدث"
+
+msgid "Functions"
+msgstr "الدوال"
+
+msgid "Furigana and formulas"
+msgstr "فوريغانا وصيغ"
+
+msgid "Getting Started with Recuerdo"
+msgstr "البدء مع Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "أعطِ العناصر جوابًا في لسان «إدخال» أولًا."
+
+msgid "Go on after seeing the right answer"
+msgstr "المتابعة بعد رؤية الجواب الصحيح"
+
+msgid "Grades in:"
+msgstr "الدرجات بنظام:"
+
+msgid "Hard words"
+msgstr "الكلمات الصعبة"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "الكلمات الصعبة: التي أُجيب عنها خطأً أكثر من الصواب، أو لم يُتدرَّب عليها بعد. لم يُجَب عنها بشكل صحيح أبدًا: التي ليس لها جواب صحيح في الجلسات السابقة."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "مدة عرض الجواب في «تكرار الجواب» قبل أن تكتبه"
+
+msgid "How the Results tab grades your sessions"
+msgstr "كيف يمنح لسان «النتائج» درجات لجلساتك"
+
+msgid "Import"
+msgstr "استيراد"
+
+msgid "Import File"
+msgstr "استيراد ملف"
+
+msgid "Import Lesson"
+msgstr "استيراد درس"
+
+msgid "Import Options"
+msgstr "خيارات الاستيراد"
+
+msgid "Import from &Picture..."
+msgstr "استيراد من &صورة..."
+
+msgid "Import from Picture"
+msgstr "استيراد من صورة"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "في «الاسم – المكان»، انطق اسم المكان الذي يجب النقر عليه"
+
+msgid "In mind"
+msgstr "في الذهن"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "في وضع «تكرار الجواب»، مدة عرض الجواب قبل أن تكتبه"
+
+msgid "Index"
+msgstr "رمز سفلي"
+
+msgid "Integral"
+msgstr "تكامل"
+
+msgid "Interface"
+msgstr "الواجهة"
+
+msgid "Interval"
+msgstr "فاصل زمني"
+
+msgid "Items:"
+msgstr "العناصر:"
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "Languages"
+msgstr "اللغات"
+
+msgid "Last session:"
+msgstr "الجلسة الأخيرة:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "الجلسة الأخيرة: %d من %d صحيحة. جلسات هذا الدرس: %d."
+
+msgid "Latest Session Results"
+msgstr "نتائج الجلسة الأخيرة"
+
+msgid "Learn words, places and more by heart"
+msgstr "احفظ الكلمات والأماكن وغيرها عن ظهر قلب"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "احفظ الكلمات والأماكن وغيرها عن ظهر قلب:\nمفردات لغة أجنبية، أو التضاريس،\nأو أي شيء آخر تريد تذكّره."
+
+msgid "Lesson Information"
+msgstr "معلومات الدرس"
+
+msgid "Lesson Properties"
+msgstr "خصائص الدرس"
+
+msgid "Lesson Type"
+msgstr "نوع الدرس"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "أزواج الكلمات في الدرس: %d\n\nأكمل جلسة تعليم لترى النتائج المفصلة هنا."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "أزواج الكلمات في الدرس: %d | الجلسات السابقة: %d (انظر «التقدّم»)\n\nتدرّب لترى أجوبتك بالتفصيل هنا."
+
+msgid "Lesson type:"
+msgstr "نوع الدرس:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "الدرس: أزواج الكلمات: %d | الجلسات المكتملة: %d\n\nالجلسة الأخيرة: %d/%d صحيحة (%d%%)، الدرجة %s\nالدرجة المتوسطة: %s (%d%%)\n\nالنتائج المفصلة للجلسة الأخيرة:"
+
+msgid "Limit"
+msgstr "نهاية"
+
+msgid "Loaded '%s': %d words"
+msgstr "حُمِّل «%s»: الكلمات: %d"
+
+msgid "Loading…"
+msgstr "جارٍ التحميل…"
+
+msgid "Made a lesson of %d words"
+msgstr "أُنشئ درس، الكلمات: %d"
+
+msgid "Map:"
+msgstr "الخريطة:"
+
+msgid "Media"
+msgstr "الوسائط"
+
+msgid "Merged %d words from %s"
+msgstr "دُمجت كلمات (%d) من %s"
+
+msgid "Mode"
+msgstr "الوضع"
+
+msgid "Mode:"
+msgstr "الوضع:"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Name of a place"
+msgstr "اسم مكان"
+
+msgid "Name of the marked place"
+msgstr "اسم المكان المحدد"
+
+msgid "Name – Place"
+msgstr "الاسم – المكان"
+
+msgid "Name:"
+msgstr "الاسم:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "يحتاج إلى برنامج نطق: ثبّت espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "لم يُجَب عنها بشكل صحيح أبدًا"
+
+msgid "New Lesson"
+msgstr "درس جديد"
+
+msgid "New from &Text..."
+msgstr "جديد من &نص..."
+
+msgid "New lesson created successfully"
+msgstr "أُنشئ الدرس الجديد بنجاح"
+
+msgid "New lesson dialog created"
+msgstr "أُنشئت نافذة الدرس الجديد"
+
+msgid "New question"
+msgstr "سؤال جديد"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "No lesson data available"
+msgstr "لا توجد بيانات للدرس"
+
+msgid "No lesson open to show properties"
+msgstr "لا يوجد درس مفتوح لعرض خصائصه"
+
+msgid "No recent lessons"
+msgstr "لا توجد دروس حديثة"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "لا نتائج بعد: تدرّب في لسان «التعليم»."
+
+msgid "No teaching results available yet"
+msgstr "لا توجد نتائج تعليم بعد"
+
+msgid "No words available for teaching"
+msgstr "لا توجد كلمات للتعليم"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "لا كلمات للتدرّب: لا توجد كلمات «%s» بعد"
+
+msgid "Now click where %s is on the map."
+msgstr "انقر الآن على مكان %s في الخريطة."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "كلمة واحدة في كل سطر، مع علامة يساوي بين السؤال والجواب."
+
+msgid "Open"
+msgstr "فتح"
+
+msgid "Open Lesson…"
+msgstr "فتح درس…"
+
+msgid "Open a lesson"
+msgstr "افتح درسًا"
+
+msgid "Open operation cancelled"
+msgstr "أُلغيت عملية الفتح"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "دروس OpenTeacher (.ot، .otwd)، ولوائح كلمات (.csv، .txt)، وKWordQuiz (.kvtml)، وAnki وWRTS وغيرها"
+
+msgid "Opened '%s' - %d words"
+msgstr "فُتح «%s» - الكلمات: %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "يفتح دروس OpenTeacher (.ot، .otwd)، ولوائح الكلمات (.csv، .txt) وملفات KWordQuiz (.kvtml)"
+
+msgid "Operators"
+msgstr "العوامل"
+
+msgid "Or type a list"
+msgstr "أو اكتب لائحة"
+
+msgid "Order"
+msgstr "الترتيب"
+
+msgid "Order:"
+msgstr "الترتيب:"
+
+msgid "Other lesson"
+msgstr "درس آخر"
+
+msgid "Other picture…"
+msgstr "صورة أخرى…"
+
+msgid "Page %d of %d"
+msgstr "الصفحة %d من %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "صور أو أصوات أو فيديوهات أو نصوص، محفوظة داخل الدرس"
+
+msgid "Place %d"
+msgstr "المكان %d"
+
+msgid "Place – Name"
+msgstr "المكان – الاسم"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "المكان – الاسم: يُحدَّد مكان، فاكتب اسمه.\nالاسم – المكان: يُعطى اسم، فانقر على المكان."
+
+msgid "Please add words in the Enter tab"
+msgstr "رجاءً أضف كلمات في لسان «إدخال»"
+
+msgid "Power"
+msgstr "أُس"
+
+msgid "Practice"
+msgstr "التدرّب"
+
+msgid "Practice sessions:"
+msgstr "جلسات التدرّب:"
+
+msgid "Practise"
+msgstr "تدرّب"
+
+msgid "Practise again"
+msgstr "تدرّب مرة أخرى"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "تدرّب بالعكس: يُسأل عن الأجوبة وتصبح الأسئلة هي الأجوبة"
+
+msgid "Practise these words"
+msgstr "تدرّب على هذه الكلمات"
+
+msgid "Practise to see your answers here."
+msgstr "تدرّب لترى أجوبتك هنا."
+
+msgid "Preview"
+msgstr "معاينة"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Printed %s"
+msgstr "طُبع %s"
+
+msgid "Progress"
+msgstr "التقدّم"
+
+msgid "Pronounce names"
+msgstr "نطق الأسماء"
+
+msgid "Pronounce questions"
+msgstr "نطق الأسئلة"
+
+msgid "Properties dialog cancelled"
+msgstr "أُلغيت نافذة الخصائص"
+
+msgid "Question"
+msgstr "السؤال"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "السؤال %d من %d (النتيجة: %d/%d صحيحة)"
+
+msgid "Question Language:"
+msgstr "لغة السؤال:"
+
+msgid "Question language"
+msgstr "لغة السؤال"
+
+msgid "Quick Access"
+msgstr "وصول سريع"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "قُرئت أزواج كلمات (%d) من الصورة: راجعها في لسان «إدخال»"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "قراءة لائحة كلمات من مسح ضوئي أو صورة للائحة مطبوعة (يحتاج إلى Tesseract)"
+
+msgid "Ready"
+msgstr "جاهز"
+
+msgid "Ready to start"
+msgstr "جاهز للبدء"
+
+msgid "Ready to start teaching"
+msgstr "جاهز لبدء التعليم"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "يعمل Recuerdo في متصفحك: تبقى دروسك على حاسوبك."
+
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Remove Word"
+msgstr "إزالة كلمة"
+
+msgid "Repeat answer"
+msgstr "تكرار الجواب"
+
+msgid "Repeat answer shows the answer for"
+msgstr "مدة عرض الجواب في «تكرار الجواب»"
+
+msgid "Result"
+msgstr "النتيجة"
+
+msgid "Results Overview"
+msgstr "نظرة عامة على النتائج"
+
+msgid "Reversed"
+msgstr "معكوس"
+
+msgid "Right"
+msgstr "صحيح"
+
+msgid "Right answer"
+msgstr "الجواب الصحيح"
+
+msgid "Right: %s"
+msgstr "صحيح: %s"
+
+msgid "Root"
+msgstr "جذر"
+
+msgid "Rotate 90°"
+msgstr "تدوير 90°"
+
+msgid "Saved %s"
+msgstr "حُفظ %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "انطق كل سؤال بصوت عالٍ بلغة السؤال (يحتاج إلى espeak-ng أو أصوات macOS أو Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "انطق كل سؤال بصوت عالٍ بلغة السؤال"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "اختر كتلة Unicode في الأعلى لعرض الحروف، أو أدخل نقطة رمز مباشرةً."
+
+msgid "Select file to import..."
+msgstr "اختر ملفًا للاستيراد..."
+
+msgid "Selected file: %s"
+msgstr "الملف المحدد: %s"
+
+msgid "Settings saved"
+msgstr "حُفظت الإعدادات"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "عدة كلمات لسؤال واحد: افصل بينها بفواصل. تبقى التغييرات حتى تغادر الصفحة: نزّل الدرس للاحتفاظ به."
+
+msgid "Show answer for:"
+msgstr "عرض الجواب لمدة:"
+
+msgid "Show or hide special characters"
+msgstr "إظهار الحروف الخاصة أو إخفاؤها"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "إظهار الحروف الخاصة أو إخفاؤها: حروف بعلامات وأنظمة كتابة أخرى"
+
+msgid "Shuffle answer"
+msgstr "خلط الجواب"
+
+msgid "Skip"
+msgstr "تخطٍّ"
+
+msgid "Sorted"
+msgstr "مرتّب"
+
+msgid "Square root"
+msgstr "جذر تربيعي"
+
+msgid "Start"
+msgstr "ابدأ"
+
+msgid "Start Again"
+msgstr "ابدأ من جديد"
+
+msgid "Start Teaching"
+msgstr "ابدأ التعليم"
+
+msgid "Stop"
+msgstr "إيقاف"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "قوّم الصورة لتصبح الأسطر أفقية، واسحب مستطيلًا حول لائحة الكلمات إن كانت الصورة تُظهر أكثر منها."
+
+msgid "Straighten:"
+msgstr "تقويم:"
+
+msgid "Structure"
+msgstr "البنية"
+
+msgid "Sum"
+msgstr "مجموع"
+
+msgid "System language"
+msgstr "لغة النظام"
+
+msgid "Teach"
+msgstr "التعليم"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "اكتمل التعليم! النتيجة النهائية: %d/%d صحيحة (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "اكتملت جلسة التعليم"
+
+msgid "Text"
+msgstr "نص"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%s %s غير موجود في الدرس."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "لغة قوائم Recuerdo وشاشاته (بعد إعادة تشغيل Recuerdo). النصوص غير المترجمة تبقى بالإنجليزية."
+
+msgid "There are no settings to change."
+msgstr "لا توجد إعدادات لتغييرها."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "فكّر في الجواب، واضغط «معرفة الإجابة» عند الانتهاء."
+
+msgid "Title"
+msgstr "العنوان"
+
+msgid "Topology"
+msgstr "التضاريس"
+
+msgid "Translation: %s"
+msgstr "الترجمة: %s"
+
+msgid "Try an example"
+msgstr "جرّب مثالًا"
+
+msgid "Type a List"
+msgstr "اكتب لائحة"
+
+msgid "Type at least one word."
+msgstr "اكتب كلمة واحدة على الأقل."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "اكتب لائحة كلمات أو الصقها كأسطر «سؤال = جواب»"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "اكتب الكلمات أو الصقها: كلمة في كل سطر، مع علامة يساوي (=) أو مسافة جدولة بين السؤال والجواب، مثل \"hond = dog\". تُفصل عدة كلمات في جهة واحدة بفواصل."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "اكتب الكلمات أو الصقها كأسطر «سؤال = جواب»"
+
+msgid "Typed list"
+msgstr "لائحة مكتوبة"
+
+msgid "Typing"
+msgstr "الكتابة"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "الكتابة: اكتب الجواب. خلط الجواب: مع حروف الجواب كتلميح. تكرار الجواب: يُعرض الجواب أولًا، ثم يُكتب من الذاكرة."
+
+msgid "Unicode Block:"
+msgstr "كتلة Unicode:"
+
+msgid "Use a picture of your own as the map"
+msgstr "استخدم صورة خاصة بك كخريطة"
+
+msgid "Version %s"
+msgstr "الإصدار %s"
+
+msgid "Where is %s?"
+msgstr "أين يقع %s؟"
+
+msgid "Which place is marked?"
+msgstr "ما المكان المحدد؟"
+
+msgid "Whole picture"
+msgstr "الصورة كاملة"
+
+msgid "Word Lesson: %s"
+msgstr "درس كلمات: %s"
+
+msgid "Word Pairs"
+msgstr "أزواج الكلمات"
+
+msgid "Words"
+msgstr "الكلمات"
+
+msgid "Words List"
+msgstr "لائحة الكلمات"
+
+msgid "Words never answered correctly"
+msgstr "كلمات لم يُجَب عنها بشكل صحيح أبدًا"
+
+msgid "Words:"
+msgstr "الكلمات:"
+
+msgid "Wrong"
+msgstr "خطأ"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "خطأ. الجواب الصحيح هو: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "خطأ: %s → %s"
+
+msgid "Your Answer"
+msgstr "جوابك"
+
+msgid "Your answer"
+msgstr "جوابك"
+
+msgid "e.g. Dutch"
+msgstr "مثلًا الهولندية"
+
+msgid "e.g. English"
+msgstr "مثلًا الإنجليزية"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nمبني على OpenTeacher من فريق OpenTeacher، 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ صحيح: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ كان الجواب %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ كان الجواب: %s"
+
+# corrects OpenTeacher's ar.po for 'All once': "في كل مرّة" (every time)
+msgid "All once"
+msgstr "الكل مرة واحدة"
+
+# corrects OpenTeacher's ar.po for 'Correct anyway': "صحّح في كل الحالات" (fix it in all cases)
+msgid "Correct anyway"
+msgstr "احتسبه صحيحًا"
+
+# corrects OpenTeacher's ar.po for 'Note:': "ملاحظة" (remark)
+msgid "Grades in"
+msgstr "الدرجة"
+
+# corrects OpenTeacher's ar.po for 'Answer language:': missing colon
+msgid "Answer language:"
+msgstr "لغة الجواب:"
+
+# corrects OpenTeacher's ar.po for 'Question language:': missing colon
+msgid "Question language:"
+msgstr "لغة السؤال:"
+
+# corrects OpenTeacher's ar.po for 'Check!': "تثبّت" (make sure), missing !
+msgid "Check!"
+msgstr "تحقّق!"
+
+# corrects OpenTeacher's ar.po for 'Title:': space before the colon
+msgid "Title:"
+msgstr "العنوان:"
+
+# corrects OpenTeacher's ar.po for 'View answer': presentation-form ligature
+msgid "View answer"
+msgstr "معرفة الإجابة"

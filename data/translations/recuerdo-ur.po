@@ -1,0 +1,907 @@
+# Recuerdo's own texts in Urdu (OpenTeacher's translations, data/translations/ur.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Urdu terms where it has them. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nگریڈ (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "مشق کے لیے %d آئٹم۔ شروع کریں دبائیں۔"
+
+msgid "%d of %d"
+msgstr "%d از %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d از %d درست (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d مقامات۔ مشق کا طریقہ چنیں اور شروع کریں دبائیں۔"
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d سیشن؛ آخری میں %d%% درست۔"
+
+msgid "&Merge Lesson..."
+msgstr "سبق &ضم کریں..."
+
+msgid "&Properties..."
+msgstr "&خصوصیات..."
+
+msgid "&Tools"
+msgstr "&اوزار"
+
+msgid ", %d tests"
+msgstr "، %d ٹیسٹ"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "کوئی ویب سائٹ یا YouTube، Vimeo یا Dailymotion ویڈیو"
+
+msgid "About Recuerdo"
+msgstr "Recuerdo کا تعارف"
+
+msgid "About dialog not available"
+msgstr "تعارف کا ڈائیلاگ دستیاب نہیں"
+
+msgid "About dialog shown"
+msgstr "تعارف کا ڈائیلاگ دکھایا گیا"
+
+msgid "Add"
+msgstr "شامل کریں"
+
+msgid "Add Character"
+msgstr "حرف شامل کریں"
+
+msgid "Add Word"
+msgstr "لفظ شامل کریں"
+
+msgid "Add all places"
+msgstr "تمام مقامات شامل کریں"
+
+msgid "Add every place this map knows"
+msgstr "اس نقشے کا ہر مقام شامل کریں"
+
+msgid "Add files…"
+msgstr "فائلیں شامل کریں…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "کسی دوسرے سبق کے الفاظ اور نتائج اس سبق میں شامل کریں"
+
+msgid "Add web address…"
+msgstr "ویب پتہ شامل کریں…"
+
+msgid "All once"
+msgstr "سب ایک بار"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "سب ایک بار: ہر لفظ ایک بار۔ ذہین: غلط الفاظ جلد اور آخر میں دوبارہ آتے ہیں۔ وقفہ: الفاظ تب تک دوبارہ آتے ہیں جب تک آپ انہیں سیکھ نہ لیں۔"
+
+msgid "All words"
+msgstr "تمام الفاظ"
+
+msgid "Answer"
+msgstr "جواب"
+
+msgid "Answer Language:"
+msgstr "جواب کی زبان:"
+
+msgid "Answer language"
+msgstr "جواب کی زبان"
+
+msgid "Answer language:"
+msgstr "جواب کی زبان:"
+
+msgid "Answers"
+msgstr "جوابات"
+
+msgid "As entered"
+msgstr "جیسے درج کیا"
+
+msgid "Ask the answers"
+msgstr "جوابات پوچھیں"
+
+msgid "Ask this word again later"
+msgstr "یہ لفظ بعد میں دوبارہ پوچھیں"
+
+msgid "Ask:"
+msgstr "پوچھیں:"
+
+msgid "Brackets"
+msgstr "قوسین"
+
+msgid "Browse Unicode"
+msgstr "یونیکوڈ دیکھیں"
+
+msgid "Browse..."
+msgstr "براؤز کریں..."
+
+msgid "Cancel"
+msgstr "منسوخ کریں"
+
+msgid "Check"
+msgstr "جانچیں"
+
+msgid "Check!"
+msgstr "جانچیں!"
+
+msgid "Choose a file…"
+msgstr "فائل چنیں…"
+
+msgid "Clear List"
+msgstr "فہرست صاف کریں"
+
+msgid "Clear recent files"
+msgstr "حالیہ فائلیں صاف کریں"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "آغاز کے لیے 'مشق شروع کریں' پر کلک کریں"
+
+msgid "Comment"
+msgstr "تبصرہ"
+
+msgid "Continue"
+msgstr "جاری رکھیں"
+
+msgid "Correct Answer"
+msgstr "درست جواب"
+
+msgid "Correct anyway"
+msgstr "پھر بھی درست"
+
+msgid "Count your last answer as right after all"
+msgstr "اپنا آخری جواب درست شمار کریں"
+
+msgid "Counted as right"
+msgstr "درست شمار کیا گیا"
+
+msgid "Create Lesson"
+msgstr "سبق بنائیں"
+
+msgid "Create New Lesson"
+msgstr "نیا سبق بنائیں"
+
+msgid "Credits"
+msgstr "اعترافات"
+
+msgid "Degrees"
+msgstr "درجے"
+
+msgid "Description:"
+msgstr "تفصیل:"
+
+msgid "Done: %d of %d right."
+msgstr "مکمل: %d از %d درست۔"
+
+msgid "Download"
+msgstr "ڈاؤن لوڈ کریں"
+
+msgid "Download the lesson, with your results"
+msgstr "سبق اپنے نتائج کے ساتھ ڈاؤن لوڈ کریں"
+
+msgid "Download…"
+msgstr "ڈاؤن لوڈ کریں…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "سبق کی فائل یہاں چھوڑیں، یا کوئی فائل چنیں۔"
+
+msgid "Each session:"
+msgstr "ہر سیشن:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "منتخب سوال یا جواب میں فارمولا ساز سے ترمیم کریں"
+
+msgid "Empty the File > Open Recent list"
+msgstr "فائل > حالیہ کھولیں کی فہرست خالی کریں"
+
+msgid "Enter"
+msgstr "اندراج"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "یونیکوڈ کوڈ پوائنٹ درج کریں (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "سبق کی تفصیل درج کریں..."
+
+msgid "Enter lesson name..."
+msgstr "سبق کا نام درج کریں..."
+
+msgid "Enter lesson title"
+msgstr "سبق کا عنوان درج کریں"
+
+msgid "Enter some places first."
+msgstr "پہلے کچھ مقامات درج کریں۔"
+
+msgid "Error creating lesson: %v"
+msgstr "سبق بنانے میں خرابی: %v"
+
+msgid "Error loading file: %v"
+msgstr "فائل لوڈ کرنے میں خرابی: %v"
+
+msgid "Error: File dialog not available"
+msgstr "خرابی: فائل کا ڈائیلاگ دستیاب نہیں"
+
+msgid "Error: Lesson dialog not available"
+msgstr "خرابی: سبق کا ڈائیلاگ دستیاب نہیں"
+
+msgid "Error: No about dialog modules available"
+msgstr "خرابی: تعارف کے ڈائیلاگ کا کوئی ماڈیول دستیاب نہیں"
+
+msgid "Error: No file dialog modules available"
+msgstr "خرابی: فائل ڈائیلاگ کا کوئی ماڈیول دستیاب نہیں"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "خرابی: سبق کے ڈائیلاگ کا کوئی ماڈیول دستیاب نہیں"
+
+msgid "Error: No settings dialog modules available"
+msgstr "خرابی: ترتیبات کے ڈائیلاگ کا کوئی ماڈیول دستیاب نہیں"
+
+msgid "Error: Properties dialog not available"
+msgstr "خرابی: خصوصیات کا ڈائیلاگ دستیاب نہیں"
+
+msgid "Error: Settings dialog not available"
+msgstr "خرابی: ترتیبات کا ڈائیلاگ دستیاب نہیں"
+
+msgid "Example"
+msgstr "مثال"
+
+msgid "Exported %s"
+msgstr "%s برآمد کر دی گئی"
+
+msgid "Field separator:"
+msgstr "فیلڈ جداکار:"
+
+msgid "File"
+msgstr "فائل"
+
+msgid "File encoding:"
+msgstr "فائل کی انکوڈنگ:"
+
+msgid "Files"
+msgstr "فائلیں"
+
+msgid "First row contains headers"
+msgstr "پہلی قطار میں سرخیاں ہیں"
+
+msgid "Format"
+msgstr "فارمیٹ"
+
+msgid "Formula builder"
+msgstr "فارمولا ساز"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "فارمولا، مثلاً x^2 + 1"
+
+msgid "Fraction"
+msgstr "کسر"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "GNU General Public License کے تحت آزاد سافٹ ویئر،\nورژن 3 یا بعد کا"
+
+msgid "Functions"
+msgstr "فنکشن"
+
+msgid "Furigana and formulas"
+msgstr "فوریگانا اور فارمولے"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Recuerdo کا آغاز"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "پہلے اندراج ٹیب پر آئٹموں کو جواب دیں۔"
+
+msgid "Go on after seeing the right answer"
+msgstr "درست جواب دیکھ کر آگے بڑھیں"
+
+msgid "Grades in:"
+msgstr "گریڈ بطور:"
+
+msgid "Greek"
+msgstr "یونانی"
+
+msgid "Hard words"
+msgstr "مشکل الفاظ"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "مشکل الفاظ: جن کے جواب درست سے زیادہ بار غلط دیے گئے، یا جن کی ابھی مشق نہیں ہوئی۔ کبھی درست جواب نہیں دیا: جن کا پچھلے سیشنوں میں کوئی درست جواب نہیں۔"
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "جواب دہرائیں آپ کے ٹائپ کرنے سے پہلے جواب کتنی دیر دکھاتا ہے"
+
+msgid "How the Results tab grades your sessions"
+msgstr "نتائج ٹیب آپ کے سیشنوں کو کیسے گریڈ دیتا ہے"
+
+msgid "I was right"
+msgstr "میرا جواب درست تھا"
+
+msgid "I was wrong"
+msgstr "میرا جواب غلط تھا"
+
+msgid "Import"
+msgstr "درآمد کریں"
+
+msgid "Import File"
+msgstr "فائل درآمد کریں"
+
+msgid "Import Lesson"
+msgstr "سبق درآمد کریں"
+
+msgid "Import Options"
+msgstr "درآمد کے اختیارات"
+
+msgid "Import from &Picture..."
+msgstr "&تصویر سے درآمد کریں..."
+
+msgid "Import from Picture"
+msgstr "تصویر سے درآمد کریں"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "نام – مقام میں، جس مقام پر کلک کرنا ہے اس کا نام بولیں"
+
+msgid "In mind"
+msgstr "ذہن میں"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "جواب دہرائیں کے طریقے میں، آپ کے ٹائپ کرنے سے پہلے جواب کتنی دیر دکھایا جائے"
+
+msgid "Index"
+msgstr "اشاریہ"
+
+msgid "Integral"
+msgstr "تکمل"
+
+msgid "Interface"
+msgstr "انٹرفیس"
+
+msgid "Interval"
+msgstr "وقفہ"
+
+msgid "Items:"
+msgstr "آئٹم:"
+
+msgid "Languages"
+msgstr "زبانیں"
+
+msgid "Last session:"
+msgstr "آخری سیشن:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "آخری سیشن: %d از %d درست۔ اس سبق کے سیشن: %d۔"
+
+msgid "Latest Session Results"
+msgstr "تازہ ترین سیشن کے نتائج"
+
+msgid "Learn words, places and more by heart"
+msgstr "الفاظ، مقامات اور بہت کچھ زبانی یاد کریں"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "الفاظ، مقامات اور بہت کچھ زبانی یاد کریں:\nکسی غیر ملکی زبان کا ذخیرۂ الفاظ، جغرافیہ،\nیا کوئی بھی اور چیز جو آپ یاد رکھنا چاہیں۔"
+
+msgid "Lesson Information"
+msgstr "سبق کی معلومات"
+
+msgid "Lesson Properties"
+msgstr "سبق کی خصوصیات"
+
+msgid "Lesson Type"
+msgstr "سبق کی قسم"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "سبق میں %d لفظی جوڑے ہیں\n\nتفصیلی نتائج یہاں دیکھنے کے لیے مشق کا ایک سیشن مکمل کریں۔"
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "سبق میں %d لفظی جوڑے ہیں | %d پچھلے سیشن (پیش رفت دیکھیں)\n\nاپنے جوابات کی تفصیل یہاں دیکھنے کے لیے مشق کریں۔"
+
+msgid "Lesson type"
+msgstr "سبق کی قسم"
+
+msgid "Lesson type:"
+msgstr "سبق کی قسم:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "سبق: %d لفظی جوڑے | مکمل سیشن: %d\n\nتازہ ترین سیشن: %d/%d درست (%d%%)، گریڈ %s\nاوسط گریڈ: %s (%d%%)\n\nتازہ ترین سیشن کے تفصیلی نتائج:"
+
+msgid "Limit"
+msgstr "حد"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' لوڈ ہو گیا: %d الفاظ"
+
+msgid "Loading…"
+msgstr "لوڈ ہو رہا ہے…"
+
+msgid "Made a lesson of %d words"
+msgstr "%d الفاظ کا سبق بنا دیا گیا"
+
+msgid "Map:"
+msgstr "نقشہ:"
+
+msgid "Media"
+msgstr "میڈیا"
+
+msgid "Merged %d words from %s"
+msgstr "%d الفاظ %s سے ضم کر دیے گئے"
+
+msgid "Mode"
+msgstr "طریقہ"
+
+msgid "Mode:"
+msgstr "طریقہ:"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Name of a place"
+msgstr "کسی مقام کا نام"
+
+msgid "Name of the marked place"
+msgstr "نشان زدہ مقام کا نام"
+
+msgid "Name – Place"
+msgstr "نام – مقام"
+
+msgid "Name:"
+msgstr "نام:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "بولنے کا پروگرام درکار ہے: espeak-ng انسٹال کریں"
+
+msgid "Never answered correctly"
+msgstr "کبھی درست جواب نہیں دیا"
+
+msgid "New Lesson"
+msgstr "نیا سبق"
+
+msgid "New from &Text..."
+msgstr "&متن سے نیا..."
+
+msgid "New lesson created successfully"
+msgstr "نیا سبق کامیابی سے بن گیا"
+
+msgid "New lesson dialog created"
+msgstr "نئے سبق کا ڈائیلاگ بن گیا"
+
+msgid "New question"
+msgstr "نیا سوال"
+
+msgid "Next"
+msgstr "اگلا"
+
+msgid "No lesson data available"
+msgstr "سبق کا کوئی ڈیٹا دستیاب نہیں"
+
+msgid "No lesson open to show properties"
+msgstr "خصوصیات دکھانے کے لیے کوئی سبق کھلا نہیں"
+
+msgid "No recent lessons"
+msgstr "کوئی حالیہ سبق نہیں"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "ابھی کوئی نتائج نہیں: مشق ٹیب پر مشق کریں۔"
+
+msgid "No teaching results available yet"
+msgstr "مشق کے نتائج ابھی دستیاب نہیں"
+
+msgid "No words available for teaching"
+msgstr "مشق کے لیے کوئی لفظ دستیاب نہیں"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "مشق کے لیے کوئی لفظ نہیں: ابھی کوئی بھی \"%s\" نہیں"
+
+msgid "Now click where %s is on the map."
+msgstr "اب نقشے پر وہاں کلک کریں جہاں %s ہے۔"
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "ہر سطر میں ایک لفظ، سوال اور جواب کے درمیان برابر کا نشان۔"
+
+msgid "Open"
+msgstr "کھولیں"
+
+msgid "Open Lesson…"
+msgstr "سبق کھولیں…"
+
+msgid "Open a lesson"
+msgstr "کوئی سبق کھولیں"
+
+msgid "Open operation cancelled"
+msgstr "کھولنا منسوخ کر دیا گیا"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher کے اسباق (.ot, .otwd)، الفاظ کی فہرستیں (.csv, .txt)، KWordQuiz (.kvtml)، Anki، WRTS اور مزید"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' کھول دی گئی - %d الفاظ"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "OpenTeacher کے اسباق (.ot, .otwd)، الفاظ کی فہرستیں (.csv, .txt) اور KWordQuiz (.kvtml) فائلیں کھولتا ہے"
+
+msgid "Operators"
+msgstr "عاملین"
+
+msgid "Or type a list"
+msgstr "یا فہرست ٹائپ کریں"
+
+msgid "Order"
+msgstr "ترتیب"
+
+msgid "Order:"
+msgstr "ترتیب:"
+
+msgid "Other lesson"
+msgstr "دوسرا سبق"
+
+msgid "Other picture…"
+msgstr "دوسری تصویر…"
+
+msgid "Page %d of %d"
+msgstr "صفحہ %d از %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "تصاویر، آوازیں، ویڈیوز یا متن، سبق کے اندر محفوظ"
+
+msgid "Place %d"
+msgstr "مقام %d"
+
+msgid "Place – Name"
+msgstr "مقام – نام"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "مقام – نام: ایک مقام پر نشان ہے، اس کا نام ٹائپ کریں۔\nنام – مقام: ایک نام دیا گیا ہے، اس مقام پر کلک کریں۔"
+
+msgid "Please add words in the Enter tab"
+msgstr "براہ کرم اندراج ٹیب میں الفاظ شامل کریں"
+
+msgid "Power"
+msgstr "قوت نما"
+
+msgid "Practice"
+msgstr "مشق"
+
+msgid "Practice sessions:"
+msgstr "مشق کے سیشن:"
+
+msgid "Practise"
+msgstr "مشق کریں"
+
+msgid "Practise again"
+msgstr "دوبارہ مشق کریں"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "الٹی طرف سے مشق کریں: جوابات پوچھے جاتے ہیں اور سوالات جواب ہوتے ہیں"
+
+msgid "Practise these words"
+msgstr "ان الفاظ کی مشق کریں"
+
+msgid "Practise to see your answers here."
+msgstr "اپنے جوابات یہاں دیکھنے کے لیے مشق کریں۔"
+
+msgid "Preview"
+msgstr "پیش نظارہ"
+
+msgid "Previous"
+msgstr "پچھلا"
+
+msgid "Printed %s"
+msgstr "%s چھاپ دی گئی"
+
+msgid "Progress"
+msgstr "پیش رفت"
+
+msgid "Pronounce names"
+msgstr "نام بولیں"
+
+msgid "Pronounce questions"
+msgstr "سوالات بولیں"
+
+msgid "Properties dialog cancelled"
+msgstr "خصوصیات کا ڈائیلاگ منسوخ کر دیا گیا"
+
+msgid "Question"
+msgstr "سوال"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "سوال %d از %d (اسکور: %d/%d درست)"
+
+msgid "Question Language:"
+msgstr "سوال کی زبان:"
+
+msgid "Question language"
+msgstr "سوال کی زبان"
+
+msgid "Question language:"
+msgstr "سوال کی زبان:"
+
+msgid "Questions"
+msgstr "سوالات"
+
+msgid "Quick Access"
+msgstr "فوری رسائی"
+
+msgid "Random"
+msgstr "بے ترتیب"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "تصویر سے %d لفظی جوڑے پڑھے گئے: اندراج ٹیب پر انہیں جانچیں"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "چھپی ہوئی فہرست کے اسکین یا تصویر سے الفاظ کی فہرست پڑھیں (Tesseract درکار ہے)"
+
+msgid "Ready"
+msgstr "تیار"
+
+msgid "Ready to start"
+msgstr "شروع کرنے کے لیے تیار"
+
+msgid "Ready to start teaching"
+msgstr "مشق شروع کرنے کے لیے تیار"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo آپ کے براؤزر میں چلتا ہے: آپ کے اسباق آپ کے کمپیوٹر پر ہی رہتے ہیں۔"
+
+msgid "Remove"
+msgstr "ہٹائیں"
+
+msgid "Remove Word"
+msgstr "لفظ ہٹائیں"
+
+msgid "Repeat answer"
+msgstr "جواب دہرائیں"
+
+msgid "Repeat answer shows the answer for"
+msgstr "جواب دہرائیں جواب کو اتنی دیر دکھاتا ہے"
+
+msgid "Result"
+msgstr "نتیجہ"
+
+msgid "Results Overview"
+msgstr "نتائج کا خلاصہ"
+
+msgid "Reverse"
+msgstr "الٹ دیں"
+
+msgid "Reversed"
+msgstr "الٹی ترتیب"
+
+msgid "Right"
+msgstr "درست"
+
+msgid "Right answer"
+msgstr "درست جواب"
+
+msgid "Right: %s"
+msgstr "درست: %s"
+
+msgid "Root"
+msgstr "جذر"
+
+msgid "Rotate 90°"
+msgstr "90° گھمائیں"
+
+msgid "Saved %s"
+msgstr "%s محفوظ کر دی گئی"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "ہر سوال سوال کی زبان میں بلند آواز سے بولیں (espeak-ng، یا macOS یا Windows کی آوازیں درکار ہیں)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "ہر سوال سوال کی زبان میں بلند آواز سے بولیں"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "حروف دیکھنے کے لیے اوپر سے کوئی یونیکوڈ بلاک منتخب کریں، یا براہ راست کوڈ پوائنٹ درج کریں۔"
+
+msgid "Select file to import..."
+msgstr "درآمد کے لیے فائل منتخب کریں..."
+
+msgid "Selected file: %s"
+msgstr "منتخب فائل: %s"
+
+msgid "Settings"
+msgstr "ترتیبات"
+
+msgid "Settings saved"
+msgstr "ترتیبات محفوظ ہو گئیں"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "ایک سوال کے کئی الفاظ: انہیں کوموں سے الگ کریں۔ تبدیلیاں صفحہ چھوڑنے تک رہتی ہیں: سبق محفوظ رکھنے کے لیے اسے ڈاؤن لوڈ کریں۔"
+
+msgid "Show answer for:"
+msgstr "جواب اتنی دیر دکھائیں:"
+
+msgid "Show or hide special characters"
+msgstr "خاص حروف دکھائیں یا چھپائیں"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "خاص حروف دکھائیں یا چھپائیں: اعراب والے حروف اور دوسرے رسم الخط"
+
+msgid "Shuffle answer"
+msgstr "گڈمڈ جواب"
+
+msgid "Skip"
+msgstr "چھوڑیں"
+
+msgid "Smart"
+msgstr "ذہین"
+
+msgid "Sort"
+msgstr "ترتیب دیں"
+
+msgid "Sorted"
+msgstr "ترتیب وار"
+
+msgid "Square root"
+msgstr "جذر المربع"
+
+msgid "Start"
+msgstr "شروع کریں"
+
+msgid "Start Again"
+msgstr "دوبارہ شروع کریں"
+
+msgid "Start Teaching"
+msgstr "مشق شروع کریں"
+
+msgid "Stop"
+msgstr "روکیں"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "تصویر سیدھی کریں تاکہ سطریں ہموار ہوں، اور اگر تصویر میں اور بھی کچھ ہو تو الفاظ کی فہرست کے گرد ایک مستطیل کھینچیں۔"
+
+msgid "Straighten:"
+msgstr "سیدھا کریں:"
+
+msgid "Structure"
+msgstr "ساخت"
+
+msgid "Sum"
+msgstr "مجموعہ"
+
+msgid "System language"
+msgstr "سسٹم کی زبان"
+
+msgid "Teach"
+msgstr "مشق"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "مشق مکمل! حتمی اسکور: %d/%d درست (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "مشق کا سیشن مکمل ہو گیا"
+
+msgid "Text"
+msgstr "متن"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "سبق میں %s %s موجود نہیں ہے۔"
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Recuerdo کے مینیو اور اسکرینوں کی زبان (Recuerdo دوبارہ شروع کرنے کے بعد)۔ جن متون کا ترجمہ نہیں وہ انگریزی میں رہتے ہیں۔"
+
+msgid "There are no settings to change."
+msgstr "تبدیل کرنے کے لیے کوئی ترتیبات نہیں ہیں۔"
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "جواب کے بارے میں سوچیں، اور جب ہو جائے تو 'جواب دیکھیں' دبائیں۔"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Title:"
+msgstr "عنوان:"
+
+msgid "Topology"
+msgstr "جغرافیہ"
+
+msgid "Translation: %s"
+msgstr "ترجمہ: %s"
+
+msgid "Try an example"
+msgstr "ایک مثال آزمائیں"
+
+msgid "Type a List"
+msgstr "فہرست ٹائپ کریں"
+
+msgid "Type at least one word."
+msgstr "کم از کم ایک لفظ ٹائپ کریں۔"
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "الفاظ کی فہرست \"سوال = جواب\" سطروں کی صورت میں ٹائپ یا پیسٹ کریں"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "الفاظ ٹائپ یا پیسٹ کریں: ہر سطر میں ایک، سوال اور جواب کے درمیان برابر کا نشان (=) یا ٹیب، جیسے \"hond = dog\"۔ ایک طرف کے کئی الفاظ کوموں سے الگ کیے جاتے ہیں۔"
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "الفاظ \"سوال = جواب\" سطروں کی صورت میں ٹائپ یا پیسٹ کریں"
+
+msgid "Typed list"
+msgstr "ٹائپ کی گئی فہرست"
+
+msgid "Typing"
+msgstr "ٹائپنگ"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "ٹائپنگ: جواب ٹائپ کریں۔ گڈمڈ جواب: جواب کے حروف بطور اشارہ۔ جواب دہرائیں: پہلے جواب دکھایا جاتا ہے، پھر یاد سے ٹائپ کیا جاتا ہے۔"
+
+msgid "Unicode Block:"
+msgstr "یونیکوڈ بلاک:"
+
+msgid "Use a picture of your own as the map"
+msgstr "اپنی تصویر کو نقشے کے طور پر استعمال کریں"
+
+msgid "Version %s"
+msgstr "ورژن %s"
+
+msgid "View answer"
+msgstr "جواب دیکھیں"
+
+msgid "Where is %s?"
+msgstr "%s کہاں ہے؟"
+
+msgid "Which place is marked?"
+msgstr "کس مقام پر نشان ہے؟"
+
+msgid "Whole picture"
+msgstr "پوری تصویر"
+
+msgid "Word Lesson: %s"
+msgstr "الفاظ کا سبق: %s"
+
+msgid "Word Pairs"
+msgstr "لفظی جوڑے"
+
+msgid "Words"
+msgstr "الفاظ"
+
+msgid "Words List"
+msgstr "الفاظ کی فہرست"
+
+msgid "Words never answered correctly"
+msgstr "وہ الفاظ جن کا کبھی درست جواب نہیں دیا"
+
+msgid "Words:"
+msgstr "الفاظ:"
+
+msgid "Wrong"
+msgstr "غلط"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "غلط۔ درست جواب ہے: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "غلط: %s → %s"
+
+msgid "Your Answer"
+msgstr "آپ کا جواب"
+
+msgid "Your answer"
+msgstr "آپ کا جواب"
+
+msgid "e.g. Dutch"
+msgstr "مثلاً ڈچ"
+
+msgid "e.g. English"
+msgstr "مثلاً انگریزی"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nOpenTeacher Team کے OpenTeacher پر مبنی، 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ درست: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ وہ %s تھا"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ جواب تھا: %s"
+
+# corrects OpenTeacher's ur.po for 'Note:': "نوٹ" (remark)
+msgid "Grades in"
+msgstr "گریڈ"
+
+# corrects OpenTeacher's ur.po for '&Documentation': broken transliteration
+msgid "&Getting Started"
+msgstr "&دستاویزات"
+
+# corrects OpenTeacher's ur.po for '&Quit': missing shortcut
+msgid "E&xit"
+msgstr "&بند کریں"

@@ -26,6 +26,8 @@ type Pad struct {
 func New(edit *qt.QLineEdit, wrap bool, parent *qt.QWidget) *Pad {
 	p := &Pad{QWidget: qt.NewQWidget(parent), edit: edit, wrap: wrap}
 	p.SetObjectName(*qt.NewQAnyStringView3("formulaPad"))
+	// formulas are written left to right, also in Arabic or Urdu
+	p.SetLayoutDirection(qt.LeftToRight)
 	layout := qt.NewQVBoxLayout(p.QWidget)
 	layout.SetContentsMargins(4, 4, 4, 4)
 	layout.SetSpacing(2)

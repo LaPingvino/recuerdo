@@ -104,6 +104,12 @@ def main():
         ot = parse(po)
         own_path = TR / f"recuerdo-{lang}.po"
         own = parse(own_path) if own_path.exists() else {}
+        if lang.startswith("en_"):
+            # British and Australian English: Recuerdo's English already
+            # uses British spelling (practise, cancelled), so the English
+            # source is their text where OpenTeacher's file has none
+            print(f"{lang:6} {len(found):4}/{len(found)} (100%) English source")
+            continue
         n = sum(translated(t, ot, own, al) for t in found)
         print(f"{lang:6} {n:4}/{len(found)} ({100 * n // len(found)}%)" + (" + own" if own else ""))
         if lang == missing_for:

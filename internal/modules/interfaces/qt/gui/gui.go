@@ -1199,11 +1199,15 @@ func (mod *GuiModule) newLessonFromText() {
 
 // installQtTranslator translates Qt's own texts (standard buttons such as
 // OK, Cancel and Close, file dialogs) into the interface language, with
-// Qt's translations when they are installed (qt5-translations).
+// Qt's translations when they are installed (qt6-translations), and lays
+// the interface out from right to left for Arabic, Urdu and the like.
 func (mod *GuiModule) installQtTranslator() {
 	lang := i18n.Current()
 	if lang == "" {
 		return
+	}
+	if i18n.RightToLeft(lang) {
+		qt.QGuiApplication_SetLayoutDirection(qt.RightToLeft)
 	}
 	dir := qt.QLibraryInfo_Location(qt.QLibraryInfo__TranslationsPath)
 	tr := qt.NewQTranslator()

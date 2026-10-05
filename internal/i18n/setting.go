@@ -3,6 +3,7 @@ package i18n
 import (
 	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
@@ -52,4 +53,14 @@ func Start(store settingsdefs.Store) {
 		lang = SystemLanguage()
 	}
 	Use(Dir(), lang)
+}
+
+// RightToLeft reports whether lang (a code such as "ar" or "ur_PK") is
+// written from right to left, so the interface is laid out mirrored.
+func RightToLeft(lang string) bool {
+	switch strings.SplitN(lang, "_", 2)[0] {
+	case "ar", "ur", "fa", "he", "ps", "sd", "ug", "yi", "ckb", "dv":
+		return true
+	}
+	return false
 }

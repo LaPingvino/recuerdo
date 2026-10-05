@@ -104,6 +104,8 @@ function applyTranslations() {
 		el.placeholder = t(el.dataset.i18nPlaceholder);
 	}
 	document.documentElement.lang = (currentLanguage || "en").replace("_", "-");
+	// Arabic, Urdu and the like: the page mirrored
+	document.documentElement.dir = api && api.rightToLeft && api.rightToLeft(currentLanguage || "en") ? "rtl" : "ltr";
 }
 let currentLanguage = "";
 async function useLanguage(lang) {

@@ -1,0 +1,868 @@
+# Recuerdo's own texts in Sinhala (OpenTeacher's translations, data/translations/si.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Sinhala terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nශ්‍රේණිය (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "පුහුණු වීමට අයිතම: %d. ආරම්භ කරන්න ඔබන්න."
+
+msgid "%d of %d"
+msgstr "%d / %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "හරි: %d / %d (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "ස්ථාන: %d. පුහුණු වන ආකාරය තෝරා ආරම්භ කරන්න ඔබන්න."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "වාර: %d; අවසාන වාරය %d%% හරි."
+
+msgid "&Getting Started"
+msgstr "ආරම්භ කිරීම (&G)"
+
+msgid "&Merge Lesson..."
+msgstr "පාඩම ඒකාබද්ධ කරන්න (&M)..."
+
+msgid "&Properties..."
+msgstr "ගුණාංග (&P)..."
+
+msgid "&Tools"
+msgstr "මෙවලම් (&T)"
+
+msgid ", %d tests"
+msgstr ", පරීක්ෂණ: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "වෙබ් අඩවියක් හෝ YouTube, Vimeo හෝ Dailymotion වීඩියෝවක්"
+
+msgid "About Recuerdo"
+msgstr "Recuerdo පිළිබඳ"
+
+msgid "About dialog not available"
+msgstr "පිළිබඳ කවුළුව ලබා ගත නොහැක"
+
+msgid "About dialog shown"
+msgstr "පිළිබඳ කවුළුව පෙන්වන ලදී"
+
+msgid "Add"
+msgstr "එක් කරන්න"
+
+msgid "Add Character"
+msgstr "අක්ෂරය එක් කරන්න"
+
+msgid "Add Word"
+msgstr "වචනය එක් කරන්න"
+
+msgid "Add all places"
+msgstr "සියලු ස්ථාන එක් කරන්න"
+
+msgid "Add every place this map knows"
+msgstr "මෙම සිතියමේ ඇති සෑම ස්ථානයක්ම එක් කරන්න"
+
+msgid "Add files…"
+msgstr "ගොනු එක් කරන්න…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "වෙනත් පාඩමක වචන සහ ප්‍රතිඵල මෙම පාඩමට එක් කරන්න"
+
+msgid "Add web address…"
+msgstr "වෙබ් ලිපිනය එක් කරන්න…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "සියල්ල එක් වරක්: සෑම වචනයක්ම එක් වරක්. බුද්ධිමත්: වැරදි වචන ඉක්මනින් සහ අවසානයේ නැවත එයි. කාල පරතරය: ඔබ දැන ගන්නා තුරු වචන නැවත එයි."
+
+msgid "All words"
+msgstr "සියලු වචන"
+
+msgid "Answer Language:"
+msgstr "පිළිතුරු භාෂාව:"
+
+msgid "Answer language"
+msgstr "පිළිතුරු භාෂාව"
+
+msgid "As entered"
+msgstr "ඇතුළත් කළ පරිදි"
+
+msgid "Ask the answers"
+msgstr "පිළිතුරු අසන්න"
+
+msgid "Ask this word again later"
+msgstr "මෙම වචනය පසුව නැවත අසන්න"
+
+msgid "Ask:"
+msgstr "අසන්න:"
+
+msgid "Brackets"
+msgstr "වරහන්"
+
+msgid "Browse Unicode"
+msgstr "Unicode පිරික්සන්න"
+
+msgid "Browse..."
+msgstr "පිරික්සන්න..."
+
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+msgid "Check"
+msgstr "පරීක්ෂා කරන්න"
+
+msgid "Choose a file…"
+msgstr "ගොනුවක් තෝරන්න…"
+
+msgid "Clear List"
+msgstr "ලැයිස්තුව හිස් කරන්න"
+
+msgid "Clear recent files"
+msgstr "මෑත ගොනු හිස් කරන්න"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "ආරම්භ කිරීමට 'ඉගැන්වීම ආරම්භ කරන්න' ක්ලික් කරන්න"
+
+msgid "Continue"
+msgstr "ඉදිරියට"
+
+msgid "Correct Answer"
+msgstr "නිවැරදි පිළිතුර"
+
+msgid "Correct anyway"
+msgstr "කෙසේ වෙතත් හරි"
+
+msgid "Count your last answer as right after all"
+msgstr "ඔබගේ අවසාන පිළිතුර හරි ලෙස ගණන් කරන්න"
+
+msgid "Counted as right"
+msgstr "හරි ලෙස ගණන් කරන ලදී"
+
+msgid "Create Lesson"
+msgstr "පාඩම නිර්මාණය කරන්න"
+
+msgid "Create New Lesson"
+msgstr "නව පාඩමක් නිර්මාණය කරන්න"
+
+msgid "Credits"
+msgstr "ස්තුතිය"
+
+msgid "Degrees"
+msgstr "අංශක"
+
+msgid "Description:"
+msgstr "විස්තරය:"
+
+msgid "Done: %d of %d right."
+msgstr "අවසන්: හරි %d / %d."
+
+msgid "Download"
+msgstr "බාගන්න"
+
+msgid "Download the lesson, with your results"
+msgstr "ඔබගේ ප්‍රතිඵල සමඟ පාඩම බාගන්න"
+
+msgid "Download…"
+msgstr "බාගන්න…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "පාඩම් ගොනුවක් මෙහි අතහරින්න, නැතහොත් එකක් තෝරන්න."
+
+msgid "Each session:"
+msgstr "සෑම වාරයකම:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "තෝරාගත් ප්‍රශ්නය හෝ පිළිතුර සූත්‍ර නිර්මාපකය සමඟ සංස්කරණය කරන්න"
+
+msgid "Empty the File > Open Recent list"
+msgstr "ගොනුව > මෑත ඒවා විවෘත කරන්න ලැයිස්තුව හිස් කරන්න"
+
+msgid "Enter"
+msgstr "ඇතුළත් කරන්න"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode කේත ලක්ෂ්‍යය ඇතුළත් කරන්න (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "පාඩමේ විස්තරය ඇතුළත් කරන්න..."
+
+msgid "Enter lesson name..."
+msgstr "පාඩමේ නම ඇතුළත් කරන්න..."
+
+msgid "Enter lesson title"
+msgstr "පාඩමේ මාතෘකාව ඇතුළත් කරන්න"
+
+msgid "Enter some places first."
+msgstr "පළමුව ස්ථාන කිහිපයක් ඇතුළත් කරන්න."
+
+msgid "Error creating lesson: %v"
+msgstr "පාඩම නිර්මාණය කිරීමේ දෝෂය: %v"
+
+msgid "Error loading file: %v"
+msgstr "ගොනුව පූරණය කිරීමේ දෝෂය: %v"
+
+msgid "Error: File dialog not available"
+msgstr "දෝෂය: ගොනු කවුළුව ලබා ගත නොහැක"
+
+msgid "Error: Lesson dialog not available"
+msgstr "දෝෂය: පාඩම් කවුළුව ලබා ගත නොහැක"
+
+msgid "Error: No about dialog modules available"
+msgstr "දෝෂය: පිළිබඳ කවුළු මොඩියුල කිසිවක් නැත"
+
+msgid "Error: No file dialog modules available"
+msgstr "දෝෂය: ගොනු කවුළු මොඩියුල කිසිවක් නැත"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "දෝෂය: පාඩම් කවුළු මොඩියුල කිසිවක් නැත"
+
+msgid "Error: No settings dialog modules available"
+msgstr "දෝෂය: සැකසුම් කවුළු මොඩියුල කිසිවක් නැත"
+
+msgid "Error: Properties dialog not available"
+msgstr "දෝෂය: ගුණාංග කවුළුව ලබා ගත නොහැක"
+
+msgid "Error: Settings dialog not available"
+msgstr "දෝෂය: සැකසුම් කවුළුව ලබා ගත නොහැක"
+
+msgid "Example"
+msgstr "උදාහරණය"
+
+msgid "Exported %s"
+msgstr "අපනයනය කරන ලදී: %s"
+
+msgid "Field separator:"
+msgstr "ක්ෂේත්‍ර වෙන්කරනය:"
+
+msgid "File"
+msgstr "ගොනුව"
+
+msgid "File encoding:"
+msgstr "ගොනු කේතනය:"
+
+msgid "Files"
+msgstr "ගොනු"
+
+msgid "First row contains headers"
+msgstr "පළමු පේළියේ ශීර්ෂ ඇත"
+
+msgid "Format"
+msgstr "ආකෘතිය"
+
+msgid "Formula builder"
+msgstr "සූත්‍ර නිර්මාපකය"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "සූත්‍රය, උදා. x^2 + 1"
+
+msgid "Fraction"
+msgstr "භාගය"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "GNU General Public License යටතේ නිදහස් මෘදුකාංගයකි,\nඅනුවාදය 3 හෝ පසු අනුවාදයක්"
+
+msgid "Functions"
+msgstr "ශ්‍රිත"
+
+msgid "Furigana and formulas"
+msgstr "Furigana සහ සූත්‍ර"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Recuerdo සමඟ ආරම්භ කිරීම"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "පළමුව ඇතුළත් කරන්න ටැබයේ අයිතමවලට පිළිතුරක් දෙන්න."
+
+msgid "Go on after seeing the right answer"
+msgstr "නිවැරදි පිළිතුර දුටු පසු ඉදිරියට යන්න"
+
+msgid "Grades in"
+msgstr "ශ්‍රේණි ක්‍රමය"
+
+msgid "Grades in:"
+msgstr "ශ්‍රේණි ක්‍රමය:"
+
+msgid "Hard words"
+msgstr "අමාරු වචන"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "අමාරු වචන: හරි වාරවලට වඩා වැඩි වාර ගණනක් වැරදි වූ හෝ තවම පුහුණු නොවූ වචන. කිසි විටෙක හරි නොවූ: පෙර වාරවලදී හරි පිළිතුරක් නොලැබුණු වචන."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "ඔබ ටයිප් කිරීමට පෙර පිළිතුර නැවත කියන්න ප්‍රකාරය පිළිතුර පෙන්වන කාලය"
+
+msgid "How the Results tab grades your sessions"
+msgstr "ප්‍රතිඵල ටැබය ඔබගේ වාර ශ්‍රේණිගත කරන ආකාරය"
+
+msgid "Import"
+msgstr "ආයාත කරන්න"
+
+msgid "Import File"
+msgstr "ගොනුව ආයාත කරන්න"
+
+msgid "Import Lesson"
+msgstr "පාඩම ආයාත කරන්න"
+
+msgid "Import Options"
+msgstr "ආයාත විකල්ප"
+
+msgid "Import from &Picture..."
+msgstr "පින්තූරයකින් ආයාත කරන්න (&P)..."
+
+msgid "Import from Picture"
+msgstr "පින්තූරයකින් ආයාත කරන්න"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "නම – ස්ථානය ප්‍රකාරයේදී, ක්ලික් කළ යුතු ස්ථානයේ නම කියන්න"
+
+msgid "In mind"
+msgstr "සිතින්"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "පිළිතුර නැවත කියන්න ප්‍රකාරයේදී, ඔබ ටයිප් කිරීමට පෙර පිළිතුර පෙන්වන කාලය"
+
+msgid "Index"
+msgstr "යටකුර"
+
+msgid "Integral"
+msgstr "අනුකලය"
+
+msgid "Interface"
+msgstr "අතුරුමුහුණත"
+
+msgid "Items:"
+msgstr "අයිතම:"
+
+msgid "Language"
+msgstr "භාෂාව"
+
+msgid "Languages"
+msgstr "භාෂා"
+
+msgid "Last session:"
+msgstr "අවසාන වාරය:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "අවසාන වාරය: හරි %d / %d. මෙම පාඩමේ වාර: %d."
+
+msgid "Latest Session Results"
+msgstr "අවසාන වාරයේ ප්‍රතිඵල"
+
+msgid "Learn words, places and more by heart"
+msgstr "වචන, ස්ථාන සහ තවත් දේ කටපාඩම් කරන්න"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "වචන, ස්ථාන සහ තවත් දේ කටපාඩම් කරන්න:\nවිදේශ භාෂාවක වචන මාලාව, ස්ථලාකෘතිය,\nහෝ ඔබට මතක තබා ගැනීමට අවශ්‍ය වෙනත් ඕනෑම දෙයක්."
+
+msgid "Lesson Information"
+msgstr "පාඩම් තොරතුරු"
+
+msgid "Lesson Properties"
+msgstr "පාඩම් ගුණාංග"
+
+msgid "Lesson Type"
+msgstr "පාඩම් වර්ගය"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "පාඩමේ වචන යුගල: %d\n\nසවිස්තර ප්‍රතිඵල මෙහි දැකීමට ඉගැන්වීමේ වාරයක් සම්පූර්ණ කරන්න."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "පාඩමේ වචන යුගල: %d | පෙර වාර: %d (ප්‍රගතිය බලන්න)\n\nඔබගේ පිළිතුරු සවිස්තරව මෙහි දැකීමට පුහුණු වන්න."
+
+msgid "Lesson type:"
+msgstr "පාඩම් වර්ගය:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "පාඩම: වචන යුගල %d | සම්පූර්ණ කළ වාර: %d\n\nඅවසාන වාරය: %d/%d හරි (%d%%), ශ්‍රේණිය %s\nසාමාන්‍ය ශ්‍රේණිය: %s (%d%%)\n\nඅවසාන වාරයේ සවිස්තර ප්‍රතිඵල:"
+
+msgid "Limit"
+msgstr "සීමාව"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' පූරණය කරන ලදී: වචන %d"
+
+msgid "Loading…"
+msgstr "පූරණය වෙමින්…"
+
+msgid "Made a lesson of %d words"
+msgstr "පාඩමක් සාදන ලදී: වචන %d"
+
+msgid "Map:"
+msgstr "සිතියම:"
+
+msgid "Media"
+msgstr "මාධ්‍ය"
+
+msgid "Merged %d words from %s"
+msgstr "ඒකාබද්ධ කරන ලද වචන: %d, %s වෙතින්"
+
+msgid "Mode"
+msgstr "ප්‍රකාරය"
+
+msgid "Mode:"
+msgstr "ප්‍රකාරය:"
+
+msgid "Name of a place"
+msgstr "ස්ථානයක නම"
+
+msgid "Name of the marked place"
+msgstr "සලකුණු කළ ස්ථානයේ නම"
+
+msgid "Name – Place"
+msgstr "නම – ස්ථානය"
+
+msgid "Name:"
+msgstr "නම:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "කථන වැඩසටහනක් අවශ්‍යයි: espeak-ng ස්ථාපනය කරන්න"
+
+msgid "Never answered correctly"
+msgstr "කිසි විටෙක හරි නොවූ"
+
+msgid "New Lesson"
+msgstr "නව පාඩම"
+
+msgid "New from &Text..."
+msgstr "පෙළෙන් නව (&T)..."
+
+msgid "New lesson created successfully"
+msgstr "නව පාඩම සාර්ථකව නිර්මාණය කරන ලදී"
+
+msgid "New lesson dialog created"
+msgstr "නව පාඩම් කවුළුව නිර්මාණය කරන ලදී"
+
+msgid "New question"
+msgstr "නව ප්‍රශ්නය"
+
+msgid "Next"
+msgstr "ඊළඟ"
+
+msgid "No lesson data available"
+msgstr "පාඩම් දත්ත නැත"
+
+msgid "No lesson open to show properties"
+msgstr "ගුණාංග පෙන්වීමට විවෘත පාඩමක් නැත"
+
+msgid "No recent lessons"
+msgstr "මෑත පාඩම් නැත"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "තවම ප්‍රතිඵල නැත: උගන්වන්න ටැබයේ පුහුණු වන්න."
+
+msgid "No teaching results available yet"
+msgstr "තවම ඉගැන්වීමේ ප්‍රතිඵල නැත"
+
+msgid "No words available for teaching"
+msgstr "ඉගැන්වීමට වචන නැත"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "පුහුණු වීමට වචන නැත: තවම \"%s\" කිසිවක් නැත"
+
+msgid "Now click where %s is on the map."
+msgstr "දැන් සිතියමේ %s ඇති තැන ක්ලික් කරන්න."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "පේළියකට එක් වචනයක්, ප්‍රශ්නය සහ පිළිතුර අතර සමාන ලකුණක් සමඟ."
+
+msgid "Open"
+msgstr "විවෘත කරන්න"
+
+msgid "Open &Recent"
+msgstr "මෑත ඒවා විවෘත කරන්න (&R)"
+
+msgid "Open Lesson…"
+msgstr "පාඩම විවෘත කරන්න…"
+
+msgid "Open a lesson"
+msgstr "පාඩමක් විවෘත කරන්න"
+
+msgid "Open operation cancelled"
+msgstr "විවෘත කිරීම අවලංගු කරන ලදී"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher පාඩම් (.ot, .otwd), වචන ලැයිස්තු (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS සහ තවත්"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' විවෘත කරන ලදී - වචන %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "OpenTeacher පාඩම් (.ot, .otwd), වචන ලැයිස්තු (.csv, .txt) සහ KWordQuiz (.kvtml) ගොනු විවෘත කරයි"
+
+msgid "Operators"
+msgstr "කාරක"
+
+msgid "Or type a list"
+msgstr "නැතහොත් ලැයිස්තුවක් ටයිප් කරන්න"
+
+msgid "Order"
+msgstr "අනුපිළිවෙළ"
+
+msgid "Order:"
+msgstr "අනුපිළිවෙළ:"
+
+msgid "Other lesson"
+msgstr "වෙනත් පාඩම"
+
+msgid "Other picture…"
+msgstr "වෙනත් පින්තූරයක්…"
+
+msgid "Page %d of %d"
+msgstr "පිටුව %d / %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "පාඩම තුළ තබා ඇති පින්තූර, ශබ්ද, වීඩියෝ හෝ පෙළ"
+
+msgid "Place %d"
+msgstr "ස්ථානය %d"
+
+msgid "Place – Name"
+msgstr "ස්ථානය – නම"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "ස්ථානය – නම: ස්ථානයක් සලකුණු කර ඇත, එහි නම ටයිප් කරන්න.\nනම – ස්ථානය: නමක් දී ඇත, ස්ථානය ක්ලික් කරන්න."
+
+msgid "Please add words in the Enter tab"
+msgstr "කරුණාකර ඇතුළත් කරන්න ටැබයේ වචන එක් කරන්න"
+
+msgid "Power"
+msgstr "ඝාතය"
+
+msgid "Practice"
+msgstr "පුහුණුව"
+
+msgid "Practice sessions:"
+msgstr "පුහුණු වාර:"
+
+msgid "Practise"
+msgstr "පුහුණු වන්න"
+
+msgid "Practise again"
+msgstr "නැවත පුහුණු වන්න"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "අනෙක් පැත්තට පුහුණු වන්න: පිළිතුරු අසනු ලබන අතර ප්‍රශ්න පිළිතුරු වේ"
+
+msgid "Practise these words"
+msgstr "මෙම වචන පුහුණු වන්න"
+
+msgid "Practise to see your answers here."
+msgstr "ඔබගේ පිළිතුරු මෙහි දැකීමට පුහුණු වන්න."
+
+msgid "Preview"
+msgstr "පෙරදසුන"
+
+msgid "Previous"
+msgstr "පෙර"
+
+msgid "Printed %s"
+msgstr "මුද්‍රණය කරන ලදී: %s"
+
+msgid "Progress"
+msgstr "ප්‍රගතිය"
+
+msgid "Pronounce names"
+msgstr "නම් උච්චාරණය කරන්න"
+
+msgid "Pronounce questions"
+msgstr "ප්‍රශ්න උච්චාරණය කරන්න"
+
+msgid "Properties dialog cancelled"
+msgstr "ගුණාංග කවුළුව අවලංගු කරන ලදී"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "ප්‍රශ්නය %d / %d (ලකුණු: %d/%d හරි)"
+
+msgid "Question Language:"
+msgstr "ප්‍රශ්න භාෂාව:"
+
+msgid "Question language"
+msgstr "ප්‍රශ්න භාෂාව"
+
+msgid "Quick Access"
+msgstr "ඉක්මන් ප්‍රවේශය"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "පින්තූරයෙන් කියවූ වචන යුගල: %d. ඇතුළත් කරන්න ටැබයේ ඒවා පරීක්ෂා කරන්න"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "මුද්‍රිත ලැයිස්තුවක ස්කෑන් එකකින් හෝ ඡායාරූපයකින් වචන ලැයිස්තුවක් කියවන්න (Tesseract අවශ්‍යයි)"
+
+msgid "Ready"
+msgstr "සූදානම්"
+
+msgid "Ready to start"
+msgstr "ආරම්භ කිරීමට සූදානම්"
+
+msgid "Ready to start teaching"
+msgstr "ඉගැන්වීම ආරම්භ කිරීමට සූදානම්"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo ඔබගේ බ්‍රවුසරයේ ක්‍රියා කරයි: ඔබගේ පාඩම් ඔබගේ පරිගණකයේම රැඳේ."
+
+msgid "Remove"
+msgstr "ඉවත් කරන්න"
+
+msgid "Remove Word"
+msgstr "වචනය ඉවත් කරන්න"
+
+msgid "Repeat answer"
+msgstr "පිළිතුර නැවත කියන්න"
+
+msgid "Repeat answer shows the answer for"
+msgstr "පිළිතුර නැවත කියන්න ප්‍රකාරය පිළිතුර පෙන්වන කාලය"
+
+msgid "Result"
+msgstr "ප්‍රතිඵලය"
+
+msgid "Results"
+msgstr "ප්‍රතිඵල"
+
+msgid "Results Overview"
+msgstr "ප්‍රතිඵල දළ විශ්ලේෂණය"
+
+msgid "Reversed"
+msgstr "ප්‍රතිලෝම"
+
+msgid "Right"
+msgstr "හරි"
+
+msgid "Right answer"
+msgstr "නිවැරදි පිළිතුර"
+
+msgid "Right: %s"
+msgstr "හරි: %s"
+
+msgid "Root"
+msgstr "මූලය"
+
+msgid "Rotate 90°"
+msgstr "90° කරකවන්න"
+
+msgid "Saved %s"
+msgstr "සුරකින ලදී: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "සෑම ප්‍රශ්නයක්ම ප්‍රශ්න භාෂාවෙන් හඬ නගා කියන්න (espeak-ng, හෝ macOS හෝ Windows හඬ අවශ්‍යයි)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "සෑම ප්‍රශ්නයක්ම ප්‍රශ්න භාෂාවෙන් හඬ නගා කියන්න"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "අක්ෂර බැලීමට ඉහළින් Unicode කොටසක් තෝරන්න, නැතහොත් කේත ලක්ෂ්‍යයක් සෘජුවම ඇතුළත් කරන්න."
+
+msgid "Select file to import..."
+msgstr "ආයාත කිරීමට ගොනුව තෝරන්න..."
+
+msgid "Selected file: %s"
+msgstr "තෝරාගත් ගොනුව: %s"
+
+msgid "Settings saved"
+msgstr "සැකසුම් සුරකින ලදී"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "එක් ප්‍රශ්නයකට වචන කිහිපයක්: ඒවා කොමා වලින් වෙන් කරන්න. ඔබ පිටුවෙන් ඉවත් වන තුරු වෙනස්කම් රැඳේ: පාඩම තබා ගැනීමට එය බාගන්න."
+
+msgid "Show answer for:"
+msgstr "පිළිතුර පෙන්වන කාලය:"
+
+msgid "Show or hide special characters"
+msgstr "විශේෂ අක්ෂර පෙන්වන්න හෝ සඟවන්න"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "විශේෂ අක්ෂර පෙන්වන්න හෝ සඟවන්න: උච්චාරණ ලකුණු සහිත අකුරු සහ වෙනත් අක්ෂර මාලා"
+
+msgid "Shuffle answer"
+msgstr "පිළිතුර මිශ්‍ර කරන්න"
+
+msgid "Smart"
+msgstr "බුද්ධිමත්"
+
+msgid "Sorted"
+msgstr "වර්ග කළ"
+
+msgid "Square root"
+msgstr "වර්ගමූලය"
+
+msgid "Start"
+msgstr "ආරම්භ කරන්න"
+
+msgid "Start Again"
+msgstr "නැවත ආරම්භ කරන්න"
+
+msgid "Start Teaching"
+msgstr "ඉගැන්වීම ආරම්භ කරන්න"
+
+msgid "Stop"
+msgstr "නවත්වන්න"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "පේළි තිරස් වන සේ පින්තූරය කෙළින් කරන්න, පින්තූරයේ වැඩිපුර දේ ඇත්නම් වචන ලැයිස්තුව වටා සෘජුකෝණාස්‍රයක් අදින්න."
+
+msgid "Straighten:"
+msgstr "කෙළින් කරන්න:"
+
+msgid "Structure"
+msgstr "ව්‍යුහය"
+
+msgid "Sum"
+msgstr "ඓක්‍යය"
+
+msgid "System language"
+msgstr "පද්ධති භාෂාව"
+
+msgid "Teach"
+msgstr "උගන්වන්න"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "ඉගැන්වීම අවසන්! අවසාන ලකුණු: %d/%d හරි (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "ඉගැන්වීමේ වාරය අවසන්"
+
+msgid "Text"
+msgstr "පෙළ"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%s %s පාඩමේ නැත."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Recuerdo හි මෙනු සහ තිරවල භාෂාව (Recuerdo නැවත ආරම්භ කළ පසු). පරිවර්තනයක් නැති පෙළ ඉංග්‍රීසියෙන් පවතී."
+
+msgid "There are no settings to change."
+msgstr "වෙනස් කිරීමට සැකසුම් නැත."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "පිළිතුර ගැන සිතා, අවසන් වූ විට 'පිළිතුර පෙන්වන්න' ඔබන්න."
+
+msgid "Title"
+msgstr "මාතෘකාව"
+
+msgid "Topology"
+msgstr "ස්ථලාකෘතිය"
+
+msgid "Translation: %s"
+msgstr "පරිවර්තනය: %s"
+
+msgid "Try an example"
+msgstr "උදාහරණයක් උත්සාහ කරන්න"
+
+msgid "Type a List"
+msgstr "ලැයිස්තුවක් ටයිප් කරන්න"
+
+msgid "Type at least one word."
+msgstr "අවම වශයෙන් එක් වචනයක් ටයිප් කරන්න."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "වචන ලැයිස්තුවක් \"ප්‍රශ්නය = පිළිතුර\" පේළි ලෙස ටයිප් කරන්න හෝ අලවන්න"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "වචන ටයිප් කරන්න හෝ අලවන්න: පේළියකට එකක්, ප්‍රශ්නය සහ පිළිතුර අතර සමාන ලකුණක් (=) හෝ ටැබයක් සමඟ, \"hond = dog\" ලෙස. එක් පැත්තක ඇති වචන කිහිපයක් කොමා වලින් වෙන් කෙරේ."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "වචන \"ප්‍රශ්නය = පිළිතුර\" පේළි ලෙස ටයිප් කරන්න හෝ අලවන්න"
+
+msgid "Typed list"
+msgstr "ටයිප් කළ ලැයිස්තුව"
+
+msgid "Typing"
+msgstr "ටයිප් කිරීම"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "ටයිප් කිරීම: පිළිතුර ටයිප් කරන්න. පිළිතුර මිශ්‍ර කරන්න: පිළිතුරේ අකුරු ඉඟියක් ලෙස. පිළිතුර නැවත කියන්න: පිළිතුර පළමුව පෙන්වා, පසුව මතකයෙන් ටයිප් කෙරේ."
+
+msgid "Unicode Block:"
+msgstr "Unicode කොටස:"
+
+msgid "Use a picture of your own as the map"
+msgstr "ඔබගේම පින්තූරයක් සිතියම ලෙස භාවිත කරන්න"
+
+msgid "Version %s"
+msgstr "අනුවාදය %s"
+
+msgid "Where is %s?"
+msgstr "%s කොහේද?"
+
+msgid "Which place is marked?"
+msgstr "සලකුණු කර ඇත්තේ කුමන ස්ථානයද?"
+
+msgid "Whole picture"
+msgstr "සම්පූර්ණ පින්තූරය"
+
+msgid "Word Lesson: %s"
+msgstr "වචන පාඩම: %s"
+
+msgid "Word Pairs"
+msgstr "වචන යුගල"
+
+msgid "Words"
+msgstr "වචන"
+
+msgid "Words List"
+msgstr "වචන ලැයිස්තුව"
+
+msgid "Words never answered correctly"
+msgstr "කිසි විටෙක හරි නොවූ වචන"
+
+msgid "Words:"
+msgstr "වචන:"
+
+msgid "Wrong"
+msgstr "වැරදි"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "වැරදියි. නිවැරදි පිළිතුර: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "වැරදි: %s → %s"
+
+msgid "Your Answer"
+msgstr "ඔබගේ පිළිතුර"
+
+msgid "Your answer"
+msgstr "ඔබගේ පිළිතුර"
+
+msgid "e.g. Dutch"
+msgstr "උදා. ලන්දේසි"
+
+msgid "e.g. English"
+msgstr "උදා. ඉංග්‍රීසි"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nOpenTeacher Team විසින් සාදන ලද OpenTeacher මත පදනම් වේ, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ හරි: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ එය %s විය"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ පිළිතුර වූයේ: %s"
+
+# corrects OpenTeacher's si.po for 'Reverse': "ආපසු" (back)
+msgid "Reverse"
+msgstr "ප්‍රතිලෝම"
+
+# corrects OpenTeacher's si.po for 'Comment': "නිදර්ශනය" (illustration)
+msgid "Comment"
+msgstr "අදහස"
+
+# corrects OpenTeacher's si.po for 'Interval': "විරාමය" (pause)
+msgid "Interval"
+msgstr "කාල පරතරය"
+
+# corrects OpenTeacher's si.po for 'All once': "සියල්ල එකවිට" (all at the same time)
+msgid "All once"
+msgstr "සියල්ල එක් වරක්"
+
+# corrects OpenTeacher's si.po for 'Check!': misspelt
+msgid "Check!"
+msgstr "පරීක්ෂා කරන්න!"
+
+# corrects OpenTeacher's si.po for '&Edit': "සකසන්න" (arrange)
+msgid "&Edit"
+msgstr "සංස්කරණය (&E)"

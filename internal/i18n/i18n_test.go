@@ -162,3 +162,11 @@ func TestRecuerdoTranslations(t *testing.T) {
 		}
 	}
 }
+
+func TestRightToLeft(t *testing.T) {
+	for lang, want := range map[string]bool{"ar": true, "ur": true, "ur_PK": true, "he": true, "nl": false, "en_GB": false, "": false} {
+		if got := RightToLeft(lang); got != want {
+			t.Errorf("RightToLeft(%q) = %v", lang, got)
+		}
+	}
+}

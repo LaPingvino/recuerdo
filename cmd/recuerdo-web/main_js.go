@@ -78,6 +78,7 @@ func main() {
 		}),
 		"t":            js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.T(args[0].String()) }),
 		"languageName": js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.Name(args[0].String()) }),
+		"rightToLeft":  js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.RightToLeft(args[0].String()) }),
 		"report":       js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
 		"palette":      js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Palette(), nil) }),
 		"expand": js.FuncOf(func(_ js.Value, args []js.Value) any {
