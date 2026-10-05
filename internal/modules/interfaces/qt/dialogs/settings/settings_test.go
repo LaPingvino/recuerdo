@@ -7,7 +7,9 @@ import (
 	"path/filepath"
 	"testing"
 
+	_ "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessonDialogs" // registers Words only
 	_ "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessons/words" // registers its settings
+	_ "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/theme"         // registers Theme
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
 	qt "github.com/mappu/miqt/qt6"
@@ -42,8 +44,8 @@ const (
 
 func drive() error {
 	defs := settingsdefs.All()
-	if len(defs) != 6 {
-		return fmt.Errorf("%d settings registered, want notation, pronounce, repeat, check spelling, clear recent and language", len(defs))
+	if len(defs) != 8 {
+		return fmt.Errorf("%d settings registered, want notation, pronounce, repeat, check spelling, words only, theme, clear recent and language", len(defs))
 	}
 	store := mapStore{repeat: 2500.0, recentlyopened.SettingKey: []string{"/a.otwd"}}
 	d := NewDialog(nil, store, defs)

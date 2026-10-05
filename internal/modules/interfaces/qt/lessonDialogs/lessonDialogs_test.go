@@ -231,3 +231,20 @@ func BenchmarkModuleRegistration(b *testing.B) {
 		}
 	}
 }
+
+// "Words only" hides the lesson kinds: every new lesson is a word lesson.
+func TestWordsOnly(t *testing.T) {
+	defer func() { WordsOnly = nil }()
+	for _, on := range []bool{false, true} {
+		WordsOnly = func() bool { return on }
+		mod := NewLessonDialogsModule()
+		mod.createNewLessonDialog(nil)
+		if visible := mod.topoRadio.IsVisibleTo(mod.newLessonDialog.QWidget); visible == on {
+			t.Errorf("words only %v: topography offered %v", on, visible)
+		}
+		if mod.getNewLessonData()["type"] != "words" {
+			t.Errorf("words only %v: not a word lesson", on)
+		}
+		mod.newLessonDialog.DeleteLater()
+	}
+}

@@ -15,7 +15,9 @@ import (
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/testmode"
 	plaintextwords "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/enterers/plainTextWords"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/lessonDialogs"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrimport"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/theme"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/typingcourse"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 	"github.com/LaPingvino/recuerdo/internal/ocr"
@@ -107,6 +109,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 		}
 	}
 	mod.installQtTranslator()
+	mod.applyTheme()
 
 	// Create main window
 	mod.mainWindow = qt.NewQMainWindow(nil)
@@ -441,6 +444,13 @@ func (mod *GuiModule) createWelcomeWidget() *qt.QWidget {
 
 // Dialog helper methods
 func (mod *GuiModule) showNewLessonDialog() {
+	lessonDialogs.WordsOnly = func() bool {
+		if s := mod.settings(); s != nil {
+			on, _ := s.GetSettingWithDefault(lessonDialogs.WordsOnlySetting, false).(bool)
+			return on
+		}
+		return false
+	}
 	mod.logger.Action("showNewLessonDialog() - attempting to show lesson dialog")
 
 	// Try to find lesson dialog module
@@ -810,6 +820,7 @@ func (mod *GuiModule) showSettingsDialog() {
 		if settingsMod, ok := settingsDialogModules[0].(interface{ ShowSettingsDialog() bool }); ok {
 			mod.logger.Success("Calling ShowSettingsDialog() on settingsDialog module")
 			if settingsMod.ShowSettingsDialog() {
+				mod.applyTheme()
 				mod.applySettingsToLessons()
 				mod.statusBar.ShowMessage(i18n.T("Settings saved"))
 			}
@@ -1035,6 +1046,17 @@ func (mod *GuiModule) settings() recentlyopened.Settings {
 	}
 	s, _ := m.(recentlyopened.Settings)
 	return s
+}
+
+// applyTheme sets the colours of the Theme setting.
+func (mod *GuiModule) applyTheme() {
+	name := theme.System
+	if s := mod.settings(); s != nil {
+		if v, ok := s.GetSettingWithDefault(theme.Setting, theme.System).(string); ok {
+			name = v
+		}
+	}
+	theme.Apply(name)
 }
 
 // rememberRecent puts path at the top of File > Open Recent.

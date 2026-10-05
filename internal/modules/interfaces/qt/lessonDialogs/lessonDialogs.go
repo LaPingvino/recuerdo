@@ -10,6 +10,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
+	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
 	"log"
 	"strings"
 
@@ -178,6 +179,10 @@ func (mod *LessonDialogsModule) createNewLessonDialog(parent *qt.QWidget) {
 	typeLayout.AddWidget(mod.mediaRadio.QWidget)
 
 	layout.AddWidget(typeGroup.QWidget)
+	// "Words only": word lessons only, as in OpenTeacher 2
+	if WordsOnly != nil && WordsOnly() {
+		typeGroup.Hide()
+	}
 
 	// Language settings
 	langGroup := qt.NewQGroupBox(mod.newLessonDialog.QWidget)
@@ -358,6 +363,22 @@ func (mod *LessonDialogsModule) resetNewLessonForm() {
 	if mod.wordsRadio != nil {
 		mod.wordsRadio.SetChecked(true)
 	}
+}
+
+// WordsOnlySetting hides topography and media lessons when making a new
+// lesson (OpenTeacher's wordsOnly profile: "just gimme my good old
+// OpenTeacher 2.x").
+const WordsOnlySetting = "org.recuerdo.wordsOnly"
+
+// WordsOnly reports whether the Words only setting is on (set by the GUI).
+var WordsOnly func() bool
+
+func init() {
+	settingsdefs.Register(settingsdefs.Def{
+		Key: WordsOnlySetting, Category: "Interface", Name: "Words only",
+		Help: "Make only word lessons: no topography or media lessons when making a new lesson",
+		Kind: settingsdefs.Bool, Default: false,
+	})
 }
 
 // getNewLessonData retrieves data from the new lesson dialog form
