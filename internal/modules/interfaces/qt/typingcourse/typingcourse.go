@@ -54,7 +54,7 @@ func Show(parent *qt.QWidget) *Window {
 	var err error
 	if w.profiles, err = typing.Load(ProfilesPath()); err != nil {
 		w.status.SetText(err.Error())
-		w.profiles, _ = typing.Load("")
+		w.profiles = &typing.Profiles{}
 	}
 	w.showProfiles()
 	w.Show()

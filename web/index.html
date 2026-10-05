@@ -39,12 +39,27 @@
 				<button id="richExample" class="button" data-i18n>Furigana and formulas</button>
 			</div>
 		</div>
+		<div class="type-list" id="typingEntry">
+			<h2 data-i18n>Typing course</h2>
+			<p data-i18n>Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster.</p>
+			<button id="openTyping" class="button primary" data-i18n>Start</button>
+		</div>
 		<div class="type-list" id="testEntry" hidden>
 			<h2 data-i18n>Test mode</h2>
 			<p data-i18n>Take the tests your teacher gave you.</p>
 			<button id="openTestMode" class="button primary" data-i18n>Log in</button>
 		</div>
 		<p id="startError" class="error" hidden></p>
+	</section>
+
+	<section id="typing" class="panel test-panel" hidden>
+		<div class="row test-head">
+			<h2 id="typingHeading" data-i18n>Typing course</h2>
+			<span class="spacer"></span>
+			<button id="typingBack" class="button" data-i18n>Back</button>
+		</div>
+		<div id="typingBody"></div>
+		<p id="typingMessage" class="feedback"></p>
 	</section>
 
 	<section id="testmode" class="panel test-panel" hidden>
@@ -158,5 +173,6 @@
 <script src="app.js"></script>
 <script src="testmode.js"></script>
 <script src="teacher.js"></script>
+<script src="typing.js"></script>
 </body>
 </html>

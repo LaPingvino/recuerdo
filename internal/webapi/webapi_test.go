@@ -222,3 +222,24 @@ func TestWordList(t *testing.T) {
 		t.Errorf("word list %+v %v", l, err)
 	}
 }
+
+func TestTyping(t *testing.T) {
+	c := TypingChoices()
+	if len(c["layouts"].([]TypingLayout)) != 6 || len(c["languages"].([][2]string)) < 5 {
+		t.Errorf("choices %v", c)
+	}
+	if _, err := TypingNew(" ", "qwerty", "en"); err == nil {
+		t.Error("no name")
+	}
+	st, err := TypingNew("Anna", "qwerty", "en")
+	if err != nil || st.Level != 1 || st.Levels != 57 || st.Target != 20 || st.Done || st.Profile.Current == "" {
+		t.Fatalf("new %+v %v", st, err)
+	}
+	st = TypingFinish(st.Profile, 1, 0) // fast and right
+	if st.Level != 2 || !st.Done || st.Speed < 20 || st.Instruction == "" {
+		t.Errorf("finished %+v", st)
+	}
+	if again := TypingShow(st.Profile); again.Level != 2 {
+		t.Errorf("show %+v", again)
+	}
+}

@@ -105,3 +105,16 @@ ul.assigned li { border: 1px solid var(--line); border-radius: 999px; padding: .
 #testTeacher h4, #testAdmin h4 { margin: 1rem 0 .3rem; }
 #testAdmin .group { border-top: 1px solid var(--line); padding-top: .2rem; }
 #testAdmin textarea { width: 100%; }
+/* the typing course */
+.keyboard { position: relative; width: 100%; max-width: 46rem; aspect-ratio: 3 / 1; margin: 1rem auto; }
+.keyboard .key { position: absolute; box-sizing: border-box; border: 2px solid var(--panel); border-radius: 6px; color: #222;
+	display: flex; align-items: center; justify-content: center; font-size: clamp(.6rem, 1.6vw, 1rem); }
+.keyboard .key.current { background: #1e1e1e !important; color: #fff; }
+.keyboard .key.wrong { background: #c2453d !important; color: #fff; }
+.typing-text { font: 1.6rem/1.6 ui-monospace, monospace; padding: .6rem .8rem; background: var(--bg); border-radius: 8px; overflow-wrap: anywhere; }
+.typing-text .typed { color: var(--muted); }
+.typing-text .next { text-decoration: underline; font-weight: 700; }
+dl.typing-facts { display: grid; grid-template-columns: max-content 1fr; gap: .2rem 1rem; }
+dl.typing-facts dt { color: var(--muted); }
+dl.typing-facts dd { margin: 0; }
+#typingBody > .row { align-items: center; }

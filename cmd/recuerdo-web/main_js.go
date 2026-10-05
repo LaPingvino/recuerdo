@@ -16,6 +16,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/langcode"
 	"github.com/LaPingvino/recuerdo/internal/richtext"
+	"github.com/LaPingvino/recuerdo/internal/typing"
 	"github.com/LaPingvino/recuerdo/internal/webapi"
 )
 
@@ -88,7 +89,26 @@ func main() {
 		// sanitize makes words with markup safe to show (internal/richtext)
 		"sanitize": js.FuncOf(func(_ js.Value, args []js.Value) any { return richtext.Sanitize(args[0].String()) }),
 		"report":   js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
-		"palette":  js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Palette(), nil) }),
+		// the typing course: profiles go in and out as JSON
+		"typingChoices": js.FuncOf(func(js.Value, []js.Value) any { return reply(webapi.TypingChoices(), nil) }),
+		"typingNew": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(webapi.TypingNew(args[0].String(), args[1].String(), args[2].String()))
+		}),
+		"typingShow": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			var p typing.Profile
+			if err := json.Unmarshal([]byte(args[0].String()), &p); err != nil {
+				return reply(nil, err)
+			}
+			return reply(webapi.TypingShow(p), nil)
+		}),
+		"typingFinish": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			var p typing.Profile
+			if err := json.Unmarshal([]byte(args[0].String()), &p); err != nil {
+				return reply(nil, err)
+			}
+			return reply(webapi.TypingFinish(p, args[1].Float(), args[2].Int()), nil)
+		}),
+		"palette": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Palette(), nil) }),
 		"expand": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(app.Expand(args[0].String(), args[1].String()))
 		}),
