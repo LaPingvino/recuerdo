@@ -68,7 +68,7 @@ const appName = "Recuerdo"
 var _ wordslesson.Settings = (*modules.SettingsModule)(nil)
 
 // appVersion is set by release builds with -ldflags "-X main.appVersion=...".
-var appVersion = "0.2.0-dev"
+var appVersion = "4.0.0-dev" // after OpenTeacher 3.3
 
 // Command-line arguments
 var (
