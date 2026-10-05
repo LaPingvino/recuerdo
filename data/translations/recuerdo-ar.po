@@ -1113,3 +1113,13 @@ msgstr "اختباراتك"
 # corrects OpenTeacher's ar.po for "Test mode"
 msgid "Test mode"
 msgstr "وضع الاختبار"
+
+# spell checking
+msgid "Check spelling"
+msgstr "تدقيق الإملاء"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "تمييز الكلمات في لسان «إدخال» غير الموجودة في قاموس لغة السؤال أو لغة الجواب (يحتاج إلى hunspell وقواميسه)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "غير موجودة في القاموس (%s):"

@@ -89,3 +89,7 @@ func PlainMath(s string) string {
 // NormalizeAnswer makes a typed answer comparable with a formula's
 // plain form: without spaces.
 func NormalizeAnswer(typed string) string { return mathPlain(typed) }
+
+// EachSpan calls onMath with the TeX of each formula in s and onText with
+// the text between them.
+func EachSpan(s string, onMath, onText func(string)) { mathSpans(s, onMath, onText) }

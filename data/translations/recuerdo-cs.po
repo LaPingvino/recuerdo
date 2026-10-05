@@ -1046,3 +1046,13 @@ msgstr "Adresu serveru vám sdělí učitel. Studenti mohou testy psát také ve
 
 msgid "Your tests"
 msgstr "Vaše testy"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Kontrolovat pravopis"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Označit na kartě Zadání slova, která nejsou ve slovníku jazyka otázek nebo odpovědí (vyžaduje hunspell a jeho slovníky)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Chybí ve slovníku (%s):"

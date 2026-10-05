@@ -1058,3 +1058,13 @@ msgstr "Τη διεύθυνση του διακομιστή σάς τη λέει
 
 msgid "Your tests"
 msgstr "Οι δοκιμασίες σας"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Ορθογραφικός έλεγχος"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Επισήμανση λέξεων στην καρτέλα Εισαγωγή που δεν υπάρχουν στο λεξικό της γλώσσας ερώτησης ή απάντησης (απαιτεί το hunspell και τα λεξικά του)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Δεν υπάρχει στο λεξικό (%s):"

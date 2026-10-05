@@ -42,8 +42,8 @@ const (
 
 func drive() error {
 	defs := settingsdefs.All()
-	if len(defs) != 5 {
-		return fmt.Errorf("%d settings registered, want notation, pronounce, repeat, clear recent and language", len(defs))
+	if len(defs) != 6 {
+		return fmt.Errorf("%d settings registered, want notation, pronounce, repeat, check spelling, clear recent and language", len(defs))
 	}
 	store := mapStore{repeat: 2500.0, recentlyopened.SettingKey: []string{"/a.otwd"}}
 	d := NewDialog(nil, store, defs)

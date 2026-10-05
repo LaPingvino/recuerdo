@@ -202,6 +202,12 @@ function wordRow(it) {
 	const q = document.createElement("input"), a = document.createElement("input");
 	q.value = it ? it.question : ""; a.value = it ? it.answer : "";
 	q.placeholder = it ? "" : t("New question"); a.placeholder = it ? "" : t("Answer");
+	// the browser's spell checker, in the lesson's languages
+	for (const [input, language] of [[q, lesson.questionLanguage], [a, lesson.answerLanguage]]) {
+		input.spellcheck = true; input.dir = "auto";
+		const code = language && api.languageCode ? api.languageCode(language) : "";
+		if (code) input.lang = code;
+	}
 	const save = () => {
 		try {
 			if (it) {

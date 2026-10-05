@@ -1055,3 +1055,13 @@ msgstr "服务器地址由老师告诉你。学生也可以在网页浏览器中
 
 msgid "Your tests"
 msgstr "你的测试"
+
+# spell checking
+msgid "Check spelling"
+msgstr "检查拼写"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "在“输入”标签页中标记不在问题语言或答案语言词典中的单词（需要 hunspell 及其词典）"
+
+msgid "Not in the dictionary (%s):"
+msgstr "不在词典中（%s）："

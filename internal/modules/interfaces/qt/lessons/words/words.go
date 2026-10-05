@@ -8,6 +8,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
 	"github.com/LaPingvino/recuerdo/internal/resources"
 	"github.com/LaPingvino/recuerdo/internal/richtext"
+	"github.com/LaPingvino/recuerdo/internal/spellcheck"
 	"github.com/LaPingvino/recuerdo/internal/tts"
 	"path/filepath"
 	"runtime"
@@ -73,6 +74,7 @@ type Settings interface {
 const (
 	NotationSetting       = "org.openteacher.noteCalculatorChooser.noteCalculator"
 	PronounceSetting      = "org.openteacher.ttsProviders.words.pronounce"
+	SpellSetting          = "org.recuerdo.words.spellCheck"
 	RepeatDurationSetting = "org.openteacher.teachTypes.repeatAnswer.fadeDuration"
 )
 
@@ -83,6 +85,7 @@ func (w *WordsLessonWidget) UseSettings(s Settings) {
 		return
 	}
 	w.teachWidget.useSettings(s)
+	w.enterWidget.useSettings(s)
 	w.resultsWidget.useSettings(s)
 }
 
@@ -245,6 +248,8 @@ type EnterTabWidget struct {
 	onModified       func() // called after every edit of the lesson
 	addWordButton    *qt.QPushButton
 	removeWordButton *qt.QPushButton
+	noSpelling       bool                           // the Check spelling setting is off
+	checkers         map[string]*spellcheck.Checker // by language (nil: no dictionary)
 	formulaButton    *qt.QPushButton
 }
 
@@ -341,6 +346,7 @@ func (w *EnterTabWidget) connectSignals() {
 		if w.lesson != nil {
 			w.lesson.Data.List.QuestionLanguage = text
 			w.modified()
+			w.checkSpelling(0)
 			// Qt signal emission - will be implemented with proper Qt bindings
 			w.logger.LegacyReminder("lessonChanged signal for question language", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "signal emission needed")
 		}
@@ -350,6 +356,7 @@ func (w *EnterTabWidget) connectSignals() {
 		if w.lesson != nil {
 			w.lesson.Data.List.AnswerLanguage = text
 			w.modified()
+			w.checkSpelling(1)
 			// Qt signal emission - will be implemented with proper Qt bindings
 			w.logger.LegacyReminder("lessonChanged signal for answer language", "legacy/modules/org/openteacher/interfaces/qt/lessons/words/words.py", "signal emission needed")
 		}
@@ -417,6 +424,89 @@ func (w *EnterTabWidget) updateWordsTable() {
 
 	// questions and answers stretch; the comment column keeps a usable width
 	w.wordsTable.SetColumnWidth(2, max(200, w.wordsTable.SizeHintForColumn(2)))
+	w.checkSpelling(0, 1)
+}
+
+// useSettings takes the Check spelling setting.
+func (w *EnterTabWidget) useSettings(s Settings) {
+	on, ok := s.GetSettingWithDefault(SpellSetting, true).(bool)
+	w.noSpelling = ok && !on
+	w.checkSpelling(0, 1)
+}
+
+// checker is the spell checker for the language of a column (0
+// questions, 1 answers), or nil.
+func (w *EnterTabWidget) checker(column int) *spellcheck.Checker {
+	if w.noSpelling || w.lesson == nil {
+		return nil
+	}
+	lang := w.lesson.Data.List.QuestionLanguage
+	if column == 1 {
+		lang = w.lesson.Data.List.AnswerLanguage
+	}
+	if w.checkers == nil {
+		w.checkers = map[string]*spellcheck.Checker{}
+	}
+	c, ok := w.checkers[lang]
+	if !ok {
+		c = spellcheck.New(lang)
+		w.checkers[lang] = c
+	}
+	return c
+}
+
+// checkSpelling marks the cells of the columns (0 questions, 1 answers)
+// with words that are not in the language's dictionary: red, underlined,
+// and the words with suggestions in the tooltip.
+func (w *EnterTabWidget) checkSpelling(columns ...int) {
+	if w.lesson == nil || w.wordsTable == nil {
+		return
+	}
+	filling := w.filling
+	w.filling = true // marking a cell is not an edit
+	defer func() { w.filling = filling }()
+	for _, col := range columns {
+		c := w.checker(col)
+		rows := w.wordsTable.RowCount()
+		texts := make([]string, rows)
+		for r := 0; r < rows; r++ {
+			if it := w.wordsTable.Item(r, col); it != nil {
+				texts[r] = it.Text()
+			}
+		}
+		c.Wrong(texts...) // one hunspell run for the whole column
+		for r := 0; r < rows; r++ {
+			w.markSpelling(w.wordsTable.Item(r, col), c)
+		}
+	}
+}
+
+func (w *EnterTabWidget) markSpelling(it *qt.QTableWidgetItem, c *spellcheck.Checker) {
+	if it == nil {
+		return
+	}
+	wrong := c.Wrong(it.Text())
+	font := it.Font()
+	font.SetUnderline(len(wrong) > 0)
+	it.SetFont(font)
+	if len(wrong) == 0 {
+		it.SetData(int(qt.ForegroundRole), qt.NewQVariant())
+		it.SetToolTip("")
+		return
+	}
+	it.SetForeground(qt.NewQBrush3(qt.NewQColor3(194, 69, 61)))
+	var lines []string
+	for _, word := range spellcheck.Words(it.Text()) {
+		if s, ok := wrong[word]; ok {
+			line := word
+			if len(s) > 0 {
+				line += ": " + strings.Join(s[:min(len(s), 5)], ", ")
+			}
+			lines = append(lines, line)
+			delete(wrong, word)
+		}
+	}
+	it.SetToolTip(i18n.Tf("Not in the dictionary (%s):", c.Dictionary) + "\n" + strings.Join(lines, "\n"))
 }
 
 // addNewWord adds a new word pair
@@ -469,6 +559,11 @@ func (w *EnterTabWidget) cellChanged(row, column int) {
 			}
 		}
 		return out
+	}
+	if column == 0 || column == 1 {
+		w.filling = true
+		w.markSpelling(cell, w.checker(column))
+		w.filling = false
 	}
 	switch column {
 	case 0:

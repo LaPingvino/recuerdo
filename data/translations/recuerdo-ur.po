@@ -1149,3 +1149,13 @@ msgstr "سرور کا پتہ آپ کے استاد بتائیں گے۔ طلبہ �
 
 msgid "Your tests"
 msgstr "آپ کے ٹیسٹ"
+
+# spell checking
+msgid "Check spelling"
+msgstr "املا جانچیں"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "اندراج ٹیب میں وہ الفاظ نشان زد کریں جو سوال یا جواب کی زبان کی لغت میں نہیں ہیں (hunspell اور اس کی لغات درکار ہیں)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "لغت میں نہیں (%s):"

@@ -1107,3 +1107,13 @@ msgstr "සේවාදායකයේ ලිපිනය ඔබගේ ගුර
 
 msgid "Your tests"
 msgstr "ඔබගේ පරීක්ෂණ"
+
+# spell checking
+msgid "Check spelling"
+msgstr "අක්ෂර වින්‍යාසය පරීක්ෂා කරන්න"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "ප්‍රශ්න භාෂාවේ හෝ පිළිතුරු භාෂාවේ ශබ්දකෝෂයේ නැති වචන ඇතුළත් කරන්න ටැබයේ සලකුණු කරන්න (hunspell සහ එහි ශබ්දකෝෂ අවශ්‍යයි)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "ශබ්දකෝෂයේ නැත (%s):"

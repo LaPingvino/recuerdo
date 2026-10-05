@@ -14,6 +14,7 @@ import (
 	"syscall/js"
 
 	"github.com/LaPingvino/recuerdo/internal/i18n"
+	"github.com/LaPingvino/recuerdo/internal/langcode"
 	"github.com/LaPingvino/recuerdo/internal/richtext"
 	"github.com/LaPingvino/recuerdo/internal/webapi"
 )
@@ -81,6 +82,9 @@ func main() {
 		"t":            js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.T(args[0].String()) }),
 		"languageName": js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.Name(args[0].String()) }),
 		"rightToLeft":  js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.RightToLeft(args[0].String()) }),
+		// languageCode is the code of a language name ("Dutch": "nl"), for
+		// the browser's spell checker
+		"languageCode": js.FuncOf(func(_ js.Value, args []js.Value) any { return langcode.Guess(args[0].String()) }),
 		// sanitize makes words with markup safe to show (internal/richtext)
 		"sanitize": js.FuncOf(func(_ js.Value, args []js.Value) any { return richtext.Sanitize(args[0].String()) }),
 		"report":   js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),

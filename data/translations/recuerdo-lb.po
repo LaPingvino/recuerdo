@@ -1146,3 +1146,13 @@ msgstr "Däin Enseignant seet dir d'Adress vum Server. Schüler kënnen d'Tester
 
 msgid "Your tests"
 msgstr "Deng Tester"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Rechtschreiwung kontrolléieren"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Wierder am Tab Aginn markéieren, déi net am Dictionnaire vun der Fro- oder Äntwertsprooch stinn (brauch hunspell a seng Dictionnairen)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Net am Dictionnaire (%s):"

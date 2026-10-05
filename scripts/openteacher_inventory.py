@@ -208,7 +208,6 @@ DROPPED = (
 # module path prefix -> (priority, what and why).
 DEVTOOL = ("low", "developer tooling: useful later as independent command line tools")
 PLANNED = {
-    "logic/spellChecker": ("medium", "spell checking while entering words, with Hunspell (OpenTeacher used Enchant)"),
     "logic/interfaces/typingTutorModel": ("medium", "OpenTeacher's touch typing course, a lesson of its own kind"),
     "interfaces/qt/typingTutor": ("medium", "the touch typing course's screen and keyboard"),
     "interfaces/qt/theme": ("low", "a dark theme, as a setting"),
@@ -236,6 +235,7 @@ PLANNED = {
 
 # Areas whose job Recuerdo does another way: prefix -> (where, why).
 COVERED_AREAS = {
+    "logic/spellChecker": ("internal/spellcheck", "spell checking while entering words, with Hunspell dictionaries through the hunspell program (OpenTeacher used Enchant): the Enter tab marks words not in the question or answer language's dictionary; the web version gives its fields the languages for the browser's own spell checker"),
     "interfaces/qt/testMode": ("internal/modules/interfaces/qt/dialogs/testmode, web/testmode.js, web/teacher.js",
                                "test mode's client: File > Test Mode on the desktop, and the web version served by "
                                "the test server (OpenTeacher's never shipped: its menu entry was switched off)"),

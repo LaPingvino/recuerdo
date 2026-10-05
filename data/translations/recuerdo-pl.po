@@ -1034,3 +1034,13 @@ msgstr "Adres serwera poda ci nauczyciel. Uczniowie mogą też zdawać testy w p
 
 msgid "Your tests"
 msgstr "Twoje testy"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Sprawdzaj pisownię"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Zaznaczaj na karcie Wprowadzanie słowa, których nie ma w słowniku języka pytania lub odpowiedzi (wymaga hunspell i jego słowników)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Brak w słowniku (%s):"

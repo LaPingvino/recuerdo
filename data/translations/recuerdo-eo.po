@@ -1132,3 +1132,13 @@ msgstr "Via instruisto diras al vi la adreson de la servilo. Lernantoj ankaŭ po
 
 msgid "Your tests"
 msgstr "Viaj testoj"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Kontroli literumadon"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Marki vortojn en la langeto Enigi, kiuj ne estas en la vortaro de la lingvo de la demandoj aŭ de la respondoj (bezonas hunspell kaj ĝiajn vortarojn)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Ne en la vortaro (%s):"

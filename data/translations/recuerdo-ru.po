@@ -1022,3 +1022,13 @@ msgstr "Адрес сервера сообщит преподаватель. У�
 
 msgid "Your tests"
 msgstr "Ваши тесты"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Проверять орфографию"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Отмечать на вкладке «Ввод» слова, которых нет в словаре языка вопросов или ответов (нужен hunspell и его словари)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Нет в словаре (%s):"

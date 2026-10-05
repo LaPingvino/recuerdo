@@ -251,6 +251,10 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Check spelling"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/hangman.go
 msgid "Check!"
 msgstr ""
@@ -735,6 +739,10 @@ msgstr ""
 msgid "Map:"
 msgstr ""
 
+#: internal/modules/interfaces/qt/lessons/words/settings.go
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Media"
 msgstr ""
@@ -877,6 +885,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Not handed in yet: %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessons/words/words.go
+msgid "Not in the dictionary (%s):"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go

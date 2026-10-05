@@ -1179,3 +1179,13 @@ msgstr "Адресу сервера ти даје наставник. Учени
 
 msgid "Your tests"
 msgstr "Твоји тестови"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Провери правопис"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Означи на картици „Унос“ речи којих нема у речнику језика питања или одговора (потребан је hunspell са својим речницима)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Нема у речнику (%s):"

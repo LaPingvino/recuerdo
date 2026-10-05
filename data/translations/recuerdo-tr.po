@@ -1043,3 +1043,13 @@ msgstr "Testleriniz"
 # corrects OpenTeacher's tr.po for "Test mode"
 msgid "Test mode"
 msgstr "Test modu"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Yazımı denetle"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Giriş sekmesinde soru veya cevap dilinin sözlüğünde bulunmayan kelimeleri işaretle (hunspell ve sözlükleri gerekir)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Sözlükte yok (%s):"

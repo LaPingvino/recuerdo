@@ -1048,3 +1048,13 @@ msgstr "A szerver címét a tanára adja meg. A diákok webböngészőben is kit
 
 msgid "Your tests"
 msgstr "Saját tesztek"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Helyesírás-ellenőrzés"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "A Bevitel lapon azon szavak megjelölése, amelyek nincsenek benne a kérdés vagy a válasz nyelvének szótárában (a hunspell és a szótárai szükségesek)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Nincs a szótárban (%s):"

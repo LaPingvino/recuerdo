@@ -1083,3 +1083,13 @@ msgstr "Opettajasi kertoo palvelimen osoitteen. Oppilaat voivat tehdä kokeita m
 
 msgid "Your tests"
 msgstr "Kokeesi"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Tarkista oikeinkirjoitus"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Merkitse Syötä-välilehdellä sanat, joita ei löydy kysymyksen tai vastauksen kielen sanakirjasta (vaatii hunspell-ohjelman ja sen sanakirjat)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Ei sanakirjassa (%s):"

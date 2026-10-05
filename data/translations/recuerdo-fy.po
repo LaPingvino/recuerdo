@@ -1044,3 +1044,13 @@ msgstr "Jo learaar fertelt jo it adres fan de tsjinner. Learlingen kinne ek toet
 
 msgid "Your tests"
 msgstr "Jo toetsen"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Stavering kontrolearje"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Markearje wurden op it ljepblêd Ynfiere dy't net yn it wurdboek fan de taal fan de fragen of de antwurden steane (hjirfoar binne hunspell en syn wurdboeken nedich)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Net yn it wurdboek (%s):"

@@ -14,6 +14,7 @@ depends=('glibc' 'qt6-base')
 optdepends=('qt6-wayland: native Wayland windows'
             'qt6-translations: the texts of OK, Cancel and the file dialogs in your language'
             'espeak-ng: pronouncing questions'
+            'hunspell: spell checking while entering words (with hunspell-en_us, hunspell-nl, ...)'
             'tesseract: reading word lists from pictures'
             'tesseract-data-eng: English for tesseract (other languages: tesseract-data-*)'
             'libreoffice: exporting to Word, Excel and other office formats')

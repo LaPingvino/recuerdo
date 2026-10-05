@@ -1020,3 +1020,13 @@ msgstr "Ihr Lehrer nennt Ihnen die Adresse des Servers. Schüler können Tests a
 
 msgid "Your tests"
 msgstr "Ihre Tests"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Rechtschreibung prüfen"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Wörter im Reiter »Eingeben« markieren, die nicht im Wörterbuch der Frage- oder Antwortsprache stehen (benötigt hunspell und seine Wörterbücher)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Nicht im Wörterbuch (%s):"

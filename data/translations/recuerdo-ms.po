@@ -1133,3 +1133,13 @@ msgstr "Guru anda akan memberitahu alamat pelayan. Pelajar juga boleh mengambil 
 
 msgid "Your tests"
 msgstr "Ujian anda"
+
+# spell checking
+msgid "Check spelling"
+msgstr "Semak ejaan"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "Tandakan perkataan dalam tab Masukkan yang tiada dalam kamus bahasa soalan atau bahasa jawapan (memerlukan hunspell dan kamusnya)"
+
+msgid "Not in the dictionary (%s):"
+msgstr "Tiada dalam kamus (%s):"

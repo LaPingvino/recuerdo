@@ -1068,3 +1068,13 @@ msgstr "サーバーのアドレスは先生から教えてもらえます。生
 
 msgid "Your tests"
 msgstr "あなたのテスト"
+
+# spell checking
+msgid "Check spelling"
+msgstr "スペルをチェックする"
+
+msgid "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)"
+msgstr "「入力」タブで、質問の言語または答えの言語の辞書にない単語に印を付けます（hunspell とその辞書が必要）"
+
+msgid "Not in the dictionary (%s):"
+msgstr "辞書にない語（%s）："

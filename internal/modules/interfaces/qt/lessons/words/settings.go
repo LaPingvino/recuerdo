@@ -19,6 +19,11 @@ func init() {
 		Kind: settingsdefs.Bool, Default: false,
 	})
 	settingsdefs.Register(settingsdefs.Def{
+		Key: SpellSetting, Category: "Interface", Name: "Check spelling",
+		Help: "Mark words in the Enter tab that are not in the dictionary of the question or answer language (needs hunspell and its dictionaries)",
+		Kind: settingsdefs.Bool, Default: true,
+	})
+	settingsdefs.Register(settingsdefs.Def{
 		Key: RepeatDurationSetting, Category: "Practice", Name: "Repeat answer shows the answer for",
 		Help: "In the Repeat answer mode, how long the answer is shown before you type it",
 		Kind: settingsdefs.Seconds, Default: float64(teaching.RepeatFadeDuration.Milliseconds()), Min: 0.5, Max: 30,

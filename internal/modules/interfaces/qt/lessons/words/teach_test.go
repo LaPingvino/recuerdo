@@ -2,6 +2,7 @@ package words
 
 import (
 	"fmt"
+	"github.com/LaPingvino/recuerdo/internal/spellcheck"
 	"os"
 	"runtime"
 	"strings"
@@ -29,10 +30,62 @@ func TestMain(m *testing.M) {
 	storedErr = checkSessionStored()
 	pronounceErr = checkPronounce()
 	formulaErr = checkFormulas()
+	spellErr = checkSpellingMarks()
 	os.Exit(m.Run())
 }
 
-var pronounceErr, formulaErr error
+var pronounceErr, formulaErr, spellErr error
+
+func TestSpellingMarks(t *testing.T) {
+	if spellErr == errNoHunspell {
+		t.Skip("hunspell with nl and en dictionaries is not installed")
+	}
+	if spellErr != nil {
+		t.Fatal(spellErr)
+	}
+}
+
+var errNoHunspell = fmt.Errorf("no hunspell")
+
+// Words not in the dictionary of their column's language are marked.
+func checkSpellingMarks() error {
+	if spellcheck.New("Dutch") == nil || spellcheck.New("English") == nil {
+		return errNoHunspell
+	}
+	l := &lesson.Lesson{DataType: "words", Data: lesson.LessonData{List: lesson.WordList{
+		QuestionLanguage: "Dutch", AnswerLanguage: "English", Items: []lesson.WordItem{
+			{ID: 0, Questions: []string{"hond"}, Answers: []string{"dog"}},
+			{ID: 1, Questions: []string{"huiss"}, Answers: []string{"house"}},
+			{ID: 2, Questions: []string{"fiets"}, Answers: []string{"bicylce"}},
+		}}}}
+	w := NewWordsLessonWidget(l, nil)
+	e := w.enterWidget
+	e.checkSpelling(0, 1)
+	marked := func(r, c int) bool { return e.wordsTable.Item(r, c).Font().Underline() }
+	if marked(0, 0) || marked(0, 1) || !marked(1, 0) || marked(1, 1) || marked(2, 0) || !marked(2, 1) {
+		return fmt.Errorf("marks wrong")
+	}
+	if tip := e.wordsTable.Item(2, 1).ToolTip(); !strings.Contains(tip, "bicylce: bicycle") {
+		return fmt.Errorf("tooltip %q", tip)
+	}
+	e.wordsTable.Item(1, 0).SetText("huis") // fixed: no longer marked
+	if marked(1, 0) || l.Data.List.Items[1].Questions[0] != "huis" {
+		return fmt.Errorf("after fixing: %v %q", marked(1, 0), l.Data.List.Items[1].Questions)
+	}
+	if dir := os.Getenv("SHOT_DIR"); dir != "" {
+		e.wordsTable.Item(1, 0).SetText("huiss")
+		w.Resize(900, 400)
+		w.Show()
+		qt.QCoreApplication_ProcessEvents()
+		w.Grab().Save(dir + "/spelling.png")
+	}
+	e.noSpelling = true // the setting off: no marks
+	e.checkSpelling(0, 1)
+	if marked(2, 1) {
+		return fmt.Errorf("marked with the setting off")
+	}
+	return nil
+}
 
 func TestFormulasInTeach(t *testing.T) {
 	if formulaErr != nil {

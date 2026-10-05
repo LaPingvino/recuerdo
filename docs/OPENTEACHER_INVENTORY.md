@@ -58,10 +58,10 @@ Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 22 |  |  | 13 | 6 | 5 | 49 |
 | interfaces | 11 |  |  | 60 |  |  | 3 | 6 | 14 | 94 |
-| logic | 25 |  |  | 104 |  |  | 3 | 9 | 39 | 180 |
+| logic | 25 |  |  | 105 |  |  | 2 | 9 | 39 | 180 |
 | misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 14 |  |  | 10 | 2 | 1 | 27 |
-| **all** | **39** | **0** | **0** | **200** | **0** | **0** | **29** | **24** | **62** | **354** |
+| **all** | **39** | **0** | **0** | **201** | **0** | **0** | **28** | **24** | **62** | **354** |
 
 ## 3. Features
 
@@ -82,7 +82,8 @@ The state in October 2026, by feature:
 | Interface translations | done: all 30 of OpenTeacher's languages, OpenTeacher's translations with Recuerdo's own texts on top (machine-translated with OpenTeacher's terms; mistakes in OpenTeacher's translations of the labels Recuerdo shows corrected); right-to-left layout for Arabic and Urdu on the desktop and the web |
 | In-browser version | done: the Go logic as WebAssembly (`web/`, `recuerdo serve`): open, enter and edit words, practise in all modes, results, download; formulas (KaTeX) with a formula builder, also on the desktop |
 | Test mode (classroom server) | done: `recuerdo testserver` (Go and SQLite), with the students' and teachers' pages in the web version and File > Test Mode on the desktop; see docs/TESTMODE.md. OpenTeacher Web (online accounts and list sync) is dropped |
-| Spell checking, touch typing course | planned (medium) |
+| Spell checking | done: Hunspell dictionaries in the Enter tab (optional: needs hunspell); the web version uses the browser's |
+| Touch typing course | planned (medium) |
 | Dark theme, words-only setting, developer tools | planned (low) |
 | Web services import (Quizlet, StudyStack, Course Hero) | dropped: those APIs changed or closed |
 
@@ -191,6 +192,7 @@ file formats, see **covered** above):
 | `logic/otxxsaver` | `internal/lesson` | FileSaver writes .otwd/.ottp/.otmd zips |
 | `logic/savers/png` | `internal/modules/interfaces/qt/export` | Save as .png writes a topography lesson's map with its places (MapPicture; tested), also as PDF |
 | `logic/settingsFilterer` | `internal/modules/interfaces/qt/dialogs/settings` | the settings dialog lays its settings out in fixed tabs instead of grouping them by category |
+| `logic/spellChecker (all)` | `internal/spellcheck` | spell checking while entering words, with Hunspell dictionaries through the hunspell program (OpenTeacher used Enchant): the Enter tab marks words not in the question or answer language's dictionary; the web version gives its fields the languages for the browser's own spell checker |
 | `logic/sylkSaver` | `internal/lesson` | FileSaver.saveSYLKFile |
 | `logic/testTypes/media` | `internal/modules/interfaces/qt/lessons/media` | the Results tab shows a media lesson's sessions (charts); the result table model was not used by anything |
 | `logic/testTypes/topo` | `internal/modules/interfaces/qt/lessons/topo` | the Results tab shows a topography lesson's sessions (charts); the result table model was not used by anything |
@@ -211,7 +213,6 @@ OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
 
 | Priority | Modules | Count | What |
 |---|---|---:|---|
-| medium | `logic/spellChecker` | 1 | spell checking while entering words, with Hunspell (OpenTeacher used Enchant) |
 | medium | `logic/interfaces/typingTutorModel` | 1 | OpenTeacher's touch typing course, a lesson of its own kind |
 | medium | `interfaces/qt/typingTutor` | 2 | the touch typing course's screen and keyboard |
 | low | `interfaces/qt/theme` | 1 | a dark theme, as a setting |
@@ -326,7 +327,7 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 369 | 0 | 2 | working |
 | `interfaces/qt/lessons/media` | lesson | 197 | 588 | 0 | 2 | working |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 702 | 0 | 2 | working |
-| `interfaces/qt/lessons/words` | lesson | 211 | 2153 | 0 | 2 | working |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2243 | 0 | 2 | working |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 0 | 0 | 0 | covered |
@@ -545,7 +546,7 @@ Course Hero: those APIs changed or closed):
 | `logic/settingsFilterer` | settingsFilterer | 47 | 0 | 0 | 0 | covered |
 | `logic/sourceSaver` | sourceSaver | 67 | 0 | 0 | 0 | dropped |
 | `logic/sourceWithSetupSaver` | sourceWithSetupSaver | 217 | 0 | 0 | 0 | dropped |
-| `logic/spellChecker` | spellChecker | 56 | 0 | 0 | 0 | planned |
+| `logic/spellChecker` | spellChecker | 56 | 0 | 0 | 0 | covered |
 | `logic/spellCheckerTest` | test | 57 | 58 | 19 | 0 | test suite |
 | `logic/sylkSaver` | sylkSaver | 79 | 0 | 0 | 0 | covered |
 | `logic/testTypes/media` | testType | 58 | 0 | 0 | 0 | covered |
