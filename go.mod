@@ -6,6 +6,7 @@ require (
 	github.com/mappu/miqt v0.14.0
 	github.com/mattn/go-sqlite3 v1.14.32
 	github.com/stretchr/testify v1.8.4
+	golang.org/x/crypto v0.57.0
 	golang.org/x/net v0.59.0
 	golang.org/x/text v0.42.0
 )
