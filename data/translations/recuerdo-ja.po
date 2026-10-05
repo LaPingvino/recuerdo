@@ -1,0 +1,832 @@
+# Recuerdo's own texts in Japanese (OpenTeacher's translations, data/translations/ja.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Japanese terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\n評価（%s）：%s"
+
+msgid "%d items to practise. Press Start."
+msgstr "練習する項目：%d 個。「スタート」を押してください。"
+
+msgid "%d of %d"
+msgstr "%d / %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d / %d 正解（%d%%）"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d か所。練習方法を選んで「スタート」を押してください。"
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "練習 %d 回。前回は %d%% 正解でした。"
+
+msgid "&Edit"
+msgstr "編集(&E)"
+
+msgid "&Merge Lesson..."
+msgstr "レッスンを結合(&M)..."
+
+msgid "&New Lesson..."
+msgstr "新しいレッスン(&N)..."
+
+msgid "&Properties..."
+msgstr "プロパティ(&P)..."
+
+msgid "&Tools"
+msgstr "ツール(&T)"
+
+msgid ", %d tests"
+msgstr "、テスト %d 回"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "ウェブサイト、または YouTube・Vimeo・Dailymotion の動画"
+
+msgid "About Recuerdo"
+msgstr "Recuerdo について"
+
+msgid "About dialog not available"
+msgstr "情報ダイアログを利用できません"
+
+msgid "About dialog shown"
+msgstr "情報ダイアログを表示しました"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Add Character"
+msgstr "文字を追加"
+
+msgid "Add Word"
+msgstr "単語を追加"
+
+msgid "Add all places"
+msgstr "すべての地名を追加"
+
+msgid "Add every place this map knows"
+msgstr "この地図にあるすべての場所を追加"
+
+msgid "Add files…"
+msgstr "ファイルを追加…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "別のレッスンの単語と結果をこのレッスンに追加します"
+
+msgid "Add web address…"
+msgstr "ウェブアドレスを追加…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "すべて一気に：各単語を一回ずつ。賢い：間違えた単語はすぐ後と最後にもう一度出ます。期間：覚えるまで単語が繰り返し出ます。"
+
+msgid "All words"
+msgstr "すべての単語"
+
+msgid "Answer Language:"
+msgstr "答えの言語："
+
+msgid "Answer language"
+msgstr "答えの言語"
+
+msgid "As entered"
+msgstr "入力順"
+
+msgid "Ask the answers"
+msgstr "答えを出題する"
+
+msgid "Ask this word again later"
+msgstr "この単語を後でもう一度出す"
+
+msgid "Ask:"
+msgstr "出題："
+
+msgid "Brackets"
+msgstr "括弧"
+
+msgid "Browse Unicode"
+msgstr "Unicode を参照"
+
+msgid "Browse..."
+msgstr "参照..."
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Check"
+msgstr "チェック"
+
+msgid "Choose a file…"
+msgstr "ファイルを選択…"
+
+msgid "Clear List"
+msgstr "リストを消去"
+
+msgid "Clear recent files"
+msgstr "最近使ったファイルを消去"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "「練習開始」をクリックして始めてください"
+
+msgid "Continue"
+msgstr "続ける"
+
+msgid "Correct Answer"
+msgstr "正解"
+
+msgid "Count your last answer as right after all"
+msgstr "直前の答えを正解として数える"
+
+msgid "Counted as right"
+msgstr "正解として数えました"
+
+msgid "Create Lesson"
+msgstr "レッスン作成"
+
+msgid "Create New Lesson"
+msgstr "新しいレッスンを作成"
+
+msgid "Credits"
+msgstr "クレジット"
+
+msgid "Degrees"
+msgstr "度"
+
+msgid "Description:"
+msgstr "説明："
+
+msgid "Done: %d of %d right."
+msgstr "終了：%d / %d 正解。"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Download the lesson, with your results"
+msgstr "レッスンを結果と一緒にダウンロード"
+
+msgid "Download…"
+msgstr "ダウンロード…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "ここにレッスンファイルをドロップするか、選択してください。"
+
+msgid "Each session:"
+msgstr "毎回の練習："
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "選択した質問または答えを数式ビルダーで編集"
+
+msgid "Empty the File > Open Recent list"
+msgstr "「ファイル > 最近使ったファイル」の一覧を空にする"
+
+msgid "Enter"
+msgstr "入力"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode コードポイントを入力（U+xxxx）："
+
+msgid "Enter lesson description..."
+msgstr "レッスンの説明を入力..."
+
+msgid "Enter lesson name..."
+msgstr "レッスン名を入力..."
+
+msgid "Enter lesson title"
+msgstr "レッスンのタイトルを入力"
+
+msgid "Enter some places first."
+msgstr "先に地名を入力してください。"
+
+msgid "Error creating lesson: %v"
+msgstr "レッスン作成エラー：%v"
+
+msgid "Error loading file: %v"
+msgstr "ファイル読み込みエラー：%v"
+
+msgid "Error: File dialog not available"
+msgstr "エラー：ファイルダイアログを利用できません"
+
+msgid "Error: Lesson dialog not available"
+msgstr "エラー：レッスンダイアログを利用できません"
+
+msgid "Error: No about dialog modules available"
+msgstr "エラー：情報ダイアログのモジュールがありません"
+
+msgid "Error: No file dialog modules available"
+msgstr "エラー：ファイルダイアログのモジュールがありません"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "エラー：レッスンダイアログのモジュールがありません"
+
+msgid "Error: No settings dialog modules available"
+msgstr "エラー：設定ダイアログのモジュールがありません"
+
+msgid "Error: Properties dialog not available"
+msgstr "エラー：プロパティダイアログを利用できません"
+
+msgid "Error: Settings dialog not available"
+msgstr "エラー：設定ダイアログを利用できません"
+
+msgid "Example"
+msgstr "例"
+
+msgid "Exported %s"
+msgstr "%s をエクスポートしました"
+
+msgid "Field separator:"
+msgstr "区切り文字："
+
+msgid "File"
+msgstr "ファイル"
+
+msgid "File encoding:"
+msgstr "文字コード："
+
+msgid "Files"
+msgstr "ファイル"
+
+msgid "First row contains headers"
+msgstr "1 行目は見出し"
+
+msgid "Format"
+msgstr "形式"
+
+msgid "Formula builder"
+msgstr "数式ビルダー"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "数式（例：x^2 + 1）"
+
+msgid "Fraction"
+msgstr "分数"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "GNU 一般公衆利用許諾書（バージョン 3 以降）の\nもとで配布されるフリーソフトウェア"
+
+msgid "Functions"
+msgstr "関数"
+
+msgid "Furigana and formulas"
+msgstr "ふりがなと数式"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Recuerdo を始めよう"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "先に「入力」タブで各項目に答えを付けてください。"
+
+msgid "Go on after seeing the right answer"
+msgstr "正解を見てから次へ進む"
+
+msgid "Grades in:"
+msgstr "評価の方式："
+
+msgid "Greek"
+msgstr "ギリシャ文字"
+
+msgid "Hard words"
+msgstr "難しい単語"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "難しい単語：正解より間違いが多い単語、またはまだ練習していない単語。一度も正解していない：以前の練習で一度も正解していない単語。"
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "「答えを繰り返す」で入力前に答えを表示する時間"
+
+msgid "How the Results tab grades your sessions"
+msgstr "「結果」タブで練習を評価する方式"
+
+msgid "Import"
+msgstr "インポート"
+
+msgid "Import File"
+msgstr "ファイルをインポート"
+
+msgid "Import Lesson"
+msgstr "レッスンをインポート"
+
+msgid "Import Options"
+msgstr "インポートのオプション"
+
+msgid "Import from &Picture..."
+msgstr "画像からインポート(&P)..."
+
+msgid "Import from Picture"
+msgstr "画像からインポート"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "「地名 – 場所」では、クリックする場所の名前を読み上げます"
+
+msgid "In mind"
+msgstr "考えて答える"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "「答えを繰り返す」モードで、入力前に答えを表示する時間"
+
+msgid "Index"
+msgstr "添字"
+
+msgid "Integral"
+msgstr "積分"
+
+msgid "Interface"
+msgstr "インターフェース"
+
+msgid "Items:"
+msgstr "項目："
+
+msgid "Languages"
+msgstr "言語"
+
+msgid "Last session:"
+msgstr "前回の練習："
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "前回の練習：%d / %d 正解。このレッスンの練習回数：%d。"
+
+msgid "Latest Session Results"
+msgstr "前回の練習結果"
+
+msgid "Learn words, places and more by heart"
+msgstr "単語や地名などを暗記しましょう"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "単語や地名などを暗記しましょう：\n外国語の語彙、地誌、\nその他覚えたいことなら何でも。"
+
+msgid "Lesson Information"
+msgstr "レッスン情報"
+
+msgid "Lesson Properties"
+msgstr "レッスンのプロパティ"
+
+msgid "Lesson Type"
+msgstr "レッスンタイプ"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "レッスンには単語ペアが %d 個あります\n\n練習を完了すると、ここに詳しい結果が表示されます。"
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "レッスンの単語ペア：%d 個 | 以前の練習：%d 回（「進捗」を参照）\n\n練習すると、ここに答えの詳細が表示されます。"
+
+msgid "Lesson type:"
+msgstr "レッスンタイプ："
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "レッスン：単語ペア %d 個 | 完了した練習：%d 回\n\n前回の練習：%d/%d 正解（%d%%）、評価 %s\n平均評価：%s（%d%%）\n\n前回の練習の詳細な結果："
+
+msgid "Limit"
+msgstr "極限"
+
+msgid "Loaded '%s': %d words"
+msgstr "「%s」を読み込みました：%d 単語"
+
+msgid "Loading…"
+msgstr "読み込み中…"
+
+msgid "Made a lesson of %d words"
+msgstr "%d 単語のレッスンを作成しました"
+
+msgid "Map:"
+msgstr "地図："
+
+msgid "Media"
+msgstr "メディア"
+
+msgid "Merged %d words from %s"
+msgstr "%[2]s から %[1]d 単語を結合しました"
+
+msgid "Mode"
+msgstr "モード"
+
+msgid "Mode:"
+msgstr "モード："
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Name of a place"
+msgstr "地名"
+
+msgid "Name of the marked place"
+msgstr "印の付いた場所の名前"
+
+msgid "Name – Place"
+msgstr "地名 – 場所"
+
+msgid "Name:"
+msgstr "名前："
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "音声合成プログラムが必要です：espeak-ng をインストールしてください"
+
+msgid "Never answered correctly"
+msgstr "一度も正解していない"
+
+msgid "New Lesson"
+msgstr "新しいレッスン"
+
+msgid "New from &Text..."
+msgstr "テキストから新規作成(&T)..."
+
+msgid "New lesson created successfully"
+msgstr "新しいレッスンを作成しました"
+
+msgid "New lesson dialog created"
+msgstr "新規レッスンダイアログを作成しました"
+
+msgid "New question"
+msgstr "新しい質問"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "No lesson data available"
+msgstr "レッスンデータがありません"
+
+msgid "No lesson open to show properties"
+msgstr "プロパティを表示するレッスンが開かれていません"
+
+msgid "No recent lessons"
+msgstr "最近のレッスンはありません"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "まだ結果がありません：「練習」タブで練習してください。"
+
+msgid "No teaching results available yet"
+msgstr "まだ練習結果がありません"
+
+msgid "No words available for teaching"
+msgstr "練習できる単語がありません"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "練習する単語がありません：「%s」の単語はまだありません"
+
+msgid "Now click where %s is on the map."
+msgstr "地図上で %s の場所をクリックしてください。"
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "1 行に 1 単語、質問と答えの間に等号（=）を入れます。"
+
+msgid "Open"
+msgstr "開く"
+
+msgid "Open &Recent"
+msgstr "最近使ったファイル(&R)"
+
+msgid "Open Lesson…"
+msgstr "レッスンを開く…"
+
+msgid "Open a lesson"
+msgstr "レッスンを開く"
+
+msgid "Open operation cancelled"
+msgstr "開く操作をキャンセルしました"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher のレッスン（.ot、.otwd）、単語リスト（.csv、.txt）、KWordQuiz（.kvtml）、Anki、WRTS など"
+
+msgid "Opened '%s' - %d words"
+msgstr "「%s」を開きました - %d 単語"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "OpenTeacher のレッスン（.ot、.otwd）、単語リスト（.csv、.txt）、KWordQuiz（.kvtml）ファイルを開きます"
+
+msgid "Operators"
+msgstr "演算子"
+
+msgid "Or type a list"
+msgstr "またはリストを入力"
+
+msgid "Order"
+msgstr "順序"
+
+msgid "Order:"
+msgstr "順序："
+
+msgid "Other lesson"
+msgstr "別のレッスン"
+
+msgid "Other picture…"
+msgstr "別の画像…"
+
+msgid "Page %d of %d"
+msgstr "%d / %d ページ"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "レッスン内に保存される画像・音声・動画・テキスト"
+
+msgid "Place %d"
+msgstr "場所 %d"
+
+msgid "Place – Name"
+msgstr "場所 – 地名"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "場所 – 地名：印の付いた場所の名前を入力します。\n地名 – 場所：示された地名の場所をクリックします。"
+
+msgid "Please add words in the Enter tab"
+msgstr "「入力」タブで単語を追加してください"
+
+msgid "Power"
+msgstr "べき乗"
+
+msgid "Practice"
+msgstr "練習"
+
+msgid "Practice sessions:"
+msgstr "練習回数："
+
+msgid "Practise"
+msgstr "練習"
+
+msgid "Practise again"
+msgstr "もう一度練習"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "逆方向に練習：答えが質問され、質問が答えになります"
+
+msgid "Practise these words"
+msgstr "これらの単語を練習"
+
+msgid "Practise to see your answers here."
+msgstr "練習すると、ここに答えが表示されます。"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Previous"
+msgstr "前へ"
+
+msgid "Printed %s"
+msgstr "%s を印刷しました"
+
+msgid "Progress"
+msgstr "進捗"
+
+msgid "Pronounce names"
+msgstr "地名を発音する"
+
+msgid "Properties dialog cancelled"
+msgstr "プロパティダイアログをキャンセルしました"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "質問 %d / %d（スコア：%d/%d 正解）"
+
+msgid "Question Language:"
+msgstr "質問の言語："
+
+msgid "Question language"
+msgstr "質問の言語"
+
+msgid "Quick Access"
+msgstr "クイックアクセス"
+
+msgid "Random"
+msgstr "ランダム"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "画像から単語ペアを %d 個読み取りました：「入力」タブで確認してください"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "印刷されたリストのスキャンや写真から単語リストを読み取ります（Tesseract が必要）"
+
+msgid "Ready"
+msgstr "準備完了"
+
+msgid "Ready to start"
+msgstr "開始の準備ができました"
+
+msgid "Ready to start teaching"
+msgstr "練習を始める準備ができました"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo はブラウザ上で動作します：レッスンはお使いのコンピューターから出ません。"
+
+msgid "Remove"
+msgstr "削除"
+
+msgid "Remove Word"
+msgstr "単語を削除"
+
+msgid "Repeat answer shows the answer for"
+msgstr "「答えを繰り返す」で答えを表示する時間"
+
+msgid "Result"
+msgstr "結果"
+
+msgid "Results Overview"
+msgstr "結果の概要"
+
+msgid "Reversed"
+msgstr "逆順"
+
+msgid "Right"
+msgstr "正解"
+
+msgid "Right answer"
+msgstr "正しい答え"
+
+msgid "Right: %s"
+msgstr "正解：%s"
+
+msgid "Root"
+msgstr "累乗根"
+
+msgid "Rotate 90°"
+msgstr "90° 回転"
+
+msgid "Saved %s"
+msgstr "%s を保存しました"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "各質問を質問の言語で読み上げます（espeak-ng、または macOS や Windows の音声が必要）"
+
+msgid "Say each question aloud, in the question language"
+msgstr "各質問を質問の言語で読み上げる"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "上の Unicode ブロックを選んで文字を表示するか、コードポイントを直接入力してください。"
+
+msgid "Select file to import..."
+msgstr "インポートするファイルを選択..."
+
+msgid "Selected file: %s"
+msgstr "選択したファイル：%s"
+
+msgid "Settings saved"
+msgstr "設定を保存しました"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "1 つの質問に複数の単語：カンマで区切ります。変更はページを離れるまで保持されます。残すにはレッスンをダウンロードしてください。"
+
+msgid "Show answer for:"
+msgstr "答えの表示時間："
+
+msgid "Show or hide special characters"
+msgstr "特殊文字の表示／非表示"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "特殊文字の表示／非表示：アクセント付き文字やその他の文字体系"
+
+msgid "Sorted"
+msgstr "並び替え順"
+
+msgid "Square root"
+msgstr "平方根"
+
+msgid "Start"
+msgstr "スタート"
+
+msgid "Start Again"
+msgstr "もう一度スタート"
+
+msgid "Start Teaching"
+msgstr "練習開始"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "行が水平になるように画像をまっすぐにし、画像に単語リスト以外も写っている場合は単語リストの周りに四角形をドラッグしてください。"
+
+msgid "Straighten:"
+msgstr "傾き補正："
+
+msgid "Structure"
+msgstr "構造"
+
+msgid "Sum"
+msgstr "総和"
+
+msgid "System language"
+msgstr "システムの言語"
+
+msgid "Teach"
+msgstr "練習"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "練習完了！最終スコア：%d/%d 正解（%d%%）"
+
+msgid "Teaching session completed"
+msgstr "練習が完了しました"
+
+msgid "Text"
+msgstr "テキスト"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%s「%s」がレッスンにありません。"
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Recuerdo のメニューと画面の言語（Recuerdo の再起動後に反映）。翻訳のない文字列は英語のままです。"
+
+msgid "There are no settings to change."
+msgstr "変更できる設定はありません。"
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "答えを考えて、終わったら「答えを見る」を押してください。"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Topology"
+msgstr "地誌"
+
+msgid "Translation: %s"
+msgstr "翻訳：%s"
+
+msgid "Try an example"
+msgstr "例を試す"
+
+msgid "Type a List"
+msgstr "リストを入力"
+
+msgid "Type at least one word."
+msgstr "単語を少なくとも 1 つ入力してください。"
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "単語リストを「質問 = 答え」の行で入力または貼り付け"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "単語を入力または貼り付けてください：1 行に 1 つ、質問と答えの間に等号（=）かタブを入れます（例：「hond = dog」）。片側に複数の単語がある場合はカンマで区切ります。"
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "単語を「質問 = 答え」の行で入力または貼り付け"
+
+msgid "Typed list"
+msgstr "入力したリスト"
+
+msgid "Typing"
+msgstr "答えを入力"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "答えを入力：答えを入力します。答えをシャッフルする：答えの文字がヒントになります。答えを繰り返す：まず答えが表示され、その後記憶から入力します。"
+
+msgid "Unicode Block:"
+msgstr "Unicode ブロック："
+
+msgid "Use a picture of your own as the map"
+msgstr "自分の画像を地図として使う"
+
+msgid "Version %s"
+msgstr "バージョン %s"
+
+msgid "Where is %s?"
+msgstr "%s はどこですか？"
+
+msgid "Which place is marked?"
+msgstr "この印はどの場所ですか？"
+
+msgid "Whole picture"
+msgstr "画像全体"
+
+msgid "Word Lesson: %s"
+msgstr "単語レッスン：%s"
+
+msgid "Word Pairs"
+msgstr "単語ペア"
+
+msgid "Words"
+msgstr "単語"
+
+msgid "Words List"
+msgstr "単語リスト"
+
+msgid "Words never answered correctly"
+msgstr "一度も正解していない単語"
+
+msgid "Words:"
+msgstr "単語："
+
+msgid "Wrong"
+msgstr "不正解"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "不正解。正しい答え：%s"
+
+msgid "Wrong: %s → %s"
+msgstr "不正解：%s → %s"
+
+msgid "Your Answer"
+msgstr "あなたの答え"
+
+msgid "Your answer"
+msgstr "あなたの答え"
+
+msgid "e.g. Dutch"
+msgstr "例：オランダ語"
+
+msgid "e.g. English"
+msgstr "例：英語"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nOpenTeacher Team による OpenTeacher（2010–2023）をもとにしています"
+
+msgid "✔ Right: %s"
+msgstr "✔ 正解：%s"
+
+msgid "✘ That was %s"
+msgstr "✘ 正しくは %s でした"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ 答え：%s"

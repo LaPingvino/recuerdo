@@ -1,0 +1,784 @@
+# Recuerdo's own texts in German (OpenTeacher's translations, data/translations/de.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's German terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nNote (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d Elemente zu üben. Klicken Sie auf Start."
+
+msgid "%d of %d"
+msgstr "%d von %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d von %d richtig (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d Orte. Wählen Sie, wie Sie üben möchten, und klicken Sie auf Start."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d Durchgänge; der letzte %d%% richtig."
+
+msgid "&Merge Lesson..."
+msgstr "Lektion &zusammenführen..."
+
+msgid "&Properties..."
+msgstr "&Eigenschaften..."
+
+msgid "&Tools"
+msgstr "E&xtras"
+
+msgid ", %d tests"
+msgstr ", %d Tests"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Eine Webseite oder ein Video von YouTube, Vimeo oder Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Über Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Über-Dialog nicht verfügbar"
+
+msgid "About dialog shown"
+msgstr "Über-Dialog angezeigt"
+
+msgid "Add Character"
+msgstr "Zeichen hinzufügen"
+
+msgid "Add Word"
+msgstr "Wort hinzufügen"
+
+msgid "Add all places"
+msgstr "Alle Orte hinzufügen"
+
+msgid "Add every place this map knows"
+msgstr "Alle Orte dieser Karte hinzufügen"
+
+msgid "Add files…"
+msgstr "Dateien hinzufügen…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Die Wörter und Ergebnisse einer anderen Lektion zu dieser hinzufügen"
+
+msgid "Add web address…"
+msgstr "Webadresse hinzufügen…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Alle einmal: jedes Wort einmal. Intelligent: falsche Wörter kommen bald und am Ende wieder. Intervall: Wörter kommen wieder, bis Sie sie können."
+
+msgid "All words"
+msgstr "Alle Wörter"
+
+msgid "Answer Language:"
+msgstr "Antwortsprache:"
+
+msgid "Answer language"
+msgstr "Antwortsprache"
+
+msgid "As entered"
+msgstr "Wie eingegeben"
+
+msgid "Ask the answers"
+msgstr "Die Antworten abfragen"
+
+msgid "Ask this word again later"
+msgstr "Dieses Wort später erneut abfragen"
+
+msgid "Ask:"
+msgstr "Abfragen:"
+
+msgid "Brackets"
+msgstr "Klammern"
+
+msgid "Browse Unicode"
+msgstr "Unicode durchsuchen"
+
+msgid "Browse..."
+msgstr "Durchsuchen..."
+
+msgid "Choose a file…"
+msgstr "Datei wählen…"
+
+msgid "Clear List"
+msgstr "Liste leeren"
+
+msgid "Clear recent files"
+msgstr "Zuletzt geöffnete Dateien leeren"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Klicken Sie zum Beginnen auf »Üben starten«"
+
+msgid "Continue"
+msgstr "Weiter"
+
+msgid "Correct Answer"
+msgstr "Richtige Antwort"
+
+msgid "Count your last answer as right after all"
+msgstr "Ihre letzte Antwort doch als richtig werten"
+
+msgid "Counted as right"
+msgstr "Als richtig gewertet"
+
+msgid "Create Lesson"
+msgstr "Lektion erstellen"
+
+msgid "Create New Lesson"
+msgstr "Neue Lektion erstellen"
+
+msgid "Credits"
+msgstr "Mitwirkende"
+
+msgid "Degrees"
+msgstr "Grad"
+
+msgid "Description:"
+msgstr "Beschreibung:"
+
+msgid "Done: %d of %d right."
+msgstr "Fertig: %d von %d richtig."
+
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Download the lesson, with your results"
+msgstr "Die Lektion mit Ihren Ergebnissen herunterladen"
+
+msgid "Download…"
+msgstr "Herunterladen…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Legen Sie hier eine Lektionsdatei ab oder wählen Sie eine."
+
+msgid "Each session:"
+msgstr "Jeder Durchgang:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Die ausgewählte Frage oder Antwort mit dem Formeleditor bearbeiten"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Die Liste Datei > Zuletzt geöffnet leeren"
+
+msgid "Enter"
+msgstr "Eingeben"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode-Codepunkt eingeben (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Beschreibung der Lektion eingeben..."
+
+msgid "Enter lesson name..."
+msgstr "Name der Lektion eingeben..."
+
+msgid "Enter lesson title"
+msgstr "Titel der Lektion eingeben"
+
+msgid "Enter some places first."
+msgstr "Geben Sie zuerst einige Orte ein."
+
+msgid "Error creating lesson: %v"
+msgstr "Fehler beim Erstellen der Lektion: %v"
+
+msgid "Error loading file: %v"
+msgstr "Fehler beim Laden der Datei: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Fehler: Dateidialog nicht verfügbar"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Fehler: Lektionsdialog nicht verfügbar"
+
+msgid "Error: No about dialog modules available"
+msgstr "Fehler: Keine Module für den Über-Dialog verfügbar"
+
+msgid "Error: No file dialog modules available"
+msgstr "Fehler: Keine Dateidialog-Module verfügbar"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Fehler: Keine Lektionsdialog-Module verfügbar"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Fehler: Keine Einstellungsdialog-Module verfügbar"
+
+msgid "Error: Properties dialog not available"
+msgstr "Fehler: Eigenschaftendialog nicht verfügbar"
+
+msgid "Error: Settings dialog not available"
+msgstr "Fehler: Einstellungsdialog nicht verfügbar"
+
+msgid "Example"
+msgstr "Beispiel"
+
+msgid "Exported %s"
+msgstr "%s exportiert"
+
+msgid "Field separator:"
+msgstr "Feldtrenner:"
+
+msgid "File"
+msgstr "Datei"
+
+msgid "File encoding:"
+msgstr "Dateikodierung:"
+
+msgid "Files"
+msgstr "Dateien"
+
+msgid "First row contains headers"
+msgstr "Erste Zeile enthält Überschriften"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Formula builder"
+msgstr "Formeleditor"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formel, z. B. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Bruch"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Freie Software unter der GNU General Public License,\nVersion 3 oder später"
+
+msgid "Functions"
+msgstr "Funktionen"
+
+msgid "Furigana and formulas"
+msgstr "Furigana und Formeln"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Erste Schritte mit Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Geben Sie den Elementen zuerst im Reiter »Eingeben« eine Antwort."
+
+msgid "Go on after seeing the right answer"
+msgstr "Nach der richtigen Antwort weitermachen"
+
+msgid "Grades in:"
+msgstr "Noten in:"
+
+msgid "Hard words"
+msgstr "Schwere Wörter"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Schwere Wörter: öfter falsch als richtig beantwortete oder noch nicht geübte. Nie richtig beantwortet: Wörter ohne richtige Antwort in früheren Durchgängen."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Wie lange »Antwort wiederholen« die Antwort zeigt, bevor Sie sie eingeben"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Wie der Reiter »Ergebnisse« Ihre Durchgänge benotet"
+
+msgid "Import"
+msgstr "Importieren"
+
+msgid "Import File"
+msgstr "Datei importieren"
+
+msgid "Import Lesson"
+msgstr "Lektion importieren"
+
+msgid "Import Options"
+msgstr "Importoptionen"
+
+msgid "Import from &Picture..."
+msgstr "Aus &Bild importieren..."
+
+msgid "Import from Picture"
+msgstr "Aus Bild importieren"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Bei Name – Ort den Namen des anzuklickenden Ortes aussprechen"
+
+msgid "In mind"
+msgstr "Im Kopf"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Wie lange die Antwort im Modus »Antwort wiederholen« gezeigt wird, bevor Sie sie eingeben"
+
+msgid "Index"
+msgstr "Index"
+
+msgid "Integral"
+msgstr "Integral"
+
+msgid "Interface"
+msgstr "Oberfläche"
+
+msgid "Items:"
+msgstr "Elemente:"
+
+msgid "Languages"
+msgstr "Sprachen"
+
+msgid "Last session:"
+msgstr "Letzter Durchgang:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Letzter Durchgang: %d von %d richtig. Durchgänge in dieser Lektion: %d."
+
+msgid "Latest Session Results"
+msgstr "Ergebnisse des letzten Durchgangs"
+
+msgid "Learn words, places and more by heart"
+msgstr "Wörter, Orte und mehr auswendig lernen"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Wörter, Orte und mehr auswendig lernen:\nden Wortschatz einer Fremdsprache, Topografie\noder alles andere, was Sie sich merken möchten."
+
+msgid "Lesson Information"
+msgstr "Lektionsinformationen"
+
+msgid "Lesson Properties"
+msgstr "Lektionseigenschaften"
+
+msgid "Lesson Type"
+msgstr "Übungstyp"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Die Lektion enthält %d Wortpaare\n\nSchließen Sie einen Übungsdurchgang ab, um hier ausführliche Ergebnisse zu sehen."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Die Lektion enthält %d Wortpaare | %d frühere Durchgänge (siehe Fortschritt)\n\nÜben Sie, um Ihre Antworten hier im Detail zu sehen."
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Lektion: %d Wortpaare | Abgeschlossene Durchgänge: %d\n\nLetzter Durchgang: %d/%d richtig (%d%%), Note %s\nDurchschnittliche Note: %s (%d%%)\n\nAusführliche Ergebnisse des letzten Durchgangs:"
+
+msgid "Limit"
+msgstr "Grenzwert"
+
+msgid "Loaded '%s': %d words"
+msgstr "»%s« geladen: %d Wörter"
+
+msgid "Loading…"
+msgstr "Wird geladen…"
+
+msgid "Made a lesson of %d words"
+msgstr "Lektion mit %d Wörtern erstellt"
+
+msgid "Merged %d words from %s"
+msgstr "%d Wörter aus %s zusammengeführt"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Mode:"
+msgstr "Modus:"
+
+msgid "Name of a place"
+msgstr "Name eines Ortes"
+
+msgid "Name of the marked place"
+msgstr "Name des markierten Ortes"
+
+msgid "Name – Place"
+msgstr "Name – Ort"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Benötigt ein Sprachprogramm: Installieren Sie espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Nie richtig beantwortet"
+
+msgid "New from &Text..."
+msgstr "Neu aus &Text..."
+
+msgid "New lesson created successfully"
+msgstr "Neue Lektion erfolgreich erstellt"
+
+msgid "New lesson dialog created"
+msgstr "Dialog für neue Lektion erstellt"
+
+msgid "New question"
+msgstr "Neue Frage"
+
+msgid "No lesson data available"
+msgstr "Keine Lektionsdaten verfügbar"
+
+msgid "No lesson open to show properties"
+msgstr "Keine Lektion geöffnet, deren Eigenschaften angezeigt werden können"
+
+msgid "No recent lessons"
+msgstr "Keine zuletzt geöffneten Lektionen"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Noch keine Ergebnisse: Üben Sie im Reiter »Üben«."
+
+msgid "No teaching results available yet"
+msgstr "Noch keine Übungsergebnisse verfügbar"
+
+msgid "No words available for teaching"
+msgstr "Keine Wörter zum Üben verfügbar"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Keine Wörter zum Üben: noch keines ist »%s«"
+
+msgid "Now click where %s is on the map."
+msgstr "Klicken Sie jetzt auf der Karte, wo %s liegt."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Ein Wort pro Zeile, mit einem Gleichheitszeichen zwischen Frage und Antwort."
+
+msgid "Open"
+msgstr "Öffnen"
+
+msgid "Open Lesson…"
+msgstr "Lektion öffnen…"
+
+msgid "Open a lesson"
+msgstr "Eine Lektion öffnen"
+
+msgid "Open operation cancelled"
+msgstr "Öffnen abgebrochen"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher-Lektionen (.ot, .otwd), Wortlisten (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS und mehr"
+
+msgid "Opened '%s' - %d words"
+msgstr "»%s« geöffnet – %d Wörter"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Öffnet OpenTeacher-Lektionen (.ot, .otwd), Wortlisten (.csv, .txt) und KWordQuiz-Dateien (.kvtml)"
+
+msgid "Operators"
+msgstr "Operatoren"
+
+msgid "Or type a list"
+msgstr "Oder tippen Sie eine Liste"
+
+msgid "Order"
+msgstr "Reihenfolge"
+
+msgid "Order:"
+msgstr "Reihenfolge:"
+
+msgid "Other lesson"
+msgstr "Andere Lektion"
+
+msgid "Other picture…"
+msgstr "Anderes Bild…"
+
+msgid "Page %d of %d"
+msgstr "Seite %d von %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Bilder, Töne, Videos oder Texte, in der Lektion gespeichert"
+
+msgid "Place %d"
+msgstr "Ort %d"
+
+msgid "Place – Name"
+msgstr "Ort – Name"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Ort – Name: Ein Ort ist markiert, geben Sie seinen Namen ein.\nName – Ort: Ein Name ist gegeben, klicken Sie auf den Ort."
+
+msgid "Please add words in the Enter tab"
+msgstr "Bitte fügen Sie im Reiter »Eingeben« Wörter hinzu"
+
+msgid "Power"
+msgstr "Potenz"
+
+msgid "Practice"
+msgstr "Üben"
+
+msgid "Practice sessions:"
+msgstr "Übungsdurchgänge:"
+
+msgid "Practise"
+msgstr "Üben"
+
+msgid "Practise again"
+msgstr "Erneut üben"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Umgekehrt üben: Die Antworten werden abgefragt und die Fragen sind die Antworten"
+
+msgid "Practise these words"
+msgstr "Diese Wörter üben"
+
+msgid "Practise to see your answers here."
+msgstr "Üben Sie, um hier Ihre Antworten zu sehen."
+
+msgid "Preview"
+msgstr "Vorschau"
+
+msgid "Previous"
+msgstr "Zurück"
+
+msgid "Printed %s"
+msgstr "%s gedruckt"
+
+msgid "Progress"
+msgstr "Fortschritt"
+
+msgid "Pronounce names"
+msgstr "Namen aussprechen"
+
+msgid "Properties dialog cancelled"
+msgstr "Eigenschaftendialog abgebrochen"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Frage %d von %d (Punkte: %d/%d richtig)"
+
+msgid "Question Language:"
+msgstr "Fragesprache:"
+
+msgid "Question language"
+msgstr "Fragesprache"
+
+msgid "Quick Access"
+msgstr "Schnellzugriff"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "%d Wortpaare aus dem Bild gelesen: Prüfen Sie sie im Reiter »Eingeben«"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Eine Wortliste aus einem Scan oder Foto einer gedruckten Liste lesen (benötigt Tesseract)"
+
+msgid "Ready"
+msgstr "Bereit"
+
+msgid "Ready to start"
+msgstr "Bereit zum Starten"
+
+msgid "Ready to start teaching"
+msgstr "Bereit zum Üben"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo läuft in Ihrem Browser: Ihre Lektionen bleiben auf Ihrem Rechner."
+
+msgid "Remove Word"
+msgstr "Wort entfernen"
+
+msgid "Repeat answer shows the answer for"
+msgstr "»Antwort wiederholen« zeigt die Antwort für"
+
+msgid "Result"
+msgstr "Ergebnis"
+
+msgid "Results Overview"
+msgstr "Ergebnisübersicht"
+
+msgid "Reversed"
+msgstr "Umgekehrt"
+
+msgid "Right"
+msgstr "Richtig"
+
+msgid "Right answer"
+msgstr "Richtige Antwort"
+
+msgid "Right: %s"
+msgstr "Richtig: %s"
+
+msgid "Root"
+msgstr "Wurzel"
+
+msgid "Rotate 90°"
+msgstr "Um 90° drehen"
+
+msgid "Saved %s"
+msgstr "%s gespeichert"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Jede Frage in der Fragesprache vorlesen (benötigt espeak-ng oder die Stimmen von macOS oder Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Jede Frage in der Fragesprache vorlesen"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Wählen Sie oben einen Unicode-Block, um Zeichen anzuzeigen, oder geben Sie direkt einen Codepunkt ein."
+
+msgid "Select file to import..."
+msgstr "Datei zum Importieren auswählen..."
+
+msgid "Selected file: %s"
+msgstr "Ausgewählte Datei: %s"
+
+msgid "Settings saved"
+msgstr "Einstellungen gespeichert"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Mehrere Wörter für eine Frage: Trennen Sie sie mit Kommas. Änderungen bleiben erhalten, bis Sie die Seite verlassen: Laden Sie die Lektion herunter, um sie zu behalten."
+
+msgid "Show answer for:"
+msgstr "Antwort zeigen für:"
+
+msgid "Show or hide special characters"
+msgstr "Sonderzeichen ein- oder ausblenden"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Sonderzeichen ein- oder ausblenden: Buchstaben mit Akzenten und andere Schriften"
+
+msgid "Sorted"
+msgstr "Sortiert"
+
+msgid "Square root"
+msgstr "Quadratwurzel"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Again"
+msgstr "Neu starten"
+
+msgid "Start Teaching"
+msgstr "Üben starten"
+
+msgid "Stop"
+msgstr "Stopp"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Richten Sie das Bild gerade aus, sodass die Zeilen waagerecht sind, und ziehen Sie ein Rechteck um die Wortliste, wenn das Bild mehr zeigt."
+
+msgid "Straighten:"
+msgstr "Ausrichten:"
+
+msgid "Structure"
+msgstr "Struktur"
+
+msgid "Sum"
+msgstr "Summe"
+
+msgid "System language"
+msgstr "Systemsprache"
+
+msgid "Teach"
+msgstr "Üben"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Üben abgeschlossen! Endergebnis: %d/%d richtig (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Übungsdurchgang abgeschlossen"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%s %s fehlt in der Lektion."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Die Sprache der Menüs und Fenster von Recuerdo (nach einem Neustart von Recuerdo). Texte ohne Übersetzung bleiben Englisch."
+
+msgid "There are no settings to change."
+msgstr "Es gibt keine Einstellungen zu ändern."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Denken Sie über die Antwort nach und drücken Sie auf »Antwort anzeigen«, wenn Sie bereit sind."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Topology"
+msgstr "Topografie"
+
+msgid "Translation: %s"
+msgstr "Übersetzung: %s"
+
+msgid "Try an example"
+msgstr "Beispiel ausprobieren"
+
+msgid "Type a List"
+msgstr "Liste eintippen"
+
+msgid "Type at least one word."
+msgstr "Geben Sie mindestens ein Wort ein."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Eine Wortliste als Zeilen »Frage = Antwort« eingeben oder einfügen"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Geben Sie die Wörter ein oder fügen Sie sie ein: eines pro Zeile, mit einem Gleichheitszeichen (=) oder einem Tabulator zwischen Frage und Antwort, etwa »hond = dog«. Mehrere Wörter auf einer Seite werden durch Kommas getrennt."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Wörter als Zeilen »Frage = Antwort« eingeben oder einfügen"
+
+msgid "Typed list"
+msgstr "Eingetippte Liste"
+
+msgid "Typing"
+msgstr "Eintippen"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Eintippen: Geben Sie die Antwort ein. Antworten mischen: mit den Buchstaben der Antwort als Hinweis. Antwort wiederholen: Die Antwort wird zuerst gezeigt und dann aus dem Gedächtnis eingegeben."
+
+msgid "Unicode Block:"
+msgstr "Unicode-Block:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Ein eigenes Bild als Karte verwenden"
+
+msgid "Version %s"
+msgstr "Version %s"
+
+msgid "Where is %s?"
+msgstr "Wo liegt %s?"
+
+msgid "Which place is marked?"
+msgstr "Welcher Ort ist markiert?"
+
+msgid "Whole picture"
+msgstr "Ganzes Bild"
+
+msgid "Word Lesson: %s"
+msgstr "Wörterlektion: %s"
+
+msgid "Word Pairs"
+msgstr "Wortpaare"
+
+msgid "Words"
+msgstr "Wörter"
+
+msgid "Words List"
+msgstr "Wortliste"
+
+msgid "Words never answered correctly"
+msgstr "Nie richtig beantwortete Wörter"
+
+msgid "Words:"
+msgstr "Wörter:"
+
+msgid "Wrong"
+msgstr "Falsch"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Falsch. Die richtige Antwort lautet: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Falsch: %s → %s"
+
+msgid "Your Answer"
+msgstr "Ihre Antwort"
+
+msgid "Your answer"
+msgstr "Ihre Antwort"
+
+msgid "e.g. Dutch"
+msgstr "z. B. Niederländisch"
+
+msgid "e.g. English"
+msgstr "z. B. Englisch"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nBasiert auf OpenTeacher vom OpenTeacher-Team, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Richtig: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Das war %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Die Antwort war: %s"
