@@ -1,0 +1,904 @@
+# Recuerdo's own texts in Luxembourgish (OpenTeacher's translations, data/translations/lb.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Luxembourgish terms where it has them. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nNout (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d Elementer fir ze üben. Dréck op Start."
+
+msgid "%d of %d"
+msgstr "%d vun %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d vun %d richteg (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d Plazen. Wiel d'Übungsaart an dréck op Start."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d Sessiounen; déi lescht %d%% richteg."
+
+msgid "&Merge Lesson..."
+msgstr "Lektioun &zesummeféieren..."
+
+msgid "&Properties..."
+msgstr "&Eegenschaften..."
+
+msgid "&Tools"
+msgstr "&Geschier"
+
+msgid ", %d tests"
+msgstr ", %d Tester"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Eng Websäit oder e YouTube-, Vimeo- oder Dailymotion-Video"
+
+msgid "About Recuerdo"
+msgstr "Iwwer Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Iwwer-Dialog net disponibel"
+
+msgid "About dialog shown"
+msgstr "Iwwer-Dialog gewisen"
+
+msgid "Add"
+msgstr "Derbäisetzen"
+
+msgid "Add Character"
+msgstr "Zeeche derbäisetzen"
+
+msgid "Add Word"
+msgstr "Wuert derbäisetzen"
+
+msgid "Add all places"
+msgstr "All Plazen derbäisetzen"
+
+msgid "Add every place this map knows"
+msgstr "All Plazen derbäisetzen, déi dës Kaart kennt"
+
+msgid "Add files…"
+msgstr "Fichieren derbäisetzen…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "D'Wierder an d'Resultater vun enger anerer Lektioun hei derbäisetzen"
+
+msgid "Add web address…"
+msgstr "Webadress derbäisetzen…"
+
+msgid "All once"
+msgstr "All eemol"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "All eemol: all Wuert eemol. Intelligent: falsch Wierder komme séier an um Enn erëm. Intervall: Wierder kommen ëmmer erëm, bis s de se kanns."
+
+msgid "All words"
+msgstr "All Wierder"
+
+msgid "Answer"
+msgstr "Äntwert"
+
+msgid "Answer Language:"
+msgstr "Äntwertsprooch:"
+
+msgid "Answer language"
+msgstr "Äntwertsprooch"
+
+msgid "Answer language:"
+msgstr "Äntwertsprooch:"
+
+msgid "Answers"
+msgstr "Äntwerten"
+
+msgid "As entered"
+msgstr "Wéi aginn"
+
+msgid "Ask the answers"
+msgstr "D'Äntwerte froen"
+
+msgid "Ask this word again later"
+msgstr "Dëst Wuert méi spéit nach eng Kéier froen"
+
+msgid "Ask:"
+msgstr "Froen:"
+
+msgid "Brackets"
+msgstr "Klameren"
+
+msgid "Browse Unicode"
+msgstr "Unicode duerchsichen"
+
+msgid "Browse..."
+msgstr "Duerchsichen..."
+
+msgid "Cancel"
+msgstr "Ofbriechen"
+
+msgid "Check"
+msgstr "Kontrolléieren"
+
+msgid "Check!"
+msgstr "Kontrolléieren!"
+
+msgid "Choose a file…"
+msgstr "E Fichier wielen…"
+
+msgid "Clear List"
+msgstr "Lëscht eidel maachen"
+
+msgid "Clear recent files"
+msgstr "Zulescht benotzt Fichieren läschen"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Klick op 'Mam Léieren ufänken', fir unzefänken"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Continue"
+msgstr "Weider"
+
+msgid "Correct Answer"
+msgstr "Richteg Äntwert"
+
+msgid "Correct anyway"
+msgstr "Trotzdeem richteg"
+
+msgid "Count your last answer as right after all"
+msgstr "Deng lescht Äntwert awer als richteg zielen"
+
+msgid "Counted as right"
+msgstr "Als richteg gezielt"
+
+msgid "Create Lesson"
+msgstr "Lektioun erstellen"
+
+msgid "Create New Lesson"
+msgstr "Nei Lektioun erstellen"
+
+msgid "Credits"
+msgstr "Credits"
+
+msgid "Degrees"
+msgstr "Grad"
+
+msgid "Description:"
+msgstr "Beschreiwung:"
+
+msgid "Done: %d of %d right."
+msgstr "Fäerdeg: %d vun %d richteg."
+
+msgid "Download"
+msgstr "Eroflueden"
+
+msgid "Download the lesson, with your results"
+msgstr "D'Lektioun mat denge Resultater eroflueden"
+
+msgid "Download…"
+msgstr "Eroflueden…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Zéi e Lektiounsfichier heihin oder wiel een."
+
+msgid "Each session:"
+msgstr "Pro Sessioun:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Déi ausgewielte Fro oder Äntwert mam Formeleditor änneren"
+
+msgid "Empty the File > Open Recent list"
+msgstr "D'Lëscht Fichier > Rezent opmaachen eidel maachen"
+
+msgid "Enter"
+msgstr "Aginn"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode-Codepunkt aginn (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Beschreiwung vun der Lektioun aginn..."
+
+msgid "Enter lesson name..."
+msgstr "Numm vun der Lektioun aginn..."
+
+msgid "Enter lesson title"
+msgstr "Titel vun der Lektioun aginn"
+
+msgid "Enter some places first."
+msgstr "Gëff fir d'éischt e puer Plazen an."
+
+msgid "Error creating lesson: %v"
+msgstr "Feeler beim Erstelle vun der Lektioun: %v"
+
+msgid "Error loading file: %v"
+msgstr "Feeler beim Luede vum Fichier: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Feeler: Fichiersdialog net disponibel"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Feeler: Lektiounsdialog net disponibel"
+
+msgid "Error: No about dialog modules available"
+msgstr "Feeler: Keng Moduler fir den Iwwer-Dialog disponibel"
+
+msgid "Error: No file dialog modules available"
+msgstr "Feeler: Keng Moduler fir de Fichiersdialog disponibel"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Feeler: Keng Moduler fir de Lektiounsdialog disponibel"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Feeler: Keng Moduler fir den Astellungsdialog disponibel"
+
+msgid "Error: Properties dialog not available"
+msgstr "Feeler: Eegenschaftsdialog net disponibel"
+
+msgid "Error: Settings dialog not available"
+msgstr "Feeler: Astellungsdialog net disponibel"
+
+msgid "Example"
+msgstr "Beispill"
+
+msgid "Exported %s"
+msgstr "%s exportéiert"
+
+msgid "Field separator:"
+msgstr "Feldtrenner:"
+
+msgid "File"
+msgstr "Fichier"
+
+msgid "File encoding:"
+msgstr "Kodéierung vum Fichier:"
+
+msgid "Files"
+msgstr "Fichieren"
+
+msgid "First row contains headers"
+msgstr "Déi éischt Zeil enthält Iwwerschrëften"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Formula builder"
+msgstr "Formeleditor"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formel, z. B. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Bruch"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Fräi Software ënner der GNU General Public License,\nVersioun 3 oder méi spéit"
+
+msgid "Functions"
+msgstr "Funktiounen"
+
+msgid "Furigana and formulas"
+msgstr "Furigana a Formelen"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Éischt Schrëtt mat Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Gëff den Elementer fir d'éischt eng Äntwert am Tab Aginn."
+
+msgid "Go on after seeing the right answer"
+msgstr "Weidermaachen, nodeems s de déi richteg Äntwert gesinn hues"
+
+msgid "Grades in"
+msgstr "Nouten an"
+
+msgid "Grades in:"
+msgstr "Nouten an:"
+
+msgid "Greek"
+msgstr "Griichesch"
+
+msgid "Hard words"
+msgstr "Schwéier Wierder"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Schwéier Wierder: déi, déi méi dacks falsch wéi richteg beäntwert oder nach net geüübt goufen. Ni richteg beäntwert: déi ouni richteg Äntwert a fréiere Sessiounen."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Wéi laang 'Äntwert widderhuelen' d'Äntwert weist, ier s de se tipps"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Wéi den Tab Resultater deng Sessioune bewäert"
+
+msgid "I was right"
+msgstr "Ech hat richteg"
+
+msgid "I was wrong"
+msgstr "Ech hat falsch"
+
+msgid "Import"
+msgstr "Importéieren"
+
+msgid "Import File"
+msgstr "Fichier importéieren"
+
+msgid "Import Lesson"
+msgstr "Lektioun importéieren"
+
+msgid "Import Options"
+msgstr "Importoptiounen"
+
+msgid "Import from &Picture..."
+msgstr "Aus engem &Bild importéieren..."
+
+msgid "Import from Picture"
+msgstr "Aus engem Bild importéieren"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Bei Numm – Plaz den Numm vun der Plaz virliesen, op déi s de klicke solls"
+
+msgid "In mind"
+msgstr "Am Kapp"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Am Modus 'Äntwert widderhuelen': wéi laang d'Äntwert gewise gëtt, ier s de se tipps"
+
+msgid "Index"
+msgstr "Index"
+
+msgid "Integral"
+msgstr "Integral"
+
+msgid "Interface"
+msgstr "Uewerfläch"
+
+msgid "Interval"
+msgstr "Intervall"
+
+msgid "Items:"
+msgstr "Elementer:"
+
+msgid "Languages"
+msgstr "Sproochen"
+
+msgid "Last session:"
+msgstr "Lescht Sessioun:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Lescht Sessioun: %d vun %d richteg. Sessiounen an dëser Lektioun: %d."
+
+msgid "Latest Session Results"
+msgstr "Resultater vun der leschter Sessioun"
+
+msgid "Learn words, places and more by heart"
+msgstr "Wierder, Plazen a méi auswenneg léieren"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Wierder, Plazen a méi auswenneg léieren:\nde Vokabulär vun enger Friemsprooch, Topografie,\noder alles anescht, wat s de der mierke wëlls."
+
+msgid "Lesson Information"
+msgstr "Informatiounen zur Lektioun"
+
+msgid "Lesson Properties"
+msgstr "Eegenschafte vun der Lektioun"
+
+msgid "Lesson Type"
+msgstr "Lektiounstyp"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Lektioun enthält %d Wuertpairen\n\nMaach eng Übungssessioun fäerdeg, fir hei detailléiert Resultater ze gesinn."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Lektioun enthält %d Wuertpairen | %d fréier Sessiounen (kuck Fortschrëtt)\n\nÜb, fir hei deng Äntwerten am Detail ze gesinn."
+
+msgid "Lesson type"
+msgstr "Lektiounstyp"
+
+msgid "Lesson type:"
+msgstr "Lektiounstyp:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Lektioun: %d Wuertpairen | Ofgeschloss Sessiounen: %d\n\nLescht Sessioun: %d/%d richteg (%d%%), Nout %s\nDuerchschnëttsnout: %s (%d%%)\n\nDetailléiert Resultater vun der leschter Sessioun:"
+
+msgid "Limit"
+msgstr "Grenzwäert"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' gelueden: %d Wierder"
+
+msgid "Loading…"
+msgstr "Lueden…"
+
+msgid "Made a lesson of %d words"
+msgstr "Eng Lektioun mat %d Wierder gemaach"
+
+msgid "Map:"
+msgstr "Kaart:"
+
+msgid "Media"
+msgstr "Medien"
+
+msgid "Merged %d words from %s"
+msgstr "%d Wierder aus %s derbäigesat"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Mode:"
+msgstr "Modus:"
+
+msgid "Name"
+msgstr "Numm"
+
+msgid "Name of a place"
+msgstr "Numm vun enger Plaz"
+
+msgid "Name of the marked place"
+msgstr "Numm vun der markéierter Plaz"
+
+msgid "Name – Place"
+msgstr "Numm – Plaz"
+
+msgid "Name:"
+msgstr "Numm:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Brauch e Programm fir d'Sproochausgab: installéier espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Ni richteg beäntwert"
+
+msgid "New Lesson"
+msgstr "Nei Lektioun"
+
+msgid "New from &Text..."
+msgstr "Nei aus &Text..."
+
+msgid "New lesson created successfully"
+msgstr "Nei Lektioun erfollegräich erstallt"
+
+msgid "New lesson dialog created"
+msgstr "Dialog fir eng nei Lektioun erstallt"
+
+msgid "New question"
+msgstr "Nei Fro"
+
+msgid "Next"
+msgstr "Nächst"
+
+msgid "No lesson data available"
+msgstr "Keng Lektiounsdaten disponibel"
+
+msgid "No lesson open to show properties"
+msgstr "Keng Lektioun op, fir Eegenschaften ze weisen"
+
+msgid "No recent lessons"
+msgstr "Keng rezent Lektiounen"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Nach keng Resultater: üb am Tab Léieren."
+
+msgid "No teaching results available yet"
+msgstr "Nach keng Übungsresultater disponibel"
+
+msgid "No words available for teaching"
+msgstr "Keng Wierder zum Üben disponibel"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Keng Wierder fir ze üben: nach keent ass „%s“"
+
+msgid "Now click where %s is on the map."
+msgstr "Klick elo op der Kaart do, wou %s ass."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Ee Wuert pro Zeil, mat engem Gläichheetszeechen tëscht der Fro an der Äntwert."
+
+msgid "Open"
+msgstr "Opmaachen"
+
+msgid "Open &Recent"
+msgstr "&Rezent opmaachen"
+
+msgid "Open Lesson…"
+msgstr "Lektioun opmaachen…"
+
+msgid "Open a lesson"
+msgstr "Eng Lektioun opmaachen"
+
+msgid "Open operation cancelled"
+msgstr "Opmaachen ofgebrach"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher-Lektiounen (.ot, .otwd), Wierderlëschten (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS a méi"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' opgemaach - %d Wierder"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Mécht OpenTeacher-Lektiounen (.ot, .otwd), Wierderlëschten (.csv, .txt) a KWordQuiz-Fichieren (.kvtml) op"
+
+msgid "Operators"
+msgstr "Operatoren"
+
+msgid "Or type a list"
+msgstr "Oder tipp eng Lëscht"
+
+msgid "Order"
+msgstr "Reiefolleg"
+
+msgid "Order:"
+msgstr "Reiefolleg:"
+
+msgid "Other lesson"
+msgstr "Aner Lektioun"
+
+msgid "Other picture…"
+msgstr "Anert Bild…"
+
+msgid "Page %d of %d"
+msgstr "Säit %d vun %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Biller, Téin, Videoen oder Texter, an der Lektioun gespäichert"
+
+msgid "Place %d"
+msgstr "Plaz %d"
+
+msgid "Place – Name"
+msgstr "Plaz – Numm"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Plaz – Numm: eng Plaz ass markéiert, tipp hiren Numm.\nNumm – Plaz: en Numm ass virginn, klick op d'Plaz."
+
+msgid "Please add words in the Enter tab"
+msgstr "Setz w.e.g. am Tab Aginn Wierder derbäi"
+
+msgid "Power"
+msgstr "Potenz"
+
+msgid "Practice"
+msgstr "Üben"
+
+msgid "Practice sessions:"
+msgstr "Übungssessiounen:"
+
+msgid "Practise"
+msgstr "Üben"
+
+msgid "Practise again"
+msgstr "Nach eng Kéier üben"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Ëmgedréint üben: d'Äntwerte ginn ofgefrot an d'Froe sinn d'Äntwerten"
+
+msgid "Practise these words"
+msgstr "Dës Wierder üben"
+
+msgid "Practise to see your answers here."
+msgstr "Üb, fir hei deng Äntwerten ze gesinn."
+
+msgid "Preview"
+msgstr "Virschau"
+
+msgid "Previous"
+msgstr "Vireg"
+
+msgid "Printed %s"
+msgstr "%s gedréckt"
+
+msgid "Progress"
+msgstr "Fortschrëtt"
+
+msgid "Pronounce names"
+msgstr "Nimm ausschwätzen"
+
+msgid "Pronounce questions"
+msgstr "Froen ausschwätzen"
+
+msgid "Properties dialog cancelled"
+msgstr "Eegenschaftsdialog ofgebrach"
+
+msgid "Question"
+msgstr "Fro"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Fro %d vun %d (Resultat: %d/%d richteg)"
+
+msgid "Question Language:"
+msgstr "Frosprooch:"
+
+msgid "Question language"
+msgstr "Frosprooch"
+
+msgid "Question language:"
+msgstr "Frosprooch:"
+
+msgid "Questions"
+msgstr "Froen"
+
+msgid "Quick Access"
+msgstr "Séieren Zougrëff"
+
+msgid "Random"
+msgstr "Zoufälleg"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "%d Wuertpaire vum Bild gelies: kontrolléier se am Tab Aginn"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Eng Wierderlëscht aus engem Scan oder Foto vun enger gedréckter Lëscht liesen (brauch Tesseract)"
+
+msgid "Ready"
+msgstr "Prett"
+
+msgid "Ready to start"
+msgstr "Prett fir unzefänken"
+
+msgid "Ready to start teaching"
+msgstr "Prett fir mam Léieren unzefänken"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo leeft an dengem Browser: deng Lektioune bleiwen op dengem Computer."
+
+msgid "Remove"
+msgstr "Ewechhuelen"
+
+msgid "Remove Word"
+msgstr "Wuert ewechhuelen"
+
+msgid "Repeat answer"
+msgstr "Äntwert widderhuelen"
+
+msgid "Repeat answer shows the answer for"
+msgstr "'Äntwert widderhuelen' weist d'Äntwert während"
+
+msgid "Result"
+msgstr "Resultat"
+
+msgid "Results"
+msgstr "Resultater"
+
+msgid "Results Overview"
+msgstr "Iwwersiicht vun de Resultater"
+
+msgid "Reverse"
+msgstr "Ëmdréinen"
+
+msgid "Reversed"
+msgstr "Ëmgedréint"
+
+msgid "Right"
+msgstr "Richteg"
+
+msgid "Right answer"
+msgstr "Richteg Äntwert"
+
+msgid "Right: %s"
+msgstr "Richteg: %s"
+
+msgid "Root"
+msgstr "Wuerzel"
+
+msgid "Rotate 90°"
+msgstr "90° dréinen"
+
+msgid "Saved %s"
+msgstr "%s gespäichert"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "All Fro haart an der Frosprooch virliesen (brauch espeak-ng oder d'Stëmme vu macOS oder Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "All Fro haart virliesen, an der Frosprooch"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Wiel uewen en Unicode-Block, fir Zeechen ze gesinn, oder gëff direkt e Codepunkt an."
+
+msgid "Select file to import..."
+msgstr "Fichier zum Importéiere wielen..."
+
+msgid "Selected file: %s"
+msgstr "Ausgewielte Fichier: %s"
+
+msgid "Settings"
+msgstr "Astellungen"
+
+msgid "Settings saved"
+msgstr "Astellunge gespäichert"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Méi Wierder fir eng Fro: trenn se mat Kommaen. Ännerunge bleiwen erhalen, bis s de d'Säit verléiss: lued d'Lektioun erof, fir se ze behalen."
+
+msgid "Show answer for:"
+msgstr "Äntwert weise während:"
+
+msgid "Show or hide special characters"
+msgstr "Spezialzeechen weisen oder verstoppen"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Spezialzeechen weisen oder verstoppen: Buschtawe mat Akzenter an aner Schrëften"
+
+msgid "Shuffle answer"
+msgstr "Äntwert mëschen"
+
+msgid "Skip"
+msgstr "Iwwersprangen"
+
+msgid "Smart"
+msgstr "Intelligent"
+
+msgid "Sort"
+msgstr "Sortéieren"
+
+msgid "Sorted"
+msgstr "Sortéiert"
+
+msgid "Square root"
+msgstr "Quadratwuerzel"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Again"
+msgstr "Nach eng Kéier ufänken"
+
+msgid "Start Teaching"
+msgstr "Mam Léieren ufänken"
+
+msgid "Stop"
+msgstr "Stopp"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Riicht d'Bild aus, sou datt d'Zeilen horizontal sinn, a zéi e Rechteck ronderëm d'Wierderlëscht, wann d'Bild méi weist."
+
+msgid "Straighten:"
+msgstr "Ausriichten:"
+
+msgid "Structure"
+msgstr "Struktur"
+
+msgid "Sum"
+msgstr "Zomm"
+
+msgid "System language"
+msgstr "Systemsprooch"
+
+msgid "Teach"
+msgstr "Léieren"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Fäerdeg geüübt! Schlussresultat: %d/%d richteg (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Übungssessioun ofgeschloss"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%s %s feelt an der Lektioun."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "D'Sprooch vun de Menüen a Fënstere vu Recuerdo (nom Neistart vu Recuerdo). Texter ouni Iwwersetzung bleiwen op Englesch."
+
+msgid "There are no settings to change."
+msgstr "Et gëtt keng Astellungen ze änneren."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Iwwerlee der d'Äntwert, a dréck op 'Äntwert weisen', wann s de fäerdeg bass."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Title:"
+msgstr "Titel:"
+
+msgid "Topology"
+msgstr "Topografie"
+
+msgid "Translation: %s"
+msgstr "Iwwersetzung: %s"
+
+msgid "Try an example"
+msgstr "E Beispill probéieren"
+
+msgid "Type a List"
+msgstr "Eng Lëscht tippen"
+
+msgid "Type at least one word."
+msgstr "Tipp op d'mannst ee Wuert."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Tipp eng Wierderlëscht oder pech se an, als Zeilen „Fro = Äntwert“"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Tipp d'Wierder oder pech se an: eent pro Zeil, mat engem Gläichheetszeechen (=) oder engem Tab tëscht der Fro an der Äntwert, wéi „hond = dog“. Méi Wierder op enger Säit ginn duerch Kommae getrennt."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Tipp Wierder oder pech se an, als Zeilen „Fro = Äntwert“"
+
+msgid "Typed list"
+msgstr "Getippte Lëscht"
+
+msgid "Typing"
+msgstr "Tippen"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Tippen: tipp d'Äntwert. Äntwert mëschen: mat de Buschtawe vun der Äntwert als Hëllef. Äntwert widderhuelen: d'Äntwert gëtt fir d'éischt gewisen, duerno aus dem Kapp getippt."
+
+msgid "Unicode Block:"
+msgstr "Unicode-Block:"
+
+msgid "Use a picture of your own as the map"
+msgstr "En eegent Bild als Kaart benotzen"
+
+msgid "Version %s"
+msgstr "Versioun %s"
+
+msgid "View answer"
+msgstr "Äntwert weisen"
+
+msgid "Where is %s?"
+msgstr "Wou ass %s?"
+
+msgid "Which place is marked?"
+msgstr "Wéi eng Plaz ass markéiert?"
+
+msgid "Whole picture"
+msgstr "Ganzt Bild"
+
+msgid "Word Lesson: %s"
+msgstr "Wierderlektioun: %s"
+
+msgid "Word Pairs"
+msgstr "Wuertpairen"
+
+msgid "Words"
+msgstr "Wierder"
+
+msgid "Words List"
+msgstr "Wierderlëscht"
+
+msgid "Words never answered correctly"
+msgstr "Wierder, déi ni richteg beäntwert goufen"
+
+msgid "Words:"
+msgstr "Wierder:"
+
+msgid "Wrong"
+msgstr "Falsch"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Falsch. Déi richteg Äntwert ass: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Falsch: %s → %s"
+
+msgid "Your Answer"
+msgstr "Deng Äntwert"
+
+msgid "Your answer"
+msgstr "Deng Äntwert"
+
+msgid "e.g. Dutch"
+msgstr "z. B. Hollännesch"
+
+msgid "e.g. English"
+msgstr "z. B. Englesch"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nBaséiert op OpenTeacher vum OpenTeacher-Team, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Richteg: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Dat war %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ D'Äntwert war: %s"

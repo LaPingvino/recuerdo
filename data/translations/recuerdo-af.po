@@ -1,0 +1,898 @@
+# Recuerdo's own texts in Afrikaans (OpenTeacher's translations, data/translations/af.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Afrikaans terms where it has them. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nPunt (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d items om te oefen. Druk Begin."
+
+msgid "%d of %d"
+msgstr "%d van %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d van %d reg (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d plekke. Kies hoe jy wil oefen en druk Begin."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d sessies; die laaste een %d%% reg."
+
+msgid "&Merge Lesson..."
+msgstr "&Voeg les saam..."
+
+msgid "&Properties..."
+msgstr "&Eienskappe..."
+
+msgid "&Tools"
+msgstr "&Gereedskap"
+
+msgid ", %d tests"
+msgstr ", %d toetse"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "’n Webwerf of ’n video van YouTube, Vimeo of Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Oor Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Die Oor-venster is nie beskikbaar nie"
+
+msgid "About dialog shown"
+msgstr "Oor-venster gewys"
+
+msgid "Add"
+msgstr "Voeg by"
+
+msgid "Add Character"
+msgstr "Voeg karakter by"
+
+msgid "Add Word"
+msgstr "Voeg woord by"
+
+msgid "Add all places"
+msgstr "Voeg alle plekke by"
+
+msgid "Add every place this map knows"
+msgstr "Voeg elke plek by wat hierdie kaart ken"
+
+msgid "Add files…"
+msgstr "Voeg lêers by…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Voeg die woorde en resultate van ’n ander les by hierdie een"
+
+msgid "Add web address…"
+msgstr "Voeg webadres by…"
+
+msgid "All once"
+msgstr "Almal een keer"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Almal een keer: elke woord een keer. Slim: verkeerde woorde kom gou en aan die einde terug. Interval: woorde kom terug totdat jy hulle ken."
+
+msgid "All words"
+msgstr "Alle woorde"
+
+msgid "Answer"
+msgstr "Antwoord"
+
+msgid "Answer Language:"
+msgstr "Antwoordtaal:"
+
+msgid "Answer language"
+msgstr "Antwoordtaal"
+
+msgid "As entered"
+msgstr "Soos ingevoer"
+
+msgid "Ask the answers"
+msgstr "Vra die antwoorde"
+
+msgid "Ask this word again later"
+msgstr "Vra hierdie woord later weer"
+
+msgid "Ask:"
+msgstr "Vra:"
+
+msgid "Brackets"
+msgstr "Hakies"
+
+msgid "Browse Unicode"
+msgstr "Blaai deur Unicode"
+
+msgid "Browse..."
+msgstr "Blaai..."
+
+msgid "Cancel"
+msgstr "Kanselleer"
+
+msgid "Check"
+msgstr "Kontroleer"
+
+msgid "Check!"
+msgstr "Kontroleer!"
+
+msgid "Choose a file…"
+msgstr "Kies ’n lêer…"
+
+msgid "Clear List"
+msgstr "Maak lys skoon"
+
+msgid "Clear recent files"
+msgstr "Maak onlangse lêers skoon"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Klik op 'Begin oefen' om te begin"
+
+msgid "Continue"
+msgstr "Gaan voort"
+
+msgid "Correct Answer"
+msgstr "Regte antwoord"
+
+msgid "Correct anyway"
+msgstr "Tog reg"
+
+msgid "Count your last answer as right after all"
+msgstr "Tel jou laaste antwoord tog as reg"
+
+msgid "Counted as right"
+msgstr "As reg getel"
+
+msgid "Create Lesson"
+msgstr "Skep les"
+
+msgid "Create New Lesson"
+msgstr "Skep nuwe les"
+
+msgid "Credits"
+msgstr "Erkennings"
+
+msgid "Degrees"
+msgstr "Grade"
+
+msgid "Description:"
+msgstr "Beskrywing:"
+
+msgid "Done: %d of %d right."
+msgstr "Klaar: %d van %d reg."
+
+msgid "Download"
+msgstr "Laai af"
+
+msgid "Download the lesson, with your results"
+msgstr "Laai die les af, met jou resultate"
+
+msgid "Download…"
+msgstr "Laai af…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Sleep ’n leslêer hierheen, of kies een."
+
+msgid "Each session:"
+msgstr "Elke sessie:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Redigeer die gekose vraag of antwoord met die formulebouer"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Maak die lys Lêer > Open onlangse leeg"
+
+msgid "Enter"
+msgstr "Invoer"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode-kodepunt (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Beskrywing van die les..."
+
+msgid "Enter lesson name..."
+msgstr "Naam van die les..."
+
+msgid "Enter lesson title"
+msgstr "Titel van die les"
+
+msgid "Enter some places first."
+msgstr "Voer eers ’n paar plekke in."
+
+msgid "Error creating lesson: %v"
+msgstr "Fout met die skep van die les: %v"
+
+msgid "Error loading file: %v"
+msgstr "Fout met die laai van die lêer: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Fout: die lêervenster is nie beskikbaar nie"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Fout: die lesvenster is nie beskikbaar nie"
+
+msgid "Error: No about dialog modules available"
+msgstr "Fout: geen module vir die Oor-venster nie"
+
+msgid "Error: No file dialog modules available"
+msgstr "Fout: geen module vir lêervensters nie"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Fout: geen module vir lesvensters nie"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Fout: geen module vir die instellingsvenster nie"
+
+msgid "Error: Properties dialog not available"
+msgstr "Fout: die Eienskappe-venster is nie beskikbaar nie"
+
+msgid "Error: Settings dialog not available"
+msgstr "Fout: die instellingsvenster is nie beskikbaar nie"
+
+msgid "Example"
+msgstr "Voorbeeld"
+
+msgid "Exported %s"
+msgstr "%s uitgevoer"
+
+msgid "Field separator:"
+msgstr "Veldskeier:"
+
+msgid "File"
+msgstr "Lêer"
+
+msgid "File encoding:"
+msgstr "Lêerkodering:"
+
+msgid "Files"
+msgstr "Lêers"
+
+msgid "First row contains headers"
+msgstr "Die eerste ry bevat opskrifte"
+
+msgid "Format"
+msgstr "Formaat"
+
+msgid "Formula builder"
+msgstr "Formulebouer"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formule, bv. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Breuk"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Vrye sagteware onder die GNU General Public License,\nweergawe 3 of later"
+
+msgid "Functions"
+msgstr "Funksies"
+
+msgid "Furigana and formulas"
+msgstr "Furigana en formules"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Begin met Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Gee eers die items ’n antwoord op die Invoer-oortjie."
+
+msgid "Go on after seeing the right answer"
+msgstr "Gaan voort nadat jy die regte antwoord gesien het"
+
+msgid "Grades in"
+msgstr "Punte in"
+
+msgid "Grades in:"
+msgstr "Punte in:"
+
+msgid "Greek"
+msgstr "Grieks"
+
+msgid "Hard words"
+msgstr "Moeilike woorde"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Moeilike woorde: dié wat meer dikwels verkeerd as reg beantwoord is, of nog nie geoefen is nie. Nooit reg beantwoord nie: dié sonder ’n regte antwoord in vorige sessies."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Hoe lank Herhaal antwoord die antwoord wys voordat jy dit tik"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Hoe die Resultate-oortjie jou sessies punte gee"
+
+msgid "I was right"
+msgstr "Ek was reg"
+
+msgid "I was wrong"
+msgstr "Ek was verkeerd"
+
+msgid "Import"
+msgstr "Importeer"
+
+msgid "Import File"
+msgstr "Importeer lêer"
+
+msgid "Import Lesson"
+msgstr "Importeer les"
+
+msgid "Import Options"
+msgstr "Importeeropsies"
+
+msgid "Import from &Picture..."
+msgstr "Importeer uit &prent..."
+
+msgid "Import from Picture"
+msgstr "Importeer uit prent"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Sê by Naam – Plek die naam van die plek waarop jy moet klik"
+
+msgid "In mind"
+msgstr "In gedagte"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Hoe lank die antwoord in die modus Herhaal antwoord gewys word voordat jy dit tik"
+
+msgid "Index"
+msgstr "Indeks"
+
+msgid "Integral"
+msgstr "Integraal"
+
+msgid "Interface"
+msgstr "Koppelvlak"
+
+msgid "Interval"
+msgstr "Interval"
+
+msgid "Items:"
+msgstr "Items:"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Languages"
+msgstr "Tale"
+
+msgid "Last session:"
+msgstr "Laaste sessie:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Laaste sessie: %d van %d reg. Sessies in hierdie les: %d."
+
+msgid "Latest Session Results"
+msgstr "Resultate van die laaste sessie"
+
+msgid "Learn words, places and more by heart"
+msgstr "Leer woorde, plekke en meer uit jou kop"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Leer woorde, plekke en meer uit jou kop:\ndie woordeskat van ’n vreemde taal, topografie,\nof enigiets anders wat jy wil onthou."
+
+msgid "Lesson Information"
+msgstr "Lesinligting"
+
+msgid "Lesson Properties"
+msgstr "Leseienskappe"
+
+msgid "Lesson Type"
+msgstr "Lestipe"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Die les bevat %d woordpare\n\nVoltooi ’n oefensessie om die resultate hier in besonderhede te sien."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Die les bevat %d woordpare | %d vorige sessies (sien Vordering)\n\nOefen om jou antwoorde hier in besonderhede te sien."
+
+msgid "Lesson type"
+msgstr "Lestipe"
+
+msgid "Lesson type:"
+msgstr "Lestipe:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Les: %d woordpare | Voltooide sessies: %d\n\nLaaste sessie: %d/%d reg (%d%%), punt %s\nGemiddelde punt: %s (%d%%)\n\nResultate van die laaste sessie in besonderhede:"
+
+msgid "Limit"
+msgstr "Limiet"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' gelaai: %d woorde"
+
+msgid "Loading…"
+msgstr "Laai tans…"
+
+msgid "Made a lesson of %d words"
+msgstr "Les van %d woorde gemaak"
+
+msgid "Map:"
+msgstr "Kaart:"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Merged %d words from %s"
+msgstr "%d woorde uit %s saamgevoeg"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Mode:"
+msgstr "Modus:"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Name of a place"
+msgstr "Naam van ’n plek"
+
+msgid "Name of the marked place"
+msgstr "Naam van die gemerkte plek"
+
+msgid "Name – Place"
+msgstr "Naam – Plek"
+
+msgid "Name:"
+msgstr "Naam:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Hiervoor is ’n spraakprogram nodig: installeer espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Nooit reg beantwoord nie"
+
+msgid "New Lesson"
+msgstr "Nuwe les"
+
+msgid "New from &Text..."
+msgstr "Nuut uit &teks..."
+
+msgid "New lesson created successfully"
+msgstr "Nuwe les geskep"
+
+msgid "New lesson dialog created"
+msgstr "Venster vir ’n nuwe les geskep"
+
+msgid "New question"
+msgstr "Nuwe vraag"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "No lesson data available"
+msgstr "Geen lesdata beskikbaar nie"
+
+msgid "No lesson open to show properties"
+msgstr "Daar is geen les oop om eienskappe van te wys nie"
+
+msgid "No recent lessons"
+msgstr "Geen onlangse lesse nie"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Nog geen resultate nie: oefen op die Oefen-oortjie."
+
+msgid "No teaching results available yet"
+msgstr "Nog geen oefenresultate nie"
+
+msgid "No words available for teaching"
+msgstr "Geen woorde om te oefen nie"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Geen woorde om te oefen nie: nog geen woord is \"%s\" nie"
+
+msgid "Now click where %s is on the map."
+msgstr "Klik nou op die kaart waar %s lê."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Een woord per reël, met ’n gelykaanteken tussen die vraag en die antwoord."
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Open &Recent"
+msgstr "Open on&langse"
+
+msgid "Open Lesson…"
+msgstr "Open les…"
+
+msgid "Open a lesson"
+msgstr "Open ’n les"
+
+msgid "Open operation cancelled"
+msgstr "Oopmaak gekanselleer"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher-lesse (.ot, .otwd), woordelyste (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS en meer"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' oopgemaak - %d woorde"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Maak OpenTeacher-lesse (.ot, .otwd), woordelyste (.csv, .txt) en KWordQuiz-lêers (.kvtml) oop"
+
+msgid "Operators"
+msgstr "Operatore"
+
+msgid "Or type a list"
+msgstr "Of tik ’n lys"
+
+msgid "Order"
+msgstr "Volgorde"
+
+msgid "Order:"
+msgstr "Volgorde:"
+
+msgid "Other lesson"
+msgstr "Ander les"
+
+msgid "Other picture…"
+msgstr "Ander prent…"
+
+msgid "Page %d of %d"
+msgstr "Bladsy %d van %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Prente, klanke, video’s of tekste, in die les bewaar"
+
+msgid "Place %d"
+msgstr "Plek %d"
+
+msgid "Place – Name"
+msgstr "Plek – Naam"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Plek – Naam: ’n plek is gemerk, tik sy naam.\nNaam – Plek: ’n naam word gegee, klik op die plek."
+
+msgid "Please add words in the Enter tab"
+msgstr "Voeg asseblief woorde by op die Invoer-oortjie"
+
+msgid "Power"
+msgstr "Mag"
+
+msgid "Practice"
+msgstr "Oefening"
+
+msgid "Practice sessions:"
+msgstr "Oefensessies:"
+
+msgid "Practise"
+msgstr "Oefen"
+
+msgid "Practise again"
+msgstr "Oefen weer"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Oefen andersom: die antwoorde word gevra en die vrae is die antwoorde"
+
+msgid "Practise these words"
+msgstr "Oefen hierdie woorde"
+
+msgid "Practise to see your answers here."
+msgstr "Oefen om jou antwoorde hier te sien."
+
+msgid "Preview"
+msgstr "Voorskou"
+
+msgid "Previous"
+msgstr "Vorige"
+
+msgid "Printed %s"
+msgstr "%s gedruk"
+
+msgid "Progress"
+msgstr "Vordering"
+
+msgid "Pronounce names"
+msgstr "Spreek name uit"
+
+msgid "Pronounce questions"
+msgstr "Spreek vrae uit"
+
+msgid "Properties dialog cancelled"
+msgstr "Eienskappe gekanselleer"
+
+msgid "Question"
+msgstr "Vraag"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Vraag %d van %d (telling: %d/%d reg)"
+
+msgid "Question Language:"
+msgstr "Vraagtaal:"
+
+msgid "Question language"
+msgstr "Vraagtaal"
+
+msgid "Quick Access"
+msgstr "Vinnige toegang"
+
+msgid "Random"
+msgstr "Willekeurig"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "%d woordpare uit die prent gelees: kontroleer hulle op die Invoer-oortjie"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Lees ’n woordelys uit ’n skandering of foto van ’n gedrukte lys (hiervoor is Tesseract nodig)"
+
+msgid "Ready"
+msgstr "Gereed"
+
+msgid "Ready to start"
+msgstr "Gereed om te begin"
+
+msgid "Ready to start teaching"
+msgstr "Gereed om te oefen"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo loop in jou blaaier: jou lesse bly op jou rekenaar."
+
+msgid "Remove"
+msgstr "Verwyder"
+
+msgid "Remove Word"
+msgstr "Verwyder woord"
+
+msgid "Repeat answer"
+msgstr "Herhaal antwoord"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Herhaal antwoord wys die antwoord vir"
+
+msgid "Result"
+msgstr "Resultaat"
+
+msgid "Results"
+msgstr "Resultate"
+
+msgid "Results Overview"
+msgstr "Oorsig van die resultate"
+
+msgid "Reverse"
+msgstr "Keer om"
+
+msgid "Reversed"
+msgstr "Omgekeer"
+
+msgid "Right"
+msgstr "Reg"
+
+msgid "Right answer"
+msgstr "Regte antwoord"
+
+msgid "Right: %s"
+msgstr "Reg: %s"
+
+msgid "Root"
+msgstr "Wortel"
+
+msgid "Rotate 90°"
+msgstr "Draai 90°"
+
+msgid "Saved %s"
+msgstr "%s gestoor"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Sê elke vraag hardop in die vraagtaal (hiervoor is espeak-ng nodig, of die stemme van macOS of Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Sê elke vraag hardop, in die vraagtaal"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Kies hierbo ’n Unicode-blok om karakters te sien, of voer direk ’n kodepunt in."
+
+msgid "Select file to import..."
+msgstr "Kies ’n lêer om te importeer..."
+
+msgid "Selected file: %s"
+msgstr "Gekose lêer: %s"
+
+msgid "Settings"
+msgstr "Instellings"
+
+msgid "Settings saved"
+msgstr "Instellings gestoor"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Verskeie woorde vir een vraag: skei hulle met kommas. Veranderinge bly bewaar totdat jy die bladsy verlaat: laai die les af om dit te hou."
+
+msgid "Show answer for:"
+msgstr "Wys antwoord vir:"
+
+msgid "Show or hide special characters"
+msgstr "Wys of versteek spesiale karakters"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Wys of versteek spesiale karakters: letters met aksente en ander skrifte"
+
+msgid "Shuffle answer"
+msgstr "Skommel antwoord"
+
+msgid "Skip"
+msgstr "Slaan oor"
+
+msgid "Smart"
+msgstr "Slim"
+
+msgid "Sorted"
+msgstr "Gesorteer"
+
+msgid "Square root"
+msgstr "Vierkantswortel"
+
+msgid "Start"
+msgstr "Begin"
+
+msgid "Start Again"
+msgstr "Begin weer"
+
+msgid "Start Teaching"
+msgstr "Begin oefen"
+
+msgid "Stop"
+msgstr "Stop"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Draai die prent sodat die reëls reguit lê, en trek ’n reghoek om die woordelys as die prent meer wys."
+
+msgid "Straighten:"
+msgstr "Maak reguit:"
+
+msgid "Structure"
+msgstr "Struktuur"
+
+msgid "Sum"
+msgstr "Som"
+
+msgid "System language"
+msgstr "Stelseltaal"
+
+msgid "Teach"
+msgstr "Oefen"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Oefensessie klaar! Telling: %d/%d reg (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Oefensessie voltooi"
+
+msgid "Text"
+msgstr "Teks"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "Die %s %s ontbreek in die les."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Die taal van Recuerdo se kieslyste en skerms (nadat Recuerdo herbegin is). Tekste sonder ’n vertaling bly Engels."
+
+msgid "There are no settings to change."
+msgstr "Daar is geen instellings om te verander nie."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Dink aan die antwoord, en druk 'Bekyk antwoord' wanneer jy klaar is."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Topology"
+msgstr "Topografie"
+
+msgid "Translation: %s"
+msgstr "Vertaling: %s"
+
+msgid "Try an example"
+msgstr "Probeer ’n voorbeeld"
+
+msgid "Type a List"
+msgstr "Tik ’n lys"
+
+msgid "Type at least one word."
+msgstr "Tik minstens een woord."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Tik of plak ’n woordelys as reëls \"vraag = antwoord\""
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Tik of plak die woorde: een per reël, met ’n gelykaanteken (=) of ’n tab tussen die vraag en die antwoord, soos \"hond = dog\". Verskeie woorde aan een kant word met kommas geskei."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Tik of plak woorde as reëls \"vraag = antwoord\""
+
+msgid "Typed list"
+msgstr "Getikte lys"
+
+msgid "Typing"
+msgstr "Tik"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Tik: tik die antwoord. Skommel antwoord: met die letters van die antwoord as leidraad. Herhaal antwoord: die antwoord word eers gewys en dan uit jou kop getik."
+
+msgid "Unicode Block:"
+msgstr "Unicode-blok:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Gebruik jou eie prent as die kaart"
+
+msgid "Version %s"
+msgstr "Weergawe %s"
+
+msgid "View answer"
+msgstr "Bekyk antwoord"
+
+msgid "Where is %s?"
+msgstr "Waar is %s?"
+
+msgid "Which place is marked?"
+msgstr "Watter plek is gemerk?"
+
+msgid "Whole picture"
+msgstr "Hele prent"
+
+msgid "Word Lesson: %s"
+msgstr "Woordles: %s"
+
+msgid "Word Pairs"
+msgstr "Woordpare"
+
+msgid "Words"
+msgstr "Woorde"
+
+msgid "Words List"
+msgstr "Woordelys"
+
+msgid "Words never answered correctly"
+msgstr "Woorde wat nooit reg beantwoord is nie"
+
+msgid "Words:"
+msgstr "Woorde:"
+
+msgid "Wrong"
+msgstr "Verkeerd"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Verkeerd. Die regte antwoord is: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Verkeerd: %s → %s"
+
+msgid "Your Answer"
+msgstr "Jou antwoord"
+
+msgid "Your answer"
+msgstr "Jou antwoord"
+
+msgid "e.g. Dutch"
+msgstr "bv. Nederlands"
+
+msgid "e.g. English"
+msgstr "bv. Engels"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nGebaseer op OpenTeacher deur die OpenTeacher-span, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Reg: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Dit was %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Die antwoord was: %s"
+
+# corrects OpenTeacher's af.po for 'Answer language:': compound written apart
+msgid "Answer language:"
+msgstr "Antwoordtaal:"
+
+# corrects OpenTeacher's af.po for 'Question language:': compound written apart
+msgid "Question language:"
+msgstr "Vraagtaal:"
+
+# corrects OpenTeacher's af.po for '&Quit': "Stop" (halt an action)
+msgid "E&xit"
+msgstr "&Sluit af"

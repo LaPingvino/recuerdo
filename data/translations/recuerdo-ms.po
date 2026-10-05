@@ -1,0 +1,891 @@
+# Recuerdo's own texts in Malay (OpenTeacher's translations, data/translations/ms.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Malay terms where it has them. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nGred (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d item untuk dilatih. Tekan Mula."
+
+msgid "%d of %d"
+msgstr "%d daripada %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d daripada %d betul (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d tempat. Pilih cara berlatih dan tekan Mula."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d sesi; yang terakhir %d%% betul."
+
+msgid "&Merge Lesson..."
+msgstr "&Gabung Pelajaran..."
+
+msgid "&Properties..."
+msgstr "&Sifat..."
+
+msgid "&Tools"
+msgstr "&Alatan"
+
+msgid ", %d tests"
+msgstr ", %d ujian"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Laman web atau video YouTube, Vimeo atau Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Perihal Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Dialog Perihal tidak tersedia"
+
+msgid "About dialog shown"
+msgstr "Dialog Perihal dipaparkan"
+
+msgid "Add"
+msgstr "Tambah"
+
+msgid "Add Character"
+msgstr "Tambah Aksara"
+
+msgid "Add Word"
+msgstr "Tambah Perkataan"
+
+msgid "Add all places"
+msgstr "Tambah semua tempat"
+
+msgid "Add every place this map knows"
+msgstr "Tambah setiap tempat yang dikenali oleh peta ini"
+
+msgid "Add files…"
+msgstr "Tambah fail…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Tambah perkataan dan keputusan pelajaran lain ke pelajaran ini"
+
+msgid "Add web address…"
+msgstr "Tambah alamat web…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Semua sekali: setiap perkataan sekali. Pintar: perkataan yang salah diulang tidak lama kemudian dan pada akhirnya. Selang: perkataan diulang sehingga anda menguasainya."
+
+msgid "All words"
+msgstr "Semua perkataan"
+
+msgid "Answer"
+msgstr "Jawapan"
+
+msgid "Answer Language:"
+msgstr "Bahasa Jawapan:"
+
+msgid "Answer language"
+msgstr "Bahasa jawapan"
+
+msgid "Answer language:"
+msgstr "Bahasa jawapan:"
+
+msgid "Answers"
+msgstr "Jawapan"
+
+msgid "As entered"
+msgstr "Seperti dimasukkan"
+
+msgid "Ask the answers"
+msgstr "Tanya jawapan"
+
+msgid "Ask this word again later"
+msgstr "Tanya perkataan ini sekali lagi nanti"
+
+msgid "Ask:"
+msgstr "Tanya:"
+
+msgid "Brackets"
+msgstr "Kurungan"
+
+msgid "Browse Unicode"
+msgstr "Layari Unicode"
+
+msgid "Browse..."
+msgstr "Layari..."
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Check"
+msgstr "Semak"
+
+msgid "Choose a file…"
+msgstr "Pilih fail…"
+
+msgid "Clear List"
+msgstr "Kosongkan Senarai"
+
+msgid "Clear recent files"
+msgstr "Kosongkan fail terkini"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Klik 'Mula Mengajar' untuk bermula"
+
+msgid "Comment"
+msgstr "Ulasan"
+
+msgid "Continue"
+msgstr "Teruskan"
+
+msgid "Correct Answer"
+msgstr "Jawapan Betul"
+
+msgid "Count your last answer as right after all"
+msgstr "Kira jawapan terakhir anda sebagai betul"
+
+msgid "Counted as right"
+msgstr "Dikira sebagai betul"
+
+msgid "Create Lesson"
+msgstr "Cipta Pelajaran"
+
+msgid "Create New Lesson"
+msgstr "Cipta Pelajaran Baharu"
+
+msgid "Credits"
+msgstr "Penghargaan"
+
+msgid "Degrees"
+msgstr "Darjah"
+
+msgid "Description:"
+msgstr "Keterangan:"
+
+msgid "Done: %d of %d right."
+msgstr "Selesai: %d daripada %d betul."
+
+msgid "Download"
+msgstr "Muat turun"
+
+msgid "Download the lesson, with your results"
+msgstr "Muat turun pelajaran, bersama keputusan anda"
+
+msgid "Download…"
+msgstr "Muat turun…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Lepaskan fail pelajaran di sini, atau pilih satu."
+
+msgid "Each session:"
+msgstr "Setiap sesi:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Sunting soalan atau jawapan yang dipilih dengan pembina formula"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Kosongkan senarai Fail > Buka Terkini"
+
+msgid "Enter"
+msgstr "Masukkan"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Masukkan titik kod Unicode (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Masukkan keterangan pelajaran..."
+
+msgid "Enter lesson name..."
+msgstr "Masukkan nama pelajaran..."
+
+msgid "Enter lesson title"
+msgstr "Masukkan tajuk pelajaran"
+
+msgid "Enter some places first."
+msgstr "Masukkan beberapa tempat dahulu."
+
+msgid "Error creating lesson: %v"
+msgstr "Ralat mencipta pelajaran: %v"
+
+msgid "Error loading file: %v"
+msgstr "Ralat memuatkan fail: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Ralat: Dialog fail tidak tersedia"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Ralat: Dialog pelajaran tidak tersedia"
+
+msgid "Error: No about dialog modules available"
+msgstr "Ralat: Tiada modul dialog Perihal tersedia"
+
+msgid "Error: No file dialog modules available"
+msgstr "Ralat: Tiada modul dialog fail tersedia"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Ralat: Tiada modul dialog pelajaran tersedia"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Ralat: Tiada modul dialog tetapan tersedia"
+
+msgid "Error: Properties dialog not available"
+msgstr "Ralat: Dialog sifat tidak tersedia"
+
+msgid "Error: Settings dialog not available"
+msgstr "Ralat: Dialog tetapan tidak tersedia"
+
+msgid "Example"
+msgstr "Contoh"
+
+msgid "Exported %s"
+msgstr "%s dieksport"
+
+msgid "Field separator:"
+msgstr "Pemisah medan:"
+
+msgid "File"
+msgstr "Fail"
+
+msgid "File encoding:"
+msgstr "Pengekodan fail:"
+
+msgid "Files"
+msgstr "Fail"
+
+msgid "First row contains headers"
+msgstr "Baris pertama mengandungi pengepala"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Formula builder"
+msgstr "Pembina formula"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formula, cth. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Pecahan"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Perisian bebas di bawah GNU General Public License,\nversi 3 atau lebih baharu"
+
+msgid "Functions"
+msgstr "Fungsi"
+
+msgid "Furigana and formulas"
+msgstr "Furigana dan formula"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Bermula dengan Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Berikan jawapan kepada item pada tab Masukkan dahulu."
+
+msgid "Go on after seeing the right answer"
+msgstr "Teruskan selepas melihat jawapan yang betul"
+
+msgid "Grades in:"
+msgstr "Gred dalam:"
+
+msgid "Greek"
+msgstr "Yunani"
+
+msgid "Hard words"
+msgstr "Perkataan sukar"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Perkataan sukar: yang lebih kerap dijawab salah daripada betul, atau belum dilatih. Tidak pernah dijawab dengan betul: yang tiada jawapan betul dalam sesi terdahulu."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Berapa lama Ulang jawapan memaparkan jawapan sebelum anda menaipnya"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Cara tab Keputusan memberi gred kepada sesi anda"
+
+msgid "I was right"
+msgstr "Saya betul"
+
+msgid "I was wrong"
+msgstr "Saya salah"
+
+msgid "Import"
+msgstr "Import"
+
+msgid "Import File"
+msgstr "Import Fail"
+
+msgid "Import Lesson"
+msgstr "Import Pelajaran"
+
+msgid "Import Options"
+msgstr "Pilihan Import"
+
+msgid "Import from &Picture..."
+msgstr "Import daripada &Gambar..."
+
+msgid "Import from Picture"
+msgstr "Import daripada Gambar"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Dalam Nama – Tempat, sebut nama tempat yang perlu diklik"
+
+msgid "In mind"
+msgstr "Dalam fikiran"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Dalam mod Ulang jawapan, berapa lama jawapan dipaparkan sebelum anda menaipnya"
+
+msgid "Index"
+msgstr "Subskrip"
+
+msgid "Integral"
+msgstr "Kamiran"
+
+msgid "Interface"
+msgstr "Antara muka"
+
+msgid "Interval"
+msgstr "Selang"
+
+msgid "Items:"
+msgstr "Item:"
+
+msgid "Languages"
+msgstr "Bahasa"
+
+msgid "Last session:"
+msgstr "Sesi terakhir:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Sesi terakhir: %d daripada %d betul. Sesi dalam pelajaran ini: %d."
+
+msgid "Latest Session Results"
+msgstr "Keputusan Sesi Terkini"
+
+msgid "Learn words, places and more by heart"
+msgstr "Hafal perkataan, tempat dan banyak lagi"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Hafal perkataan, tempat dan banyak lagi:\nkosa kata bahasa asing, topografi,\natau apa sahaja yang anda mahu ingat."
+
+msgid "Lesson Information"
+msgstr "Maklumat Pelajaran"
+
+msgid "Lesson Properties"
+msgstr "Sifat Pelajaran"
+
+msgid "Lesson Type"
+msgstr "Jenis Pelajaran"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Pelajaran mengandungi %d pasangan perkataan\n\nLengkapkan satu sesi latihan untuk melihat keputusan terperinci di sini."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Pelajaran mengandungi %d pasangan perkataan | %d sesi terdahulu (lihat Kemajuan)\n\nBerlatih untuk melihat jawapan anda secara terperinci di sini."
+
+msgid "Lesson type"
+msgstr "Jenis pelajaran"
+
+msgid "Lesson type:"
+msgstr "Jenis pelajaran:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Pelajaran: %d pasangan perkataan | Sesi selesai: %d\n\nSesi Terkini: %d/%d betul (%d%%), gred %s\nGred purata: %s (%d%%)\n\nKeputusan terperinci sesi terkini:"
+
+msgid "Limit"
+msgstr "Had"
+
+msgid "Loaded '%s': %d words"
+msgstr "'%s' dimuatkan: %d perkataan"
+
+msgid "Loading…"
+msgstr "Memuatkan…"
+
+msgid "Made a lesson of %d words"
+msgstr "Pelajaran %d perkataan telah dibuat"
+
+msgid "Map:"
+msgstr "Peta:"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Merged %d words from %s"
+msgstr "%d perkataan daripada %s telah digabungkan"
+
+msgid "Mode"
+msgstr "Mod"
+
+msgid "Mode:"
+msgstr "Mod:"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Name of a place"
+msgstr "Nama tempat"
+
+msgid "Name of the marked place"
+msgstr "Nama tempat yang ditandakan"
+
+msgid "Name – Place"
+msgstr "Nama – Tempat"
+
+msgid "Name:"
+msgstr "Nama:"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Memerlukan program pertuturan: pasang espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Tidak pernah dijawab dengan betul"
+
+msgid "New Lesson"
+msgstr "Pelajaran Baharu"
+
+msgid "New from &Text..."
+msgstr "Baharu daripada &Teks..."
+
+msgid "New lesson created successfully"
+msgstr "Pelajaran baharu berjaya dicipta"
+
+msgid "New lesson dialog created"
+msgstr "Dialog pelajaran baharu dicipta"
+
+msgid "New question"
+msgstr "Soalan baharu"
+
+msgid "Next"
+msgstr "Seterusnya"
+
+msgid "No lesson data available"
+msgstr "Tiada data pelajaran tersedia"
+
+msgid "No lesson open to show properties"
+msgstr "Tiada pelajaran dibuka untuk memaparkan sifat"
+
+msgid "No recent lessons"
+msgstr "Tiada pelajaran terkini"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Belum ada keputusan: berlatih pada tab Ajar."
+
+msgid "No teaching results available yet"
+msgstr "Belum ada keputusan latihan"
+
+msgid "No words available for teaching"
+msgstr "Tiada perkataan untuk dilatih"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Tiada perkataan untuk dilatih: belum ada yang \"%s\""
+
+msgid "Now click where %s is on the map."
+msgstr "Sekarang klik di mana %s terletak pada peta."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Satu perkataan setiap baris, dengan tanda sama dengan antara soalan dan jawapan."
+
+msgid "Open"
+msgstr "Buka"
+
+msgid "Open Lesson…"
+msgstr "Buka Pelajaran…"
+
+msgid "Open a lesson"
+msgstr "Buka pelajaran"
+
+msgid "Open operation cancelled"
+msgstr "Operasi buka dibatalkan"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "Pelajaran OpenTeacher (.ot, .otwd), senarai perkataan (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS dan banyak lagi"
+
+msgid "Opened '%s' - %d words"
+msgstr "'%s' dibuka - %d perkataan"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Membuka pelajaran OpenTeacher (.ot, .otwd), senarai perkataan (.csv, .txt) dan fail KWordQuiz (.kvtml)"
+
+msgid "Operators"
+msgstr "Operator"
+
+msgid "Or type a list"
+msgstr "Atau taip senarai"
+
+msgid "Order"
+msgstr "Susunan"
+
+msgid "Order:"
+msgstr "Susunan:"
+
+msgid "Other lesson"
+msgstr "Pelajaran lain"
+
+msgid "Other picture…"
+msgstr "Gambar lain…"
+
+msgid "Page %d of %d"
+msgstr "Halaman %d daripada %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Gambar, bunyi, video atau teks, disimpan di dalam pelajaran"
+
+msgid "Place %d"
+msgstr "Tempat %d"
+
+msgid "Place – Name"
+msgstr "Tempat – Nama"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Tempat – Nama: satu tempat ditandakan, taip namanya.\nNama – Tempat: satu nama diberikan, klik tempat itu."
+
+msgid "Please add words in the Enter tab"
+msgstr "Sila tambah perkataan dalam tab Masukkan"
+
+msgid "Power"
+msgstr "Kuasa"
+
+msgid "Practice"
+msgstr "Latihan"
+
+msgid "Practice sessions:"
+msgstr "Sesi latihan:"
+
+msgid "Practise"
+msgstr "Berlatih"
+
+msgid "Practise again"
+msgstr "Berlatih lagi"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Berlatih secara terbalik: jawapan ditanya dan soalan menjadi jawapan"
+
+msgid "Practise these words"
+msgstr "Latih perkataan ini"
+
+msgid "Practise to see your answers here."
+msgstr "Berlatih untuk melihat jawapan anda di sini."
+
+msgid "Preview"
+msgstr "Pratonton"
+
+msgid "Previous"
+msgstr "Sebelumnya"
+
+msgid "Printed %s"
+msgstr "%s dicetak"
+
+msgid "Progress"
+msgstr "Kemajuan"
+
+msgid "Pronounce names"
+msgstr "Sebut nama"
+
+msgid "Pronounce questions"
+msgstr "Sebut soalan"
+
+msgid "Properties dialog cancelled"
+msgstr "Dialog sifat dibatalkan"
+
+msgid "Question"
+msgstr "Soalan"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Soalan %d daripada %d (Markah: %d/%d betul)"
+
+msgid "Question Language:"
+msgstr "Bahasa Soalan:"
+
+msgid "Question language"
+msgstr "Bahasa soalan"
+
+msgid "Question language:"
+msgstr "Bahasa soalan:"
+
+msgid "Questions"
+msgstr "Soalan"
+
+msgid "Quick Access"
+msgstr "Akses Pantas"
+
+msgid "Random"
+msgstr "Rawak"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "%d pasangan perkataan dibaca daripada gambar: semaknya pada tab Masukkan"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Baca senarai perkataan daripada imbasan atau foto senarai bercetak (memerlukan Tesseract)"
+
+msgid "Ready"
+msgstr "Sedia"
+
+msgid "Ready to start"
+msgstr "Sedia untuk bermula"
+
+msgid "Ready to start teaching"
+msgstr "Sedia untuk mula mengajar"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo berjalan dalam pelayar anda: pelajaran anda kekal di komputer anda."
+
+msgid "Remove"
+msgstr "Buang"
+
+msgid "Remove Word"
+msgstr "Buang Perkataan"
+
+msgid "Repeat answer"
+msgstr "Ulang jawapan"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Ulang jawapan memaparkan jawapan selama"
+
+msgid "Result"
+msgstr "Keputusan"
+
+msgid "Results Overview"
+msgstr "Gambaran Keseluruhan Keputusan"
+
+msgid "Reverse"
+msgstr "Songsang"
+
+msgid "Reversed"
+msgstr "Disongsangkan"
+
+msgid "Right"
+msgstr "Betul"
+
+msgid "Right answer"
+msgstr "Jawapan betul"
+
+msgid "Right: %s"
+msgstr "Betul: %s"
+
+msgid "Root"
+msgstr "Punca"
+
+msgid "Rotate 90°"
+msgstr "Putar 90°"
+
+msgid "Saved %s"
+msgstr "%s disimpan"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Sebut setiap soalan dengan kuat dalam bahasa soalan (memerlukan espeak-ng, atau suara macOS atau Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Sebut setiap soalan dengan kuat, dalam bahasa soalan"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Pilih blok Unicode di atas untuk melihat aksara, atau masukkan titik kod secara terus."
+
+msgid "Select file to import..."
+msgstr "Pilih fail untuk diimport..."
+
+msgid "Selected file: %s"
+msgstr "Fail dipilih: %s"
+
+msgid "Settings"
+msgstr "Tetapan"
+
+msgid "Settings saved"
+msgstr "Tetapan disimpan"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Beberapa perkataan untuk satu soalan: pisahkan dengan koma. Perubahan disimpan sehingga anda meninggalkan halaman: muat turun pelajaran untuk menyimpannya."
+
+msgid "Show answer for:"
+msgstr "Papar jawapan selama:"
+
+msgid "Show or hide special characters"
+msgstr "Papar atau sembunyikan aksara khas"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Papar atau sembunyikan aksara khas: huruf beraksen dan tulisan lain"
+
+msgid "Shuffle answer"
+msgstr "Kocok jawapan"
+
+msgid "Smart"
+msgstr "Pintar"
+
+msgid "Sort"
+msgstr "Isih"
+
+msgid "Sorted"
+msgstr "Diisih"
+
+msgid "Square root"
+msgstr "Punca kuasa dua"
+
+msgid "Start"
+msgstr "Mula"
+
+msgid "Start Again"
+msgstr "Mula Semula"
+
+msgid "Start Teaching"
+msgstr "Mula Mengajar"
+
+msgid "Stop"
+msgstr "Henti"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Luruskan gambar supaya baris-barisnya mendatar, dan seret segi empat di sekeliling senarai perkataan jika gambar menunjukkan lebih daripada itu."
+
+msgid "Straighten:"
+msgstr "Luruskan:"
+
+msgid "Structure"
+msgstr "Struktur"
+
+msgid "Sum"
+msgstr "Hasil tambah"
+
+msgid "System language"
+msgstr "Bahasa sistem"
+
+msgid "Teach"
+msgstr "Ajar"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Latihan selesai! Markah Akhir: %d/%d betul (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Sesi latihan selesai"
+
+msgid "Text"
+msgstr "Teks"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "%s %s tiada dalam pelajaran."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Bahasa menu dan skrin Recuerdo (selepas Recuerdo dimulakan semula). Teks tanpa terjemahan kekal dalam bahasa Inggeris."
+
+msgid "There are no settings to change."
+msgstr "Tiada tetapan untuk diubah."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Fikirkan jawapannya, dan tekan 'Lihat jawapan' apabila anda selesai."
+
+msgid "Title"
+msgstr "Tajuk"
+
+msgid "Title:"
+msgstr "Tajuk:"
+
+msgid "Topology"
+msgstr "Topografi"
+
+msgid "Translation: %s"
+msgstr "Terjemahan: %s"
+
+msgid "Try an example"
+msgstr "Cuba contoh"
+
+msgid "Type a List"
+msgstr "Taip Senarai"
+
+msgid "Type at least one word."
+msgstr "Taip sekurang-kurangnya satu perkataan."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Taip atau tampal senarai perkataan sebagai baris \"soalan = jawapan\""
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Taip atau tampal perkataan: satu setiap baris, dengan tanda sama dengan (=) atau tab antara soalan dan jawapan, seperti \"hond = dog\". Beberapa perkataan pada satu sisi dipisahkan dengan koma."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Taip atau tampal perkataan sebagai baris \"soalan = jawapan\""
+
+msgid "Typed list"
+msgstr "Senarai yang ditaip"
+
+msgid "Typing"
+msgstr "Menaip"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Menaip: taip jawapan. Kocok jawapan: dengan huruf-huruf jawapan sebagai petunjuk. Ulang jawapan: jawapan dipaparkan dahulu, kemudian ditaip daripada ingatan."
+
+msgid "Unicode Block:"
+msgstr "Blok Unicode:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Gunakan gambar anda sendiri sebagai peta"
+
+msgid "Version %s"
+msgstr "Versi %s"
+
+msgid "View answer"
+msgstr "Lihat jawapan"
+
+msgid "Where is %s?"
+msgstr "Di manakah %s?"
+
+msgid "Which place is marked?"
+msgstr "Tempat manakah yang ditandakan?"
+
+msgid "Whole picture"
+msgstr "Seluruh gambar"
+
+msgid "Word Lesson: %s"
+msgstr "Pelajaran Perkataan: %s"
+
+msgid "Word Pairs"
+msgstr "Pasangan Perkataan"
+
+msgid "Words"
+msgstr "Perkataan"
+
+msgid "Words List"
+msgstr "Senarai Perkataan"
+
+msgid "Words never answered correctly"
+msgstr "Perkataan yang tidak pernah dijawab dengan betul"
+
+msgid "Words:"
+msgstr "Perkataan:"
+
+msgid "Wrong"
+msgstr "Salah"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Salah. Jawapan yang betul ialah: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Salah: %s → %s"
+
+msgid "Your Answer"
+msgstr "Jawapan Anda"
+
+msgid "Your answer"
+msgstr "Jawapan anda"
+
+msgid "e.g. Dutch"
+msgstr "cth. Belanda"
+
+msgid "e.g. English"
+msgstr "cth. Inggeris"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nBerdasarkan OpenTeacher oleh Pasukan OpenTeacher, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Betul: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Jawapannya ialah %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Jawapannya ialah: %s"
+
+# corrects OpenTeacher's ms.po for 'Note:': "Perhatian:" (attention)
+msgid "Grades in"
+msgstr "Gred"
+
+# corrects OpenTeacher's ms.po for 'Correct anyway': literary "Betul jua"
+msgid "Correct anyway"
+msgstr "Kira sebagai betul"

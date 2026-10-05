@@ -1,0 +1,841 @@
+# Recuerdo's own texts in Finnish (OpenTeacher's translations, data/translations/fi.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Finnish terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nArvosana (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "Opeteltavia kohteita: %d. Paina Aloita."
+
+msgid "%d of %d"
+msgstr "%d / %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d / %d oikein (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "Paikkoja: %d. Valitse, miten opettelet, ja paina Aloita."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "Opettelukertoja: %d; viimeisin %d%% oikein."
+
+msgid "&Merge Lesson..."
+msgstr "&Yhdistä oppitunti..."
+
+msgid "&Properties..."
+msgstr "&Ominaisuudet..."
+
+msgid "&Tools"
+msgstr "T&yökalut"
+
+msgid ", %d tests"
+msgstr ", testejä: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Nettisivu tai YouTube-, Vimeo- tai Dailymotion-video"
+
+msgid "About Recuerdo"
+msgstr "Tietoja Recuerdosta"
+
+msgid "About dialog not available"
+msgstr "Tietoja-ikkuna ei ole käytettävissä"
+
+msgid "About dialog shown"
+msgstr "Tietoja-ikkuna näytetty"
+
+msgid "Add Character"
+msgstr "Lisää merkki"
+
+msgid "Add Word"
+msgstr "Lisää sana"
+
+msgid "Add all places"
+msgstr "Lisää kaikki paikat"
+
+msgid "Add every place this map knows"
+msgstr "Lisää kaikki tämän kartan paikat"
+
+msgid "Add files…"
+msgstr "Lisää tiedostoja…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Lisää toisen oppitunnin sanat ja tulokset tähän oppituntiin"
+
+msgid "Add web address…"
+msgstr "Lisää verkko-osoite…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Kaikki kerran: jokainen sana kerran. Viisas: väärin menneet sanat tulevat pian uudelleen ja lopussa. Aikaväli: sanat palaavat, kunnes osaat ne."
+
+msgid "All words"
+msgstr "Kaikki sanat"
+
+msgid "Answer Language:"
+msgstr "Vastauksen kieli:"
+
+msgid "Answer language"
+msgstr "Vastauksen kieli"
+
+msgid "As entered"
+msgstr "Syötetty järjestys"
+
+msgid "Ask the answers"
+msgstr "Kysy vastaukset"
+
+msgid "Ask this word again later"
+msgstr "Kysy tämä sana myöhemmin uudelleen"
+
+msgid "Ask:"
+msgstr "Kysy:"
+
+msgid "Brackets"
+msgstr "Sulkeet"
+
+msgid "Browse Unicode"
+msgstr "Selaa Unicodea"
+
+msgid "Browse..."
+msgstr "Selaa..."
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Check"
+msgstr "Tarkista"
+
+msgid "Choose a file…"
+msgstr "Valitse tiedosto…"
+
+msgid "Clear List"
+msgstr "Tyhjennä lista"
+
+msgid "Clear recent files"
+msgstr "Tyhjennä viimeksi avatut tiedostot"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Aloita painamalla 'Aloita opettelu'"
+
+msgid "Continue"
+msgstr "Jatka"
+
+msgid "Correct Answer"
+msgstr "Oikea vastaus"
+
+msgid "Count your last answer as right after all"
+msgstr "Laske viimeisin vastauksesi sittenkin oikeaksi"
+
+msgid "Counted as right"
+msgstr "Laskettu oikeaksi"
+
+msgid "Create Lesson"
+msgstr "Luo oppitunti"
+
+msgid "Create New Lesson"
+msgstr "Luo uusi oppitunti"
+
+msgid "Credits"
+msgstr "Tekijät"
+
+msgid "Degrees"
+msgstr "Asteet"
+
+msgid "Description:"
+msgstr "Kuvaus:"
+
+msgid "Done: %d of %d right."
+msgstr "Valmis: %d / %d oikein."
+
+msgid "Download"
+msgstr "Lataa"
+
+msgid "Download the lesson, with your results"
+msgstr "Lataa oppitunti tuloksineen"
+
+msgid "Download…"
+msgstr "Lataa…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Pudota oppituntitiedosto tähän tai valitse tiedosto."
+
+msgid "Each session:"
+msgstr "Jokainen kerta:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Muokkaa valittua kysymystä tai vastausta kaavaeditorilla"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Tyhjennä Tiedosto > Viimeksi avatut -lista"
+
+msgid "Enter"
+msgstr "Syötä"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Anna Unicode-koodipiste (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Anna oppitunnin kuvaus..."
+
+msgid "Enter lesson name..."
+msgstr "Anna oppitunnin nimi..."
+
+msgid "Enter lesson title"
+msgstr "Anna oppitunnin otsikko"
+
+msgid "Enter some places first."
+msgstr "Anna ensin joitakin paikkoja."
+
+msgid "Error creating lesson: %v"
+msgstr "Virhe oppitunnin luonnissa: %v"
+
+msgid "Error loading file: %v"
+msgstr "Virhe tiedoston lataamisessa: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Virhe: Tiedostoikkuna ei ole käytettävissä"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Virhe: Oppituntien ikkuna ei ole käytettävissä"
+
+msgid "Error: No about dialog modules available"
+msgstr "Virhe: Tietoja-ikkunan moduuleja ei ole käytettävissä"
+
+msgid "Error: No file dialog modules available"
+msgstr "Virhe: Tiedostoikkunan moduuleja ei ole käytettävissä"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Virhe: Oppituntien ikkunan moduuleja ei ole käytettävissä"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Virhe: Asetusikkunan moduuleja ei ole käytettävissä"
+
+msgid "Error: Properties dialog not available"
+msgstr "Virhe: Ominaisuusikkuna ei ole käytettävissä"
+
+msgid "Error: Settings dialog not available"
+msgstr "Virhe: Asetusikkuna ei ole käytettävissä"
+
+msgid "Example"
+msgstr "Esimerkki"
+
+msgid "Exported %s"
+msgstr "Viety: %s"
+
+msgid "Field separator:"
+msgstr "Kenttien erotin:"
+
+msgid "File"
+msgstr "Tiedosto"
+
+msgid "File encoding:"
+msgstr "Tiedoston merkistö:"
+
+msgid "Files"
+msgstr "Tiedostot"
+
+msgid "First row contains headers"
+msgstr "Ensimmäisellä rivillä on otsikot"
+
+msgid "Format"
+msgstr "Muoto"
+
+msgid "Formula builder"
+msgstr "Kaavaeditori"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Kaava, esim. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Murtoluku"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Vapaa ohjelmisto, GNU General Public License,\nversio 3 tai uudempi"
+
+msgid "Functions"
+msgstr "Funktiot"
+
+msgid "Furigana and formulas"
+msgstr "Furiganat ja kaavat"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Recuerdon käytön aloittaminen"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Anna ensin kohteille vastaus Syötä-välilehdellä."
+
+msgid "Go on after seeing the right answer"
+msgstr "Jatka, kun olet nähnyt oikean vastauksen"
+
+msgid "Grades in"
+msgstr "Arvosana-asteikko"
+
+msgid "Grades in:"
+msgstr "Arvosana-asteikko:"
+
+msgid "Hard words"
+msgstr "Vaikeat sanat"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Vaikeat sanat: useammin väärin kuin oikein vastatut tai vielä opettelemattomat. Ei koskaan oikein: sanat, joihin ei ole vastattu oikein aiemmilla kerroilla."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Kuinka kauan Toista vastaus näyttää vastauksen ennen kuin kirjoitat sen"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Miten Tulokset-välilehti arvostelee opettelukertasi"
+
+msgid "Import"
+msgstr "Tuo"
+
+msgid "Import File"
+msgstr "Tuo tiedosto"
+
+msgid "Import Lesson"
+msgstr "Tuo oppitunti"
+
+msgid "Import Options"
+msgstr "Tuonnin asetukset"
+
+msgid "Import from &Picture..."
+msgstr "Tuo &kuvasta..."
+
+msgid "Import from Picture"
+msgstr "Tuo kuvasta"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Nimi – paikka -tilassa lausu klikattavan paikan nimi"
+
+msgid "In mind"
+msgstr "Mieti vastausta"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Toista vastaus -tilassa: kuinka kauan vastaus näytetään ennen kuin kirjoitat sen"
+
+msgid "Index"
+msgstr "Alaindeksi"
+
+msgid "Integral"
+msgstr "Integraali"
+
+msgid "Interface"
+msgstr "Käyttöliittymä"
+
+msgid "Items:"
+msgstr "Kohteet:"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Languages"
+msgstr "Kielet"
+
+msgid "Last session:"
+msgstr "Viimeisin kerta:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Viimeisin kerta: %d / %d oikein. Opettelukertoja tässä oppitunnissa: %d."
+
+msgid "Latest Session Results"
+msgstr "Viimeisimmän kerran tulokset"
+
+msgid "Learn words, places and more by heart"
+msgstr "Opettele ulkoa sanoja, paikkoja ja muuta"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Opettele ulkoa sanoja, paikkoja ja muuta:\nvieraan kielen sanastoa, topografiaa\ntai mitä tahansa, minkä haluat muistaa."
+
+msgid "Lesson Information"
+msgstr "Oppitunnin tiedot"
+
+msgid "Lesson Properties"
+msgstr "Oppitunnin ominaisuudet"
+
+msgid "Lesson Type"
+msgstr "Opettelun tyyppi"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Sanapareja oppitunnissa: %d\n\nSuorita opettelukerta nähdäksesi tarkat tulokset tässä."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Sanapareja oppitunnissa: %d | Aiempia opettelukertoja: %d (katso Edistyminen)\n\nOpettele, niin näet vastauksesi tässä tarkemmin."
+
+msgid "Lesson type:"
+msgstr "Opettelun tyyppi:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Sanapareja: %d | Suoritettuja opettelukertoja: %d\n\nViimeisin kerta: %d/%d oikein (%d%%), arvosana %s\nKeskiarvosana: %s (%d%%)\n\nViimeisimmän kerran tarkat tulokset:"
+
+msgid "Limit"
+msgstr "Raja-arvo"
+
+msgid "Loaded '%s': %d words"
+msgstr "Ladattu '%s': sanoja %d"
+
+msgid "Loading…"
+msgstr "Ladataan…"
+
+msgid "Made a lesson of %d words"
+msgstr "Oppitunti luotu, sanoja: %d"
+
+msgid "Merged %d words from %s"
+msgstr "Yhdistetty sanoja: %d (lähde: %s)"
+
+msgid "Mode"
+msgstr "Tila"
+
+msgid "Mode:"
+msgstr "Tila:"
+
+msgid "Name"
+msgstr "Nimi"
+
+msgid "Name of a place"
+msgstr "Paikan nimi"
+
+msgid "Name of the marked place"
+msgstr "Merkityn paikan nimi"
+
+msgid "Name – Place"
+msgstr "Nimi – paikka"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Vaatii puheohjelman: asenna espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Ei koskaan oikein"
+
+msgid "New Lesson"
+msgstr "Uusi oppitunti"
+
+msgid "New from &Text..."
+msgstr "Uusi &tekstistä..."
+
+msgid "New lesson created successfully"
+msgstr "Uusi oppitunti luotu"
+
+msgid "New lesson dialog created"
+msgstr "Uuden oppitunnin ikkuna luotu"
+
+msgid "New question"
+msgstr "Uusi kysymys"
+
+msgid "Next"
+msgstr "Seuraava"
+
+msgid "No lesson data available"
+msgstr "Oppitunnin tietoja ei ole saatavilla"
+
+msgid "No lesson open to show properties"
+msgstr "Mitään oppituntia ei ole auki, joten ominaisuuksia ei voi näyttää"
+
+msgid "No recent lessons"
+msgstr "Ei viimeksi avattuja oppitunteja"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Ei vielä tuloksia: opettele Opettele-välilehdellä."
+
+msgid "No teaching results available yet"
+msgstr "Opettelun tuloksia ei vielä ole"
+
+msgid "No words available for teaching"
+msgstr "Ei opeteltavia sanoja"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Ei opeteltavia sanoja: valintaan \"%s\" ei kuulu vielä yhtään sanaa"
+
+msgid "Now click where %s is on the map."
+msgstr "Klikkaa nyt kartalla paikkaa: %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Yksi sana riviä kohden, kysymyksen ja vastauksen välissä yhtäsuuruusmerkki."
+
+msgid "Open"
+msgstr "Avaa"
+
+msgid "Open &Recent"
+msgstr "&Viimeksi avatut"
+
+msgid "Open Lesson…"
+msgstr "Avaa oppitunti…"
+
+msgid "Open a lesson"
+msgstr "Avaa oppitunti"
+
+msgid "Open operation cancelled"
+msgstr "Avaaminen peruttu"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher-oppitunnit (.ot, .otwd), sanalistat (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS ja muita"
+
+msgid "Opened '%s' - %d words"
+msgstr "Avattu '%s' – sanoja %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Avaa OpenTeacher-oppitunnit (.ot, .otwd), sanalistat (.csv, .txt) ja KWordQuiz-tiedostot (.kvtml)"
+
+msgid "Operators"
+msgstr "Operaattorit"
+
+msgid "Or type a list"
+msgstr "Tai kirjoita lista"
+
+msgid "Order"
+msgstr "Järjestys"
+
+msgid "Order:"
+msgstr "Järjestys:"
+
+msgid "Other lesson"
+msgstr "Toinen oppitunti"
+
+msgid "Other picture…"
+msgstr "Muu kuva…"
+
+msgid "Page %d of %d"
+msgstr "Sivu %d / %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Kuvia, ääniä, videoita tai tekstejä, tallennettuina oppitunnin sisään"
+
+msgid "Place %d"
+msgstr "Paikka %d"
+
+msgid "Place – Name"
+msgstr "Paikka – nimi"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Paikka – nimi: paikka on merkitty, kirjoita sen nimi.\nNimi – paikka: nimi annetaan, klikkaa paikkaa."
+
+msgid "Please add words in the Enter tab"
+msgstr "Lisää sanoja Syötä-välilehdellä"
+
+msgid "Power"
+msgstr "Potenssi"
+
+msgid "Practice"
+msgstr "Opettelu"
+
+msgid "Practice sessions:"
+msgstr "Opettelukerrat:"
+
+msgid "Practise"
+msgstr "Opettele"
+
+msgid "Practise again"
+msgstr "Opettele uudelleen"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Opettele toisin päin: vastaukset kysytään ja kysymykset ovat vastauksia"
+
+msgid "Practise these words"
+msgstr "Opettele nämä sanat"
+
+msgid "Practise to see your answers here."
+msgstr "Opettele, niin näet vastauksesi tässä."
+
+msgid "Preview"
+msgstr "Esikatselu"
+
+msgid "Previous"
+msgstr "Edellinen"
+
+msgid "Printed %s"
+msgstr "Tulostettu: %s"
+
+msgid "Progress"
+msgstr "Edistyminen"
+
+msgid "Pronounce names"
+msgstr "Lausu nimet"
+
+msgid "Pronounce questions"
+msgstr "Lausu kysymykset"
+
+msgid "Properties dialog cancelled"
+msgstr "Ominaisuusikkuna peruttu"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Kysymys %d / %d (pisteet: %d/%d oikein)"
+
+msgid "Question Language:"
+msgstr "Kysymyksen kieli:"
+
+msgid "Question language"
+msgstr "Kysymyksen kieli"
+
+msgid "Quick Access"
+msgstr "Pikavalinnat"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Kuvasta luettuja sanapareja: %d. Tarkista ne Syötä-välilehdellä"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Lue sanalista tulostetun listan skannauksesta tai valokuvasta (vaatii Tesseractin)"
+
+msgid "Ready"
+msgstr "Valmis"
+
+msgid "Ready to start"
+msgstr "Valmis aloittamaan"
+
+msgid "Ready to start teaching"
+msgstr "Valmis aloittamaan opettelun"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo toimii selaimessasi: oppituntisi pysyvät tietokoneellasi."
+
+msgid "Remove Word"
+msgstr "Poista sana"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Toista vastaus -tilan näyttöaika"
+
+msgid "Result"
+msgstr "Tulos"
+
+msgid "Results"
+msgstr "Tulokset"
+
+msgid "Results Overview"
+msgstr "Tulosten yhteenveto"
+
+msgid "Reversed"
+msgstr "Käänteinen"
+
+msgid "Right"
+msgstr "Oikein"
+
+msgid "Right answer"
+msgstr "Oikea vastaus"
+
+msgid "Right: %s"
+msgstr "Oikein: %s"
+
+msgid "Root"
+msgstr "Juuri"
+
+msgid "Rotate 90°"
+msgstr "Kierrä 90°"
+
+msgid "Saved %s"
+msgstr "Tallennettu: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Lue jokainen kysymys ääneen kysymyksen kielellä (vaatii espeak-ng:n tai macOS:n tai Windowsin puheäänet)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Lue jokainen kysymys ääneen kysymyksen kielellä"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Valitse yltä Unicode-lohko nähdäksesi merkit tai anna koodipiste suoraan."
+
+msgid "Select file to import..."
+msgstr "Valitse tuotava tiedosto..."
+
+msgid "Selected file: %s"
+msgstr "Valittu tiedosto: %s"
+
+msgid "Settings saved"
+msgstr "Asetukset tallennettu"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Useita sanoja yhteen kysymykseen: erota ne pilkuilla. Muutokset säilyvät, kunnes poistut sivulta: lataa oppitunti säilyttääksesi sen."
+
+msgid "Show answer for:"
+msgstr "Vastauksen näyttöaika:"
+
+msgid "Show or hide special characters"
+msgstr "Näytä tai piilota erikoismerkit"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Näytä tai piilota erikoismerkit: tarkkeelliset kirjaimet ja muut kirjoitusjärjestelmät"
+
+msgid "Sorted"
+msgstr "Lajiteltu"
+
+msgid "Square root"
+msgstr "Neliöjuuri"
+
+msgid "Start"
+msgstr "Aloita"
+
+msgid "Start Again"
+msgstr "Aloita alusta"
+
+msgid "Start Teaching"
+msgstr "Aloita opettelu"
+
+msgid "Stop"
+msgstr "Lopeta"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Suorista kuva niin, että rivit ovat vaakasuorassa, ja vedä suorakulmio sanalistan ympärille, jos kuvassa on muutakin."
+
+msgid "Straighten:"
+msgstr "Suorista:"
+
+msgid "Structure"
+msgstr "Rakenne"
+
+msgid "Sum"
+msgstr "Summa"
+
+msgid "System language"
+msgstr "Järjestelmän kieli"
+
+msgid "Teach"
+msgstr "Opettele"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Opettelu valmis! Lopputulos: %d/%d oikein (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Opettelukerta suoritettu"
+
+msgid "Text"
+msgstr "Teksti"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "Oppitunnista puuttuu: %s %s."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Recuerdon valikoiden ja näkymien kieli (kun Recuerdo käynnistetään uudelleen). Kääntämättömät tekstit pysyvät englanninkielisinä."
+
+msgid "There are no settings to change."
+msgstr "Muutettavia asetuksia ei ole."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Mieti vastausta ja paina 'Katso vastaus', kun olet valmis."
+
+msgid "Title"
+msgstr "Otsikko"
+
+msgid "Topology"
+msgstr "Topografia"
+
+msgid "Translation: %s"
+msgstr "Käännös: %s"
+
+msgid "Try an example"
+msgstr "Kokeile esimerkkiä"
+
+msgid "Type a List"
+msgstr "Kirjoita lista"
+
+msgid "Type at least one word."
+msgstr "Kirjoita vähintään yksi sana."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Kirjoita tai liitä sanalista riveinä \"kysymys = vastaus\""
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Kirjoita tai liitä sanat: yksi riviä kohden, kysymyksen ja vastauksen välissä yhtäsuuruusmerkki (=) tai sarkain, esimerkiksi \"hond = dog\". Saman puolen useat sanat erotetaan pilkuilla."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Kirjoita tai liitä sanat riveinä \"kysymys = vastaus\""
+
+msgid "Typed list"
+msgstr "Kirjoitettu lista"
+
+msgid "Typing"
+msgstr "Kirjoittaminen"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Kirjoittaminen: kirjoita vastaus. Sekoita vastaus: vastauksen kirjaimet vihjeenä. Toista vastaus: vastaus näytetään ensin, sitten se kirjoitetaan muistista."
+
+msgid "Unicode Block:"
+msgstr "Unicode-lohko:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Käytä omaa kuvaa karttana"
+
+msgid "Version %s"
+msgstr "Versio %s"
+
+msgid "Where is %s?"
+msgstr "Missä on %s?"
+
+msgid "Which place is marked?"
+msgstr "Mikä paikka on merkitty?"
+
+msgid "Whole picture"
+msgstr "Koko kuva"
+
+msgid "Word Lesson: %s"
+msgstr "Sanojen opettelu: %s"
+
+msgid "Word Pairs"
+msgstr "Sanaparit"
+
+msgid "Words"
+msgstr "Sanat"
+
+msgid "Words List"
+msgstr "Sanalista"
+
+msgid "Words never answered correctly"
+msgstr "Sanat, joihin ei ole koskaan vastattu oikein"
+
+msgid "Words:"
+msgstr "Sanat:"
+
+msgid "Wrong"
+msgstr "Väärin"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Väärin. Oikea vastaus: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Väärin: %s → %s"
+
+msgid "Your Answer"
+msgstr "Vastauksesi"
+
+msgid "Your answer"
+msgstr "Vastauksesi"
+
+msgid "e.g. Dutch"
+msgstr "esim. hollanti"
+
+msgid "e.g. English"
+msgstr "esim. englanti"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nPerustuu OpenTeacher-tiimin OpenTeacheriin, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Oikein: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Se oli %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Vastaus oli: %s"
+
+# corrects OpenTeacher's fi.po for 'Correct anyway': "Korjaa joka tapauksessa" (fix it anyway)
+msgid "Correct anyway"
+msgstr "Hyväksy oikeaksi"
+
+# corrects OpenTeacher's fi.po for 'Shuffle answer': "Arvo vastaus" (draw lots)
+msgid "Shuffle answer"
+msgstr "Sekoita vastaus"
+
+# corrects OpenTeacher's fi.po for '&Save': missing accelerator
+msgid "&Save"
+msgstr "&Tallenna"
+
+# corrects OpenTeacher's fi.po for 'Answers': partitive
+msgid "Answers"
+msgstr "Vastaukset"
+
+# corrects OpenTeacher's fi.po for 'Questions': partitive
+msgid "Questions"
+msgstr "Kysymykset"
+
+# corrects OpenTeacher's fi.po for '&Documentation': "Dokumentointi" (documenting)
+msgid "&Getting Started"
+msgstr "&Ohjeet"
