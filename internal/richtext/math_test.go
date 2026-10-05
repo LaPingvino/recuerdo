@@ -24,3 +24,16 @@ func TestMath(t *testing.T) {
 		t.Error("NormalizeAnswer")
 	}
 }
+
+func TestNormalizeScripts(t *testing.T) {
+	for _, c := range [][2]string{
+		{`x^{2}+1`, `x^2+1`}, {`x_{1}`, `x_1`}, {`e^{\pi}`, `e^\pi`}, {`\pi r^{2}`, `\pir^2`},
+	} {
+		if a, b := NormalizeAnswer(c[0]), NormalizeAnswer(c[1]); a != b {
+			t.Errorf("%q and %q: %q, %q", c[0], c[1], a, b)
+		}
+	}
+	if NormalizeAnswer(`x^{10}`) == NormalizeAnswer(`x^10`) {
+		t.Error("x^{10} is not x^10")
+	}
+}

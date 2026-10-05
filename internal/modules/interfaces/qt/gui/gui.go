@@ -13,6 +13,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
 	userdocumentation "github.com/LaPingvino/recuerdo/internal/modules/data/userDocumentation"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/testmode"
 	plaintextwords "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/enterers/plainTextWords"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrimport"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
@@ -279,6 +280,19 @@ func (mod *GuiModule) createMenuBar() {
 	pictureAction := fileMenu.AddActionWithText(i18n.T("Import from &Picture..."))
 	pictureAction.SetToolTip(i18n.T("Read a word list from a scan or photo of a printed list (needs Tesseract)"))
 	pictureAction.OnTriggered(mod.importFromPicture)
+
+	fileMenu.AddSeparator()
+
+	testAction := fileMenu.AddActionWithText(i18n.T("&Test Mode..."))
+	testAction.SetToolTip(i18n.T("Take tests from a test server, or give them as a teacher"))
+	testAction.OnTriggered(func() {
+		testmode.Show(mod.mainWindow.QWidget, func() *lesson.WordList {
+			if l, _ := mod.currentLesson(); l != nil && l.DataType == "words" {
+				return &l.Data.List
+			}
+			return nil
+		})
+	})
 
 	fileMenu.AddSeparator()
 

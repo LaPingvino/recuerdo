@@ -1,6 +1,7 @@
 package richtext
 
 import (
+	"regexp"
 	"strings"
 	"unicode"
 )
@@ -60,13 +61,18 @@ func mathSpans(s string, onMath, onText func(string)) {
 
 // mathPlain is a formula's TeX without spaces, for checking.
 func mathPlain(tex string) string {
-	return strings.Map(func(r rune) rune {
+	tex = strings.Map(func(r rune) rune {
 		if unicode.IsSpace(r) {
 			return -1
 		}
 		return r
 	}, tex)
+	// x^{2} is x^2: braces around one character or command after ^ or _
+	// do not count (the formula builder's x² button writes ^{})
+	return singleScript.ReplaceAllString(tex, "$1$2")
 }
+
+var singleScript = regexp.MustCompile(`([\^_])\{([^{}\\]|\\[A-Za-z]+)\}`)
 
 // PlainMath is s with its formulas as their TeX without spaces and
 // without delimiters ("area: $\pi r^2$" -> "area: \pi r^2" without the

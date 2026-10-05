@@ -19,7 +19,7 @@ msgstr ""
 msgid "%d of %d"
 msgstr ""
 
-#: web/app.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "%d of %d right (%d%%)"
 msgstr ""
 
@@ -27,7 +27,7 @@ msgstr ""
 msgid "%d places. Choose how to practise and press Start."
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
 msgstr ""
 
@@ -85,6 +85,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "&Settings..."
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "&Test Mode..."
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -215,7 +219,7 @@ msgstr ""
 msgid "Ask:"
 msgstr ""
 
-#: web/index.html
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Back"
 msgstr ""
 
@@ -267,7 +271,7 @@ msgstr ""
 msgid "Close for handing in"
 msgstr ""
 
-#: web/teacher.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Closed"
 msgstr ""
 
@@ -455,6 +459,10 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Fill in the server, your name and your password."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "First row contains headers"
 msgstr ""
@@ -467,7 +475,7 @@ msgstr ""
 msgid "Formula builder"
 msgstr ""
 
-#: internal/modules/interfaces/qt/lessons/words/words.go
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Formula, e.g. x^2 + 1"
 msgstr ""
 
@@ -531,19 +539,19 @@ msgstr ""
 msgid "Groups"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Hand in"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Hand in? You cannot change your answers afterwards."
 msgstr ""
 
-#: web/teacher.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Handed in"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Handed in. Your teacher will check your answers."
 msgstr ""
 
@@ -623,6 +631,10 @@ msgstr ""
 msgid "Interval"
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Items:"
 msgstr ""
@@ -699,11 +711,15 @@ msgstr ""
 msgid "Loading…"
 msgstr ""
 
-#: web/index.html
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Log in"
 msgstr ""
 
-#: web/index.html
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Log in to a test server"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Log out"
 msgstr ""
 
@@ -731,7 +747,7 @@ msgstr ""
 msgid "Mode:"
 msgstr ""
 
-#: internal/modules/interfaces/qt/lessons/media/widget.go
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Name"
 msgstr ""
 
@@ -795,6 +811,10 @@ msgstr ""
 msgid "New test of the open lesson"
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "New test server"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
 msgid "Next"
 msgstr ""
@@ -827,7 +847,7 @@ msgstr ""
 msgid "No teaching results available yet"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "No tests for you yet."
 msgstr ""
 
@@ -845,6 +865,10 @@ msgstr ""
 
 #: web/teacher.js
 msgid "Not added: %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Not connected: the certificate was not confirmed."
 msgstr ""
 
 #: web/teacher.js
@@ -931,7 +955,7 @@ msgstr ""
 msgid "Page %d of %d"
 msgstr ""
 
-#: web/index.html
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Password"
 msgstr ""
 
@@ -1031,7 +1055,7 @@ msgstr ""
 msgid "Published: the students can see their results."
 msgstr ""
 
-#: internal/modules/interfaces/qt/lessons/media/widget.go
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Question"
 msgstr ""
 
@@ -1087,6 +1111,10 @@ msgstr ""
 msgid "Recuerdo runs in your browser: your lessons stay on your computer."
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Refresh"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Remove"
 msgstr ""
@@ -1111,7 +1139,7 @@ msgstr ""
 msgid "Result"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Result ready"
 msgstr ""
 
@@ -1131,11 +1159,11 @@ msgstr ""
 msgid "Reversed"
 msgstr ""
 
-#: web/app.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Right"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Right (your teacher's decision)"
 msgstr ""
 
@@ -1187,7 +1215,7 @@ msgstr ""
 msgid "Score"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "See the result"
 msgstr ""
 
@@ -1201,6 +1229,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Selected file: %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Server"
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/settings/settings.go
@@ -1263,7 +1295,7 @@ msgstr ""
 msgid "Start Teaching"
 msgstr ""
 
-#: web/teacher.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Status"
 msgstr ""
 
@@ -1295,7 +1327,11 @@ msgstr ""
 msgid "System language"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Take the test"
 msgstr ""
 
@@ -1311,6 +1347,10 @@ msgstr ""
 msgid "Teacher"
 msgstr ""
 
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Teachers and admins: use the server's web page for now."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
 msgstr ""
@@ -1319,7 +1359,7 @@ msgstr ""
 msgid "Teaching session completed"
 msgstr ""
 
-#: web/teacher.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Test"
 msgstr ""
 
@@ -1327,7 +1367,7 @@ msgstr ""
 msgid "Test made: %s. Now give it to students or groups."
 msgstr ""
 
-#: web/index.html
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Test mode"
 msgstr ""
 
@@ -1363,7 +1403,7 @@ msgstr ""
 msgid "Title:"
 msgstr ""
 
-#: web/testmode.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "To do"
 msgstr ""
 
@@ -1447,7 +1487,7 @@ msgstr ""
 msgid "Word Pairs"
 msgstr ""
 
-#: web/index.html
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Words"
 msgstr ""
 
@@ -1463,7 +1503,7 @@ msgstr ""
 msgid "Words:"
 msgstr ""
 
-#: web/app.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Wrong"
 msgstr ""
 
@@ -1495,11 +1535,15 @@ msgstr ""
 msgid "Your Answer"
 msgstr ""
 
-#: internal/modules/interfaces/qt/lessons/media/widget.go
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Your answer"
 msgstr ""
 
-#: web/teacher.js
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr ""
+
+#: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Your tests"
 msgstr ""
 

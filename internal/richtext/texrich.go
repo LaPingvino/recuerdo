@@ -2,6 +2,7 @@ package richtext
 
 import (
 	"html"
+	"regexp"
 	"strings"
 	"unicode"
 )
@@ -219,9 +220,22 @@ func (p *texParser) command() string {
 // formulas ($...$ and the like) as TeXToRich renders them.
 func RichWithMath(s string) string {
 	if !HasMath(s) {
-		return Sanitize(s)
+		return rubyForQt(Sanitize(s))
 	}
 	var b strings.Builder
 	mathSpans(s, func(tex string) { b.WriteString(TeXToRich(tex)) }, func(t string) { b.WriteString(Sanitize(t)) })
-	return b.String()
+	return rubyForQt(b.String())
+}
+
+var rubyRT = regexp.MustCompile(`<rt>(.*?)</rt>`)
+
+// rubyForQt shows furigana the way Qt's rich text can (it has no ruby):
+// the reading small, in brackets, after the word: 水 (みず).
+func rubyForQt(rich string) string {
+	if !strings.Contains(rich, "<ruby>") {
+		return rich
+	}
+	rich = rubyRT.ReplaceAllString(rich, "<span style=\"font-size: small; color: gray;\">\u00a0($1)</span>")
+	rich = strings.NewReplacer("<ruby>", "", "</ruby>", "", "<rp>", "", "</rp>", "").Replace(rich)
+	return rich
 }

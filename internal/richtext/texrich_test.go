@@ -39,3 +39,11 @@ func TestRichWithMath(t *testing.T) {
 		}
 	}
 }
+
+func TestRubyForQt(t *testing.T) {
+	got := RichWithMath("<ruby>水<rt>みず</rt></ruby> and $x^2$")
+	want := `水<span style="font-size: small; color: gray;">` + "\u00a0" + `(みず)</span> and x<sup>2</sup>`
+	if got != want {
+		t.Errorf("got %q\nwant %q", got, want)
+	}
+}
