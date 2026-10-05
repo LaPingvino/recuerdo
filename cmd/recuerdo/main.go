@@ -75,6 +75,7 @@ var (
 	commands         = flag.String("commands", "", "Comma-separated list of commands to execute (e.g., 'show-properties,show-settings')")
 	listCmds         = flag.Bool("list-commands", false, "List available commands and exit")
 	helpFlag         = flag.Bool("help", false, "Show help message")
+	versionFlag      = flag.Bool("version", false, "Show the version and exit")
 	strictValidation = flag.Bool("strict-validation", false, "Enable strict UI layout validation (fail on overlaps)")
 )
 
@@ -98,7 +99,7 @@ func main() {
 		flag.PrintDefaults()
 		fmt.Fprintf(os.Stderr, "\nCommands (recuerdo help lists them with their arguments):\n")
 		fmt.Fprintf(os.Stderr, "  authors, convert, merge, reverse-list, view-word-list, ocr-word-list,\n")
-		fmt.Fprintf(os.Stderr, "  new-word-list, practise-word-list\n")
+		fmt.Fprintf(os.Stderr, "  new-word-list, practise-word-list, serve, testserver\n")
 	}
 
 	flag.Parse()
@@ -106,6 +107,10 @@ func main() {
 	// Handle help flag first
 	if *helpFlag {
 		flag.Usage()
+		return
+	}
+	if *versionFlag {
+		fmt.Printf("%s %s\n", appName, appVersion)
 		return
 	}
 
