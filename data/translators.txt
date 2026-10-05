@@ -1,0 +1,33 @@
+# Who translated OpenTeacher (from its .po files' Last-Translator lines),
+# made by: recuerdo-dev translators > data/translators.txt
+af: Geoffrey De Belie, Marten de Vries
+ar: Aminos Amigos, El Achèche ANIS, Marten de Vries
+cs: Jakub Šnapka, Jan Havran, Jan Žárský, Marten de Vries
+de: Alexander Haack, Daniel Winzen, Dennis Baudys, Hans Schmidt, Marten de Vries, Maximilian Mühlbauer, Moritz Gehlhaar, Phil Krämer, Phillip Sz, Simon Schütte, Tim O., Tobias Bannert, dagmalina, dubst3pp4, psyca
+el: Basilis Thomopoulos, Marten de Vries, Yannis Kaskamanidis
+en_AU: Jackson Doak, Joel Pickett
+en_GB: Andi Chandler
+eo: Michael Moroni
+es: Adolfo Jayme, Aiguanachein, Alfredo Hernández, Cas Widdershoven, Eduardo Alberto Calvo, Emerling, Hector A. Mantellini, Jack, Mariano Noguera, Marten de Vries, Miguel A. Alvarado V., R0s3, Ricardo, Shaun Mallette, Victor Rodriguez Cavaliere, Yury Jajitzky, gustavoreyes
+fi: Marten de Vries, Teemu Paavola
+fr: El Achèche ANIS, EmmanuelLeNormand, Flames_in_Paradise, Florent (LSc), Jean-Marc, Marten de Vries, Messer Kevin, Pierre Slamich, SarahSlean, Stanislas Michalak, Stef, Sylvie Gallet, Tubuntu, YannUbuntu, demonipuch, londumas
+fy: Dooitze de Jong, Marten de Vries
+gl: Marten de Vries, Miguel Anxo Bouzada, Xosé, ghas, merelin croes
+hu: Molnár Krisztián, Richard Somlói, Úr Balázs
+it: Andrea Luciano Damico, Domenico Ragusa, Guybrush88, Marten de Vries, Pierdomenico
+ja: LeeAnna Kobayashi
+lb: Philippe Clement
+ms: Marten de Vries, abuyop
+mus: Macedon
+nl: Dragnadh, Marten de Vries, Michael Tel
+pl: Marten de Vries, Michał Kudela, Piotr Halama, pp/bs
+pt_BR: Adriano Steffler, Marcelo Thomaz, Marten de Vries
+ru: Alexander Golikov, Nkolay Parukhin, Pasha. P. Komar, facepalm
+si: Marten de Vries, Mohamed Rizmi, Sameera Nelson, vijee, පසිඳු කාවින්ද
+sk: supersasho
+sr: Мирослав Николић
+tr: Marten de Vries, kodadiirem, oldumulenone, zeugma
+uk: Andrij Mizyk
+ur: Waqar Ahmed
+zh_CN: Marten de Vries, Wang Dianjin, adam liu
+zh_TW: BlueT - Matthew Lien - 練喆明, Louie Chen

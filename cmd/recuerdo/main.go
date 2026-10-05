@@ -237,18 +237,6 @@ func registerAllModules(manager *core.Manager) error {
 		return fmt.Errorf("failed to register lesson dialogs module: %w", err)
 	}
 
-	// Temporarily disable business card and background image modules to test core system
-	// TODO: Re-enable once Qt UI system is properly integrated
-	// businessCardModule := businesscard.Init()
-	// if err := manager.Register(businessCardModule); err != nil {
-	// 	return fmt.Errorf("failed to register business card module: %w", err)
-	// }
-
-	// backgroundImageModule := backgroundimage.Init()
-	// if err := manager.Register(backgroundImageModule); err != nil {
-	// 	return fmt.Errorf("failed to register background image module: %w", err)
-	// }
-
 	// qtApp module is now registered above with GUI module
 
 	// Register charskeyboard module - DISABLED for now

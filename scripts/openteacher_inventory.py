@@ -206,30 +206,35 @@ DROPPED = (
 
 # Areas Recuerdo will port later (decided with the user, 2026-10-04):
 # module path prefix -> (priority, what and why).
-DEVTOOL = ("low", "developer tooling: useful later as independent command line tools")
 PLANNED = {
-    "logic/moduleGraphBuilder": DEVTOOL,
-    "profileRunners/backgroundImageGenerator": DEVTOOL,
-    "profileRunners/businessCardGenerator": DEVTOOL,
-    "profileRunners/codeComplexity": DEVTOOL,
-    "profileRunners/getTranslationAuthors": DEVTOOL,
-    "profileRunners/languageCodeGuesserTableGenerator": DEVTOOL,
-    "profileRunners/moduleGraph": DEVTOOL,
-    "profileRunners/rosettaUpdater": DEVTOOL,
-    "profileRunners/translationUpdater": DEVTOOL,
-    "profileRunners/ircBot": DEVTOOL,
-    "profileRunners/gtkGui": ("low", "an alternative GTK interface OpenTeacher experimented with"),
-    "data/profileDescriptions/codeComplexity": DEVTOOL,
-    "data/profileDescriptions/codeDocumentation": DEVTOOL,
-    "data/profileDescriptions/generate": DEVTOOL,
-    "data/profileDescriptions/getTranslationAuthors": DEVTOOL,
-    "data/profileDescriptions/ircBot": DEVTOOL,
-    "data/profileDescriptions/moduleGraph": DEVTOOL,
-    "data/profileDescriptions/update": DEVTOOL,
 }
 
 # Areas whose job Recuerdo does another way: prefix -> (where, why).
+DEV = "cmd/recuerdo-dev"
 COVERED_AREAS = {
+    "logic/moduleGraphBuilder": (DEV, "recuerdo-dev module-graph: the packages and their imports as a Graphviz graph"),
+    "profileRunners/moduleGraph": (DEV, "recuerdo-dev module-graph"),
+    "data/profileDescriptions/moduleGraph": (DEV, "recuerdo-dev module-graph"),
+    "profileRunners/codeComplexity": (DEV, "recuerdo-dev complexity: the functions above a cyclomatic complexity"),
+    "data/profileDescriptions/codeComplexity": (DEV, "recuerdo-dev complexity"),
+    "profileRunners/getTranslationAuthors": (DEV, "recuerdo-dev translators writes data/translators.txt from the "
+                                             ".po files (OpenTeacher asked Launchpad); recuerdo authors and the About "
+                                             "dialog show the translators per language"),
+    "data/profileDescriptions/getTranslationAuthors": (DEV, "recuerdo-dev translators"),
+    "profileRunners/translationUpdater": ("scripts/extract_strings.py, scripts/merge_translations.py",
+                                          "the texts to translate (recuerdo.pot) and the coverage per language"),
+    "data/profileDescriptions/updateTranslations": ("scripts/extract_strings.py", "with the translation updater"),
+    "profileRunners/languageCodeGuesserTableGenerator": ("internal/langcode", "language names and codes come from "
+                                                         "golang.org/x/text tables; nothing to generate"),
+    "data/profileDescriptions/generateLanguageCodeGuesserTable": ("internal/langcode", "with the table generator"),
+    "data/profileDescriptions/codeDocumentation": ("go doc", "Go's own documentation tool reads the package and "
+                                                   "function comments"),
+    "data/profileDescriptions/generateWeb": ("scripts/build-web.sh", "builds the web version"),
+    "data/profileDescriptions/generateMobile": ("scripts/build-web.sh", "the web version works on phones"),
+    "profileRunners/gtkGui": ("web/, internal/cli", "OpenTeacher's 2013 experiment showing its typing logic was "
+                              "not tied to Qt (a stub, never offered by a profile); Recuerdo's logic drives two "
+                              "other front-ends already: the web version and recuerdo practise-word-list. A GTK "
+                              "interface would add cgo bindings and a system dependency for no gain"),
     "logic/interfaces/typingTutorModel": ("internal/typing", "the touch typing course: OpenTeacher's 57 levels and "
                                           "rules, its layouts with a finger per key (AZERTY's w restored), word lists "
                                           "per language, profiles saved after every exercise"),
@@ -398,7 +403,16 @@ COVERED = {
 OPENTEACHER_WEB = ("OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that "
                    "synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). "
                    "Recuerdo keeps lessons as files, and its test server covers classroom use")
+PROJECT = "OpenTeacher's own project infrastructure"
 DROPPED_REASONS = {
+    "profileRunners/ircBot": PROJECT + ": a bot for its IRC channel",
+    "data/profileDescriptions/ircBot": PROJECT + ": the IRC bot's profile",
+    "profileRunners/rosettaUpdater": PROJECT + ": synced translations with Launchpad's Rosetta; Recuerdo's are files in the repository",
+    "data/profileDescriptions/updateRosetta": PROJECT + ": the Rosetta updater's profile",
+    "data/profileDescriptions/generateWebsite": PROJECT + ": generated openteacher.org; Recuerdo lives on GitHub, and its web version is the app itself",
+    "profileRunners/businessCardGenerator": "promotional art: business cards for OpenTeacher",
+    "data/profileDescriptions/generateBusinessCard": "promotional art: the business card generator's profile",
+    "profileRunners/backgroundImageGenerator": "promotional art: background images for OpenTeacher's website",
     "interfaces/webServicesServer": OPENTEACHER_WEB,
     "logic/webDatabase": OPENTEACHER_WEB,
     "profileRunners/webServicesServerRunner": OPENTEACHER_WEB,

@@ -20,10 +20,6 @@ Recuerdo is a modern language learning application written in Go, evolved from t
 - [`TESTMODE.md`](./TESTMODE.md) - Test mode: running a test server for a class, accounts and roles, the API
 - [`OPENTEACHER_INVENTORY.md`](./OPENTEACHER_INVENTORY.md) - What Recuerdo has of OpenTeacher, module by module
 
-### Module Documentation
-- [`modules/`](./modules/) - Documentation for specific modules
-  - [`business-card.md`](./modules/business-card.md) - Business card generation module
-
 ## Key Features
 
 - **System Detection**: Automatic detection of display servers (X11/Wayland), Qt backends, and input methods

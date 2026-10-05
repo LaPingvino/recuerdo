@@ -56,12 +56,12 @@ Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
 
 | Area | working | untested | partial | covered | scaffold | missing | planned | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data | 3 |  |  | 23 |  |  | 12 | 6 | 5 | 49 |
+| data | 3 |  |  | 31 |  |  |  | 10 | 5 | 49 |
 | interfaces | 11 |  |  | 63 |  |  |  | 6 | 14 | 94 |
-| logic | 25 |  |  | 106 |  |  | 1 | 9 | 39 | 180 |
+| logic | 25 |  |  | 107 |  |  |  | 9 | 39 | 180 |
 | misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
-| profileRunners |  |  |  | 14 |  |  | 10 | 2 | 1 | 27 |
-| **all** | **39** | **0** | **0** | **206** | **0** | **0** | **23** | **24** | **62** | **354** |
+| profileRunners |  |  |  | 20 |  |  |  | 6 | 1 | 27 |
+| **all** | **39** | **0** | **0** | **221** | **0** | **0** | **0** | **32** | **62** | **354** |
 
 ## 3. Features
 
@@ -85,7 +85,7 @@ The state in October 2026, by feature:
 | Spell checking | done: Hunspell dictionaries in the Enter tab (optional: needs hunspell); the web version uses the browser's |
 | Touch typing course | done: File > Typing Course on the desktop and in the web version (57 levels, six layouts, words in five languages) |
 | Dark theme, words-only setting | done: settings Theme (system, light, dark) and Words only |
-| Developer tools | planned (low): later, as independent command line tools |
+| Developer tools | done: cmd/recuerdo-dev (module graph, code complexity, translators); the translation tooling is in scripts/; OpenTeacher's project infrastructure (IRC bot, Rosetta sync, website and promotional art generators) dropped |
 | Web services import (Quizlet, StudyStack, Course Hero) | dropped: those APIs changed or closed |
 
 ## 4. The repository's older status documents
@@ -115,9 +115,17 @@ file formats, see **covered** above):
 | `data/metadata` | `internal/modules/metadata.go` | Recuerdo's own metadata module (name, version, application ID) |
 | `data/profileDescriptions/all` | `cmd/recuerdo` | Recuerdo always starts with all its features, which is what OpenTeacher's "all" profile chose |
 | `data/profileDescriptions/cli` | `internal/cli` | the command line is reached with recuerdo <command>, not a profile |
+| `data/profileDescriptions/codeComplexity (all)` | `cmd/recuerdo-dev` | recuerdo-dev complexity |
+| `data/profileDescriptions/codeDocumentation (all)` | `go doc` | Go's own documentation tool reads the package and function comments |
+| `data/profileDescriptions/generateLanguageCodeGuesserTable (all)` | `internal/langcode` | with the table generator |
+| `data/profileDescriptions/generateMobile (all)` | `scripts/build-web.sh` | the web version works on phones |
+| `data/profileDescriptions/generateWeb (all)` | `scripts/build-web.sh` | builds the web version |
+| `data/profileDescriptions/getTranslationAuthors (all)` | `cmd/recuerdo-dev` | recuerdo-dev translators |
 | `data/profileDescriptions/help` | `internal/cli` | recuerdo help |
+| `data/profileDescriptions/moduleGraph (all)` | `cmd/recuerdo-dev` | recuerdo-dev module-graph |
 | `data/profileDescriptions/package (all)` | `packaging/, .github/workflows/release.yml` | the packaging profiles, with the packagers |
 | `data/profileDescriptions/testServer (all)` | `recuerdo testserver` | the test server's profile, with the server |
+| `data/profileDescriptions/updateTranslations (all)` | `scripts/extract_strings.py` | with the translation updater |
 | `data/profileDescriptions/wordsOnly (all)` | `internal/modules/interfaces/qt/lessonDialogs` | the Words only setting: a new lesson is always a word lesson |
 | `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
@@ -189,6 +197,7 @@ file formats, see **covered** above):
 | `logic/itemModifiers/foreignKnown` | `internal/teaching` | the Teach tab's "Ask the answers" (Options.AskAnswers) swaps questions and answers |
 | `logic/languageCodeGuesser` | `internal/langcode` | Guess and Name map language names and ISO 639-1 codes (CLDR names via golang.org/x/text instead of Babel's tables) |
 | `logic/mergers/words` | `internal/lesson` | Merge, used by File > Merge Lesson |
+| `logic/moduleGraphBuilder (all)` | `cmd/recuerdo-dev` | recuerdo-dev module-graph: the packages and their imports as a Graphviz graph |
 | `logic/modules` | `internal/core` | Recuerdo's module manager (registration, types, default modules) |
 | `logic/ocr/tesseractRecognizer` | `internal/ocr` | runs tesseract for hOCR |
 | `logic/ocr/wordListLoader` | `internal/ocr` | LoadWordList: hOCR lines to rows and columns to word pairs |
@@ -207,9 +216,15 @@ file formats, see **covered** above):
 | `logic/wordListString/composer` | `internal/lesson` | ComposeWordList |
 | `logic/wordListString/parser` | `internal/lesson` | ParseWordList ("q = a" / tab lines with \= escapes) |
 | `profileRunners/cli` | `internal/cli` | recuerdo <command>: authors, convert, merge, reverse-list, view-word-list, ocr-word-list, new-word-list, practise-word-list (-flags for +flags); tested |
+| `profileRunners/codeComplexity (all)` | `cmd/recuerdo-dev` | recuerdo-dev complexity: the functions above a cyclomatic complexity |
+| `profileRunners/getTranslationAuthors (all)` | `cmd/recuerdo-dev` | recuerdo-dev translators writes data/translators.txt from the .po files (OpenTeacher asked Launchpad); recuerdo authors and the About dialog show the translators per language |
+| `profileRunners/gtkGui (all)` | `web/, internal/cli` | OpenTeacher's 2013 experiment showing its typing logic was not tied to Qt (a stub, never offered by a profile); Recuerdo's logic drives two other front-ends already: the web version and recuerdo practise-word-list. A GTK interface would add cgo bindings and a system dependency for no gain |
+| `profileRunners/languageCodeGuesserTableGenerator (all)` | `internal/langcode` | language names and codes come from golang.org/x/text tables; nothing to generate |
+| `profileRunners/moduleGraph (all)` | `cmd/recuerdo-dev` | recuerdo-dev module-graph |
 | `profileRunners/packagers (all)` | `packaging/, .github/workflows/release.yml` | Recuerdo is built by Go and released by CI; the Arch package is a PKGBUILD |
 | `profileRunners/profilesHelp` | `internal/cli` | recuerdo help lists the commands (and recuerdo -help the options) |
 | `profileRunners/testserver (all)` | `internal/testserver, recuerdo testserver` | OpenTeacher's test server (Django and SQLite) as Go and SQLite: users with roles, groups, tests, hand-ins checked on the server, results published to students |
+| `profileRunners/translationUpdater (all)` | `scripts/extract_strings.py, scripts/merge_translations.py` | the texts to translate (recuerdo.pot) and the coverage per language |
 | `profileRunners/uiController` | `internal/modules/interfaces/qt/gui` | the GUI module connects the Qt interface to loading, saving, printing, dialogs and the lessons itself |
 
 ## Planned
@@ -218,8 +233,6 @@ OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
 
 | Priority | Modules | Count | What |
 |---|---|---:|---|
-| low | `logic/moduleGraphBuilder`, `profileRunners/backgroundImageGenerator`, `profileRunners/businessCardGenerator`, `profileRunners/codeComplexity`, `profileRunners/getTranslationAuthors`, `profileRunners/languageCodeGuesserTableGenerator`, `profileRunners/moduleGraph`, `profileRunners/rosettaUpdater`, `profileRunners/translationUpdater`, `profileRunners/ircBot`, `data/profileDescriptions/codeComplexity`, `data/profileDescriptions/codeDocumentation`, `data/profileDescriptions/generate`, `data/profileDescriptions/getTranslationAuthors`, `data/profileDescriptions/ircBot`, `data/profileDescriptions/moduleGraph`, `data/profileDescriptions/update` | 22 | developer tooling: useful later as independent command line tools |
-| low | `profileRunners/gtkGui` | 1 | an alternative GTK interface OpenTeacher experimented with |
 
 ## Dropped, and why
 
@@ -228,11 +241,15 @@ Course Hero: those APIs changed or closed):
 
 | Module | Why |
 |---|---|
+| `data/profileDescriptions/generateBusinessCard` | promotional art: the business card generator's profile |
+| `data/profileDescriptions/generateWebsite` | OpenTeacher's own project infrastructure: generated openteacher.org; Recuerdo lives on GitHub, and its web version is the app itself |
+| `data/profileDescriptions/ircBot` | OpenTeacher's own project infrastructure: the IRC bot's profile |
 | `data/profileDescriptions/selfstudy` | OpenTeacher's start-up profiles only chose which GUI modules to load for an audience; Recuerdo has one, smaller feature set |
 | `data/profileDescriptions/shell` | describes the Python shell profile, dropped with it |
 | `data/profileDescriptions/studentAtHome` | as selfstudy: an audience profile |
 | `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
+| `data/profileDescriptions/updateRosetta` | OpenTeacher's own project infrastructure: the Rosetta updater's profile |
 | `data/profileDescriptions/webServicesServer` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 | `interfaces/qt/hiddenBrowser` | a hidden web browser (an easter egg) nothing else used |
 | `interfaces/qt/mediaTypes/liveleak` | LiveLeak closed in 2021: its video links no longer work |
@@ -247,6 +264,10 @@ Course Hero: those APIs changed or closed):
 | `logic/translationIndex/merger` | OpenTeacher's translation tooling |
 | `logic/webDatabase` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 | `misc/testUrllibMock` | a stand-in for Python's urllib in OpenTeacher's tests; Go tests use net/http/httptest |
+| `profileRunners/backgroundImageGenerator` | promotional art: background images for OpenTeacher's website |
+| `profileRunners/businessCardGenerator` | promotional art: business cards for OpenTeacher |
+| `profileRunners/ircBot` | OpenTeacher's own project infrastructure: a bot for its IRC channel |
+| `profileRunners/rosettaUpdater` | OpenTeacher's own project infrastructure: synced translations with Launchpad's Rosetta; Recuerdo's are files in the repository |
 | `profileRunners/shell` | an interactive Python shell with OpenTeacher's modules loaded, for developers; Go has no such shell, and Recuerdo's modules are used from Go code and tests |
 | `profileRunners/webServicesServerRunner` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 
@@ -267,20 +288,20 @@ Course Hero: those APIs changed or closed):
 | `data/maps/usa` | map | 27 | 0 | 0 | 0 | covered |
 | `data/maps/world` | map | 27 | 0 | 0 | 0 | covered |
 | `data/metadata` | metadata | 83 | 0 | 0 | 0 | covered |
-| `data/openteacherAuthors` | openteacherAuthors | 151 | 37 | 0 | 1 | working |
+| `data/openteacherAuthors` | openteacherAuthors | 151 | 79 | 0 | 1 | working |
 | `data/profileDescriptions/all` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/cli` | profileDescription | 19 | 0 | 0 | 0 | covered |
-| `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/generateLanguageCodeGuesserTable` | profileDescription | 23 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/generateMobile` | profileDescription | 24 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/generateWeb` | profileDescription | 24 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/codeComplexity` | profileDescription | 19 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/codeDocumentation` | profileDescription | 19 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/generateBusinessCard` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/generateLanguageCodeGuesserTable` | profileDescription | 23 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/generateMobile` | profileDescription | 24 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/generateWeb` | profileDescription | 24 | 0 | 0 | 0 | covered |
+| `data/profileDescriptions/generateWebsite` | profileDescription | 23 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/getTranslationAuthors` | profileDescription | 19 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/help` | profileDescription | 41 | 0 | 0 | 0 | covered |
-| `data/profileDescriptions/ircBot` | profileDescription | 19 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/ircBot` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/moduleGraph` | profileDescription | 19 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/packageArch` | profileDescription | 22 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/packageDebian` | profileDescription | 22 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/packageMac` | profileDescription | 22 | 0 | 0 | 0 | covered |
@@ -297,8 +318,8 @@ Course Hero: those APIs changed or closed):
 | `data/profileDescriptions/test` | test | 24 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/testServer` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/testSuite` | profileDescription | 19 | 0 | 0 | 0 | test suite |
-| `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | dropped |
+| `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
@@ -489,7 +510,7 @@ Course Hero: those APIs changed or closed):
 | `logic/mergers/wordsTest` | test | 80 | 40 | 10 | 0 | test suite |
 | `logic/mimicryTypefaceConverter` | mimicryTypefaceConverter | 84 | 64 | 0 | 1 | working |
 | `logic/mimicryTypefaceConverterTest` | test | 30 | 44 | 12 | 0 | test suite |
-| `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | planned |
+| `logic/moduleGraphBuilder` | moduleGraphBuilder | 53 | 0 | 0 | 0 | covered |
 | `logic/moduleGraphBuilderTest` | test | 33 | 0 | 0 | 0 | test suite |
 | `logic/modules` | modules | 148 | 0 | 0 | 0 | covered |
 | `logic/modulesTest` | test | 44 | 78 | 14 | 0 | test suite |
@@ -581,15 +602,15 @@ Course Hero: those APIs changed or closed):
 | `misc/moduleManagerTest` | test | 114 | 1 | 0 | 0 | test suite |
 | `misc/testUrllibMock` |  | 44 | 0 | 0 | 0 | dropped |
 | `misc/testsTest` | test | 34 | 42 | 11 | 0 | test suite |
-| `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 0 | 0 | 0 | planned |
-| `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 0 | 0 | 0 | planned |
+| `profileRunners/backgroundImageGenerator` | backgroundImageGenerator | 96 | 0 | 0 | 0 | dropped |
+| `profileRunners/businessCardGenerator` | businessCardGenerator | 73 | 0 | 0 | 0 | dropped |
 | `profileRunners/cli` | cli | 343 | 0 | 0 | 0 | covered |
-| `profileRunners/codeComplexity` | codeComplexity | 68 | 0 | 0 | 0 | planned |
-| `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 0 | 0 | 0 | planned |
-| `profileRunners/gtkGui` | gtkGui | 136 | 0 | 0 | 0 | planned |
-| `profileRunners/ircBot` | ircBot | 284 | 0 | 0 | 0 | planned |
-| `profileRunners/languageCodeGuesserTableGenerator` | languageCodeGuesserTableGenerator | 49 | 0 | 0 | 0 | planned |
-| `profileRunners/moduleGraph` | moduleGraph | 31 | 0 | 0 | 0 | planned |
+| `profileRunners/codeComplexity` | codeComplexity | 68 | 0 | 0 | 0 | covered |
+| `profileRunners/getTranslationAuthors` | getTranslationAuthors | 59 | 0 | 0 | 0 | covered |
+| `profileRunners/gtkGui` | gtkGui | 136 | 0 | 0 | 0 | covered |
+| `profileRunners/ircBot` | ircBot | 284 | 0 | 0 | 0 | dropped |
+| `profileRunners/languageCodeGuesserTableGenerator` | languageCodeGuesserTableGenerator | 49 | 0 | 0 | 0 | covered |
+| `profileRunners/moduleGraph` | moduleGraph | 31 | 0 | 0 | 0 | covered |
 | `profileRunners/packagers/arch` | archPackager | 68 | 0 | 0 | 0 | covered |
 | `profileRunners/packagers/debian` | debianPackager | 77 | 0 | 0 | 0 | covered |
 | `profileRunners/packagers/mac` | macPackager | 38 | 0 | 0 | 0 | covered |
@@ -598,13 +619,13 @@ Course Hero: those APIs changed or closed):
 | `profileRunners/packagers/sourceWithSetup` | sourceWithSetupPackager | 35 | 0 | 0 | 0 | covered |
 | `profileRunners/packagers/windowsPortable` | windowsPortablePackager | 40 | 0 | 0 | 0 | covered |
 | `profileRunners/profilesHelp` | profilesHelp | 44 | 0 | 0 | 0 | covered |
-| `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | planned |
+| `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | dropped |
 | `profileRunners/shell` | shell | 81 | 0 | 0 | 0 | dropped |
 | `profileRunners/testRunner` | testRunner | 44 | 0 | 0 | 0 | test suite |
 | `profileRunners/testserver` | test_server | 65 | 0 | 0 | 0 | covered |
 | `profileRunners/testserver/admin_files/js` |  | 40 | 0 | 0 | 0 | covered |
 | `profileRunners/testserver/ot_testserver` |  | 119 | 0 | 0 | 0 | covered |
 | `profileRunners/testserver/ot_testserver/testserver` |  | 574 | 0 | 0 | 0 | covered |
-| `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | planned |
+| `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | covered |
 | `profileRunners/uiController` | uiController | 320 | 0 | 0 | 0 | covered |
 | `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | dropped |
