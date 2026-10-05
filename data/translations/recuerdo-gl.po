@@ -828,3 +828,241 @@ msgstr "✘ A resposta era: %s"
 # corrects OpenTeacher's gl.po for 'Correct anyway': "Corrixir de todos xeitos" (fix it anyway)
 msgid "Correct anyway"
 msgstr "Dar por correcta"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Engadíronse %d contas."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Hai %d preguntas sen resposta. Entregar igualmente? Despois non poderás cambiar as túas respostas."
+
+msgid "%d words"
+msgstr "%d palabras"
+
+msgid "&Test Mode..."
+msgstr "Modo &proba..."
+
+msgid "A group…"
+msgstr "Un grupo…"
+
+msgid "A student…"
+msgstr "Un alumno…"
+
+msgid "Accounts"
+msgstr "Contas"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "As contas e os grupos xestiónanse na páxina web do servidor."
+
+msgid "Add many"
+msgstr "Engadir varias"
+
+msgid "Add these accounts"
+msgstr "Engadir estas contas"
+
+msgid "Admin"
+msgstr "Administrador"
+
+msgid "Back to the test"
+msgstr "Volver á proba"
+
+msgid "Close for handing in"
+msgstr "Pechar a entrega"
+
+msgid "Closed"
+msgstr "Pechada"
+
+msgid "Count as right"
+msgstr "Contar como correcta"
+
+msgid "Count as wrong"
+msgstr "Contar como incorrecta"
+
+msgid "Delete the group"
+msgstr "Eliminar o grupo"
+
+msgid "Delete the test"
+msgstr "Eliminar a proba"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Enche o servidor, o teu nome e o teu contrasinal."
+
+msgid "Given"
+msgstr "Resposta dada"
+
+msgid "Given to"
+msgstr "Asignada a"
+
+msgid "Group %s"
+msgstr "Grupo %s"
+
+msgid "Group name"
+msgstr "Nome do grupo"
+
+msgid "Groups"
+msgstr "Grupos"
+
+msgid "Hand in"
+msgstr "Entregar"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Entregar? Despois non poderás cambiar as túas respostas."
+
+msgid "Handed in"
+msgstr "Entregada"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Entregada. O teu profesor comprobará as túas respostas."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "É este o certificado do servidor de probas? Compara a súa pegada dixital coa que mostra o servidor (pregúntalle ao teu profesor):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+msgid "Log in to a test server"
+msgstr "Iniciar sesión nun servidor de probas"
+
+msgid "Log out"
+msgstr "Pechar sesión"
+
+msgid "New group"
+msgstr "Novo grupo"
+
+msgid "New test"
+msgstr "Nova proba"
+
+msgid "New test of a lesson file…"
+msgstr "Nova proba dun ficheiro de lección…"
+
+msgid "New test of the open lesson"
+msgstr "Nova proba da lección aberta"
+
+msgid "New test server"
+msgstr "Novo servidor de probas"
+
+msgid "No one has handed in yet."
+msgstr "Aínda non entregou ninguén."
+
+msgid "No one yet."
+msgstr "Aínda ninguén."
+
+msgid "No tests for you yet."
+msgstr "Aínda non tes probas."
+
+msgid "No tests yet."
+msgstr "Aínda non hai probas."
+
+msgid "Not added: %s"
+msgstr "Non engadidas: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Non conectado: o certificado non se confirmou."
+
+msgid "Not handed in yet: %s"
+msgstr "Aínda non entregaron: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Unha conta por liña: nome, contrasinal e (se non é alumno) o rol, separados por comas."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Abre primeiro unha lección de palabras en Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Abrir a entrega"
+
+msgid "Open the test"
+msgstr "Abrir a proba"
+
+msgid "Password"
+msgstr "Contrasinal"
+
+msgid "Publish all results"
+msgstr "Publicar todos os resultados"
+
+msgid "Publish this result"
+msgstr "Publicar este resultado"
+
+msgid "Published"
+msgstr "Publicado"
+
+msgid "Published: the students can see their results."
+msgstr "Publicado: os alumnos poden ver os seus resultados."
+
+msgid "Refresh"
+msgstr "Actualizar"
+
+msgid "Remove %s"
+msgstr "Eliminar %s"
+
+msgid "Result ready"
+msgstr "Resultado listo"
+
+msgid "Right (your teacher's decision)"
+msgstr "Correcto (decisión do teu profesor)"
+
+msgid "Right answers"
+msgstr "Respostas correctas"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Role…"
+msgstr "Rol…"
+
+msgid "Score"
+msgstr "Puntuación"
+
+msgid "See the result"
+msgstr "Ver o resultado"
+
+msgid "Server"
+msgstr "Servidor"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Student"
+msgstr "Alumno"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Facer probas dun servidor de probas, ou poñelas como profesor"
+
+msgid "Take the test"
+msgstr "Facer a proba"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Fai as probas que che puxo o teu profesor."
+
+msgid "Teacher"
+msgstr "Profesor"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Proba feita: %s. Agora asígnalla a alumnos ou grupos."
+
+msgid "Test mode"
+msgstr "Modo proba"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "A proba leva as palabras da lección; os alumnos ven as preguntas, nunca as respostas."
+
+msgid "To do"
+msgstr "Por facer"
+
+msgid "Wrong name or password."
+msgstr "Nome ou contrasinal incorrectos."
+
+msgid "Yes, delete %s"
+msgstr "Si, eliminar %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Si, eliminala cos seus resultados"
+
+msgid "Yes, hand in"
+msgstr "Si, entregar"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "O teu profesor dirache o enderezo do servidor. Os alumnos tamén poden facer probas nun navegador web, no mesmo enderezo."
+
+msgid "Your tests"
+msgstr "As túas probas"

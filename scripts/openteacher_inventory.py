@@ -206,15 +206,8 @@ DROPPED = (
 
 # Areas Recuerdo will port later (decided with the user, 2026-10-04):
 # module path prefix -> (priority, what and why).
-TESTMODE = ("medium", "test mode: classroom tests run from a server. OpenTeacher's server is in legacy/ "
-            "(Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one")
 DEVTOOL = ("low", "developer tooling: useful later as independent command line tools")
 PLANNED = {
-    "interfaces/qt/testMode": TESTMODE,
-    "interfaces/webServicesServer": TESTMODE,
-    "logic/webDatabase": TESTMODE,
-    "profileRunners/webServicesServerRunner": TESTMODE,
-    "data/profileDescriptions/webServicesServer": TESTMODE,
     "logic/spellChecker": ("medium", "spell checking while entering words, with Hunspell (OpenTeacher used Enchant)"),
     "logic/interfaces/typingTutorModel": ("medium", "OpenTeacher's touch typing course, a lesson of its own kind"),
     "interfaces/qt/typingTutor": ("medium", "the touch typing course's screen and keyboard"),
@@ -243,6 +236,13 @@ PLANNED = {
 
 # Areas whose job Recuerdo does another way: prefix -> (where, why).
 COVERED_AREAS = {
+    "interfaces/qt/testMode": ("internal/modules/interfaces/qt/dialogs/testmode, web/testmode.js, web/teacher.js",
+                               "test mode's client: File > Test Mode on the desktop, and the web version served by "
+                               "the test server (OpenTeacher's never shipped: its menu entry was switched off)"),
+    "profileRunners/testserver": ("internal/testserver, recuerdo testserver", "OpenTeacher's test server (Django "
+                                  "and SQLite) as Go and SQLite: users with roles, groups, tests, hand-ins checked "
+                                  "on the server, results published to students"),
+    "data/profileDescriptions/testServer": ("recuerdo testserver", "the test server's profile, with the server"),
     "javaScript": ("web/, cmd/recuerdo-web, internal/webapi", "the in-browser version: OpenTeacher ported its "
                    "logic to JavaScript by hand; Recuerdo compiles its Go logic (word lists, checking, lesson "
                    "types, notes, translations) to WebAssembly, so the page needs no copies of it"),
@@ -390,7 +390,14 @@ COVERED = {
 
 
 # Why the modules dropped one by one (beyond the areas in DROPPED) were.
+OPENTEACHER_WEB = ("OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that "
+                   "synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). "
+                   "Recuerdo keeps lessons as files, and its test server covers classroom use")
 DROPPED_REASONS = {
+    "interfaces/webServicesServer": OPENTEACHER_WEB,
+    "logic/webDatabase": OPENTEACHER_WEB,
+    "profileRunners/webServicesServerRunner": OPENTEACHER_WEB,
+    "data/profileDescriptions/webServicesServer": OPENTEACHER_WEB,
     "profileRunners/shell": "an interactive Python shell with OpenTeacher's modules loaded, for developers; "
                             "Go has no such shell, and Recuerdo's modules are used from Go code and tests",
     "data/profileDescriptions/shell": "describes the Python shell profile, dropped with it",
@@ -443,8 +450,7 @@ def rows():
         if prefixed(rel, PLANNED):
             st["status"] = "planned"
         name = rel.parts[-1]
-        if name.endswith("Test") or name in ("test", "testRunner", "testserver", "testServer", "testSuite") \
-                or "testserver" in rel.parts:
+        if name.endswith("Test") or name in ("test", "testRunner", "testSuite"):
             # OpenTeacher's own test suites; their Go equivalent is _test.go files
             st["status"] = "test suite"
         yield dict(module=str(rel), area=rel.parts[0], type=",".join(types),

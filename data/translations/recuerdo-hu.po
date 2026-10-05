@@ -810,3 +810,241 @@ msgstr "Lecketípus"
 # corrects OpenTeacher's hu.po for 'Greek': lower case
 msgid "Greek"
 msgstr "Görög"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Hozzáadott fiókok: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Megválaszolatlan kérdések: %d. Mégis beadja? Utána már nem módosíthatja a válaszait."
+
+msgid "%d words"
+msgstr "Szavak: %d"
+
+msgid "&Test Mode..."
+msgstr "&Teszt mód..."
+
+msgid "A group…"
+msgstr "Csoport…"
+
+msgid "A student…"
+msgstr "Diák…"
+
+msgid "Accounts"
+msgstr "Fiókok"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "A fiókok és a csoportok kezelése a szerver weboldalán történik."
+
+msgid "Add many"
+msgstr "Több hozzáadása egyszerre"
+
+msgid "Add these accounts"
+msgstr "Ezen fiókok hozzáadása"
+
+msgid "Admin"
+msgstr "Rendszergazda"
+
+msgid "Back to the test"
+msgstr "Vissza a teszthez"
+
+msgid "Close for handing in"
+msgstr "Beadás lezárása"
+
+msgid "Closed"
+msgstr "Lezárva"
+
+msgid "Count as right"
+msgstr "Helyesnek számítás"
+
+msgid "Count as wrong"
+msgstr "Rossznak számítás"
+
+msgid "Delete the group"
+msgstr "A csoport törlése"
+
+msgid "Delete the test"
+msgstr "A teszt törlése"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Adja meg a szervert, a nevét és a jelszavát."
+
+msgid "Given"
+msgstr "Adott válasz"
+
+msgid "Given to"
+msgstr "Kiosztva"
+
+msgid "Group %s"
+msgstr "Csoport: %s"
+
+msgid "Group name"
+msgstr "Csoport neve"
+
+msgid "Groups"
+msgstr "Csoportok"
+
+msgid "Hand in"
+msgstr "Beadás"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Beadja? Utána már nem módosíthatja a válaszait."
+
+msgid "Handed in"
+msgstr "Beadva"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Beadva. A tanára ellenőrizni fogja a válaszait."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Ez a tesztszerver tanúsítványa? Hasonlítsa össze az ujjlenyomatát azzal, amelyet a szerver mutat (kérdezze meg a tanárát):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Bejelentkezés"
+
+msgid "Log in to a test server"
+msgstr "Bejelentkezés tesztszerverre"
+
+msgid "Log out"
+msgstr "Kijelentkezés"
+
+msgid "New group"
+msgstr "Új csoport"
+
+msgid "New test"
+msgstr "Új teszt"
+
+msgid "New test of a lesson file…"
+msgstr "Új teszt leckefájlból…"
+
+msgid "New test of the open lesson"
+msgstr "Új teszt a megnyitott leckéből"
+
+msgid "New test server"
+msgstr "Új tesztszerver"
+
+msgid "No one has handed in yet."
+msgstr "Még senki sem adta be."
+
+msgid "No one yet."
+msgstr "Még senki."
+
+msgid "No tests for you yet."
+msgstr "Még nincs tesztje."
+
+msgid "No tests yet."
+msgstr "Még nincsenek tesztek."
+
+msgid "Not added: %s"
+msgstr "Nincs hozzáadva: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Nincs kapcsolat: a tanúsítvány nem lett megerősítve."
+
+msgid "Not handed in yet: %s"
+msgstr "Még nem adta be: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Soronként egy fiók: név, jelszó és (ha nem diák) a szerepkör, vesszővel elválasztva."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Először nyisson meg egy szóleckét a Recuerdo programban."
+
+msgid "Open for handing in"
+msgstr "Beadás megnyitása"
+
+msgid "Open the test"
+msgstr "A teszt megnyitása"
+
+msgid "Password"
+msgstr "Jelszó"
+
+msgid "Publish all results"
+msgstr "Minden eredmény közzététele"
+
+msgid "Publish this result"
+msgstr "Ezen eredmény közzététele"
+
+msgid "Published"
+msgstr "Közzétéve"
+
+msgid "Published: the students can see their results."
+msgstr "Közzétéve: a diákok láthatják az eredményeiket."
+
+msgid "Refresh"
+msgstr "Frissítés"
+
+msgid "Remove %s"
+msgstr "Eltávolítás: %s"
+
+msgid "Result ready"
+msgstr "Eredmény elkészült"
+
+msgid "Right (your teacher's decision)"
+msgstr "Helyes (a tanára döntése)"
+
+msgid "Right answers"
+msgstr "Helyes válaszok"
+
+msgid "Role"
+msgstr "Szerepkör"
+
+msgid "Role…"
+msgstr "Szerepkör…"
+
+msgid "Score"
+msgstr "Pontszám"
+
+msgid "See the result"
+msgstr "Eredmény megtekintése"
+
+msgid "Server"
+msgstr "Szerver"
+
+msgid "Status"
+msgstr "Állapot"
+
+msgid "Student"
+msgstr "Diák"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Tesztek kitöltése tesztszerverről, vagy kiosztásuk tanárként"
+
+msgid "Take the test"
+msgstr "A teszt kitöltése"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Töltse ki a tanára által kiosztott teszteket."
+
+msgid "Teacher"
+msgstr "Tanár"
+
+msgid "Test"
+msgstr "Teszt"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Teszt elkészült: %s. Most ossza ki diákoknak vagy csoportoknak."
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "A teszt a lecke szavait kapja; a diákok a kérdéseket látják, a válaszokat soha."
+
+msgid "To do"
+msgstr "Teendő"
+
+msgid "Wrong name or password."
+msgstr "Hibás név vagy jelszó."
+
+msgid "Yes, delete %s"
+msgstr "Igen, törlés: %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Igen, törlés az eredményeivel együtt"
+
+msgid "Yes, hand in"
+msgstr "Igen, beadás"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "A szerver címét a tanára adja meg. A diákok webböngészőben is kitölthetik a teszteket, ugyanazon a címen."
+
+msgid "Your tests"
+msgstr "Saját tesztek"

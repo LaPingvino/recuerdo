@@ -804,3 +804,242 @@ msgstr "Tersine çevir"
 # corrects OpenTeacher's tr.po for 'Name': "Adı" (its name)
 msgid "Name"
 msgstr "Ad"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Eklenen hesap: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Cevapsız soru sayısı: %d. Yine de teslim edilsin mi? Teslimden sonra cevaplarınızı değiştiremezsiniz."
+
+msgid "%d words"
+msgstr "%d kelime"
+
+msgid "&Test Mode..."
+msgstr "&Test modu..."
+
+msgid "A group…"
+msgstr "Bir grup…"
+
+msgid "A student…"
+msgstr "Bir öğrenci…"
+
+msgid "Accounts"
+msgstr "Hesaplar"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Hesaplar ve gruplar sunucunun web sayfasından yönetilir."
+
+msgid "Add many"
+msgstr "Toplu ekle"
+
+msgid "Add these accounts"
+msgstr "Bu hesapları ekle"
+
+msgid "Admin"
+msgstr "Yönetici"
+
+msgid "Back to the test"
+msgstr "Teste dön"
+
+msgid "Close for handing in"
+msgstr "Teslime kapat"
+
+msgid "Closed"
+msgstr "Kapalı"
+
+msgid "Count as right"
+msgstr "Doğru say"
+
+msgid "Count as wrong"
+msgstr "Yanlış say"
+
+msgid "Delete the group"
+msgstr "Grubu sil"
+
+msgid "Delete the test"
+msgstr "Testi sil"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Sunucuyu, adınızı ve parolanızı girin."
+
+msgid "Given"
+msgstr "Verilen cevap"
+
+msgid "Given to"
+msgstr "Verildiği kişiler"
+
+msgid "Group %s"
+msgstr "Grup %s"
+
+msgid "Group name"
+msgstr "Grup adı"
+
+msgid "Groups"
+msgstr "Gruplar"
+
+msgid "Hand in"
+msgstr "Teslim et"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Teslim edilsin mi? Teslimden sonra cevaplarınızı değiştiremezsiniz."
+
+msgid "Handed in"
+msgstr "Teslim edildi"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Teslim edildi. Öğretmeniniz cevaplarınızı kontrol edecek."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Bu, test sunucusunun sertifikası mı? Parmak izini sunucunun gösterdiğiyle karşılaştırın (öğretmeninize sorun):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Giriş yap"
+
+msgid "Log in to a test server"
+msgstr "Bir test sunucusuna giriş yap"
+
+msgid "Log out"
+msgstr "Çıkış yap"
+
+msgid "New group"
+msgstr "Yeni grup"
+
+msgid "New test"
+msgstr "Yeni test"
+
+msgid "New test of a lesson file…"
+msgstr "Bir ders dosyasından yeni test…"
+
+msgid "New test of the open lesson"
+msgstr "Açık dersten yeni test"
+
+msgid "New test server"
+msgstr "Yeni test sunucusu"
+
+msgid "No one has handed in yet."
+msgstr "Henüz kimse teslim etmedi."
+
+msgid "No one yet."
+msgstr "Henüz kimse yok."
+
+msgid "No tests for you yet."
+msgstr "Henüz size verilmiş test yok."
+
+msgid "No tests yet."
+msgstr "Henüz test yok."
+
+msgid "Not added: %s"
+msgstr "Eklenmeyenler: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Bağlanılmadı: sertifika onaylanmadı."
+
+msgid "Not handed in yet: %s"
+msgstr "Henüz teslim etmeyenler: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Her satıra bir hesap: ad, parola ve (öğrenci değilse) rol, virgülle ayrılmış olarak."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Önce Recuerdo'da bir kelime dersi açın."
+
+msgid "Open for handing in"
+msgstr "Teslime aç"
+
+msgid "Open the test"
+msgstr "Testi aç"
+
+msgid "Password"
+msgstr "Parola"
+
+msgid "Publish all results"
+msgstr "Tüm sonuçları yayınla"
+
+msgid "Publish this result"
+msgstr "Bu sonucu yayınla"
+
+msgid "Published"
+msgstr "Yayınlandı"
+
+msgid "Published: the students can see their results."
+msgstr "Yayınlandı: öğrenciler artık sonuçlarını görebilir."
+
+msgid "Refresh"
+msgstr "Yenile"
+
+msgid "Remove %s"
+msgstr "Kaldır: %s"
+
+msgid "Result ready"
+msgstr "Sonuç hazır"
+
+msgid "Right (your teacher's decision)"
+msgstr "Doğru (öğretmeninizin kararı)"
+
+msgid "Right answers"
+msgstr "Doğru cevaplar"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Role…"
+msgstr "Rol…"
+
+msgid "Score"
+msgstr "Puan"
+
+msgid "See the result"
+msgstr "Sonucu gör"
+
+msgid "Server"
+msgstr "Sunucu"
+
+msgid "Status"
+msgstr "Durum"
+
+msgid "Student"
+msgstr "Öğrenci"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Bir test sunucusundan test çözün ya da öğretmen olarak test verin"
+
+msgid "Take the test"
+msgstr "Testi çöz"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Öğretmeninizin size verdiği testleri çözün."
+
+msgid "Teacher"
+msgstr "Öğretmen"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Test oluşturuldu: %s. Şimdi öğrencilere veya gruplara verin."
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Test, dersin kelimelerini alır; öğrenciler soruları görür, cevapları asla görmez."
+
+msgid "To do"
+msgstr "Yapılacak"
+
+msgid "Wrong name or password."
+msgstr "Ad veya parola yanlış."
+
+msgid "Yes, delete %s"
+msgstr "Evet, sil: %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Evet, sonuçlarıyla birlikte sil"
+
+msgid "Yes, hand in"
+msgstr "Evet, teslim et"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Sunucunun adresini öğretmeniniz söyler. Öğrenciler aynı adreste web tarayıcısında da test çözebilir."
+
+msgid "Your tests"
+msgstr "Testleriniz"
+
+# corrects OpenTeacher's tr.po for "Test mode"
+msgid "Test mode"
+msgstr "Test modu"

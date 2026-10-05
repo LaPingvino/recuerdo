@@ -811,3 +811,238 @@ msgstr "課程類型："
 # corrects OpenTeacher's zh_TW.po for 'Note:': "評論" (comment)
 msgid "Grades in"
 msgstr "成績"
+
+# test mode
+msgid "%d accounts added."
+msgstr "已新增 %d 個帳號。"
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "有 %d 個問題尚未作答。仍要交出嗎？交出後就無法再修改答案。"
+
+msgid "%d words"
+msgstr "%d 個單字"
+
+msgid "&Test Mode..."
+msgstr "測試模式(&T)..."
+
+msgid "A group…"
+msgstr "選擇群組…"
+
+msgid "A student…"
+msgstr "選擇學生…"
+
+msgid "Accounts"
+msgstr "帳號"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "帳號和群組在伺服器的網頁上管理。"
+
+msgid "Add many"
+msgstr "大量新增"
+
+msgid "Add these accounts"
+msgstr "新增這些帳號"
+
+msgid "Admin"
+msgstr "管理員"
+
+msgid "Back to the test"
+msgstr "返回測驗"
+
+msgid "Close for handing in"
+msgstr "停止交出"
+
+msgid "Closed"
+msgstr "已關閉"
+
+msgid "Count as right"
+msgstr "算作正確"
+
+msgid "Count as wrong"
+msgstr "算作錯誤"
+
+msgid "Delete the group"
+msgstr "刪除群組"
+
+msgid "Delete the test"
+msgstr "刪除測驗"
+
+msgid "Fill in the server, your name and your password."
+msgstr "請填寫伺服器、您的名稱和密碼。"
+
+msgid "Given"
+msgstr "給予答案"
+
+msgid "Given to"
+msgstr "指派給"
+
+msgid "Group %s"
+msgstr "群組 %s"
+
+msgid "Group name"
+msgstr "群組名稱"
+
+msgid "Groups"
+msgstr "群組"
+
+msgid "Hand in"
+msgstr "交出"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "要交出嗎？交出後就無法再修改答案。"
+
+msgid "Handed in"
+msgstr "已交出"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "已交出。老師會檢查您的答案。"
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "這是測試伺服器的憑證嗎？請將它的指紋與伺服器顯示的指紋比對（請詢問您的老師）：\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "登入"
+
+msgid "Log in to a test server"
+msgstr "登入測試伺服器"
+
+msgid "Log out"
+msgstr "登出"
+
+msgid "New group"
+msgstr "新增群組"
+
+msgid "New test"
+msgstr "新增測驗"
+
+msgid "New test of a lesson file…"
+msgstr "從課程檔案新增測驗…"
+
+msgid "New test of the open lesson"
+msgstr "從開啟的課程新增測驗"
+
+msgid "New test server"
+msgstr "新的測試伺服器"
+
+msgid "No one has handed in yet."
+msgstr "還沒有人交出。"
+
+msgid "No one yet."
+msgstr "還沒有人。"
+
+msgid "No tests for you yet."
+msgstr "您還沒有測驗。"
+
+msgid "No tests yet."
+msgstr "還沒有測驗。"
+
+msgid "Not added: %s"
+msgstr "未新增：%s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "未連線：憑證未經確認。"
+
+msgid "Not handed in yet: %s"
+msgstr "尚未交出：%s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "每行一個帳號：名稱、密碼及角色（若不是學生），以逗號分隔。"
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "請先在 Recuerdo 中開啟一個單字課程。"
+
+msgid "Open for handing in"
+msgstr "開放交出"
+
+msgid "Open the test"
+msgstr "開啟測驗"
+
+msgid "Password"
+msgstr "密碼"
+
+msgid "Publish all results"
+msgstr "公布所有結果"
+
+msgid "Publish this result"
+msgstr "公布此結果"
+
+msgid "Published"
+msgstr "已公布"
+
+msgid "Published: the students can see their results."
+msgstr "已公布：學生現在可以看到自己的結果。"
+
+msgid "Refresh"
+msgstr "重新整理"
+
+msgid "Remove %s"
+msgstr "移除 %s"
+
+msgid "Result ready"
+msgstr "結果已出爐"
+
+msgid "Right (your teacher's decision)"
+msgstr "正確（老師的判定）"
+
+msgid "Right answers"
+msgstr "正確答案"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Role…"
+msgstr "角色…"
+
+msgid "Score"
+msgstr "得分"
+
+msgid "See the result"
+msgstr "查看結果"
+
+msgid "Server"
+msgstr "伺服器"
+
+msgid "Status"
+msgstr "狀態"
+
+msgid "Student"
+msgstr "學生"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "從測試伺服器參加測驗，或以老師身分出測驗"
+
+msgid "Take the test"
+msgstr "參加測驗"
+
+msgid "Take the tests your teacher gave you."
+msgstr "參加老師給您的測驗。"
+
+msgid "Teacher"
+msgstr "老師"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "已建立測驗：%s。現在請把它指派給學生或群組。"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "測驗使用課程中的單字；學生只會看到問題，絕不會看到答案。"
+
+msgid "To do"
+msgstr "待完成"
+
+msgid "Wrong name or password."
+msgstr "名稱或密碼錯誤。"
+
+msgid "Yes, delete %s"
+msgstr "是，刪除 %s"
+
+msgid "Yes, delete it with its results"
+msgstr "是，連同結果一起刪除"
+
+msgid "Yes, hand in"
+msgstr "是，交出"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "老師會告訴您伺服器的位址。學生也可以在網頁瀏覽器中，以相同位址參加測驗。"
+
+msgid "Your tests"
+msgstr "您的測驗"

@@ -817,3 +817,241 @@ msgstr "地图："
 # corrects OpenTeacher's zh_CN.po for 'Name:': "名字", half-width colon
 msgid "Name:"
 msgstr "名称："
+
+# test mode
+msgid "%d accounts added."
+msgstr "已添加 %d 个账户。"
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "有 %d 个问题还没有回答。仍要上交吗？上交后就不能再修改答案。"
+
+msgid "%d words"
+msgstr "%d 个单词"
+
+msgid "&Test Mode..."
+msgstr "测试模式(&T)..."
+
+msgid "A group…"
+msgstr "选择小组…"
+
+msgid "A student…"
+msgstr "选择学生…"
+
+msgid "Accounts"
+msgstr "账户"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "账户和小组在服务器的网页上管理。"
+
+msgid "Add many"
+msgstr "批量添加"
+
+msgid "Add these accounts"
+msgstr "添加这些账户"
+
+msgid "Admin"
+msgstr "管理员"
+
+msgid "Back to the test"
+msgstr "返回测试"
+
+msgid "Close for handing in"
+msgstr "停止上交"
+
+msgid "Closed"
+msgstr "已关闭"
+
+msgid "Count as right"
+msgstr "算作正确"
+
+msgid "Count as wrong"
+msgstr "算作错误"
+
+msgid "Delete the group"
+msgstr "删除小组"
+
+msgid "Delete the test"
+msgstr "删除测试"
+
+msgid "Fill in the server, your name and your password."
+msgstr "请填写服务器、你的名字和密码。"
+
+msgid "Given"
+msgstr "给定的答案"
+
+msgid "Given to"
+msgstr "分配给"
+
+msgid "Group %s"
+msgstr "小组 %s"
+
+msgid "Group name"
+msgstr "小组名称"
+
+msgid "Groups"
+msgstr "小组"
+
+msgid "Hand in"
+msgstr "上交"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "要上交吗？上交后就不能再修改答案。"
+
+msgid "Handed in"
+msgstr "已上交"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "已上交。老师会检查你的答案。"
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "这是测试服务器的证书吗？请将它的指纹与服务器显示的指纹进行比较（可以问你的老师）：\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "登录"
+
+msgid "Log in to a test server"
+msgstr "登录测试服务器"
+
+msgid "Log out"
+msgstr "退出登录"
+
+msgid "New group"
+msgstr "新建小组"
+
+msgid "New test"
+msgstr "新建测试"
+
+msgid "New test of a lesson file…"
+msgstr "用课程文件新建测试…"
+
+msgid "New test of the open lesson"
+msgstr "用打开的课程新建测试"
+
+msgid "New test server"
+msgstr "新的测试服务器"
+
+msgid "No one has handed in yet."
+msgstr "还没有人上交。"
+
+msgid "No one yet."
+msgstr "还没有人。"
+
+msgid "No tests for you yet."
+msgstr "还没有你的测试。"
+
+msgid "No tests yet."
+msgstr "还没有测试。"
+
+msgid "Not added: %s"
+msgstr "未添加：%s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "未连接：证书未经确认。"
+
+msgid "Not handed in yet: %s"
+msgstr "尚未上交：%s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "每行一个账户：名字、密码以及角色（如果不是学生），用逗号分隔。"
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "请先在 Recuerdo 中打开一个单词课程。"
+
+msgid "Open for handing in"
+msgstr "开放上交"
+
+msgid "Open the test"
+msgstr "打开测试"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Publish all results"
+msgstr "公布所有成绩"
+
+msgid "Publish this result"
+msgstr "公布此成绩"
+
+msgid "Published"
+msgstr "已公布"
+
+msgid "Published: the students can see their results."
+msgstr "已公布：学生现在可以看到自己的成绩。"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Remove %s"
+msgstr "删除 %s"
+
+msgid "Result ready"
+msgstr "成绩已出"
+
+msgid "Right (your teacher's decision)"
+msgstr "正确（老师的判定）"
+
+msgid "Right answers"
+msgstr "正确答案"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Role…"
+msgstr "角色…"
+
+msgid "Score"
+msgstr "得分"
+
+msgid "See the result"
+msgstr "查看成绩"
+
+msgid "Server"
+msgstr "服务器"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Student"
+msgstr "学生"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "从测试服务器参加测试，或以教师身份布置测试"
+
+msgid "Take the test"
+msgstr "参加测试"
+
+msgid "Take the tests your teacher gave you."
+msgstr "参加老师布置给你的测试。"
+
+msgid "Teacher"
+msgstr "教师"
+
+msgid "Test"
+msgstr "测试"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "已创建测试：%s。现在把它分配给学生或小组。"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "测试使用课程中的单词；学生只能看到问题，永远看不到答案。"
+
+msgid "To do"
+msgstr "待完成"
+
+msgid "Wrong name or password."
+msgstr "名字或密码错误。"
+
+msgid "Yes, delete %s"
+msgstr "是，删除 %s"
+
+msgid "Yes, delete it with its results"
+msgstr "是，连同成绩一起删除"
+
+msgid "Yes, hand in"
+msgstr "是，上交"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "服务器地址由老师告诉你。学生也可以在网页浏览器中通过同一地址参加测试。"
+
+msgid "Your tests"
+msgstr "你的测试"

@@ -56,12 +56,12 @@ Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
 
 | Area | working | untested | partial | covered | scaffold | missing | planned | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data | 3 |  |  | 21 |  |  | 14 | 5 | 6 | 49 |
-| interfaces | 11 |  |  | 52 |  |  | 12 | 5 | 14 | 94 |
-| logic | 25 |  |  | 104 |  |  | 4 | 8 | 39 | 180 |
+| data | 3 |  |  | 22 |  |  | 13 | 6 | 5 | 49 |
+| interfaces | 11 |  |  | 60 |  |  | 3 | 6 | 14 | 94 |
+| logic | 25 |  |  | 104 |  |  | 3 | 9 | 39 | 180 |
 | misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
-| profileRunners |  |  |  | 10 |  |  | 11 | 1 | 5 | 27 |
-| **all** | **39** | **0** | **0** | **187** | **0** | **0** | **41** | **20** | **67** | **354** |
+| profileRunners |  |  |  | 14 |  |  | 10 | 2 | 1 | 27 |
+| **all** | **39** | **0** | **0** | **200** | **0** | **0** | **29** | **24** | **62** | **354** |
 
 ## 3. Features
 
@@ -81,7 +81,7 @@ The state in October 2026, by feature:
 | Command line | done: `recuerdo <command>` (convert, merge, view, practise, ...) |
 | Interface translations | done: all 30 of OpenTeacher's languages, OpenTeacher's translations with Recuerdo's own texts on top (machine-translated with OpenTeacher's terms; mistakes in OpenTeacher's translations of the labels Recuerdo shows corrected); right-to-left layout for Arabic and Urdu on the desktop and the web |
 | In-browser version | done: the Go logic as WebAssembly (`web/`, `recuerdo serve`): open, enter and edit words, practise in all modes, results, download; formulas (KaTeX) with a formula builder, also on the desktop |
-| Test mode (classroom server) | planned (medium): convert OpenTeacher's server or build one |
+| Test mode (classroom server) | done: `recuerdo testserver` (Go and SQLite), with the students' and teachers' pages in the web version and File > Test Mode on the desktop; see docs/TESTMODE.md. OpenTeacher Web (online accounts and list sync) is dropped |
 | Spell checking, touch typing course | planned (medium) |
 | Dark theme, words-only setting, developer tools | planned (low) |
 | Web services import (Quizlet, StudyStack, Course Hero) | dropped: those APIs changed or closed |
@@ -115,6 +115,7 @@ file formats, see **covered** above):
 | `data/profileDescriptions/cli` | `internal/cli` | the command line is reached with recuerdo <command>, not a profile |
 | `data/profileDescriptions/help` | `internal/cli` | recuerdo help |
 | `data/profileDescriptions/package (all)` | `packaging/, .github/workflows/release.yml` | the packaging profiles, with the packagers |
+| `data/profileDescriptions/testServer (all)` | `recuerdo testserver` | the test server's profile, with the server |
 | `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
@@ -161,6 +162,7 @@ file formats, see **covered** above):
 | `interfaces/qt/teachers/media` | `internal/modules/interfaces/qt/lessons/media` | Teach tab: the item and its question, a typed answer on teaching.Session; results kept (tested offscreen) |
 | `interfaces/qt/teachers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Teach tab: Place – Name and Name – Place on teaching.Session, results kept in the lesson (tested offscreen) |
 | `interfaces/qt/teachers/words` | `internal/modules/interfaces/qt/lessons/words` | the Teach tab of a word lesson |
+| `interfaces/qt/testMode (all)` | `internal/modules/interfaces/qt/dialogs/testmode, web/testmode.js, web/teacher.js` | test mode's client: File > Test Mode on the desktop, and the web version served by the test server (OpenTeacher's never shipped: its menu entry was switched off) |
 | `interfaces/qt/testViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab and results dialog show a session's answers |
 | `interfaces/qt/testsViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab lists the results; charts: see progressViewer |
 | `interfaces/qt/topoMaps` | `internal/modules/interfaces/qt/lessons/topo` | BundledMaps reads data/maps (OpenTeacher's six maps with their known places, all their names); tested |
@@ -200,6 +202,7 @@ file formats, see **covered** above):
 | `profileRunners/cli` | `internal/cli` | recuerdo <command>: authors, convert, merge, reverse-list, view-word-list, ocr-word-list, new-word-list, practise-word-list (-flags for +flags); tested |
 | `profileRunners/packagers (all)` | `packaging/, .github/workflows/release.yml` | Recuerdo is built by Go and released by CI; the Arch package is a PKGBUILD |
 | `profileRunners/profilesHelp` | `internal/cli` | recuerdo help lists the commands (and recuerdo -help the options) |
+| `profileRunners/testserver (all)` | `internal/testserver, recuerdo testserver` | OpenTeacher's test server (Django and SQLite) as Go and SQLite: users with roles, groups, tests, hand-ins checked on the server, results published to students |
 | `profileRunners/uiController` | `internal/modules/interfaces/qt/gui` | the GUI module connects the Qt interface to loading, saving, printing, dialogs and the lessons itself |
 
 ## Planned
@@ -208,7 +211,6 @@ OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
 
 | Priority | Modules | Count | What |
 |---|---|---:|---|
-| medium | `interfaces/qt/testMode`, `interfaces/webServicesServer`, `logic/webDatabase`, `profileRunners/webServicesServerRunner`, `data/profileDescriptions/webServicesServer` | 12 | test mode: classroom tests run from a server. OpenTeacher's server is in legacy/ (Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one |
 | medium | `logic/spellChecker` | 1 | spell checking while entering words, with Hunspell (OpenTeacher used Enchant) |
 | medium | `logic/interfaces/typingTutorModel` | 1 | OpenTeacher's touch typing course, a lesson of its own kind |
 | medium | `interfaces/qt/typingTutor` | 2 | the touch typing course's screen and keyboard |
@@ -229,8 +231,10 @@ Course Hero: those APIs changed or closed):
 | `data/profileDescriptions/studentAtHome` | as selfstudy: an audience profile |
 | `data/profileDescriptions/studentAtSchool` | as selfstudy: an audience profile |
 | `data/profileDescriptions/teacher` | as selfstudy: an audience profile |
+| `data/profileDescriptions/webServicesServer` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 | `interfaces/qt/hiddenBrowser` | a hidden web browser (an easter egg) nothing else used |
 | `interfaces/qt/mediaTypes/liveleak` | LiveLeak closed in 2021: its video links no longer work |
+| `interfaces/webServicesServer` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 | `logic/ocr/cuneiformRecognizer` | Cuneiform is no longer developed; Tesseract (internal/ocr) does OCR |
 | `logic/pyinstallerInterface` | Python packaging; Recuerdo is built by Go and released by CI |
 | `logic/safeHtmlChecker` | only OpenTeacher's web database (dropped) used it |
@@ -239,8 +243,10 @@ Course Hero: those APIs changed or closed):
 | `logic/translationIndex/builder` | OpenTeacher's translation tooling (building its translation index) |
 | `logic/translationIndex/jsonWriter` | OpenTeacher's translation tooling |
 | `logic/translationIndex/merger` | OpenTeacher's translation tooling |
+| `logic/webDatabase` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 | `misc/testUrllibMock` | a stand-in for Python's urllib in OpenTeacher's tests; Go tests use net/http/httptest |
 | `profileRunners/shell` | an interactive Python shell with OpenTeacher's modules loaded, for developers; Go has no such shell, and Recuerdo's modules are used from Go code and tests |
+| `profileRunners/webServicesServerRunner` | OpenTeacher Web: a hosted service with online accounts (sign-up with reCAPTCHA) that synced and shared word lists through CouchDB; not test mode (that used profileRunners/testserver). Recuerdo keeps lessons as files, and its test server covers classroom use |
 
 ## 5. Module table
 
@@ -287,11 +293,11 @@ Course Hero: those APIs changed or closed):
 | `data/profileDescriptions/studentAtSchool` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/teacher` | profileDescription | 41 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/test` | test | 24 | 0 | 0 | 0 | test suite |
-| `data/profileDescriptions/testServer` | profileDescription | 41 | 0 | 0 | 0 | test suite |
+| `data/profileDescriptions/testServer` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/profileDescriptions/testSuite` | profileDescription | 19 | 0 | 0 | 0 | test suite |
 | `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | planned |
 | `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | planned |
-| `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
 | `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | planned |
 | `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
@@ -313,7 +319,7 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1092 | 0 | 2 | working |
+| `interfaces/qt/gui` | ui | 607 | 1104 | 0 | 2 | working |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
@@ -367,14 +373,14 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/teachers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/teachers/words` | wordsTeacher | 387 | 0 | 0 | 0 | covered |
 | `interfaces/qt/teachers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/testMode/connection` | testModeConnection | 216 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/menu` | testMenu | 51 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/studentsView` | testModeStudentsView | 74 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/teacher` | wordsTestTeacher | 102 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/teacherPanel` | testModeTeacherPanel | 496 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 0 | 0 | 0 | planned |
-| `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 0 | 0 | 0 | planned |
+| `interfaces/qt/testMode/connection` | testModeConnection | 216 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/menu` | testMenu | 51 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/studentsView` | testModeStudentsView | 74 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/teacher` | wordsTestTeacher | 102 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/teacherPanel` | testModeTeacherPanel | 496 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/testSelecter` | testModeTestSelecter | 98 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/testTaker` | testModeTestTaker | 124 | 0 | 0 | 0 | covered |
+| `interfaces/qt/testMode/uploader` | testModeUploader | 82 | 0 | 0 | 0 | covered |
 | `interfaces/qt/testViewer` | testViewer | 175 | 0 | 0 | 0 | covered |
 | `interfaces/qt/testViewerTest` | test | 73 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/testsViewer` | testsViewer | 275 | 0 | 0 | 0 | covered |
@@ -388,7 +394,7 @@ Course Hero: those APIs changed or closed):
 | `interfaces/textToSpeech/impl` | textToSpeech | 122 | 0 | 0 | 0 | covered |
 | `interfaces/textToSpeech/providers/topo` | ttsProvider | 70 | 0 | 0 | 0 | covered |
 | `interfaces/textToSpeech/providers/words` | ttsProvider | 79 | 0 | 0 | 0 | covered |
-| `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | planned |
+| `interfaces/webServicesServer` | webServicesServer | 391 | 0 | 0 | 0 | dropped |
 | `logic/authors` | authors | 45 | 0 | 0 | 0 | covered |
 | `logic/authorsTest` | test | 62 | 1 | 0 | 0 | test suite |
 | `logic/dataStore` | dataStore | 51 | 0 | 0 | 0 | covered |
@@ -552,7 +558,7 @@ Course Hero: those APIs changed or closed):
 | `logic/translationTest` | test | 58 | 40 | 10 | 0 | test suite |
 | `logic/translator` | translator | 89 | 0 | 0 | 0 | covered |
 | `logic/userDocumentationWrapper` | userDocumentationWrapper | 30 | 0 | 0 | 0 | covered |
-| `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | planned |
+| `logic/webDatabase` | webDatabase | 198 | 0 | 0 | 0 | dropped |
 | `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |
 | `logic/wordListString/composer` | wordListStringComposer | 35 | 0 | 0 | 0 | covered |
 | `logic/wordListString/composerTest` | test | 145 | 0 | 0 | 0 | test suite |
@@ -593,10 +599,10 @@ Course Hero: those APIs changed or closed):
 | `profileRunners/rosettaUpdater` | rosettaUpdater | 112 | 0 | 0 | 0 | planned |
 | `profileRunners/shell` | shell | 81 | 0 | 0 | 0 | dropped |
 | `profileRunners/testRunner` | testRunner | 44 | 0 | 0 | 0 | test suite |
-| `profileRunners/testserver` | test_server | 65 | 0 | 0 | 0 | test suite |
-| `profileRunners/testserver/admin_files/js` |  | 40 | 0 | 0 | 0 | test suite |
-| `profileRunners/testserver/ot_testserver` |  | 119 | 0 | 0 | 0 | test suite |
-| `profileRunners/testserver/ot_testserver/testserver` |  | 574 | 0 | 0 | 0 | test suite |
+| `profileRunners/testserver` | test_server | 65 | 0 | 0 | 0 | covered |
+| `profileRunners/testserver/admin_files/js` |  | 40 | 0 | 0 | 0 | covered |
+| `profileRunners/testserver/ot_testserver` |  | 119 | 0 | 0 | 0 | covered |
+| `profileRunners/testserver/ot_testserver/testserver` |  | 574 | 0 | 0 | 0 | covered |
 | `profileRunners/translationUpdater` |  | 66 | 0 | 0 | 0 | planned |
 | `profileRunners/uiController` | uiController | 320 | 0 | 0 | 0 | covered |
-| `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | planned |
+| `profileRunners/webServicesServerRunner` | webServicesServerRunner | 31 | 0 | 0 | 0 | dropped |

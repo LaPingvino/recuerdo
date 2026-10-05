@@ -820,3 +820,244 @@ msgstr "&Редагування"
 # corrects OpenTeacher's uk.po: "Вірно в будь-якому разі"
 msgid "Correct anyway"
 msgstr "Все одно правильно"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Додано облікових записів: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Запитань без відповіді: %d. Усе одно здати? Потім змінити відповіді буде неможливо."
+
+msgid "%d words"
+msgstr "слів: %d"
+
+msgid "&Test Mode..."
+msgstr "&Режим тестування..."
+
+msgid "A group…"
+msgstr "Група…"
+
+msgid "A student…"
+msgstr "Учень…"
+
+msgid "Accounts"
+msgstr "Облікові записи"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Облікові записи та групи керуються на вебсторінці сервера."
+
+msgid "Add many"
+msgstr "Додати одразу кілька"
+
+msgid "Add these accounts"
+msgstr "Додати ці облікові записи"
+
+msgid "Admin"
+msgstr "Адміністратор"
+
+msgid "Back to the test"
+msgstr "Повернутися до тесту"
+
+msgid "Close for handing in"
+msgstr "Закрити здачу"
+
+msgid "Closed"
+msgstr "Закритий"
+
+msgid "Count as right"
+msgstr "Зарахувати як правильну"
+
+msgid "Count as wrong"
+msgstr "Зарахувати як неправильну"
+
+msgid "Delete the group"
+msgstr "Видалити групу"
+
+msgid "Delete the test"
+msgstr "Видалити тест"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Вкажіть сервер, Ваше ім’я та пароль."
+
+msgid "Given"
+msgstr "Відповідь учня"
+
+msgid "Given to"
+msgstr "Кому призначено"
+
+msgid "Group %s"
+msgstr "Група %s"
+
+msgid "Group name"
+msgstr "Назва групи"
+
+msgid "Groups"
+msgstr "Групи"
+
+msgid "Hand in"
+msgstr "Здати"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Здати? Потім змінити відповіді буде неможливо."
+
+msgid "Handed in"
+msgstr "Здано"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Здано. Ваш учитель перевірить Ваші відповіді."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Це сертифікат сервера тестування? Порівняйте його відбиток з тим, який показує сервер (запитайте вчителя):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Увійти"
+
+msgid "Log in to a test server"
+msgstr "Вхід на сервер тестування"
+
+msgid "Log out"
+msgstr "Вийти"
+
+msgid "New group"
+msgstr "Нова група"
+
+msgid "New test"
+msgstr "Новий тест"
+
+msgid "New test of a lesson file…"
+msgstr "Новий тест із файлу уроку…"
+
+msgid "New test of the open lesson"
+msgstr "Новий тест із відкритого уроку"
+
+msgid "New test server"
+msgstr "Новий сервер тестування"
+
+msgid "No one has handed in yet."
+msgstr "Поки ніхто не здав."
+
+msgid "No one yet."
+msgstr "Поки нікого."
+
+msgid "No tests for you yet."
+msgstr "Для Вас поки немає тестів."
+
+msgid "No tests yet."
+msgstr "Тестів поки немає."
+
+msgid "Not added: %s"
+msgstr "Не додано: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Не під’єднано: сертифікат не підтверджено."
+
+msgid "Not handed in yet: %s"
+msgstr "Ще не здали: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Один обліковий запис на рядок: ім’я, пароль і (якщо це не учень) роль, через кому."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Спершу відкрийте урок зі словами в Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Відкрити здачу"
+
+msgid "Open the test"
+msgstr "Відкрити тест"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Publish all results"
+msgstr "Опублікувати всі результати"
+
+msgid "Publish this result"
+msgstr "Опублікувати цей результат"
+
+msgid "Published"
+msgstr "Опубліковано"
+
+msgid "Published: the students can see their results."
+msgstr "Опубліковано: учні бачать свої результати."
+
+msgid "Refresh"
+msgstr "Оновити"
+
+msgid "Remove %s"
+msgstr "Усунути %s"
+
+msgid "Result ready"
+msgstr "Результат готовий"
+
+msgid "Right (your teacher's decision)"
+msgstr "Правильно (рішення вчителя)"
+
+msgid "Right answers"
+msgstr "Правильні відповіді"
+
+msgid "Role"
+msgstr "Роль"
+
+msgid "Role…"
+msgstr "Роль…"
+
+msgid "Score"
+msgstr "Бали"
+
+msgid "See the result"
+msgstr "Переглянути результат"
+
+msgid "Server"
+msgstr "Сервер"
+
+msgid "Status"
+msgstr "Стан"
+
+msgid "Student"
+msgstr "Учень"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Проходити тести із сервера тестування або призначати їх як учитель"
+
+msgid "Take the test"
+msgstr "Пройти тест"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Пройдіть тести, які призначив Вам учитель."
+
+msgid "Teacher"
+msgstr "Учитель"
+
+msgid "Test"
+msgstr "Тест"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Тест створено: %s. Тепер призначте його учням або групам."
+
+msgid "Test mode"
+msgstr "Режим тестування"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "До тесту потрапляють слова уроку; учні бачать запитання, але ніколи не бачать відповідей."
+
+msgid "To do"
+msgstr "Треба пройти"
+
+msgid "Wrong name or password."
+msgstr "Неправильне ім’я або пароль."
+
+msgid "Yes, delete %s"
+msgstr "Так, видалити %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Так, видалити разом із результатами"
+
+msgid "Yes, hand in"
+msgstr "Так, здати"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Адресу сервера Вам повідомить учитель. Учні також можуть проходити тести у браузері за тією ж адресою."
+
+msgid "Your tests"
+msgstr "Ваші тести"

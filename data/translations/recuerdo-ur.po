@@ -905,3 +905,247 @@ msgstr "&دستاویزات"
 # corrects OpenTeacher's ur.po for '&Quit': missing shortcut
 msgid "E&xit"
 msgstr "&بند کریں"
+
+# test mode
+msgid "%d accounts added."
+msgstr "%d اکاؤنٹ شامل کر دیے گئے۔"
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "%d سوالوں کا کوئی جواب نہیں۔ پھر بھی جمع کرائیں؟ اس کے بعد آپ اپنے جوابات تبدیل نہیں کر سکتے۔"
+
+msgid "%d words"
+msgstr "%d الفاظ"
+
+msgid "&Test Mode..."
+msgstr "&ٹیسٹ موڈ..."
+
+msgid "A group…"
+msgstr "کوئی گروپ…"
+
+msgid "A student…"
+msgstr "کوئی طالب علم…"
+
+msgid "Accounts"
+msgstr "اکاؤنٹس"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "اکاؤنٹس اور گروپس کا انتظام سرور کے ویب صفحے پر ہوتا ہے۔"
+
+msgid "Add many"
+msgstr "کئی ایک ساتھ شامل کریں"
+
+msgid "Add these accounts"
+msgstr "یہ اکاؤنٹس شامل کریں"
+
+msgid "Admin"
+msgstr "منتظم"
+
+msgid "Back"
+msgstr "واپس"
+
+msgid "Back to the test"
+msgstr "ٹیسٹ پر واپس جائیں"
+
+msgid "Close for handing in"
+msgstr "جمع کرانا بند کریں"
+
+msgid "Closed"
+msgstr "بند"
+
+msgid "Count as right"
+msgstr "درست شمار کریں"
+
+msgid "Count as wrong"
+msgstr "غلط شمار کریں"
+
+msgid "Delete the group"
+msgstr "گروپ حذف کریں"
+
+msgid "Delete the test"
+msgstr "ٹیسٹ حذف کریں"
+
+msgid "Fill in the server, your name and your password."
+msgstr "سرور، اپنا نام اور اپنا پاس ورڈ درج کریں۔"
+
+msgid "Given"
+msgstr "دیا گیا جواب"
+
+msgid "Given to"
+msgstr "کس کو دیا گیا"
+
+msgid "Group %s"
+msgstr "گروپ %s"
+
+msgid "Group name"
+msgstr "گروپ کا نام"
+
+msgid "Groups"
+msgstr "گروپس"
+
+msgid "Hand in"
+msgstr "جمع کرائیں"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "جمع کرائیں؟ اس کے بعد آپ اپنے جوابات تبدیل نہیں کر سکتے۔"
+
+msgid "Handed in"
+msgstr "جمع کرا دیا"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "جمع کرا دیا گیا۔ آپ کے استاد آپ کے جوابات جانچیں گے۔"
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "کیا یہ ٹیسٹ سرور کا سرٹیفکیٹ ہے؟ اس کا فنگرپرنٹ اس فنگرپرنٹ سے ملائیں جو سرور دکھاتا ہے (اپنے استاد سے پوچھیں):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "لاگ ان کریں"
+
+msgid "Log in to a test server"
+msgstr "ٹیسٹ سرور میں لاگ ان کریں"
+
+msgid "Log out"
+msgstr "لاگ آؤٹ کریں"
+
+msgid "New group"
+msgstr "نیا گروپ"
+
+msgid "New test"
+msgstr "نیا ٹیسٹ"
+
+msgid "New test of a lesson file…"
+msgstr "سبق کی فائل سے نیا ٹیسٹ…"
+
+msgid "New test of the open lesson"
+msgstr "کھلے سبق سے نیا ٹیسٹ"
+
+msgid "New test server"
+msgstr "نیا ٹیسٹ سرور"
+
+msgid "No one has handed in yet."
+msgstr "ابھی تک کسی نے جمع نہیں کرایا۔"
+
+msgid "No one yet."
+msgstr "ابھی کوئی نہیں۔"
+
+msgid "No tests for you yet."
+msgstr "ابھی آپ کے لیے کوئی ٹیسٹ نہیں۔"
+
+msgid "No tests yet."
+msgstr "ابھی کوئی ٹیسٹ نہیں۔"
+
+msgid "Not added: %s"
+msgstr "شامل نہیں ہوئے: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "منسلک نہیں: سرٹیفکیٹ کی تصدیق نہیں ہوئی۔"
+
+msgid "Not handed in yet: %s"
+msgstr "ابھی جمع نہیں کرایا: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "ہر سطر میں ایک اکاؤنٹ: نام، پاس ورڈ اور (اگر طالب علم نہ ہو تو) کردار، کوما سے الگ کیے ہوئے۔"
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "پہلے Recuerdo میں الفاظ کا سبق کھولیں۔"
+
+msgid "Open for handing in"
+msgstr "جمع کرانے کے لیے کھولیں"
+
+msgid "Open the test"
+msgstr "ٹیسٹ کھولیں"
+
+msgid "Password"
+msgstr "پاس ورڈ"
+
+msgid "Publish all results"
+msgstr "تمام نتائج شائع کریں"
+
+msgid "Publish this result"
+msgstr "یہ نتیجہ شائع کریں"
+
+msgid "Published"
+msgstr "شائع شدہ"
+
+msgid "Published: the students can see their results."
+msgstr "شائع ہو گیا: طلبہ اپنے نتائج دیکھ سکتے ہیں۔"
+
+msgid "Refresh"
+msgstr "تازہ کریں"
+
+msgid "Remove %s"
+msgstr "%s کو ہٹائیں"
+
+msgid "Result ready"
+msgstr "نتیجہ تیار ہے"
+
+msgid "Right (your teacher's decision)"
+msgstr "درست (آپ کے استاد کا فیصلہ)"
+
+msgid "Right answers"
+msgstr "درست جوابات"
+
+msgid "Role"
+msgstr "کردار"
+
+msgid "Role…"
+msgstr "کردار…"
+
+msgid "Score"
+msgstr "اسکور"
+
+msgid "See the result"
+msgstr "نتیجہ دیکھیں"
+
+msgid "Server"
+msgstr "سرور"
+
+msgid "Status"
+msgstr "حیثیت"
+
+msgid "Student"
+msgstr "طالب علم"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "ٹیسٹ سرور پر ٹیسٹ دیں، یا بطور استاد ٹیسٹ لیں"
+
+msgid "Take the test"
+msgstr "ٹیسٹ دیں"
+
+msgid "Take the tests your teacher gave you."
+msgstr "وہ ٹیسٹ دیں جو آپ کے استاد نے آپ کو دیے ہیں۔"
+
+msgid "Teacher"
+msgstr "استاد"
+
+msgid "Test"
+msgstr "ٹیسٹ"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "ٹیسٹ بن گیا: %s۔ اب اسے طلبہ یا گروپس کو دیں۔"
+
+msgid "Test mode"
+msgstr "ٹیسٹ موڈ"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "ٹیسٹ میں سبق کے الفاظ آتے ہیں؛ طلبہ کو سوالات نظر آتے ہیں، جوابات کبھی نہیں۔"
+
+msgid "To do"
+msgstr "باقی"
+
+msgid "Wrong name or password."
+msgstr "غلط نام یا پاس ورڈ۔"
+
+msgid "Yes, delete %s"
+msgstr "ہاں، %s حذف کریں"
+
+msgid "Yes, delete it with its results"
+msgstr "ہاں، اسے اس کے نتائج سمیت حذف کریں"
+
+msgid "Yes, hand in"
+msgstr "ہاں، جمع کرائیں"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "سرور کا پتہ آپ کے استاد بتائیں گے۔ طلبہ اسی پتے پر ویب براؤزر میں بھی ٹیسٹ دے سکتے ہیں۔"
+
+msgid "Your tests"
+msgstr "آپ کے ٹیسٹ"

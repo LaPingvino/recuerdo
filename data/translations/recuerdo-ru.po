@@ -787,3 +787,238 @@ msgstr "Название:"
 # corrects OpenTeacher's ru.po: "Pronounce words" was "Произношение мест" (places)
 msgid "Pronounce questions"
 msgstr "Произносить вопросы"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Добавлено учётных записей: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Вопросов без ответа: %d. Всё равно сдать? Потом изменить ответы будет нельзя."
+
+msgid "%d words"
+msgstr "слов: %d"
+
+msgid "&Test Mode..."
+msgstr "&Режим тестирования..."
+
+msgid "A group…"
+msgstr "Группа…"
+
+msgid "A student…"
+msgstr "Учащийся…"
+
+msgid "Accounts"
+msgstr "Учётные записи"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Учётные записи и группы управляются на веб-странице сервера."
+
+msgid "Add many"
+msgstr "Добавить сразу несколько"
+
+msgid "Add these accounts"
+msgstr "Добавить эти учётные записи"
+
+msgid "Admin"
+msgstr "Администратор"
+
+msgid "Back to the test"
+msgstr "Вернуться к тесту"
+
+msgid "Close for handing in"
+msgstr "Закрыть приём ответов"
+
+msgid "Closed"
+msgstr "Закрыт"
+
+msgid "Count as right"
+msgstr "Засчитать как верный"
+
+msgid "Count as wrong"
+msgstr "Засчитать как неверный"
+
+msgid "Delete the group"
+msgstr "Удалить группу"
+
+msgid "Delete the test"
+msgstr "Удалить тест"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Укажите сервер, ваше имя и пароль."
+
+msgid "Given"
+msgstr "Ответ учащегося"
+
+msgid "Given to"
+msgstr "Кому назначен"
+
+msgid "Group %s"
+msgstr "Группа %s"
+
+msgid "Group name"
+msgstr "Название группы"
+
+msgid "Groups"
+msgstr "Группы"
+
+msgid "Hand in"
+msgstr "Сдать"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Сдать? Потом изменить ответы будет нельзя."
+
+msgid "Handed in"
+msgstr "Сдано"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Сдано. Преподаватель проверит ваши ответы."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Это сертификат сервера тестирования? Сравните его отпечаток с тем, который показывает сервер (спросите преподавателя):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid "Log in to a test server"
+msgstr "Вход на сервер тестирования"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "New group"
+msgstr "Новая группа"
+
+msgid "New test"
+msgstr "Новый тест"
+
+msgid "New test of a lesson file…"
+msgstr "Новый тест из файла урока…"
+
+msgid "New test of the open lesson"
+msgstr "Новый тест из открытого урока"
+
+msgid "New test server"
+msgstr "Новый сервер тестирования"
+
+msgid "No one has handed in yet."
+msgstr "Пока никто не сдал."
+
+msgid "No one yet."
+msgstr "Пока никого."
+
+msgid "No tests for you yet."
+msgstr "Для вас пока нет тестов."
+
+msgid "No tests yet."
+msgstr "Тестов пока нет."
+
+msgid "Not added: %s"
+msgstr "Не добавлены: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Не подключено: сертификат не подтверждён."
+
+msgid "Not handed in yet: %s"
+msgstr "Ещё не сдали: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "По одной учётной записи на строку: имя, пароль и (если это не учащийся) роль, через запятую."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Сначала откройте словарный урок в Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Открыть приём ответов"
+
+msgid "Open the test"
+msgstr "Открыть тест"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Publish all results"
+msgstr "Опубликовать все результаты"
+
+msgid "Publish this result"
+msgstr "Опубликовать этот результат"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Published: the students can see their results."
+msgstr "Опубликовано: учащиеся видят свои результаты."
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Remove %s"
+msgstr "Удалить %s"
+
+msgid "Result ready"
+msgstr "Результат готов"
+
+msgid "Right (your teacher's decision)"
+msgstr "Правильно (решение преподавателя)"
+
+msgid "Right answers"
+msgstr "Правильные ответы"
+
+msgid "Role"
+msgstr "Роль"
+
+msgid "Role…"
+msgstr "Роль…"
+
+msgid "Score"
+msgstr "Баллы"
+
+msgid "See the result"
+msgstr "Посмотреть результат"
+
+msgid "Server"
+msgstr "Сервер"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Student"
+msgstr "Учащийся"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Проходить тесты с сервера тестирования или назначать их как преподаватель"
+
+msgid "Take the test"
+msgstr "Пройти тест"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Пройдите тесты, которые назначил вам преподаватель."
+
+msgid "Teacher"
+msgstr "Преподаватель"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Тест создан: %s. Теперь назначьте его учащимся или группам."
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "В тест попадают слова урока; учащиеся видят вопросы, но никогда не видят ответов."
+
+msgid "To do"
+msgstr "Нужно пройти"
+
+msgid "Wrong name or password."
+msgstr "Неверное имя или пароль."
+
+msgid "Yes, delete %s"
+msgstr "Да, удалить %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Да, удалить вместе с результатами"
+
+msgid "Yes, hand in"
+msgstr "Да, сдать"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Адрес сервера сообщит преподаватель. Учащиеся также могут проходить тесты в веб-браузере по тому же адресу."
+
+msgid "Your tests"
+msgstr "Ваши тесты"

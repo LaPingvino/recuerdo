@@ -839,3 +839,247 @@ msgstr "Kysymykset"
 # corrects OpenTeacher's fi.po for '&Documentation': "Dokumentointi" (documenting)
 msgid "&Getting Started"
 msgstr "&Ohjeet"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Käyttäjätilejä lisätty: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Vastaamattomia kysymyksiä: %d. Palautetaanko silti? Et voi muuttaa vastauksiasi jälkeenpäin."
+
+msgid "%d words"
+msgstr "Sanoja: %d"
+
+msgid "&Test Mode..."
+msgstr "&Koetila..."
+
+msgid "A group…"
+msgstr "Ryhmä…"
+
+msgid "A student…"
+msgstr "Oppilas…"
+
+msgid "Accounts"
+msgstr "Käyttäjätilit"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Käyttäjätilejä ja ryhmiä hallitaan palvelimen verkkosivulla."
+
+msgid "Add many"
+msgstr "Lisää monta kerralla"
+
+msgid "Add these accounts"
+msgstr "Lisää nämä käyttäjätilit"
+
+msgid "Admin"
+msgstr "Ylläpitäjä"
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "Back to the test"
+msgstr "Takaisin kokeeseen"
+
+msgid "Close for handing in"
+msgstr "Sulje palautukset"
+
+msgid "Closed"
+msgstr "Suljettu"
+
+msgid "Count as right"
+msgstr "Laske oikeaksi"
+
+msgid "Count as wrong"
+msgstr "Laske vääräksi"
+
+msgid "Delete the group"
+msgstr "Poista ryhmä"
+
+msgid "Delete the test"
+msgstr "Poista koe"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Täytä palvelin, nimesi ja salasanasi."
+
+msgid "Given"
+msgstr "Annettu vastaus"
+
+msgid "Given to"
+msgstr "Vastaanottajat"
+
+msgid "Group %s"
+msgstr "Ryhmä %s"
+
+msgid "Group name"
+msgstr "Ryhmän nimi"
+
+msgid "Groups"
+msgstr "Ryhmät"
+
+msgid "Hand in"
+msgstr "Palauta"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Palautetaanko? Et voi muuttaa vastauksiasi jälkeenpäin."
+
+msgid "Handed in"
+msgstr "Palautettu"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Palautettu. Opettajasi tarkistaa vastauksesi."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Onko tämä koepalvelimen varmenne? Vertaa sen sormenjälkeä siihen, jonka palvelin näyttää (kysy opettajaltasi):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Kirjaudu sisään"
+
+msgid "Log in to a test server"
+msgstr "Kirjaudu koepalvelimelle"
+
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+msgid "New group"
+msgstr "Uusi ryhmä"
+
+msgid "New test"
+msgstr "Uusi koe"
+
+msgid "New test of a lesson file…"
+msgstr "Uusi koe oppituntitiedostosta…"
+
+msgid "New test of the open lesson"
+msgstr "Uusi koe avoimesta oppitunnista"
+
+msgid "New test server"
+msgstr "Uusi koepalvelin"
+
+msgid "No one has handed in yet."
+msgstr "Kukaan ei ole vielä palauttanut."
+
+msgid "No one yet."
+msgstr "Ei vielä ketään."
+
+msgid "No tests for you yet."
+msgstr "Sinulle ei ole vielä kokeita."
+
+msgid "No tests yet."
+msgstr "Ei vielä kokeita."
+
+msgid "Not added: %s"
+msgstr "Ei lisätty: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Ei yhdistetty: varmennetta ei vahvistettu."
+
+msgid "Not handed in yet: %s"
+msgstr "Ei vielä palauttanut: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Yksi käyttäjätili riviä kohden: nimi, salasana ja (jos ei oppilas) rooli pilkuilla erotettuina."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Avaa ensin sanaoppitunti Recuerdo-sovelluksessa."
+
+msgid "Open for handing in"
+msgstr "Avaa palautuksille"
+
+msgid "Open the test"
+msgstr "Avaa koe"
+
+msgid "Password"
+msgstr "Salasana"
+
+msgid "Publish all results"
+msgstr "Julkaise kaikki tulokset"
+
+msgid "Publish this result"
+msgstr "Julkaise tämä tulos"
+
+msgid "Published"
+msgstr "Julkaistu"
+
+msgid "Published: the students can see their results."
+msgstr "Julkaistu: oppilaat näkevät tuloksensa."
+
+msgid "Refresh"
+msgstr "Päivitä"
+
+msgid "Remove %s"
+msgstr "Poista %s"
+
+msgid "Result ready"
+msgstr "Tulos valmis"
+
+msgid "Right (your teacher's decision)"
+msgstr "Oikein (opettajasi päätös)"
+
+msgid "Right answers"
+msgstr "Oikeat vastaukset"
+
+msgid "Role"
+msgstr "Rooli"
+
+msgid "Role…"
+msgstr "Rooli…"
+
+msgid "Score"
+msgstr "Pisteet"
+
+msgid "See the result"
+msgstr "Katso tulos"
+
+msgid "Server"
+msgstr "Palvelin"
+
+msgid "Status"
+msgstr "Tila"
+
+msgid "Student"
+msgstr "Oppilas"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Tee kokeita koepalvelimelta tai anna niitä opettajana"
+
+msgid "Take the test"
+msgstr "Tee koe"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Tee kokeet, jotka opettajasi antoi sinulle."
+
+msgid "Teacher"
+msgstr "Opettaja"
+
+msgid "Test"
+msgstr "Koe"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Koe tehty: %s. Anna se nyt oppilaille tai ryhmille."
+
+msgid "Test mode"
+msgstr "Koetila"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Kokeeseen tulevat oppitunnin sanat; oppilaat näkevät kysymykset, eivät koskaan vastauksia."
+
+msgid "To do"
+msgstr "Tekemättä"
+
+msgid "Wrong name or password."
+msgstr "Väärä nimi tai salasana."
+
+msgid "Yes, delete %s"
+msgstr "Kyllä, poista %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Kyllä, poista se tuloksineen"
+
+msgid "Yes, hand in"
+msgstr "Kyllä, palauta"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Opettajasi kertoo palvelimen osoitteen. Oppilaat voivat tehdä kokeita myös verkkoselaimella samassa osoitteessa."
+
+msgid "Your tests"
+msgstr "Kokeesi"

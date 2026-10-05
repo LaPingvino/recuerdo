@@ -789,3 +789,238 @@ msgstr "✘ La respuesta era: %s"
 # corrects OpenTeacher's es.po ("Repetir la pregunta")
 msgid "Repeat answer"
 msgstr "Repetir la respuesta"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Se añadieron %d cuentas."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "%d preguntas no tienen respuesta. ¿Entregar de todas formas? Después no podrá cambiar sus respuestas."
+
+msgid "%d words"
+msgstr "%d palabras"
+
+msgid "&Test Mode..."
+msgstr "Modo de &prueba..."
+
+msgid "A group…"
+msgstr "Un grupo…"
+
+msgid "A student…"
+msgstr "Un estudiante…"
+
+msgid "Accounts"
+msgstr "Cuentas"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Las cuentas y los grupos se gestionan en la página web del servidor."
+
+msgid "Add many"
+msgstr "Añadir varias"
+
+msgid "Add these accounts"
+msgstr "Añadir estas cuentas"
+
+msgid "Admin"
+msgstr "Administrador"
+
+msgid "Back to the test"
+msgstr "Volver a la prueba"
+
+msgid "Close for handing in"
+msgstr "Cerrar la entrega"
+
+msgid "Closed"
+msgstr "Cerrada"
+
+msgid "Count as right"
+msgstr "Contar como correcta"
+
+msgid "Count as wrong"
+msgstr "Contar como incorrecta"
+
+msgid "Delete the group"
+msgstr "Eliminar el grupo"
+
+msgid "Delete the test"
+msgstr "Eliminar la prueba"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Introduzca el servidor, su nombre y su contraseña."
+
+msgid "Given"
+msgstr "Dada"
+
+msgid "Given to"
+msgstr "Asignada a"
+
+msgid "Group %s"
+msgstr "Grupo %s"
+
+msgid "Group name"
+msgstr "Nombre del grupo"
+
+msgid "Groups"
+msgstr "Grupos"
+
+msgid "Hand in"
+msgstr "Entregar"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "¿Entregar? Después no podrá cambiar sus respuestas."
+
+msgid "Handed in"
+msgstr "Entregada"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Entregada. Su profesor comprobará sus respuestas."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "¿Es este el certificado del servidor de pruebas? Compare su huella digital con la que muestra el servidor (pregunte a su profesor):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+msgid "Log in to a test server"
+msgstr "Iniciar sesión en un servidor de pruebas"
+
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+msgid "New group"
+msgstr "Nuevo grupo"
+
+msgid "New test"
+msgstr "Nueva prueba"
+
+msgid "New test of a lesson file…"
+msgstr "Nueva prueba a partir de un archivo de lección…"
+
+msgid "New test of the open lesson"
+msgstr "Nueva prueba a partir de la lección abierta"
+
+msgid "New test server"
+msgstr "Nuevo servidor de pruebas"
+
+msgid "No one has handed in yet."
+msgstr "Nadie ha entregado todavía."
+
+msgid "No one yet."
+msgstr "Nadie todavía."
+
+msgid "No tests for you yet."
+msgstr "Todavía no hay pruebas para usted."
+
+msgid "No tests yet."
+msgstr "Todavía no hay pruebas."
+
+msgid "Not added: %s"
+msgstr "No añadidas: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "No conectado: el certificado no se confirmó."
+
+msgid "Not handed in yet: %s"
+msgstr "Aún no han entregado: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Una cuenta por línea: nombre, contraseña y (si no es estudiante) el rol, separados por comas."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Abra primero una lección de palabras en Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Abrir la entrega"
+
+msgid "Open the test"
+msgstr "Abrir la prueba"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Publish all results"
+msgstr "Publicar todos los resultados"
+
+msgid "Publish this result"
+msgstr "Publicar este resultado"
+
+msgid "Published"
+msgstr "Publicado"
+
+msgid "Published: the students can see their results."
+msgstr "Publicado: los estudiantes pueden ver sus resultados."
+
+msgid "Refresh"
+msgstr "Actualizar"
+
+msgid "Remove %s"
+msgstr "Eliminar a %s"
+
+msgid "Result ready"
+msgstr "Resultado listo"
+
+msgid "Right (your teacher's decision)"
+msgstr "Correcto (decisión de su profesor)"
+
+msgid "Right answers"
+msgstr "Respuestas correctas"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Role…"
+msgstr "Rol…"
+
+msgid "Score"
+msgstr "Puntuación"
+
+msgid "See the result"
+msgstr "Ver el resultado"
+
+msgid "Server"
+msgstr "Servidor"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Student"
+msgstr "Estudiante"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Hacer pruebas de un servidor de pruebas, o asignarlas como profesor"
+
+msgid "Take the test"
+msgstr "Hacer la prueba"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Haga las pruebas que le asignó su profesor."
+
+msgid "Teacher"
+msgstr "Profesor"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Prueba creada: %s. Ahora asígnela a estudiantes o grupos."
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "La prueba recibe las palabras de la lección; los estudiantes ven las preguntas, nunca las respuestas."
+
+msgid "To do"
+msgstr "Pendiente"
+
+msgid "Wrong name or password."
+msgstr "Nombre o contraseña incorrectos."
+
+msgid "Yes, delete %s"
+msgstr "Sí, eliminar %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Sí, eliminarla con sus resultados"
+
+msgid "Yes, hand in"
+msgstr "Sí, entregar"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Su profesor le indica la dirección del servidor. Los estudiantes también pueden hacer las pruebas en un navegador web, en la misma dirección."
+
+msgid "Your tests"
+msgstr "Sus pruebas"

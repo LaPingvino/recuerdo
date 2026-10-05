@@ -902,3 +902,247 @@ msgstr "✘ Dat war %s"
 
 msgid "✘ The answer was: %s"
 msgstr "✘ D'Äntwert war: %s"
+
+# test mode
+msgid "%d accounts added."
+msgstr "%d Konten derbäigesat."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "%d Froen hu keng Äntwert. Trotzdeem ofginn? Duerno kanns de deng Äntwerten net méi änneren."
+
+msgid "%d words"
+msgstr "%d Wierder"
+
+msgid "&Test Mode..."
+msgstr "&Testmodus..."
+
+msgid "A group…"
+msgstr "E Grupp…"
+
+msgid "A student…"
+msgstr "E Schüler…"
+
+msgid "Accounts"
+msgstr "Konten"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Konten a Gruppe ginn op der Websäit vum Server verwalt."
+
+msgid "Add many"
+msgstr "Vill op eemol derbäisetzen"
+
+msgid "Add these accounts"
+msgstr "Dës Konten derbäisetzen"
+
+msgid "Admin"
+msgstr "Administrateur"
+
+msgid "Back"
+msgstr "Zréck"
+
+msgid "Back to the test"
+msgstr "Zréck bei den Test"
+
+msgid "Close for handing in"
+msgstr "Fir d'Ofginn zoumaachen"
+
+msgid "Closed"
+msgstr "Zou"
+
+msgid "Count as right"
+msgstr "Als richteg zielen"
+
+msgid "Count as wrong"
+msgstr "Als falsch zielen"
+
+msgid "Delete the group"
+msgstr "De Grupp läschen"
+
+msgid "Delete the test"
+msgstr "Den Test läschen"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Gëff de Server, däin Numm an däi Passwuert an."
+
+msgid "Given"
+msgstr "Gi Äntwert"
+
+msgid "Given to"
+msgstr "Verdeelt un"
+
+msgid "Group %s"
+msgstr "Grupp %s"
+
+msgid "Group name"
+msgstr "Gruppennumm"
+
+msgid "Groups"
+msgstr "Gruppen"
+
+msgid "Hand in"
+msgstr "Ofginn"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Ofginn? Duerno kanns de deng Äntwerten net méi änneren."
+
+msgid "Handed in"
+msgstr "Ofginn"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Ofginn. Däin Enseignant kontrolléiert deng Äntwerten."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Ass dat den Zertifikat vum Testserver? Vergläich säi Fangerofdrock mat deem, deen de Server weist (fro däin Enseignant):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Aloggen"
+
+msgid "Log in to a test server"
+msgstr "Op engem Testserver aloggen"
+
+msgid "Log out"
+msgstr "Ausloggen"
+
+msgid "New group"
+msgstr "Nei Grupp"
+
+msgid "New test"
+msgstr "Neien Test"
+
+msgid "New test of a lesson file…"
+msgstr "Neien Test aus engem Lektiounsfichier…"
+
+msgid "New test of the open lesson"
+msgstr "Neien Test aus der oppener Lektioun"
+
+msgid "New test server"
+msgstr "Neien Testserver"
+
+msgid "No one has handed in yet."
+msgstr "Nach keen huet ofginn."
+
+msgid "No one yet."
+msgstr "Nach keen."
+
+msgid "No tests for you yet."
+msgstr "Nach keng Tester fir dech."
+
+msgid "No tests yet."
+msgstr "Nach keng Tester."
+
+msgid "Not added: %s"
+msgstr "Net derbäigesat: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Net verbonnen: den Zertifikat gouf net bestätegt."
+
+msgid "Not handed in yet: %s"
+msgstr "Nach net ofginn: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Ee Kont pro Linn: Numm, Passwuert an (wann et kee Schüler ass) d'Roll, mat Kommaen getrennt."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Maach fir d'éischt eng Wierderlektioun am Recuerdo op."
+
+msgid "Open for handing in"
+msgstr "Fir d'Ofginn opmaachen"
+
+msgid "Open the test"
+msgstr "Den Test opmaachen"
+
+msgid "Password"
+msgstr "Passwuert"
+
+msgid "Publish all results"
+msgstr "All Resultater publizéieren"
+
+msgid "Publish this result"
+msgstr "Dëst Resultat publizéieren"
+
+msgid "Published"
+msgstr "Publizéiert"
+
+msgid "Published: the students can see their results."
+msgstr "Publizéiert: d'Schüler kënnen hir Resultater gesinn."
+
+msgid "Refresh"
+msgstr "Aktualiséieren"
+
+msgid "Remove %s"
+msgstr "%s ewechhuelen"
+
+msgid "Result ready"
+msgstr "Resultat fäerdeg"
+
+msgid "Right (your teacher's decision)"
+msgstr "Richteg (Decisioun vun dengem Enseignant)"
+
+msgid "Right answers"
+msgstr "Richteg Äntwerten"
+
+msgid "Role"
+msgstr "Roll"
+
+msgid "Role…"
+msgstr "Roll…"
+
+msgid "Score"
+msgstr "Punkten"
+
+msgid "See the result"
+msgstr "Resultat kucken"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Student"
+msgstr "Schüler"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Tester vun engem Testserver maachen, oder se als Enseignant ginn"
+
+msgid "Take the test"
+msgstr "Den Test maachen"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Maach d'Tester, déi däin Enseignant dir ginn huet."
+
+msgid "Teacher"
+msgstr "Enseignant"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Test gemaach: %s. Gëff en elo Schüler oder Gruppen."
+
+msgid "Test mode"
+msgstr "Testmodus"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Den Test kritt d'Wierder vun der Lektioun; d'Schüler gesinn d'Froen, ni d'Äntwerten."
+
+msgid "To do"
+msgstr "Nach ze maachen"
+
+msgid "Wrong name or password."
+msgstr "Falschen Numm oder falscht Passwuert."
+
+msgid "Yes, delete %s"
+msgstr "Jo, %s läschen"
+
+msgid "Yes, delete it with its results"
+msgstr "Jo, mat senge Resultater läschen"
+
+msgid "Yes, hand in"
+msgstr "Jo, ofginn"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Däin Enseignant seet dir d'Adress vum Server. Schüler kënnen d'Tester och an engem Webbrowser maachen, op der selwechter Adress."
+
+msgid "Your tests"
+msgstr "Deng Tester"

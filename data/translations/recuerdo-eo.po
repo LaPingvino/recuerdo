@@ -888,3 +888,247 @@ msgstr "Greka"
 
 msgid "Edit the selected question or answer with the formula builder"
 msgstr "Redakti la elektitan demandon aŭ respondon per la formulkonstruilo"
+
+# test mode
+msgid "%d accounts added."
+msgstr "%d kontoj aldonitaj."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "%d demandoj ne havas respondon. Ĉu tamen transdoni? Poste vi ne plu povos ŝanĝi viajn respondojn."
+
+msgid "%d words"
+msgstr "%d vortoj"
+
+msgid "&Test Mode..."
+msgstr "&Testa reĝimo..."
+
+msgid "A group…"
+msgstr "Grupo…"
+
+msgid "A student…"
+msgstr "Lernanto…"
+
+msgid "Accounts"
+msgstr "Kontoj"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Kontojn kaj grupojn oni administras en la retpaĝo de la servilo."
+
+msgid "Add many"
+msgstr "Aldoni multajn"
+
+msgid "Add these accounts"
+msgstr "Aldoni ĉi tiujn kontojn"
+
+msgid "Admin"
+msgstr "Administranto"
+
+msgid "Back"
+msgstr "Reen"
+
+msgid "Back to the test"
+msgstr "Reen al la testo"
+
+msgid "Close for handing in"
+msgstr "Fermi por transdonado"
+
+msgid "Closed"
+msgstr "Fermita"
+
+msgid "Count as right"
+msgstr "Kalkuli kiel ĝustan"
+
+msgid "Count as wrong"
+msgstr "Kalkuli kiel malĝustan"
+
+msgid "Delete the group"
+msgstr "Forigi la grupon"
+
+msgid "Delete the test"
+msgstr "Forigi la teston"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Plenigu la servilon, vian nomon kaj vian pasvorton."
+
+msgid "Given"
+msgstr "Donita"
+
+msgid "Given to"
+msgstr "Donita al"
+
+msgid "Group %s"
+msgstr "Grupo %s"
+
+msgid "Group name"
+msgstr "Nomo de la grupo"
+
+msgid "Groups"
+msgstr "Grupoj"
+
+msgid "Hand in"
+msgstr "Transdoni"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Ĉu transdoni? Poste vi ne plu povos ŝanĝi viajn respondojn."
+
+msgid "Handed in"
+msgstr "Transdonita"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Transdonita. Via instruisto kontrolos viajn respondojn."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Ĉu ĉi tio estas la atestilo de la testservilo? Komparu ĝian fingrospuron kun tiu, kiun la servilo montras (demandu vian instruiston):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Ensaluti"
+
+msgid "Log in to a test server"
+msgstr "Ensaluti al testservilo"
+
+msgid "Log out"
+msgstr "Elsaluti"
+
+msgid "New group"
+msgstr "Nova grupo"
+
+msgid "New test"
+msgstr "Nova testo"
+
+msgid "New test of a lesson file…"
+msgstr "Nova testo el leciona dosiero…"
+
+msgid "New test of the open lesson"
+msgstr "Nova testo el la malfermita leciono"
+
+msgid "New test server"
+msgstr "Nova testservilo"
+
+msgid "No one has handed in yet."
+msgstr "Neniu transdonis ankoraŭ."
+
+msgid "No one yet."
+msgstr "Ankoraŭ neniu."
+
+msgid "No tests for you yet."
+msgstr "Ankoraŭ neniuj testoj por vi."
+
+msgid "No tests yet."
+msgstr "Ankoraŭ neniuj testoj."
+
+msgid "Not added: %s"
+msgstr "Ne aldonitaj: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Ne konektita: la atestilo ne estis konfirmita."
+
+msgid "Not handed in yet: %s"
+msgstr "Ankoraŭ ne transdonis: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Unu konto po linio: nomo, pasvorto kaj (se ne lernanto) la rolo, apartigitaj per komoj."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Unue malfermu vortlecionon en Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Malfermi por transdonado"
+
+msgid "Open the test"
+msgstr "Malfermi la teston"
+
+msgid "Password"
+msgstr "Pasvorto"
+
+msgid "Publish all results"
+msgstr "Publikigi ĉiujn rezultojn"
+
+msgid "Publish this result"
+msgstr "Publikigi ĉi tiun rezulton"
+
+msgid "Published"
+msgstr "Publikigita"
+
+msgid "Published: the students can see their results."
+msgstr "Publikigita: la lernantoj povas vidi siajn rezultojn."
+
+msgid "Refresh"
+msgstr "Aktualigi"
+
+msgid "Remove %s"
+msgstr "Forigi %s"
+
+msgid "Result ready"
+msgstr "Rezulto preta"
+
+msgid "Right (your teacher's decision)"
+msgstr "Ĝuste (decido de via instruisto)"
+
+msgid "Right answers"
+msgstr "Ĝustaj respondoj"
+
+msgid "Role"
+msgstr "Rolo"
+
+msgid "Role…"
+msgstr "Rolo…"
+
+msgid "Score"
+msgstr "Poentoj"
+
+msgid "See the result"
+msgstr "Vidi la rezulton"
+
+msgid "Server"
+msgstr "Servilo"
+
+msgid "Status"
+msgstr "Stato"
+
+msgid "Student"
+msgstr "Lernanto"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Fari testojn de testservilo, aŭ doni ilin kiel instruisto"
+
+msgid "Take the test"
+msgstr "Fari la teston"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Faru la testojn, kiujn via instruisto donis al vi."
+
+msgid "Teacher"
+msgstr "Instruisto"
+
+msgid "Test"
+msgstr "Testo"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Testo farita: %s. Nun donu ĝin al lernantoj aŭ grupoj."
+
+msgid "Test mode"
+msgstr "Testa reĝimo"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "La testo ricevas la vortojn de la leciono; lernantoj vidas la demandojn, neniam la respondojn."
+
+msgid "To do"
+msgstr "Farenda"
+
+msgid "Wrong name or password."
+msgstr "Malĝusta nomo aŭ pasvorto."
+
+msgid "Yes, delete %s"
+msgstr "Jes, forigi %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Jes, forigi ĝin kun ĝiaj rezultoj"
+
+msgid "Yes, hand in"
+msgstr "Jes, transdoni"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Via instruisto diras al vi la adreson de la servilo. Lernantoj ankaŭ povas fari testojn en retumilo, ĉe la sama adreso."
+
+msgid "Your tests"
+msgstr "Viaj testoj"

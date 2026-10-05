@@ -830,3 +830,241 @@ msgstr "✘ 正しくは %s でした"
 
 msgid "✘ The answer was: %s"
 msgstr "✘ 答え：%s"
+
+# test mode
+msgid "%d accounts added."
+msgstr "%d 件のアカウントを追加しました。"
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "未回答の質問が %d 問あります。このまま提出しますか？提出後は答えを変更できません。"
+
+msgid "%d words"
+msgstr "%d 単語"
+
+msgid "&Test Mode..."
+msgstr "試験モード(&T)..."
+
+msgid "A group…"
+msgstr "グループを選択…"
+
+msgid "A student…"
+msgstr "生徒を選択…"
+
+msgid "Accounts"
+msgstr "アカウント"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "アカウントとグループはサーバーのウェブページで管理します。"
+
+msgid "Add many"
+msgstr "まとめて追加"
+
+msgid "Add these accounts"
+msgstr "これらのアカウントを追加"
+
+msgid "Admin"
+msgstr "管理者"
+
+msgid "Back to the test"
+msgstr "テストに戻る"
+
+msgid "Close for handing in"
+msgstr "提出を締め切る"
+
+msgid "Closed"
+msgstr "締め切り"
+
+msgid "Count as right"
+msgstr "正解として数える"
+
+msgid "Count as wrong"
+msgstr "不正解として数える"
+
+msgid "Delete the group"
+msgstr "グループを削除"
+
+msgid "Delete the test"
+msgstr "テストを削除"
+
+msgid "Fill in the server, your name and your password."
+msgstr "サーバー、名前、パスワードを入力してください。"
+
+msgid "Given"
+msgstr "生徒の答え"
+
+msgid "Given to"
+msgstr "出題先"
+
+msgid "Group %s"
+msgstr "グループ %s"
+
+msgid "Group name"
+msgstr "グループ名"
+
+msgid "Groups"
+msgstr "グループ"
+
+msgid "Hand in"
+msgstr "提出"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "提出しますか？提出後は答えを変更できません。"
+
+msgid "Handed in"
+msgstr "提出済み"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "提出しました。先生が答えをチェックします。"
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "これはテストサーバーの証明書ですか？フィンガープリントを、サーバーに表示されているものと比べてください（先生に聞いてください）：\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "ログイン"
+
+msgid "Log in to a test server"
+msgstr "テストサーバーにログイン"
+
+msgid "Log out"
+msgstr "ログアウト"
+
+msgid "New group"
+msgstr "新しいグループ"
+
+msgid "New test"
+msgstr "新しいテスト"
+
+msgid "New test of a lesson file…"
+msgstr "レッスンファイルから新しいテスト…"
+
+msgid "New test of the open lesson"
+msgstr "開いているレッスンから新しいテスト"
+
+msgid "New test server"
+msgstr "新しいテストサーバー"
+
+msgid "No one has handed in yet."
+msgstr "まだ誰も提出していません。"
+
+msgid "No one yet."
+msgstr "まだ誰もいません。"
+
+msgid "No tests for you yet."
+msgstr "あなたのテストはまだありません。"
+
+msgid "No tests yet."
+msgstr "テストはまだありません。"
+
+msgid "Not added: %s"
+msgstr "追加されませんでした：%s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "接続していません：証明書が確認されませんでした。"
+
+msgid "Not handed in yet: %s"
+msgstr "未提出：%s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "1 行に 1 アカウント：名前、パスワード、（生徒でない場合は）役割をコンマで区切って入力します。"
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "先に Recuerdo で単語レッスンを開いてください。"
+
+msgid "Open for handing in"
+msgstr "提出を受け付ける"
+
+msgid "Open the test"
+msgstr "テストを開く"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Publish all results"
+msgstr "すべての結果を公開"
+
+msgid "Publish this result"
+msgstr "この結果を公開"
+
+msgid "Published"
+msgstr "公開済み"
+
+msgid "Published: the students can see their results."
+msgstr "公開しました：生徒は自分の結果を見られます。"
+
+msgid "Refresh"
+msgstr "更新"
+
+msgid "Remove %s"
+msgstr "%s を削除"
+
+msgid "Result ready"
+msgstr "結果あり"
+
+msgid "Right (your teacher's decision)"
+msgstr "正解（先生の判断）"
+
+msgid "Right answers"
+msgstr "正しい答え"
+
+msgid "Role"
+msgstr "役割"
+
+msgid "Role…"
+msgstr "役割…"
+
+msgid "Score"
+msgstr "スコア"
+
+msgid "See the result"
+msgstr "結果を見る"
+
+msgid "Server"
+msgstr "サーバー"
+
+msgid "Status"
+msgstr "状態"
+
+msgid "Student"
+msgstr "生徒"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "テストサーバーでテストを受けたり、先生としてテストを出したりします"
+
+msgid "Take the test"
+msgstr "テストを受ける"
+
+msgid "Take the tests your teacher gave you."
+msgstr "先生が出したテストを受けましょう。"
+
+msgid "Teacher"
+msgstr "先生"
+
+msgid "Test"
+msgstr "テスト"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "テストを作成しました：%s。生徒やグループに出題してください。"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "テストにはレッスンの単語が使われます。生徒には質問だけが表示され、答えは表示されません。"
+
+msgid "To do"
+msgstr "未受験"
+
+msgid "Wrong name or password."
+msgstr "名前またはパスワードが違います。"
+
+msgid "Yes, delete %s"
+msgstr "はい、%s を削除します"
+
+msgid "Yes, delete it with its results"
+msgstr "はい、結果ごと削除します"
+
+msgid "Yes, hand in"
+msgstr "はい、提出します"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "サーバーのアドレスは先生から教えてもらえます。生徒は同じアドレスでウェブブラウザからもテストを受けられます。"
+
+msgid "Your tests"
+msgstr "あなたのテスト"

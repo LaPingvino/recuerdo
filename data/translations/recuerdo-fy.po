@@ -809,3 +809,238 @@ msgstr "Ik hie 't fout"
 # corrects OpenTeacher's fy.po for 'Pronounce words': typo
 msgid "Pronounce questions"
 msgstr "Wurden útsprekke"
+
+# test mode
+msgid "%d accounts added."
+msgstr "%d akkounts tafoege."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "%d fragen hawwe gjin antwurd. Dochs ynleverje? Jo kinne jo antwurden dêrnei net mear feroarje."
+
+msgid "%d words"
+msgstr "%d wurden"
+
+msgid "&Test Mode..."
+msgstr "&Toetsmodus..."
+
+msgid "A group…"
+msgstr "In groep…"
+
+msgid "A student…"
+msgstr "In learling…"
+
+msgid "Accounts"
+msgstr "Akkounts"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Akkounts en groepen wurde beheard op de webside fan de tsjinner."
+
+msgid "Add many"
+msgstr "Mear tagelyk tafoegje"
+
+msgid "Add these accounts"
+msgstr "Dizze akkounts tafoegje"
+
+msgid "Admin"
+msgstr "Behearder"
+
+msgid "Back to the test"
+msgstr "Werom nei de toets"
+
+msgid "Close for handing in"
+msgstr "Slute foar ynleverjen"
+
+msgid "Closed"
+msgstr "Sletten"
+
+msgid "Count as right"
+msgstr "As goed rekkenje"
+
+msgid "Count as wrong"
+msgstr "As fout rekkenje"
+
+msgid "Delete the group"
+msgstr "De groep wiskje"
+
+msgid "Delete the test"
+msgstr "De toets wiskje"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Folje de tsjinner, jo namme en jo wachtwurd yn."
+
+msgid "Given"
+msgstr "Jûn"
+
+msgid "Given to"
+msgstr "Jûn oan"
+
+msgid "Group %s"
+msgstr "Groep %s"
+
+msgid "Group name"
+msgstr "Namme fan de groep"
+
+msgid "Groups"
+msgstr "Groepen"
+
+msgid "Hand in"
+msgstr "Ynleverje"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Ynleverje? Jo kinne jo antwurden dêrnei net mear feroarje."
+
+msgid "Handed in"
+msgstr "Ynleverd"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Ynleverd. Jo learaar sil jo antwurden kontrolearje."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Is dit it sertifikaat fan de toetstsjinner? Fergelykje de fingerôfdruk mei dy dy't de tsjinner sjen lit (freegje it jo learaar):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Oanmelde"
+
+msgid "Log in to a test server"
+msgstr "Oanmelde by in toetstsjinner"
+
+msgid "Log out"
+msgstr "Ofmelde"
+
+msgid "New group"
+msgstr "Nije groep"
+
+msgid "New test"
+msgstr "Nije toets"
+
+msgid "New test of a lesson file…"
+msgstr "Nije toets fan in lesbestân…"
+
+msgid "New test of the open lesson"
+msgstr "Nije toets fan de iepen les"
+
+msgid "New test server"
+msgstr "Nije toetstsjinner"
+
+msgid "No one has handed in yet."
+msgstr "Noch nimmen hat ynlevere."
+
+msgid "No one yet."
+msgstr "Noch nimmen."
+
+msgid "No tests for you yet."
+msgstr "Noch gjin toetsen foar jo."
+
+msgid "No tests yet."
+msgstr "Noch gjin toetsen."
+
+msgid "Not added: %s"
+msgstr "Net tafoege: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Net ferbûn: it sertifikaat is net befêstige."
+
+msgid "Not handed in yet: %s"
+msgstr "Noch net ynlevere: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Ien akkount per rigel: namme, wachtwurd en (as it gjin learling is) de rol, skieden troch komma's."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Iepenje earst in wurdles yn Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Iepenje foar ynleverjen"
+
+msgid "Open the test"
+msgstr "De toets iepenje"
+
+msgid "Password"
+msgstr "Wachtwurd"
+
+msgid "Publish all results"
+msgstr "Alle resultaten publisearje"
+
+msgid "Publish this result"
+msgstr "Dit resultaat publisearje"
+
+msgid "Published"
+msgstr "Publisearre"
+
+msgid "Published: the students can see their results."
+msgstr "Publisearre: de learlingen kinne harren resultaten sjen."
+
+msgid "Refresh"
+msgstr "Ferfarskje"
+
+msgid "Remove %s"
+msgstr "%s fuortsmite"
+
+msgid "Result ready"
+msgstr "Resultaat klear"
+
+msgid "Right (your teacher's decision)"
+msgstr "Goed (beslút fan jo learaar)"
+
+msgid "Right answers"
+msgstr "Goede antwurden"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Role…"
+msgstr "Rol…"
+
+msgid "Score"
+msgstr "Skoare"
+
+msgid "See the result"
+msgstr "It resultaat besjen"
+
+msgid "Server"
+msgstr "Tsjinner"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Student"
+msgstr "Learling"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Toetsen meitsje fan in toetstsjinner, of se as learaar jaan"
+
+msgid "Take the test"
+msgstr "De toets meitsje"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Meitsje de toetsen dy't jo learaar jo jûn hat."
+
+msgid "Teacher"
+msgstr "Learaar"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Toets makke: %s. Jou him no oan learlingen of groepen."
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "De toets kriget de wurden fan de les; learlingen sjogge de fragen, nea de antwurden."
+
+msgid "To do"
+msgstr "Noch te dwaan"
+
+msgid "Wrong name or password."
+msgstr "Ferkearde namme of wachtwurd."
+
+msgid "Yes, delete %s"
+msgstr "Ja, %s wiskje"
+
+msgid "Yes, delete it with its results"
+msgstr "Ja, wiskje him mei syn resultaten"
+
+msgid "Yes, hand in"
+msgstr "Ja, ynleverje"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Jo learaar fertelt jo it adres fan de tsjinner. Learlingen kinne ek toetsen meitsje yn in webbrowser, op itselde adres."
+
+msgid "Your tests"
+msgstr "Jo toetsen"

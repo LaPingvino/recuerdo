@@ -866,3 +866,244 @@ msgstr "පරීක්ෂා කරන්න!"
 # corrects OpenTeacher's si.po for '&Edit': "සකසන්න" (arrange)
 msgid "&Edit"
 msgstr "සංස්කරණය (&E)"
+
+# test mode
+msgid "%d accounts added."
+msgstr "එක් කළ ගිණුම්: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "පිළිතුරු නැති ප්‍රශ්න: %d. කෙසේ වෙතත් භාර දෙන්නද? පසුව ඔබට පිළිතුරු වෙනස් කළ නොහැක."
+
+msgid "%d words"
+msgstr "වචන %d"
+
+msgid "&Test Mode..."
+msgstr "පරීක්ෂණ ප්‍රකාරය (&T)..."
+
+msgid "A group…"
+msgstr "කණ්ඩායමක්…"
+
+msgid "A student…"
+msgstr "ශිෂ්‍යයෙක්…"
+
+msgid "Accounts"
+msgstr "ගිණුම්"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "ගිණුම් සහ කණ්ඩායම් කළමනාකරණය කරන්නේ සේවාදායකයේ වෙබ් පිටුවෙනි."
+
+msgid "Add many"
+msgstr "කිහිපයක් එකවර එක් කරන්න"
+
+msgid "Add these accounts"
+msgstr "මෙම ගිණුම් එක් කරන්න"
+
+msgid "Admin"
+msgstr "පරිපාලක"
+
+msgid "Back to the test"
+msgstr "පරීක්ෂණයට ආපසු"
+
+msgid "Close for handing in"
+msgstr "භාර දීම වසන්න"
+
+msgid "Closed"
+msgstr "වසා ඇත"
+
+msgid "Count as right"
+msgstr "හරි ලෙස ගණන් කරන්න"
+
+msgid "Count as wrong"
+msgstr "වැරදි ලෙස ගණන් කරන්න"
+
+msgid "Delete the group"
+msgstr "කණ්ඩායම මකන්න"
+
+msgid "Delete the test"
+msgstr "පරීක්ෂණය මකන්න"
+
+msgid "Fill in the server, your name and your password."
+msgstr "සේවාදායකය, ඔබගේ නම සහ මුරපදය ඇතුළත් කරන්න."
+
+msgid "Given"
+msgstr "දී ඇති පිළිතුර"
+
+msgid "Given to"
+msgstr "ලබා දුන්නේ"
+
+msgid "Group %s"
+msgstr "කණ්ඩායම %s"
+
+msgid "Group name"
+msgstr "කණ්ඩායමේ නම"
+
+msgid "Groups"
+msgstr "කණ්ඩායම්"
+
+msgid "Hand in"
+msgstr "භාර දෙන්න"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "භාර දෙන්නද? පසුව ඔබට පිළිතුරු වෙනස් කළ නොහැක."
+
+msgid "Handed in"
+msgstr "භාර දී ඇත"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "භාර දෙන ලදී. ඔබගේ ගුරුවරයා ඔබගේ පිළිතුරු පරීක්ෂා කරනු ඇත."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "මෙය පරීක්ෂණ සේවාදායකයේ සහතිකයද? එහි ඇඟිලි සලකුණ සේවාදායකය පෙන්වන ඇඟිලි සලකුණ සමඟ සසඳන්න (ඔබගේ ගුරුවරයාගෙන් අසන්න):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "පිවිසෙන්න"
+
+msgid "Log in to a test server"
+msgstr "පරීක්ෂණ සේවාදායකයකට පිවිසෙන්න"
+
+msgid "Log out"
+msgstr "ඉවත් වන්න"
+
+msgid "New group"
+msgstr "නව කණ්ඩායම"
+
+msgid "New test"
+msgstr "නව පරීක්ෂණය"
+
+msgid "New test of a lesson file…"
+msgstr "පාඩම් ගොනුවකින් නව පරීක්ෂණයක්…"
+
+msgid "New test of the open lesson"
+msgstr "විවෘත පාඩමෙන් නව පරීක්ෂණයක්"
+
+msgid "New test server"
+msgstr "නව පරීක්ෂණ සේවාදායකය"
+
+msgid "No one has handed in yet."
+msgstr "තවම කිසිවෙකු භාර දී නැත."
+
+msgid "No one yet."
+msgstr "තවම කිසිවෙකු නැත."
+
+msgid "No tests for you yet."
+msgstr "ඔබට තවම පරීක්ෂණ නැත."
+
+msgid "No tests yet."
+msgstr "තවම පරීක්ෂණ නැත."
+
+msgid "Not added: %s"
+msgstr "එක් නොකළ: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "සම්බන්ධ නොවීය: සහතිකය තහවුරු නොකෙරිණි."
+
+msgid "Not handed in yet: %s"
+msgstr "තවම භාර නොදුන්: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "පේළියකට එක් ගිණුමක්: නම, මුරපදය සහ (ශිෂ්‍යයෙකු නොවේ නම්) භූමිකාව, කොමා වලින් වෙන් කර."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "පළමුව Recuerdo හි වචන පාඩමක් විවෘත කරන්න."
+
+msgid "Open for handing in"
+msgstr "භාර දීම සඳහා විවෘත කරන්න"
+
+msgid "Open the test"
+msgstr "පරීක්ෂණය විවෘත කරන්න"
+
+msgid "Password"
+msgstr "මුරපදය"
+
+msgid "Publish all results"
+msgstr "සියලු ප්‍රතිඵල ප්‍රකාශ කරන්න"
+
+msgid "Publish this result"
+msgstr "මෙම ප්‍රතිඵලය ප්‍රකාශ කරන්න"
+
+msgid "Published"
+msgstr "ප්‍රකාශිත"
+
+msgid "Published: the students can see their results."
+msgstr "ප්‍රකාශ කරන ලදී: සිසුන්ට තම ප්‍රතිඵල දැකිය හැක."
+
+msgid "Refresh"
+msgstr "නැවුම් කරන්න"
+
+msgid "Remove %s"
+msgstr "%s ඉවත් කරන්න"
+
+msgid "Result ready"
+msgstr "ප්‍රතිඵලය සූදානම්"
+
+msgid "Right (your teacher's decision)"
+msgstr "හරි (ඔබගේ ගුරුවරයාගේ තීරණය)"
+
+msgid "Right answers"
+msgstr "හරි පිළිතුරු"
+
+msgid "Role"
+msgstr "භූමිකාව"
+
+msgid "Role…"
+msgstr "භූමිකාව…"
+
+msgid "Score"
+msgstr "ලකුණු"
+
+msgid "See the result"
+msgstr "ප්‍රතිඵලය බලන්න"
+
+msgid "Server"
+msgstr "සේවාදායකය"
+
+msgid "Status"
+msgstr "තත්ත්වය"
+
+msgid "Student"
+msgstr "ශිෂ්‍යයා"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "පරීක්ෂණ සේවාදායකයකින් පරීක්ෂණවලට මුහුණ දෙන්න, නැතහොත් ගුරුවරයෙකු ලෙස ඒවා ලබා දෙන්න"
+
+msgid "Take the test"
+msgstr "පරීක්ෂණයට මුහුණ දෙන්න"
+
+msgid "Take the tests your teacher gave you."
+msgstr "ඔබගේ ගුරුවරයා ඔබට දුන් පරීක්ෂණවලට මුහුණ දෙන්න."
+
+msgid "Teacher"
+msgstr "ගුරුවරයා"
+
+msgid "Test"
+msgstr "පරීක්ෂණය"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "පරීක්ෂණය සාදන ලදී: %s. දැන් එය සිසුන්ට හෝ කණ්ඩායම්වලට ලබා දෙන්න."
+
+msgid "Test mode"
+msgstr "පරීක්ෂණ ප්‍රකාරය"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "පරීක්ෂණයට පාඩමේ වචන ලැබේ; සිසුන්ට ප්‍රශ්න පෙනේ, පිළිතුරු කිසිදා නොපෙනේ."
+
+msgid "To do"
+msgstr "කිරීමට ඇත"
+
+msgid "Wrong name or password."
+msgstr "නම හෝ මුරපදය වැරදියි."
+
+msgid "Yes, delete %s"
+msgstr "ඔව්, %s මකන්න"
+
+msgid "Yes, delete it with its results"
+msgstr "ඔව්, එහි ප්‍රතිඵල සමඟම මකන්න"
+
+msgid "Yes, hand in"
+msgstr "ඔව්, භාර දෙන්න"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "සේවාදායකයේ ලිපිනය ඔබගේ ගුරුවරයා ඔබට කියනු ඇත. සිසුන්ට එම ලිපිනයෙන්ම වෙබ් බ්‍රව්සරයකින්ද පරීක්ෂණවලට මුහුණ දිය හැක."
+
+msgid "Your tests"
+msgstr "ඔබගේ පරීක්ෂණ"

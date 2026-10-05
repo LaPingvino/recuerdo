@@ -889,3 +889,247 @@ msgstr "Gred"
 # corrects OpenTeacher's ms.po for 'Correct anyway': literary "Betul jua"
 msgid "Correct anyway"
 msgstr "Kira sebagai betul"
+
+# test mode
+msgid "%d accounts added."
+msgstr "%d akaun ditambah."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "%d soalan tiada jawapan. Hantar juga? Anda tidak boleh mengubah jawapan anda selepas itu."
+
+msgid "%d words"
+msgstr "%d perkataan"
+
+msgid "&Test Mode..."
+msgstr "Mod &Ujian..."
+
+msgid "A group…"
+msgstr "Satu kumpulan…"
+
+msgid "A student…"
+msgstr "Seorang pelajar…"
+
+msgid "Accounts"
+msgstr "Akaun"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Akaun dan kumpulan diurus di laman web pelayan."
+
+msgid "Add many"
+msgstr "Tambah banyak sekali gus"
+
+msgid "Add these accounts"
+msgstr "Tambah akaun ini"
+
+msgid "Admin"
+msgstr "Pentadbir"
+
+msgid "Back"
+msgstr "Kembali"
+
+msgid "Back to the test"
+msgstr "Kembali ke ujian"
+
+msgid "Close for handing in"
+msgstr "Tutup penghantaran"
+
+msgid "Closed"
+msgstr "Ditutup"
+
+msgid "Count as right"
+msgstr "Kira sebagai betul"
+
+msgid "Count as wrong"
+msgstr "Kira sebagai salah"
+
+msgid "Delete the group"
+msgstr "Padam kumpulan"
+
+msgid "Delete the test"
+msgstr "Padam ujian"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Isikan pelayan, nama anda dan kata laluan anda."
+
+msgid "Given"
+msgstr "Diberi"
+
+msgid "Given to"
+msgstr "Diberikan kepada"
+
+msgid "Group %s"
+msgstr "Kumpulan %s"
+
+msgid "Group name"
+msgstr "Nama kumpulan"
+
+msgid "Groups"
+msgstr "Kumpulan"
+
+msgid "Hand in"
+msgstr "Hantar"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Hantar? Anda tidak boleh mengubah jawapan anda selepas itu."
+
+msgid "Handed in"
+msgstr "Dihantar"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Dihantar. Guru anda akan menyemak jawapan anda."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Adakah ini sijil pelayan ujian? Bandingkan cap jarinya dengan yang dipaparkan oleh pelayan (tanya guru anda):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Log masuk"
+
+msgid "Log in to a test server"
+msgstr "Log masuk ke pelayan ujian"
+
+msgid "Log out"
+msgstr "Log keluar"
+
+msgid "New group"
+msgstr "Kumpulan baharu"
+
+msgid "New test"
+msgstr "Ujian baharu"
+
+msgid "New test of a lesson file…"
+msgstr "Ujian baharu daripada fail pelajaran…"
+
+msgid "New test of the open lesson"
+msgstr "Ujian baharu daripada pelajaran yang dibuka"
+
+msgid "New test server"
+msgstr "Pelayan ujian baharu"
+
+msgid "No one has handed in yet."
+msgstr "Belum ada sesiapa yang menghantar."
+
+msgid "No one yet."
+msgstr "Belum ada sesiapa."
+
+msgid "No tests for you yet."
+msgstr "Belum ada ujian untuk anda."
+
+msgid "No tests yet."
+msgstr "Belum ada ujian."
+
+msgid "Not added: %s"
+msgstr "Tidak ditambah: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Tidak bersambung: sijil tidak disahkan."
+
+msgid "Not handed in yet: %s"
+msgstr "Belum menghantar: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Satu akaun setiap baris: nama, kata laluan dan (jika bukan pelajar) peranan, dipisahkan dengan koma."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Buka pelajaran perkataan dalam Recuerdo dahulu."
+
+msgid "Open for handing in"
+msgstr "Buka untuk penghantaran"
+
+msgid "Open the test"
+msgstr "Buka ujian"
+
+msgid "Password"
+msgstr "Kata laluan"
+
+msgid "Publish all results"
+msgstr "Terbitkan semua keputusan"
+
+msgid "Publish this result"
+msgstr "Terbitkan keputusan ini"
+
+msgid "Published"
+msgstr "Diterbitkan"
+
+msgid "Published: the students can see their results."
+msgstr "Diterbitkan: pelajar boleh melihat keputusan mereka."
+
+msgid "Refresh"
+msgstr "Muat semula"
+
+msgid "Remove %s"
+msgstr "Buang %s"
+
+msgid "Result ready"
+msgstr "Keputusan sedia"
+
+msgid "Right (your teacher's decision)"
+msgstr "Betul (keputusan guru anda)"
+
+msgid "Right answers"
+msgstr "Jawapan betul"
+
+msgid "Role"
+msgstr "Peranan"
+
+msgid "Role…"
+msgstr "Peranan…"
+
+msgid "Score"
+msgstr "Markah"
+
+msgid "See the result"
+msgstr "Lihat keputusan"
+
+msgid "Server"
+msgstr "Pelayan"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Student"
+msgstr "Pelajar"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Ambil ujian daripada pelayan ujian, atau berikan ujian sebagai guru"
+
+msgid "Take the test"
+msgstr "Ambil ujian"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Ambil ujian yang diberikan oleh guru anda."
+
+msgid "Teacher"
+msgstr "Guru"
+
+msgid "Test"
+msgstr "Ujian"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Ujian dibuat: %s. Sekarang berikan kepada pelajar atau kumpulan."
+
+msgid "Test mode"
+msgstr "Mod ujian"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Ujian mengambil perkataan pelajaran; pelajar melihat soalan, tidak pernah jawapan."
+
+msgid "To do"
+msgstr "Belum dibuat"
+
+msgid "Wrong name or password."
+msgstr "Nama atau kata laluan salah."
+
+msgid "Yes, delete %s"
+msgstr "Ya, padam %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Ya, padam bersama keputusannya"
+
+msgid "Yes, hand in"
+msgstr "Ya, hantar"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Guru anda akan memberitahu alamat pelayan. Pelajar juga boleh mengambil ujian dalam pelayar web, di alamat yang sama."
+
+msgid "Your tests"
+msgstr "Ujian anda"

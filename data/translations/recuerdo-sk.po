@@ -860,3 +860,247 @@ msgstr "Otázky"
 # corrects OpenTeacher's sk.po: Czech "&Nápoveda"
 msgid "&Help"
 msgstr "&Pomocník"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Pridaných účtov: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Otázok bez odpovede: %d. Odovzdať aj tak? Odpovede potom už nebudeš môcť zmeniť."
+
+msgid "%d words"
+msgstr "slov: %d"
+
+msgid "&Test Mode..."
+msgstr "&Testovací režim..."
+
+msgid "A group…"
+msgstr "Skupina…"
+
+msgid "A student…"
+msgstr "Žiak…"
+
+msgid "Accounts"
+msgstr "Účty"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Účty a skupiny sa spravujú na webovej stránke servera."
+
+msgid "Add many"
+msgstr "Pridať viac naraz"
+
+msgid "Add these accounts"
+msgstr "Pridať tieto účty"
+
+msgid "Admin"
+msgstr "Správca"
+
+msgid "Back"
+msgstr "Späť"
+
+msgid "Back to the test"
+msgstr "Späť k testu"
+
+msgid "Close for handing in"
+msgstr "Uzavrieť odovzdávanie"
+
+msgid "Closed"
+msgstr "Uzavretý"
+
+msgid "Count as right"
+msgstr "Uznať za správnu"
+
+msgid "Count as wrong"
+msgstr "Uznať za nesprávnu"
+
+msgid "Delete the group"
+msgstr "Vymazať skupinu"
+
+msgid "Delete the test"
+msgstr "Vymazať test"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Vyplň server, svoje meno a heslo."
+
+msgid "Given"
+msgstr "Odpoveď žiaka"
+
+msgid "Given to"
+msgstr "Zadané"
+
+msgid "Group %s"
+msgstr "Skupina %s"
+
+msgid "Group name"
+msgstr "Názov skupiny"
+
+msgid "Groups"
+msgstr "Skupiny"
+
+msgid "Hand in"
+msgstr "Odovzdať"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Odovzdať? Odpovede potom už nebudeš môcť zmeniť."
+
+msgid "Handed in"
+msgstr "Odovzdané"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Odovzdané. Učiteľ skontroluje tvoje odpovede."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Je toto certifikát testovacieho servera? Porovnaj jeho odtlačok s tým, ktorý ukazuje server (opýtaj sa učiteľa):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Prihlásiť sa"
+
+msgid "Log in to a test server"
+msgstr "Prihlásenie na testovací server"
+
+msgid "Log out"
+msgstr "Odhlásiť sa"
+
+msgid "New group"
+msgstr "Nová skupina"
+
+msgid "New test"
+msgstr "Nový test"
+
+msgid "New test of a lesson file…"
+msgstr "Nový test zo súboru lekcie…"
+
+msgid "New test of the open lesson"
+msgstr "Nový test z otvorenej lekcie"
+
+msgid "New test server"
+msgstr "Nový testovací server"
+
+msgid "No one has handed in yet."
+msgstr "Zatiaľ nikto neodovzdal."
+
+msgid "No one yet."
+msgstr "Zatiaľ nikto."
+
+msgid "No tests for you yet."
+msgstr "Zatiaľ pre teba nie sú žiadne testy."
+
+msgid "No tests yet."
+msgstr "Zatiaľ žiadne testy."
+
+msgid "Not added: %s"
+msgstr "Nepridané: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Nepripojené: certifikát nebol potvrdený."
+
+msgid "Not handed in yet: %s"
+msgstr "Ešte neodovzdali: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Jeden účet na riadok: meno, heslo a (ak to nie je žiak) rola, oddelené čiarkami."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Najprv otvor v Recuerdo lekciu slov."
+
+msgid "Open for handing in"
+msgstr "Otvoriť odovzdávanie"
+
+msgid "Open the test"
+msgstr "Otvoriť test"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Publish all results"
+msgstr "Zverejniť všetky výsledky"
+
+msgid "Publish this result"
+msgstr "Zverejniť tento výsledok"
+
+msgid "Published"
+msgstr "Zverejnené"
+
+msgid "Published: the students can see their results."
+msgstr "Zverejnené: žiaci vidia svoje výsledky."
+
+msgid "Refresh"
+msgstr "Obnoviť"
+
+msgid "Remove %s"
+msgstr "Odstrániť %s"
+
+msgid "Result ready"
+msgstr "Výsledok je hotový"
+
+msgid "Right (your teacher's decision)"
+msgstr "Správne (rozhodnutie učiteľa)"
+
+msgid "Right answers"
+msgstr "Správne odpovede"
+
+msgid "Role"
+msgstr "Rola"
+
+msgid "Role…"
+msgstr "Rola…"
+
+msgid "Score"
+msgstr "Skóre"
+
+msgid "See the result"
+msgstr "Zobraziť výsledok"
+
+msgid "Server"
+msgstr "Server"
+
+msgid "Status"
+msgstr "Stav"
+
+msgid "Student"
+msgstr "Žiak"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Písať testy z testovacieho servera alebo ich ako učiteľ zadávať"
+
+msgid "Take the test"
+msgstr "Písať test"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Napíš testy, ktoré ti zadal učiteľ."
+
+msgid "Teacher"
+msgstr "Učiteľ"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Test vytvorený: %s. Teraz ho zadaj žiakom alebo skupinám."
+
+msgid "Test mode"
+msgstr "Testovací režim"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Test dostane slová z lekcie; žiaci vidia otázky, nikdy nie odpovede."
+
+msgid "To do"
+msgstr "Treba napísať"
+
+msgid "Wrong name or password."
+msgstr "Nesprávne meno alebo heslo."
+
+msgid "Yes, delete %s"
+msgstr "Áno, vymazať %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Áno, vymazať aj s výsledkami"
+
+msgid "Yes, hand in"
+msgstr "Áno, odovzdať"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Adresu servera ti povie učiteľ. Žiaci môžu písať testy aj vo webovom prehliadači na tej istej adrese."
+
+msgid "Your tests"
+msgstr "Tvoje testy"

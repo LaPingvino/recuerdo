@@ -935,3 +935,247 @@ msgstr "✘ То је било %s"
 
 msgid "✘ The answer was: %s"
 msgstr "✘ Одговор је био: %s"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Додато налога: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Питања без одговора: %d. Ипак предати? Касније не можеш да мењаш одговоре."
+
+msgid "%d words"
+msgstr "речи: %d"
+
+msgid "&Test Mode..."
+msgstr "&Режим тестирања..."
+
+msgid "A group…"
+msgstr "Група…"
+
+msgid "A student…"
+msgstr "Ученик…"
+
+msgid "Accounts"
+msgstr "Налози"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Налозима и групама се управља на веб-страници сервера."
+
+msgid "Add many"
+msgstr "Додај више одједном"
+
+msgid "Add these accounts"
+msgstr "Додај ове налоге"
+
+msgid "Admin"
+msgstr "Администратор"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Back to the test"
+msgstr "Назад на тест"
+
+msgid "Close for handing in"
+msgstr "Затвори предају"
+
+msgid "Closed"
+msgstr "Затворен"
+
+msgid "Count as right"
+msgstr "Рачунај као тачан"
+
+msgid "Count as wrong"
+msgstr "Рачунај као погрешан"
+
+msgid "Delete the group"
+msgstr "Обриши групу"
+
+msgid "Delete the test"
+msgstr "Обриши тест"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Унеси сервер, своје име и лозинку."
+
+msgid "Given"
+msgstr "Одговор ученика"
+
+msgid "Given to"
+msgstr "Додељено"
+
+msgid "Group %s"
+msgstr "Група %s"
+
+msgid "Group name"
+msgstr "Назив групе"
+
+msgid "Groups"
+msgstr "Групе"
+
+msgid "Hand in"
+msgstr "Предај"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Предати? Касније не можеш да мењаш одговоре."
+
+msgid "Handed in"
+msgstr "Предато"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Предато. Наставник ће прегледати твоје одговоре."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Да ли је ово сертификат сервера за тестове? Упореди његов отисак са оним који приказује сервер (питај наставника):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Пријави се"
+
+msgid "Log in to a test server"
+msgstr "Пријава на сервер за тестове"
+
+msgid "Log out"
+msgstr "Одјави се"
+
+msgid "New group"
+msgstr "Нова група"
+
+msgid "New test"
+msgstr "Нови тест"
+
+msgid "New test of a lesson file…"
+msgstr "Нови тест из датотеке лекције…"
+
+msgid "New test of the open lesson"
+msgstr "Нови тест из отворене лекције"
+
+msgid "New test server"
+msgstr "Нови сервер за тестове"
+
+msgid "No one has handed in yet."
+msgstr "Још нико није предао."
+
+msgid "No one yet."
+msgstr "Још нико."
+
+msgid "No tests for you yet."
+msgstr "Још немаш тестова."
+
+msgid "No tests yet."
+msgstr "Још нема тестова."
+
+msgid "Not added: %s"
+msgstr "Није додато: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Није повезано: сертификат није потврђен."
+
+msgid "Not handed in yet: %s"
+msgstr "Још нису предали: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Један налог по реду: име, лозинка и (ако није ученик) улога, раздвојени зарезима."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Прво отвори лекцију речи у Recuerdo-у."
+
+msgid "Open for handing in"
+msgstr "Отвори предају"
+
+msgid "Open the test"
+msgstr "Отвори тест"
+
+msgid "Password"
+msgstr "Лозинка"
+
+msgid "Publish all results"
+msgstr "Објави све резултате"
+
+msgid "Publish this result"
+msgstr "Објави овај резултат"
+
+msgid "Published"
+msgstr "Објављено"
+
+msgid "Published: the students can see their results."
+msgstr "Објављено: ученици виде своје резултате."
+
+msgid "Refresh"
+msgstr "Освежи"
+
+msgid "Remove %s"
+msgstr "Уклони %s"
+
+msgid "Result ready"
+msgstr "Резултат је спреман"
+
+msgid "Right (your teacher's decision)"
+msgstr "Тачно (одлука наставника)"
+
+msgid "Right answers"
+msgstr "Тачни одговори"
+
+msgid "Role"
+msgstr "Улога"
+
+msgid "Role…"
+msgstr "Улога…"
+
+msgid "Score"
+msgstr "Бодови"
+
+msgid "See the result"
+msgstr "Погледај резултат"
+
+msgid "Server"
+msgstr "Сервер"
+
+msgid "Status"
+msgstr "Стање"
+
+msgid "Student"
+msgstr "Ученик"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Ради тестове са сервера за тестове или их као наставник додељуј"
+
+msgid "Take the test"
+msgstr "Ради тест"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Уради тестове које ти је доделио наставник."
+
+msgid "Teacher"
+msgstr "Наставник"
+
+msgid "Test"
+msgstr "Тест"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Тест је направљен: %s. Сада га додели ученицима или групама."
+
+msgid "Test mode"
+msgstr "Режим тестирања"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Тест добија речи из лекције; ученици виде питања, никада одговоре."
+
+msgid "To do"
+msgstr "За урадити"
+
+msgid "Wrong name or password."
+msgstr "Погрешно име или лозинка."
+
+msgid "Yes, delete %s"
+msgstr "Да, обриши %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Да, обриши га са резултатима"
+
+msgid "Yes, hand in"
+msgstr "Да, предај"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Адресу сервера ти даје наставник. Ученици могу да раде тестове и у веб-прегледачу, на истој адреси."
+
+msgid "Your tests"
+msgstr "Твоји тестови"

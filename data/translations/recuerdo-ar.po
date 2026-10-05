@@ -871,3 +871,245 @@ msgstr "العنوان:"
 # corrects OpenTeacher's ar.po for 'View answer': presentation-form ligature
 msgid "View answer"
 msgstr "معرفة الإجابة"
+
+# test mode
+msgid "%d accounts added."
+msgstr "الحسابات المضافة: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "أسئلة بلا جواب: %d. هل تريد التسليم على أي حال؟ لا يمكنك تغيير أجوبتك بعد ذلك."
+
+msgid "%d words"
+msgstr "الكلمات: %d"
+
+msgid "&Test Mode..."
+msgstr "&وضع الاختبار..."
+
+msgid "A group…"
+msgstr "اختر مجموعة…"
+
+msgid "A student…"
+msgstr "اختر طالبًا…"
+
+msgid "Accounts"
+msgstr "الحسابات"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "تُدار الحسابات والمجموعات من صفحة الويب الخاصة بالخادم."
+
+msgid "Add many"
+msgstr "إضافة عدة حسابات"
+
+msgid "Add these accounts"
+msgstr "إضافة هذه الحسابات"
+
+msgid "Admin"
+msgstr "مدير"
+
+msgid "Back to the test"
+msgstr "العودة إلى الاختبار"
+
+msgid "Close for handing in"
+msgstr "إغلاق التسليم"
+
+msgid "Closed"
+msgstr "مغلق"
+
+msgid "Count as right"
+msgstr "احتسابه صحيحًا"
+
+msgid "Count as wrong"
+msgstr "احتسابه خطأ"
+
+msgid "Delete the group"
+msgstr "حذف المجموعة"
+
+msgid "Delete the test"
+msgstr "حذف الاختبار"
+
+msgid "Fill in the server, your name and your password."
+msgstr "أدخل الخادم واسمك وكلمة المرور."
+
+msgid "Given"
+msgstr "الجواب المُعطى"
+
+msgid "Given to"
+msgstr "أُعطي إلى"
+
+msgid "Group %s"
+msgstr "المجموعة %s"
+
+msgid "Group name"
+msgstr "اسم المجموعة"
+
+msgid "Groups"
+msgstr "المجموعات"
+
+msgid "Hand in"
+msgstr "تسليم"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "هل تريد التسليم؟ لا يمكنك تغيير أجوبتك بعد ذلك."
+
+msgid "Handed in"
+msgstr "سُلِّم"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "سُلِّم. سيتحقّق معلّمك من أجوبتك."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "هل هذه شهادة خادم الاختبارات؟ قارن بصمتها بالبصمة التي يعرضها الخادم (اسأل معلّمك):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+msgid "Log in to a test server"
+msgstr "تسجيل الدخول إلى خادم اختبارات"
+
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+msgid "New group"
+msgstr "مجموعة جديدة"
+
+msgid "New test"
+msgstr "اختبار جديد"
+
+msgid "New test of a lesson file…"
+msgstr "اختبار جديد من ملف درس…"
+
+msgid "New test of the open lesson"
+msgstr "اختبار جديد من الدرس المفتوح"
+
+msgid "New test server"
+msgstr "خادم اختبارات جديد"
+
+msgid "No one has handed in yet."
+msgstr "لم يسلّم أحد بعد."
+
+msgid "No one yet."
+msgstr "لا أحد بعد."
+
+msgid "No tests for you yet."
+msgstr "لا توجد اختبارات لك بعد."
+
+msgid "No tests yet."
+msgstr "لا توجد اختبارات بعد."
+
+msgid "Not added: %s"
+msgstr "لم تُضَف: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "غير متصل: لم تُؤكَّد الشهادة."
+
+msgid "Not handed in yet: %s"
+msgstr "لم يسلّموا بعد: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "حساب واحد في كل سطر: الاسم وكلمة المرور و(إن لم يكن طالبًا) الدور، مفصولة بفواصل."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "افتح درس كلمات في Recuerdo أولًا."
+
+msgid "Open for handing in"
+msgstr "فتح التسليم"
+
+msgid "Open the test"
+msgstr "فتح الاختبار"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Publish all results"
+msgstr "نشر كل النتائج"
+
+msgid "Publish this result"
+msgstr "نشر هذه النتيجة"
+
+msgid "Published"
+msgstr "منشور"
+
+msgid "Published: the students can see their results."
+msgstr "نُشرت: يمكن للطلاب الآن رؤية نتائجهم."
+
+msgid "Refresh"
+msgstr "تحديث"
+
+msgid "Remove %s"
+msgstr "إزالة %s"
+
+msgid "Result ready"
+msgstr "النتيجة جاهزة"
+
+msgid "Right (your teacher's decision)"
+msgstr "صحيح (بقرار معلّمك)"
+
+msgid "Right answers"
+msgstr "الأجوبة الصحيحة"
+
+msgid "Role"
+msgstr "الدور"
+
+msgid "Role…"
+msgstr "الدور…"
+
+msgid "Score"
+msgstr "الدرجة"
+
+msgid "See the result"
+msgstr "عرض النتيجة"
+
+msgid "Server"
+msgstr "الخادم"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Student"
+msgstr "طالب"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "أدِّ اختبارات من خادم اختبارات، أو أعطِها بصفتك معلّمًا"
+
+msgid "Take the test"
+msgstr "أداء الاختبار"
+
+msgid "Take the tests your teacher gave you."
+msgstr "أدِّ الاختبارات التي أعطاك إياها معلّمك."
+
+msgid "Teacher"
+msgstr "معلّم"
+
+msgid "Test"
+msgstr "الاختبار"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "أُنشئ الاختبار: %s. أعطه الآن للطلاب أو المجموعات."
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "يأخذ الاختبار كلمات الدرس؛ يرى الطلاب الأسئلة، ولا يرون الأجوبة أبدًا."
+
+msgid "To do"
+msgstr "لم يُؤدَّ بعد"
+
+msgid "Wrong name or password."
+msgstr "الاسم أو كلمة المرور غير صحيحة."
+
+msgid "Yes, delete %s"
+msgstr "نعم، احذف %s"
+
+msgid "Yes, delete it with its results"
+msgstr "نعم، احذفه مع نتائجه"
+
+msgid "Yes, hand in"
+msgstr "نعم، سلِّم"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "يخبرك معلّمك بعنوان الخادم. ويمكن للطلاب أيضًا أداء الاختبارات في متصفح ويب، على العنوان نفسه."
+
+msgid "Your tests"
+msgstr "اختباراتك"
+
+# corrects OpenTeacher's ar.po for "Test mode"
+msgid "Test mode"
+msgstr "وضع الاختبار"

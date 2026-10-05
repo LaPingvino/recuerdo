@@ -817,3 +817,244 @@ msgstr "Σωστό τελικά"
 # corrects OpenTeacher's el.po for 'Media': singular "Μέσο"
 msgid "Media"
 msgstr "Πολυμέσα"
+
+# test mode
+msgid "%d accounts added."
+msgstr "Λογαριασμοί που προστέθηκαν: %d."
+
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr "Ερωτήσεις χωρίς απάντηση: %d. Παράδοση παρ’ όλα αυτά; Δεν θα μπορείτε να αλλάξετε τις απαντήσεις σας μετά."
+
+msgid "%d words"
+msgstr "λέξεις: %d"
+
+msgid "&Test Mode..."
+msgstr "&Λειτουργία δοκιμασίας..."
+
+msgid "A group…"
+msgstr "Μια ομάδα…"
+
+msgid "A student…"
+msgstr "Ένας μαθητής…"
+
+msgid "Accounts"
+msgstr "Λογαριασμοί"
+
+msgid "Accounts and groups are managed on the server's web page."
+msgstr "Οι λογαριασμοί και οι ομάδες διαχειρίζονται στην ιστοσελίδα του διακομιστή."
+
+msgid "Add many"
+msgstr "Προσθήκη πολλών"
+
+msgid "Add these accounts"
+msgstr "Προσθήκη αυτών των λογαριασμών"
+
+msgid "Admin"
+msgstr "Διαχειριστής"
+
+msgid "Back to the test"
+msgstr "Πίσω στη δοκιμασία"
+
+msgid "Close for handing in"
+msgstr "Κλείσιμο παράδοσης"
+
+msgid "Closed"
+msgstr "Κλειστή"
+
+msgid "Count as right"
+msgstr "Να μετρήσει ως σωστή"
+
+msgid "Count as wrong"
+msgstr "Να μετρήσει ως λάθος"
+
+msgid "Delete the group"
+msgstr "Διαγραφή της ομάδας"
+
+msgid "Delete the test"
+msgstr "Διαγραφή της δοκιμασίας"
+
+msgid "Fill in the server, your name and your password."
+msgstr "Συμπληρώστε τον διακομιστή, το όνομά σας και τον κωδικό πρόσβασής σας."
+
+msgid "Given"
+msgstr "Απάντηση μαθητή"
+
+msgid "Given to"
+msgstr "Ανατέθηκε σε"
+
+msgid "Group %s"
+msgstr "Ομάδα %s"
+
+msgid "Group name"
+msgstr "Όνομα ομάδας"
+
+msgid "Groups"
+msgstr "Ομάδες"
+
+msgid "Hand in"
+msgstr "Παράδοση"
+
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr "Παράδοση; Δεν θα μπορείτε να αλλάξετε τις απαντήσεις σας μετά."
+
+msgid "Handed in"
+msgstr "Παραδόθηκε"
+
+msgid "Handed in. Your teacher will check your answers."
+msgstr "Παραδόθηκε. Ο καθηγητής σας θα ελέγξει τις απαντήσεις σας."
+
+msgid "Is this the test server's certificate? Compare its fingerprint with the one the server shows (ask your teacher):\n\n%s\n\n%s"
+msgstr "Είναι αυτό το πιστοποιητικό του διακομιστή δοκιμασιών; Συγκρίνετε το αποτύπωμά του με αυτό που δείχνει ο διακομιστής (ρωτήστε τον καθηγητή σας):\n\n%s\n\n%s"
+
+msgid "Log in"
+msgstr "Σύνδεση"
+
+msgid "Log in to a test server"
+msgstr "Σύνδεση σε διακομιστή δοκιμασιών"
+
+msgid "Log out"
+msgstr "Αποσύνδεση"
+
+msgid "New group"
+msgstr "Νέα ομάδα"
+
+msgid "New test"
+msgstr "Νέα δοκιμασία"
+
+msgid "New test of a lesson file…"
+msgstr "Νέα δοκιμασία από αρχείο μαθήματος…"
+
+msgid "New test of the open lesson"
+msgstr "Νέα δοκιμασία από το ανοιχτό μάθημα"
+
+msgid "New test server"
+msgstr "Νέος διακομιστής δοκιμασιών"
+
+msgid "No one has handed in yet."
+msgstr "Κανείς δεν έχει παραδώσει ακόμη."
+
+msgid "No one yet."
+msgstr "Κανείς ακόμη."
+
+msgid "No tests for you yet."
+msgstr "Δεν υπάρχουν ακόμη δοκιμασίες για εσάς."
+
+msgid "No tests yet."
+msgstr "Δεν υπάρχουν ακόμη δοκιμασίες."
+
+msgid "Not added: %s"
+msgstr "Δεν προστέθηκαν: %s"
+
+msgid "Not connected: the certificate was not confirmed."
+msgstr "Δεν συνδέθηκε: το πιστοποιητικό δεν επιβεβαιώθηκε."
+
+msgid "Not handed in yet: %s"
+msgstr "Δεν έχουν παραδώσει ακόμη: %s"
+
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
+msgstr "Ένας λογαριασμός ανά γραμμή: όνομα, κωδικός πρόσβασης και (αν δεν είναι μαθητής) ο ρόλος, χωρισμένα με κόμματα."
+
+msgid "Open a word lesson in Recuerdo first."
+msgstr "Ανοίξτε πρώτα ένα μάθημα λέξεων στο Recuerdo."
+
+msgid "Open for handing in"
+msgstr "Άνοιγμα παράδοσης"
+
+msgid "Open the test"
+msgstr "Άνοιγμα της δοκιμασίας"
+
+msgid "Password"
+msgstr "Κωδικός πρόσβασης"
+
+msgid "Publish all results"
+msgstr "Δημοσίευση όλων των αποτελεσμάτων"
+
+msgid "Publish this result"
+msgstr "Δημοσίευση αυτού του αποτελέσματος"
+
+msgid "Published"
+msgstr "Δημοσιεύτηκε"
+
+msgid "Published: the students can see their results."
+msgstr "Δημοσιεύτηκε: οι μαθητές βλέπουν τα αποτελέσματά τους."
+
+msgid "Refresh"
+msgstr "Ανανέωση"
+
+msgid "Remove %s"
+msgstr "Αφαίρεση %s"
+
+msgid "Result ready"
+msgstr "Το αποτέλεσμα είναι έτοιμο"
+
+msgid "Right (your teacher's decision)"
+msgstr "Σωστό (απόφαση του καθηγητή σας)"
+
+msgid "Right answers"
+msgstr "Σωστές απαντήσεις"
+
+msgid "Role"
+msgstr "Ρόλος"
+
+msgid "Role…"
+msgstr "Ρόλος…"
+
+msgid "Score"
+msgstr "Βαθμολογία"
+
+msgid "See the result"
+msgstr "Προβολή του αποτελέσματος"
+
+msgid "Server"
+msgstr "Διακομιστής"
+
+msgid "Status"
+msgstr "Κατάσταση"
+
+msgid "Student"
+msgstr "Μαθητής"
+
+msgid "Take tests from a test server, or give them as a teacher"
+msgstr "Γράψτε δοκιμασίες από διακομιστή δοκιμασιών ή αναθέστε τις ως καθηγητής"
+
+msgid "Take the test"
+msgstr "Γράψτε τη δοκιμασία"
+
+msgid "Take the tests your teacher gave you."
+msgstr "Γράψτε τις δοκιμασίες που σας ανέθεσε ο καθηγητής σας."
+
+msgid "Teacher"
+msgstr "Καθηγητής"
+
+msgid "Test"
+msgstr "Δοκιμασία"
+
+msgid "Test made: %s. Now give it to students or groups."
+msgstr "Η δοκιμασία δημιουργήθηκε: %s. Τώρα αναθέστε την σε μαθητές ή ομάδες."
+
+msgid "Test mode"
+msgstr "Λειτουργία δοκιμασίας"
+
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr "Η δοκιμασία παίρνει τις λέξεις του μαθήματος· οι μαθητές βλέπουν τις ερωτήσεις, ποτέ τις απαντήσεις."
+
+msgid "To do"
+msgstr "Εκκρεμεί"
+
+msgid "Wrong name or password."
+msgstr "Λάθος όνομα ή κωδικός πρόσβασης."
+
+msgid "Yes, delete %s"
+msgstr "Ναι, διαγραφή %s"
+
+msgid "Yes, delete it with its results"
+msgstr "Ναι, διαγραφή μαζί με τα αποτελέσματα"
+
+msgid "Yes, hand in"
+msgstr "Ναι, παράδοση"
+
+msgid "Your teacher tells you the server's address. Students can also take tests in a web browser, at the same address."
+msgstr "Τη διεύθυνση του διακομιστή σάς τη λέει ο καθηγητής σας. Οι μαθητές μπορούν επίσης να γράψουν δοκιμασίες σε περιηγητή ιστού, στην ίδια διεύθυνση."
+
+msgid "Your tests"
+msgstr "Οι δοκιμασίες σας"
