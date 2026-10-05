@@ -1,8 +1,12 @@
 package testserver
 
 import (
+	"crypto/tls"
 	"errors"
+	"os"
 	"path/filepath"
+	"runtime"
+	"strings"
 	"testing"
 	"time"
 
@@ -193,5 +197,25 @@ func TestReopen(t *testing.T) {
 	defer s.Close()
 	if list := must(s.TestsFor(teacher)); len(list) != 1 || list[0].Title != "Animals" {
 		t.Errorf("after reopening %+v", list)
+	}
+}
+
+func TestCertificate(t *testing.T) {
+	dir := t.TempDir()
+	cert, key, fp, err := Certificate(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(fp) != 95 || strings.Count(fp, ":") != 31 {
+		t.Errorf("fingerprint %q", fp)
+	}
+	if _, err := tls.LoadX509KeyPair(cert, key); err != nil {
+		t.Fatal(err)
+	}
+	if _, _, again, _ := Certificate(dir); again != fp {
+		t.Error("the certificate was made again")
+	}
+	if info, _ := os.Stat(key); info.Mode().Perm() != 0o600 && runtime.GOOS != "windows" {
+		t.Errorf("key file mode %v", info.Mode())
 	}
 }
