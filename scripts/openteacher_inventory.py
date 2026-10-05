@@ -210,8 +210,6 @@ TESTMODE = ("medium", "test mode: classroom tests run from a server. OpenTeacher
             "(Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one")
 DEVTOOL = ("low", "developer tooling: useful later as independent command line tools")
 PLANNED = {
-    "javaScript": ("medium", "the in-browser version: lessons and practice in a web browser, which also makes "
-                   "exercises possible that rely on HTML"),
     "interfaces/qt/testMode": TESTMODE,
     "interfaces/webServicesServer": TESTMODE,
     "logic/webDatabase": TESTMODE,
@@ -245,6 +243,9 @@ PLANNED = {
 
 # Areas whose job Recuerdo does another way: prefix -> (where, why).
 COVERED_AREAS = {
+    "javaScript": ("web/, cmd/recuerdo-web, internal/webapi", "the in-browser version: OpenTeacher ported its "
+                   "logic to JavaScript by hand; Recuerdo compiles its Go logic (word lists, checking, lesson "
+                   "types, notes, translations) to WebAssembly, so the page needs no copies of it"),
     "profileRunners/packagers": ("packaging/, .github/workflows/release.yml", "Recuerdo is built by Go and "
                                  "released by CI; the Arch package is a PKGBUILD"),
     "data/profileDescriptions/package": ("packaging/, .github/workflows/release.yml", "the packaging profiles, "

@@ -22,16 +22,17 @@ Missing from `legacy/` compared with upstream:
 |---|---|---|
 | `interfaces/qt/webServices/{wrtsApi,cramApi,vocatrainApi}` | Import word lists from WRTS, Cram, VocaTrain | No: these services or their APIs no longer exist in that form |
 | `interfaces/qt/mediaTypes/_megavideo` | Megavideo media type | No: the site is gone |
-| `logic/wordListString/javascript*`, `logic/wordsString/javaScript*` | JavaScript versions of the word list parsers/composers | For the planned in-browser version: take them from the upstream mirror |
+| `logic/wordListString/javascript*`, `logic/wordsString/javaScript*` | JavaScript versions of the word list parsers/composers | No: the in-browser version runs the Go ones as WebAssembly |
 | `profileRunners/{autoPackager,codeDocs,packagers/windowsMsi,websiteGenerator}` | Packaging, code docs, website generator | No: build tooling |
-| `profileRunners/{webGenerator,mobileGenerator,webApiServerRunner}` | Build the web and mobile versions; run the web API server | For the planned in-browser version and test mode: in the upstream mirror |
+| `profileRunners/{webGenerator,mobileGenerator,webApiServerRunner}` | Build the web and mobile versions; run the web API server | The web version is built by `scripts/build-web.sh` and served by `recuerdo serve`; the web API server is for the planned test mode (in the upstream mirror) |
 | `data/developerDocs`, `data/profileDescriptions/{packageAll,webApiServer}` | Developer docs and descriptions for the above | No |
 
 `legacy/` in turn has a few modules the mirror lacks (JavaScript note
 calculators, `logic/savers/latex`, `logic/htmlGenerator/javaScriptWords`),
 so it is from a slightly later OpenTeacher. **Conclusion:** `legacy/` is a
-complete base for the desktop application; the planned in-browser version
-and test mode can take the few pieces it lacks from the upstream mirror.
+complete base for the desktop application; the in-browser version needs
+none of the JavaScript (it runs the Go logic as WebAssembly), and the
+planned test mode can take the pieces it lacks from the upstream mirror.
 
 ## 2. How far the Go port is
 
@@ -57,10 +58,10 @@ Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | data | 3 |  |  | 21 |  |  | 14 | 5 | 6 | 49 |
 | interfaces | 11 |  |  | 52 |  |  | 12 | 5 | 14 | 94 |
-| logic | 25 |  |  | 80 |  |  | 28 | 8 | 39 | 180 |
+| logic | 25 |  |  | 104 |  |  | 4 | 8 | 39 | 180 |
 | misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 10 |  |  | 11 | 1 | 5 | 27 |
-| **all** | **39** | **0** | **0** | **163** | **0** | **0** | **65** | **20** | **67** | **354** |
+| **all** | **39** | **0** | **0** | **187** | **0** | **0** | **41** | **20** | **67** | **354** |
 
 ## 3. Features
 
@@ -78,8 +79,8 @@ The state in October 2026, by feature:
 | Speech | done: Pronounce questions (espeak-ng, macOS and Windows voices) |
 | Settings, properties, about | done, made from what Recuerdo really has |
 | Command line | done: `recuerdo <command>` (convert, merge, view, practise, ...) |
-| Interface translations | planned (high): English only for now |
-| In-browser version | planned (medium) |
+| Interface translations | done: OpenTeacher's translations in 30 languages, Recuerdo's own texts complete in Dutch, Esperanto and Brazilian Portuguese; the other languages planned (high) |
+| In-browser version | done: the Go logic as WebAssembly (`web/`, `recuerdo serve`): open, enter and edit words, practise in all modes, results, download; formulas (KaTeX) with a formula builder, also on the desktop |
 | Test mode (classroom server) | planned (medium): convert OpenTeacher's server or build one |
 | Spell checking, touch typing course | planned (medium) |
 | Dark theme, words-only setting, developer tools | planned (low) |
@@ -166,6 +167,7 @@ file formats, see **covered** above):
 | `interfaces/textToSpeech/impl` | `internal/tts` | Speak with espeak-ng/espeak (Linux, BSD), say (macOS) or System.Speech (Windows) instead of pyttsx; command lines tested |
 | `interfaces/textToSpeech/providers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Teach option "Pronounce names": Name – Place says the place to click; tested |
 | `interfaces/textToSpeech/providers/words` | `internal/modules/interfaces/qt/lessons/words` | Teach option "Pronounce questions" (setting kept), in the question language; tested |
+| `javaScript (all)` | `web/, cmd/recuerdo-web, internal/webapi` | the in-browser version: OpenTeacher ported its logic to JavaScript by hand; Recuerdo compiles its Go logic (word lists, checking, lesson types, notes, translations) to WebAssembly, so the page needs no copies of it |
 | `logic/authors` | `internal/modules/data/openteacherAuthors` | the credits list in the About dialog |
 | `logic/dataStore` | `internal/modules/settings.go` | the settings module's JSON file is Recuerdo's persistent store |
 | `logic/execute` | `internal/core, internal/modules/execute.go` | start-up and enabling modules |
@@ -206,7 +208,6 @@ OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
 
 | Priority | Modules | Count | What |
 |---|---|---:|---|
-| medium | `javaScript` | 24 | the in-browser version: lessons and practice in a web browser, which also makes exercises possible that rely on HTML |
 | medium | `interfaces/qt/testMode`, `interfaces/webServicesServer`, `logic/webDatabase`, `profileRunners/webServicesServerRunner`, `data/profileDescriptions/webServicesServer` | 12 | test mode: classroom tests run from a server. OpenTeacher's server is in legacy/ (Flask web services on a CouchDB web database, about 800 lines): convert it to Go, or build a new one |
 | medium | `logic/spellChecker` | 1 | spell checking while entering words, with Hunspell (OpenTeacher used Enchant) |
 | medium | `logic/interfaces/typingTutorModel` | 1 | OpenTeacher's touch typing course, a lesson of its own kind |
@@ -296,30 +297,30 @@ Course Hero: those APIs changed or closed):
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogShower` | dialogShower | 141 | 0 | 0 | 0 | covered |
-| `interfaces/qt/dialogs/about` | about | 247 | 142 | 0 | 1 | working |
+| `interfaces/qt/dialogs/about` | about | 247 | 143 | 0 | 1 | working |
 | `interfaces/qt/dialogs/aboutTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/documentation` | documentation | 117 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/documentationTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/dialogs/file` | fileDialogs | 91 | 137 | 0 | 1 | working |
 | `interfaces/qt/dialogs/print` | printDialog | 31 | 0 | 0 | 0 | covered |
 | `interfaces/qt/dialogs/results` | resultsDialog | 51 | 86 | 0 | 1 | working |
-| `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 159 | 0 | 1 | working |
+| `interfaces/qt/dialogs/settings` | settingsDialog | 180 | 164 | 0 | 1 | working |
 | `interfaces/qt/dialogs/settingsTest` | test | 24 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/enterers/media` | mediaEnterer | 305 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/mediaTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 86 | 0 | 1 | working |
+| `interfaces/qt/enterers/plainTextWords` | plainTextWordsEnterer | 154 | 87 | 0 | 1 | working |
 | `interfaces/qt/enterers/topo` | topoEnterer | 251 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1072 | 0 | 2 | working |
+| `interfaces/qt/gui` | ui | 607 | 1089 | 0 | 2 | working |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
-| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 368 | 0 | 2 | working |
-| `interfaces/qt/lessons/media` | lesson | 197 | 585 | 0 | 2 | working |
-| `interfaces/qt/lessons/topo` | lesson | 202 | 699 | 0 | 2 | working |
-| `interfaces/qt/lessons/words` | lesson | 211 | 2093 | 0 | 2 | working |
+| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 369 | 0 | 2 | working |
+| `interfaces/qt/lessons/media` | lesson | 197 | 588 | 0 | 2 | working |
+| `interfaces/qt/lessons/topo` | lesson | 202 | 702 | 0 | 2 | working |
+| `interfaces/qt/lessons/words` | lesson | 211 | 2153 | 0 | 2 | working |
 | `interfaces/qt/loaderGui` | loaderGui | 58 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaDisplay` | mediaDisplay | 211 | 0 | 0 | 0 | covered |
 | `interfaces/qt/mediaTypes/audio` | mediaType | 84 | 0 | 0 | 0 | covered |
@@ -396,7 +397,7 @@ Course Hero: those APIs changed or closed):
 | `logic/execute` | execute | 115 | 108 | 3 | 1 | covered |
 | `logic/friendlyTranslationNames` | friendlyTranslationNames | 40 | 0 | 0 | 0 | covered |
 | `logic/friendlyTranslationNamesTest` | test | 33 | 42 | 11 | 0 | test suite |
-| `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | planned |
+| `logic/htmlGenerator/javaScriptWords` | htmlGenerator | 46 | 0 | 0 | 0 | covered |
 | `logic/htmlGenerator/media` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
 | `logic/htmlGenerator/test` | test | 37 | 0 | 0 | 0 | test suite |
 | `logic/htmlGenerator/topo` | htmlGenerator | 25 | 0 | 0 | 0 | covered |
@@ -405,27 +406,27 @@ Course Hero: those APIs changed or closed):
 | `logic/interfaces/buttonRegisterTest` | test | 70 | 0 | 0 | 0 | test suite |
 | `logic/interfaces/inputTypingLogic` | inputTypingLogic | 171 | 0 | 0 | 0 | covered |
 | `logic/interfaces/inputTypingLogicTest` | test | 177 | 0 | 0 | 0 | test suite |
-| `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | planned |
+| `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | covered |
 | `logic/interfaces/lessonTracker` | lessonTracker | 55 | 0 | 0 | 0 | covered |
 | `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 0 | 0 | 0 | planned |
 | `logic/interfaces/typingTutorModelTest` | test | 119 | 0 | 0 | 0 | test suite |
 | `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 0 | 0 | 0 | covered |
 | `logic/itemModifiers/test` | test | 26 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | planned |
+| `logic/javaScript/bisect` | bisectfunc | 23 | 0 | 0 | 0 | covered |
 | `logic/javaScript/bisectTest` | test | 37 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/evaluator` | javaScriptEvaluator | 22 | 0 | 0 | 0 | planned |
+| `logic/javaScript/evaluator` | javaScriptEvaluator | 22 | 0 | 0 | 0 | covered |
 | `logic/javaScript/evaluatorTest` | testSuite | 26 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/event` | javaScriptEvent | 25 | 0 | 0 | 0 | planned |
+| `logic/javaScript/event` | javaScriptEvent | 25 | 0 | 0 | 0 | covered |
 | `logic/javaScript/implementationTest` | test | 28 | 0 | 0 | 0 | test suite |
 | `logic/javaScript/jshintTest` | test | 46 | 0 | 0 | 0 | test suite |
-| `logic/javaScript/lessonType` | javaScriptLessonType | 27 | 0 | 0 | 0 | planned |
-| `logic/javaScript/libraries/jquery` | jsLib | 15 | 0 | 0 | 0 | planned |
-| `logic/javaScript/libraries/tmpl` | jsLib | 15 | 0 | 0 | 0 | planned |
-| `logic/javaScript/map` | mapfunc | 15 | 0 | 0 | 0 | planned |
-| `logic/javaScript/sum` | sumfunc | 15 | 0 | 0 | 0 | planned |
-| `logic/javaScript/translator` | jsTranslator | 15 | 0 | 0 | 0 | planned |
-| `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 0 | 0 | 0 | planned |
-| `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | planned |
+| `logic/javaScript/lessonType` | javaScriptLessonType | 27 | 0 | 0 | 0 | covered |
+| `logic/javaScript/libraries/jquery` | jsLib | 15 | 0 | 0 | 0 | covered |
+| `logic/javaScript/libraries/tmpl` | jsLib | 15 | 0 | 0 | 0 | covered |
+| `logic/javaScript/map` | mapfunc | 15 | 0 | 0 | 0 | covered |
+| `logic/javaScript/sum` | sumfunc | 15 | 0 | 0 | 0 | covered |
+| `logic/javaScript/translator` | jsTranslator | 15 | 0 | 0 | 0 | covered |
+| `logic/javaScript/webLogicGenerator` | webLogicGenerator | 52 | 0 | 0 | 0 | covered |
+| `logic/javaScriptPercentsCalculator` | percentsCalculator | 34 | 0 | 0 | 0 | covered |
 | `logic/languageCodeGuesser` | languageCodeGuesser | 30 | 0 | 0 | 0 | covered |
 | `logic/languageCodeGuesserTest` | test | 45 | 58 | 19 | 0 | test suite |
 | `logic/lessonTypes/allOnce` | lessonType | 108 | 54 | 0 | 1 | working |
@@ -490,12 +491,12 @@ Course Hero: those APIs changed or closed):
 | `logic/noteCalculators/ects` | noteCalculator | 57 | 16 | 0 | 1 | working |
 | `logic/noteCalculators/french` | noteCalculator | 51 | 25 | 0 | 1 | working |
 | `logic/noteCalculators/german` | noteCalculator | 55 | 16 | 0 | 1 | working |
-| `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 0 | 0 | 0 | planned |
-| `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 0 | 0 | 0 | planned |
-| `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 0 | 0 | 0 | planned |
-| `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 0 | 0 | 0 | planned |
-| `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 0 | 0 | 0 | planned |
-| `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | planned |
+| `logic/noteCalculators/javaScript/american` | noteCalculator | 62 | 0 | 0 | 0 | covered |
+| `logic/noteCalculators/javaScript/dutch` | noteCalculator | 54 | 0 | 0 | 0 | covered |
+| `logic/noteCalculators/javaScript/ects` | noteCalculator | 62 | 0 | 0 | 0 | covered |
+| `logic/noteCalculators/javaScript/french` | noteCalculator | 54 | 0 | 0 | 0 | covered |
+| `logic/noteCalculators/javaScript/german` | noteCalculator | 62 | 0 | 0 | 0 | covered |
+| `logic/noteCalculators/javaScript/percents` | noteCalculator | 56 | 0 | 0 | 0 | covered |
 | `logic/noteCalculators/percents` | noteCalculator | 55 | 13 | 0 | 1 | working |
 | `logic/noteCalculators/test` | test | 444 | 0 | 0 | 0 | test suite |
 | `logic/ocr/cuneiformRecognizer` | ocrRecognizer | 34 | 0 | 0 | 0 | dropped |
@@ -555,17 +556,17 @@ Course Hero: those APIs changed or closed):
 | `logic/webDatabaseTest` | test | 137 | 0 | 0 | 0 | test suite |
 | `logic/wordListString/composer` | wordListStringComposer | 35 | 0 | 0 | 0 | covered |
 | `logic/wordListString/composerTest` | test | 145 | 0 | 0 | 0 | test suite |
-| `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 0 | 0 | 0 | planned |
-| `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 0 | 0 | 0 | planned |
+| `logic/wordListString/javaScript/composer` | wordListStringComposer | 26 | 0 | 0 | 0 | covered |
+| `logic/wordListString/javaScript/parser` | wordListStringParser | 34 | 0 | 0 | 0 | covered |
 | `logic/wordListString/parser` | wordListStringParser | 50 | 0 | 0 | 0 | covered |
 | `logic/wordListString/parserTest` | test | 159 | 0 | 0 | 0 | test suite |
 | `logic/wordsString/checker` | wordsStringChecker | 59 | 117 | 0 | 1 | working |
 | `logic/wordsString/checkerTest` | test | 78 | 1 | 0 | 0 | test suite |
 | `logic/wordsString/composer` | wordsStringComposer | 33 | 44 | 0 | 1 | working |
 | `logic/wordsString/composerTest` | test | 55 | 52 | 16 | 0 | test suite |
-| `logic/wordsString/javaScript/checker` | wordsStringChecker | 31 | 0 | 0 | 0 | planned |
-| `logic/wordsString/javaScript/composer` | wordsStringComposer | 35 | 0 | 0 | 0 | planned |
-| `logic/wordsString/javaScript/parser` | wordsStringParser | 34 | 0 | 0 | 0 | planned |
+| `logic/wordsString/javaScript/checker` | wordsStringChecker | 31 | 0 | 0 | 0 | covered |
+| `logic/wordsString/javaScript/composer` | wordsStringComposer | 35 | 0 | 0 | 0 | covered |
+| `logic/wordsString/javaScript/parser` | wordsStringParser | 34 | 0 | 0 | 0 | covered |
 | `logic/wordsString/parser` | wordsStringParser | 34 | 86 | 0 | 1 | working |
 | `logic/wordsString/parserTest` | test | 115 | 1 | 0 | 0 | test suite |
 | `misc/cliTest` | test | 131 | 1 | 0 | 0 | test suite |
