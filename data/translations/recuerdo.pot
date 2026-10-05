@@ -23,6 +23,10 @@ msgstr ""
 msgid "%d places. Choose how to practise and press Start."
 msgstr ""
 
+#: web/testmode.js
+msgid "%d questions have no answer. Hand in anyway? You cannot change your answers afterwards."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "%d sessions; the last one %d%% right."
 msgstr ""
@@ -179,6 +183,10 @@ msgstr ""
 msgid "Ask:"
 msgstr ""
 
+#: web/index.html
+msgid "Back"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Brackets"
 msgstr ""
@@ -217,6 +225,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Click 'Start Teaching' to begin"
+msgstr ""
+
+#: web/testmode.js
+msgid "Closed"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -443,6 +455,22 @@ msgstr ""
 msgid "Greek"
 msgstr ""
 
+#: web/testmode.js
+msgid "Hand in"
+msgstr ""
+
+#: web/testmode.js
+msgid "Hand in? You cannot change your answers afterwards."
+msgstr ""
+
+#: web/testmode.js
+msgid "Handed in"
+msgstr ""
+
+#: web/testmode.js
+msgid "Handed in. Your teacher will check your answers."
+msgstr ""
+
 #: internal/modules/logic/listModifiers/hardWords/hardWords.go
 msgid "Hard words"
 msgstr ""
@@ -595,6 +623,14 @@ msgstr ""
 msgid "Loading…"
 msgstr ""
 
+#: web/index.html
+msgid "Log in"
+msgstr ""
+
+#: web/index.html
+msgid "Log out"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Made a lesson of %d words"
 msgstr ""
@@ -691,6 +727,10 @@ msgstr ""
 msgid "No teaching results available yet"
 msgstr ""
 
+#: web/testmode.js
+msgid "No tests for you yet."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "No words available for teaching"
 msgstr ""
@@ -765,6 +805,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
 msgid "Page %d of %d"
+msgstr ""
+
+#: web/index.html
+msgid "Password"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
@@ -923,6 +967,10 @@ msgstr ""
 msgid "Result"
 msgstr ""
 
+#: web/testmode.js
+msgid "Result ready"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Results"
 msgstr ""
@@ -973,6 +1021,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Say each question aloud, in the question language"
+msgstr ""
+
+#: web/testmode.js
+msgid "See the result"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
@@ -1047,6 +1099,10 @@ msgstr ""
 msgid "Start Teaching"
 msgstr ""
 
+#: web/testmode.js
+msgid "Status"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Stop"
 msgstr ""
@@ -1071,6 +1127,14 @@ msgstr ""
 msgid "System language"
 msgstr ""
 
+#: web/testmode.js
+msgid "Take the test"
+msgstr ""
+
+#: web/index.html
+msgid "Take the tests your teacher gave you."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Teach"
 msgstr ""
@@ -1081,6 +1145,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Teaching session completed"
+msgstr ""
+
+#: web/testmode.js
+msgid "Test"
+msgstr ""
+
+#: web/index.html
+msgid "Test mode"
 msgstr ""
 
 #: internal/richtext/palette.go
@@ -1103,12 +1175,20 @@ msgstr ""
 msgid "Think about the answer, and press 'View answer' when you're done."
 msgstr ""
 
+#: web/testmode.js
+msgid "This page is for students. Teachers and admins: use the teacher's page."
+msgstr ""
+
 #: web/index.html
 msgid "Title"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "Title:"
+msgstr ""
+
+#: web/testmode.js
+msgid "To do"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -1211,12 +1291,20 @@ msgstr ""
 msgid "Wrong"
 msgstr ""
 
+#: web/testmode.js
+msgid "Wrong name or password."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Wrong. The right answer is: %s"
 msgstr ""
 
 #: web/app.js
 msgid "Wrong: %s → %s"
+msgstr ""
+
+#: web/testmode.js
+msgid "Yes, hand in"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go

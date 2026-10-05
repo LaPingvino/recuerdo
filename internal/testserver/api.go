@@ -362,7 +362,7 @@ func (a *API) test(w http.ResponseWriter, r *http.Request, u User) {
 		reply(w, http.StatusOK, t)
 	case u.Role == Student:
 		if ok, _ := a.Store.Assigned(t.ID, u.ID); ok {
-			reply(w, http.StatusOK, t.ForStudent())
+			reply(w, http.StatusOK, a.Store.StudentView(t, u.ID))
 			return
 		}
 		fallthrough

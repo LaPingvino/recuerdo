@@ -89,3 +89,14 @@ header .lesson-title:empty + .language { margin-inline-start: auto; }
 .building > .preview { display: none; }
 .formula-preview { direction: ltr; }
 .fb-button { direction: ltr; unicode-bidi: isolate; }
+/* test mode */
+.test-head { align-items: center; margin-top: 0; margin-bottom: .8rem; }
+.test-head h2 { margin: 0; }
+.test-login { display: flex; flex-direction: column; gap: .7rem; max-width: 22rem; }
+.test-login label { display: flex; flex-direction: column; gap: .2rem; color: var(--muted); font-size: .9rem; }
+.test-item { padding: .7rem 0; border-bottom: 1px solid var(--line); }
+.test-question { display: flex; gap: .5rem; font-size: 1.2rem; font-weight: 600; margin-bottom: .4rem; }
+.test-num { color: var(--muted); min-width: 1.6rem; }
+.test-item input { width: min(28rem, 100%); }
+.test-item ruby rt { font-size: .5em; color: var(--muted); }
+table.tests td { vertical-align: middle; }

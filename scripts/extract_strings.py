@@ -57,16 +57,19 @@ def texts():
     for m in re.finditer(r'\{"\w+", "[^"]*", (?:`[^`]*`|"(?:[^"\\]|\\.)*"), "([^"]+)"\}', pal):
         found.setdefault(m.group(1), "internal/richtext/palette.go")
     # the web version: texts marked data-i18n / data-i18n-placeholder in
-    # web/index.html, and t("...") in web/app.js
+    # web/index.html, and t("...") in the page's scripts (web/*.js)
     import html as htmlmod
     page = (ROOT / "web/index.html").read_text(encoding="utf-8")
     for m in re.finditer(r'<(\w+)[^>]*\bdata-i18n\b[^>]*>(.*?)</\1>', page, re.S):
         found.setdefault(htmlmod.unescape(m.group(2).strip()), "web/index.html")
     for m in re.finditer(r'data-i18n-placeholder="([^"]*)"', page):
         found.setdefault(htmlmod.unescape(m.group(1)), "web/index.html")
-    js = (ROOT / "web/app.js").read_text(encoding="utf-8")
-    for m in re.finditer(r'\bt\(' + GOSTR, js):
-        found.setdefault(gounquote(m.group(1)), "web/app.js")
+    for jsfile in sorted((ROOT / "web").glob("*.js")):
+        if jsfile.name in ("memfs.js", "wasm_exec.js"):
+            continue
+        js = jsfile.read_text(encoding="utf-8")
+        for m in re.finditer(r'\bt\(' + GOSTR, js):
+            found.setdefault(gounquote(m.group(1)), "web/" + jsfile.name)
     for c in ("Practice", "Results", "Files", "Interface", "System language"):
         found.setdefault(c, "internal/settingsdefs")
     return found

@@ -124,8 +124,13 @@ func TestAPI(t *testing.T) {
 		t.Errorf("anna's tests %v", list)
 	}
 	got, _ := ac.want(200, "GET", fmt.Sprintf("/api/tests/%d", tid), nil)
-	if strings.Contains(fmt.Sprint(got["list"]), "dog") {
-		t.Errorf("a student got the answers: %v", got["list"])
+	if b, _ := json.Marshal(got); strings.Contains(string(b), "dog") || strings.Contains(string(b), "kitty") {
+		t.Errorf("a student got the answers: %s", b)
+	}
+	items := got["items"].([]any)
+	if len(items) != 4 || items[2].(map[string]any)["math"] != true || items[0].(map[string]any)["math"] != nil ||
+		items[0].(map[string]any)["question"] != "hond" || got["handedIn"] != false {
+		t.Errorf("student view %v", got)
 	}
 	ac.want(201, "POST", fmt.Sprintf("/api/tests/%d/answers", tid), map[string]any{"answers": map[string]string{"0": "dog", "1": "cta"}})
 	ac.want(409, "POST", fmt.Sprintf("/api/tests/%d/answers", tid), map[string]any{"answers": map[string]string{"0": "dog"}})
