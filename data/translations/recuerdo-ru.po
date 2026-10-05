@@ -1032,3 +1032,111 @@ msgstr "Отмечать на вкладке «Ввод» слова, котор
 
 msgid "Not in the dictionary (%s):"
 msgstr "Нет в словаре (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "Слов в минуту: %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "Слов в минуту: %d (нужно: %d)"
+
+msgid "A name is needed."
+msgstr "Нужно указать имя."
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Сначала поместите пальцы на домашний ряд: слева направо на клавиши %s. Держите их там, когда не нажимаете другую клавишу. Когда пальцы будут на месте, начните первое упражнение. Сначала добивайтесь точности, а не скорости."
+
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Научитесь печатать всеми десятью пальцами"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Научитесь печатать всеми десятью пальцами, не глядя на клавиатуру: сначала буквы, ряд за рядом, затем слова, всё быстрее и быстрее."
+
+msgid "Mistakes"
+msgstr "Ошибки"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Ошибок: %d. Пожалуйста, пробуйте снова, пока не получится без ошибок."
+
+msgid "New profile"
+msgstr "Новый профиль"
+
+msgid "Other profile"
+msgstr "Другой профиль"
+
+msgid "Spanish"
+msgstr "Испанский"
+
+msgid "Speed needed"
+msgstr "Нужная скорость"
+
+msgid "Start the exercise"
+msgstr "Начать упражнение"
+
+msgid "T&yping Course..."
+msgstr "&Курс машинописи..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Это имя уже занято: выберите его в списке выше."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Это ошибка (ошибок: %d)."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Для этого попробуйте немного снизить скорость."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Жаль, ошибок: %d. Продолжайте заниматься, чтобы стать лучше!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Наберите текст ниже. Отсчёт времени начинается с первого нажатия; неверная клавиша выделяется красным, и её нужно набрать заново."
+
+msgid "Typing course"
+msgstr "Курс машинописи"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Добро пожаловать на курс машинописи. Вы улучшите навыки набора текста, выполняя простые упражнения; между ними вы будете получать инструкции. Давайте начнём:"
+
+msgid "Who is practising?"
+msgstr "Кто занимается?"
+
+msgid "Words in"
+msgstr "Язык слов"
+
+msgid "level %d of %d"
+msgstr "уровень %d из %d"
+
+msgid "space"
+msgstr "пробел"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Тёмная"
+
+msgid "Light"
+msgstr "Светлая"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Создавать только словарные уроки: никаких топографических и мультимедийных уроков при создании нового урока"
+
+msgid "System"
+msgstr "Системная"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Цвета Recuerdo: как в системе, светлые или тёмные"
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Words only"
+msgstr "Только слова"

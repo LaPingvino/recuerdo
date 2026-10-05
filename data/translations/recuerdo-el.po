@@ -1068,3 +1068,165 @@ msgstr "Επισήμανση λέξεων στην καρτέλα Εισαγωγ
 
 msgid "Not in the dictionary (%s):"
 msgstr "Δεν υπάρχει στο λεξικό (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "Λέξεις ανά λεπτό: %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "Λέξεις ανά λεπτό: %d (απαιτούνται: %d)"
+
+msgid "A name is needed."
+msgstr "Χρειάζεται ένα όνομα."
+
+msgid "Belgian AZERTY"
+msgstr "Βελγικό AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Συγχαρητήρια, ολοκληρώσατε αυτή την εκμάθηση πληκτρολόγησης! Αν θέλετε, μπορείτε να συνεχίσετε, αλλά εδώ τελειώνουν οι οδηγίες. Κάνατε εξαιρετική δουλειά!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Συγχαρητήρια, ολοκληρώσατε την πρώτη σας άσκηση!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Αγγλικά"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Πρώτα τοποθετήστε τα δάχτυλά σας στη βασική σειρά: από αριστερά προς τα δεξιά, στα πλήκτρα %s. Κρατήστε τα εκεί όταν δεν πληκτρολογείτε άλλο πλήκτρο. Όταν τα δάχτυλά σας είναι στη θέση τους, ξεκινήστε την πρώτη άσκηση. Στην αρχή επιδιώξτε την ακρίβεια, όχι την ταχύτητα."
+
+msgid "French"
+msgstr "Γαλλικά"
+
+msgid "French AZERTY"
+msgstr "Γαλλικό AZERTY"
+
+msgid "German"
+msgstr "Γερμανικά"
+
+msgid "Keyboard"
+msgstr "Πληκτρολόγιο"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Μάθετε να πληκτρολογείτε και με τα δέκα δάχτυλα"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Μάθετε να πληκτρολογείτε και με τα δέκα δάχτυλα χωρίς να κοιτάτε το πληκτρολόγιο: πρώτα τα γράμματα, σειρά προς σειρά, μετά λέξεις, όλο και πιο γρήγορα."
+
+msgid "Level"
+msgstr "Επίπεδο"
+
+msgid "Mistakes"
+msgstr "Λάθη"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Λάθη: %d. Συνεχίστε να προσπαθείτε μέχρι να τα καταφέρετε χωρίς κανένα λάθος."
+
+msgid "New profile"
+msgstr "Νέο προφίλ"
+
+msgid "Other profile"
+msgstr "Άλλο προφίλ"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+msgid "Speed"
+msgstr "Ταχύτητα"
+
+msgid "Speed needed"
+msgstr "Απαιτούμενη ταχύτητα"
+
+msgid "Start the exercise"
+msgstr "Έναρξη άσκησης"
+
+msgid "T&yping Course..."
+msgstr "&Εκμάθηση πληκτρολόγησης..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Αυτό το όνομα υπάρχει ήδη: επιλέξτε το από την παραπάνω λίστα."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Αυτό είναι λάθος (λάθη: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Τα πλήκτρα που θα εξασκήσετε τώρα πατιούνται με τον δείκτη του αριστερού και του δεξιού χεριού και βρίσκονται πιο μακριά από αυτά τα δάχτυλα από ό,τι τα άλλα πλήκτρα που εξασκήσαμε στην τρέχουσα σειρά. Φροντίστε να επιστρέφετε το δάχτυλο στη θέση του στη βασική σειρά όταν πληκτρολογείτε άλλο γράμμα."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Για να το πετύχετε, δοκιμάστε ίσως να χαλαρώσετε λίγο τον ρυθμό."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Κρίμα, λάθη: %d. Συνεχίστε την εξάσκηση για να βελτιωθείτε!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Πληκτρολογήστε το παρακάτω κείμενο. Ο χρόνος ξεκινά με το πρώτο σας πλήκτρο· ένα λάθος πλήκτρο εμφανίζεται με κόκκινο και πρέπει να πληκτρολογηθεί ξανά."
+
+msgid "Typing course"
+msgstr "Εκμάθηση πληκτρολόγησης"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Καλώς ήρθατε στην εκμάθηση πληκτρολόγησης. Θα βελτιώσετε την πληκτρολόγησή σας κάνοντας απλές ασκήσεις· ανάμεσά τους θα παίρνετε οδηγίες. Ας ξεκινήσουμε:"
+
+msgid "Who is practising?"
+msgstr "Ποιος εξασκείται;"
+
+msgid "Words in"
+msgstr "Γλώσσα λέξεων"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Τα καταφέρατε χωρίς λάθη και γρήγορα! Συνεχίστε την εξάσκηση με νέους συνδυασμούς γραμμάτων για να βελτιωθείτε ακόμα περισσότερο!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Τα καταφέρατε χωρίς λάθη και γρήγορα! Συνεχίστε την εξάσκηση με νέες λέξεις για να βελτιωθείτε ακόμα περισσότερο!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Δεν κάνατε κανένα λάθος και πληκτρολογείτε αρκετά γρήγορα, οπότε μπορείτε να συνεχίσετε την εξάσκηση με νέους συνδυασμούς γραμμάτων. Συνεχίστε έτσι!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Δεν κάνατε κανένα λάθος και πληκτρολογείτε αρκετά γρήγορα, οπότε μπορείτε να συνεχίσετε την εξάσκηση με νέες λέξεις. Συνεχίστε έτσι!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Δεν κάνατε κανένα λάθος. Τώρα προσπαθήστε να αυξήσετε λίγο την ταχύτητα πληκτρολόγησης."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Τώρα θα μάθετε γράμματα που δεν βρίσκονται στη βασική σειρά. Για να δείτε ποια δάχτυλα πρέπει να χρησιμοποιήσετε, κοιτάξτε την εικόνα του πληκτρολογίου στην οθόνη σας. Όταν δεν χρησιμοποιείτε ένα δάχτυλο για να πληκτρολογήσετε ένα γράμμα, επαναφέρετέ το αμέσως στη βασική σειρά."
+
+msgid "level %d of %d"
+msgstr "επίπεδο %d από %d"
+
+msgid "space"
+msgstr "διάστημα"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Σκοτεινό"
+
+msgid "Light"
+msgstr "Φωτεινό"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Δημιουργία μόνο μαθημάτων λέξεων: όχι μαθήματα τοπογραφίας ή πολυμέσων κατά τη δημιουργία νέου μαθήματος"
+
+msgid "System"
+msgstr "Συστήματος"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Τα χρώματα του Recuerdo: όπως τα έχει το σύστημα, φωτεινά ή σκοτεινά"
+
+msgid "Theme"
+msgstr "Θέμα"
+
+msgid "Words only"
+msgstr "Μόνο λέξεις"

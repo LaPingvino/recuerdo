@@ -1056,3 +1056,111 @@ msgstr "在「輸入」分頁標記不在問題的語言或答案的語言字典
 
 msgid "Not in the dictionary (%s):"
 msgstr "不在字典中（%s）："
+
+# typing course
+msgid "%d words per minute"
+msgstr "每分鐘 %d 個字"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "每分鐘 %d 個字（需要：%d）"
+
+msgid "A name is needed."
+msgstr "需要輸入名稱。"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "英文"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "首先將手指放在基準列上：從左到右，分別放在 %s 鍵上。沒有打其他按鍵時，讓手指停在那裡。手指就定位後，開始第一個練習。一開始要求準確，而不是速度。"
+
+msgid "Keyboard"
+msgstr "鍵盤"
+
+msgid "Learn to type with all ten fingers"
+msgstr "學習用十根手指打字"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "學習不看鍵盤、用十根手指打字：先一列一列練習字母，再練習單字，越打越快。"
+
+msgid "Mistakes"
+msgstr "錯誤"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "錯誤：%d。請繼續嘗試，直到完全沒有錯誤為止。"
+
+msgid "New profile"
+msgstr "新增個人檔案"
+
+msgid "Other profile"
+msgstr "其他個人檔案"
+
+msgid "Spanish"
+msgstr "西班牙文"
+
+msgid "Speed needed"
+msgstr "需要的速度"
+
+msgid "Start the exercise"
+msgstr "開始練習"
+
+msgid "T&yping Course..."
+msgstr "打字課程(&Y)..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "這個名稱已被使用：請從上方清單中選擇它。"
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "打錯了（錯誤：%d）。"
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "為此，您可以試著放慢一點。"
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "真可惜：%d 個錯誤。繼續練習，您會越來越好！"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "請輸入下方的文字。按下第一個鍵時開始計時；打錯的鍵會以紅色顯示，必須重新輸入。"
+
+msgid "Typing course"
+msgstr "打字課程"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "歡迎來到打字課程。您將透過簡單的練習提升打字能力；練習之間會有教學說明。讓我們開始吧："
+
+msgid "Who is practising?"
+msgstr "誰要練習？"
+
+msgid "Words in"
+msgstr "單字語言"
+
+msgid "level %d of %d"
+msgstr "第 %d 級（共 %d 級）"
+
+msgid "space"
+msgstr "空白鍵"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "深色"
+
+msgid "Light"
+msgstr "淺色"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "只建立單字課程：建立新課程時不提供地形學或媒體課程"
+
+msgid "System"
+msgstr "跟隨系統"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdo 的顏色：跟隨系統、淺色或深色"
+
+msgid "Theme"
+msgstr "主題"
+
+msgid "Words only"
+msgstr "僅單字"

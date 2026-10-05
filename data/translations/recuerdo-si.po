@@ -1117,3 +1117,159 @@ msgstr "ප්‍රශ්න භාෂාවේ හෝ පිළිතුරු
 
 msgid "Not in the dictionary (%s):"
 msgstr "ශබ්දකෝෂයේ නැත (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "විනාඩියකට වචන %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "විනාඩියකට වචන %d (අවශ්‍ය: %d)"
+
+msgid "A name is needed."
+msgstr "නමක් අවශ්‍යයි."
+
+msgid "Belgian AZERTY"
+msgstr "බෙල්ජියම් AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "සුබ පැතුම්, ඔබ මෙම ටයිප් කිරීමේ පාඨමාලාව අවසන් කළා! ඔබට දිගටම කරගෙන යාමට අවශ්‍ය නම් එසේ කළ හැකියි, නමුත් උපදෙස් මෙතැනින් අවසන්. ඔබ ඉතා හොඳින් කළා!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "සුබ පැතුම්, ඔබ ඔබේ පළමු අභ්‍යාසය අවසන් කළා!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "ඉංග්‍රීසි"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "පළමුව ඔබේ ඇඟිලි මූලික පේළිය මත තබන්න: වමේ සිට දකුණට, %s යතුරු මත. වෙනත් යතුරක් ටයිප් නොකරන විට ඒවා එහිම තබාගන්න. ඇඟිලි නියමිත ස්ථානයේ ඇති විට පළමු අභ්‍යාසය ආරම්භ කරන්න. මුලදී වේගයට නොව නිරවද්‍යතාවයට අවධානය යොමු කරන්න."
+
+msgid "French AZERTY"
+msgstr "ප්‍රංශ AZERTY"
+
+msgid "Keyboard"
+msgstr "යතුරුපුවරුව"
+
+msgid "Learn to type with all ten fingers"
+msgstr "ඇඟිලි දහයෙන්ම ටයිප් කිරීමට ඉගෙන ගන්න"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "යතුරුපුවරුව දෙස නොබලා ඇඟිලි දහයෙන්ම ටයිප් කිරීමට ඉගෙන ගන්න: පළමුව අකුරු, පේළියෙන් පේළිය, ඉන්පසු වචන, වඩ වඩාත් වේගයෙන්."
+
+msgid "Level"
+msgstr "මට්ටම"
+
+msgid "Mistakes"
+msgstr "වැරදි"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "වැරදි: %d. කිසිදු වරදක් නොමැතිව කළ හැකි වන තුරු දිගටම උත්සාහ කරන්න."
+
+msgid "New profile"
+msgstr "නව පැතිකඩ"
+
+msgid "Other profile"
+msgstr "වෙනත් පැතිකඩ"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "ස්පාඤ්ඤ"
+
+msgid "Speed"
+msgstr "වේගය"
+
+msgid "Speed needed"
+msgstr "අවශ්‍ය වේගය"
+
+msgid "Start the exercise"
+msgstr "අභ්‍යාසය ආරම්භ කරන්න"
+
+msgid "T&yping Course..."
+msgstr "ටයිප් කිරීමේ පාඨමාලාව (&Y)..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "එම නම දැනටමත් භාවිතයේ ඇත: ඉහත ලැයිස්තුවෙන් එය තෝරන්න."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "එය වරදක් (වැරදි: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "ඔබ දැන් පුහුණු වන යතුරු වම් සහ දකුණු දබර ඇඟිල්ලෙන් ටයිප් කෙරෙන අතර, මෙම පේළියේ අප පුහුණු වූ අනෙක් යතුරු වලට වඩා එම ඇඟිලි වලින් ඈතින් පිහිටා ඇත. වෙනත් අකුරක් ටයිප් කරන විට ඔබේ ඇඟිල්ල මූලික පේළියේ එහි ස්ථානයට නැවත ගෙන ඒමට වග බලාගන්න."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "එය සාක්ෂාත් කර ගැනීමට, ඔබට ටිකක් සෙමින් ටයිප් කිරීමට උත්සාහ කළ හැකියි."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "කනගාටුයි: වැරදි %d. වඩා හොඳ වීමට දිගටම පුහුණු වන්න!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "පහත පාඨය ටයිප් කරන්න. ඔබේ පළමු යතුරෙන් කාලය ආරම්භ වේ; වැරදි යතුරක් රතු පැහැයෙන් පෙන්වන අතර එය නැවත ටයිප් කළ යුතුය."
+
+msgid "Typing course"
+msgstr "ටයිප් කිරීමේ පාඨමාලාව"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "ටයිප් කිරීමේ පාඨමාලාවට සාදරයෙන් පිළිගනිමු. සරල අභ්‍යාස කිරීමෙන් ඔබ ඔබේ ටයිප් කිරීම දියුණු කරනු ඇත; ඒවා අතරතුර ඔබට උපදෙස් ලැබේ. අපි පටන් ගනිමු:"
+
+msgid "Who is practising?"
+msgstr "පුහුණු වන්නේ කවුද?"
+
+msgid "Words in"
+msgstr "වචනවල භාෂාව"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "ඔබ එය වැරදි නැතිව සහ වේගයෙන් කළා! තවත් දියුණු වීමට නව අකුරු සංයෝජන කිහිපයක් දිගටම පුහුණු වන්න!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "ඔබ එය වැරදි නැතිව සහ වේගයෙන් කළා! තවත් දියුණු වීමට නව වචන සමඟ දිගටම පුහුණු වන්න!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "ඔබ කිසිදු වරදක් කළේ නැති අතර ප්‍රමාණවත් වේගයෙන් ටයිප් කරයි, එබැවින් ඔබට නව අකුරු සංයෝජන කිහිපයක් දිගටම පුහුණු විය හැකියි. දිගටම හොඳින් කරගෙන යන්න!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "ඔබ කිසිදු වරදක් කළේ නැති අතර ප්‍රමාණවත් වේගයෙන් ටයිප් කරයි, එබැවින් ඔබට නව වචන කිහිපයක් සමඟ දිගටම පුහුණු විය හැකියි. දිගටම හොඳින් කරගෙන යන්න!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "ඔබ කිසිදු වරදක් කළේ නැත. දැන් ඔබේ ටයිප් කිරීමේ වේගය ටිකක් වැඩි කිරීමට උත්සාහ කරන්න."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "ඔබ දැන් මූලික පේළියේ නොමැති අකුරු ඉගෙන ගනු ඇත. භාවිතා කළ යුතු ඇඟිලි මොනවාදැයි දැන ගැනීමට, ඔබේ තිරයේ ඇති යතුරුපුවරු රූපය බලන්න. අකුරක් ටයිප් කිරීමට ඇඟිල්ලක් භාවිතා නොකරන විට, එය වහාම මූලික පේළියට නැවත තබන්න."
+
+msgid "level %d of %d"
+msgstr "මට්ටම %d / %d"
+
+msgid "space"
+msgstr "හිස්තැන"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "අඳුරු"
+
+msgid "Light"
+msgstr "ලා"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "වචන පාඩම් පමණක් නිර්මාණය කරන්න: නව පාඩමක් නිර්මාණය කරන විට ස්ථලාකෘති හෝ මාධ‍ය පාඩම් නොමැත"
+
+msgid "System"
+msgstr "පද්ධතිය"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdo හි වර්ණ: පද්ධතියේ ඇති පරිදි, ලා හෝ අඳුරු"
+
+msgid "Theme"
+msgstr "තේමාව"
+
+msgid "Words only"
+msgstr "වචන පමණි"

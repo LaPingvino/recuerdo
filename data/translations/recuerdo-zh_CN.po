@@ -1065,3 +1065,135 @@ msgstr "在“输入”标签页中标记不在问题语言或答案语言词典
 
 msgid "Not in the dictionary (%s):"
 msgstr "不在词典中（%s）："
+
+# typing course
+msgid "%d words per minute"
+msgstr "每分钟 %d 个单词"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "每分钟 %d 个单词（要求：%d）"
+
+msgid "A name is needed."
+msgstr "需要填写名字。"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "恭喜你，你完成了这门打字课程！如果你想继续练习也可以，但讲解到此结束。你做得非常好！"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "英语"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "首先把手指放在基准键行上：从左到右，分别放在 %s 键上。不按其他键时，让手指停留在那里。手指就位后，开始第一个练习。一开始要追求准确，而不是速度。"
+
+msgid "Keyboard"
+msgstr "键盘"
+
+msgid "Learn to type with all ten fingers"
+msgstr "学习用十个手指打字"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "学习不看键盘、用十个手指打字：先一行一行地练字母，再练单词，越打越快。"
+
+msgid "Level"
+msgstr "级别"
+
+msgid "Mistakes"
+msgstr "错误"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "错误：%d。请继续练习，直到一个错误都没有。"
+
+msgid "New profile"
+msgstr "新建档案"
+
+msgid "Other profile"
+msgstr "其他档案"
+
+msgid "Spanish"
+msgstr "西班牙语"
+
+msgid "Speed needed"
+msgstr "要求的速度"
+
+msgid "Start the exercise"
+msgstr "开始练习"
+
+msgid "T&yping Course..."
+msgstr "打字课程(&Y)..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "这个名字已被使用：请在上面的列表中选择它。"
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "打错了（错误：%d）。"
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "现在要练习的键由左右手食指来按，它们比这一行上已练过的其他键离食指更远。打其他字母时，一定要把手指放回基准键行上的位置。"
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "为此，你可以试着放慢一点。"
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "真可惜：%d 个错误。继续练习，你会越来越好！"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "请输入下面的文字。按下第一个键时开始计时；打错的键会显示为红色，必须重新输入。"
+
+msgid "Typing course"
+msgstr "打字课程"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "欢迎来到打字课程。你将通过简单的练习提高打字水平；练习之间会有讲解。我们开始吧："
+
+msgid "Who is practising?"
+msgstr "谁来练习？"
+
+msgid "Words in"
+msgstr "单词语言"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "你打得又准又快！继续练习一些新的字母组合，让自己更上一层楼！"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "你打得又准又快！继续练习新的单词，让自己更上一层楼！"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "你一个错误都没有，而且速度够快，可以继续练习一些新的字母组合了。继续保持！"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "你一个错误都没有，而且速度够快，可以继续练习一些新的单词了。继续保持！"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "现在你要学习不在基准键行上的字母。要知道该用哪个手指，请看屏幕上的键盘图。手指不用来打字母时，要立即把它放回基准键行。"
+
+msgid "level %d of %d"
+msgstr "第 %d 级（共 %d 级）"
+
+msgid "space"
+msgstr "空格"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "深色"
+
+msgid "Light"
+msgstr "浅色"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "只创建单词课程：创建新课程时不提供地形学或媒体课程"
+
+msgid "System"
+msgstr "跟随系统"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdo 的颜色：跟随系统、浅色或深色"
+
+msgid "Theme"
+msgstr "主题"
+
+msgid "Words only"
+msgstr "仅单词"

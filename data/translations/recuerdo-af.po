@@ -1150,3 +1150,168 @@ msgstr "Merk woorde op die Invoer-oortjie wat nie in die woordeboek van die vraa
 
 msgid "Not in the dictionary (%s):"
 msgstr "Nie in die woordeboek nie (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d woorde per minuut"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d woorde per minuut (nodig: %d)"
+
+msgid "A name is needed."
+msgstr "’n Naam is nodig."
+
+msgid "Belgian AZERTY"
+msgstr "Belgiese AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Baie geluk, jy het hierdie tikkursus voltooi! As jy wil, kan jy aanhou, maar dit is die einde van die instruksies. Jy het uitstekend gevaar!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Baie geluk, jy het jou eerste oefening voltooi!"
+
+msgid "Dutch"
+msgstr "Nederlands"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Engels"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Plaas eers jou vingers op die tuisry: van links na regs, op die sleutels %s. Hou hulle daar wanneer jy nie ’n ander sleutel tik nie. Wanneer jou vingers in posisie is, begin die eerste oefening. Werk eers aan akkuraatheid, nie aan spoed nie."
+
+msgid "French"
+msgstr "Frans"
+
+msgid "French AZERTY"
+msgstr "Franse AZERTY"
+
+msgid "German"
+msgstr "Duits"
+
+msgid "Keyboard"
+msgstr "Sleutelbord"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Leer tik met al tien vingers"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Leer tik met al tien vingers sonder om na die sleutelbord te kyk: eers die letters, ry vir ry, dan woorde, al hoe vinniger."
+
+msgid "Level"
+msgstr "Vlak"
+
+msgid "Mistakes"
+msgstr "Foute"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Foute: %d. Probeer asseblief aanhou totdat jy dit sonder enige foute kan doen."
+
+msgid "New profile"
+msgstr "Nuwe profiel"
+
+msgid "Other profile"
+msgstr "Ander profiel"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Spaans"
+
+msgid "Speed"
+msgstr "Spoed"
+
+msgid "Speed needed"
+msgstr "Vereiste spoed"
+
+msgid "Start the exercise"
+msgstr "Begin die oefening"
+
+msgid "T&yping Course..."
+msgstr "&Tikkursus..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Daardie naam is reeds geneem: kies dit in die lys hierbo."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Dis ’n fout (foute: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Die sleutels wat jy nou gaan oefen, word met die linker- en regterwysvinger getik en is verder van daardie vingers af as die ander sleutels wat ons op hierdie ry geoefen het. Maak seker dat jy jou vinger na sy posisie op die tuisry terugbring wanneer jy ’n ander letter tik."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Om dit te bereik, kan jy probeer om ’n bietjie stadiger te tik."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Jammer: %d foute. Hou aan oefen om beter te word!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Tik die teks hieronder. Die klok begin by jou eerste sleuteldruk; ’n verkeerde sleutel word in rooi gewys en moet weer getik word."
+
+msgid "Typing course"
+msgstr "Tikkursus"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Welkom by die tikkursus. Jy sal jou tikwerk verbeter deur eenvoudige oefeninge te doen; tussendeur kry jy instruksies. Kom ons begin:"
+
+msgid "Who is practising?"
+msgstr "Wie oefen?"
+
+msgid "Words in"
+msgstr "Woorde in"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Jy het dit foutloos en vinnig gedoen! Oefen verder met ’n paar nuwe letterkombinasies om nog beter te word!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Jy het dit foutloos en vinnig gedoen! Oefen verder met nuwe woorde om nog beter te word!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Jy het geen foute gemaak nie en tik vinnig genoeg, so jy kan verder oefen met ’n paar nuwe letterkombinasies. Hou so aan!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Jy het geen foute gemaak nie en tik vinnig genoeg, so jy kan verder oefen met ’n paar nuwe woorde. Hou so aan!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Jy het geen foute gemaak nie. Probeer nou om jou tikspoed ’n bietjie te verbeter."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Jy gaan nou letters leer wat nie op die tuisry is nie. Kyk na die prent van die sleutelbord op jou skerm om te sien watter vingers jy moet gebruik. Wanneer jy nie ’n vinger gebruik om ’n letter te tik nie, sit dit dadelik terug op die tuisry."
+
+msgid "level %d of %d"
+msgstr "vlak %d van %d"
+
+msgid "space"
+msgstr "spasie"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Donker"
+
+msgid "Light"
+msgstr "Lig"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Maak slegs woordlesse: geen topografie- of medialesse wanneer ’n nuwe les gemaak word"
+
+msgid "System"
+msgstr "Stelsel"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Die kleure van Recuerdo: soos die stelsel dit het, lig of donker"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Words only"
+msgstr "Slegs woorde"

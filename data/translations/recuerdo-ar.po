@@ -1123,3 +1123,159 @@ msgstr "تمييز الكلمات في لسان «إدخال» غير الموج
 
 msgid "Not in the dictionary (%s):"
 msgstr "غير موجودة في القاموس (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d كلمة في الدقيقة"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d كلمة في الدقيقة (المطلوب: %d)"
+
+msgid "A name is needed."
+msgstr "الاسم مطلوب."
+
+msgid "Belgian AZERTY"
+msgstr "AZERTY البلجيكية"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "تهانينا، لقد أنهيت دورة الكتابة على لوحة المفاتيح! يمكنك المتابعة إن أردت، لكن التعليمات تنتهي هنا. لقد أحسنت صنعًا!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "تهانينا، لقد أنهيت تمرينك الأول!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "ضع أصابعك أولًا على صف الارتكاز: من اليسار إلى اليمين، على المفاتيح %s. أبقها هناك ما دمت لا تكتب مفتاحًا آخر. عندما تصبح أصابعك في مكانها، ابدأ التمرين الأول. اهتم بالدقة أولًا، لا بالسرعة."
+
+msgid "French AZERTY"
+msgstr "AZERTY الفرنسية"
+
+msgid "Keyboard"
+msgstr "لوحة المفاتيح"
+
+msgid "Learn to type with all ten fingers"
+msgstr "تعلّم الكتابة بالأصابع العشرة"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "تعلّم الكتابة بالأصابع العشرة دون النظر إلى لوحة المفاتيح: الحروف أولًا، صفًا بعد صف، ثم الكلمات، بسرعة متزايدة."
+
+msgid "Level"
+msgstr "المستوى"
+
+msgid "Mistakes"
+msgstr "الأخطاء"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "الأخطاء: %d. واصل المحاولة حتى تتمكن من ذلك دون أي خطأ."
+
+msgid "New profile"
+msgstr "ملف شخصي جديد"
+
+msgid "Other profile"
+msgstr "ملف شخصي آخر"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "الإسبانية"
+
+msgid "Speed"
+msgstr "السرعة"
+
+msgid "Speed needed"
+msgstr "السرعة المطلوبة"
+
+msgid "Start the exercise"
+msgstr "ابدأ التمرين"
+
+msgid "T&yping Course..."
+msgstr "&دورة الكتابة على لوحة المفاتيح..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "هذا الاسم مستخدم: اختره من القائمة أعلاه."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "هذا خطأ (الأخطاء: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "المفاتيح التي ستتدرّب عليها الآن تُكتب بالسبابة اليسرى واليمنى، وهي أبعد عن هذين الإصبعين من المفاتيح الأخرى التي تدرّبنا عليها في هذا الصف. احرص على إعادة إصبعك إلى مكانه على صف الارتكاز عندما تكتب حرفًا آخر."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "لتحقيق ذلك، يمكنك أن تحاول الإبطاء قليلًا."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "للأسف، عدد الأخطاء: %d. واصل التدرّب لتتحسّن!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "اكتب النص أدناه. يبدأ التوقيت عند أول مفتاح تضغطه؛ ويظهر المفتاح الخاطئ باللون الأحمر ويجب كتابته من جديد."
+
+msgid "Typing course"
+msgstr "دورة الكتابة على لوحة المفاتيح"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "مرحبًا بك في دورة الكتابة على لوحة المفاتيح. ستحسّن كتابتك بأداء تمارين بسيطة، وبينها تحصل على تعليمات. لنبدأ:"
+
+msgid "Who is practising?"
+msgstr "من يتدرّب؟"
+
+msgid "Words in"
+msgstr "لغة الكلمات"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "أدّيت ذلك دون أخطاء وبسرعة! واصل التدرّب على تراكيب حروف جديدة لتصبح أفضل!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "أدّيت ذلك دون أخطاء وبسرعة! واصل التدرّب على كلمات جديدة لتصبح أفضل!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "لم ترتكب أي خطأ وسرعتك كافية، لذا يمكنك متابعة التدرّب على تراكيب حروف جديدة. واصل العمل الجيد!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "لم ترتكب أي خطأ وسرعتك كافية، لذا يمكنك متابعة التدرّب على كلمات جديدة. واصل العمل الجيد!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "لم ترتكب أي خطأ. حاول الآن زيادة سرعة كتابتك قليلًا."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "ستتعلّم الآن حروفًا ليست على صف الارتكاز. لمعرفة الأصابع التي عليك استخدامها، انظر إلى صورة لوحة المفاتيح على شاشتك. عندما لا تستخدم إصبعًا لكتابة حرف، أعده مباشرة إلى صف الارتكاز."
+
+msgid "level %d of %d"
+msgstr "المستوى %d من %d"
+
+msgid "space"
+msgstr "المسافة"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "داكنة"
+
+msgid "Light"
+msgstr "فاتحة"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "إنشاء دروس كلمات فقط: لا دروس تضاريس أو وسائط عند إنشاء درس جديد"
+
+msgid "System"
+msgstr "النظام"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "ألوان Recuerdo: كما في النظام، فاتحة أو داكنة"
+
+msgid "Theme"
+msgstr "السمة"
+
+msgid "Words only"
+msgstr "الكلمات فقط"

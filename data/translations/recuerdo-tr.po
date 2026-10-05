@@ -1053,3 +1053,117 @@ msgstr "Giriş sekmesinde soru veya cevap dilinin sözlüğünde bulunmayan keli
 
 msgid "Not in the dictionary (%s):"
 msgstr "Sözlükte yok (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "dakikada %d kelime"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "dakikada %d kelime (gereken: %d)"
+
+msgid "A name is needed."
+msgstr "Bir ad gerekli."
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "İngilizce"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Önce parmaklarınızı ev satırına yerleştirin: soldan sağa şu tuşlara: %s. Başka bir tuşa basmadığınız sürece parmaklarınızı orada tutun. Parmaklarınız yerindeyse ilk alıştırmaya başlayın. Başlangıçta hıza değil, doğruluğa odaklanın."
+
+msgid "Keyboard"
+msgstr "Klavye"
+
+msgid "Learn to type with all ten fingers"
+msgstr "On parmakla yazmayı öğrenin"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Klavyeye bakmadan on parmakla yazmayı öğrenin: önce satır satır harfler, sonra kelimeler, gittikçe daha hızlı."
+
+msgid "Level"
+msgstr "Seviye"
+
+msgid "Mistakes"
+msgstr "Hatalar"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Hatalar: %d. Lütfen hiç hata yapmadan yapabilene kadar denemeye devam edin."
+
+msgid "New profile"
+msgstr "Yeni profil"
+
+msgid "Other profile"
+msgstr "Başka profil"
+
+msgid "Spanish"
+msgstr "İspanyolca"
+
+msgid "Speed needed"
+msgstr "Gereken hız"
+
+msgid "Start the exercise"
+msgstr "Alıştırmayı başlat"
+
+msgid "T&yping Course..."
+msgstr "&Yazım Kursu..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Bu ad zaten kullanılıyor: yukarıdaki listeden seçin."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Bu bir hata (hatalar: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Şimdi çalışacağınız tuşlara sol ve sağ işaret parmağıyla basılır; bu tuşlar, bu satırda çalıştığımız diğer tuşlara göre o parmaklardan daha uzaktadır. Başka bir harf yazarken parmağınızı ev satırındaki yerine geri getirmeyi unutmayın."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Bunu başarmak için biraz yavaşlamayı deneyebilirsiniz."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Yazık, hata sayısı: %d. Daha iyi olmak için alıştırma yapmaya devam edin!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Aşağıdaki metni yazın. Süre ilk tuşa bastığınızda başlar; yanlış tuş kırmızı gösterilir ve yeniden yazılmalıdır."
+
+msgid "Typing course"
+msgstr "Yazım kursu"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Yazım kursuna hoş geldiniz. Basit alıştırmalar yaparak yazma becerinizi geliştireceksiniz; alıştırmaların arasında talimatlar alacaksınız. Haydi başlayalım:"
+
+msgid "Who is practising?"
+msgstr "Kim çalışıyor?"
+
+msgid "Words in"
+msgstr "Kelimelerin dili"
+
+msgid "level %d of %d"
+msgstr "seviye %d / %d"
+
+msgid "space"
+msgstr "boşluk"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Koyu"
+
+msgid "Light"
+msgstr "Açık"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Yalnızca kelime dersleri oluştur: yeni bir ders oluştururken topografi veya ortam dersi yok"
+
+msgid "System"
+msgstr "Sistem"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdo'nun renkleri: sistemdeki gibi, açık ya da koyu"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Words only"
+msgstr "Yalnızca kelimeler"

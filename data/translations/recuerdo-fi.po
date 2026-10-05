@@ -1093,3 +1093,156 @@ msgstr "Merkitse Syötä-välilehdellä sanat, joita ei löydy kysymyksen tai va
 
 msgid "Not in the dictionary (%s):"
 msgstr "Ei sanakirjassa (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d sanaa minuutissa"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d sanaa minuutissa (vaaditaan: %d)"
+
+msgid "A name is needed."
+msgstr "Nimi on pakollinen."
+
+msgid "Belgian AZERTY"
+msgstr "Belgialainen AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Onnittelut, suoritit tämän konekirjoituskurssin loppuun! Voit halutessasi jatkaa harjoittelua, mutta ohjeet päättyvät tähän. Teit hienoa työtä!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Onnittelut, suoritit ensimmäisen harjoituksesi!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Englanti"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Aseta ensin sormesi perusriville: vasemmalta oikealle näppäimille %s. Pidä ne siellä, kun et paina jotain muuta näppäintä. Kun sormesi ovat paikoillaan, aloita ensimmäinen harjoitus. Keskity aluksi tarkkuuteen, älä nopeuteen."
+
+msgid "French AZERTY"
+msgstr "Ranskalainen AZERTY"
+
+msgid "Keyboard"
+msgstr "Näppäimistö"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Opettele kirjoittamaan kaikilla kymmenellä sormella"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Opettele kirjoittamaan kaikilla kymmenellä sormella katsomatta näppäimistöä: ensin kirjaimet rivi kerrallaan, sitten sanat, yhä nopeammin."
+
+msgid "Level"
+msgstr "Taso"
+
+msgid "Mistakes"
+msgstr "Virheet"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Virheitä: %d. Yritä uudelleen, kunnes onnistut ilman yhtään virhettä."
+
+msgid "New profile"
+msgstr "Uusi profiili"
+
+msgid "Other profile"
+msgstr "Toinen profiili"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Espanja"
+
+msgid "Speed needed"
+msgstr "Vaadittu nopeus"
+
+msgid "Start the exercise"
+msgstr "Aloita harjoitus"
+
+msgid "T&yping Course..."
+msgstr "&Konekirjoituskurssi..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Nimi on jo käytössä: valitse se yllä olevasta luettelosta."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Tuo oli virhe (virheitä: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Nyt harjoiteltavat näppäimet painetaan vasemmalla ja oikealla etusormella, ja ne ovat kauempana näistä sormista kuin muut tällä rivillä harjoittelemamme näppäimet. Muista palauttaa sormi paikalleen perusriville, kun kirjoitat jonkin toisen kirjaimen."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Siihen päästäksesi voit kokeilla kirjoittaa hieman hitaammin."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Harmi, virheitä: %d. Jatka harjoittelua, niin kehityt!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Kirjoita alla oleva teksti. Kello käynnistyy ensimmäisestä näppäilystäsi; väärä näppäin näytetään punaisella, ja se on kirjoitettava uudelleen."
+
+msgid "Typing course"
+msgstr "Konekirjoituskurssi"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Tervetuloa konekirjoituskurssille. Kirjoitustaitosi paranee yksinkertaisten harjoitusten avulla; niiden välillä saat ohjeita. Aloitetaan:"
+
+msgid "Who is practising?"
+msgstr "Kuka harjoittelee?"
+
+msgid "Words in"
+msgstr "Sanojen kieli"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Teit sen virheettömästi ja nopeasti! Jatka harjoittelua uusilla kirjainyhdistelmillä, niin kehityt entisestään!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Teit sen virheettömästi ja nopeasti! Jatka harjoittelua uusilla sanoilla, niin kehityt entisestään!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Et tehnyt yhtään virhettä ja kirjoitat riittävän nopeasti, joten voit jatkaa harjoittelua uusilla kirjainyhdistelmillä. Jatka samaan malliin!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Et tehnyt yhtään virhettä ja kirjoitat riittävän nopeasti, joten voit jatkaa harjoittelua uusilla sanoilla. Jatka samaan malliin!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Et tehnyt yhtään virhettä. Yritä nyt kirjoittaa hieman nopeammin."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Seuraavaksi opettelet kirjaimia, jotka eivät ole perusrivillä. Näytölläsi olevasta näppäimistökuvasta näet, mitä sormia sinun pitää käyttää. Kun et käytä sormea kirjaimen kirjoittamiseen, palauta se heti perusriville."
+
+msgid "level %d of %d"
+msgstr "taso %d / %d"
+
+msgid "space"
+msgstr "välilyönti"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Tumma"
+
+msgid "Light"
+msgstr "Vaalea"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Tee vain sanaoppitunteja: ei topografia- tai mediaoppitunteja uutta oppituntia luotaessa"
+
+msgid "System"
+msgstr "Järjestelmä"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdon värit: kuten järjestelmässä, vaaleat tai tummat"
+
+msgid "Theme"
+msgstr "Teema"
+
+msgid "Words only"
+msgstr "Vain sanat"

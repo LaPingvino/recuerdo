@@ -1114,3 +1114,168 @@ msgstr "Označiť na karte Zadávanie slová, ktoré nie sú v slovníku jazyka 
 
 msgid "Not in the dictionary (%s):"
 msgstr "Chýba v slovníku (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "Slov za minútu: %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "Slov za minútu: %d (potrebné: %d)"
+
+msgid "A name is needed."
+msgstr "Treba zadať meno."
+
+msgid "Belgian AZERTY"
+msgstr "Belgická AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Gratulujeme, tento kurz písania na klávesnici máš za sebou! Ak chceš, môžeš pokračovať, ale tu sa pokyny končia. Skvelá práca!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Gratulujeme, prvé cvičenie máš za sebou!"
+
+msgid "Dutch"
+msgstr "Holandčina"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Angličtina"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Najprv polož prsty na základný rad: zľava doprava na klávesy %s. Nechaj ich tam, keď práve nepíšeš inú klávesu. Keď budú prsty na mieste, začni prvé cvičenie. Spočiatku sa sústreď na presnosť, nie na rýchlosť."
+
+msgid "French"
+msgstr "Francúzština"
+
+msgid "French AZERTY"
+msgstr "Francúzska AZERTY"
+
+msgid "German"
+msgstr "Nemčina"
+
+msgid "Keyboard"
+msgstr "Klávesnica"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Nauč sa písať všetkými desiatimi prstami"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Nauč sa písať všetkými desiatimi prstami bez pozerania na klávesnicu: najprv písmená, rad po rade, potom slová, stále rýchlejšie."
+
+msgid "Level"
+msgstr "Úroveň"
+
+msgid "Mistakes"
+msgstr "Chyby"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Chýb: %d. Skúšaj to ďalej, kým to nezvládneš bez chyby."
+
+msgid "New profile"
+msgstr "Nový profil"
+
+msgid "Other profile"
+msgstr "Iný profil"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Španielčina"
+
+msgid "Speed"
+msgstr "Rýchlosť"
+
+msgid "Speed needed"
+msgstr "Potrebná rýchlosť"
+
+msgid "Start the exercise"
+msgstr "Začať cvičenie"
+
+msgid "T&yping Course..."
+msgstr "&Kurz písania na klávesnici..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Toto meno už existuje: vyber ho v zozname vyššie."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "To je chyba (chýb: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Klávesy, ktoré budeš teraz precvičovať, sa píšu ukazovákom ľavej a pravej ruky a sú od týchto prstov ďalej než ostatné klávesy, ktoré sme na tomto rade precvičovali. Nezabudni vrátiť prst na jeho miesto v základnom rade, keď píšeš iné písmeno."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Na to skús trochu spomaliť."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Škoda, chýb: %d. Precvičuj ďalej a zlepšíš sa!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Prepíš text nižšie. Čas sa začne merať prvou klávesou; nesprávna klávesa sa zobrazí červenou a treba ju napísať znova."
+
+msgid "Typing course"
+msgstr "Kurz písania na klávesnici"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Vitaj v kurze písania na klávesnici. Svoje písanie zlepšíš jednoduchými cvičeniami; medzi nimi dostaneš pokyny. Poďme na to:"
+
+msgid "Who is practising?"
+msgstr "Kto bude cvičiť?"
+
+msgid "Words in"
+msgstr "Jazyk slov"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Bez chyby a rýchlo! Pokračuj v precvičovaní nových kombinácií písmen a zlepšíš sa ešte viac!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Bez chyby a rýchlo! Pokračuj v precvičovaní nových slov a zlepšíš sa ešte viac!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Nemáš žiadnu chybu a píšeš dosť rýchlo, takže môžeš pokračovať v precvičovaní nových kombinácií písmen. Len tak ďalej!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Nemáš žiadnu chybu a píšeš dosť rýchlo, takže môžeš pokračovať v precvičovaní nových slov. Len tak ďalej!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Nemáš žiadnu chybu. Teraz skús trochu zvýšiť rýchlosť písania."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Teraz sa naučíš písmená, ktoré nie sú na základnom rade. Ktoré prsty máš použiť, uvidíš na obrázku klávesnice na obrazovke. Keď prstom práve nepíšeš písmeno, vráť ho hneď späť na základný rad."
+
+msgid "level %d of %d"
+msgstr "úroveň %d z %d"
+
+msgid "space"
+msgstr "medzerník"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Tmavý"
+
+msgid "Light"
+msgstr "Svetlý"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Vytvárať iba lekcie slov: žiadne lekcie topografie ani médií pri vytváraní novej lekcie"
+
+msgid "System"
+msgstr "Systémový"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Farby programu Recuerdo: podľa systému, svetlé alebo tmavé"
+
+msgid "Theme"
+msgstr "Motív"
+
+msgid "Words only"
+msgstr "Iba slová"

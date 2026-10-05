@@ -1189,3 +1189,168 @@ msgstr "Означи на картици „Унос“ речи којих не
 
 msgid "Not in the dictionary (%s):"
 msgstr "Нема у речнику (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "Речи у минуту: %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "Речи у минуту: %d (потребно: %d)"
+
+msgid "A name is needed."
+msgstr "Потребно је име."
+
+msgid "Belgian AZERTY"
+msgstr "Белгијски AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Честитамо, овај курс куцања је завршен! Ако желиш, можеш да наставиш, али овде се упутства завршавају. Одличан посао!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Честитамо, прва вежба је завршена!"
+
+msgid "Dutch"
+msgstr "Холандски"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Енглески"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Прво постави прсте на основни ред: слева надесно, на тастере %s. Држи их тамо кад не куцаш неки други тастер. Кад прсти буду на месту, почни прву вежбу. У почетку тежи тачности, а не брзини."
+
+msgid "French"
+msgstr "Француски"
+
+msgid "French AZERTY"
+msgstr "Француски AZERTY"
+
+msgid "German"
+msgstr "Немачки"
+
+msgid "Keyboard"
+msgstr "Тастатура"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Научи да куцаш са свих десет прстију"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Научи да куцаш са свих десет прстију, без гледања у тастатуру: прво слова, ред по ред, па речи, све брже и брже."
+
+msgid "Level"
+msgstr "Ниво"
+
+msgid "Mistakes"
+msgstr "Грешке"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Грешака: %d. Покушавај и даље док не успеш без иједне."
+
+msgid "New profile"
+msgstr "Нови профил"
+
+msgid "Other profile"
+msgstr "Други профил"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Шпански"
+
+msgid "Speed"
+msgstr "Брзина"
+
+msgid "Speed needed"
+msgstr "Потребна брзина"
+
+msgid "Start the exercise"
+msgstr "Почни вежбу"
+
+msgid "T&yping Course..."
+msgstr "&Курс куцања..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "То име је заузето: изабери га на листи изнад."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "То је грешка (грешака: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Тастери које ћеш сада вежбати куцају се левим и десним кажипрстом и даље су од тих прстију него остали тастери које смо вежбали у тренутном реду. Пази да вратиш прст на његово место у основном реду кад куцаш неко друго слово."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "За то пробај мало да успориш."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Штета, грешака: %d. Настави да вежбаш и биће све боље!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Откуцај текст испод. Време почиње да тече од првог тастера; погрешан тастер се приказује црвено и мора поново да се откуца."
+
+msgid "Typing course"
+msgstr "Курс куцања"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Добро дошли на курс куцања. Своје куцање побољшаћеш кроз једноставне вежбе; између њих добијаш упутства. Почнимо:"
+
+msgid "Who is practising?"
+msgstr "Ко вежба?"
+
+msgid "Words in"
+msgstr "Језик речи"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Без грешке и брзо! Настави да вежбаш нове комбинације слова да би било још боље!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Без грешке и брзо! Настави да вежбаш са новим речима да би било још боље!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Нема ниједне грешке, а куцаш довољно брзо, па можеш да наставиш да вежбаш нове комбинације слова. Само тако настави!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Нема ниједне грешке, а куцаш довољно брзо, па можеш да наставиш да вежбаш са новим речима. Само тако настави!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Нема ниједне грешке. Сада пробај мало да повећаш брзину куцања."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Сада ћеш учити слова која нису у основном реду. Које прсте треба да користиш, види на слици тастатуре на екрану. Кад прстом не куцаш слово, одмах га врати на основни ред."
+
+msgid "level %d of %d"
+msgstr "ниво %d од %d"
+
+msgid "space"
+msgstr "размак"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Тамна"
+
+msgid "Light"
+msgstr "Светла"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Прави само лекције речи: без лекција топографије или медија при прављењу нове лекције"
+
+msgid "System"
+msgstr "Системска"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Боје Recuerdo-а: као у систему, светле или тамне"
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Words only"
+msgstr "Само речи"

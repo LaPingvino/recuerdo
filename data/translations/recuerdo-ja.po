@@ -1078,3 +1078,168 @@ msgstr "「入力」タブで、質問の言語または答えの言語の辞書
 
 msgid "Not in the dictionary (%s):"
 msgstr "辞書にない語（%s）："
+
+# typing course
+msgid "%d words per minute"
+msgstr "1 分あたり %d 語"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "1 分あたり %d 語（必要：%d）"
+
+msgid "A name is needed."
+msgstr "名前が必要です。"
+
+msgid "Belgian AZERTY"
+msgstr "ベルギー AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "おめでとうございます。タイピング講座を修了しました！続けたい場合は続けられますが、説明はここまでです。よく頑張りました！"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "おめでとうございます。最初の練習を終えました！"
+
+msgid "Dutch"
+msgstr "オランダ語"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "英語"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "まず指をホームポジションに置きます。左から右へ、%s のキーです。ほかのキーを打たないときは、指をそこに置いたままにします。指の位置が決まったら、最初の練習を始めましょう。最初は速さではなく正確さを目指してください。"
+
+msgid "French"
+msgstr "フランス語"
+
+msgid "French AZERTY"
+msgstr "フランス AZERTY"
+
+msgid "German"
+msgstr "ドイツ語"
+
+msgid "Keyboard"
+msgstr "キーボード"
+
+msgid "Learn to type with all ten fingers"
+msgstr "10 本の指すべてでタイピングを身につける"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "キーボードを見ずに、10 本の指すべてでタイピングを身につけます。まずは文字を段ごとに、次に単語を、だんだん速く打てるようにします。"
+
+msgid "Level"
+msgstr "レベル"
+
+msgid "Mistakes"
+msgstr "ミス"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "ミス：%d。ミスなしでできるまで続けてください。"
+
+msgid "New profile"
+msgstr "新しいプロフィール"
+
+msgid "Other profile"
+msgstr "別のプロフィール"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "スペイン語"
+
+msgid "Speed"
+msgstr "速度"
+
+msgid "Speed needed"
+msgstr "必要な速度"
+
+msgid "Start the exercise"
+msgstr "練習を始める"
+
+msgid "T&yping Course..."
+msgstr "タイピング講座(&Y)..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "その名前はすでに使われています。上のリストから選んでください。"
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "ミスです（ミス：%d）。"
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "これから練習するキーは左右の人差し指で打ちます。この段でこれまで練習したほかのキーよりも、人差し指から離れた位置にあります。ほかの文字を打つときは、指をホームポジションに必ず戻してください。"
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "そのためには、少しゆっくり打ってみるとよいでしょう。"
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "残念、ミスが %d 個ありました。練習を続けて上達しましょう！"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "下のテキストを入力してください。時間は最初のキーを押したときから計り始めます。間違ったキーは赤で表示され、打ち直す必要があります。"
+
+msgid "Typing course"
+msgstr "タイピング講座"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "タイピング講座へようこそ。簡単な練習をしながらタイピングを上達させます。練習の合間には説明があります。では始めましょう："
+
+msgid "Who is practising?"
+msgstr "誰が練習しますか？"
+
+msgid "Words in"
+msgstr "単語の言語"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "ミスなしで速く打てました！新しい文字の組み合わせの練習を続けて、さらに上達しましょう！"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "ミスなしで速く打てました！新しい単語で練習を続けて、さらに上達しましょう！"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "ミスがなく、速さも十分なので、新しい文字の組み合わせの練習に進めます。この調子で頑張りましょう！"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "ミスがなく、速さも十分なので、新しい単語の練習に進めます。この調子で頑張りましょう！"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "ミスはありませんでした。次は打つ速さを少し上げてみましょう。"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "これからホームポジション以外の文字を覚えます。どの指を使うかは、画面のキーボードの図を見てください。文字を打つのに使っていない指は、すぐにホームポジションに戻しましょう。"
+
+msgid "level %d of %d"
+msgstr "レベル %d／%d"
+
+msgid "space"
+msgstr "スペース"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "ダーク"
+
+msgid "Light"
+msgstr "ライト"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "単語レッスンだけを作成する：新しいレッスンの作成時に地誌レッスンやメディアレッスンを作らない"
+
+msgid "System"
+msgstr "システム"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdo の配色：システムと同じ、ライト、またはダーク"
+
+msgid "Theme"
+msgstr "テーマ"
+
+msgid "Words only"
+msgstr "単語のみ"

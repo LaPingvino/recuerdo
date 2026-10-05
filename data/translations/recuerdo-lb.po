@@ -1156,3 +1156,168 @@ msgstr "Wierder am Tab Aginn markéieren, déi net am Dictionnaire vun der Fro- 
 
 msgid "Not in the dictionary (%s):"
 msgstr "Net am Dictionnaire (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d Wierder pro Minutt"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d Wierder pro Minutt (néideg: %d)"
+
+msgid "A name is needed."
+msgstr "En Numm ass néideg."
+
+msgid "Belgian AZERTY"
+msgstr "Belsch AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Félicitatiounen, du hues dësen Tippcours ofgeschloss! Wann s du wëlls, kanns du weidermaachen, mä hei sinn d'Instruktiounen um Enn. Du hues dat super gemaach!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Félicitatiounen, du hues deng éischt Übung fäerdeg gemaach!"
+
+msgid "Dutch"
+msgstr "Hollännesch"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Englesch"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Lee fir d'éischt deng Fangeren op d'Grondrei: vu lénks no riets, op d'Tasten %s. Loss se do, wann s du keng aner Tast tipps. Wann deng Fangeren op hirer Plaz sinn, fänk mat der éischter Übung un. Fir d'éischt geet et ëm Genauegkeet, net ëm Vitess."
+
+msgid "French"
+msgstr "Franséisch"
+
+msgid "French AZERTY"
+msgstr "Franséisch AZERTY"
+
+msgid "German"
+msgstr "Däitsch"
+
+msgid "Keyboard"
+msgstr "Tastatur"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Léier mat allen zéng Fangeren tippen"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Léier mat allen zéng Fangeren tippen, ouni op d'Tastatur ze kucken: fir d'éischt d'Buschtawen, Rei fir Rei, duerno Wierder, ëmmer méi séier."
+
+msgid "Level"
+msgstr "Niveau"
+
+msgid "Mistakes"
+msgstr "Feeler"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Feeler: %d. Probéier w.e.g. weider, bis du et ouni Feeler kanns."
+
+msgid "New profile"
+msgstr "Neie Profil"
+
+msgid "Other profile"
+msgstr "Anere Profil"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Spuenesch"
+
+msgid "Speed"
+msgstr "Vitess"
+
+msgid "Speed needed"
+msgstr "Néideg Vitess"
+
+msgid "Start the exercise"
+msgstr "Übung ufänken"
+
+msgid "T&yping Course..."
+msgstr "&Tippcours..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Dësen Numm gëtt et schonn: wiel en an der Lëscht uewendriwwer."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Dat ass e Feeler (Feeler: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "D'Tasten, déi s du elo übs, gi mam lénksen a mam rietsen Zeigefanger getippt a si méi wäit vun dëse Fangeren ewech wéi déi aner Tasten, déi mir op dëser Rei geübt hunn. Pass op, dass däi Fanger op seng Plaz op der Grondrei zréckgeet, wann s du en anere Buschtaf tipps."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Fir dat z'erreechen, kéints du probéieren, e bësse méi lues ze tippen."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Schued: %d Feeler. Üb weider, fir besser ze ginn!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Tipp den Text hei ënnendrënner. D'Auer fänkt bei denger éischter Tast un; eng falsch Tast gëtt rout ugewisen a muss nach eng Kéier getippt ginn."
+
+msgid "Typing course"
+msgstr "Tippcours"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Wëllkomm beim Tippcours. Du verbessers däin Tippen duerch einfach Übungen; dertëscht kriss du Instruktiounen. Komm, mir fänken un:"
+
+msgid "Who is practising?"
+msgstr "Wien übt?"
+
+msgid "Words in"
+msgstr "Wierder op"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Du hues et ouni Feeler a séier gemaach! Üb weider mat e puer neie Buschtawekombinatiounen, fir nach besser ze ginn!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Du hues et ouni Feeler a séier gemaach! Üb weider mat neie Wierder, fir nach besser ze ginn!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Du hues keen eenzege Feeler gemaach an tipps séier genuch, also kanns du mat e puer neie Buschtawekombinatiounen weiderüben. Maach esou weider!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Du hues keen eenzege Feeler gemaach an tipps séier genuch, also kanns du mat e puer neie Wierder weiderüben. Maach esou weider!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Du hues keen eenzege Feeler gemaach. Probéier elo, e bësse méi séier ze tippen."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Du léiers elo Buschtawen, déi net op der Grondrei sinn. Fir ze gesinn, wéi eng Fangeren s du benotze muss, kuck d'Bild vun der Tastatur op dengem Schierm. Wann s du e Fanger net benotz fir e Buschtaf ze tippen, lee en direkt zréck op d'Grondrei."
+
+msgid "level %d of %d"
+msgstr "Niveau %d vun %d"
+
+msgid "space"
+msgstr "Leertast"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Donkel"
+
+msgid "Light"
+msgstr "Hell"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Nëmme Wierderlektioune maachen: keng Topografie- oder Medielektioune beim Erstelle vun enger neier Lektioun"
+
+msgid "System"
+msgstr "System"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "D'Faarwe vum Recuerdo: wéi de System se huet, hell oder donkel"
+
+msgid "Theme"
+msgstr "Thema"
+
+msgid "Words only"
+msgstr "Nëmme Wierder"

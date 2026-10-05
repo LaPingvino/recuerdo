@@ -1031,3 +1031,138 @@ msgstr "Marquer dans l’onglet Entrer les mots absents du dictionnaire de la la
 
 msgid "Not in the dictionary (%s):"
 msgstr "Absent du dictionnaire (%s) :"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d mots par minute"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d mots par minute (requis : %d)"
+
+msgid "A name is needed."
+msgstr "Un nom est nécessaire."
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Félicitations, vous avez terminé ce cours de dactylographie ! Vous pouvez continuer si vous le souhaitez, mais les instructions s’arrêtent ici. Vous avez fait du très bon travail !"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Félicitations, vous avez terminé votre premier exercice !"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Placez d’abord vos doigts sur la rangée de repos : de gauche à droite, sur les touches %s. Laissez-les là quand vous ne tapez pas une autre touche. Quand vos doigts sont en position, commencez le premier exercice. Visez d’abord la précision, pas la vitesse."
+
+msgid "Keyboard"
+msgstr "Clavier"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Apprendre à taper avec les dix doigts"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Apprenez à taper avec les dix doigts, sans regarder le clavier : d’abord les lettres, rangée par rangée, puis des mots, de plus en plus vite."
+
+msgid "Mistakes"
+msgstr "Erreurs"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Erreurs : %d. Continuez d’essayer jusqu’à y arriver sans aucune erreur."
+
+msgid "New profile"
+msgstr "Nouveau profil"
+
+msgid "Other profile"
+msgstr "Autre profil"
+
+msgid "Spanish"
+msgstr "Espagnol"
+
+msgid "Speed needed"
+msgstr "Vitesse requise"
+
+msgid "Start the exercise"
+msgstr "Commencer l’exercice"
+
+msgid "T&yping Course..."
+msgstr "Cours de &dactylographie..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Ce nom est déjà pris : choisissez-le dans la liste ci-dessus."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "C’est une erreur (erreurs : %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Les touches que vous allez maintenant pratiquer se tapent avec l’index gauche et l’index droit et sont plus éloignées de ces doigts que les autres touches de la rangée actuelle que nous avons pratiquées. Veillez à ramener votre doigt à sa position sur la rangée de repos quand vous tapez une autre lettre."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Pour y arriver, essayez peut-être de ralentir un peu."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Dommage, erreurs : %d. Continuez à vous entraîner pour progresser !"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Tapez le texte ci-dessous. Le chronomètre démarre à votre première touche ; une touche erronée s’affiche en rouge et doit être retapée."
+
+msgid "Typing course"
+msgstr "Cours de dactylographie"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Bienvenue dans le cours de dactylographie. Vous allez améliorer votre frappe grâce à des exercices simples ; entre eux, vous recevrez des instructions. Commençons :"
+
+msgid "Who is practising?"
+msgstr "Qui s’entraîne ?"
+
+msgid "Words in"
+msgstr "Mots en"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Sans erreur et rapide ! Continuez à vous entraîner avec de nouvelles combinaisons de lettres pour faire encore mieux !"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Sans erreur et rapide ! Continuez à vous entraîner avec de nouveaux mots pour faire encore mieux !"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Vous n’avez fait aucune erreur et vous tapez assez vite : vous pouvez donc passer à de nouvelles combinaisons de lettres. Continuez comme ça !"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Vous n’avez fait aucune erreur et vous tapez assez vite : vous pouvez donc continuer avec de nouveaux mots. Continuez comme ça !"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Vous n’avez fait aucune erreur. Essayez maintenant d’améliorer un peu votre vitesse de frappe."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Vous allez maintenant apprendre des lettres qui ne sont pas sur la rangée de repos. Pour savoir quels doigts utiliser, regardez l’image du clavier à l’écran. Quand vous n’utilisez pas un doigt pour taper une lettre, replacez-le directement sur la rangée de repos."
+
+msgid "level %d of %d"
+msgstr "niveau %d sur %d"
+
+msgid "space"
+msgstr "espace"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Sombre"
+
+msgid "Light"
+msgstr "Clair"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Ne créer que des leçons de mots : pas de leçons de topographie ni de média lors de la création d’une nouvelle leçon"
+
+msgid "System"
+msgstr "Système"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Les couleurs de Recuerdo : comme dans le système, claires ou sombres"
+
+msgid "Theme"
+msgstr "Thème"
+
+msgid "Words only"
+msgstr "Mots uniquement"

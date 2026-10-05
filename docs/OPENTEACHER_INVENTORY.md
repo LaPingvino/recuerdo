@@ -56,12 +56,12 @@ Status per module, judged from the Go code (`scripts/openteacher_inventory.py`;
 
 | Area | working | untested | partial | covered | scaffold | missing | planned | dropped | test suite | Total |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| data | 3 |  |  | 22 |  |  | 13 | 6 | 5 | 49 |
-| interfaces | 11 |  |  | 60 |  |  | 3 | 6 | 14 | 94 |
-| logic | 25 |  |  | 105 |  |  | 2 | 9 | 39 | 180 |
+| data | 3 |  |  | 23 |  |  | 12 | 6 | 5 | 49 |
+| interfaces | 11 |  |  | 63 |  |  |  | 6 | 14 | 94 |
+| logic | 25 |  |  | 106 |  |  | 1 | 9 | 39 | 180 |
 | misc |  |  |  |  |  |  |  | 1 | 3 | 4 |
 | profileRunners |  |  |  | 14 |  |  | 10 | 2 | 1 | 27 |
-| **all** | **39** | **0** | **0** | **201** | **0** | **0** | **28** | **24** | **62** | **354** |
+| **all** | **39** | **0** | **0** | **206** | **0** | **0** | **23** | **24** | **62** | **354** |
 
 ## 3. Features
 
@@ -83,8 +83,9 @@ The state in October 2026, by feature:
 | In-browser version | done: the Go logic as WebAssembly (`web/`, `recuerdo serve`): open, enter and edit words, practise in all modes, results, download; formulas (KaTeX) with a formula builder, also on the desktop |
 | Test mode (classroom server) | done: `recuerdo testserver` (Go and SQLite), with the students' and teachers' pages in the web version and File > Test Mode on the desktop; see docs/TESTMODE.md. OpenTeacher Web (online accounts and list sync) is dropped |
 | Spell checking | done: Hunspell dictionaries in the Enter tab (optional: needs hunspell); the web version uses the browser's |
-| Touch typing course | planned (medium) |
-| Dark theme, words-only setting, developer tools | planned (low) |
+| Touch typing course | done: File > Typing Course on the desktop and in the web version (57 levels, six layouts, words in five languages) |
+| Dark theme, words-only setting | done: settings Theme (system, light, dark) and Words only |
+| Developer tools | planned (low): later, as independent command line tools |
 | Web services import (Quizlet, StudyStack, Course Hero) | dropped: those APIs changed or closed |
 
 ## 4. The repository's older status documents
@@ -117,6 +118,7 @@ file formats, see **covered** above):
 | `data/profileDescriptions/help` | `internal/cli` | recuerdo help |
 | `data/profileDescriptions/package (all)` | `packaging/, .github/workflows/release.yml` | the packaging profiles, with the packagers |
 | `data/profileDescriptions/testServer (all)` | `recuerdo testserver` | the test server's profile, with the server |
+| `data/profileDescriptions/wordsOnly (all)` | `internal/modules/interfaces/qt/lessonDialogs` | the Words only setting: a new lesson is always a word lesson |
 | `interfaces/qt/charsKeyboard` | `internal/modules/interfaces/qt/lessons/words` | the special characters picker (an unused, unregistered Go version was removed) |
 | `interfaces/qt/dialogShower` | `internal/modules/interfaces/qt/gui` | the GUI shows its dialogs itself |
 | `interfaces/qt/dialogs/documentation` | `internal/modules/interfaces/qt/gui` | Help > Getting Started |
@@ -166,7 +168,9 @@ file formats, see **covered** above):
 | `interfaces/qt/testMode (all)` | `internal/modules/interfaces/qt/dialogs/testmode, web/testmode.js, web/teacher.js` | test mode's client: File > Test Mode on the desktop, and the web version served by the test server (OpenTeacher's never shipped: its menu entry was switched off) |
 | `interfaces/qt/testViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab and results dialog show a session's answers |
 | `interfaces/qt/testsViewer` | `internal/modules/interfaces/qt/lessons/words` | the Results tab lists the results; charts: see progressViewer |
+| `interfaces/qt/theme (all)` | `internal/modules/interfaces/qt/theme` | the Theme setting: the system's colours, light or dark |
 | `interfaces/qt/topoMaps` | `internal/modules/interfaces/qt/lessons/topo` | BundledMaps reads data/maps (OpenTeacher's six maps with their known places, all their names); tested |
+| `interfaces/qt/typingTutor (all)` | `internal/modules/interfaces/qt/typingcourse, web/typing.js` | File > Typing Course on the desktop and the typing course in the web version, with the on-screen keyboard in fixed finger colours |
 | `interfaces/textToSpeech/impl` | `internal/tts` | Speak with espeak-ng/espeak (Linux, BSD), say (macOS) or System.Speech (Windows) instead of pyttsx; command lines tested |
 | `interfaces/textToSpeech/providers/topo` | `internal/modules/interfaces/qt/lessons/topo` | Teach option "Pronounce names": Name – Place says the place to click; tested |
 | `interfaces/textToSpeech/providers/words` | `internal/modules/interfaces/qt/lessons/words` | Teach option "Pronounce questions" (setting kept), in the question language; tested |
@@ -181,6 +185,7 @@ file formats, see **covered** above):
 | `logic/interfaces/buttonRegister` | `internal/modules/buttonregister.go` | Recuerdo's own button register |
 | `logic/interfaces/inputTypingLogic` | `internal/teaching` | Typing checks typed answers and shows corrections |
 | `logic/interfaces/lessonTracker` | `internal/modules/interfaces/qt/gui` | the GUI keeps the lesson of each tab (tabLessons) and the current one (currentLesson) |
+| `logic/interfaces/typingTutorModel (all)` | `internal/typing` | the touch typing course: OpenTeacher's 57 levels and rules, its layouts with a finger per key (AZERTY's w restored), word lists per language, profiles saved after every exercise |
 | `logic/itemModifiers/foreignKnown` | `internal/teaching` | the Teach tab's "Ask the answers" (Options.AskAnswers) swaps questions and answers |
 | `logic/languageCodeGuesser` | `internal/langcode` | Guess and Name map language names and ISO 639-1 codes (CLDR names via golang.org/x/text instead of Babel's tables) |
 | `logic/mergers/words` | `internal/lesson` | Merge, used by File > Merge Lesson |
@@ -213,10 +218,6 @@ OpenTeacher modules Recuerdo will port later (decided 2026-10-04):
 
 | Priority | Modules | Count | What |
 |---|---|---:|---|
-| medium | `logic/interfaces/typingTutorModel` | 1 | OpenTeacher's touch typing course, a lesson of its own kind |
-| medium | `interfaces/qt/typingTutor` | 2 | the touch typing course's screen and keyboard |
-| low | `interfaces/qt/theme` | 1 | a dark theme, as a setting |
-| low | `data/profileDescriptions/wordsOnly` | 1 | a setting that hides topography and media lessons ("just gimme my good old OpenTeacher 2.x") |
 | low | `logic/moduleGraphBuilder`, `profileRunners/backgroundImageGenerator`, `profileRunners/businessCardGenerator`, `profileRunners/codeComplexity`, `profileRunners/getTranslationAuthors`, `profileRunners/languageCodeGuesserTableGenerator`, `profileRunners/moduleGraph`, `profileRunners/rosettaUpdater`, `profileRunners/translationUpdater`, `profileRunners/ircBot`, `data/profileDescriptions/codeComplexity`, `data/profileDescriptions/codeDocumentation`, `data/profileDescriptions/generate`, `data/profileDescriptions/getTranslationAuthors`, `data/profileDescriptions/ircBot`, `data/profileDescriptions/moduleGraph`, `data/profileDescriptions/update` | 22 | developer tooling: useful later as independent command line tools |
 | low | `profileRunners/gtkGui` | 1 | an alternative GTK interface OpenTeacher experimented with |
 
@@ -299,7 +300,7 @@ Course Hero: those APIs changed or closed):
 | `data/profileDescriptions/updateRosetta` | profileDescription | 19 | 0 | 0 | 0 | planned |
 | `data/profileDescriptions/updateTranslations` | profileDescription | 19 | 0 | 0 | 0 | planned |
 | `data/profileDescriptions/webServicesServer` | profileDescription | 19 | 0 | 0 | 0 | dropped |
-| `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | planned |
+| `data/profileDescriptions/wordsOnly` | profileDescription | 41 | 0 | 0 | 0 | covered |
 | `data/userDocumentation` | userDocumentation | 57 | 20 | 0 | 1 | working |
 | `data/userDocumentationTest` | test | 41 | 0 | 0 | 0 | test suite |
 | `interfaces/qt/charsKeyboard` | charsKeyboard | 124 | 0 | 0 | 0 | covered |
@@ -320,11 +321,11 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/enterers/topoTest` | test | 27 | 40 | 10 | 0 | test suite |
 | `interfaces/qt/enterers/words` | wordsEnterer | 474 | 0 | 0 | 0 | covered |
 | `interfaces/qt/enterers/wordsTest` | test | 27 | 40 | 10 | 0 | test suite |
-| `interfaces/qt/gui` | ui | 607 | 1104 | 0 | 2 | working |
+| `interfaces/qt/gui` | ui | 607 | 1128 | 0 | 2 | working |
 | `interfaces/qt/guiTest` | test | 37 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/hiddenBrowser` | webbrowser | 192 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/inputTyping` | typingInput | 187 | 0 | 0 | 0 | covered |
-| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 369 | 0 | 2 | working |
+| `interfaces/qt/lessonDialogs` | lessonDialogs | 84 | 382 | 0 | 2 | working |
 | `interfaces/qt/lessons/media` | lesson | 197 | 588 | 0 | 2 | working |
 | `interfaces/qt/lessons/topo` | lesson | 202 | 702 | 0 | 2 | working |
 | `interfaces/qt/lessons/words` | lesson | 211 | 2243 | 0 | 2 | working |
@@ -385,10 +386,10 @@ Course Hero: those APIs changed or closed):
 | `interfaces/qt/testViewer` | testViewer | 175 | 0 | 0 | 0 | covered |
 | `interfaces/qt/testViewerTest` | test | 73 | 36 | 8 | 0 | test suite |
 | `interfaces/qt/testsViewer` | testsViewer | 275 | 0 | 0 | 0 | covered |
-| `interfaces/qt/theme` | theme | 35 | 0 | 0 | 0 | planned |
+| `interfaces/qt/theme` | theme | 35 | 64 | 0 | 1 | covered |
 | `interfaces/qt/topoMaps` | topoMaps | 231 | 0 | 0 | 0 | covered |
-| `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 0 | 0 | 0 | planned |
-| `interfaces/qt/typingTutor/main` | typingTutor | 358 | 0 | 0 | 0 | planned |
+| `interfaces/qt/typingTutor/keyboard` | typingTutorKeyboard | 102 | 0 | 0 | 0 | covered |
+| `interfaces/qt/typingTutor/main` | typingTutor | 358 | 0 | 0 | 0 | covered |
 | `interfaces/qt/webServices/courseHeroApi` | courseHeroApi | 245 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/quizletApi` | quizletApi | 236 | 0 | 0 | 0 | dropped |
 | `interfaces/qt/webServices/studyStackApi` | studyStackApi | 222 | 0 | 0 | 0 | dropped |
@@ -415,7 +416,7 @@ Course Hero: those APIs changed or closed):
 | `logic/interfaces/inputTypingLogicTest` | test | 177 | 0 | 0 | 0 | test suite |
 | `logic/interfaces/javaScriptInputTypingLogic` | jsInputTypingLogic | 65 | 0 | 0 | 0 | covered |
 | `logic/interfaces/lessonTracker` | lessonTracker | 55 | 0 | 0 | 0 | covered |
-| `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 0 | 0 | 0 | planned |
+| `logic/interfaces/typingTutorModel` | typingTutorModel | 302 | 0 | 0 | 0 | covered |
 | `logic/interfaces/typingTutorModelTest` | test | 119 | 0 | 0 | 0 | test suite |
 | `logic/itemModifiers/foreignKnown` | itemModifier | 32 | 0 | 0 | 0 | covered |
 | `logic/itemModifiers/test` | test | 26 | 0 | 0 | 0 | test suite |

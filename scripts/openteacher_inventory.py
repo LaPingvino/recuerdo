@@ -208,11 +208,6 @@ DROPPED = (
 # module path prefix -> (priority, what and why).
 DEVTOOL = ("low", "developer tooling: useful later as independent command line tools")
 PLANNED = {
-    "logic/interfaces/typingTutorModel": ("medium", "OpenTeacher's touch typing course, a lesson of its own kind"),
-    "interfaces/qt/typingTutor": ("medium", "the touch typing course's screen and keyboard"),
-    "interfaces/qt/theme": ("low", "a dark theme, as a setting"),
-    "data/profileDescriptions/wordsOnly": ("low", "a setting that hides topography and media lessons "
-                                           "(\"just gimme my good old OpenTeacher 2.x\")"),
     "logic/moduleGraphBuilder": DEVTOOL,
     "profileRunners/backgroundImageGenerator": DEVTOOL,
     "profileRunners/businessCardGenerator": DEVTOOL,
@@ -235,6 +230,16 @@ PLANNED = {
 
 # Areas whose job Recuerdo does another way: prefix -> (where, why).
 COVERED_AREAS = {
+    "logic/interfaces/typingTutorModel": ("internal/typing", "the touch typing course: OpenTeacher's 57 levels and "
+                                          "rules, its layouts with a finger per key (AZERTY's w restored), word lists "
+                                          "per language, profiles saved after every exercise"),
+    "interfaces/qt/typingTutor": ("internal/modules/interfaces/qt/typingcourse, web/typing.js", "File > Typing "
+                                  "Course on the desktop and the typing course in the web version, with the "
+                                  "on-screen keyboard in fixed finger colours"),
+    "interfaces/qt/theme": ("internal/modules/interfaces/qt/theme", "the Theme setting: the system's colours, light "
+                            "or dark"),
+    "data/profileDescriptions/wordsOnly": ("internal/modules/interfaces/qt/lessonDialogs", "the Words only setting: "
+                                           "a new lesson is always a word lesson"),
     "logic/spellChecker": ("internal/spellcheck", "spell checking while entering words, with Hunspell dictionaries through the hunspell program (OpenTeacher used Enchant): the Enter tab marks words not in the question or answer language's dictionary; the web version gives its fields the languages for the browser's own spell checker"),
     "interfaces/qt/testMode": ("internal/modules/interfaces/qt/dialogs/testmode, web/testmode.js, web/teacher.js",
                                "test mode's client: File > Test Mode on the desktop, and the web version served by "

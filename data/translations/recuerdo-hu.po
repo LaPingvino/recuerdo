@@ -1058,3 +1058,156 @@ msgstr "A Bevitel lapon azon szavak megjelölése, amelyek nincsenek benne a ké
 
 msgid "Not in the dictionary (%s):"
 msgstr "Nincs a szótárban (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d szó/perc"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d szó/perc (szükséges: %d)"
+
+msgid "A name is needed."
+msgstr "Meg kell adni egy nevet."
+
+msgid "Belgian AZERTY"
+msgstr "Belga AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Gratulálunk, befejezte ezt a gépírás-tanfolyamot! Ha szeretné, folytathatja, de az útmutatásoknak itt vége. Nagyszerű munkát végzett!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Gratulálunk, befejezte az első gyakorlatát!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Angol"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Először helyezze az ujjait az alapsorra, balról jobbra ezekre a billentyűkre: %s. Tartsa ott őket, amikor nem üt le más billentyűt. Ha az ujjai a helyükön vannak, kezdje el az első gyakorlatot. Eleinte a pontosságra törekedjen, ne a sebességre."
+
+msgid "French AZERTY"
+msgstr "Francia AZERTY"
+
+msgid "Keyboard"
+msgstr "Billentyűzet"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Tanuljon meg tíz ujjal gépelni"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Tanuljon meg tíz ujjal, a billentyűzetre nézés nélkül gépelni: először a betűket, soronként, aztán szavakat, egyre gyorsabban."
+
+msgid "Level"
+msgstr "Szint"
+
+msgid "Mistakes"
+msgstr "Hibák"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Hibák: %d. Kérem, próbálkozzon tovább, amíg hiba nélkül nem sikerül."
+
+msgid "New profile"
+msgstr "Új profil"
+
+msgid "Other profile"
+msgstr "Másik profil"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Spanyol"
+
+msgid "Speed needed"
+msgstr "Szükséges sebesség"
+
+msgid "Start the exercise"
+msgstr "Gyakorlat indítása"
+
+msgid "T&yping Course..."
+msgstr "&Gépírás-tanfolyam..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Ez a név már foglalt: válassza ki a fenti listából."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Ez hiba volt (hibák: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "A most gyakorlandó billentyűket a bal és a jobb mutatóujjal kell leütni, és messzebb vannak ezektől az ujjaktól, mint az aktuális sor eddig gyakorolt többi billentyűje. Ügyeljen arra, hogy az ujja visszatérjen az alapsoron lévő helyére, amikor egy másik betűt gépel."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Ennek eléréséhez megpróbálhat kicsit lassabban gépelni."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Kár, hibák: %d. Gyakoroljon tovább, hogy fejlődjön!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Gépelje be az alábbi szöveget. Az óra az első billentyűleütéssel indul; a hibás billentyű pirossal jelenik meg, és újra be kell gépelni."
+
+msgid "Typing course"
+msgstr "Gépírás-tanfolyam"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Üdvözöljük a gépírás-tanfolyamon. Egyszerű gyakorlatokkal fejlesztheti a gépelését; közöttük útmutatásokat kap. Kezdjük is:"
+
+msgid "Who is practising?"
+msgstr "Ki gyakorol?"
+
+msgid "Words in"
+msgstr "Szavak nyelve"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Hibátlanul és gyorsan csinálta! Gyakoroljon tovább néhány új betűkombinációval, hogy még jobb legyen!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Hibátlanul és gyorsan csinálta! Gyakoroljon tovább új szavakkal, hogy még jobb legyen!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Egyetlen hibát sem vétett, és elég gyorsan gépel, így folytathatja a gyakorlást néhány új betűkombinációval. Csak így tovább!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Egyetlen hibát sem vétett, és elég gyorsan gépel, így folytathatja a gyakorlást néhány új szóval. Csak így tovább!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Egyetlen hibát sem vétett. Most próbáljon meg egy kicsit gyorsabban gépelni."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Most olyan betűket fog megtanulni, amelyek nem az alapsoron vannak. Hogy mely ujjakat kell használnia, azt a képernyőn látható billentyűzetképen láthatja. Amikor egy ujjával nem üt le betűt, azonnal tegye vissza az alapsorra."
+
+msgid "level %d of %d"
+msgstr "szint: %d / %d"
+
+msgid "space"
+msgstr "szóköz"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Sötét"
+
+msgid "Light"
+msgstr "Világos"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Csak szóleckék készítése: új lecke készítésekor nincs topográfiai vagy médialecke"
+
+msgid "System"
+msgstr "Rendszer"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "A Recuerdo színei: ahogy a rendszerben vannak, világos vagy sötét"
+
+msgid "Theme"
+msgstr "Téma"
+
+msgid "Words only"
+msgstr "Csak szavak"

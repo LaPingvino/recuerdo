@@ -1034,3 +1034,135 @@ msgstr "Marcar las palabras de la pestaña Introducir que no están en el diccio
 
 msgid "Not in the dictionary (%s):"
 msgstr "No está en el diccionario (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d palabras por minuto"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d palabras por minuto (necesarias: %d)"
+
+msgid "A name is needed."
+msgstr "Se necesita un nombre."
+
+msgid "Belgian AZERTY"
+msgstr "AZERTY belga"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Inglés"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Primero coloque los dedos en la fila guía: de izquierda a derecha, sobre las teclas %s. Manténgalos ahí mientras no esté pulsando otra tecla. Cuando tenga los dedos en posición, comience el primer ejercicio. Al principio busque la precisión, no la velocidad."
+
+msgid "French AZERTY"
+msgstr "AZERTY francés"
+
+msgid "Keyboard"
+msgstr "Teclado"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Aprender a escribir con los diez dedos"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Aprenda a escribir con los diez dedos sin mirar el teclado: primero las letras, fila por fila, luego palabras, cada vez más rápido."
+
+msgid "Level"
+msgstr "Nivel"
+
+msgid "Mistakes"
+msgstr "Errores"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Errores: %d. Siga intentándolo hasta que lo consiga sin ninguno."
+
+msgid "New profile"
+msgstr "Nuevo perfil"
+
+msgid "Other profile"
+msgstr "Otro perfil"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Español"
+
+msgid "Speed needed"
+msgstr "Velocidad necesaria"
+
+msgid "Start the exercise"
+msgstr "Comenzar el ejercicio"
+
+msgid "T&yping Course..."
+msgstr "Curso de &mecanografía..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Ese nombre ya existe: elíjalo en la lista de arriba."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Eso es un error (errores: %d)."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Para lograrlo, quizá le ayude ir un poco más despacio."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "¡Lástima! Errores: %d. ¡Siga practicando para mejorar!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Escriba el texto de abajo. El reloj empieza con su primera pulsación; una tecla equivocada se muestra en rojo y hay que volver a pulsarla."
+
+msgid "Typing course"
+msgstr "Curso de mecanografía"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Bienvenido al curso de mecanografía. Mejorará su escritura haciendo ejercicios sencillos; entre ellos recibirá instrucciones. Empecemos:"
+
+msgid "Who is practising?"
+msgstr "¿Quién va a practicar?"
+
+msgid "Words in"
+msgstr "Palabras en"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "No ha cometido ningún error y escribe lo bastante rápido, así que puede seguir practicando con nuevas combinaciones de letras. ¡Siga así!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "No ha cometido ningún error. Ahora intente aumentar un poco su velocidad."
+
+msgid "level %d of %d"
+msgstr "nivel %d de %d"
+
+msgid "space"
+msgstr "espacio"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Oscuro"
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Crear solo lecciones de palabras: ninguna lección de topografía ni de medios al crear una nueva lección"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Los colores de Recuerdo: como los tiene el sistema, claros u oscuros"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Words only"
+msgstr "Solo palabras"

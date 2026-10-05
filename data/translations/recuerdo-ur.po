@@ -1159,3 +1159,168 @@ msgstr "اندراج ٹیب میں وہ الفاظ نشان زد کریں جو �
 
 msgid "Not in the dictionary (%s):"
 msgstr "لغت میں نہیں (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d الفاظ فی منٹ"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d الفاظ فی منٹ (درکار: %d)"
+
+msgid "A name is needed."
+msgstr "نام درکار ہے۔"
+
+msgid "Belgian AZERTY"
+msgstr "بیلجیئن AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "مبارک ہو، آپ نے یہ ٹائپنگ کورس مکمل کر لیا! اگر آپ جاری رکھنا چاہیں تو رکھ سکتے ہیں، لیکن ہدایات یہیں ختم ہوتی ہیں۔ آپ نے بہت اچھا کام کیا!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "مبارک ہو، آپ نے اپنی پہلی مشق مکمل کر لی!"
+
+msgid "Dutch"
+msgstr "ڈچ"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "انگریزی"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "پہلے اپنی انگلیاں بنیادی قطار پر رکھیں: بائیں سے دائیں، ان کلیدوں پر: %s۔ جب آپ کوئی اور کلید ٹائپ نہ کر رہے ہوں تو انہیں وہیں رکھیں۔ جب انگلیاں اپنی جگہ پر ہوں تو پہلی مشق شروع کریں۔ شروع میں رفتار کے بجائے درستی پر توجہ دیں۔"
+
+msgid "French"
+msgstr "فرانسیسی"
+
+msgid "French AZERTY"
+msgstr "فرانسیسی AZERTY"
+
+msgid "German"
+msgstr "جرمن"
+
+msgid "Keyboard"
+msgstr "کی بورڈ"
+
+msgid "Learn to type with all ten fingers"
+msgstr "دسوں انگلیوں سے ٹائپ کرنا سیکھیں"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "کی بورڈ کو دیکھے بغیر دسوں انگلیوں سے ٹائپ کرنا سیکھیں: پہلے حروف، قطار در قطار، پھر الفاظ، اور رفتار بڑھاتے ہوئے۔"
+
+msgid "Level"
+msgstr "سطح"
+
+msgid "Mistakes"
+msgstr "غلطیاں"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "غلطیاں: %d۔ براہ کرم کوشش جاری رکھیں جب تک آپ بغیر کسی غلطی کے نہ کر سکیں۔"
+
+msgid "New profile"
+msgstr "نئی پروفائل"
+
+msgid "Other profile"
+msgstr "دوسری پروفائل"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "ہسپانوی"
+
+msgid "Speed"
+msgstr "رفتار"
+
+msgid "Speed needed"
+msgstr "درکار رفتار"
+
+msgid "Start the exercise"
+msgstr "مشق شروع کریں"
+
+msgid "T&yping Course..."
+msgstr "&ٹائپنگ کورس..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "یہ نام پہلے سے موجود ہے: اسے اوپر کی فہرست میں سے منتخب کریں۔"
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "یہ غلطی ہے (غلطیاں: %d)۔"
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "اب آپ جن کلیدوں کی مشق کریں گے وہ بائیں اور دائیں شہادت کی انگلی سے ٹائپ ہوتی ہیں، اور ان انگلیوں سے اس قطار کی ان دوسری کلیدوں سے زیادہ دور ہیں جن کی ہم نے مشق کی۔ کوئی اور حرف ٹائپ کرتے وقت اپنی انگلی کو بنیادی قطار پر اس کی جگہ واپس لانا یقینی بنائیں۔"
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "اس کے لیے آپ تھوڑا آہستہ ٹائپ کرنے کی کوشش کر سکتے ہیں۔"
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "افسوس: %d غلطیاں۔ بہتر ہونے کے لیے مشق جاری رکھیں!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "نیچے دیا گیا متن ٹائپ کریں۔ وقت آپ کی پہلی کلید سے شروع ہوتا ہے؛ غلط کلید سرخ رنگ میں دکھائی جاتی ہے اور اسے دوبارہ ٹائپ کرنا ہوتا ہے۔"
+
+msgid "Typing course"
+msgstr "ٹائپنگ کورس"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "ٹائپنگ کورس میں خوش آمدید۔ آپ آسان مشقیں کر کے اپنی ٹائپنگ بہتر بنائیں گے؛ ان کے درمیان آپ کو ہدایات ملیں گی۔ آئیے شروع کریں:"
+
+msgid "Who is practising?"
+msgstr "کون مشق کر رہا ہے؟"
+
+msgid "Words in"
+msgstr "الفاظ کی زبان"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "آپ نے بغیر غلطی کے اور تیزی سے کر دکھایا! مزید بہتر ہونے کے لیے حروف کے نئے مجموعوں کی مشق جاری رکھیں!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "آپ نے بغیر غلطی کے اور تیزی سے کر دکھایا! مزید بہتر ہونے کے لیے نئے الفاظ کے ساتھ مشق جاری رکھیں!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "آپ نے کوئی غلطی نہیں کی اور آپ کی رفتار کافی ہے، اس لیے آپ حروف کے نئے مجموعوں کی مشق جاری رکھ سکتے ہیں۔ شاباش، اسی طرح جاری رکھیں!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "آپ نے کوئی غلطی نہیں کی اور آپ کی رفتار کافی ہے، اس لیے آپ نئے الفاظ کے ساتھ مشق جاری رکھ سکتے ہیں۔ شاباش، اسی طرح جاری رکھیں!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "آپ نے کوئی غلطی نہیں کی۔ اب اپنی ٹائپنگ کی رفتار تھوڑی بڑھانے کی کوشش کریں۔"
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "اب آپ وہ حروف سیکھیں گے جو بنیادی قطار پر نہیں ہیں۔ کون سی انگلیاں استعمال کرنی ہیں، یہ جاننے کے لیے اپنی اسکرین پر کی بورڈ کی تصویر دیکھیں۔ جب کسی انگلی سے حرف ٹائپ نہ کر رہے ہوں تو اسے فوراً بنیادی قطار پر واپس رکھیں۔"
+
+msgid "level %d of %d"
+msgstr "سطح %d از %d"
+
+msgid "space"
+msgstr "اسپیس"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "تاریک"
+
+msgid "Light"
+msgstr "روشن"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "صرف الفاظ کے اسباق بنائیں: نیا سبق بناتے وقت جغرافیہ یا میڈیا کے اسباق نہیں"
+
+msgid "System"
+msgstr "سسٹم"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Recuerdo کے رنگ: جیسے سسٹم میں ہیں، روشن یا تاریک"
+
+msgid "Theme"
+msgstr "تھیم"
+
+msgid "Words only"
+msgstr "صرف الفاظ"

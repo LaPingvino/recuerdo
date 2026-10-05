@@ -1028,3 +1028,111 @@ msgstr "Markeer woorden op het tabblad Invoeren die niet in het woordenboek van 
 
 msgid "Not in the dictionary (%s):"
 msgstr "Niet in het woordenboek (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d woorden per minuut"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d woorden per minuut (nodig: %d)"
+
+msgid "A name is needed."
+msgstr "Er is een naam nodig."
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Engels"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Plaats eerst uw vingers op de thuisrij: van links naar rechts op de toetsen %s. Houd ze daar als u geen andere toets typt. Begin de eerste oefening als uw vingers in positie staan. Let eerst op nauwkeurigheid, niet op snelheid."
+
+msgid "Keyboard"
+msgstr "Toetsenbord"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Leer typen met tien vingers"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Leer typen met alle tien vingers zonder naar het toetsenbord te kijken: eerst de letters, rij voor rij, dan woorden, steeds sneller."
+
+msgid "Mistakes"
+msgstr "Fouten"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Fouten: %d. Blijf het proberen tot het u zonder fouten lukt."
+
+msgid "New profile"
+msgstr "Nieuw profiel"
+
+msgid "Other profile"
+msgstr "Ander profiel"
+
+msgid "Spanish"
+msgstr "Spaans"
+
+msgid "Speed needed"
+msgstr "Benodigde snelheid"
+
+msgid "Start the exercise"
+msgstr "Begin de oefening"
+
+msgid "T&yping Course..."
+msgstr "T&ypecursus..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Die naam bestaat al: kies hem in de lijst hierboven."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Dat is een fout (fouten: %d)."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Om dat te bereiken kunt u proberen iets langzamer te typen."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Jammer, fouten: %d. Blijf oefenen om beter te worden!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Typ de tekst hieronder over. De klok start bij uw eerste toetsaanslag; een verkeerde toets wordt rood weergegeven en moet opnieuw worden getypt."
+
+msgid "Typing course"
+msgstr "Typecursus"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Welkom bij de typecursus. U gaat beter typen door eenvoudige oefeningen te doen; daartussen krijgt u instructies. Laten we beginnen:"
+
+msgid "Who is practising?"
+msgstr "Wie gaat er oefenen?"
+
+msgid "Words in"
+msgstr "Woorden in"
+
+msgid "level %d of %d"
+msgstr "niveau %d van %d"
+
+msgid "space"
+msgstr "spatie"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Donker"
+
+msgid "Light"
+msgstr "Licht"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Maak alleen woordjeslessen: geen topografie- of medialessen bij het maken van een nieuwe les"
+
+msgid "System"
+msgstr "Systeem"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "De kleuren van Recuerdo: zoals het systeem ze heeft, licht of donker"
+
+msgid "Theme"
+msgstr "Thema"
+
+msgid "Words only"
+msgstr "Alleen woordjes"

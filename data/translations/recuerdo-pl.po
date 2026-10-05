@@ -1044,3 +1044,117 @@ msgstr "Zaznaczaj na karcie Wprowadzanie słowa, których nie ma w słowniku ję
 
 msgid "Not in the dictionary (%s):"
 msgstr "Brak w słowniku (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "Słów na minutę: %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "Słów na minutę: %d (wymagane: %d)"
+
+msgid "A name is needed."
+msgstr "Imię jest wymagane."
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Angielski"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Najpierw połóż palce na rzędzie głównym: od lewej do prawej, na klawiszach %s. Trzymaj je tam, gdy nie naciskasz innego klawisza. Gdy palce będą na miejscu, rozpocznij pierwsze ćwiczenie. Na początku stawiaj na dokładność, nie na szybkość."
+
+msgid "French"
+msgstr "Francuski"
+
+msgid "Keyboard"
+msgstr "Klawiatura"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Naucz się pisać wszystkimi dziesięcioma palcami"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Naucz się pisać wszystkimi dziesięcioma palcami, bez patrzenia na klawiaturę: najpierw litery, rząd po rzędzie, potem słowa, coraz szybciej."
+
+msgid "Mistakes"
+msgstr "Błędy"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Błędów: %d. Próbuj dalej, aż uda ci się bez żadnego błędu."
+
+msgid "New profile"
+msgstr "Nowy profil"
+
+msgid "Other profile"
+msgstr "Inny profil"
+
+msgid "Spanish"
+msgstr "Hiszpański"
+
+msgid "Speed needed"
+msgstr "Wymagana szybkość"
+
+msgid "Start the exercise"
+msgstr "Rozpocznij ćwiczenie"
+
+msgid "T&yping Course..."
+msgstr "&Kurs pisania na klawiaturze..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "To imię jest już zajęte: wybierz je z listy powyżej."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "To błąd (błędów: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Klawisze, które teraz przećwiczysz, naciska się palcem wskazującym lewej i prawej ręki i leżą one dalej od tych palców niż inne klawisze, które ćwiczyliśmy w bieżącym rzędzie. Pamiętaj, aby wracać palcem na jego miejsce w rzędzie głównym, gdy piszesz inną literę."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Aby to osiągnąć, spróbuj nieco zwolnić."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Szkoda, błędów: %d. Ćwicz dalej, a będzie coraz lepiej!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Przepisz poniższy tekst. Czas liczy się od pierwszego klawisza; błędny klawisz jest zaznaczany na czerwono i trzeba go wpisać ponownie."
+
+msgid "Typing course"
+msgstr "Kurs pisania na klawiaturze"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Witaj na kursie pisania na klawiaturze. Poprawisz swoje pisanie, wykonując proste ćwiczenia; pomiędzy nimi otrzymasz instrukcje. Zaczynamy:"
+
+msgid "Who is practising?"
+msgstr "Kto ćwiczy?"
+
+msgid "Words in"
+msgstr "Język słów"
+
+msgid "level %d of %d"
+msgstr "poziom %d z %d"
+
+msgid "space"
+msgstr "spacja"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Ciemny"
+
+msgid "Light"
+msgstr "Jasny"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Twórz tylko lekcje słów: żadnych lekcji topografii ani mediów przy tworzeniu nowej lekcji"
+
+msgid "System"
+msgstr "Systemowy"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Kolory Recuerdo: jak w systemie, jasne lub ciemne"
+
+msgid "Theme"
+msgstr "Motyw"
+
+msgid "Words only"
+msgstr "Tylko słowa"

@@ -1054,3 +1054,156 @@ msgstr "Markearje wurden op it ljepblêd Ynfiere dy't net yn it wurdboek fan de 
 
 msgid "Not in the dictionary (%s):"
 msgstr "Net yn it wurdboek (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d wurden de minút"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d wurden de minút (nedich: %d)"
+
+msgid "A name is needed."
+msgstr "In namme is nedich."
+
+msgid "Belgian AZERTY"
+msgstr "Belgysk AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Lokwinske, jo hawwe dizze typkursus ôfmakke! As jo trochgean wolle, kin dat, mar hjir einigje de ynstruksjes. Jo hawwe it poerbêst dien!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Lokwinske, jo hawwe jo earste oefening ôfmakke!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Ingelsk"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Set jo fingers earst op de thúsrige: fan lofts nei rjochts, op de toetsen %s. Hâld se dêr as jo gjin oare toets oanslaan. As jo fingers op harren plak steane, begjin dan mei de earste oefening. Gean earst foar krektens, net foar fluggens."
+
+msgid "French AZERTY"
+msgstr "Frânsk AZERTY"
+
+msgid "Keyboard"
+msgstr "Toetseboerd"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Lear typje mei alle tsien fingers"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Lear typje mei alle tsien fingers, sûnder nei it toetseboerd te sjen: earst de letters, rige foar rige, dan wurden, hieltyd flugger."
+
+msgid "Level"
+msgstr "Nivo"
+
+msgid "Mistakes"
+msgstr "Flaters"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Flaters: %d. Besykje it asjebleaft troch oant it sûnder flaters slagget."
+
+msgid "New profile"
+msgstr "Nij profyl"
+
+msgid "Other profile"
+msgstr "Oar profyl"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Spaansk"
+
+msgid "Speed needed"
+msgstr "Nedige fluggens"
+
+msgid "Start the exercise"
+msgstr "Begjin oefening"
+
+msgid "T&yping Course..."
+msgstr "&Typkursus..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Dy namme is al yn gebrûk: kies him yn de list hjirboppe."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Dat is in flater (flaters: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "De toetsen dy't jo no oefenje sille, wurde mei de lofter- en rjochterwiisfinger typt en lizze fierder fan dy fingers ôf as de oare toetsen dy't wy op dizze rige oefene hawwe. Soargje dat jo finger werom giet nei syn plak op de thúsrige as jo in oare letter typje."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Om dat te berikken, kinne jo besykje wat stadiger te typjen."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Spitich: %d flaters. Oefenje troch om better te wurden!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Typ de tekst hjirûnder. De klok begjint by jo earste toets; in ferkearde toets wurdt read werjûn en moat opnij typt wurde."
+
+msgid "Typing course"
+msgstr "Typkursus"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Wolkom by de typkursus. Jo wurde better yn typjen troch ienfâldige oefeningen te dwaan; dêrtusken krije jo ynstruksjes. Lit ús begjinne:"
+
+msgid "Who is practising?"
+msgstr "Wa oefenet der?"
+
+msgid "Words in"
+msgstr "Taal fan de wurden"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Jo hawwe it flaterleas en fluch dien! Oefenje troch mei wat nije letterkombinaasjes om noch better te wurden!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Jo hawwe it flaterleas en fluch dien! Oefenje troch mei nije wurden om noch better te wurden!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Jo hawwe gjin inkelde flater makke en jo typje fluch genôch, dus jo kinne trochgean mei it oefenjen fan wat nije letterkombinaasjes. Gean sa troch!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Jo hawwe gjin inkelde flater makke en jo typje fluch genôch, dus jo kinne trochgean mei oefenjen mei wat nije wurden. Gean sa troch!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Jo hawwe gjin inkelde flater makke. Besykje no wat flugger te typjen."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Jo sille no letters leare dy't net op de thúsrige steane. Sjoch nei de ôfbylding fan it toetseboerd op jo skerm om te sjen hokker fingers jo brûke moatte. As jo in finger net brûke om in letter te typjen, set him dan daliks werom op de thúsrige."
+
+msgid "level %d of %d"
+msgstr "nivo %d fan %d"
+
+msgid "space"
+msgstr "spaasje"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Tsjuster"
+
+msgid "Light"
+msgstr "Ljocht"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Meitsje allinnich wurdlessen: gjin topografy- of medialessen by it oanmeitsjen fan in nije les"
+
+msgid "System"
+msgstr "Systeem"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "De kleuren fan Recuerdo: sa't it systeem se hat, ljocht of tsjuster"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Words only"
+msgstr "Allinnich wurden"

@@ -1071,3 +1071,147 @@ msgstr "Позначати на вкладці «Введення» слова, 
 
 msgid "Not in the dictionary (%s):"
 msgstr "Немає у словнику (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "Слів за хвилину: %d"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "Слів за хвилину: %d (потрібно: %d)"
+
+msgid "A name is needed."
+msgstr "Потрібно вказати ім’я."
+
+msgid "Belgian AZERTY"
+msgstr "Бельгійська AZERTY"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Вітаємо, Ви завершили цей курс сліпого друку! Якщо бажаєте, можете продовжувати, але інструкції на цьому закінчуються. Ви чудово попрацювали!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Вітаємо, Ви виконали свою першу вправу!"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Англійська"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Спочатку покладіть пальці на основний ряд: зліва направо, на клавіші %s. Тримайте їх там, коли не натискаєте іншу клавішу. Коли пальці будуть на місці, почніть першу вправу. Спершу працюйте над точністю, а не над швидкістю."
+
+msgid "French AZERTY"
+msgstr "Французька AZERTY"
+
+msgid "Keyboard"
+msgstr "Клавіатура"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Навчіться друкувати всіма десятьма пальцями"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Навчіться друкувати всіма десятьма пальцями, не дивлячись на клавіатуру: спочатку літери, ряд за рядом, потім слова, дедалі швидше."
+
+msgid "Mistakes"
+msgstr "Помилки"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Помилок: %d. Будь ласка, пробуйте ще, доки не вийде без жодної помилки."
+
+msgid "New profile"
+msgstr "Новий профіль"
+
+msgid "Other profile"
+msgstr "Інший профіль"
+
+msgid "Spanish"
+msgstr "Іспанська"
+
+msgid "Speed needed"
+msgstr "Потрібна швидкість"
+
+msgid "Start the exercise"
+msgstr "Почати вправу"
+
+msgid "T&yping Course..."
+msgstr "&Курс сліпого друку..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Це ім’я вже зайняте: виберіть його у списку вище."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Це помилка (помилок: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Клавіші, які Ви зараз відпрацьовуватимете, натискаються вказівними пальцями лівої та правої руки й розташовані далі від цих пальців, ніж інші клавіші, які ми відпрацьовували в поточному ряду. Не забувайте повертати палець на його місце в основному ряду, коли друкуєте іншу літеру."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Щоб цього досягти, спробуйте трохи сповільнитися."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Шкода, помилок: %d. Продовжуйте тренуватися, щоб покращити результат!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Наберіть текст нижче. Час починає відлічуватися з першого натискання; неправильна клавіша позначається червоним, і її треба набрати ще раз."
+
+msgid "Typing course"
+msgstr "Курс сліпого друку"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Ласкаво просимо до курсу сліпого друку. Ви покращите навички друку, виконуючи прості вправи; між ними Ви отримуватимете інструкції. Почнімо:"
+
+msgid "Who is practising?"
+msgstr "Хто тренується?"
+
+msgid "Words in"
+msgstr "Мова слів"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Ви впоралися без помилок і швидко! Продовжуйте відпрацьовувати нові комбінації літер, щоб досягти ще кращого результату!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Ви впоралися без помилок і швидко! Продовжуйте тренуватися з новими словами, щоб досягти ще кращого результату!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Ви не зробили жодної помилки й друкуєте досить швидко, тож можете далі відпрацьовувати нові комбінації літер. Так тримати!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Ви не зробили жодної помилки й друкуєте досить швидко, тож можете далі тренуватися з новими словами. Так тримати!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Ви не зробили жодної помилки. Тепер спробуйте трохи збільшити швидкість друку."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Тепер Ви вивчатимете літери, яких немає в основному ряду. Які пальці використовувати, дивіться на зображенні клавіатури на екрані. Коли палець не друкує літеру, одразу повертайте його на основний ряд."
+
+msgid "level %d of %d"
+msgstr "рівень %d з %d"
+
+msgid "space"
+msgstr "пробіл"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Темна"
+
+msgid "Light"
+msgstr "Світла"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Створювати лише уроки зі словами: жодних уроків з топографії чи медія під час створення нового уроку"
+
+msgid "System"
+msgstr "Системна"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Кольори Recuerdo: як у системі, світлі або темні"
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Words only"
+msgstr "Лише слова"

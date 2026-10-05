@@ -16,7 +16,7 @@ type Key struct {
 // space).
 type Layout struct {
 	ID   string  `json:"id"`
-	Name string  `json:"name"` // i18n:values
+	Name string  `json:"name"` // shown with i18n.T (see the list at the end)
 	Rows [][]Key `json:"rows"`
 }
 
@@ -130,3 +130,20 @@ func (l Layout) typable(word string) bool {
 	}
 	return true
 }
+
+// The names shown translated (scripts/extract_strings.py finds them
+// here): the layouts and the languages with words.
+// i18n:values
+var (
+	_ = "QWERTY"
+	_ = "Belgian AZERTY"
+	_ = "French AZERTY"
+	_ = "Colemak"
+	_ = "Dvorak"
+	_ = "QWERTZ"
+	_ = "English"
+	_ = "Dutch"
+	_ = "German"
+	_ = "French"
+	_ = "Spanish"
+)

@@ -1143,3 +1143,168 @@ msgstr "Tandakan perkataan dalam tab Masukkan yang tiada dalam kamus bahasa soal
 
 msgid "Not in the dictionary (%s):"
 msgstr "Tiada dalam kamus (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d patah perkataan seminit"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d patah perkataan seminit (diperlukan: %d)"
+
+msgid "A name is needed."
+msgstr "Nama diperlukan."
+
+msgid "Belgian AZERTY"
+msgstr "AZERTY Belgium"
+
+msgid "Colemak"
+msgstr "Colemak"
+
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr "Tahniah, anda telah menamatkan kursus menaip ini! Anda boleh terus berlatih jika mahu, tetapi arahan berakhir di sini. Syabas!"
+
+msgid "Congratulations, you finished your first exercise!"
+msgstr "Tahniah, anda telah menamatkan latihan pertama anda!"
+
+msgid "Dutch"
+msgstr "Bahasa Belanda"
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Bahasa Inggeris"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Mula-mula, letakkan jari anda pada baris asas: dari kiri ke kanan, pada kekunci %s. Biarkan jari di situ apabila anda tidak menaip kekunci lain. Apabila jari anda sudah berada di kedudukannya, mulakan latihan pertama. Utamakan ketepatan dahulu, bukan kelajuan."
+
+msgid "French"
+msgstr "Bahasa Perancis"
+
+msgid "French AZERTY"
+msgstr "AZERTY Perancis"
+
+msgid "German"
+msgstr "Bahasa Jerman"
+
+msgid "Keyboard"
+msgstr "Papan kekunci"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Belajar menaip dengan kesemua sepuluh jari"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Belajar menaip dengan kesemua sepuluh jari tanpa melihat papan kekunci: mula-mula huruf, baris demi baris, kemudian perkataan, semakin lama semakin pantas."
+
+msgid "Level"
+msgstr "Tahap"
+
+msgid "Mistakes"
+msgstr "Kesilapan"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Kesilapan: %d. Sila terus mencuba sehingga anda dapat melakukannya tanpa sebarang kesilapan."
+
+msgid "New profile"
+msgstr "Profil baharu"
+
+msgid "Other profile"
+msgstr "Profil lain"
+
+msgid "QWERTY"
+msgstr "QWERTY"
+
+msgid "QWERTZ"
+msgstr "QWERTZ"
+
+msgid "Spanish"
+msgstr "Bahasa Sepanyol"
+
+msgid "Speed"
+msgstr "Kelajuan"
+
+msgid "Speed needed"
+msgstr "Kelajuan diperlukan"
+
+msgid "Start the exercise"
+msgstr "Mulakan latihan"
+
+msgid "T&yping Course..."
+msgstr "Kursus &Menaip..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Nama itu sudah digunakan: pilih nama itu dalam senarai di atas."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Itu satu kesilapan (kesilapan: %d)."
+
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
+msgstr "Kekunci yang akan anda latih sekarang ditaip dengan jari telunjuk kiri dan kanan, dan terletak lebih jauh dari jari-jari itu berbanding kekunci lain yang telah kita latih pada baris ini. Pastikan anda mengembalikan jari ke kedudukannya pada baris asas apabila menaip huruf lain."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Untuk mencapainya, anda boleh cuba menaip dengan lebih perlahan sedikit."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Sayang sekali: %d kesilapan. Teruskan berlatih untuk menjadi lebih baik!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Taip teks di bawah. Jam bermula pada kekunci pertama anda; kekunci yang salah ditunjukkan dengan warna merah dan mesti ditaip semula."
+
+msgid "Typing course"
+msgstr "Kursus menaip"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Selamat datang ke kursus menaip. Anda akan meningkatkan kemahiran menaip dengan melakukan latihan mudah; di antaranya, anda akan menerima arahan. Mari kita mulakan:"
+
+msgid "Who is practising?"
+msgstr "Siapa yang berlatih?"
+
+msgid "Words in"
+msgstr "Perkataan dalam"
+
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr "Anda melakukannya tanpa kesilapan dan dengan pantas! Teruskan berlatih beberapa gabungan huruf baharu untuk menjadi lebih baik lagi!"
+
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr "Anda melakukannya tanpa kesilapan dan dengan pantas! Teruskan berlatih dengan perkataan baharu untuk menjadi lebih baik lagi!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr "Anda tidak membuat sebarang kesilapan dan menaip dengan cukup pantas, jadi anda boleh terus berlatih beberapa gabungan huruf baharu. Teruskan usaha yang baik!"
+
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr "Anda tidak membuat sebarang kesilapan dan menaip dengan cukup pantas, jadi anda boleh terus berlatih dengan beberapa perkataan baharu. Teruskan usaha yang baik!"
+
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr "Anda tidak membuat sebarang kesilapan. Sekarang cuba tingkatkan sedikit kelajuan menaip anda."
+
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr "Anda kini akan mempelajari huruf yang tiada pada baris asas. Untuk melihat jari mana yang perlu digunakan, lihat gambar papan kekunci pada skrin anda. Apabila anda tidak menggunakan sesuatu jari untuk menaip huruf, terus letakkan semula jari itu pada baris asas."
+
+msgid "level %d of %d"
+msgstr "tahap %d daripada %d"
+
+msgid "space"
+msgstr "ruang"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Gelap"
+
+msgid "Light"
+msgstr "Cerah"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Cipta pelajaran perkataan sahaja: tiada pelajaran topografi atau media semasa mencipta pelajaran baharu"
+
+msgid "System"
+msgstr "Sistem"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "Warna Recuerdo: seperti dalam sistem, cerah atau gelap"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Words only"
+msgstr "Perkataan sahaja"

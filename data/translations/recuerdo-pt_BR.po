@@ -1028,3 +1028,111 @@ msgstr "Marcar as palavras na aba Inserir que não estão no dicionário do idio
 
 msgid "Not in the dictionary (%s):"
 msgstr "Não está no dicionário (%s):"
+
+# typing course
+msgid "%d words per minute"
+msgstr "%d palavras por minuto"
+
+msgid "%d words per minute (needed: %d)"
+msgstr "%d palavras por minuto (necessário: %d)"
+
+msgid "A name is needed."
+msgstr "É necessário um nome."
+
+msgid "Dvorak"
+msgstr "Dvorak"
+
+msgid "English"
+msgstr "Inglês"
+
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr "Primeiro coloque os dedos na fileira guia: da esquerda para a direita, sobre as teclas %s. Mantenha-os ali quando não estiver digitando outra tecla. Quando os dedos estiverem em posição, comece o primeiro exercício. No início, busque a precisão, não a velocidade."
+
+msgid "Keyboard"
+msgstr "Teclado"
+
+msgid "Learn to type with all ten fingers"
+msgstr "Aprender a digitar com os dez dedos"
+
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
+msgstr "Aprenda a digitar com os dez dedos sem olhar para o teclado: primeiro as letras, fileira por fileira, depois palavras, cada vez mais rápido."
+
+msgid "Mistakes"
+msgstr "Erros"
+
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
+msgstr "Erros: %d. Continue tentando até conseguir sem nenhum erro."
+
+msgid "New profile"
+msgstr "Novo perfil"
+
+msgid "Other profile"
+msgstr "Outro perfil"
+
+msgid "Spanish"
+msgstr "Espanhol"
+
+msgid "Speed needed"
+msgstr "Velocidade necessária"
+
+msgid "Start the exercise"
+msgstr "Começar o exercício"
+
+msgid "T&yping Course..."
+msgstr "Curso de &digitação..."
+
+msgid "That name is taken: choose it in the list above."
+msgstr "Esse nome já existe: escolha-o na lista acima."
+
+msgid "That's a mistake (mistakes: %d)."
+msgstr "Isso é um erro (erros: %d)."
+
+msgid "To achieve that, you might try slowing down a bit."
+msgstr "Para conseguir isso, talvez ajude ir um pouco mais devagar."
+
+msgid "Too bad: %d mistakes. Keep practising to get better!"
+msgstr "Que pena, erros: %d. Continue praticando para melhorar!"
+
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr "Digite o texto abaixo. O relógio começa na sua primeira tecla; uma tecla errada aparece em vermelho e precisa ser digitada de novo."
+
+msgid "Typing course"
+msgstr "Curso de digitação"
+
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr "Bem-vindo ao curso de digitação. Você vai melhorar a sua digitação fazendo exercícios simples; entre eles, você recebe instruções. Vamos começar:"
+
+msgid "Who is practising?"
+msgstr "Quem vai praticar?"
+
+msgid "Words in"
+msgstr "Palavras em"
+
+msgid "level %d of %d"
+msgstr "nível %d de %d"
+
+msgid "space"
+msgstr "espaço"
+
+# theme and words only
+
+msgid "Dark"
+msgstr "Escuro"
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr "Criar apenas lições de palavras: nenhuma lição de topografia ou de mídia ao criar uma nova lição"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr "As cores do Recuerdo: como no sistema, claras ou escuras"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Words only"
+msgstr "Apenas palavras"

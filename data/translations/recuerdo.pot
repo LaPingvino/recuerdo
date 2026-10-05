@@ -39,6 +39,14 @@ msgstr ""
 msgid "%d words"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "%d words per minute"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "%d words per minute (needed: %d)"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "&About..."
 msgstr ""
@@ -101,6 +109,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "A group…"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "A name is needed."
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
@@ -231,6 +243,10 @@ msgstr ""
 msgid "Back to the test"
 msgstr ""
 
+#: internal/typing/layouts.go
+msgid "Belgian AZERTY"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Brackets"
 msgstr ""
@@ -283,8 +299,20 @@ msgstr ""
 msgid "Closed"
 msgstr ""
 
+#: internal/typing/layouts.go
+msgid "Colemak"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Comment"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "Congratulations, you finished this typing course! If you want to continue, you can, but this is the end of the instructions. You did a great job!"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "Congratulations, you finished your first exercise!"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -327,6 +355,10 @@ msgstr ""
 msgid "Credits"
 msgstr ""
 
+#: internal/modules/interfaces/qt/theme/theme.go
+msgid "Dark"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Degrees"
 msgstr ""
@@ -363,6 +395,14 @@ msgstr ""
 msgid "Drop a lesson file here, or choose one."
 msgstr ""
 
+#: internal/typing/layouts.go
+msgid "Dutch"
+msgstr ""
+
+#: internal/typing/layouts.go
+msgid "Dvorak"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "E&xit"
 msgstr ""
@@ -377,6 +417,10 @@ msgstr ""
 
 #: internal/modules/logic/recentlyOpened/recentlyOpened.go
 msgid "Empty the File > Open Recent list"
+msgstr ""
+
+#: internal/typing/layouts.go
+msgid "English"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
@@ -471,6 +515,10 @@ msgstr ""
 msgid "Fill in the server, your name and your password."
 msgstr ""
 
+#: internal/typing/course.go
+msgid "First place your fingers on the home row: from left to right, on the keys %s. Keep them there when you're not typing another key. When your fingers are in position, start the first exercise. Work for accuracy at first, not speed."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
 msgid "First row contains headers"
 msgstr ""
@@ -495,12 +543,24 @@ msgstr ""
 msgid "Free software under the GNU General Public License,\nversion 3 or later"
 msgstr ""
 
+#: internal/typing/layouts.go
+msgid "French"
+msgstr ""
+
+#: internal/typing/layouts.go
+msgid "French AZERTY"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Functions"
 msgstr ""
 
 #: web/index.html
 msgid "Furigana and formulas"
+msgstr ""
+
+#: internal/typing/layouts.go
+msgid "German"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -647,6 +707,10 @@ msgstr ""
 msgid "Items:"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Keyboard"
+msgstr ""
+
 #: internal/i18n/setting.go
 msgid "Language"
 msgstr ""
@@ -665,6 +729,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Latest Session Results"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "Learn to type with all ten fingers"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Learn to type with all ten fingers, without looking at the keyboard: first the letters, row by row, then words, faster and faster."
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -707,6 +779,14 @@ msgstr ""
 msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Level"
+msgstr ""
+
+#: internal/modules/interfaces/qt/theme/theme.go
+msgid "Light"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Limit"
 msgstr ""
@@ -735,6 +815,10 @@ msgstr ""
 msgid "Made a lesson of %d words"
 msgstr ""
 
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Make only word lessons: no topography or media lessons when making a new lesson"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Map:"
 msgstr ""
@@ -749,6 +833,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Merged %d words from %s"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Mistakes"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "Mistakes: %d. Please keep trying until you can do it without any."
 msgstr ""
 
 #: web/index.html
@@ -805,6 +897,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "New lesson dialog created"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "New profile"
 msgstr ""
 
 #: web/app.js
@@ -971,6 +1067,10 @@ msgstr ""
 msgid "Other picture…"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Other profile"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
 msgid "Page %d of %d"
 msgstr ""
@@ -1073,6 +1173,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "Published: the students can see their results."
+msgstr ""
+
+#: internal/typing/layouts.go
+msgid "QWERTY"
+msgstr ""
+
+#: internal/typing/layouts.go
+msgid "QWERTZ"
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
@@ -1299,6 +1407,18 @@ msgstr ""
 msgid "Sorted"
 msgstr ""
 
+#: internal/typing/layouts.go
+msgid "Spanish"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Speed"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Speed needed"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Square root"
 msgstr ""
@@ -1313,6 +1433,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Start Teaching"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Start the exercise"
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
@@ -1343,8 +1467,16 @@ msgstr ""
 msgid "Sum"
 msgstr ""
 
+#: internal/modules/interfaces/qt/theme/theme.go
+msgid "System"
+msgstr ""
+
 #: internal/settingsdefs
 msgid "System language"
+msgstr ""
+
+#: internal/modules/interfaces/qt/gui/gui.go
+msgid "T&yping Course..."
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -1391,8 +1523,24 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "That name is taken: choose it in the list above."
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "That's a mistake (mistakes: %d)."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/preview.go
 msgid "The %s %s is missing from the lesson."
+msgstr ""
+
+#: internal/modules/interfaces/qt/theme/theme.go
+msgid "The colours of Recuerdo: as the system has them, light or dark"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "The keys you're going to practise now are typed by the left and right index finger and further away from those fingers than the other keys we practised on the current row. Make sure you return your finger to its position on the home row when you're typing another letter."
 msgstr ""
 
 #: internal/i18n/setting.go
@@ -1401,6 +1549,10 @@ msgstr ""
 
 #: web/teacher.js
 msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr ""
+
+#: internal/modules/interfaces/qt/theme/theme.go
+msgid "Theme"
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/settings/settings.go
@@ -1419,8 +1571,16 @@ msgstr ""
 msgid "Title:"
 msgstr ""
 
+#: internal/typing/course.go
+msgid "To achieve that, you might try slowing down a bit."
+msgstr ""
+
 #: internal/modules/interfaces/qt/dialogs/testmode/testmode.go
 msgid "To do"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "Too bad: %d mistakes. Keep practising to get better!"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -1455,12 +1615,20 @@ msgstr ""
 msgid "Type or paste words as \"question = answer\" lines"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Type the text below. The clock starts at your first key; a wrong key is shown in red and must be typed again."
+msgstr ""
+
 #: web/app.js
 msgid "Typed list"
 msgstr ""
 
 #: internal/teaching/teachtypes.go
 msgid "Typing"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Typing course"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -1483,12 +1651,20 @@ msgstr ""
 msgid "View answer"
 msgstr ""
 
+#: internal/typing/course.go
+msgid "Welcome to the typing course. You'll improve your typing by doing simple exercises; between them, you get instructions. Let's get started:"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Where is %s?"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Which place is marked?"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Who is practising?"
 msgstr ""
 
 #: internal/modules/interfaces/qt/ocrimport/ocrimport.go
@@ -1511,8 +1687,16 @@ msgstr ""
 msgid "Words List"
 msgstr ""
 
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "Words in"
+msgstr ""
+
 #: internal/modules/logic/listModifiers/wordsNeverAnsweredCorrectly/wordsNeverAnsweredCorrectly.go
 msgid "Words never answered correctly"
+msgstr ""
+
+#: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
+msgid "Words only"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -1547,6 +1731,30 @@ msgstr ""
 msgid "Yes, hand in"
 msgstr ""
 
+#: internal/typing/course.go
+msgid "You did it flawlessly and fast! Continue practising some new letters combinations to get even better!"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "You did it flawlessly and fast! Continue practising with new words to get even better!"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising some new letter combinations. Keep up the good work!"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "You made zero mistakes and are typing fast enough, so you can continue practising with some new words. Keep up the good work!"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "You made zero mistakes. Now try to improve your typing speed a bit."
+msgstr ""
+
+#: internal/typing/course.go
+msgid "You're now going to learn letters that aren't on the home row. To see which fingers you need to use, see the keyboard image on your screen. When you're not using a finger to type a letter, put it back on the home row directly."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Your Answer"
 msgstr ""
@@ -1573,6 +1781,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/enterers/plainTextWords/plaintextwords.go
 msgid "hond = dog\nkat = cat"
+msgstr ""
+
+#: internal/modules/interfaces/qt/typingcourse/typingcourse.go
+msgid "level %d of %d"
+msgstr ""
+
+#: internal/typing/course.go
+msgid "space"
 msgstr ""
 
 #: internal/modules/interfaces/qt/dialogs/about/about.go
