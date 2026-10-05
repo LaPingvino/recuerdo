@@ -9,8 +9,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"html"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	qt "github.com/mappu/miqt/qt6"
@@ -433,13 +435,280 @@ func (w *Window) showStudentResult(id int64) {
 	w.setPage(page)
 }
 
-// ---- teachers (B3e3) ----
+// ---- teachers ----
 
 func (w *Window) showTeacherTests() {
+	w.message("", true)
+	tests, err := w.client.Tests()
+	if w.fail(err) {
+		return
+	}
 	page := qt.NewQWidget2()
 	layout := qt.NewQVBoxLayout(page)
 	layout.AddLayout(w.logoutRow(i18n.T("Your tests")).QLayout)
-	layout.AddWidget(qt.NewQLabel3(i18n.T("Teachers and admins: use the server's web page for now.")).QWidget)
-	layout.AddStretch()
+	if w.user.Role == testserver.Admin {
+		hint := qt.NewQLabel3(i18n.T("Accounts and groups are managed on the server's web page."))
+		hint.SetStyleSheet("color: gray;")
+		layout.AddWidget(hint.QWidget)
+	}
+	list := table(i18n.T("Test"), i18n.T("Words"), i18n.T("Status"))
+	list.SetRowCount(len(tests))
+	for i, t := range tests {
+		status := i18n.T("Open")
+		if !t.Open {
+			status = i18n.T("Closed")
+		}
+		cell(list, i, 0, t.Title)
+		cell(list, i, 1, fmt.Sprint(t.Words))
+		cell(list, i, 2, status)
+	}
+	list.ResizeColumnsToContents()
+	layout.AddWidget(list.QWidget)
+	open := button(i18n.T("Open the test"), func() { w.showTeacherTest(tests[list.CurrentRow()].ID) })
+	open.SetEnabled(false)
+	list.OnCurrentCellChanged(func(row, _, _, _ int) { open.SetEnabled(row >= 0) })
+	list.OnCellDoubleClicked(func(row, _ int) { w.showTeacherTest(tests[row].ID) })
+	row := qt.NewQHBoxLayout2()
+	row.AddWidget(open.QWidget)
+	if w.user.Role == testserver.Teacher {
+		make := button(i18n.T("New test of the open lesson"), w.makeTest)
+		make.SetEnabled(w.lesson != nil && w.lesson() != nil && len(w.lesson().Items) > 0)
+		if !make.IsEnabled() {
+			make.SetToolTip(i18n.T("Open a word lesson in Recuerdo first."))
+		}
+		row.AddWidget(make.QWidget)
+	}
+	row.AddWidget(button(i18n.T("Refresh"), w.showTeacherTests).QWidget)
+	row.AddStretch()
+	layout.AddLayout(row.QLayout)
+	w.setPage(page)
+}
+
+func (w *Window) makeTest() {
+	list := w.lesson()
+	if list == nil {
+		return
+	}
+	test, err := w.client.CreateTest(*list)
+	if w.fail(err) {
+		return
+	}
+	w.message(i18n.Tf("Test made: %s. Now give it to students or groups.", test.Title), true)
+	w.showTeacherTest(test.ID)
+}
+
+func (w *Window) showTeacherTest(id int64) {
+	test, err := w.client.Test(id)
+	if w.fail(err) {
+		return
+	}
+	results, err := w.client.Results(id)
+	if w.fail(err) {
+		return
+	}
+	students, _ := w.client.Users()
+	groups, _ := w.client.Groups()
+	page := qt.NewQWidget2()
+	layout := qt.NewQVBoxLayout(page)
+	layout.AddLayout(w.logoutRow(test.Title).QLayout)
+	reload := func() { w.showTeacherTest(id) }
+
+	top := qt.NewQHBoxLayout2()
+	openText := i18n.T("Close for handing in")
+	if !test.Open {
+		openText = i18n.T("Open for handing in")
+	}
+	top.AddWidget(button(openText, func() {
+		if !w.fail(w.client.SetOpen(id, !test.Open)) {
+			reload()
+		}
+	}).QWidget)
+	top.AddStretch()
+	layout.AddLayout(top.QLayout)
+
+	// who takes it
+	var given []string
+	for _, s := range test.Students {
+		given = append(given, s.Name)
+	}
+	for _, g := range test.Groups {
+		given = append(given, i18n.Tf("Group %s", g.Name))
+	}
+	if len(given) == 0 {
+		given = []string{i18n.T("No one yet.")}
+	}
+	who := qt.NewQLabel3("<b>" + i18n.T("Given to") + ":</b> " + html.EscapeString(strings.Join(given, ", ")))
+	who.SetWordWrap(true)
+	layout.AddWidget(who.QWidget)
+	assign := qt.NewQHBoxLayout2()
+	student := qt.NewQComboBox2()
+	student.AddItem(i18n.T("A student…"))
+	for _, s := range students {
+		student.AddItem3(s.Name, qt.NewQVariant6(s.ID))
+	}
+	group := qt.NewQComboBox2()
+	group.AddItem(i18n.T("A group…"))
+	for _, g := range groups {
+		group.AddItem3(g.Name, qt.NewQVariant6(g.ID))
+	}
+	assign.AddWidget(student.QWidget)
+	assign.AddWidget(button(i18n.T("Add"), func() {
+		if student.CurrentIndex() > 0 && !w.fail(w.client.AssignStudent(id, student.CurrentData().ToLongLong())) {
+			reload()
+		}
+	}).QWidget)
+	assign.AddWidget(group.QWidget)
+	assign.AddWidget(button(i18n.T("Add"), func() {
+		if group.CurrentIndex() > 0 && !w.fail(w.client.AssignGroup(id, group.CurrentData().ToLongLong())) {
+			reload()
+		}
+	}).QWidget)
+	assign.AddStretch()
+	layout.AddLayout(assign.QLayout)
+
+	// hand-ins
+	layout.AddWidget(heading(i18n.T("Handed in")).QWidget)
+	list := table(i18n.T("Student"), i18n.T("Score"), i18n.T("Published"))
+	list.SetRowCount(len(results))
+	handedIn := map[int64]bool{}
+	for i, r := range results {
+		handedIn[r.Student.ID] = true
+		cell(list, i, 0, r.Student.Name)
+		cell(list, i, 1, fmt.Sprintf("%d/%d (%d%%)", rightCount(r), len(r.Items), r.Note))
+		published := "–"
+		if r.Published {
+			published = "✓"
+		}
+		cell(list, i, 2, published)
+	}
+	list.ResizeColumnsToContents()
+	layout.AddWidget(list.QWidget)
+	expected := map[int64]string{}
+	for _, s := range test.Students {
+		expected[s.ID] = s.Name
+	}
+	for _, g := range test.Groups {
+		for _, full := range groups {
+			if full.ID == g.ID {
+				for _, m := range full.Members {
+					expected[m.ID] = m.Name
+				}
+			}
+		}
+	}
+	var missing []string
+	for sid, name := range expected {
+		if !handedIn[sid] {
+			missing = append(missing, name)
+		}
+	}
+	if len(missing) > 0 {
+		sort.Strings(missing)
+		l := qt.NewQLabel3(i18n.Tf("Not handed in yet: %s", strings.Join(missing, ", ")))
+		l.SetWordWrap(true)
+		l.SetStyleSheet("color: gray;")
+		layout.AddWidget(l.QWidget)
+	}
+	row := qt.NewQHBoxLayout2()
+	row.AddWidget(button(i18n.T("Back"), w.showTeacherTests).QWidget)
+	check := button(i18n.T("Check"), func() { w.showTeacherResult(test, results[list.CurrentRow()].Student.ID) })
+	check.SetEnabled(false)
+	list.OnCurrentCellChanged(func(r, _, _, _ int) { check.SetEnabled(r >= 0) })
+	list.OnCellDoubleClicked(func(r, _ int) { w.showTeacherResult(test, results[r].Student.ID) })
+	row.AddWidget(check.QWidget)
+	row.AddStretch()
+	if len(results) > 0 {
+		row.AddWidget(button(i18n.T("Publish all results"), func() {
+			if !w.fail(w.client.Publish(id, 0)) {
+				w.message(i18n.T("Published: the students can see their results."), true)
+				reload()
+			}
+		}).QWidget)
+	}
+	layout.AddLayout(row.QLayout)
+	w.setPage(page)
+}
+
+func rightCount(r testserver.Result) int {
+	n := 0
+	for _, it := range r.Items {
+		if it.Right {
+			n++
+		}
+	}
+	return n
+}
+
+func (w *Window) showTeacherResult(test testserver.Test, studentID int64) {
+	w.message("", true)
+	r, err := w.client.Result(test.ID, studentID)
+	if w.fail(err) {
+		return
+	}
+	page := qt.NewQWidget2()
+	layout := qt.NewQVBoxLayout(page)
+	layout.AddLayout(w.logoutRow(test.Title + ": " + r.Student.Name).QLayout)
+	layout.AddWidget(heading(i18n.Tf("%d of %d right (%d%%)", rightCount(r), len(r.Items), r.Note)).QWidget)
+	words := map[int]lesson.WordItem{}
+	for _, it := range test.List.Items {
+		words[it.ID] = it
+	}
+	list := table(i18n.T("Question"), i18n.T("Right answers"), i18n.T("Given"), "")
+	list.SetRowCount(len(r.Items))
+	for i, it := range r.Items {
+		word := words[it.ItemID]
+		for col, text := range []string{strings.Join(word.Questions, ", "), strings.Join(word.Answers, ", ")} {
+			// the words with their markup and formulas, as rich text
+			l := qt.NewQLabel3(richtext.RichWithMath(text))
+			l.SetTextFormat(qt.RichText)
+			l.SetContentsMargins(4, 0, 4, 0)
+			list.SetCellWidget(i, col, l.QWidget)
+		}
+		given := it.Given
+		if given == "" {
+			given = "—"
+		}
+		cell(list, i, 2, given)
+		mark, color := i18n.T("Wrong"), qt.NewQColor3(194, 69, 61)
+		if it.Right {
+			mark, color = i18n.T("Right"), qt.NewQColor3(59, 143, 79)
+		}
+		cell(list, i, 3, mark)
+		list.Item(i, 3).SetForeground(qt.NewQBrush3(color))
+	}
+	list.ResizeColumnsToContents()
+	layout.AddWidget(list.QWidget)
+	row := qt.NewQHBoxLayout2()
+	row.AddWidget(button(i18n.T("Back to the test"), func() { w.showTeacherTest(test.ID) }).QWidget)
+	flip := button(i18n.T("Count as right"), nil)
+	flip.SetEnabled(false)
+	list.OnCurrentCellChanged(func(row, _, _, _ int) {
+		flip.SetEnabled(row >= 0)
+		if row >= 0 && r.Items[row].Right {
+			flip.SetText(i18n.T("Count as wrong"))
+		} else {
+			flip.SetText(i18n.T("Count as right"))
+		}
+	})
+	flip.OnClicked(func() {
+		it := r.Items[list.CurrentRow()]
+		if _, err := w.client.Override(test.ID, studentID, it.ItemID, !it.Right); !w.fail(err) {
+			w.showTeacherResult(test, studentID)
+		}
+	})
+	row.AddWidget(flip.QWidget)
+	row.AddStretch()
+	publish := button(i18n.T("Publish this result"), func() {
+		if !w.fail(w.client.Publish(test.ID, studentID)) {
+			w.message(i18n.T("Published: the students can see their results."), true)
+			w.showTeacherResult(test, studentID)
+		}
+	})
+	if r.Published {
+		publish.SetText(i18n.T("Published"))
+		publish.SetEnabled(false)
+	}
+	row.AddWidget(publish.QWidget)
+	layout.AddLayout(row.QLayout)
 	w.setPage(page)
 }

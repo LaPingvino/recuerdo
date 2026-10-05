@@ -14,13 +14,20 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/testserver"
 )
 
-var flowErr error
+var flowErr, teacherErr error
 
 func TestMain(m *testing.M) {
 	os.Setenv("QT_QPA_PLATFORM", "offscreen")
 	qt.NewQApplication([]string{"testmode-test"})
 	flowErr = studentFlow()
+	teacherErr = teacherFlow()
 	os.Exit(m.Run())
+}
+
+func TestTeacherFlow(t *testing.T) {
+	if teacherErr != nil {
+		t.Fatal(teacherErr)
+	}
 }
 
 func TestStudentFlow(t *testing.T) {
@@ -122,5 +129,73 @@ func studentFlow() error {
 	w.showStudentTests()
 	w.showStudentResult(test.ID)
 	shot(w, "4-result.png")
+	return nil
+}
+
+func teacherFlow() error {
+	dir, _ := os.MkdirTemp("", "testmode")
+	defer os.RemoveAll(dir)
+	StateFile = func() string { return filepath.Join(dir, "testmode.json") }
+	ConfirmFingerprint = func(*qt.QWidget, string, string) bool { return true }
+	store, err := testserver.Open(filepath.Join(dir, "t.db"))
+	if err != nil {
+		return err
+	}
+	defer store.Close()
+	store.CreateUser("jansen", testserver.Teacher, "t")
+	anna, _ := store.CreateUser("anna", testserver.Student, "s")
+	bram, _ := store.CreateUser("bram", testserver.Student, "s")
+	carla, _ := store.CreateUser("carla", testserver.Student, "s")
+	class, _ := store.CreateGroup("2B")
+	store.AddMember(class.ID, anna.ID)
+	store.AddMember(class.ID, bram.ID)
+	srv := httptest.NewServer((&testserver.API{Store: store}).Handler(nil))
+	defer srv.Close()
+
+	open := &lesson.WordList{Title: "Chemistry", Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"water"}, Answers: []string{"H<sub>2</sub>O"}},
+		{ID: 1, Questions: []string{"the area of a circle"}, Answers: []string{"$\\pi r^2$"}},
+		{ID: 2, Questions: []string{"salt"}, Answers: []string{"NaCl"}},
+	}}
+	w := Show(nil, func() *lesson.WordList { return open })
+	defer func() {
+		w.Close()
+		w.DeleteLater()
+		qt.QCoreApplication_SendPostedEvents2(nil, int(qt.QEvent__DeferredDelete))
+	}()
+	w.Resize(800, 640)
+	w.connect(srv.URL, "jansen", "t")
+	if w.client == nil {
+		return failure("teacher not logged in: " + w.status.Text())
+	}
+	w.makeTest()
+	tests, _ := store.TestsFor(testserver.User{ID: 1, Role: testserver.Teacher})
+	if len(tests) != 1 || tests[0].Title != "Chemistry" {
+		return failure("test not made")
+	}
+	id := tests[0].ID
+	store.AssignGroup(id, class.ID)
+	store.AssignStudent(id, carla.ID)
+	store.HandIn(id, anna, map[int]string{0: "H2O", 1: "\\pi r^2", 2: "NaCl"})
+	store.HandIn(id, bram, map[int]string{0: "HO2", 1: "pi r^2", 2: "NaCl"})
+	w.showTeacherTests()
+	shot(w, "5-teacher-tests.png")
+	w.showTeacherTest(id)
+	shot(w, "6-teacher-test.png")
+	test, _ := w.client.Test(id)
+	w.showTeacherResult(test, bram.ID)
+	shot(w, "7-teacher-check.png")
+	if _, err := w.client.Override(id, bram.ID, 1, true); err != nil {
+		return err
+	}
+	if r, _ := store.ResultOf(id, bram.ID); r.Note != 66 {
+		return failure("override not stored")
+	}
+	if err := w.client.Publish(id, 0); err != nil {
+		return err
+	}
+	if r, _ := store.ResultOf(id, anna.ID); !r.Published {
+		return failure("not published")
+	}
 	return nil
 }
