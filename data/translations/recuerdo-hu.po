@@ -1,0 +1,812 @@
+# Recuerdo's own texts in Hungarian (OpenTeacher's translations, data/translations/hu.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Hungarian terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nJegy (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "%d gyakorolandó elem. Nyomja meg az Indítás gombot."
+
+msgid "%d of %d"
+msgstr "%d / %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d / %d helyes (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d hely. Válassza ki, hogyan szeretne gyakorolni, és nyomja meg az Indítás gombot."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "Alkalmak: %d; a legutóbbi: %d%% helyes."
+
+msgid "&Merge Lesson..."
+msgstr "Lecke e&gyesítése..."
+
+msgid "&Properties..."
+msgstr "&Tulajdonságok..."
+
+msgid "&Tools"
+msgstr "&Eszközök"
+
+msgid ", %d tests"
+msgstr ", %d teszt"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Egy weboldal vagy egy YouTube-, Vimeo- vagy Dailymotion-videó"
+
+msgid "About Recuerdo"
+msgstr "A Recuerdo névjegye"
+
+msgid "About dialog not available"
+msgstr "A névjegy ablak nem érhető el"
+
+msgid "About dialog shown"
+msgstr "Névjegy ablak megjelenítve"
+
+msgid "Add"
+msgstr "Hozzáadás"
+
+msgid "Add Character"
+msgstr "Karakter hozzáadása"
+
+msgid "Add Word"
+msgstr "Szó hozzáadása"
+
+msgid "Add all places"
+msgstr "Összes hely hozzáadása"
+
+msgid "Add every place this map knows"
+msgstr "A térkép összes helyének hozzáadása"
+
+msgid "Add files…"
+msgstr "Fájlok hozzáadása…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Egy másik lecke szavainak és eredményeinek hozzáadása ehhez a leckéhez"
+
+msgid "Add web address…"
+msgstr "Webcím hozzáadása…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Mindegyik egyszer: minden szó egyszer. Intelligens: a rossz szavak hamarosan és a végén is visszatérnek. Intervallum: a szavak addig térnek vissza, amíg meg nem tanulja őket."
+
+msgid "All words"
+msgstr "Összes szó"
+
+msgid "Answer Language:"
+msgstr "Válasz nyelve:"
+
+msgid "Answer language"
+msgstr "Válasz nyelve"
+
+msgid "As entered"
+msgstr "Bevitel sorrendjében"
+
+msgid "Ask the answers"
+msgstr "A válaszok kérdezése"
+
+msgid "Ask this word again later"
+msgstr "Ennek a szónak a későbbi újrakérdezése"
+
+msgid "Ask:"
+msgstr "Kérdezés:"
+
+msgid "Brackets"
+msgstr "Zárójelek"
+
+msgid "Browse Unicode"
+msgstr "Unicode böngészése"
+
+msgid "Browse..."
+msgstr "Tallózás..."
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Choose a file…"
+msgstr "Fájl kiválasztása…"
+
+msgid "Clear List"
+msgstr "Lista törlése"
+
+msgid "Clear recent files"
+msgstr "Legutóbbi fájlok listájának törlése"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Kattintson a „Tanulás indítása” gombra a kezdéshez"
+
+msgid "Continue"
+msgstr "Folytatás"
+
+msgid "Correct Answer"
+msgstr "Helyes válasz"
+
+msgid "Count your last answer as right after all"
+msgstr "Az utolsó válasz elfogadása mégis helyesnek"
+
+msgid "Counted as right"
+msgstr "Helyesnek számítva"
+
+msgid "Create Lesson"
+msgstr "Lecke készítése"
+
+msgid "Create New Lesson"
+msgstr "Új lecke készítése"
+
+msgid "Credits"
+msgstr "Közreműködők"
+
+msgid "Degrees"
+msgstr "Fok"
+
+msgid "Description:"
+msgstr "Leírás:"
+
+msgid "Done: %d of %d right."
+msgstr "Kész: %d / %d helyes."
+
+msgid "Download"
+msgstr "Letöltés"
+
+msgid "Download the lesson, with your results"
+msgstr "A lecke letöltése az eredményekkel együtt"
+
+msgid "Download…"
+msgstr "Letöltés…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Húzzon ide egy leckefájlt, vagy válasszon egyet."
+
+msgid "Each session:"
+msgstr "Alkalmanként:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "A kijelölt kérdés vagy válasz szerkesztése a képletszerkesztővel"
+
+msgid "Empty the File > Open Recent list"
+msgstr "A Fájl > Legutóbbiak megnyitása lista kiürítése"
+
+msgid "Enter"
+msgstr "Bevitel"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Adja meg a Unicode kódpontot (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Adja meg a lecke leírását..."
+
+msgid "Enter lesson name..."
+msgstr "Adja meg a lecke nevét..."
+
+msgid "Enter lesson title"
+msgstr "Adja meg a lecke címét"
+
+msgid "Enter some places first."
+msgstr "Először adjon meg néhány helyet."
+
+msgid "Error creating lesson: %v"
+msgstr "Hiba a lecke létrehozásakor: %v"
+
+msgid "Error loading file: %v"
+msgstr "Hiba a fájl betöltésekor: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Hiba: a fájlválasztó ablak nem érhető el"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Hiba: a lecke ablak nem érhető el"
+
+msgid "Error: No about dialog modules available"
+msgstr "Hiba: nincs elérhető névjegy ablak modul"
+
+msgid "Error: No file dialog modules available"
+msgstr "Hiba: nincs elérhető fájlválasztó ablak modul"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Hiba: nincs elérhető lecke ablak modul"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Hiba: nincs elérhető beállítások ablak modul"
+
+msgid "Error: Properties dialog not available"
+msgstr "Hiba: a tulajdonságok ablak nem érhető el"
+
+msgid "Error: Settings dialog not available"
+msgstr "Hiba: a beállítások ablak nem érhető el"
+
+msgid "Example"
+msgstr "Példa"
+
+msgid "Exported %s"
+msgstr "Exportálva: %s"
+
+msgid "Field separator:"
+msgstr "Mezőelválasztó:"
+
+msgid "File"
+msgstr "Fájl"
+
+msgid "File encoding:"
+msgstr "Fájl kódolása:"
+
+msgid "Files"
+msgstr "Fájlok"
+
+msgid "First row contains headers"
+msgstr "Az első sor fejléceket tartalmaz"
+
+msgid "Format"
+msgstr "Formátum"
+
+msgid "Formula builder"
+msgstr "Képletszerkesztő"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Képlet, pl. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Tört"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Szabad szoftver a GNU General Public License\n3. vagy újabb verziója alatt"
+
+msgid "Functions"
+msgstr "Függvények"
+
+msgid "Furigana and formulas"
+msgstr "Furigana és képletek"
+
+msgid "Getting Started with Recuerdo"
+msgstr "A Recuerdo első lépései"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Először adjon választ az elemekhez a Bevitel lapon."
+
+msgid "Go on after seeing the right answer"
+msgstr "Továbblépés a helyes válasz megtekintése után"
+
+msgid "Grades in:"
+msgstr "Osztályzás:"
+
+msgid "Hard words"
+msgstr "Nehéz szavak"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Nehéz szavak: amelyekre többször volt rossz a válasz, mint jó, vagy amelyeket még nem gyakorolt. Soha nem válaszolt helyesen: amelyekre a korábbi alkalmakkor nem volt helyes válasz."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Mennyi ideig mutatja a „Válasz ismétlése” a választ, mielőtt begépeli"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Hogyan osztályozza az Eredmények lap az alkalmakat"
+
+msgid "Import"
+msgstr "Importálás"
+
+msgid "Import File"
+msgstr "Fájl importálása"
+
+msgid "Import Lesson"
+msgstr "Lecke importálása"
+
+msgid "Import Options"
+msgstr "Importálási beállítások"
+
+msgid "Import from &Picture..."
+msgstr "Importálás ké&pből..."
+
+msgid "Import from Picture"
+msgstr "Importálás képből"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "A Név – Hely módban a kattintandó hely nevének kimondása"
+
+msgid "In mind"
+msgstr "Fejben"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "A „Válasz ismétlése” módban mennyi ideig látható a válasz, mielőtt begépeli"
+
+msgid "Index"
+msgstr "Alsó index"
+
+msgid "Integral"
+msgstr "Integrál"
+
+msgid "Interface"
+msgstr "Felület"
+
+msgid "Items:"
+msgstr "Elemek:"
+
+msgid "Languages"
+msgstr "Nyelvek"
+
+msgid "Last session:"
+msgstr "Legutóbbi alkalom:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Legutóbbi alkalom: %d / %d helyes. Alkalmak ebben a leckében: %d."
+
+msgid "Latest Session Results"
+msgstr "A legutóbbi alkalom eredményei"
+
+msgid "Learn words, places and more by heart"
+msgstr "Szavak, helyek és sok más dolog megtanulása fejből"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Szavak, helyek és sok más megtanulása fejből:\negy idegen nyelv szókincse, topográfia,\nvagy bármi, amit meg szeretne jegyezni."
+
+msgid "Lesson Information"
+msgstr "Lecke adatai"
+
+msgid "Lesson Properties"
+msgstr "Lecke tulajdonságai"
+
+msgid "Lesson Type"
+msgstr "Lecketípus"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Szópárok a leckében: %d\n\nFejezzen be egy tanulási alkalmat, hogy itt lássa a részletes eredményeket."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Szópárok a leckében: %d | Korábbi alkalmak: %d (lásd: Haladás)\n\nGyakoroljon, hogy itt részletesen lássa a válaszait."
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Lecke: %d szópár | Befejezett alkalmak: %d\n\nLegutóbbi alkalom: %d/%d helyes (%d%%), jegy: %s\nÁtlagos jegy: %s (%d%%)\n\nA legutóbbi alkalom részletes eredményei:"
+
+msgid "Limit"
+msgstr "Határérték"
+
+msgid "Loaded '%s': %d words"
+msgstr "Betöltve: „%s” – %d szó"
+
+msgid "Loading…"
+msgstr "Betöltés…"
+
+msgid "Made a lesson of %d words"
+msgstr "Lecke elkészítve, szavak: %d"
+
+msgid "Map:"
+msgstr "Térkép:"
+
+msgid "Merged %d words from %s"
+msgstr "Egyesítve: %d szó, forrás: %s"
+
+msgid "Mode"
+msgstr "Mód"
+
+msgid "Mode:"
+msgstr "Mód:"
+
+msgid "Name of a place"
+msgstr "Egy hely neve"
+
+msgid "Name of the marked place"
+msgstr "A megjelölt hely neve"
+
+msgid "Name – Place"
+msgstr "Név – Hely"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Beszédprogram szükséges: telepítse az espeak-ng-t"
+
+msgid "Never answered correctly"
+msgstr "Soha nem válaszolt helyesen"
+
+msgid "New Lesson"
+msgstr "Új lecke"
+
+msgid "New from &Text..."
+msgstr "Új szö&vegből..."
+
+msgid "New lesson created successfully"
+msgstr "Az új lecke sikeresen elkészült"
+
+msgid "New lesson dialog created"
+msgstr "Új lecke ablak létrehozva"
+
+msgid "New question"
+msgstr "Új kérdés"
+
+msgid "No lesson data available"
+msgstr "Nincsenek elérhető leckeadatok"
+
+msgid "No lesson open to show properties"
+msgstr "Nincs megnyitott lecke, amelynek a tulajdonságai megjeleníthetők"
+
+msgid "No recent lessons"
+msgstr "Nincsenek legutóbbi leckék"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Még nincsenek eredmények: gyakoroljon a Tanulás lapon."
+
+msgid "No teaching results available yet"
+msgstr "Még nincsenek tanulási eredmények"
+
+msgid "No words available for teaching"
+msgstr "Nincsenek tanulható szavak"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Nincs gyakorolandó szó: még egy sem ilyen: „%s”"
+
+msgid "Now click where %s is on the map."
+msgstr "Most kattintson a térképen erre a helyre: %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Soronként egy szó, a kérdés és a válasz között egyenlőségjellel."
+
+msgid "Open"
+msgstr "Megnyitás"
+
+msgid "Open Lesson…"
+msgstr "Lecke megnyitása…"
+
+msgid "Open a lesson"
+msgstr "Lecke megnyitása"
+
+msgid "Open operation cancelled"
+msgstr "Megnyitás megszakítva"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher leckék (.ot, .otwd), szólisták (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS és mások"
+
+msgid "Opened '%s' - %d words"
+msgstr "Megnyitva: „%s” – %d szó"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "OpenTeacher leckék (.ot, .otwd), szólisták (.csv, .txt) és KWordQuiz fájlok (.kvtml) megnyitása"
+
+msgid "Operators"
+msgstr "Műveleti jelek"
+
+msgid "Or type a list"
+msgstr "Vagy gépeljen be egy listát"
+
+msgid "Order"
+msgstr "Sorrend"
+
+msgid "Order:"
+msgstr "Sorrend:"
+
+msgid "Other lesson"
+msgstr "Másik lecke"
+
+msgid "Other picture…"
+msgstr "Másik kép…"
+
+msgid "Page %d of %d"
+msgstr "Oldal: %d / %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Képek, hangok, videók vagy szövegek, a leckén belül tárolva"
+
+msgid "Place %d"
+msgstr "%d. hely"
+
+msgid "Place – Name"
+msgstr "Hely – Név"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Hely – Név: egy hely meg van jelölve, gépelje be a nevét.\nNév – Hely: egy név adott, kattintson a helyre."
+
+msgid "Please add words in the Enter tab"
+msgstr "Adjon hozzá szavakat a Bevitel lapon"
+
+msgid "Power"
+msgstr "Hatvány"
+
+msgid "Practice"
+msgstr "Gyakorlás"
+
+msgid "Practice sessions:"
+msgstr "Gyakorlási alkalmak:"
+
+msgid "Practise"
+msgstr "Gyakorlás"
+
+msgid "Practise again"
+msgstr "Újra gyakorlás"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Gyakorlás fordítva: a válaszokat kérdezi, és a kérdések a válaszok"
+
+msgid "Practise these words"
+msgstr "Ezeknek a szavaknak a gyakorlása"
+
+msgid "Practise to see your answers here."
+msgstr "Gyakoroljon, hogy itt lássa a válaszait."
+
+msgid "Preview"
+msgstr "Előnézet"
+
+msgid "Previous"
+msgstr "Előző"
+
+msgid "Printed %s"
+msgstr "Nyomtatva: %s"
+
+msgid "Progress"
+msgstr "Haladás"
+
+msgid "Pronounce names"
+msgstr "Nevek kiejtése"
+
+msgid "Properties dialog cancelled"
+msgstr "Tulajdonságok ablak megszakítva"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Kérdés: %d / %d (Pontszám: %d/%d helyes)"
+
+msgid "Question Language:"
+msgstr "Kérdés nyelve:"
+
+msgid "Question language"
+msgstr "Kérdés nyelve"
+
+msgid "Quick Access"
+msgstr "Gyors elérés"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Beolvasott szópárok a képről: %d. Ellenőrizze őket a Bevitel lapon"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Szólista beolvasása egy nyomtatott lista szkennelt képéről vagy fényképéről (Tesseract szükséges)"
+
+msgid "Ready"
+msgstr "Kész"
+
+msgid "Ready to start"
+msgstr "Indításra kész"
+
+msgid "Ready to start teaching"
+msgstr "Készen áll a tanulásra"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "A Recuerdo a böngészőben fut: a leckék a számítógépén maradnak."
+
+msgid "Remove Word"
+msgstr "Szó eltávolítása"
+
+msgid "Repeat answer shows the answer for"
+msgstr "A „Válasz ismétlése” ennyi ideig mutatja a választ"
+
+msgid "Result"
+msgstr "Eredmény"
+
+msgid "Results Overview"
+msgstr "Eredmények áttekintése"
+
+msgid "Reversed"
+msgstr "Fordított"
+
+msgid "Right"
+msgstr "Helyes"
+
+msgid "Right answer"
+msgstr "Helyes válasz"
+
+msgid "Right: %s"
+msgstr "Helyes: %s"
+
+msgid "Root"
+msgstr "Gyök"
+
+msgid "Rotate 90°"
+msgstr "Forgatás 90°-kal"
+
+msgid "Saved %s"
+msgstr "Mentve: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Minden kérdés felolvasása a kérdés nyelvén (espeak-ng vagy a macOS, illetve a Windows hangjai szükségesek)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Minden kérdés felolvasása a kérdés nyelvén"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Válasszon fent egy Unicode blokkot a karakterek megtekintéséhez, vagy adjon meg közvetlenül egy kódpontot."
+
+msgid "Select file to import..."
+msgstr "Importálandó fájl kiválasztása..."
+
+msgid "Selected file: %s"
+msgstr "Kiválasztott fájl: %s"
+
+msgid "Settings saved"
+msgstr "Beállítások mentve"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Több szó egy kérdéshez: válassza el őket vesszővel. A módosítások az oldal elhagyásáig maradnak meg: a megőrzéshez töltse le a leckét."
+
+msgid "Show answer for:"
+msgstr "Válasz mutatása:"
+
+msgid "Show or hide special characters"
+msgstr "Különleges karakterek megjelenítése vagy elrejtése"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Különleges karakterek megjelenítése vagy elrejtése: ékezetes betűk és más írásrendszerek"
+
+msgid "Sorted"
+msgstr "Rendezett"
+
+msgid "Square root"
+msgstr "Négyzetgyök"
+
+msgid "Start"
+msgstr "Indítás"
+
+msgid "Start Again"
+msgstr "Újrakezdés"
+
+msgid "Start Teaching"
+msgstr "Tanulás indítása"
+
+msgid "Stop"
+msgstr "Leállítás"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Egyenesítse ki a képet, hogy a sorok vízszintesek legyenek, és húzzon egy téglalapot a szólista köré, ha a képen más is látható."
+
+msgid "Straighten:"
+msgstr "Kiegyenesítés:"
+
+msgid "Structure"
+msgstr "Szerkezet"
+
+msgid "Sum"
+msgstr "Összeg"
+
+msgid "System language"
+msgstr "Rendszer nyelve"
+
+msgid "Teach"
+msgstr "Tanulás"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "A tanulás befejeződött! Végeredmény: %d/%d helyes (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "A tanulási alkalom befejeződött"
+
+msgid "Text"
+msgstr "Szöveg"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "Hiányzik a leckéből: %s %s"
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "A Recuerdo menüinek és ablakainak nyelve (a Recuerdo újraindítása után). A fordítás nélküli szövegek angolul maradnak."
+
+msgid "There are no settings to change."
+msgstr "Nincsenek módosítható beállítások."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Gondolja ki a választ, majd nyomja meg a „Válasz megtekintése” gombot, amikor készen van."
+
+msgid "Title"
+msgstr "Cím"
+
+msgid "Topology"
+msgstr "Topográfia"
+
+msgid "Translation: %s"
+msgstr "Fordítás: %s"
+
+msgid "Try an example"
+msgstr "Példa kipróbálása"
+
+msgid "Type a List"
+msgstr "Lista begépelése"
+
+msgid "Type at least one word."
+msgstr "Gépeljen be legalább egy szót."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Szólista begépelése vagy beillesztése „kérdés = válasz” sorokként"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Gépelje be vagy illessze be a szavakat: soronként egyet, a kérdés és a válasz között egyenlőségjellel (=) vagy tabulátorral, például: „hond = dog”. Az egy oldalon álló több szót vessző választja el."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Szavak begépelése vagy beillesztése „kérdés = válasz” sorokként"
+
+msgid "Typed list"
+msgstr "Begépelt lista"
+
+msgid "Typing"
+msgstr "Begépelés"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Begépelés: gépelje be a választ. Kevert betűk: a válasz betűi segítségként. Válasz ismétlése: először látható a válasz, aztán emlékezetből kell begépelni."
+
+msgid "Unicode Block:"
+msgstr "Unicode blokk:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Saját kép használata térképként"
+
+msgid "Version %s"
+msgstr "Verzió: %s"
+
+msgid "Where is %s?"
+msgstr "Hol található %s?"
+
+msgid "Which place is marked?"
+msgstr "Melyik hely van megjelölve?"
+
+msgid "Whole picture"
+msgstr "Teljes kép"
+
+msgid "Word Lesson: %s"
+msgstr "Szólecke: %s"
+
+msgid "Word Pairs"
+msgstr "Szópárok"
+
+msgid "Words"
+msgstr "Szavak"
+
+msgid "Words List"
+msgstr "Szólista"
+
+msgid "Words never answered correctly"
+msgstr "Soha helyesen meg nem válaszolt szavak"
+
+msgid "Words:"
+msgstr "Szavak:"
+
+msgid "Wrong"
+msgstr "Rossz"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Rossz. A helyes válasz: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Rossz: %s → %s"
+
+msgid "Your Answer"
+msgstr "Az Ön válasza"
+
+msgid "Your answer"
+msgstr "Az Ön válasza"
+
+msgid "e.g. Dutch"
+msgstr "pl. holland"
+
+msgid "e.g. English"
+msgstr "pl. angol"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nAz OpenTeacher csapat OpenTeacher programja alapján, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Helyes: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Ez a hely: %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ A válasz ez volt: %s"
+
+# corrects OpenTeacher's hu.po for 'Correct anyway': "Javítás mindenképp" (fix it anyway)
+msgid "Correct anyway"
+msgstr "Mégis helyes"
+
+# corrects OpenTeacher's hu.po for 'Interval': "Időtartam" (duration)
+msgid "Interval"
+msgstr "Intervallum"
+
+# corrects OpenTeacher's hu.po for 'Lesson type': compound written apart
+msgid "Lesson type"
+msgstr "Lecketípus"
+
+# corrects OpenTeacher's hu.po for 'Greek': lower case
+msgid "Greek"
+msgstr "Görög"

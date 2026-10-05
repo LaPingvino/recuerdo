@@ -56,7 +56,8 @@ func lookup(msgid string) (string, bool) {
 		s, ok := catalog[a]
 		// OpenTeacher's label "Question:" serves Recuerdo's "Question"
 		if strings.HasSuffix(a, ":") && !strings.HasSuffix(msgid, ":") {
-			s = strings.TrimSpace(strings.TrimSuffix(strings.TrimSpace(s), ":"))
+			// (also the full-width "：" of Chinese and Japanese)
+			s = strings.TrimSpace(strings.TrimRight(strings.TrimSpace(s), ":："))
 		}
 		return s, ok
 	}

@@ -1,0 +1,819 @@
+# Recuerdo's own texts in Greek (OpenTeacher's translations, data/translations/el.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Greek terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nΒαθμολογία (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "Αντικείμενα για εξάσκηση: %d. Πατήστε Έναρξη."
+
+msgid "%d of %d"
+msgstr "%d από %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d από %d σωστά (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "Τοποθεσίες: %d. Επιλέξτε τρόπο εξάσκησης και πατήστε Έναρξη."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "Συνεδρίες: %d· η τελευταία %d%% σωστά."
+
+msgid "&Merge Lesson..."
+msgstr "&Συγχώνευση μαθήματος..."
+
+msgid "&Properties..."
+msgstr "&Ιδιότητες..."
+
+msgid "&Tools"
+msgstr "&Εργαλεία"
+
+msgid ", %d tests"
+msgstr ", δοκιμασίες: %d"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Ιστοσελίδα ή βίντεο YouTube, Vimeo ή Dailymotion"
+
+msgid "About Recuerdo"
+msgstr "Σχετικά με το Recuerdo"
+
+msgid "About dialog not available"
+msgstr "Το παράθυρο «Σχετικά» δεν είναι διαθέσιμο"
+
+msgid "About dialog shown"
+msgstr "Εμφανίστηκε το παράθυρο «Σχετικά»"
+
+msgid "Add"
+msgstr "Προσθήκη"
+
+msgid "Add Character"
+msgstr "Προσθήκη χαρακτήρα"
+
+msgid "Add Word"
+msgstr "Προσθήκη λέξης"
+
+msgid "Add all places"
+msgstr "Προσθήκη όλων των τοποθεσιών"
+
+msgid "Add every place this map knows"
+msgstr "Προσθήκη κάθε τοποθεσίας που γνωρίζει αυτός ο χάρτης"
+
+msgid "Add files…"
+msgstr "Προσθήκη αρχείων…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Προσθήκη των λέξεων και των αποτελεσμάτων άλλου μαθήματος σε αυτό"
+
+msgid "Add web address…"
+msgstr "Προσθήκη διεύθυνσης ιστού…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Όλα με μια φορά: κάθε λέξη μία φορά. Έξυπνη: οι λάθος λέξεις επανέρχονται σύντομα και στο τέλος. Διάστημα: οι λέξεις επανέρχονται μέχρι να τις μάθετε."
+
+msgid "All words"
+msgstr "Όλες οι λέξεις"
+
+msgid "Answer Language:"
+msgstr "Γλώσσα απάντησης:"
+
+msgid "Answer language"
+msgstr "Γλώσσα απάντησης"
+
+msgid "As entered"
+msgstr "Όπως εισήχθησαν"
+
+msgid "Ask the answers"
+msgstr "Ερώτηση των απαντήσεων"
+
+msgid "Ask this word again later"
+msgstr "Ερώτηση αυτής της λέξης ξανά αργότερα"
+
+msgid "Ask:"
+msgstr "Ερώτηση:"
+
+msgid "Brackets"
+msgstr "Παρενθέσεις"
+
+msgid "Browse Unicode"
+msgstr "Περιήγηση Unicode"
+
+msgid "Browse..."
+msgstr "Αναζήτηση..."
+
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+msgid "Check"
+msgstr "Έλεγχος"
+
+msgid "Choose a file…"
+msgstr "Επιλογή αρχείου…"
+
+msgid "Clear List"
+msgstr "Εκκαθάριση λίστας"
+
+msgid "Clear recent files"
+msgstr "Εκκαθάριση πρόσφατων αρχείων"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Πατήστε 'Έναρξη εξάσκησης' για να ξεκινήσετε"
+
+msgid "Continue"
+msgstr "Συνέχεια"
+
+msgid "Correct Answer"
+msgstr "Σωστή απάντηση"
+
+msgid "Count your last answer as right after all"
+msgstr "Να μετρήσει η τελευταία σας απάντηση ως σωστή τελικά"
+
+msgid "Counted as right"
+msgstr "Μετρήθηκε ως σωστή"
+
+msgid "Create Lesson"
+msgstr "Δημιουργία μαθήματος"
+
+msgid "Create New Lesson"
+msgstr "Δημιουργία νέου μαθήματος"
+
+msgid "Credits"
+msgstr "Συντελεστές"
+
+msgid "Degrees"
+msgstr "Μοίρες"
+
+msgid "Description:"
+msgstr "Περιγραφή:"
+
+msgid "Done: %d of %d right."
+msgstr "Τέλος: %d από %d σωστά."
+
+msgid "Download"
+msgstr "Λήψη"
+
+msgid "Download the lesson, with your results"
+msgstr "Λήψη του μαθήματος, μαζί με τα αποτελέσματά σας"
+
+msgid "Download…"
+msgstr "Λήψη…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Αφήστε ένα αρχείο μαθήματος εδώ ή επιλέξτε ένα."
+
+msgid "Each session:"
+msgstr "Κάθε συνεδρία:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Επεξεργασία της επιλεγμένης ερώτησης ή απάντησης με τον επεξεργαστή τύπων"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Άδειασμα της λίστας Αρχείο > Πρόσφατα"
+
+msgid "Enter"
+msgstr "Εισαγωγή"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Εισάγετε κωδικό Unicode (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Εισάγετε περιγραφή μαθήματος..."
+
+msgid "Enter lesson name..."
+msgstr "Εισάγετε όνομα μαθήματος..."
+
+msgid "Enter lesson title"
+msgstr "Εισάγετε τίτλο μαθήματος"
+
+msgid "Enter some places first."
+msgstr "Εισάγετε πρώτα μερικές τοποθεσίες."
+
+msgid "Error creating lesson: %v"
+msgstr "Σφάλμα κατά τη δημιουργία μαθήματος: %v"
+
+msgid "Error loading file: %v"
+msgstr "Σφάλμα κατά τη φόρτωση αρχείου: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Σφάλμα: Το παράθυρο αρχείων δεν είναι διαθέσιμο"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Σφάλμα: Το παράθυρο μαθήματος δεν είναι διαθέσιμο"
+
+msgid "Error: No about dialog modules available"
+msgstr "Σφάλμα: Δεν υπάρχουν διαθέσιμα αρθρώματα για το παράθυρο «Σχετικά»"
+
+msgid "Error: No file dialog modules available"
+msgstr "Σφάλμα: Δεν υπάρχουν διαθέσιμα αρθρώματα για το παράθυρο αρχείων"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Σφάλμα: Δεν υπάρχουν διαθέσιμα αρθρώματα για το παράθυρο μαθήματος"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Σφάλμα: Δεν υπάρχουν διαθέσιμα αρθρώματα για το παράθυρο ρυθμίσεων"
+
+msgid "Error: Properties dialog not available"
+msgstr "Σφάλμα: Το παράθυρο ιδιοτήτων δεν είναι διαθέσιμο"
+
+msgid "Error: Settings dialog not available"
+msgstr "Σφάλμα: Το παράθυρο ρυθμίσεων δεν είναι διαθέσιμο"
+
+msgid "Example"
+msgstr "Παράδειγμα"
+
+msgid "Exported %s"
+msgstr "Εξήχθη: %s"
+
+msgid "Field separator:"
+msgstr "Διαχωριστικό πεδίων:"
+
+msgid "File"
+msgstr "Αρχείο"
+
+msgid "File encoding:"
+msgstr "Κωδικοποίηση αρχείου:"
+
+msgid "Files"
+msgstr "Αρχεία"
+
+msgid "First row contains headers"
+msgstr "Η πρώτη γραμμή περιέχει επικεφαλίδες"
+
+msgid "Format"
+msgstr "Μορφή"
+
+msgid "Formula builder"
+msgstr "Επεξεργαστής τύπων"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Τύπος, π.χ. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Κλάσμα"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "Ελεύθερο λογισμικό υπό την άδεια GNU General Public License,\nέκδοση 3 ή νεότερη"
+
+msgid "Functions"
+msgstr "Συναρτήσεις"
+
+msgid "Furigana and formulas"
+msgstr "Furigana και τύποι"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Ξεκινώντας με το Recuerdo"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Δώστε πρώτα μια απάντηση στα αντικείμενα στην καρτέλα Εισαγωγή."
+
+msgid "Go on after seeing the right answer"
+msgstr "Συνέχεια αφού δείτε τη σωστή απάντηση"
+
+msgid "Grades in:"
+msgstr "Βαθμολογία σε:"
+
+msgid "Hard words"
+msgstr "Δύσκολες λέξεις"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Δύσκολες λέξεις: όσες απαντήθηκαν λάθος συχνότερα από σωστά ή δεν έχουν εξασκηθεί ακόμα. Δεν απαντήθηκαν ποτέ σωστά: όσες δεν έχουν σωστή απάντηση σε προηγούμενες συνεδρίες."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Πόσο χρόνο η Επανάληψη απάντησης δείχνει την απάντηση πριν την πληκτρολογήσετε"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Πώς βαθμολογεί η καρτέλα Αποτελέσματα τις συνεδρίες σας"
+
+msgid "Import"
+msgstr "Εισαγωγή"
+
+msgid "Import File"
+msgstr "Εισαγωγή αρχείου"
+
+msgid "Import Lesson"
+msgstr "Εισαγωγή μαθήματος"
+
+msgid "Import Options"
+msgstr "Επιλογές εισαγωγής"
+
+msgid "Import from &Picture..."
+msgstr "Εισαγωγή από &εικόνα..."
+
+msgid "Import from Picture"
+msgstr "Εισαγωγή από εικόνα"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "Στο Όνομα – Τοποθεσία, εκφώνηση του ονόματος της τοποθεσίας που πρέπει να πατήσετε"
+
+msgid "In mind"
+msgstr "Νοερά"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Στη λειτουργία Επανάληψη απάντησης, πόσο χρόνο εμφανίζεται η απάντηση πριν την πληκτρολογήσετε"
+
+msgid "Index"
+msgstr "Δείκτης"
+
+msgid "Integral"
+msgstr "Ολοκλήρωμα"
+
+msgid "Interface"
+msgstr "Διεπαφή"
+
+msgid "Items:"
+msgstr "Αντικείμενα:"
+
+msgid "Languages"
+msgstr "Γλώσσες"
+
+msgid "Last session:"
+msgstr "Τελευταία συνεδρία:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Τελευταία συνεδρία: %d από %d σωστά. Συνεδρίες σε αυτό το μάθημα: %d."
+
+msgid "Latest Session Results"
+msgstr "Αποτελέσματα τελευταίας συνεδρίας"
+
+msgid "Learn words, places and more by heart"
+msgstr "Μάθετε απέξω λέξεις, τοποθεσίες και πολλά άλλα"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Μάθετε απέξω λέξεις, τοποθεσίες και πολλά άλλα:\nτο λεξιλόγιο μιας ξένης γλώσσας, τοπογραφία\nή οτιδήποτε άλλο θέλετε να θυμάστε."
+
+msgid "Lesson Information"
+msgstr "Πληροφορίες μαθήματος"
+
+msgid "Lesson Properties"
+msgstr "Ιδιότητες μαθήματος"
+
+msgid "Lesson Type"
+msgstr "Είδος μαθήματος"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Ζεύγη λέξεων στο μάθημα: %d\n\nΟλοκληρώστε μια συνεδρία εξάσκησης για να δείτε εδώ αναλυτικά αποτελέσματα."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Ζεύγη λέξεων στο μάθημα: %d | Προηγούμενες συνεδρίες: %d (βλ. Πρόοδος)\n\nΕξασκηθείτε για να δείτε εδώ αναλυτικά τις απαντήσεις σας."
+
+msgid "Lesson type:"
+msgstr "Είδος μαθήματος:"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Μάθημα: ζεύγη λέξεων: %d | Ολοκληρωμένες συνεδρίες: %d\n\nΤελευταία συνεδρία: %d/%d σωστά (%d%%), βαθμολογία %s\nΜέση βαθμολογία: %s (%d%%)\n\nΑναλυτικά αποτελέσματα τελευταίας συνεδρίας:"
+
+msgid "Limit"
+msgstr "Όριο"
+
+msgid "Loaded '%s': %d words"
+msgstr "Φορτώθηκε το '%s': λέξεις: %d"
+
+msgid "Loading…"
+msgstr "Φόρτωση…"
+
+msgid "Made a lesson of %d words"
+msgstr "Δημιουργήθηκε μάθημα με λέξεις: %d"
+
+msgid "Map:"
+msgstr "Χάρτης:"
+
+msgid "Merged %d words from %s"
+msgstr "Συγχωνεύτηκαν λέξεις: %d από %s"
+
+msgid "Mode"
+msgstr "Λειτουργία"
+
+msgid "Mode:"
+msgstr "Λειτουργία:"
+
+msgid "Name"
+msgstr "Όνομα"
+
+msgid "Name of a place"
+msgstr "Όνομα τοποθεσίας"
+
+msgid "Name of the marked place"
+msgstr "Όνομα της σημειωμένης τοποθεσίας"
+
+msgid "Name – Place"
+msgstr "Όνομα – Τοποθεσία"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Απαιτεί πρόγραμμα ομιλίας: εγκαταστήστε το espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "Δεν απαντήθηκαν ποτέ σωστά"
+
+msgid "New Lesson"
+msgstr "Νέο μάθημα"
+
+msgid "New from &Text..."
+msgstr "Νέο από &κείμενο..."
+
+msgid "New lesson created successfully"
+msgstr "Το νέο μάθημα δημιουργήθηκε επιτυχώς"
+
+msgid "New lesson dialog created"
+msgstr "Δημιουργήθηκε το παράθυρο νέου μαθήματος"
+
+msgid "New question"
+msgstr "Νέα ερώτηση"
+
+msgid "Next"
+msgstr "Επόμενο"
+
+msgid "No lesson data available"
+msgstr "Δεν υπάρχουν διαθέσιμα δεδομένα μαθήματος"
+
+msgid "No lesson open to show properties"
+msgstr "Κανένα ανοιχτό μάθημα για προβολή ιδιοτήτων"
+
+msgid "No recent lessons"
+msgstr "Κανένα πρόσφατο μάθημα"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Κανένα αποτέλεσμα ακόμα: εξασκηθείτε στην καρτέλα Εξάσκηση."
+
+msgid "No teaching results available yet"
+msgstr "Δεν υπάρχουν ακόμα αποτελέσματα εξάσκησης"
+
+msgid "No words available for teaching"
+msgstr "Δεν υπάρχουν διαθέσιμες λέξεις για εξάσκηση"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Καμία λέξη για εξάσκηση: καμία δεν είναι ακόμα \"%s\""
+
+msgid "Now click where %s is on the map."
+msgstr "Τώρα πατήστε στο σημείο του χάρτη όπου βρίσκεται: %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Μία λέξη ανά γραμμή, με το σύμβολο της ισότητας μεταξύ ερώτησης και απάντησης."
+
+msgid "Open"
+msgstr "Άνοιγμα"
+
+msgid "Open Lesson…"
+msgstr "Άνοιγμα μαθήματος…"
+
+msgid "Open a lesson"
+msgstr "Άνοιγμα μαθήματος"
+
+msgid "Open operation cancelled"
+msgstr "Το άνοιγμα ακυρώθηκε"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "Μαθήματα OpenTeacher (.ot, .otwd), λίστες λέξεων (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS και άλλα"
+
+msgid "Opened '%s' - %d words"
+msgstr "Άνοιξε το '%s' - λέξεις: %d"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "Ανοίγει μαθήματα OpenTeacher (.ot, .otwd), λίστες λέξεων (.csv, .txt) και αρχεία KWordQuiz (.kvtml)"
+
+msgid "Operators"
+msgstr "Τελεστές"
+
+msgid "Or type a list"
+msgstr "Ή πληκτρολογήστε μια λίστα"
+
+msgid "Order"
+msgstr "Σειρά"
+
+msgid "Order:"
+msgstr "Σειρά:"
+
+msgid "Other lesson"
+msgstr "Άλλο μάθημα"
+
+msgid "Other picture…"
+msgstr "Άλλη εικόνα…"
+
+msgid "Page %d of %d"
+msgstr "Σελίδα %d από %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Εικόνες, ήχοι, βίντεο ή κείμενα, αποθηκευμένα μέσα στο μάθημα"
+
+msgid "Place %d"
+msgstr "Τοποθεσία %d"
+
+msgid "Place – Name"
+msgstr "Τοποθεσία – Όνομα"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Τοποθεσία – Όνομα: σημειώνεται μια τοποθεσία, πληκτρολογήστε το όνομά της.\nΌνομα – Τοποθεσία: δίνεται ένα όνομα, πατήστε στην τοποθεσία."
+
+msgid "Please add words in the Enter tab"
+msgstr "Παρακαλώ προσθέστε λέξεις στην καρτέλα Εισαγωγή"
+
+msgid "Power"
+msgstr "Δύναμη"
+
+msgid "Practice"
+msgstr "Εξάσκηση"
+
+msgid "Practice sessions:"
+msgstr "Συνεδρίες εξάσκησης:"
+
+msgid "Practise"
+msgstr "Εξάσκηση"
+
+msgid "Practise again"
+msgstr "Εξάσκηση ξανά"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Εξάσκηση αντίστροφα: ερωτώνται οι απαντήσεις και οι ερωτήσεις είναι οι απαντήσεις"
+
+msgid "Practise these words"
+msgstr "Εξάσκηση σε αυτές τις λέξεις"
+
+msgid "Practise to see your answers here."
+msgstr "Εξασκηθείτε για να δείτε εδώ τις απαντήσεις σας."
+
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+msgid "Printed %s"
+msgstr "Εκτυπώθηκε: %s"
+
+msgid "Progress"
+msgstr "Πρόοδος"
+
+msgid "Pronounce names"
+msgstr "Εκφώνηση ονομάτων"
+
+msgid "Pronounce questions"
+msgstr "Εκφώνηση ερωτήσεων"
+
+msgid "Properties dialog cancelled"
+msgstr "Το παράθυρο ιδιοτήτων ακυρώθηκε"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Ερώτηση %d από %d (Βαθμολογία: %d/%d σωστά)"
+
+msgid "Question Language:"
+msgstr "Γλώσσα ερώτησης:"
+
+msgid "Question language"
+msgstr "Γλώσσα ερώτησης"
+
+msgid "Quick Access"
+msgstr "Γρήγορη πρόσβαση"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Διαβάστηκαν ζεύγη λέξεων από την εικόνα: %d· ελέγξτε τα στην καρτέλα Εισαγωγή"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Ανάγνωση λίστας λέξεων από σάρωση ή φωτογραφία τυπωμένης λίστας (απαιτεί Tesseract)"
+
+msgid "Ready"
+msgstr "Έτοιμο"
+
+msgid "Ready to start"
+msgstr "Έτοιμο για έναρξη"
+
+msgid "Ready to start teaching"
+msgstr "Έτοιμο για έναρξη εξάσκησης"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Το Recuerdo εκτελείται στον περιηγητή σας: τα μαθήματά σας μένουν στον υπολογιστή σας."
+
+msgid "Remove Word"
+msgstr "Αφαίρεση λέξης"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Η Επανάληψη απάντησης δείχνει την απάντηση για"
+
+msgid "Result"
+msgstr "Αποτέλεσμα"
+
+msgid "Results Overview"
+msgstr "Επισκόπηση αποτελεσμάτων"
+
+msgid "Reversed"
+msgstr "Αντίστροφα"
+
+msgid "Right"
+msgstr "Σωστό"
+
+msgid "Right answer"
+msgstr "Σωστή απάντηση"
+
+msgid "Right: %s"
+msgstr "Σωστό: %s"
+
+msgid "Root"
+msgstr "Ρίζα"
+
+msgid "Rotate 90°"
+msgstr "Περιστροφή 90°"
+
+msgid "Saved %s"
+msgstr "Αποθηκεύτηκε: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Εκφώνηση κάθε ερώτησης στη γλώσσα ερώτησης (απαιτεί espeak-ng ή τις φωνές του macOS ή των Windows)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Εκφώνηση κάθε ερώτησης, στη γλώσσα ερώτησης"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Επιλέξτε ένα μπλοκ Unicode παραπάνω για να δείτε χαρακτήρες ή εισάγετε απευθείας έναν κωδικό."
+
+msgid "Select file to import..."
+msgstr "Επιλογή αρχείου για εισαγωγή..."
+
+msgid "Selected file: %s"
+msgstr "Επιλεγμένο αρχείο: %s"
+
+msgid "Settings saved"
+msgstr "Οι ρυθμίσεις αποθηκεύτηκαν"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Πολλές λέξεις για μία ερώτηση: διαχωρίστε τες με κόμματα. Οι αλλαγές διατηρούνται μέχρι να φύγετε από τη σελίδα: κάντε λήψη του μαθήματος για να το κρατήσετε."
+
+msgid "Show answer for:"
+msgstr "Εμφάνιση απάντησης για:"
+
+msgid "Show or hide special characters"
+msgstr "Εμφάνιση ή απόκρυψη ειδικών χαρακτήρων"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Εμφάνιση ή απόκρυψη ειδικών χαρακτήρων: τονισμένα γράμματα και άλλα αλφάβητα"
+
+msgid "Sorted"
+msgstr "Ταξινομημένα"
+
+msgid "Square root"
+msgstr "Τετραγωνική ρίζα"
+
+msgid "Start"
+msgstr "Έναρξη"
+
+msgid "Start Again"
+msgstr "Έναρξη ξανά"
+
+msgid "Start Teaching"
+msgstr "Έναρξη εξάσκησης"
+
+msgid "Stop"
+msgstr "Διακοπή"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Ισιώστε την εικόνα ώστε οι γραμμές να είναι οριζόντιες και σύρετε ένα ορθογώνιο γύρω από τη λίστα λέξεων αν η εικόνα δείχνει περισσότερα."
+
+msgid "Straighten:"
+msgstr "Ίσιωμα:"
+
+msgid "Structure"
+msgstr "Δομή"
+
+msgid "Sum"
+msgstr "Άθροισμα"
+
+msgid "System language"
+msgstr "Γλώσσα συστήματος"
+
+msgid "Teach"
+msgstr "Εξάσκηση"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Η εξάσκηση ολοκληρώθηκε! Τελική βαθμολογία: %d/%d σωστά (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Η συνεδρία εξάσκησης ολοκληρώθηκε"
+
+msgid "Text"
+msgstr "Κείμενο"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "Λείπει από το μάθημα: %s %s."
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Η γλώσσα των μενού και των οθονών του Recuerdo (μετά την επανεκκίνηση του Recuerdo). Τα κείμενα χωρίς μετάφραση μένουν στα Αγγλικά."
+
+msgid "There are no settings to change."
+msgstr "Δεν υπάρχουν ρυθμίσεις για αλλαγή."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Σκεφτείτε την απάντηση και πατήστε 'Προβολή απάντησης' όταν είστε έτοιμοι."
+
+msgid "Title"
+msgstr "Τίτλος"
+
+msgid "Topology"
+msgstr "Τοπογραφία"
+
+msgid "Translation: %s"
+msgstr "Μετάφραση: %s"
+
+msgid "Try an example"
+msgstr "Δοκιμάστε ένα παράδειγμα"
+
+msgid "Type a List"
+msgstr "Πληκτρολόγηση λίστας"
+
+msgid "Type at least one word."
+msgstr "Πληκτρολογήστε τουλάχιστον μία λέξη."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Πληκτρολογήστε ή επικολλήστε μια λίστα λέξεων ως γραμμές \"ερώτηση = απάντηση\""
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Πληκτρολογήστε ή επικολλήστε τις λέξεις: μία ανά γραμμή, με το σύμβολο της ισότητας (=) ή ένα tab μεταξύ ερώτησης και απάντησης, όπως \"hond = dog\". Πολλές λέξεις στη μία πλευρά διαχωρίζονται με κόμματα."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Πληκτρολογήστε ή επικολλήστε λέξεις ως γραμμές \"ερώτηση = απάντηση\""
+
+msgid "Typed list"
+msgstr "Πληκτρολογημένη λίστα"
+
+msgid "Typing"
+msgstr "Πληκτρολόγηση"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Πληκτρολόγηση: πληκτρολογήστε την απάντηση. Ανακάτωμα απάντησης: με τα γράμματα της απάντησης ως υπόδειξη. Επανάληψη απάντησης: η απάντηση εμφανίζεται πρώτα και μετά πληκτρολογείται από μνήμης."
+
+msgid "Unicode Block:"
+msgstr "Μπλοκ Unicode:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Χρήση δικής σας εικόνας ως χάρτη"
+
+msgid "Version %s"
+msgstr "Έκδοση %s"
+
+msgid "Where is %s?"
+msgstr "Πού βρίσκεται: %s;"
+
+msgid "Which place is marked?"
+msgstr "Ποια τοποθεσία είναι σημειωμένη;"
+
+msgid "Whole picture"
+msgstr "Ολόκληρη η εικόνα"
+
+msgid "Word Lesson: %s"
+msgstr "Μάθημα λέξεων: %s"
+
+msgid "Word Pairs"
+msgstr "Ζεύγη λέξεων"
+
+msgid "Words"
+msgstr "Λέξεις"
+
+msgid "Words List"
+msgstr "Λίστα λέξεων"
+
+msgid "Words never answered correctly"
+msgstr "Λέξεις που δεν απαντήθηκαν ποτέ σωστά"
+
+msgid "Words:"
+msgstr "Λέξεις:"
+
+msgid "Wrong"
+msgstr "Λάθος"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Λάθος. Η σωστή απάντηση είναι: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Λάθος: %s → %s"
+
+msgid "Your Answer"
+msgstr "Η απάντησή σας"
+
+msgid "Your answer"
+msgstr "Η απάντησή σας"
+
+msgid "e.g. Dutch"
+msgstr "π.χ. Ολλανδικά"
+
+msgid "e.g. English"
+msgstr "π.χ. Αγγλικά"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nΒασισμένο στο OpenTeacher της ομάδας του OpenTeacher, 2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ Σωστό: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Ήταν: %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Η απάντηση ήταν: %s"
+
+# corrects OpenTeacher's el.po for 'Correct anyway': "Διόρθωση έτσι κι αλλιώς" (a correction anyway)
+msgid "Correct anyway"
+msgstr "Σωστό τελικά"
+
+# corrects OpenTeacher's el.po for 'Media': singular "Μέσο"
+msgid "Media"
+msgstr "Πολυμέσα"

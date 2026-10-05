@@ -1,0 +1,806 @@
+# Recuerdo's own texts in Turkish (OpenTeacher's translations, data/translations/tr.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Turkish terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\nNot (%s): %s"
+
+msgid "%d items to practise. Press Start."
+msgstr "Alıştırma yapılacak öğe sayısı: %d. Başla düğmesine basın."
+
+msgid "%d of %d"
+msgstr "%d / %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d / %d doğru (%d%%)"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d yer. Nasıl alıştırma yapacağınızı seçin ve Başla düğmesine basın."
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "%d oturum; sonuncusu %d%% doğru."
+
+msgid "&Merge Lesson..."
+msgstr "Dersi &birleştir..."
+
+msgid "&Properties..."
+msgstr "Ö&zellikler..."
+
+msgid "&Tools"
+msgstr "&Araçlar"
+
+msgid ", %d tests"
+msgstr ", %d test"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "Bir internet sitesi ya da bir YouTube, Vimeo veya Dailymotion videosu"
+
+msgid "About Recuerdo"
+msgstr "Recuerdo hakkında"
+
+msgid "About dialog not available"
+msgstr "Hakkında penceresi kullanılamıyor"
+
+msgid "About dialog shown"
+msgstr "Hakkında penceresi gösterildi"
+
+msgid "Add Character"
+msgstr "Karakter ekle"
+
+msgid "Add Word"
+msgstr "Kelime ekle"
+
+msgid "Add all places"
+msgstr "Tüm yerleri ekle"
+
+msgid "Add every place this map knows"
+msgstr "Bu haritanın bildiği her yeri ekle"
+
+msgid "Add files…"
+msgstr "Dosya ekle…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "Başka bir dersin kelimelerini ve sonuçlarını bu derse ekle"
+
+msgid "Add web address…"
+msgstr "İnternet adresi ekle…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "Hepsi bir kez: her kelime bir kez. Akıllı: yanlış kelimeler kısa süre sonra ve en sonda yeniden sorulur. Aralık: kelimeler siz onları öğrenene kadar yeniden sorulur."
+
+msgid "All words"
+msgstr "Tüm kelimeler"
+
+msgid "Answer Language:"
+msgstr "Cevap dili:"
+
+msgid "Answer language"
+msgstr "Cevap dili"
+
+msgid "As entered"
+msgstr "Girildiği gibi"
+
+msgid "Ask the answers"
+msgstr "Cevapları sor"
+
+msgid "Ask this word again later"
+msgstr "Bu kelimeyi daha sonra yeniden sor"
+
+msgid "Ask:"
+msgstr "Sor:"
+
+msgid "Brackets"
+msgstr "Parantezler"
+
+msgid "Browse Unicode"
+msgstr "Unicode'a göz at"
+
+msgid "Browse..."
+msgstr "Gözat..."
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Choose a file…"
+msgstr "Bir dosya seçin…"
+
+msgid "Clear List"
+msgstr "Listeyi temizle"
+
+msgid "Clear recent files"
+msgstr "Son dosyaları temizle"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "Başlamak için 'Öğretmeye başla' düğmesine tıklayın"
+
+msgid "Continue"
+msgstr "Devam"
+
+msgid "Correct Answer"
+msgstr "Doğru cevap"
+
+msgid "Count your last answer as right after all"
+msgstr "Son cevabınızı yine de doğru say"
+
+msgid "Counted as right"
+msgstr "Doğru sayıldı"
+
+msgid "Create Lesson"
+msgstr "Ders oluştur"
+
+msgid "Create New Lesson"
+msgstr "Yeni ders oluştur"
+
+msgid "Credits"
+msgstr "Emeği geçenler"
+
+msgid "Degrees"
+msgstr "Derece"
+
+msgid "Description:"
+msgstr "Açıklama:"
+
+msgid "Done: %d of %d right."
+msgstr "Bitti: %d / %d doğru."
+
+msgid "Download"
+msgstr "İndir"
+
+msgid "Download the lesson, with your results"
+msgstr "Dersi sonuçlarınızla birlikte indir"
+
+msgid "Download…"
+msgstr "İndir…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "Bir ders dosyasını buraya bırakın ya da bir dosya seçin."
+
+msgid "Each session:"
+msgstr "Her oturum:"
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "Seçili soruyu ya da cevabı formül oluşturucuyla düzenle"
+
+msgid "Empty the File > Open Recent list"
+msgstr "Dosya > Son açılanlar listesini boşalt"
+
+msgid "Enter"
+msgstr "Giriş"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "Unicode kod noktası girin (U+xxxx):"
+
+msgid "Enter lesson description..."
+msgstr "Ders açıklaması girin..."
+
+msgid "Enter lesson name..."
+msgstr "Ders adı girin..."
+
+msgid "Enter lesson title"
+msgstr "Ders başlığı girin"
+
+msgid "Enter some places first."
+msgstr "Önce birkaç yer girin."
+
+msgid "Error creating lesson: %v"
+msgstr "Ders oluşturulurken hata: %v"
+
+msgid "Error loading file: %v"
+msgstr "Dosya yüklenirken hata: %v"
+
+msgid "Error: File dialog not available"
+msgstr "Hata: Dosya penceresi kullanılamıyor"
+
+msgid "Error: Lesson dialog not available"
+msgstr "Hata: Ders penceresi kullanılamıyor"
+
+msgid "Error: No about dialog modules available"
+msgstr "Hata: Hakkında penceresi modülü yok"
+
+msgid "Error: No file dialog modules available"
+msgstr "Hata: Dosya penceresi modülü yok"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "Hata: Ders penceresi modülü yok"
+
+msgid "Error: No settings dialog modules available"
+msgstr "Hata: Ayarlar penceresi modülü yok"
+
+msgid "Error: Properties dialog not available"
+msgstr "Hata: Özellikler penceresi kullanılamıyor"
+
+msgid "Error: Settings dialog not available"
+msgstr "Hata: Ayarlar penceresi kullanılamıyor"
+
+msgid "Example"
+msgstr "Örnek"
+
+msgid "Exported %s"
+msgstr "Dışa aktarıldı: %s"
+
+msgid "Field separator:"
+msgstr "Alan ayırıcı:"
+
+msgid "File"
+msgstr "Dosya"
+
+msgid "File encoding:"
+msgstr "Dosya kodlaması:"
+
+msgid "Files"
+msgstr "Dosyalar"
+
+msgid "First row contains headers"
+msgstr "İlk satır başlıkları içerir"
+
+msgid "Format"
+msgstr "Biçim"
+
+msgid "Formula builder"
+msgstr "Formül oluşturucu"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "Formül, örn. x^2 + 1"
+
+msgid "Fraction"
+msgstr "Kesir"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "GNU Genel Kamu Lisansı, sürüm 3 veya sonrası\nkapsamında özgür yazılım"
+
+msgid "Functions"
+msgstr "Fonksiyonlar"
+
+msgid "Furigana and formulas"
+msgstr "Furigana ve formüller"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Recuerdo ile başlarken"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "Önce Giriş sekmesinde öğelere bir cevap verin."
+
+msgid "Go on after seeing the right answer"
+msgstr "Doğru cevabı gördükten sonra devam et"
+
+msgid "Grades in:"
+msgstr "Not sistemi:"
+
+msgid "Hard words"
+msgstr "Zor kelimeler"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "Zor kelimeler: doğru cevaplandığından daha sık yanlış cevaplananlar ya da henüz alıştırması yapılmamış olanlar. Hiç doğru cevaplanmayanlar: önceki oturumlarda hiç doğru cevabı olmayanlar."
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "Cevabı tekrar et kipinin, siz yazmadan önce cevabı ne kadar süre gösterdiği"
+
+msgid "How the Results tab grades your sessions"
+msgstr "Sonuçlar sekmesinin oturumlarınıza nasıl not verdiği"
+
+msgid "Import"
+msgstr "İçe aktar"
+
+msgid "Import File"
+msgstr "Dosya içe aktar"
+
+msgid "Import Lesson"
+msgstr "Ders içe aktar"
+
+msgid "Import Options"
+msgstr "İçe aktarma seçenekleri"
+
+msgid "Import from Picture"
+msgstr "Resimden içe aktar"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "İsim – Yer kipinde tıklanacak yerin ismini sesli söyle"
+
+msgid "In mind"
+msgstr "Akılda"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "Cevabı tekrar et kipinde, siz yazmadan önce cevabın ne kadar süre gösterileceği"
+
+msgid "Index"
+msgstr "Alt simge"
+
+msgid "Integral"
+msgstr "İntegral"
+
+msgid "Interface"
+msgstr "Arayüz"
+
+msgid "Items:"
+msgstr "Öğeler:"
+
+msgid "Languages"
+msgstr "Diller"
+
+msgid "Last session:"
+msgstr "Son oturum:"
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "Son oturum: %d / %d doğru. Bu dersteki oturumlar: %d."
+
+msgid "Latest Session Results"
+msgstr "Son oturumun sonuçları"
+
+msgid "Learn words, places and more by heart"
+msgstr "Kelimeleri, yerleri ve daha fazlasını ezberleyin"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "Kelimeleri, yerleri ve daha fazlasını ezberleyin:\nbir yabancı dilin kelimeleri, topografi\nya da hatırlamak istediğiniz başka her şey."
+
+msgid "Lesson Information"
+msgstr "Ders bilgileri"
+
+msgid "Lesson Properties"
+msgstr "Ders özellikleri"
+
+msgid "Lesson Type"
+msgstr "Ders türü"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "Dersteki kelime çifti sayısı: %d\n\nAyrıntılı sonuçları burada görmek için bir öğretme oturumunu tamamlayın."
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "Dersteki kelime çifti sayısı: %d | Önceki oturumlar: %d (bkz. İlerleme)\n\nCevaplarınızı burada ayrıntılı görmek için alıştırma yapın."
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "Ders: %d kelime çifti | Tamamlanan oturumlar: %d\n\nSon oturum: %d/%d doğru (%d%%), not %s\nOrtalama not: %s (%d%%)\n\nSon oturumun ayrıntılı sonuçları:"
+
+msgid "Limit"
+msgstr "Limit"
+
+msgid "Loaded '%s': %d words"
+msgstr "Yüklendi: '%s', %d kelime"
+
+msgid "Loading…"
+msgstr "Yükleniyor…"
+
+msgid "Made a lesson of %d words"
+msgstr "%d kelimelik bir ders oluşturuldu"
+
+msgid "Merged %d words from %s"
+msgstr "Birleştirilen kelime: %d (kaynak: %s)"
+
+msgid "Mode"
+msgstr "Kip"
+
+msgid "Mode:"
+msgstr "Kip:"
+
+msgid "Name of a place"
+msgstr "Bir yerin ismi"
+
+msgid "Name of the marked place"
+msgstr "İşaretli yerin ismi"
+
+msgid "Name – Place"
+msgstr "İsim – Yer"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "Bir konuşma programı gerekli: espeak-ng kurun"
+
+msgid "Never answered correctly"
+msgstr "Hiç doğru cevaplanmayanlar"
+
+msgid "New from &Text..."
+msgstr "&Metinden yeni..."
+
+msgid "New lesson created successfully"
+msgstr "Yeni ders başarılı bir şekilde oluşturuldu"
+
+msgid "New lesson dialog created"
+msgstr "Yeni ders penceresi oluşturuldu"
+
+msgid "New question"
+msgstr "Yeni soru"
+
+msgid "Next"
+msgstr "İleri"
+
+msgid "No lesson data available"
+msgstr "Ders verisi yok"
+
+msgid "No lesson open to show properties"
+msgstr "Özelliklerini gösterecek açık bir ders yok"
+
+msgid "No recent lessons"
+msgstr "Son açılan ders yok"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "Henüz sonuç yok: Öğret sekmesinde alıştırma yapın."
+
+msgid "No teaching results available yet"
+msgstr "Henüz öğretme sonucu yok"
+
+msgid "No words available for teaching"
+msgstr "Öğretilecek kelime yok"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "Alıştırma yapılacak kelime yok: henüz hiçbiri \"%s\" değil"
+
+msgid "Now click where %s is on the map."
+msgstr "Şimdi haritada şu yere tıklayın: %s."
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "Her satıra bir kelime, soru ile cevap arasında bir eşittir işareti olacak şekilde."
+
+msgid "Open"
+msgstr "Aç"
+
+msgid "Open Lesson…"
+msgstr "Ders aç…"
+
+msgid "Open a lesson"
+msgstr "Bir ders aç"
+
+msgid "Open operation cancelled"
+msgstr "Açma işlemi iptal edildi"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher dersleri (.ot, .otwd), kelime listeleri (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS ve daha fazlası"
+
+msgid "Opened '%s' - %d words"
+msgstr "Açıldı: '%s' - %d kelime"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "OpenTeacher derslerini (.ot, .otwd), kelime listelerini (.csv, .txt) ve KWordQuiz (.kvtml) dosyalarını açar"
+
+msgid "Operators"
+msgstr "İşleçler"
+
+msgid "Or type a list"
+msgstr "Ya da bir liste yazın"
+
+msgid "Order"
+msgstr "Sıra"
+
+msgid "Order:"
+msgstr "Sıra:"
+
+msgid "Other lesson"
+msgstr "Başka ders"
+
+msgid "Other picture…"
+msgstr "Başka resim…"
+
+msgid "Page %d of %d"
+msgstr "Sayfa %d / %d"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "Ders içinde saklanan resimler, sesler, videolar ya da metinler"
+
+msgid "Place %d"
+msgstr "Yer %d"
+
+msgid "Place – Name"
+msgstr "Yer – İsim"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "Yer – İsim: bir yer işaretlenir, ismini yazın.\nİsim – Yer: bir isim verilir, o yere tıklayın."
+
+msgid "Please add words in the Enter tab"
+msgstr "Lütfen Giriş sekmesinde kelime ekleyin"
+
+msgid "Power"
+msgstr "Üs"
+
+msgid "Practice"
+msgstr "Alıştırma"
+
+msgid "Practice sessions:"
+msgstr "Alıştırma oturumları:"
+
+msgid "Practise"
+msgstr "Alıştırma yap"
+
+msgid "Practise again"
+msgstr "Yeniden alıştırma yap"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "Tersine alıştırma yap: cevaplar sorulur, sorular cevap olur"
+
+msgid "Practise these words"
+msgstr "Bu kelimelerle alıştırma yap"
+
+msgid "Practise to see your answers here."
+msgstr "Cevaplarınızı burada görmek için alıştırma yapın."
+
+msgid "Preview"
+msgstr "Ön izleme"
+
+msgid "Previous"
+msgstr "Önceki"
+
+msgid "Printed %s"
+msgstr "Yazdırıldı: %s"
+
+msgid "Progress"
+msgstr "İlerleme"
+
+msgid "Pronounce names"
+msgstr "İsimleri telaffuz et"
+
+msgid "Pronounce questions"
+msgstr "Soruları telaffuz et"
+
+msgid "Properties dialog cancelled"
+msgstr "Özellikler penceresi iptal edildi"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "Soru %d / %d (Puan: %d/%d doğru)"
+
+msgid "Question Language:"
+msgstr "Soru dili:"
+
+msgid "Question language"
+msgstr "Soru dili"
+
+msgid "Quick Access"
+msgstr "Hızlı erişim"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "Resimden okunan kelime çifti: %d. Bunları Giriş sekmesinde kontrol edin"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "Basılı bir listenin taranmış hâlinden ya da fotoğrafından kelime listesi oku (Tesseract gerekir)"
+
+msgid "Ready"
+msgstr "Hazır"
+
+msgid "Ready to start"
+msgstr "Başlamaya hazır"
+
+msgid "Ready to start teaching"
+msgstr "Öğretmeye başlamaya hazır"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo tarayıcınızda çalışır: dersleriniz bilgisayarınızda kalır."
+
+msgid "Remove Word"
+msgstr "Kelimeyi kaldır"
+
+msgid "Repeat answer shows the answer for"
+msgstr "Cevabı tekrar et kipinde cevabın gösterilme süresi"
+
+msgid "Result"
+msgstr "Sonuç"
+
+msgid "Results Overview"
+msgstr "Sonuçlara genel bakış"
+
+msgid "Reversed"
+msgstr "Ters"
+
+msgid "Right"
+msgstr "Doğru"
+
+msgid "Right answer"
+msgstr "Doğru cevap"
+
+msgid "Right: %s"
+msgstr "Doğru: %s"
+
+msgid "Root"
+msgstr "Kök"
+
+msgid "Rotate 90°"
+msgstr "90° döndür"
+
+msgid "Saved %s"
+msgstr "Kaydedildi: %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "Her soruyu soru dilinde sesli oku (espeak-ng ya da macOS veya Windows sesleri gerekir)"
+
+msgid "Say each question aloud, in the question language"
+msgstr "Her soruyu soru dilinde sesli oku"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "Karakterleri görmek için yukarıdan bir Unicode bloğu seçin ya da doğrudan bir kod noktası girin."
+
+msgid "Select file to import..."
+msgstr "İçe aktarılacak dosyayı seçin..."
+
+msgid "Selected file: %s"
+msgstr "Seçilen dosya: %s"
+
+msgid "Settings saved"
+msgstr "Ayarlar kaydedildi"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "Bir soru için birden fazla kelime: virgülle ayırın. Değişiklikler sayfadan ayrılana kadar saklanır: korumak için dersi indirin."
+
+msgid "Show answer for:"
+msgstr "Cevabı gösterme süresi:"
+
+msgid "Show or hide special characters"
+msgstr "Özel karakterleri göster ya da gizle"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "Özel karakterleri göster ya da gizle: aksanlı harfler ve diğer yazı sistemleri"
+
+msgid "Sorted"
+msgstr "Sıralı"
+
+msgid "Square root"
+msgstr "Karekök"
+
+msgid "Start"
+msgstr "Başla"
+
+msgid "Start Again"
+msgstr "Yeniden başla"
+
+msgid "Start Teaching"
+msgstr "Öğretmeye başla"
+
+msgid "Stop"
+msgstr "Durdur"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "Satırlar düz olacak şekilde resmi düzeltin; resim daha fazlasını gösteriyorsa kelime listesinin çevresine bir dikdörtgen çizin."
+
+msgid "Straighten:"
+msgstr "Düzelt:"
+
+msgid "Structure"
+msgstr "Yapı"
+
+msgid "Sum"
+msgstr "Toplam"
+
+msgid "System language"
+msgstr "Sistem dili"
+
+msgid "Teach"
+msgstr "Öğret"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "Öğretme tamamlandı! Son puan: %d/%d doğru (%d%%)"
+
+msgid "Teaching session completed"
+msgstr "Öğretme oturumu tamamlandı"
+
+msgid "Text"
+msgstr "Metin"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "Derste eksik: %s %s"
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Recuerdo menülerinin ve ekranlarının dili (Recuerdo yeniden başlatıldıktan sonra). Çevirisi olmayan metinler İngilizce kalır."
+
+msgid "There are no settings to change."
+msgstr "Değiştirilecek ayar yok."
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "Cevap hakkında düşünün ve hazır olduğunuzda 'Cevabı göster' düğmesine basın."
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Topology"
+msgstr "Topografi"
+
+msgid "Translation: %s"
+msgstr "Çeviri: %s"
+
+msgid "Try an example"
+msgstr "Bir örnek dene"
+
+msgid "Type a List"
+msgstr "Liste yaz"
+
+msgid "Type at least one word."
+msgstr "En az bir kelime yazın."
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "Bir kelime listesini \"soru = cevap\" satırları olarak yazın ya da yapıştırın"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "Kelimeleri yazın ya da yapıştırın: her satıra bir tane, soru ile cevap arasında eşittir işareti (=) ya da sekme olacak şekilde, örneğin \"hond = dog\". Bir taraftaki birden fazla kelime virgülle ayrılır."
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "Kelimeleri \"soru = cevap\" satırları olarak yazın ya da yapıştırın"
+
+msgid "Typed list"
+msgstr "Yazılan liste"
+
+msgid "Typing"
+msgstr "Yazarak"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "Yazarak: cevabı yazın. Karışık cevap: cevabın harfleri ipucu olarak verilir. Cevabı tekrar et: cevap önce gösterilir, sonra ezberden yazılır."
+
+msgid "Unicode Block:"
+msgstr "Unicode bloğu:"
+
+msgid "Use a picture of your own as the map"
+msgstr "Harita olarak kendi resminizi kullanın"
+
+msgid "Version %s"
+msgstr "Sürüm %s"
+
+msgid "Where is %s?"
+msgstr "%s nerede?"
+
+msgid "Which place is marked?"
+msgstr "Hangi yer işaretli?"
+
+msgid "Whole picture"
+msgstr "Resmin tamamı"
+
+msgid "Word Lesson: %s"
+msgstr "Kelime dersi: %s"
+
+msgid "Word Pairs"
+msgstr "Kelime çiftleri"
+
+msgid "Words"
+msgstr "Kelimeler"
+
+msgid "Words List"
+msgstr "Kelime listesi"
+
+msgid "Words never answered correctly"
+msgstr "Hiç doğru cevaplanmayan kelimeler"
+
+msgid "Words:"
+msgstr "Kelimeler:"
+
+msgid "Wrong"
+msgstr "Yanlış"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "Yanlış. Doğru cevap: %s"
+
+msgid "Wrong: %s → %s"
+msgstr "Yanlış: %s → %s"
+
+msgid "Your Answer"
+msgstr "Cevabınız"
+
+msgid "Your answer"
+msgstr "Cevabınız"
+
+msgid "e.g. Dutch"
+msgstr "örn. Hollandaca"
+
+msgid "e.g. English"
+msgstr "örn. İngilizce"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\nOpenTeacher temel alınmıştır (OpenTeacher Ekibi, 2010–2023)"
+
+msgid "✔ Right: %s"
+msgstr "✔ Doğru: %s"
+
+msgid "✘ That was %s"
+msgstr "✘ Doğrusu: %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ Cevap: %s"
+
+# corrects OpenTeacher's tr.po for 'All once': "Hepsi bir kerede" (all at the same time)
+msgid "All once"
+msgstr "Hepsi bir kez"
+
+# corrects OpenTeacher's tr.po for 'Correct anyway': "Her şekilde doğru" (correct in every way)
+msgid "Correct anyway"
+msgstr "Yine de doğru"
+
+# corrects OpenTeacher's tr.po for 'Reverse': "Çevir" (turn/translate)
+msgid "Reverse"
+msgstr "Tersine çevir"
+
+# corrects OpenTeacher's tr.po for 'Name': "Adı" (its name)
+msgid "Name"
+msgstr "Ad"

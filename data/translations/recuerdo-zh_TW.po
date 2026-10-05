@@ -1,0 +1,813 @@
+# Recuerdo's own texts in Traditional Chinese (OpenTeacher's translations, data/translations/zh_TW.po, do the rest).
+# Machine-translated by Claude (Opus 5.5), using OpenTeacher's Chinese terms. Corrections by native speakers are welcome.
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "\nGrade (%s): %s"
+msgstr "\n成績（%s）：%s"
+
+msgid "%d items to practise. Press Start."
+msgstr "有 %d 個項目要練習。請按「開始」。"
+
+msgid "%d of %d"
+msgstr "%d / %d"
+
+msgid "%d of %d right (%d%%)"
+msgstr "%d / %d 正確（%d%%）"
+
+msgid "%d places. Choose how to practise and press Start."
+msgstr "%d 個地點。請選擇練習方式，然後按「開始」。"
+
+msgid "%d sessions; the last one %d%% right."
+msgstr "已練習 %d 次；上一次正確率 %d%%。"
+
+msgid "&Merge Lesson..."
+msgstr "合併課程(&M)..."
+
+msgid "&Properties..."
+msgstr "屬性(&P)..."
+
+msgid "&Tools"
+msgstr "工具(&T)"
+
+msgid ", %d tests"
+msgstr "，%d 次測驗"
+
+msgid "A website or a YouTube, Vimeo or Dailymotion video"
+msgstr "網站，或 YouTube、Vimeo、Dailymotion 影片"
+
+msgid "About Recuerdo"
+msgstr "關於 Recuerdo"
+
+msgid "About dialog not available"
+msgstr "無法使用「關於」對話框"
+
+msgid "About dialog shown"
+msgstr "已顯示「關於」對話框"
+
+msgid "Add Character"
+msgstr "新增字元"
+
+msgid "Add Word"
+msgstr "新增單字"
+
+msgid "Add all places"
+msgstr "新增所有地點"
+
+msgid "Add every place this map knows"
+msgstr "新增這個地圖上所有已知的地點"
+
+msgid "Add files…"
+msgstr "新增檔案…"
+
+msgid "Add the words and results of another lesson to this one"
+msgstr "將另一個課程的單字和結果加入這個課程"
+
+msgid "Add web address…"
+msgstr "新增網址…"
+
+msgid "All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."
+msgstr "所有問題都問一遍：每個單字問一次。精明的詢問：答錯的單字很快會再出現，最後也會再問一次。間隔：單字會一再出現，直到您記住為止。"
+
+msgid "All words"
+msgstr "所有單字"
+
+msgid "Answer Language:"
+msgstr "答案的語言："
+
+msgid "Answer language"
+msgstr "答案的語言"
+
+msgid "As entered"
+msgstr "依輸入順序"
+
+msgid "Ask the answers"
+msgstr "詢問答案"
+
+msgid "Ask this word again later"
+msgstr "稍後再問這個單字"
+
+msgid "Ask:"
+msgstr "詢問："
+
+msgid "Brackets"
+msgstr "括號"
+
+msgid "Browse Unicode"
+msgstr "瀏覽 Unicode"
+
+msgid "Browse..."
+msgstr "瀏覽..."
+
+msgid "Choose a file…"
+msgstr "選擇檔案…"
+
+msgid "Clear List"
+msgstr "清除列表"
+
+msgid "Clear recent files"
+msgstr "清除最近開啟的檔案"
+
+msgid "Click 'Start Teaching' to begin"
+msgstr "點擊「開始教學」以開始"
+
+msgid "Continue"
+msgstr "繼續"
+
+msgid "Correct Answer"
+msgstr "正確答案"
+
+msgid "Count your last answer as right after all"
+msgstr "將上一個答案仍算作正確"
+
+msgid "Counted as right"
+msgstr "已算作正確"
+
+msgid "Create Lesson"
+msgstr "建立課程"
+
+msgid "Create New Lesson"
+msgstr "建立新課程"
+
+msgid "Credits"
+msgstr "致謝"
+
+msgid "Degrees"
+msgstr "度"
+
+msgid "Description:"
+msgstr "描述："
+
+msgid "Done: %d of %d right."
+msgstr "完成：%d / %d 正確。"
+
+msgid "Download"
+msgstr "下載"
+
+msgid "Download the lesson, with your results"
+msgstr "下載課程及您的結果"
+
+msgid "Download…"
+msgstr "下載…"
+
+msgid "Drop a lesson file here, or choose one."
+msgstr "將課程檔案拖放到這裡，或選擇一個檔案。"
+
+msgid "Each session:"
+msgstr "每次練習："
+
+msgid "Edit the selected question or answer with the formula builder"
+msgstr "用公式編輯器編輯所選的問題或答案"
+
+msgid "Empty the File > Open Recent list"
+msgstr "清空「檔案 > 最近開啟」列表"
+
+msgid "Enter"
+msgstr "輸入"
+
+msgid "Enter Unicode codepoint (U+xxxx):"
+msgstr "輸入 Unicode 碼位（U+xxxx）："
+
+msgid "Enter lesson description..."
+msgstr "輸入課程描述..."
+
+msgid "Enter lesson name..."
+msgstr "輸入課程名稱..."
+
+msgid "Enter lesson title"
+msgstr "輸入課程標題"
+
+msgid "Enter some places first."
+msgstr "請先輸入一些地點。"
+
+msgid "Error creating lesson: %v"
+msgstr "建立課程時發生錯誤：%v"
+
+msgid "Error loading file: %v"
+msgstr "載入檔案時發生錯誤：%v"
+
+msgid "Error: File dialog not available"
+msgstr "錯誤：無法使用檔案對話框"
+
+msgid "Error: Lesson dialog not available"
+msgstr "錯誤：無法使用課程對話框"
+
+msgid "Error: No about dialog modules available"
+msgstr "錯誤：沒有可用的「關於」對話框模組"
+
+msgid "Error: No file dialog modules available"
+msgstr "錯誤：沒有可用的檔案對話框模組"
+
+msgid "Error: No lesson dialog modules available"
+msgstr "錯誤：沒有可用的課程對話框模組"
+
+msgid "Error: No settings dialog modules available"
+msgstr "錯誤：沒有可用的設定對話框模組"
+
+msgid "Error: Properties dialog not available"
+msgstr "錯誤：無法使用屬性對話框"
+
+msgid "Error: Settings dialog not available"
+msgstr "錯誤：無法使用設定對話框"
+
+msgid "Example"
+msgstr "範例"
+
+msgid "Exported %s"
+msgstr "已匯出 %s"
+
+msgid "Field separator:"
+msgstr "欄位分隔符號："
+
+msgid "File"
+msgstr "檔案"
+
+msgid "File encoding:"
+msgstr "檔案編碼："
+
+msgid "Files"
+msgstr "檔案"
+
+msgid "First row contains headers"
+msgstr "第一行為標題"
+
+msgid "Format"
+msgstr "格式"
+
+msgid "Formula builder"
+msgstr "公式編輯器"
+
+msgid "Formula, e.g. x^2 + 1"
+msgstr "公式，例如 x^2 + 1"
+
+msgid "Fraction"
+msgstr "分數"
+
+msgid "Free software under the GNU General Public License,\nversion 3 or later"
+msgstr "自由軟體，以 GNU 通用公共授權條款\n第 3 版或更新版本授權"
+
+msgid "Functions"
+msgstr "函數"
+
+msgid "Furigana and formulas"
+msgstr "振假名和公式"
+
+msgid "Getting Started with Recuerdo"
+msgstr "Recuerdo 入門"
+
+msgid "Give the items an answer on the Enter tab first."
+msgstr "請先在「輸入」分頁為項目填入答案。"
+
+msgid "Go on after seeing the right answer"
+msgstr "看過正確答案後繼續"
+
+msgid "Grades in:"
+msgstr "成績表示法："
+
+msgid "Hard words"
+msgstr "較難的單字"
+
+msgid "Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."
+msgstr "較難的單字：答錯次數多於答對次數，或尚未練習過的單字。從來沒答對：在之前的練習中從未答對過的單字。"
+
+msgid "How long Repeat answer shows the answer before you type it"
+msgstr "「重覆答案」模式在您輸入前顯示答案的時間"
+
+msgid "How the Results tab grades your sessions"
+msgstr "「結果」分頁如何為您的練習評分"
+
+msgid "Import"
+msgstr "匯入"
+
+msgid "Import File"
+msgstr "匯入檔案"
+
+msgid "Import Lesson"
+msgstr "匯入課程"
+
+msgid "Import Options"
+msgstr "匯入選項"
+
+msgid "Import from Picture"
+msgstr "從圖片匯入"
+
+msgid "In Name – Place, say the name of the place to click"
+msgstr "在「名稱 – 地點」模式中，唸出要點擊的地點名稱"
+
+msgid "In mind"
+msgstr "思考答案"
+
+msgid "In the Repeat answer mode, how long the answer is shown before you type it"
+msgstr "在「重覆答案」模式中，答案在您輸入前顯示多久"
+
+msgid "Index"
+msgstr "下標"
+
+msgid "Integral"
+msgstr "積分"
+
+msgid "Interface"
+msgstr "介面"
+
+msgid "Items:"
+msgstr "項目："
+
+msgid "Languages"
+msgstr "語言"
+
+msgid "Last session:"
+msgstr "上一次練習："
+
+msgid "Last session: %d of %d right. Sessions in this lesson: %d."
+msgstr "上一次練習：%d / %d 正確。這個課程的練習次數：%d。"
+
+msgid "Latest Session Results"
+msgstr "最近一次練習的結果"
+
+msgid "Learn words, places and more by heart"
+msgstr "背單字、地點及更多內容"
+
+msgid "Learn words, places and more by heart:\na foreign language's vocabulary, topography,\nor anything else you want to remember."
+msgstr "背單字、地點及更多內容：\n外語字彙、地形學，\n或任何您想記住的東西。"
+
+msgid "Lesson Information"
+msgstr "課程資訊"
+
+msgid "Lesson Properties"
+msgstr "課程屬性"
+
+msgid "Lesson Type"
+msgstr "課程類型"
+
+msgid "Lesson contains %d word pairs\n\nComplete a teaching session to see detailed results here."
+msgstr "課程包含 %d 組單字\n\n完成一次練習後，就能在這裡看到詳細結果。"
+
+msgid "Lesson contains %d word pairs | %d earlier sessions (see Progress)\n\nPractise to see your answers in detail here."
+msgstr "課程包含 %d 組單字 | 之前練習過 %d 次（請看「進度」）\n\n練習後，就能在這裡看到您的答案詳情。"
+
+msgid "Lesson: %d word pairs | Sessions completed: %d\n\nLatest Session: %d/%d correct (%d%%), grade %s\nAverage grade: %s (%d%%)\n\nDetailed results from latest session:"
+msgstr "課程：%d 組單字 | 已完成練習：%d 次\n\n最近一次練習：%d/%d 正確（%d%%），成績 %s\n平均成績：%s（%d%%）\n\n最近一次練習的詳細結果："
+
+msgid "Limit"
+msgstr "極限"
+
+msgid "Loaded '%s': %d words"
+msgstr "已載入「%s」：%d 個單字"
+
+msgid "Loading…"
+msgstr "載入中…"
+
+msgid "Made a lesson of %d words"
+msgstr "已建立含 %d 個單字的課程"
+
+msgid "Merged %d words from %s"
+msgstr "已合併 %d 個單字（來自 %s）"
+
+msgid "Mode"
+msgstr "模式"
+
+msgid "Mode:"
+msgstr "模式："
+
+msgid "Name of a place"
+msgstr "地點名稱"
+
+msgid "Name of the marked place"
+msgstr "標記地點的名稱"
+
+msgid "Name – Place"
+msgstr "名稱 – 地點"
+
+msgid "Needs a speech program: install espeak-ng"
+msgstr "需要語音程式：請安裝 espeak-ng"
+
+msgid "Never answered correctly"
+msgstr "從來沒答對"
+
+msgid "New from &Text..."
+msgstr "從文字新建(&T)..."
+
+msgid "New lesson created successfully"
+msgstr "已成功建立新課程"
+
+msgid "New lesson dialog created"
+msgstr "已建立新課程對話框"
+
+msgid "New question"
+msgstr "新問題"
+
+msgid "No lesson data available"
+msgstr "沒有課程資料"
+
+msgid "No lesson open to show properties"
+msgstr "沒有開啟的課程可顯示屬性"
+
+msgid "No recent lessons"
+msgstr "沒有最近開啟的課程"
+
+msgid "No results yet: practise on the Teach tab."
+msgstr "尚無結果：請在「教學」分頁練習。"
+
+msgid "No teaching results available yet"
+msgstr "尚無教學結果"
+
+msgid "No words available for teaching"
+msgstr "沒有可供教學的單字"
+
+msgid "No words to practise: none are \"%s\" yet"
+msgstr "沒有可練習的單字：目前沒有任何單字屬於「%s」"
+
+msgid "Now click where %s is on the map."
+msgstr "現在請在地圖上點擊 %s 的位置。"
+
+msgid "One word per line, with an equals sign between the question and the answer."
+msgstr "每行一個單字，問題和答案之間用等號分隔。"
+
+msgid "Open"
+msgstr "開啟"
+
+msgid "Open Lesson…"
+msgstr "開啟課程…"
+
+msgid "Open a lesson"
+msgstr "開啟課程"
+
+msgid "Open operation cancelled"
+msgstr "已取消開啟"
+
+msgid "OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more"
+msgstr "OpenTeacher 課程（.ot、.otwd）、單字列表（.csv、.txt）、KWordQuiz（.kvtml）、Anki、WRTS 等"
+
+msgid "Opened '%s' - %d words"
+msgstr "已開啟「%s」- %d 個單字"
+
+msgid "Opens OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt) and KWordQuiz (.kvtml) files"
+msgstr "開啟 OpenTeacher 課程（.ot、.otwd）、單字列表（.csv、.txt）及 KWordQuiz（.kvtml）檔案"
+
+msgid "Operators"
+msgstr "運算子"
+
+msgid "Or type a list"
+msgstr "或輸入列表"
+
+msgid "Order"
+msgstr "順序"
+
+msgid "Order:"
+msgstr "順序："
+
+msgid "Other lesson"
+msgstr "其他課程"
+
+msgid "Other picture…"
+msgstr "其他圖片…"
+
+msgid "Page %d of %d"
+msgstr "第 %d 頁，共 %d 頁"
+
+msgid "Pictures, sounds, videos or texts, kept inside the lesson"
+msgstr "圖片、聲音、影片或文字，儲存在課程內"
+
+msgid "Place %d"
+msgstr "地點 %d"
+
+msgid "Place – Name"
+msgstr "地點 – 名稱"
+
+msgid "Place – Name: a place is marked, type its name.\nName – Place: a name is given, click the place."
+msgstr "地點 – 名稱：標記一個地點，輸入它的名稱。\n名稱 – 地點：給出一個名稱，點擊該地點。"
+
+msgid "Please add words in the Enter tab"
+msgstr "請在「輸入」分頁新增單字"
+
+msgid "Power"
+msgstr "次方"
+
+msgid "Practice"
+msgstr "練習"
+
+msgid "Practice sessions:"
+msgstr "練習次數："
+
+msgid "Practise"
+msgstr "練習"
+
+msgid "Practise again"
+msgstr "再練習一次"
+
+msgid "Practise the other way round: the answers are asked and the questions are the answers"
+msgstr "反向練習：詢問答案，問題變成答案"
+
+msgid "Practise these words"
+msgstr "練習這些單字"
+
+msgid "Practise to see your answers here."
+msgstr "練習後，就能在這裡看到您的答案。"
+
+msgid "Preview"
+msgstr "預覽"
+
+msgid "Previous"
+msgstr "上一個"
+
+msgid "Printed %s"
+msgstr "已列印 %s"
+
+msgid "Progress"
+msgstr "進度"
+
+msgid "Pronounce names"
+msgstr "唸出名稱"
+
+msgid "Properties dialog cancelled"
+msgstr "已取消屬性對話框"
+
+msgid "Question %d of %d (Score: %d/%d correct)"
+msgstr "第 %d 題，共 %d 題（得分：%d/%d 正確）"
+
+msgid "Question Language:"
+msgstr "問題的語言："
+
+msgid "Question language"
+msgstr "問題的語言"
+
+msgid "Quick Access"
+msgstr "快速存取"
+
+msgid "Read %d word pairs from the picture: check them on the Enter tab"
+msgstr "已從圖片讀取 %d 組單字：請在「輸入」分頁檢查"
+
+msgid "Read a word list from a scan or photo of a printed list (needs Tesseract)"
+msgstr "從印刷單字列表的掃描或照片讀取單字列表（需要 Tesseract）"
+
+msgid "Ready"
+msgstr "就緒"
+
+msgid "Ready to start"
+msgstr "準備開始"
+
+msgid "Ready to start teaching"
+msgstr "準備開始教學"
+
+msgid "Recuerdo runs in your browser: your lessons stay on your computer."
+msgstr "Recuerdo 在您的瀏覽器中執行：您的課程會留在您的電腦上。"
+
+msgid "Remove Word"
+msgstr "移除單字"
+
+msgid "Repeat answer shows the answer for"
+msgstr "「重覆答案」顯示答案的時間"
+
+msgid "Result"
+msgstr "結果"
+
+msgid "Results Overview"
+msgstr "結果總覽"
+
+msgid "Reversed"
+msgstr "反向"
+
+msgid "Right"
+msgstr "正確"
+
+msgid "Right answer"
+msgstr "正確答案"
+
+msgid "Right: %s"
+msgstr "正確：%s"
+
+msgid "Root"
+msgstr "根號"
+
+msgid "Rotate 90°"
+msgstr "旋轉 90°"
+
+msgid "Saved %s"
+msgstr "已儲存 %s"
+
+msgid "Say each question aloud in the question language (needs espeak-ng, or the voices of macOS or Windows)"
+msgstr "用問題的語言唸出每個問題（需要 espeak-ng，或 macOS、Windows 的語音）"
+
+msgid "Say each question aloud, in the question language"
+msgstr "用問題的語言唸出每個問題"
+
+msgid "Select a Unicode block above to view characters, or enter a codepoint directly."
+msgstr "在上方選擇一個 Unicode 區塊以檢視字元，或直接輸入碼位。"
+
+msgid "Select file to import..."
+msgstr "選擇要匯入的檔案..."
+
+msgid "Selected file: %s"
+msgstr "已選擇檔案：%s"
+
+msgid "Settings saved"
+msgstr "已儲存設定"
+
+msgid "Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it."
+msgstr "一個問題有多個單字時，請用逗號分隔。變更會保留到您離開頁面為止：請下載課程以保存。"
+
+msgid "Show answer for:"
+msgstr "顯示答案時間："
+
+msgid "Show or hide special characters"
+msgstr "顯示或隱藏特殊字元"
+
+msgid "Show or hide special characters: accented letters and other scripts"
+msgstr "顯示或隱藏特殊字元：帶重音符號的字母及其他文字"
+
+msgid "Sorted"
+msgstr "已排序"
+
+msgid "Square root"
+msgstr "平方根"
+
+msgid "Start"
+msgstr "開始"
+
+msgid "Start Again"
+msgstr "重新開始"
+
+msgid "Start Teaching"
+msgstr "開始教學"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Straighten the picture so the lines are level, and drag a rectangle around the word list if the picture shows more."
+msgstr "將圖片轉正，使各行保持水平；如果圖片中還有其他內容，請在單字列表周圍拖曳出一個矩形。"
+
+msgid "Straighten:"
+msgstr "轉正："
+
+msgid "Structure"
+msgstr "結構"
+
+msgid "Sum"
+msgstr "總和"
+
+msgid "System language"
+msgstr "系統語言"
+
+msgid "Teach"
+msgstr "教學"
+
+msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
+msgstr "教學完成！最後分數：%d/%d 正確（%d%%）"
+
+msgid "Teaching session completed"
+msgstr "教學已完成"
+
+msgid "Text"
+msgstr "文字"
+
+msgid "The %s %s is missing from the lesson."
+msgstr "課程中缺少%s %s。"
+
+msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
+msgstr "Recuerdo 選單和畫面的語言（重新啟動 Recuerdo 後生效）。沒有翻譯的文字會保持英文。"
+
+msgid "There are no settings to change."
+msgstr "沒有可變更的設定。"
+
+msgid "Think about the answer, and press 'View answer' when you're done."
+msgstr "思考答案，想好後請按「顯示答案」。"
+
+msgid "Title"
+msgstr "標題"
+
+msgid "Topology"
+msgstr "地形學"
+
+msgid "Translation: %s"
+msgstr "翻譯：%s"
+
+msgid "Try an example"
+msgstr "試試範例"
+
+msgid "Type a List"
+msgstr "輸入列表"
+
+msgid "Type at least one word."
+msgstr "請至少輸入一個單字。"
+
+msgid "Type or paste a word list as \"question = answer\" lines"
+msgstr "以「問題 = 答案」的格式逐行輸入或貼上單字列表"
+
+msgid "Type or paste the words: one per line, with an equals sign (=) or a tab between the question and the answer, like \"hond = dog\". Several words on one side are separated by commas."
+msgstr "輸入或貼上單字：每行一個，問題和答案之間用等號（=）或 tab 分隔，例如「hond = dog」。同一邊有多個單字時用逗號分隔。"
+
+msgid "Type or paste words as \"question = answer\" lines"
+msgstr "以「問題 = 答案」的格式逐行輸入或貼上單字"
+
+msgid "Typed list"
+msgstr "輸入的列表"
+
+msgid "Typing"
+msgstr "輸入答案"
+
+msgid "Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."
+msgstr "輸入答案：直接輸入答案。打亂答案順序：以答案的字母作為提示。重覆答案：先顯示答案，再憑記憶輸入。"
+
+msgid "Unicode Block:"
+msgstr "Unicode 區塊："
+
+msgid "Use a picture of your own as the map"
+msgstr "使用您自己的圖片作為地圖"
+
+msgid "Version %s"
+msgstr "版本 %s"
+
+msgid "Where is %s?"
+msgstr "%s 在哪裡？"
+
+msgid "Which place is marked?"
+msgstr "標記的是哪個地點？"
+
+msgid "Whole picture"
+msgstr "整張圖片"
+
+msgid "Word Lesson: %s"
+msgstr "單字課程：%s"
+
+msgid "Word Pairs"
+msgstr "單字組"
+
+msgid "Words"
+msgstr "單字"
+
+msgid "Words List"
+msgstr "單字列表"
+
+msgid "Words never answered correctly"
+msgstr "從來沒答對的單字"
+
+msgid "Words:"
+msgstr "單字："
+
+msgid "Wrong"
+msgstr "錯誤"
+
+msgid "Wrong. The right answer is: %s"
+msgstr "錯誤。正確答案是：%s"
+
+msgid "Wrong: %s → %s"
+msgstr "錯誤：%s → %s"
+
+msgid "Your Answer"
+msgstr "您的答案"
+
+msgid "Your answer"
+msgstr "您的答案"
+
+msgid "e.g. Dutch"
+msgstr "例如：荷蘭語"
+
+msgid "e.g. English"
+msgstr "例如：英語"
+
+msgid "hond = dog\nkat = cat"
+msgstr "hond = dog\nkat = cat"
+
+msgid "© 2025–2026 Joop Kiefte\nBased on OpenTeacher by the OpenTeacher Team, 2010–2023"
+msgstr "© 2025–2026 Joop Kiefte\n以 OpenTeacher 團隊的 OpenTeacher 為基礎，2010–2023"
+
+msgid "✔ Right: %s"
+msgstr "✔ 正確：%s"
+
+msgid "✘ That was %s"
+msgstr "✘ 答案是 %s"
+
+msgid "✘ The answer was: %s"
+msgstr "✘ 答案是：%s"
+
+# corrects OpenTeacher's zh_TW.po for '&Save': stray "..."
+msgid "&Save"
+msgstr "儲存(&S)"
+
+# corrects OpenTeacher's zh_TW.po for '&File': full-width parentheses
+msgid "&File"
+msgstr "檔案(&F)"
+
+# corrects OpenTeacher's zh_TW.po for '&Edit': stray space
+msgid "&Edit"
+msgstr "編輯(&E)"
+
+# corrects OpenTeacher's zh_TW.po for '&Help': Mainland "幫助"
+msgid "&Help"
+msgstr "說明(&H)"
+
+# corrects OpenTeacher's zh_TW.po for 'Settings': Mainland "設置"
+msgid "Settings"
+msgstr "設定"
+
+# corrects OpenTeacher's zh_TW.po for 'Interval': untranslated
+msgid "Interval"
+msgstr "間隔"
+
+# corrects OpenTeacher's zh_TW.po for 'Lesson type:': missing colon
+msgid "Lesson type:"
+msgstr "課程類型："
+
+# corrects OpenTeacher's zh_TW.po for 'Note:': "評論" (comment)
+msgid "Grades in"
+msgstr "成績"

@@ -98,6 +98,12 @@ func TestShippedTranslations(t *testing.T) {
 			t.Errorf("T(%q) = %q, want %q", msgid, got, want)
 		}
 	}
+	// a full-width colon is dropped too
+	tmp := t.TempDir()
+	os.WriteFile(filepath.Join(tmp, "zh_CN.po"), []byte("msgid \"Recently opened:\"\nmsgstr \"最近打开的：\"\n"), 0o644)
+	if err := Use(tmp, "zh_CN"); err != nil || T("Open Recent") != "最近打开的" {
+		t.Errorf("Chinese: %q %v", T("Open Recent"), err)
+	}
 	Use(dir, "")
 }
 
