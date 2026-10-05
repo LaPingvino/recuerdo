@@ -16,6 +16,7 @@ import (
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/dialogs/testmode"
 	plaintextwords "github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/enterers/plainTextWords"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/ocrimport"
+	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/typingcourse"
 	recentlyopened "github.com/LaPingvino/recuerdo/internal/modules/logic/recentlyOpened"
 	"github.com/LaPingvino/recuerdo/internal/ocr"
 	"github.com/LaPingvino/recuerdo/internal/settingsdefs"
@@ -282,6 +283,10 @@ func (mod *GuiModule) createMenuBar() {
 	pictureAction.OnTriggered(mod.importFromPicture)
 
 	fileMenu.AddSeparator()
+
+	typingAction := fileMenu.AddActionWithText(i18n.T("T&yping Course..."))
+	typingAction.SetToolTip(i18n.T("Learn to type with all ten fingers"))
+	typingAction.OnTriggered(func() { typingcourse.Show(mod.mainWindow.QWidget) })
 
 	testAction := fileMenu.AddActionWithText(i18n.T("&Test Mode..."))
 	testAction.SetToolTip(i18n.T("Take tests from a test server, or give them as a teacher"))
