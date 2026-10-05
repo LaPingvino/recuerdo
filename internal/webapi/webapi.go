@@ -167,6 +167,15 @@ func (a *App) Lesson() (Lesson, error) {
 	return out, nil
 }
 
+// WordList is the open lesson's word list as it is stored (for a test
+// server: a teacher makes a test of it).
+func (a *App) WordList() (lesson.WordList, error) {
+	if a.data == nil {
+		return lesson.WordList{}, ErrNoLesson
+	}
+	return a.data.List, nil
+}
+
 func compose(words []string) string { return composer.Compose(checker.StoredAnswers(words)) }
 
 // Choices are the options a session can have.

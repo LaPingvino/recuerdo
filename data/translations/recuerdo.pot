@@ -7,6 +7,10 @@ msgstr "Content-Type: text/plain; charset=UTF-8\n"
 msgid "\nGrade (%s): %s"
 msgstr ""
 
+#: web/teacher.js
+msgid "%d accounts added."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "%d items to practise. Press Start."
 msgstr ""
@@ -29,6 +33,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "%d sessions; the last one %d%% right."
+msgstr ""
+
+#: web/teacher.js
+msgid "%d words"
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -87,6 +95,14 @@ msgstr ""
 msgid ", %d tests"
 msgstr ""
 
+#: web/teacher.js
+msgid "A group…"
+msgstr ""
+
+#: web/teacher.js
+msgid "A student…"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "A website or a YouTube, Vimeo or Dailymotion video"
 msgstr ""
@@ -101,6 +117,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "About dialog shown"
+msgstr ""
+
+#: web/teacher.js
+msgid "Accounts"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
@@ -127,12 +147,24 @@ msgstr ""
 msgid "Add files…"
 msgstr ""
 
+#: web/teacher.js
+msgid "Add many"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Add the words and results of another lesson to this one"
 msgstr ""
 
+#: web/teacher.js
+msgid "Add these accounts"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Add web address…"
+msgstr ""
+
+#: web/teacher.js
+msgid "Admin"
 msgstr ""
 
 #: internal/modules/logic/lessonTypes/allOnce/allOnce.go
@@ -187,6 +219,10 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+#: web/teacher.js
+msgid "Back to the test"
+msgstr ""
+
 #: internal/richtext/palette.go
 msgid "Brackets"
 msgstr ""
@@ -227,7 +263,11 @@ msgstr ""
 msgid "Click 'Start Teaching' to begin"
 msgstr ""
 
-#: web/testmode.js
+#: web/teacher.js
+msgid "Close for handing in"
+msgstr ""
+
+#: web/teacher.js
 msgid "Closed"
 msgstr ""
 
@@ -245,6 +285,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Correct anyway"
+msgstr ""
+
+#: web/teacher.js
+msgid "Count as right"
+msgstr ""
+
+#: web/teacher.js
+msgid "Count as wrong"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
@@ -269,6 +317,14 @@ msgstr ""
 
 #: internal/richtext/palette.go
 msgid "Degrees"
+msgstr ""
+
+#: web/teacher.js
+msgid "Delete the group"
+msgstr ""
+
+#: web/teacher.js
+msgid "Delete the test"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go
@@ -439,6 +495,14 @@ msgstr ""
 msgid "Give the items an answer on the Enter tab first."
 msgstr ""
 
+#: web/teacher.js
+msgid "Given"
+msgstr ""
+
+#: web/teacher.js
+msgid "Given to"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Go on after seeing the right answer"
 msgstr ""
@@ -455,6 +519,18 @@ msgstr ""
 msgid "Greek"
 msgstr ""
 
+#: web/teacher.js
+msgid "Group %s"
+msgstr ""
+
+#: web/teacher.js
+msgid "Group name"
+msgstr ""
+
+#: web/teacher.js
+msgid "Groups"
+msgstr ""
+
 #: web/testmode.js
 msgid "Hand in"
 msgstr ""
@@ -463,7 +539,7 @@ msgstr ""
 msgid "Hand in? You cannot change your answers afterwards."
 msgstr ""
 
-#: web/testmode.js
+#: web/teacher.js
 msgid "Handed in"
 msgstr ""
 
@@ -691,6 +767,10 @@ msgstr ""
 msgid "New from &Text..."
 msgstr ""
 
+#: web/teacher.js
+msgid "New group"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "New lesson created successfully"
 msgstr ""
@@ -703,6 +783,18 @@ msgstr ""
 msgid "New question"
 msgstr ""
 
+#: web/teacher.js
+msgid "New test"
+msgstr ""
+
+#: web/teacher.js
+msgid "New test of a lesson file…"
+msgstr ""
+
+#: web/teacher.js
+msgid "New test of the open lesson"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/unicode_picker.go
 msgid "Next"
 msgstr ""
@@ -713,6 +805,14 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "No lesson open to show properties"
+msgstr ""
+
+#: web/teacher.js
+msgid "No one has handed in yet."
+msgstr ""
+
+#: web/teacher.js
+msgid "No one yet."
 msgstr ""
 
 #: internal/modules/interfaces/qt/gui/gui.go
@@ -731,6 +831,10 @@ msgstr ""
 msgid "No tests for you yet."
 msgstr ""
 
+#: web/teacher.js
+msgid "No tests yet."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "No words available for teaching"
 msgstr ""
@@ -739,8 +843,20 @@ msgstr ""
 msgid "No words to practise: none are \"%s\" yet"
 msgstr ""
 
+#: web/teacher.js
+msgid "Not added: %s"
+msgstr ""
+
+#: web/teacher.js
+msgid "Not handed in yet: %s"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/topo/widget.go
 msgid "Now click where %s is on the map."
+msgstr ""
+
+#: web/teacher.js
+msgid "One account per line: name, password and (if not a student) the role, separated by commas."
 msgstr ""
 
 #: web/index.html
@@ -763,8 +879,16 @@ msgstr ""
 msgid "Open a lesson"
 msgstr ""
 
+#: web/teacher.js
+msgid "Open for handing in"
+msgstr ""
+
 #: internal/modules/interfaces/qt/gui/gui.go
 msgid "Open operation cancelled"
+msgstr ""
+
+#: web/teacher.js
+msgid "Open the test"
 msgstr ""
 
 #: web/index.html
@@ -891,6 +1015,22 @@ msgstr ""
 msgid "Properties dialog cancelled"
 msgstr ""
 
+#: web/teacher.js
+msgid "Publish all results"
+msgstr ""
+
+#: web/teacher.js
+msgid "Publish this result"
+msgstr ""
+
+#: web/teacher.js
+msgid "Published"
+msgstr ""
+
+#: web/teacher.js
+msgid "Published: the students can see their results."
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Question"
 msgstr ""
@@ -951,6 +1091,10 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
+#: web/teacher.js
+msgid "Remove %s"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Remove Word"
 msgstr ""
@@ -991,12 +1135,28 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
+#: web/testmode.js
+msgid "Right (your teacher's decision)"
+msgstr ""
+
 #: web/index.html
 msgid "Right answer"
 msgstr ""
 
+#: web/teacher.js
+msgid "Right answers"
+msgstr ""
+
 #: web/app.js
 msgid "Right: %s"
+msgstr ""
+
+#: web/teacher.js
+msgid "Role"
+msgstr ""
+
+#: web/teacher.js
+msgid "Role…"
 msgstr ""
 
 #: internal/richtext/palette.go
@@ -1021,6 +1181,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Say each question aloud, in the question language"
+msgstr ""
+
+#: web/teacher.js
+msgid "Score"
 msgstr ""
 
 #: web/testmode.js
@@ -1099,7 +1263,7 @@ msgstr ""
 msgid "Start Teaching"
 msgstr ""
 
-#: web/testmode.js
+#: web/teacher.js
 msgid "Status"
 msgstr ""
 
@@ -1117,6 +1281,10 @@ msgstr ""
 
 #: internal/richtext/palette.go
 msgid "Structure"
+msgstr ""
+
+#: web/teacher.js
+msgid "Student"
 msgstr ""
 
 #: internal/richtext/palette.go
@@ -1139,6 +1307,10 @@ msgstr ""
 msgid "Teach"
 msgstr ""
 
+#: web/teacher.js
+msgid "Teacher"
+msgstr ""
+
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Teaching completed! Final Score: %d/%d correct (%d%%)"
 msgstr ""
@@ -1147,8 +1319,12 @@ msgstr ""
 msgid "Teaching session completed"
 msgstr ""
 
-#: web/testmode.js
+#: web/teacher.js
 msgid "Test"
+msgstr ""
+
+#: web/teacher.js
+msgid "Test made: %s. Now give it to students or groups."
 msgstr ""
 
 #: web/index.html
@@ -1167,16 +1343,16 @@ msgstr ""
 msgid "The language of Recuerdo's menus and screens (after restarting Recuerdo). Texts without a translation stay English."
 msgstr ""
 
+#: web/teacher.js
+msgid "The test gets the lesson's words; students see the questions, never the answers."
+msgstr ""
+
 #: internal/modules/interfaces/qt/dialogs/settings/settings.go
 msgid "There are no settings to change."
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/words/words.go
 msgid "Think about the answer, and press 'View answer' when you're done."
-msgstr ""
-
-#: web/testmode.js
-msgid "This page is for students. Teachers and admins: use the teacher's page."
 msgstr ""
 
 #: web/index.html
@@ -1303,6 +1479,14 @@ msgstr ""
 msgid "Wrong: %s → %s"
 msgstr ""
 
+#: web/teacher.js
+msgid "Yes, delete %s"
+msgstr ""
+
+#: web/teacher.js
+msgid "Yes, delete it with its results"
+msgstr ""
+
 #: web/testmode.js
 msgid "Yes, hand in"
 msgstr ""
@@ -1313,6 +1497,10 @@ msgstr ""
 
 #: internal/modules/interfaces/qt/lessons/media/widget.go
 msgid "Your answer"
+msgstr ""
+
+#: web/teacher.js
+msgid "Your tests"
 msgstr ""
 
 #: internal/modules/interfaces/qt/lessonDialogs/lessonDialogs.go

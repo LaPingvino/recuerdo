@@ -100,3 +100,8 @@ header .lesson-title:empty + .language { margin-inline-start: auto; }
 .test-item input { width: min(28rem, 100%); }
 .test-item ruby rt { font-size: .5em; color: var(--muted); }
 table.tests td { vertical-align: middle; }
+ul.assigned { list-style: none; padding: 0; margin: .3rem 0 .6rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+ul.assigned li { border: 1px solid var(--line); border-radius: 999px; padding: .1rem .3rem .1rem .7rem; display: flex; align-items: center; gap: .2rem; }
+#testTeacher h4, #testAdmin h4 { margin: 1rem 0 .3rem; }
+#testAdmin .group { border-top: 1px solid var(--line); padding-top: .2rem; }
+#testAdmin textarea { width: 100%; }

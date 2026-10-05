@@ -14,6 +14,7 @@ import (
 	"syscall/js"
 
 	"github.com/LaPingvino/recuerdo/internal/i18n"
+	"github.com/LaPingvino/recuerdo/internal/richtext"
 	"github.com/LaPingvino/recuerdo/internal/webapi"
 )
 
@@ -39,8 +40,9 @@ func main() {
 		"openText": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(app.OpenText(args[0].String(), args[1].String()))
 		}),
-		"lesson":  js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Lesson()) }),
-		"choices": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Choices(), nil) }),
+		"lesson":   js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Lesson()) }),
+		"wordList": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.WordList()) }),
+		"choices":  js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Choices(), nil) }),
 		"start": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			var o webapi.Options
 			if len(args) > 0 {
@@ -79,8 +81,10 @@ func main() {
 		"t":            js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.T(args[0].String()) }),
 		"languageName": js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.Name(args[0].String()) }),
 		"rightToLeft":  js.FuncOf(func(_ js.Value, args []js.Value) any { return i18n.RightToLeft(args[0].String()) }),
-		"report":       js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
-		"palette":      js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Palette(), nil) }),
+		// sanitize makes words with markup safe to show (internal/richtext)
+		"sanitize": js.FuncOf(func(_ js.Value, args []js.Value) any { return richtext.Sanitize(args[0].String()) }),
+		"report":   js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Report(), nil) }),
+		"palette":  js.FuncOf(func(js.Value, []js.Value) any { return reply(app.Palette(), nil) }),
 		"expand": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(app.Expand(args[0].String(), args[1].String()))
 		}),

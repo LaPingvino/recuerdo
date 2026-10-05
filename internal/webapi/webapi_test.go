@@ -210,3 +210,15 @@ func TestFormulaBuilder(t *testing.T) {
 		t.Error("an unknown button: no error")
 	}
 }
+
+func TestWordList(t *testing.T) {
+	var a App
+	if _, err := a.WordList(); err == nil {
+		t.Error("a word list without a lesson")
+	}
+	a.OpenText("Wiskunde", "area = $\\pi r^2$\nkat = cat, kitty\n")
+	l, err := a.WordList()
+	if err != nil || len(l.Items) != 2 || l.Items[0].Answers[0] != "$\\pi r^2$" || len(l.Items[1].Answers) != 2 {
+		t.Errorf("word list %+v %v", l, err)
+	}
+}

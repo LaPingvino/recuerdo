@@ -17,7 +17,7 @@ async function testApi(method, path, body) {
 
 function testShow(view) {
 	$("start").hidden = true; $("lesson").hidden = true; $("testmode").hidden = false;
-	for (const id of ["testLogin", "testList", "testTake", "testResult"]) $(id).hidden = id !== view;
+	for (const id of ["testLogin", "testList", "testTake", "testResult", "testTeacher", "testAdmin"]) $(id).hidden = id !== view;
 	$("testLogout").hidden = !testUser;
 	text($("testWho"), testUser ? testUser.name : "");
 }
@@ -31,7 +31,8 @@ async function openTestMode() {
 
 $("openTestMode").addEventListener("click", openTestMode);
 $("testBack").addEventListener("click", () => {
-	if (!$("testList").hidden || !$("testLogin").hidden) { $("testmode").hidden = true; $("start").hidden = false; return; }
+	const home = !$("testList").hidden || !$("testLogin").hidden || (!$("testAdmin").hidden) || (!$("testTeacher").hidden && !teacherDetail);
+	if (home) { $("testmode").hidden = true; $("start").hidden = false; return; }
 	testMessage(""); showTestList();
 });
 $("testLogin").addEventListener("submit", async (e) => {
@@ -48,10 +49,8 @@ $("testLogout").addEventListener("click", async () => {
 
 async function showTestList() {
 	const box = $("testList"); box.replaceChildren(); testShow("testList");
-	if (testUser.role !== "student") {
-		const p = document.createElement("p"); text(p, t("This page is for students. Teachers and admins: use the teacher's page.")); box.append(p);
-		return;
-	}
+	if (testUser.role === "teacher") { showTeacherHome(); return; }
+	if (testUser.role === "admin") { showAdminHome(); return; }
 	let tests = [];
 	try { tests = await testApi("GET", "tests"); } catch (e) { testMessage(e.message, "wrong"); return; }
 	if (!tests.length) { const p = document.createElement("p"); text(p, t("No tests for you yet.")); box.append(p); return; }
