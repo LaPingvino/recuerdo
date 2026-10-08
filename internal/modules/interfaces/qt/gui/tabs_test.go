@@ -17,6 +17,8 @@ var tabs struct {
 	welcomeAfterLast  bool
 	keptModified      bool
 	discarded         bool
+	quitCancelled     bool
+	quitDiscarded     bool
 }
 
 func TestMain(m *testing.M) {
@@ -54,6 +56,13 @@ func driveTabs() {
 	mod.askSave = func(string) qt.QMessageBox__StandardButton { return qt.QMessageBox__Discard }
 	mod.closeTab(0)
 	tabs.discarded = mod.tabWidget == nil
+	// quitting with a lesson with changes asks too
+	open("Saved")
+	open("*Unsaved")
+	mod.askSave = func(string) qt.QMessageBox__StandardButton { return qt.QMessageBox__Cancel }
+	tabs.quitCancelled = !mod.mayQuit()
+	mod.askSave = func(string) qt.QMessageBox__StandardButton { return qt.QMessageBox__Discard }
+	tabs.quitDiscarded = mod.mayQuit()
 }
 
 func TestClosableTabs(t *testing.T) {
@@ -68,6 +77,9 @@ func TestClosableTabs(t *testing.T) {
 	}
 	if !tabs.keptModified {
 		t.Error("Cancel closed a lesson with changes")
+	}
+	if !tabs.quitCancelled || !tabs.quitDiscarded {
+		t.Errorf("quitting: Cancel stops it %v, Discard lets it %v", tabs.quitCancelled, tabs.quitDiscarded)
 	}
 	if !tabs.discarded {
 		t.Error("Discard did not close the lesson")

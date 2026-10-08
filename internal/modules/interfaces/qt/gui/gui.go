@@ -9,6 +9,7 @@
 package gui
 
 import (
+	"encoding/base64"
 	"errors"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	datatypeicons "github.com/LaPingvino/recuerdo/internal/modules/data/dataTypeIcons"
@@ -116,6 +117,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 
 	// Create main window
 	mod.mainWindow = qt.NewQMainWindow(nil)
+	mod.windowConveniences()
 	mod.mainWindow.SetWindowTitle("Recuerdo")
 	mod.mainWindow.Resize(1000, 700)
 	mod.mainWindow.SetMinimumSize2(800, 600)
@@ -372,6 +374,82 @@ func (mod *GuiModule) createMenuBar() {
 	})
 }
 
+// windowConveniences makes the main window ask before losing unsaved
+// lessons when it closes, open lesson files dropped on it, and come back
+// at the size and place it had.
+func (mod *GuiModule) windowConveniences() {
+	w := mod.mainWindow
+	if s := mod.settings(); s != nil {
+		if g, _ := s.GetSettingWithDefault("windowGeometry", "").(string); g != "" {
+			if b, err := base64.StdEncoding.DecodeString(g); err == nil {
+				w.RestoreGeometry(b)
+			}
+		}
+	}
+	w.OnCloseEvent(func(super func(*qt.QCloseEvent), e *qt.QCloseEvent) {
+		if !mod.mayQuit() {
+			e.Ignore()
+			return
+		}
+		if s := mod.settings(); s != nil {
+			s.SetSetting("windowGeometry", base64.StdEncoding.EncodeToString(w.SaveGeometry()))
+		}
+		super(e)
+	})
+	w.SetAcceptDrops(true)
+	w.OnDragEnterEvent(func(super func(*qt.QDragEnterEvent), e *qt.QDragEnterEvent) {
+		if e.MimeData().HasUrls() {
+			e.AcceptProposedAction()
+		}
+	})
+	w.OnDropEvent(func(super func(*qt.QDropEvent), e *qt.QDropEvent) {
+		for _, u := range e.MimeData().Urls() {
+			if u.IsLocalFile() {
+				mod.loadSelectedFile(u.ToLocalFile())
+			}
+		}
+		e.AcceptProposedAction()
+	})
+}
+
+// mayQuit asks, for every lesson with unsaved changes, whether to save
+// it; false if one is cancelled (or not saved).
+func (mod *GuiModule) mayQuit() bool {
+	if mod.tabWidget == nil {
+		return true
+	}
+	for i := 0; i < mod.tabWidget.Count(); i++ {
+		title := mod.tabWidget.TabText(i)
+		if !strings.HasPrefix(title, "*") {
+			continue
+		}
+		mod.tabWidget.SetCurrentIndex(i)
+		switch mod.ask()(strings.TrimPrefix(title, "*")) {
+		case qt.QMessageBox__Save:
+			mod.saveCurrentLesson(false)
+			if strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
+				return false
+			}
+		case qt.QMessageBox__Discard:
+		default:
+			return false
+		}
+	}
+	return true
+}
+
+// ask is the question whether to save a lesson with changes.
+func (mod *GuiModule) ask() func(name string) qt.QMessageBox__StandardButton {
+	if mod.askSave != nil {
+		return mod.askSave
+	}
+	return func(name string) qt.QMessageBox__StandardButton {
+		return qt.QMessageBox_Question6(mod.mainWindow.QWidget, i18n.T("Close Lesson"),
+			i18n.Tf("Save the changes to %s?", name),
+			qt.QMessageBox__Save|qt.QMessageBox__Discard|qt.QMessageBox__Cancel, qt.QMessageBox__Save)
+	}
+}
+
 // showWelcome shows the start screen: at the start, and when the last
 // lesson is closed. Qt deletes the central widget it replaces, so the
 // lessons' tab widget is made anew for the next lesson.
@@ -391,15 +469,7 @@ func (mod *GuiModule) closeTab(i int) {
 	}
 	if strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
 		mod.tabWidget.SetCurrentIndex(i)
-		ask := mod.askSave
-		if ask == nil {
-			ask = func(name string) qt.QMessageBox__StandardButton {
-				return qt.QMessageBox_Question6(mod.mainWindow.QWidget, i18n.T("Close Lesson"),
-					i18n.Tf("Save the changes to %s?", name),
-					qt.QMessageBox__Save|qt.QMessageBox__Discard|qt.QMessageBox__Cancel, qt.QMessageBox__Save)
-			}
-		}
-		switch ask(strings.TrimPrefix(mod.tabWidget.TabText(i), "*")) {
+		switch mod.ask()(strings.TrimPrefix(mod.tabWidget.TabText(i), "*")) {
 		case qt.QMessageBox__Save:
 			mod.saveCurrentLesson(false)
 			if strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
