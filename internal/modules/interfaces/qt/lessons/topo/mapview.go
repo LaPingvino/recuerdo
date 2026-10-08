@@ -20,22 +20,89 @@ type MapView struct {
 	selected  int // place ID drawn as selected, -1 none
 	hidden    bool
 	onClick   func(x, y int)
+
+	// editing: dragging a place moves it, right-clicking one or pressing
+	// Delete acts on it (only where the callbacks are set)
+	onMove    func(id, x, y int)
+	onContext func(id int, at *qt.QPoint)
+	onDelete  func()
+	dragging  int // the ID of the place being dragged, -1 none
+	dragged   bool
 }
 
 // NewMapView creates an empty map view.
 func NewMapView(parent *qt.QWidget) *MapView {
-	v := &MapView{QWidget: qt.NewQWidget(parent), selected: -1, showNames: true}
+	v := &MapView{QWidget: qt.NewQWidget(parent), selected: -1, showNames: true, dragging: -1}
 	v.SetMinimumSize2(320, 240)
 	v.SetSizePolicy2(qt.QSizePolicy__Expanding, qt.QSizePolicy__Expanding)
 	v.OnPaintEvent(func(super func(*qt.QPaintEvent), e *qt.QPaintEvent) { v.paint() })
 	v.OnMousePressEvent(func(super func(*qt.QMouseEvent), e *qt.QMouseEvent) {
-		if v.onClick == nil || v.image == nil {
+		if v.image == nil {
 			return
 		}
 		x, y := v.fit().ToPicture(float64(e.X()), float64(e.Y()))
-		if x >= 0 && y >= 0 && x <= v.image.Width() && y <= v.image.Height() {
+		place, onPlace := v.Near(x, y)
+		if e.Button() == qt.RightButton {
+			if onPlace && v.onContext != nil {
+				v.onContext(place.ID, e.GlobalPos())
+			}
+			return
+		}
+		if v.onClick != nil && x >= 0 && y >= 0 && x <= v.image.Width() && y <= v.image.Height() {
 			v.onClick(x, y)
 		}
+		if onPlace && v.onMove != nil {
+			v.dragging, v.dragged = place.ID, false
+			v.SetCursor(qt.NewQCursor2(qt.ClosedHandCursor))
+		}
+	})
+	v.OnMouseMoveEvent(func(super func(*qt.QMouseEvent), e *qt.QMouseEvent) {
+		if v.image == nil {
+			return
+		}
+		x, y := v.fit().ToPicture(float64(e.X()), float64(e.Y()))
+		if v.dragging < 0 {
+			// a hand over places that can be dragged
+			if _, on := v.Near(x, y); on && v.onMove != nil {
+				v.SetCursor(qt.NewQCursor2(qt.OpenHandCursor))
+			} else {
+				v.UnsetCursor()
+			}
+			return
+		}
+		x = min(max(x, 0), v.image.Width())
+		y = min(max(y, 0), v.image.Height())
+		for i := range v.places {
+			if v.places[i].ID == v.dragging {
+				v.places[i].X, v.places[i].Y = x, y
+			}
+		}
+		v.dragged = true
+		v.Update()
+	})
+	v.OnMouseReleaseEvent(func(super func(*qt.QMouseEvent), e *qt.QMouseEvent) {
+		if v.dragging < 0 {
+			return
+		}
+		id, moved := v.dragging, v.dragged
+		v.dragging, v.dragged = -1, false
+		v.UnsetCursor()
+		if !moved {
+			return
+		}
+		for _, p := range v.places {
+			if p.ID == id {
+				v.onMove(id, p.X, p.Y)
+			}
+		}
+	})
+	v.SetFocusPolicy(qt.StrongFocus)
+	v.OnKeyPressEvent(func(super func(*qt.QKeyEvent), e *qt.QKeyEvent) {
+		if k := qt.Key(e.Key()); (k == qt.Key_Delete || k == qt.Key_Backspace) && v.onDelete != nil {
+			v.onDelete()
+			return
+		}
+		super(e)
 	})
 	return v
 }
@@ -67,6 +134,20 @@ func (v *MapView) Select(id int) {
 
 // OnClick calls f with the picture coordinates of each click on the map.
 func (v *MapView) OnClick(f func(x, y int)) { v.onClick = f }
+
+// OnMove makes places draggable: f gets a moved place's ID and its new
+// picture coordinates when it is let go.
+func (v *MapView) OnMove(f func(id, x, y int)) {
+	v.onMove = f
+	v.SetMouseTracking(f != nil) // for the hand over places
+}
+
+// OnContext calls f when a place is right-clicked, with where (on the
+// screen) to show a menu.
+func (v *MapView) OnContext(f func(id int, at *qt.QPoint)) { v.onContext = f }
+
+// OnDelete calls f when Delete (or Backspace) is pressed on the map.
+func (v *MapView) OnDelete(f func()) { v.onDelete = f }
 
 // Near is the place near a click at picture coordinates (x, y).
 func (v *MapView) Near(x, y int) (Place, bool) {

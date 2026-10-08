@@ -81,6 +81,22 @@ func drive() {
 	w.ClickEnter(337, 560) // near Amsterdam: selects it, adds nothing
 	check("select", len(w.places()) == 3 && w.placeList.CurrentRow() == 0, "click near a place: %d places, row %d",
 		len(w.places()), w.placeList.CurrentRow())
+	// drag a place (Move, as the map reports a drop), remove with the key
+	brussels := w.places()[1]
+	w.Move(brussels.ID, 400, 700)
+	moved := w.places()[1]
+	check("move", moved.ID == brussels.ID && moved.X == 400 && moved.Y == 700 && w.placeList.CurrentRow() == 1,
+		"moved %+v, row %d", moved, w.placeList.CurrentRow())
+	w.placeList.SetCurrentRow(2)
+	w.enterMap.onDelete()
+	check("delete", len(w.places()) == 2 && w.placeList.Count() == 2, "after Delete: %+v", w.places())
+	check("editing", w.enterMap.onMove != nil && w.enterMap.onContext != nil && w.teachMap.onMove == nil,
+		"the entering map edits, the teaching map does not")
+	// as before, for the tests below: Brussels back, Ys again
+	w.Move(brussels.ID, brussels.X, brussels.Y)
+	w.nameEdit.SetText("Ys")
+	w.ClickEnter(500, 950)
+	check("restore", len(w.places()) == 3 && w.places()[1].X == brussels.X && w.places()[2].Name == "Ys", "places %+v", w.places())
 	shot(w, 0, "02-enter.png")
 
 	// Place – Name: type the marked place's name

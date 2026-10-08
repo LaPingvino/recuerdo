@@ -139,6 +139,9 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 	body := qt.NewQHBoxLayout2()
 	w.enterMap = NewMapView(tab)
 	w.enterMap.OnClick(w.ClickEnter)
+	w.enterMap.OnMove(w.Move)
+	w.enterMap.OnContext(w.placeMenu)
+	w.enterMap.OnDelete(func() { w.Remove(w.placeList.CurrentRow()) })
 	body.AddWidget2(w.enterMap.QWidget, 3)
 
 	side := qt.NewQVBoxLayout2()
@@ -165,6 +168,13 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 		if !w.filling {
 			w.Rename(w.placeList.Row(item), item.Text())
 		}
+	})
+	w.placeList.OnKeyPressEvent(func(super func(*qt.QKeyEvent), e *qt.QKeyEvent) {
+		if k := qt.Key(e.Key()); (k == qt.Key_Delete || k == qt.Key_Backspace) && w.placeList.State() != qt.QAbstractItemView__EditingState {
+			w.Remove(w.placeList.CurrentRow())
+			return
+		}
+		super(e)
 	})
 	side.AddWidget(w.placeList.QWidget)
 	w.removeBtn = qt.NewQPushButton3(i18n.T("Remove"))
@@ -310,6 +320,48 @@ func (w *TopoLessonWidget) Rename(row int, name string) {
 	}
 	w.modified()
 	w.refresh()
+}
+
+// rowOf is the list row of the place with id, -1 if none.
+func (w *TopoLessonWidget) rowOf(id int) int {
+	for i, p := range w.places() {
+		if p.ID == id {
+			return i
+		}
+	}
+	return -1
+}
+
+// Move puts the place with id at picture coordinates (x, y): dragged on
+// the map.
+func (w *TopoLessonWidget) Move(id, x, y int) {
+	for i, it := range w.lesson.Data.List.Items {
+		if it.ID != id {
+			continue
+		}
+		for _, p := range Places([]lesson.WordItem{it}) {
+			p.X, p.Y = x, y
+			w.lesson.Data.List.Items[i] = Item(p)
+		}
+	}
+	w.modified()
+	w.refresh()
+	w.placeList.SetCurrentRow(w.rowOf(id))
+}
+
+// placeMenu is the menu of a right-clicked place: rename or remove it.
+func (w *TopoLessonWidget) placeMenu(id int, at *qt.QPoint) {
+	row := w.rowOf(id)
+	if row < 0 {
+		return
+	}
+	w.placeList.SetCurrentRow(row)
+	menu := qt.NewQMenu(w.QWidget)
+	rename := menu.AddActionWithText(i18n.T("Rename"))
+	rename.OnTriggered(func() { w.placeList.EditItem(w.placeList.Item(row)) })
+	remove := menu.AddActionWithText(i18n.T("Remove"))
+	remove.OnTriggered(func() { w.Remove(row) })
+	menu.ExecWithPos(at)
 }
 
 // Remove removes the place in row of the list.
