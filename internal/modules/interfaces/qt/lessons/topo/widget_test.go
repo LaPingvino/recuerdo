@@ -140,6 +140,21 @@ func drive() {
 	check("modified", modified > 5 && l.Data.Changed, "modified %d times", modified)
 	shot(w, 2, "05-results.png")
 
+	// a KGeography map: the Netherlands' provinces on its picture
+	if kdata, err := lesson.NewFileLoader().LoadFile(filepath.Join("..", "..", "..", "..", "..", "..", "testdata",
+		"legacy_files", "application_x-kgeographymap.kgeography.kgm")); err == nil {
+		kl := lesson.NewLesson("topo")
+		kl.Data = *kdata
+		k := NewTopoLessonWidget(kl, nil)
+		check("kgeography", k.enterMap.HasImage() && k.placeList.Count() == 12, "map %v, %d places",
+			k.enterMap.HasImage(), k.placeList.Count())
+		k.Resize(800, 640)
+		k.Show()
+		shot(k, 0, "07-kgeography.png")
+	} else {
+		check("kgeography", false, "%v", err)
+	}
+
 	// a lesson file with its own map (OpenTeacher's sample)
 	data, err := lesson.NewFileLoader().LoadFile(filepath.Join("..", "..", "..", "..", "..", "..", "testdata",
 		"legacy_files", "application_x-openteachingtopography.openteacher3x.ottp"))
