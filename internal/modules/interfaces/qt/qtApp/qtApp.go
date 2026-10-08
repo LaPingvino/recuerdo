@@ -44,6 +44,7 @@ func (mod *QtAppModule) Enable(ctx context.Context) error {
 
 	// Initialize Qt Application if not already done
 	if mod.app == nil {
+		chooseQtPlatform()
 		mod.app = qt.NewQApplication(os.Args)
 
 		// Set application properties using static functions
@@ -128,4 +129,23 @@ func (mod *QtAppModule) Exec() int {
 // This is the Go equivalent of the Python init function
 func InitQtAppModule() core.Module {
 	return NewQtAppModule()
+}
+
+// chooseQtPlatform picks X11 under ChromeOS's sommelier: its Wayland proxy
+// crashes when a dialog's window is destroyed (wl_resource_destroy in
+// sommelier 0.20: "The Wayland connection broke"), taking Recuerdo with
+// it; its X11 path (XWayland) does not. QT_QPA_PLATFORM set by the user
+// wins.
+func chooseQtPlatform() {
+	if platform := sommelierPlatform(os.Getenv); platform != "" {
+		os.Setenv("QT_QPA_PLATFORM", platform)
+	}
+}
+
+// sommelierPlatform is the Qt platform to use, or "" for Qt's own choice.
+func sommelierPlatform(getenv func(string) string) string {
+	if getenv("QT_QPA_PLATFORM") != "" || getenv("SOMMELIER_VERSION") == "" || getenv("DISPLAY") == "" {
+		return ""
+	}
+	return "xcb"
 }
