@@ -56,8 +56,11 @@ type GuiModule struct {
 	lastLoadedFile string
 	lastLoadTime   int64
 	logger         *logging.Logger
-	addingTab      bool
-	showingDialog  bool
+	// askSave asks whether to save a lesson with changes before closing it
+	// (nil: a message box)
+	askSave       func(name string) qt.QMessageBox__StandardButton
+	addingTab     bool
+	showingDialog bool
 
 	saveAction, saveAsAction, printAction *qt.QAction
 	// tabLessons is the lesson shown in each lesson tab, by tab widget
@@ -124,16 +127,7 @@ func (mod *GuiModule) Enable(ctx context.Context) error {
 	mod.statusBar = mod.mainWindow.StatusBar()
 	mod.statusBar.ShowMessage(i18n.T("Ready"))
 
-	// Create central widget with basic layout
-	centralWidget := qt.NewQWidget(nil)
-	mod.mainWindow.SetCentralWidget(centralWidget)
-
-	// Create main layout
-	mainLayout := qt.NewQVBoxLayout(centralWidget)
-
-	// Add welcome area
-	welcomeWidget := mod.createWelcomeWidget()
-	mainLayout.AddWidget(welcomeWidget)
+	mod.showWelcome()
 
 	// Show the window
 	mod.mainWindow.Show()
@@ -322,6 +316,14 @@ func (mod *GuiModule) createMenuBar() {
 	printAction.OnTriggered(mod.printCurrentLesson)
 	mod.printAction = printAction
 
+	closeAction := fileMenu.AddActionWithText(i18n.T("&Close Lesson"))
+	closeAction.SetShortcut(qt.NewQKeySequence2("Ctrl+W"))
+	closeAction.OnTriggered(func() {
+		if mod.tabWidget != nil {
+			mod.closeTab(mod.tabWidget.CurrentIndex())
+		}
+	})
+
 	fileMenu.AddSeparator()
 
 	exitAction := fileMenu.AddActionWithText(i18n.T("E&xit"))
@@ -368,6 +370,58 @@ func (mod *GuiModule) createMenuBar() {
 		mod.logger.Event("About menu action triggered")
 		mod.showAboutDialog()
 	})
+}
+
+// showWelcome shows the start screen: at the start, and when the last
+// lesson is closed. Qt deletes the central widget it replaces, so the
+// lessons' tab widget is made anew for the next lesson.
+func (mod *GuiModule) showWelcome() {
+	central := qt.NewQWidget(nil)
+	layout := qt.NewQVBoxLayout(central)
+	layout.AddWidget(mod.createWelcomeWidget())
+	mod.mainWindow.SetCentralWidget(central)
+	mod.tabWidget = nil
+}
+
+// closeTab closes the lesson in tab i, asking first whether to save it if
+// it has changes (its title starts with "*").
+func (mod *GuiModule) closeTab(i int) {
+	if mod.tabWidget == nil || i < 0 || i >= mod.tabWidget.Count() {
+		return
+	}
+	if strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
+		mod.tabWidget.SetCurrentIndex(i)
+		ask := mod.askSave
+		if ask == nil {
+			ask = func(name string) qt.QMessageBox__StandardButton {
+				return qt.QMessageBox_Question6(mod.mainWindow.QWidget, i18n.T("Close Lesson"),
+					i18n.Tf("Save the changes to %s?", name),
+					qt.QMessageBox__Save|qt.QMessageBox__Discard|qt.QMessageBox__Cancel, qt.QMessageBox__Save)
+			}
+		}
+		switch ask(strings.TrimPrefix(mod.tabWidget.TabText(i), "*")) {
+		case qt.QMessageBox__Save:
+			mod.saveCurrentLesson(false)
+			if strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
+				return // not saved (cancelled or failed): keep it open
+			}
+		case qt.QMessageBox__Discard:
+		default:
+			return
+		}
+	}
+	w := mod.tabWidget.Widget(i)
+	delete(mod.tabLessons, w.UnsafePointer())
+	mod.tabWidget.RemoveTab(i)
+	w.DeleteLater()
+	if mod.tabWidget.Count() == 0 {
+		mod.showWelcome()
+		if mod.saveAction != nil {
+			mod.saveAction.SetEnabled(false)
+			mod.saveAsAction.SetEnabled(false)
+			mod.printAction.SetEnabled(false)
+		}
+	}
 }
 
 // createWelcomeWidget creates the welcome screen widget
@@ -683,6 +737,11 @@ func (mod *GuiModule) displayLessonInTab(lesson *lesson.Lesson) {
 	// Create tab widget if it doesn't exist
 	if mod.tabWidget == nil {
 		mod.tabWidget = qt.NewQTabWidget(nil)
+		// lessons in tabs that close with their x, and can be reordered
+		mod.tabWidget.SetTabsClosable(true)
+		mod.tabWidget.SetMovable(true)
+		mod.tabWidget.SetDocumentMode(true)
+		mod.tabWidget.OnTabCloseRequested(mod.closeTab)
 		mod.mainWindow.SetCentralWidget(mod.tabWidget.QWidget)
 		mod.logger.Success("Created central tab widget")
 	} else {
