@@ -58,3 +58,26 @@ func TestKGeographyMap(t *testing.T) {
 		t.Errorf("%q: %v", data.List.Title, names)
 	}
 }
+
+// A map's place on Earth (OpenStreetMap maps) is kept in .ottp files.
+func TestOTTPKeepsMapGeo(t *testing.T) {
+	data, err := NewFileLoader().LoadFile("../../testdata/legacy_files/application_x-openteachingtopography.openteacher3x.ottp")
+	if err != nil {
+		t.Fatal(err)
+	}
+	data.Resources[MapGeoResource] = []byte(`{"zoom":7,"left":16700,"top":10600,"width":400,"height":300}`)
+	path := filepath.Join(t.TempDir(), "map.ottp")
+	if err := NewFileSaver().SaveFile(data, path); err != nil {
+		t.Fatal(err)
+	}
+	back, err := NewFileLoader().LoadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if geo, _ := back.Resources[MapGeoResource].([]byte); string(geo) != `{"zoom":7,"left":16700,"top":10600,"width":400,"height":300}` {
+		t.Errorf("geo %q", geo)
+	}
+	if img, _ := back.Resources[MapImageResource].([]byte); len(img) == 0 {
+		t.Error("map lost")
+	}
+}

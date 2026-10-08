@@ -12,6 +12,11 @@ import (
 // lesson's map picture (the image's bytes).
 const MapImageResource = "mapImage"
 
+// MapGeoResource is the key of where on Earth an OpenStreetMap map lies
+// (JSON bytes, osm.Geo): for putting places where they really are. It is
+// kept in .ottp files as map.geo.json, which OpenTeacher ignores.
+const MapGeoResource = "mapGeo"
+
 type ottpItem struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
@@ -60,6 +65,12 @@ func (fl *FileLoader) loadOpenTeachingTopoFile(path string) (*LessonData, error)
 		}
 		data.Resources[MapImageResource] = img
 	}
+	if m, err := zr.Open("map.geo.json"); err == nil {
+		if geo, err := io.ReadAll(m); err == nil {
+			data.Resources[MapGeoResource] = geo
+		}
+		m.Close()
+	}
 	return data, nil
 }
 
@@ -95,6 +106,11 @@ func (fs *FileSaver) saveOpenTeachingTopoFile(data *LessonData, path string) err
 	if img, ok := data.Resources[MapImageResource].([]byte); ok && err == nil {
 		if w, err = zw.Create("map.image"); err == nil {
 			_, err = w.Write(img)
+		}
+	}
+	if geo, ok := data.Resources[MapGeoResource].([]byte); ok && err == nil {
+		if w, err = zw.Create("map.geo.json"); err == nil {
+			_, err = w.Write(geo)
 		}
 	}
 	if cerr := zw.Close(); err == nil {

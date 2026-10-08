@@ -1,12 +1,16 @@
 package topo
 
 import (
+	"bytes"
 	"fmt"
+	"image"
+	"image/png"
 	"os"
 	"path/filepath"
 	"testing"
 
 	"github.com/LaPingvino/recuerdo/internal/lesson"
+	"github.com/LaPingvino/recuerdo/internal/osm"
 	qt "github.com/mappu/miqt/qt6"
 )
 
@@ -139,6 +143,21 @@ func drive() {
 		"tests %+v", l.Data.List.Tests)
 	check("modified", modified > 5 && l.Data.Changed, "modified %d times", modified)
 	shot(w, 2, "05-results.png")
+
+	// a map made from OpenStreetMap: kept with where it lies on Earth; a
+	// picture of one's own replaces both
+	{
+		ol := lesson.NewLesson("topo")
+		o := NewTopoLessonWidget(ol, nil)
+		var pic bytes.Buffer
+		png.Encode(&pic, image.NewRGBA(image.Rect(0, 0, 400, 300)))
+		o.useOSMMap(pic.Bytes(), osm.Geo{Zoom: 7, Left: 16700, Top: 10600, Width: 400, Height: 300})
+		g, ok := o.geo()
+		check("osm map", o.enterMap.HasImage() && ok && g.Zoom == 7, "map %v, geo %+v %v", o.enterMap.HasImage(), g, ok)
+		o.UseMapPicture(europe.Image)
+		_, ok = o.geo()
+		check("osm map replaced", !ok, "a picture kept the OpenStreetMap place")
+	}
 
 	// a KGeography map: the Netherlands' provinces on its picture
 	if kdata, err := lesson.NewFileLoader().LoadFile(filepath.Join("..", "..", "..", "..", "..", "..", "testdata",

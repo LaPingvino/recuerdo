@@ -129,6 +129,10 @@ func (w *TopoLessonWidget) enterTab() *qt.QWidget {
 		}
 	})
 	top.AddWidget(other.QWidget)
+	osmBtn := qt.NewQPushButton3(i18n.T("OpenStreetMap…"))
+	osmBtn.SetToolTip(i18n.T("Make the map of a country or region from OpenStreetMap"))
+	osmBtn.OnClicked(w.chooseOSMMap)
+	top.AddWidget(osmBtn.QWidget)
 	w.addAllBtn = qt.NewQPushButton3(i18n.T("Add all places"))
 	w.addAllBtn.SetToolTip(i18n.T("Add every place this map knows"))
 	w.addAllBtn.OnClicked(w.AddAllKnown)
@@ -226,6 +230,7 @@ func (w *TopoLessonWidget) UseMapPicture(path string) error {
 		return fmt.Errorf("%s is not a picture Recuerdo can show", filepath.Base(path))
 	}
 	w.lesson.Data.Resources[lesson.MapImageResource] = b
+	delete(w.lesson.Data.Resources, lesson.MapGeoResource) // a picture: no place on Earth
 	w.loadMap()
 	w.modified()
 	w.refresh()
@@ -245,6 +250,9 @@ func (w *TopoLessonWidget) AddByName(name string) {
 			w.nameEdit.Clear()
 			return
 		}
+	}
+	if w.addFromOSM(name) {
+		return
 	}
 	w.enterHint.SetText(fmt.Sprintf(i18n.T("Now click where %s is on the map."), name))
 }
