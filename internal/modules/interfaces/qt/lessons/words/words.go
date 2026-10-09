@@ -522,8 +522,7 @@ func (w *EnterTabWidget) addNewWord() {
 	for _, it := range w.lesson.Data.List.Items {
 		nextID = max(nextID, it.ID+1)
 	}
-	// an empty row, ready to type in (a word without a question or answer
-	// is not asked)
+	// an empty row, ready to type in (an empty word is not asked)
 	w.lesson.Data.List.Items = append(w.lesson.Data.List.Items, lesson.WordItem{ID: nextID})
 	w.updateWordsTable()
 	w.modified()

@@ -103,10 +103,11 @@ func New(list lesson.WordList, opts Options) *Session {
 		wordsreverser.Reverse(&list)
 	}
 
-	// every word, but those not finished yet (no question or answer)
+	// every word, but empty ones (a row just added): media lessons ask
+	// a picture or sound, without a question in words
 	indexes := make([]int, 0, len(list.Items))
 	for i, it := range list.Items {
-		if len(it.Questions) > 0 && len(it.Answers) > 0 {
+		if len(it.Questions) > 0 || len(it.Answers) > 0 || it.Name != "" {
 			indexes = append(indexes, i)
 		}
 	}
