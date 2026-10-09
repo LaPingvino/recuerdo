@@ -180,3 +180,15 @@ func TestCorrectRichAndFormulas(t *testing.T) {
 		}
 	}
 }
+
+// Words not finished yet (no question or no answer) are not asked.
+func TestUnfinishedWordsSkipped(t *testing.T) {
+	l := lesson.WordList{Items: []lesson.WordItem{
+		{ID: 0, Questions: []string{"hond"}, Answers: []string{"dog"}},
+		{ID: 1},
+		{ID: 2, Questions: []string{"kat"}},
+	}}
+	if _, total := New(l, Options{}).Progress(); total != 1 {
+		t.Errorf("%d questions, want 1", total)
+	}
+}

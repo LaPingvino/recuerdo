@@ -103,9 +103,12 @@ func New(list lesson.WordList, opts Options) *Session {
 		wordsreverser.Reverse(&list)
 	}
 
-	indexes := make([]int, len(list.Items))
-	for i := range indexes {
-		indexes[i] = i
+	// every word, but those not finished yet (no question or answer)
+	indexes := make([]int, 0, len(list.Items))
+	for i, it := range list.Items {
+		if len(it.Questions) > 0 && len(it.Answers) > 0 {
+			indexes = append(indexes, i)
+		}
 	}
 	// which words, judged by the list's earlier tests
 	switch opts.Words {

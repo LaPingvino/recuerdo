@@ -537,11 +537,29 @@ func checkEditing() error {
 	if n := len(l.Data.List.Items); n != 3 || l.Data.List.Items[2].ID != 2 {
 		return fmt.Errorf("added word: %d items, new ID %d", n, l.Data.List.Items[n-1].ID)
 	}
+	// a new word is an empty row, the cursor in its question
+	if it := l.Data.List.Items[2]; len(it.Questions) != 0 || table.CurrentRow() != 2 || table.CurrentColumn() != 0 {
+		return fmt.Errorf("new word %+v, cursor at %d,%d", it, table.CurrentRow(), table.CurrentColumn())
+	}
 	// filling the table from the lesson is not an edit
 	before := edits
 	w.enterWidget.updateWordsTable()
 	if edits != before {
 		return fmt.Errorf("refilling the table reported %d edits", edits-before)
+	}
+	// Delete removes the selected words, not just the current one
+	table.ClearSelection()
+	table.SelectRow(0)
+	table.SetRangeSelected(qt.NewQTableWidgetSelectionRange2(0, 0, 1, 2), true)
+	w.enterWidget.tableKeys(func(*qt.QKeyEvent) {}, qt.NewQKeyEvent(qt.QEvent__KeyPress, int(qt.Key_Delete), qt.NoModifier))
+	if n := len(l.Data.List.Items); n != 1 || l.Data.List.Items[0].ID != 2 {
+		return fmt.Errorf("after Delete on two rows: %+v", l.Data.List.Items)
+	}
+	// Tab in the last cell starts a new word
+	table.SetCurrentCell(0, table.ColumnCount()-1)
+	w.enterWidget.tableKeys(func(*qt.QKeyEvent) {}, qt.NewQKeyEvent(qt.QEvent__KeyPress, int(qt.Key_Tab), qt.NoModifier))
+	if n := len(l.Data.List.Items); n != 2 {
+		return fmt.Errorf("Tab in the last cell: %d words", n)
 	}
 	return nil
 }

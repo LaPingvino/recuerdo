@@ -364,6 +364,9 @@ func (w *EnterTabWidget) connectSignals() {
 
 	// Edits in the table go into the lesson
 	w.wordsTable.OnCellChanged(w.cellChanged)
+	w.wordsTable.OnKeyPressEvent(w.tableKeys)
+	w.wordsTable.SetContextMenuPolicy(qt.CustomContextMenu)
+	w.wordsTable.OnCustomContextMenuRequested(w.tableMenu)
 
 	// Button clicks
 	w.addWordButton.OnClicked(func() {
@@ -519,16 +522,16 @@ func (w *EnterTabWidget) addNewWord() {
 	for _, it := range w.lesson.Data.List.Items {
 		nextID = max(nextID, it.ID+1)
 	}
-	newItem := lesson.WordItem{
-		ID:        nextID,
-		Questions: []string{"New Question"},
-		Answers:   []string{"New Answer"},
-		Comment:   "",
-	}
-
-	w.lesson.Data.List.Items = append(w.lesson.Data.List.Items, newItem)
+	// an empty row, ready to type in (a word without a question or answer
+	// is not asked)
+	w.lesson.Data.List.Items = append(w.lesson.Data.List.Items, lesson.WordItem{ID: nextID})
 	w.updateWordsTable()
 	w.modified()
+	row := w.wordsTable.RowCount() - 1
+	w.wordsTable.SetCurrentCell(row, 0)
+	if it := w.wordsTable.Item(row, 0); it != nil {
+		w.wordsTable.EditItem(it)
+	}
 	w.logger.Action("Added new word pair")
 }
 
@@ -582,16 +585,60 @@ func (w *EnterTabWidget) removeSelectedWord() {
 		return
 	}
 
-	currentRow := w.wordsTable.CurrentRow()
-	if currentRow >= 0 && currentRow < len(w.lesson.Data.List.Items) {
-		// Remove item from slice
-		items := w.lesson.Data.List.Items
-		w.lesson.Data.List.Items = append(items[:currentRow], items[currentRow+1:]...)
-
-		w.updateWordsTable()
-		w.modified()
-		w.logger.Action("Removed word pair at row %d", currentRow)
+	// the selected rows, or the current one
+	rows := map[int]bool{}
+	for _, it := range w.wordsTable.SelectedItems() {
+		rows[it.Row()] = true
 	}
+	current := w.wordsTable.CurrentRow()
+	if len(rows) == 0 && current >= 0 {
+		rows[current] = true
+	}
+	if len(rows) == 0 {
+		return
+	}
+	var kept []lesson.WordItem
+	for i, it := range w.lesson.Data.List.Items {
+		if !rows[i] {
+			kept = append(kept, it)
+		}
+	}
+	w.lesson.Data.List.Items = kept
+	w.updateWordsTable()
+	w.modified()
+	// the cursor stays where the words were
+	if n := w.wordsTable.RowCount(); n > 0 {
+		w.wordsTable.SetCurrentCell(min(current, n-1), 0)
+	}
+}
+
+// tableKeys are the word table's keys: Delete removes the selected words
+// (when not typing in a cell), Tab in the last cell starts a new word.
+func (w *EnterTabWidget) tableKeys(super func(*qt.QKeyEvent), e *qt.QKeyEvent) {
+	editing := w.wordsTable.State() == qt.QAbstractItemView__EditingState
+	switch k := qt.Key(e.Key()); {
+	case (k == qt.Key_Delete || k == qt.Key_Backspace) && !editing:
+		w.removeSelectedWord()
+		return
+	case k == qt.Key_Tab && w.wordsTable.CurrentRow() == w.wordsTable.RowCount()-1 &&
+		w.wordsTable.CurrentColumn() == w.wordsTable.ColumnCount()-1:
+		w.addNewWord()
+		return
+	}
+	super(e)
+}
+
+// tableMenu is the word table's right-click menu.
+func (w *EnterTabWidget) tableMenu(pos *qt.QPoint) {
+	menu := qt.NewQMenu(w.QWidget)
+	menu.AddActionWithText(i18n.T("Add Word")).OnTriggered(w.addNewWord)
+	remove := menu.AddActionWithText(i18n.T("Remove Word"))
+	remove.SetEnabled(w.wordsTable.CurrentRow() >= 0)
+	remove.OnTriggered(w.removeSelectedWord)
+	formula := menu.AddActionWithText("∑ " + i18n.T("Formula builder"))
+	formula.SetEnabled(w.formulaButton.IsEnabled())
+	formula.OnTriggered(func() { w.editWithFormulaPad(nil) })
+	menu.ExecWithPos(w.wordsTable.Viewport().MapToGlobalWithQPoint(pos))
 }
 
 // TeachingResult represents the result of answering a single question
