@@ -4,6 +4,7 @@ package tts
 import (
 	"os"
 	"path/filepath"
+	"runtime"
 	"testing"
 	"time"
 )
@@ -313,6 +314,9 @@ func needAudio(t *testing.T) {
 // An utterance interrupted by the next does not clear that one's state:
 // Stop still stops it.
 func TestStopAfterInterruptedUtterance(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("the stand-in espeak is a shell script")
+	}
 	dir := t.TempDir()
 	if err := os.WriteFile(filepath.Join(dir, "espeak"), []byte("#!/bin/sh\nexec sleep 10\n"), 0o755); err != nil {
 		t.Fatal(err)

@@ -3,6 +3,7 @@ package lesson
 import (
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 )
@@ -128,7 +129,8 @@ func TestSaveIsAtomic(t *testing.T) {
 	// a directory the save cannot write in: an error, the file unchanged
 	os.Chmod(dir, 0o500)
 	defer os.Chmod(dir, 0o700)
-	if os.Getuid() != 0 {
+	// (Windows does not stop writes in a read-only directory, nor does root)
+	if os.Getuid() != 0 && runtime.GOOS != "windows" {
 		if err := NewFileSaver().SaveFile(data, path); err == nil {
 			t.Error("a save that could not be written reported success")
 		}
