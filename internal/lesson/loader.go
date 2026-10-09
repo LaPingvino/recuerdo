@@ -29,7 +29,18 @@ func NewFileLoader() *FileLoader {
 }
 
 // LoadFile loads a lesson file and returns lesson data
-func (fl *FileLoader) LoadFile(filePath string) (*LessonData, error) {
+func (fl *FileLoader) LoadFile(filePath string) (data *LessonData, err error) {
+	// a broken file is an error, not a crash that takes the unsaved
+	// lessons in the other tabs with it
+	defer func() {
+		if r := recover(); r != nil {
+			data, err = nil, fmt.Errorf("%s cannot be read: %v", filepath.Base(filePath), r)
+		}
+	}()
+	return fl.loadFile(filePath)
+}
+
+func (fl *FileLoader) loadFile(filePath string) (*LessonData, error) {
 	log.Printf("[ACTION] FileLoader.LoadFile() - loading file: %s", filePath)
 
 	ext := strings.ToLower(filepath.Ext(filePath))
@@ -166,6 +177,10 @@ func (fl *FileLoader) loadTextFile(filePath string) (*LessonData, error) {
 
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
+		if t, ok := strings.CutPrefix(line, "# Title: "); ok { // as Recuerdo saves it
+			lessonData.List.Title = strings.TrimSpace(t)
+			continue
+		}
 		if line == "" || strings.HasPrefix(line, "#") {
 			continue // Skip empty lines and comments
 		}

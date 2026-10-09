@@ -33,7 +33,9 @@ type vocaReader struct {
 func (r *vocaReader) next(n int) []byte {
 	if r.err != nil || n < 0 || r.pos+n > len(r.data) {
 		r.err = errVocaShort
-		return make([]byte, max(n, 0))
+		// zeros for the reader to go on with, never as many as the
+		// (broken) file asks: n can be anything, 2^62 crashed the app
+		return make([]byte, min(max(n, 0), 8))
 	}
 	b := r.data[r.pos : r.pos+n]
 	r.pos += n

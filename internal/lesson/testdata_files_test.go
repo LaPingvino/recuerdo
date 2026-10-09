@@ -1,6 +1,7 @@
 package lesson
 
 import (
+	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -79,5 +80,103 @@ func TestOTTPKeepsMapGeo(t *testing.T) {
 	}
 	if img, _ := back.Resources[MapImageResource].([]byte); len(img) == 0 {
 		t.Error("map lost")
+	}
+}
+
+// A broken lesson file is an error, never a crash: a .wdl asking for an
+// impossible length, a truncated one.
+func TestBrokenFilesDoNotCrash(t *testing.T) {
+	good, err := os.ReadFile("../../testdata/legacy_files/application_x-oriente-voca.voca4.0.wdl")
+	if err != nil {
+		t.Fatal(err)
+	}
+	dir := t.TempDir()
+	for name, data := range map[string][]byte{
+		"huge.wdl":  append(append([]byte(nil), good[:20]...), 0x3f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff),
+		"short.wdl": good[:len(good)/2],
+		"empty.wdl": nil,
+	} {
+		p := filepath.Join(dir, name)
+		os.WriteFile(p, data, 0o644)
+		func() {
+			defer func() {
+				if r := recover(); r != nil {
+					t.Errorf("%s: panic %v", name, r)
+				}
+			}()
+			NewFileLoader().LoadFile(p) // an error or a partial list, but no panic
+		}()
+	}
+}
+
+// Saving is atomic: a failed save is an error and leaves the old file;
+// a symlink stays a link.
+func TestSaveIsAtomic(t *testing.T) {
+	data, err := NewFileLoader().LoadFile("../../testdata/lessons/sample.csv")
+	if err != nil {
+		t.Fatal(err)
+	}
+	dir := t.TempDir()
+	path := filepath.Join(dir, "words.csv")
+	if err := NewFileSaver().SaveFile(data, path); err != nil {
+		t.Fatal(err)
+	}
+	before, _ := os.ReadFile(path)
+	if back, err := NewFileLoader().LoadFile(path); err != nil || len(back.List.Items) != len(data.List.Items) {
+		t.Fatalf("round trip: %v", err)
+	}
+	// a directory the save cannot write in: an error, the file unchanged
+	os.Chmod(dir, 0o500)
+	defer os.Chmod(dir, 0o700)
+	if os.Getuid() != 0 {
+		if err := NewFileSaver().SaveFile(data, path); err == nil {
+			t.Error("a save that could not be written reported success")
+		}
+		if after, _ := os.ReadFile(path); string(after) != string(before) {
+			t.Error("a failed save changed the file")
+		}
+	}
+	os.Chmod(dir, 0o700)
+	link := filepath.Join(dir, "link.csv")
+	if err := os.Symlink(path, link); err == nil {
+		if err := NewFileSaver().SaveFile(data, link); err != nil {
+			t.Fatal(err)
+		}
+		if fi, _ := os.Lstat(link); fi.Mode()&os.ModeSymlink == 0 {
+			t.Error("saving through a symlink replaced it")
+		}
+	}
+	if left, _ := filepath.Glob(filepath.Join(dir, ".*saving*")); len(left) > 0 {
+		t.Errorf("temporary files left: %v", left)
+	}
+}
+
+// A lesson saved as .txt reads back the same (Ctrl+S on a .txt lesson
+// saves in place).
+func TestTextRoundTrip(t *testing.T) {
+	data := NewLessonData()
+	data.List.Title = "Dieren"
+	data.List.Items = []WordItem{
+		{ID: 0, Questions: []string{"hond"}, Answers: []string{"dog"}},
+		{ID: 1, Questions: []string{"kat", "poes"}, Answers: []string{"cat"}},
+		{ID: 2, Questions: []string{"olifant"}, Answers: []string{"elephant", "jumbo"}},
+		{ID: 3, Questions: []string{"één"}, Answers: []string{"one"}},
+	}
+	path := filepath.Join(t.TempDir(), "dieren.txt")
+	if err := NewFileSaver().SaveFile(data, path); err != nil {
+		t.Fatal(err)
+	}
+	back, err := NewFileLoader().LoadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if back.List.Title != "Dieren" || len(back.List.Items) != 4 {
+		t.Fatalf("read back %q, %d items", back.List.Title, len(back.List.Items))
+	}
+	for i, it := range back.List.Items {
+		want := data.List.Items[i]
+		if strings.Join(it.Questions, "|") != strings.Join(want.Questions, "|") || strings.Join(it.Answers, "|") != strings.Join(want.Answers, "|") {
+			t.Errorf("item %d: %v = %v, want %v = %v", i, it.Questions, it.Answers, want.Questions, want.Answers)
+		}
 	}
 }

@@ -12,6 +12,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 // FileSaver provides file saving functionality for various lesson formats
@@ -26,7 +27,39 @@ func NewFileSaver() *FileSaver {
 
 // SaveFile saves lesson data to a file in the appropriate format based on extension
 func (fs *FileSaver) SaveFile(lessonData *LessonData, filePath string) error {
-	ext := strings.ToLower(filepath.Ext(filePath))
+	// written next to it and put in its place only when complete: a
+	// failed save (a full disk, a crash) leaves the old file as it was
+	if real, err := filepath.EvalSymlinks(filePath); err == nil {
+		filePath = real // a link stays a link
+	}
+	mode := os.FileMode(0o644)
+	if fi, err := os.Stat(filePath); err == nil {
+		mode = fi.Mode().Perm()
+	}
+	ext := filepath.Ext(filePath)
+	if strings.HasSuffix(strings.ToLower(filePath), ".pau.gz") {
+		ext = ".pau.gz"
+	}
+	tmp := filepath.Join(filepath.Dir(filePath), "."+filepath.Base(filePath)+".saving"+ext)
+	if err := fs.saveFile(lessonData, tmp, filePath); err != nil {
+		os.Remove(tmp)
+		return err
+	}
+	if err := os.Chmod(tmp, mode); err != nil {
+		os.Remove(tmp)
+		return err
+	}
+	if err := os.Rename(tmp, filePath); err != nil {
+		os.Remove(tmp)
+		return err
+	}
+	return nil
+}
+
+// saveFile writes to path in the format of target's extension.
+func (fs *FileSaver) saveFile(lessonData *LessonData, path, target string) error {
+	filePath := path
+	ext := strings.ToLower(filepath.Ext(target))
 
 	log.Printf("[ACTION] FileSaver.SaveFile() - saving to %s format", ext)
 
@@ -63,7 +96,7 @@ func (fs *FileSaver) SaveFile(lessonData *LessonData, filePath string) error {
 }
 
 // saveCSVFile saves lesson data as CSV format with proper headers and encoding
-func (fs *FileSaver) saveCSVFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveCSVFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveCSVFile() - saving CSV file")
 
 	file, err := os.Create(filePath)
@@ -71,10 +104,20 @@ func (fs *FileSaver) saveCSVFile(lessonData *LessonData, filePath string) error 
 		log.Printf("[ERROR] Failed to create CSV file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	writer := csv.NewWriter(file)
-	defer writer.Flush()
+	defer func() {
+		writer.Flush()
+		if ferr := writer.Error(); err == nil {
+			err = ferr
+		}
+	}()
 
 	// Determine header names
 	questionHeader := lessonData.List.QuestionLanguage
@@ -181,7 +224,7 @@ type OpenTeacherWord struct {
 }
 
 // saveOpenTeacherFile saves lesson data in OpenTeacher (.ot) XML format
-func (fs *FileSaver) saveOpenTeacherFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveOpenTeacherFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveOpenTeacherFile() - saving OpenTeacher file")
 
 	// Calculate word statistics
@@ -225,7 +268,12 @@ func (fs *FileSaver) saveOpenTeacherFile(lessonData *LessonData, filePath string
 		log.Printf("[ERROR] Failed to create OpenTeacher file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	// Write XML header
 	if _, err := file.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n"); err != nil {
@@ -245,7 +293,7 @@ func (fs *FileSaver) saveOpenTeacherFile(lessonData *LessonData, filePath string
 }
 
 // saveTextFile saves lesson data in plain text format
-func (fs *FileSaver) saveTextFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveTextFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveTextFile() - saving text file")
 
 	file, err := os.Create(filePath)
@@ -253,51 +301,36 @@ func (fs *FileSaver) saveTextFile(lessonData *LessonData, filePath string) error
 		log.Printf("[ERROR] Failed to create text file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	writer := bufio.NewWriter(file)
-	defer writer.Flush()
+	defer func() {
+		if ferr := writer.Flush(); err == nil {
+			err = ferr
+		}
+	}()
 
-	// Write metadata header
+	// "question = answer", aligned on the "=", which Recuerdo reads back
+	// (the title and languages as comments); several words with "; "
 	if lessonData.List.Title != "" {
-		fmt.Fprintf(writer, "%s\n\n", lessonData.List.Title)
+		fmt.Fprintf(writer, "# Title: %s\n", lessonData.List.Title)
 	}
-
-	// Write language info
-	if lessonData.List.QuestionLanguage != "" && lessonData.List.AnswerLanguage != "" {
-		fmt.Fprintf(writer, "%s - %s\n\n", lessonData.List.QuestionLanguage, lessonData.List.AnswerLanguage)
+	if lessonData.List.QuestionLanguage != "" || lessonData.List.AnswerLanguage != "" {
+		fmt.Fprintf(writer, "# %s - %s\n", lessonData.List.QuestionLanguage, lessonData.List.AnswerLanguage)
 	}
-
-	if len(lessonData.List.Items) == 0 {
-		log.Printf("[SUCCESS] FileSaver.saveTextFile() - saved empty text file")
-		return nil
-	}
-
-	// Calculate maximum question length for alignment
-	maxLen := 0
+	fmt.Fprintln(writer)
+	width := 0
 	for _, item := range lessonData.List.Items {
-		questionText := strings.Join(item.Questions, ", ")
-		if len(questionText) > maxLen {
-			maxLen = len(questionText)
-		}
+		width = max(width, utf8.RuneCountInString(strings.Join(item.Questions, "; ")))
 	}
-	maxLen += 1 // Add one space
-	if maxLen < 8 {
-		maxLen = 8 // Minimum spacing
-	}
-
-	// Write lesson items with aligned formatting
 	for _, item := range lessonData.List.Items {
-		questionText := strings.Join(item.Questions, ", ")
-		answerText := strings.Join(item.Answers, ", ")
-
-		// Create spacing
-		spaces := maxLen - len(questionText)
-		if spaces < 1 {
-			spaces = 1
-		}
-
-		fmt.Fprintf(writer, "%s%s%s\n", questionText, strings.Repeat(" ", spaces), answerText)
+		q := strings.Join(item.Questions, "; ")
+		fmt.Fprintf(writer, "%s%s = %s\n", q, strings.Repeat(" ", width-utf8.RuneCountInString(q)), strings.Join(item.Answers, "; "))
 	}
 
 	log.Printf("[SUCCESS] FileSaver.saveTextFile() - saved %d items to text file", len(lessonData.List.Items))
@@ -305,7 +338,7 @@ func (fs *FileSaver) saveTextFile(lessonData *LessonData, filePath string) error
 }
 
 // saveJSONFile saves lesson data in JSON format
-func (fs *FileSaver) saveJSONFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveJSONFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveJSONFile() - saving JSON file")
 
 	file, err := os.Create(filePath)
@@ -313,7 +346,12 @@ func (fs *FileSaver) saveJSONFile(lessonData *LessonData, filePath string) error
 		log.Printf("[ERROR] Failed to create JSON file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	encoder := json.NewEncoder(file)
 	encoder.SetIndent("", "  ")
@@ -457,7 +495,7 @@ func (fs *FileSaver) calculateWrongStats(test Test) (wrongOnce, wrongTwice, wron
 }
 
 // saveTeach2000File saves lesson data in Teach2000 (.t2k) format
-func (fs *FileSaver) saveTeach2000File(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveTeach2000File(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveTeach2000File() - saving Teach2000 file")
 
 	// Calculate word statistics
@@ -548,7 +586,12 @@ func (fs *FileSaver) saveTeach2000File(lessonData *LessonData, filePath string) 
 		log.Printf("[ERROR] Failed to create Teach2000 file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	// Write XML header with comment
 	header := `<?xml version="1.0" encoding="UTF-8"?>
@@ -621,7 +664,7 @@ type KVTMLLessonEntry struct {
 }
 
 // saveKVTMLFile saves lesson data in KVTML (.kvtml) format
-func (fs *FileSaver) saveKVTMLFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveKVTMLFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveKVTMLFile() - saving KVTML file")
 
 	// Create KVTML XML structure
@@ -710,7 +753,12 @@ func (fs *FileSaver) saveKVTMLFile(lessonData *LessonData, filePath string) erro
 		log.Printf("[ERROR] Failed to create KVTML file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	// Write XML header with DOCTYPE
 	header := `<?xml version="1.0" encoding="UTF-8"?>
@@ -733,7 +781,7 @@ func (fs *FileSaver) saveKVTMLFile(lessonData *LessonData, filePath string) erro
 }
 
 // saveHTMLFile saves lesson data in HTML format with modern styling
-func (fs *FileSaver) saveHTMLFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveHTMLFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveHTMLFile() - saving HTML file")
 
 	file, err := os.Create(filePath)
@@ -741,10 +789,19 @@ func (fs *FileSaver) saveHTMLFile(lessonData *LessonData, filePath string) error
 		log.Printf("[ERROR] Failed to create HTML file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	writer := bufio.NewWriter(file)
-	defer writer.Flush()
+	defer func() {
+		if ferr := writer.Flush(); err == nil {
+			err = ferr
+		}
+	}()
 
 	// Write HTML header with modern CSS styling
 	fmt.Fprintf(writer, `<!DOCTYPE html>
@@ -929,7 +986,7 @@ func getColumnHeader(language, fallback string) string {
 }
 
 // saveLaTeXFile saves lesson data in LaTeX format for academic/print use
-func (fs *FileSaver) saveLaTeXFile(lessonData *LessonData, filePath string) error {
+func (fs *FileSaver) saveLaTeXFile(lessonData *LessonData, filePath string) (err error) {
 	log.Printf("[ACTION] FileSaver.saveLaTeXFile() - saving LaTeX file")
 
 	file, err := os.Create(filePath)
@@ -937,10 +994,19 @@ func (fs *FileSaver) saveLaTeXFile(lessonData *LessonData, filePath string) erro
 		log.Printf("[ERROR] Failed to create LaTeX file: %v", err)
 		return err
 	}
-	defer file.Close()
+	// a failed write (a full disk) must not pass for a save
+	defer func() {
+		if cerr := file.Close(); err == nil {
+			err = cerr
+		}
+	}()
 
 	writer := bufio.NewWriter(file)
-	defer writer.Flush()
+	defer func() {
+		if ferr := writer.Flush(); err == nil {
+			err = ferr
+		}
+	}()
 
 	// Write LaTeX document header
 	fmt.Fprintf(writer, `\documentclass[12pt,a4paper]{article}

@@ -591,8 +591,8 @@ func TestFileSaver_SaveTextFile(t *testing.T) {
 		t.Error("File should contain answer text")
 	}
 
-	if !strings.Contains(text, "auf wiedersehen, tschüss") {
-		t.Error("File should contain multiple answers joined with comma")
+	if !strings.Contains(text, "auf wiedersehen; tschüss") {
+		t.Error("File should contain multiple answers joined with \"; \"")
 	}
 
 	// Verify alignment (longer questions should have proper spacing)
