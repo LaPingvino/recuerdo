@@ -261,11 +261,18 @@ func checkTeachTab() error {
 	if !strings.Contains(question(), "een") || !w.submitButton.IsEnabled() || w.nextButton.IsEnabled() {
 		return fmt.Errorf("start: question %q", question())
 	}
+	// screen readers hear the question: the focused answer field is named after it
+	if n := w.answerEdit.AccessibleName(); n != "Answer to: een" {
+		return fmt.Errorf("answer field named %q", n)
+	}
 
 	// right: moves on at once
 	answer("one")
 	if !strings.Contains(question(), "twee") || w.answerEdit.Text() != "" {
 		return fmt.Errorf("after a right answer: question %q, input %q", question(), w.answerEdit.Text())
+	}
+	if n := w.answerEdit.AccessibleName(); n != "Right! Answer to: twee" {
+		return fmt.Errorf("after a right answer, the answer field is named %q", n)
 	}
 
 	// wrong: correction shown, input locked, Continue and Correct anyway possible
@@ -273,6 +280,9 @@ func checkTeachTab() error {
 	if !strings.Contains(w.resultLabel.Text(), "two") || w.answerEdit.IsEnabled() ||
 		w.submitButton.IsEnabled() || !w.nextButton.IsEnabled() || !w.correctButton.IsEnabled() {
 		return fmt.Errorf("after a wrong answer: %q", w.resultLabel.Text())
+	}
+	if d := w.nextButton.AccessibleDescription(); !strings.Contains(d, "two") {
+		return fmt.Errorf("Continue (where the focus goes) describes %q", d)
 	}
 	w.correctButton.Click() // "I was right"
 	if !strings.Contains(question(), "drie") || !w.answerEdit.IsEnabled() || w.correctButton.IsEnabled() {
@@ -297,6 +307,9 @@ func checkTeachTab() error {
 	}
 	if !w.startButton.IsEnabled() || w.skipButton.IsEnabled() {
 		return fmt.Errorf("buttons after the end")
+	}
+	if d := w.startButton.AccessibleDescription(); !strings.Contains(d, "3/3") {
+		return fmt.Errorf("the score for screen readers: %q", d)
 	}
 	return nil
 }

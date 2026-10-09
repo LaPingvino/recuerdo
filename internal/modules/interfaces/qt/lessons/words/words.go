@@ -768,17 +768,20 @@ func (w *TeachTabWidget) setupUI() {
 		optionsLayout.AddWidget(l.QWidget)
 		return l
 	}
-	addLabel(i18n.T("Lesson type:"))
+	lessonTypeComboLabel := addLabel(i18n.T("Lesson type:"))
 	w.lessonTypeCombo = qt.NewQComboBox(w.QWidget)
+	lessonTypeComboLabel.SetBuddy(w.lessonTypeCombo.QWidget) // a screen reader names the list after its label
 	valuecombo.Fill(w.lessonTypeCombo, teaching.LessonTypes)
 	w.lessonTypeCombo.SetToolTip(i18n.T("All once: every word once. Smart: wrong words come back soon and at the end. Interval: words come back until you know them."))
 	optionsLayout.AddWidget(w.lessonTypeCombo.QWidget)
-	addLabel(i18n.T("Order:"))
+	orderComboLabel := addLabel(i18n.T("Order:"))
 	w.orderCombo = qt.NewQComboBox(w.QWidget)
+	orderComboLabel.SetBuddy(w.orderCombo.QWidget) // a screen reader names the list after its label
 	valuecombo.Fill(w.orderCombo, teaching.Orders)
 	optionsLayout.AddWidget(w.orderCombo.QWidget)
-	addLabel(i18n.T("Words:"))
+	wordsComboLabel := addLabel(i18n.T("Words:"))
 	w.wordsCombo = qt.NewQComboBox(w.QWidget)
+	wordsComboLabel.SetBuddy(w.wordsCombo.QWidget) // a screen reader names the list after its label
 	valuecombo.Fill(w.wordsCombo, teaching.WordChoices)
 	w.wordsCombo.SetToolTip(i18n.T("Hard words: those answered wrong more often than right, or not practised yet. Never answered correctly: those without a right answer in earlier sessions."))
 	optionsLayout.AddWidget(w.wordsCombo.QWidget)
@@ -786,8 +789,9 @@ func (w *TeachTabWidget) setupUI() {
 	layout.AddLayout2(optionsLayout.QLayout, 0)
 	// second row: how to answer, and the start button
 	optionsLayout = qt.NewQHBoxLayout2()
-	addLabel(i18n.T("Mode:"))
+	modeComboLabel := addLabel(i18n.T("Mode:"))
 	w.modeCombo = qt.NewQComboBox(w.QWidget)
+	modeComboLabel.SetBuddy(w.modeCombo.QWidget) // a screen reader names the list after its label
 	valuecombo.Fill(w.modeCombo, teaching.TeachTypes)
 	w.modeCombo.SetToolTip(i18n.T("Typing: type the answer. Shuffle answer: with the letters of the answer as a hint. Repeat answer: the answer is shown first, then typed from memory."))
 	optionsLayout.AddWidget(w.modeCombo.QWidget)
@@ -842,6 +846,7 @@ func (w *TeachTabWidget) setupUI() {
 	w.statusLabel.SetStyleSheet("color: palette(dark);")
 	layout.AddWidget(w.statusLabel.QWidget)
 	w.progressBar = qt.NewQProgressBar(w.QWidget)
+	w.progressBar.SetAccessibleName(i18n.T("Progress"))
 	w.progressBar.SetTextVisible(false)
 	w.progressBar.SetMaximumHeight(6)
 	layout.AddWidget(w.progressBar.QWidget)
@@ -900,6 +905,7 @@ func (w *TeachTabWidget) setupUI() {
 	answerLayout.AddWidget(w.answerEdit.QWidget)
 	w.unicodeButton = qt.NewQPushButton(w.QWidget)
 	w.unicodeButton.SetText("ä é ß…")
+	w.unicodeButton.SetAccessibleName(i18n.T("Special characters"))
 	w.unicodeButton.SetToolTip(i18n.T("Show or hide special characters: accented letters and other scripts"))
 	w.unicodeButton.SetCheckable(true)
 	w.unicodeButton.SetEnabled(false)
@@ -1099,6 +1105,7 @@ func (w *TeachTabWidget) showCurrentQuestion() {
 
 	question := composer.Compose(checker.StoredAnswers(item.Questions))
 	w.questionLabel.SetText(richtext.RichWithMath(question))
+	w.announceQuestion(question)
 	w.pronounce(question)
 	w.showModeExtras()
 	w.answerEdit.Clear()
@@ -1306,6 +1313,21 @@ func (w *TeachTabWidget) feedback(text string, right bool) {
 	w.resultLabel.SetText(text)
 	w.resultLabel.SetStyleSheet(style)
 	w.resultLabel.SetVisible(true)
+	// for screen readers: Continue, where the focus goes after a wrong
+	// answer, says it; a right one is said with the next question, which
+	// is already asked (the answer field is named after it)
+	plain := richtext.Plain(text)
+	w.nextButton.SetAccessibleDescription(plain)
+	if right && w.answerEdit.IsEnabled() {
+		w.answerEdit.SetAccessibleName(plain + " " + w.answerEdit.AccessibleName())
+	}
+}
+
+// announceQuestion has screen readers say the question: the answer field,
+// which keeps the focus, is named after it (a name change of the focused
+// widget is spoken).
+func (w *TeachTabWidget) announceQuestion(question string) {
+	w.answerEdit.SetAccessibleName(fmt.Sprintf(i18n.T("Answer to: %s"), richtext.Plain(question)))
 }
 
 // TypingUI, called by the typing controller.
@@ -1401,6 +1423,9 @@ func (w *TeachTabWidget) finishTeaching() {
 		text += fmt.Sprintf(i18n.T("\nGrade (%s): %s"), notation, grade)
 	}
 	w.questionLabel.SetText(text)
+	// screen readers: the score with the button the focus goes to
+	w.startButton.SetAccessibleDescription(text)
+	w.startButton.SetFocus()
 
 	w.answerEdit.SetEnabled(false)
 	w.submitButton.SetEnabled(false)
