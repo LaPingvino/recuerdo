@@ -63,6 +63,10 @@ func (w *TopoLessonWidget) chooseOSMMap() {
 	buttons.OnRejected(func() { d.Reject() })
 	layout.AddWidget(buttons.QWidget)
 
+	// closing the dialog (Cancel, Escape) stops what it is doing: a map
+	// still being made must not replace the lesson's afterwards
+	ctx, cancel := context.WithCancel(w.alive)
+	defer cancel()
 	var areas []osm.Area
 	busy := func(on bool) {
 		searchBtn.SetEnabled(!on)
@@ -76,8 +80,11 @@ func (w *TopoLessonWidget) chooseOSMMap() {
 		busy(true)
 		status.SetText(i18n.T("Searching…"))
 		go func() {
-			found, err := osm.Search(context.Background(), q)
+			found, err := osm.Search(ctx, q)
 			mainthread.Start(func() {
+				if ctx.Err() != nil {
+					return
+				}
 				busy(false)
 				results.Clear()
 				areas = nil
@@ -112,8 +119,12 @@ func (w *TopoLessonWidget) chooseOSMMap() {
 		g := osm.Fit(a, mapSide)
 		busy(true)
 		go func() {
-			img, err := osm.Map(context.Background(), g, a, s, func(done, all int) {
-				mainthread.Start(func() { status.SetText(i18n.Tf("Making the map: %d of %d", done, all)) })
+			img, err := osm.Map(ctx, g, a, s, func(done, all int) {
+				mainthread.Start(func() {
+					if ctx.Err() == nil {
+						status.SetText(i18n.Tf("Making the map: %d of %d", done, all))
+					}
+				})
 			})
 			var data []byte
 			if err == nil {
@@ -123,6 +134,9 @@ func (w *TopoLessonWidget) chooseOSMMap() {
 				}
 			}
 			mainthread.Start(func() {
+				if ctx.Err() != nil {
+					return
+				}
 				busy(false)
 				if err != nil {
 					status.SetText(i18n.Tf("Could not make the map: %v", err))
@@ -134,6 +148,8 @@ func (w *TopoLessonWidget) chooseOSMMap() {
 		}()
 	})
 	d.Exec()
+	cancel()
+	d.DeleteLater()
 }
 
 // useOSMMap makes a map made from OpenStreetMap the lesson's, with where
@@ -168,8 +184,11 @@ func (w *TopoLessonWidget) addFromOSM(name string) bool {
 	}
 	w.enterHint.SetText(i18n.Tf("Looking for %s…", name))
 	go func() {
-		found, err := osm.SearchIn(context.Background(), name, g)
+		found, err := osm.SearchIn(w.alive, name, g)
 		mainthread.Start(func() {
+			if w.alive.Err() != nil { // the tab was closed meanwhile
+				return
+			}
 			if err != nil {
 				w.enterHint.SetText(fmt.Sprintf(i18n.T("Could not look it up (%v): click where %s is on the map."), err, name))
 				return

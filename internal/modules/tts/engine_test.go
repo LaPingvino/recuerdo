@@ -3,6 +3,7 @@ package tts
 
 import (
 	"os"
+	"path/filepath"
 	"testing"
 	"time"
 )
@@ -163,37 +164,18 @@ func TestAsyncSpeech(t *testing.T) {
 		t.Skip("TTS not available on this system, skipping async speech tests")
 	}
 
-	// Test async speech with callback
-	testText := "Async test speech."
-	callbackCalled := false
-	var callbackError error
-
-	err := engine.SpeakAsync(testText, func(err error) {
-		callbackCalled = true
-		callbackError = err
-	})
-
-	if err != nil {
+	// Test async speech with callback (on another goroutine: a channel)
+	done := make(chan error, 1)
+	if err := engine.SpeakAsync("Async test speech.", func(err error) { done <- err }); err != nil {
 		t.Errorf("Async speech start failed: %v", err)
 	}
-
-	// Wait for callback
-	timeout := time.After(10 * time.Second)
-	ticker := time.Tick(100 * time.Millisecond)
-
-	for {
-		select {
-		case <-timeout:
-			t.Error("Async speech callback timeout")
-			return
-		case <-ticker:
-			if callbackCalled {
-				if callbackError != nil {
-					t.Errorf("Async speech callback error: %v", callbackError)
-				}
-				return
-			}
+	select {
+	case err := <-done:
+		if err != nil {
+			t.Errorf("Async speech callback error: %v", err)
 		}
+	case <-time.After(10 * time.Second):
+		t.Error("Async speech callback timeout")
 	}
 }
 
@@ -274,6 +256,7 @@ func TestWindowsRateConversion(t *testing.T) {
 }
 
 func TestWaitUntilDone(t *testing.T) {
+	needAudio(t)
 	engine := NewEngine()
 
 	if !engine.IsAvailable() {
@@ -315,12 +298,45 @@ func BenchmarkVoiceLoading(b *testing.B) {
 	}
 }
 
-// needAudio skips tests that play speech on machines without sound, such
-// as CI runners (where the engine exists but playback fails); set
-// RECUERDO_TEST_AUDIO=1 to run them there anyway.
+// needAudio skips tests that play speech out loud unless
+// RECUERDO_TEST_AUDIO=1: a test run must not start talking (and CI
+// runners have no sound at all).
 func needAudio(t *testing.T) {
 	t.Helper()
-	if os.Getenv("CI") != "" && os.Getenv("RECUERDO_TEST_AUDIO") == "" {
-		t.Skip("no audio output on CI; set RECUERDO_TEST_AUDIO=1 to play speech")
+	// a test run must not start talking out loud (on CI there is no
+	// sound at all)
+	if os.Getenv("RECUERDO_TEST_AUDIO") == "" {
+		t.Skip("plays speech: set RECUERDO_TEST_AUDIO=1 to run")
+	}
+}
+
+// An utterance interrupted by the next does not clear that one's state:
+// Stop still stops it.
+func TestStopAfterInterruptedUtterance(t *testing.T) {
+	dir := t.TempDir()
+	if err := os.WriteFile(filepath.Join(dir, "espeak"), []byte("#!/bin/sh\nexec sleep 10\n"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("PATH", dir+string(os.PathListSeparator)+os.Getenv("PATH"))
+	e := NewEngine()
+	e.backend, e.voiceID = "espeak", "en"
+	if err := e.Speak("first"); err != nil {
+		t.Fatal(err)
+	}
+	time.Sleep(100 * time.Millisecond)
+	if err := e.Speak("second"); err != nil {
+		t.Fatal(err)
+	}
+	time.Sleep(300 * time.Millisecond) // the first ends (killed), its cleanup runs
+	if !e.IsSpeaking() {
+		t.Fatal("the second utterance no longer counts as speaking")
+	}
+	e.Stop()
+	deadline := time.Now().Add(3 * time.Second)
+	for e.IsSpeaking() && time.Now().Before(deadline) {
+		time.Sleep(20 * time.Millisecond)
+	}
+	if e.IsSpeaking() {
+		t.Error("Stop did not stop the second utterance")
 	}
 }

@@ -62,7 +62,9 @@ type GuiModule struct {
 	askSave func(name string) qt.QMessageBox__StandardButton
 	// askLossy asks whether to save in a format that leaves things out (a
 	// test answers it)
-	askLossy      func(path string, losses []string) bool
+	askLossy func(path string, losses []string) bool
+	// tabPractice is each tab's lesson widget, to end its practice
+	tabPractice   map[unsafe.Pointer]practice
 	addingTab     bool
 	showingDialog bool
 
@@ -422,6 +424,7 @@ func (mod *GuiModule) mayQuit() bool {
 		return true
 	}
 	for i := 0; i < mod.tabWidget.Count(); i++ {
+		mod.keepPractice(i)
 		title := mod.tabWidget.TabText(i)
 		if !strings.HasPrefix(title, "*") {
 			continue
@@ -470,6 +473,7 @@ func (mod *GuiModule) closeTab(i int) {
 	if mod.tabWidget == nil || i < 0 || i >= mod.tabWidget.Count() {
 		return
 	}
+	mod.keepPractice(i)
 	if strings.HasPrefix(mod.tabWidget.TabText(i), "*") {
 		mod.tabWidget.SetCurrentIndex(i)
 		switch mod.ask()(strings.TrimPrefix(mod.tabWidget.TabText(i), "*")) {
@@ -485,6 +489,7 @@ func (mod *GuiModule) closeTab(i int) {
 	}
 	w := mod.tabWidget.Widget(i)
 	delete(mod.tabLessons, w.UnsafePointer())
+	delete(mod.tabPractice, w.UnsafePointer())
 	mod.tabWidget.RemoveTab(i)
 	w.DeleteLater()
 	if mod.tabWidget.Count() == 0 {
@@ -868,11 +873,13 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 		topoWidget := topo.NewTopoLessonWidget(lesson, mod.mainWindow.QWidget)
 		lessonWidget = topoWidget.QWidget
 		topoWidget.SetOnModified(func() { mod.markModified(lessonWidget) })
+		mod.rememberPractice(lessonWidget, topoWidget)
 	case "media":
 		mod.logger.Info("Creating media lesson widget for: %s", lesson.Path)
 		mediaWidget := media.NewMediaLessonWidget(lesson, mod.mainWindow.QWidget)
 		lessonWidget = mediaWidget.QWidget
 		mediaWidget.SetOnModified(func() { mod.markModified(lessonWidget) })
+		mod.rememberPractice(lessonWidget, mediaWidget)
 	case "words":
 		fallthrough
 	default:
@@ -890,6 +897,7 @@ func (mod *GuiModule) createLessonWidget(lesson *lesson.Lesson) *qt.QWidget {
 			mod.tabWords = map[unsafe.Pointer]*words.WordsLessonWidget{}
 		}
 		mod.tabWords[wordsWidget.QWidget.UnsafePointer()] = wordsWidget
+		mod.rememberPractice(lessonWidget, wordsWidget)
 	}
 
 	mod.logger.Info("Created lesson widget for: %s", lesson.Path)
@@ -1057,6 +1065,29 @@ func (mod *GuiModule) currentLesson() (*lesson.Lesson, int) {
 		return nil, -1
 	}
 	return mod.tabLessons[mod.tabWidget.Widget(i).UnsafePointer()], i
+}
+
+// practice is a lesson widget whose practice can be ended, keeping the
+// answers given so far.
+type practice interface{ KeepPractice() }
+
+// rememberPractice records the lesson widget of a tab.
+func (mod *GuiModule) rememberPractice(tab *qt.QWidget, p practice) {
+	if mod.tabPractice == nil {
+		mod.tabPractice = map[unsafe.Pointer]practice{}
+	}
+	mod.tabPractice[tab.UnsafePointer()] = p
+}
+
+// keepPractice ends the practice running in tab i, if any, before the
+// lesson closes: its answers are kept as a test, and the lesson counts as
+// changed, so closing asks whether to save it (they used to be lost
+// without a word).
+func (mod *GuiModule) keepPractice(i int) {
+	w := mod.tabWidget.Widget(i)
+	if p, ok := mod.tabPractice[w.UnsafePointer()]; ok {
+		p.KeepPractice()
+	}
 }
 
 // markModified puts a "*" before the title of the tab showing widget.

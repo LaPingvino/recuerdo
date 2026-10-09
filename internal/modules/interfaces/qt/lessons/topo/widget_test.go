@@ -44,6 +44,7 @@ func TestMain(m *testing.M) {
 	os.Setenv("RECUERDO_DATA", filepath.Join("..", "..", "..", "..", "..", ".."))
 	qt.NewQApplication([]string{"topo-test"})
 	drive()
+	driveAlive()
 	os.Exit(m.Run())
 }
 
@@ -210,4 +211,13 @@ func TestTopoWidget(t *testing.T) {
 	if len(checks) < 10 {
 		t.Errorf("only %d checks ran", len(checks))
 	}
+}
+
+// driveAlive closes a lesson's widget (as closing its tab does): what it
+// was still looking up is cancelled, and finds no widget to touch.
+func driveAlive() {
+	w := NewTopoLessonWidget(lesson.NewLesson("topo"), nil)
+	check("alive", w.alive.Err() == nil, "a new widget is not alive")
+	w.Delete()
+	check("dead", w.alive.Err() != nil, "a deleted widget's lookups go on")
 }

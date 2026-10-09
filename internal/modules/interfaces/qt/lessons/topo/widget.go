@@ -2,6 +2,7 @@ package topo
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/modules/interfaces/qt/valuecombo"
@@ -31,6 +32,9 @@ const defaultHint = "Click the map to add a place there, or type the name of a p
 // practise and see the results of.
 type TopoLessonWidget struct {
 	*qt.QWidget
+	// alive ends when Qt deletes the widget (its tab closed): what was
+	// still being looked up then must not touch it
+	alive      context.Context
 	lesson     *lesson.Lesson
 	maps       []Map
 	known      *Map // the bundled map shown, for its known places
@@ -72,6 +76,9 @@ type TopoLessonWidget struct {
 func NewTopoLessonWidget(l *lesson.Lesson, parent *qt.QWidget) *TopoLessonWidget {
 	w := &TopoLessonWidget{QWidget: qt.NewQWidget(parent), lesson: l,
 		maps: BundledMaps(filepath.Join(resources.Dir(), "data", "maps"))}
+	alive, dead := context.WithCancel(context.Background())
+	w.alive = alive
+	w.QWidget.OnDestroyed(dead)
 	layout := qt.NewQVBoxLayout(w.QWidget)
 	layout.SetContentsMargins(0, 0, 0, 0)
 	w.tabs = qt.NewQTabWidget(w.QWidget)
@@ -476,6 +483,14 @@ func (w *TopoLessonWidget) Start(order string) {
 	w.orderCombo.SetEnabled(false)
 	w.feedback.SetText("")
 	w.ask()
+}
+
+// KeepPractice ends a practice still running (its lesson is being
+// closed), keeping what was answered as a test, as Stop does.
+func (w *TopoLessonWidget) KeepPractice() {
+	if w.session != nil {
+		w.Stop()
+	}
 }
 
 // Stop ends the practice; answered questions are kept as a test.

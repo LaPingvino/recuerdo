@@ -40,7 +40,10 @@ type Engine struct {
 	// State management
 	mu       sync.RWMutex
 	speaking bool
-	cancel   context.CancelFunc
+	// utterance counts the utterances started; the one running is the
+	// last
+	utterance int
+	cancel    context.CancelFunc
 }
 
 // NewEngine creates a new text-to-speech engine
@@ -229,19 +232,36 @@ func (e *Engine) SpeakAsync(text string, callback func(error)) error {
 
 	// Create context for cancellation
 	ctx, cancel := context.WithCancel(context.Background())
+	// the command is made here, under the lock (the voice, rate and
+	// volume are read as they are now)
+	cmd, err := e.command(ctx, text)
+	if err != nil {
+		cancel()
+		if callback != nil {
+			go callback(err)
+		}
+		return err
+	}
 	e.cancel = cancel
 	e.speaking = true
+	e.utterance++
+	mine := e.utterance
 
 	// Start speech in goroutine
 	go func() {
 		defer func() {
 			e.mu.Lock()
-			e.speaking = false
-			e.cancel = nil
+			// an utterance interrupted by the next one must not clear
+			// that one's state: Stop could not stop it any more
+			if e.utterance == mine {
+				e.speaking = false
+				e.cancel = nil
+			}
 			e.mu.Unlock()
+			cancel()
 		}()
 
-		err := e.speakWithBackend(ctx, text)
+		err := cmd.Run()
 		if callback != nil {
 			callback(err)
 		}
@@ -250,8 +270,9 @@ func (e *Engine) SpeakAsync(text string, callback func(error)) error {
 	return nil
 }
 
-// speakWithBackend performs the actual TTS using the configured backend
-func (e *Engine) speakWithBackend(ctx context.Context, text string) error {
+// command is the program that speaks text with the configured backend
+// (e.mu held).
+func (e *Engine) command(ctx context.Context, text string) (*exec.Cmd, error) {
 	var cmd *exec.Cmd
 
 	switch e.backend {
@@ -282,13 +303,13 @@ func (e *Engine) speakWithBackend(ctx context.Context, text string) error {
 		cmd = exec.CommandContext(ctx, "powershell", "-Command", script)
 
 	default:
-		return fmt.Errorf("unsupported TTS backend: %s", e.backend)
+		return nil, fmt.Errorf("unsupported TTS backend: %s", e.backend)
 	}
 
 	// Redirect stderr to avoid cluttering output
 	cmd.Stderr = nil
 
-	return cmd.Run()
+	return cmd, nil
 }
 
 // Stop stops any ongoing speech synthesis

@@ -49,3 +49,37 @@ func TestSaveAsksBeforeLosing(t *testing.T) {
 		t.Error("declining still saved")
 	}
 }
+
+// fakePractice is a lesson widget with a practice running.
+type fakePractice struct{ end func() }
+
+func (p fakePractice) KeepPractice() { p.end() }
+
+var kept struct {
+	ended, asked, stillOpen bool
+}
+
+// driveKeepPractice closes a tab whose practice is running: the practice
+// ends (its answers kept, the lesson changed), so closing asks first.
+func driveKeepPractice() {
+	mod := &GuiModule{logger: logging.NewLogger("gui-test"), mainWindow: qt.NewQMainWindow(nil)}
+	mod.tabWidget = qt.NewQTabWidget(nil)
+	tab := qt.NewQWidget(nil)
+	mod.tabWidget.AddTab(tab, "Dieren")
+	mod.rememberPractice(tab, fakePractice{end: func() {
+		kept.ended = true
+		mod.markModified(tab)
+	}})
+	mod.askSave = func(string) qt.QMessageBox__StandardButton {
+		kept.asked = true
+		return qt.QMessageBox__Cancel
+	}
+	mod.closeTab(0)
+	kept.stillOpen = mod.tabWidget.Count() == 1
+}
+
+func TestClosingKeepsThePractice(t *testing.T) {
+	if !kept.ended || !kept.asked || !kept.stillOpen {
+		t.Errorf("practice ended %v, asked %v, still open after Cancel %v", kept.ended, kept.asked, kept.stillOpen)
+	}
+}

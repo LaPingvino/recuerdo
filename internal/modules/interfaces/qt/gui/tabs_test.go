@@ -26,6 +26,7 @@ func TestMain(m *testing.M) {
 	qt.NewQApplication([]string{"gui-test"})
 	driveTabs()
 	driveLossy()
+	driveKeepPractice()
 	os.Exit(m.Run())
 }
 

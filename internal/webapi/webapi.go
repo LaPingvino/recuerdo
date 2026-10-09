@@ -105,6 +105,7 @@ type App struct {
 	// mathAnswer marks the items whose answer has a formula: typed answers
 	// to them are compared without spaces
 	mathAnswer map[int]bool
+	asked      lesson.WordList // the words the session asks, as at Start
 }
 
 // ErrNoLesson is returned when there is no lesson to work on.
@@ -196,8 +197,12 @@ func (a *App) Start(o Options) (State, error) {
 		return State{}, ErrNoLesson
 	}
 	a.opts = o
+	// the words as they are now: the session asks these, by index, even
+	// if words are added, changed or removed while it runs
+	a.asked = a.data.List
+	a.asked.Items = append([]lesson.WordItem(nil), a.data.List.Items...)
 	a.mathAnswer = map[int]bool{}
-	for i, it := range a.data.List.Items {
+	for i, it := range a.asked.Items {
 		words := it.Answers
 		if o.AskAnswers {
 			words = it.Questions
@@ -208,7 +213,7 @@ func (a *App) Start(o Options) (State, error) {
 	}
 	// answers are checked against the words' plain text (H<sub>2</sub>O
 	// is typed H2O); the page shows the words with their markup
-	a.session = teaching.New(plainList(a.data.List), teaching.Options{
+	a.session = teaching.New(plainList(a.asked), teaching.Options{
 		LessonType: o.LessonType, Order: o.Order, Words: o.Words, AskAnswers: o.AskAnswers,
 	})
 	a.session.Start()
@@ -311,7 +316,7 @@ func (a *App) Report() []Row {
 		return nil
 	}
 	// the original words (with their markup), the way round they were asked
-	list := a.data.List
+	list := a.asked
 	list.Items = append([]lesson.WordItem(nil), list.Items...)
 	if a.opts.AskAnswers {
 		wordsreverser.Reverse(&list)
@@ -488,10 +493,10 @@ func plainList(list lesson.WordList) lesson.WordList {
 // shown is the question and answer of the item at index as safe HTML,
 // the way round the session asks them.
 func (a *App) shown(index int) (question, answer string) {
-	if index < 0 || index >= len(a.data.List.Items) {
+	if index < 0 || index >= len(a.asked.Items) {
 		return "", ""
 	}
-	it := a.data.List.Items[index]
+	it := a.asked.Items[index]
 	q, ans := compose(it.Questions), compose(it.Answers)
 	if a.opts.AskAnswers {
 		q, ans = ans, q

@@ -304,6 +304,14 @@ func (w *MediaLessonWidget) Start() {
 	w.ask()
 }
 
+// KeepPractice ends a practice still running (its lesson is being
+// closed), keeping what was answered as a test, as Stop does.
+func (w *MediaLessonWidget) KeepPractice() {
+	if w.session != nil {
+		w.Stop()
+	}
+}
+
 // Stop ends the practice; answered questions are kept as a test.
 func (w *MediaLessonWidget) Stop() {
 	if w.session == nil {

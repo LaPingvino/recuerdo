@@ -1,6 +1,7 @@
 package webapi
 
 import (
+	"strings"
 	"bytes"
 	"os"
 	"path/filepath"
@@ -241,5 +242,32 @@ func TestTyping(t *testing.T) {
 	}
 	if again := TypingShow(st.Profile); again.Level != 2 {
 		t.Errorf("show %+v", again)
+	}
+}
+
+// Editing the words while practising: the session goes on with the
+// words it started with, question and answer of the same pair.
+func TestEditingMidSession(t *testing.T) {
+	var a App
+	l, _ := a.OpenText("Dieren", "hond = dog\nkat = cat\nmuis = mouse\n")
+	a.Start(Options{})
+	a.RemoveItem(l.Items[0].ID)
+	a.AddItem("paard", "horse")
+	st := a.State()
+	if st.Question != "hond" || !strings.Contains(st.QuestionHTML, "hond") {
+		t.Fatalf("after editing: asks %q, shows %q", st.Question, st.QuestionHTML)
+	}
+	if r, _ := a.Answer("dog"); !r.Right || !strings.Contains(r.CorrectHTML, "dog") {
+		t.Errorf("answer: %+v", r)
+	}
+	a.Answer("cat")
+	a.Answer("mouse")
+	rows := a.Report()
+	if len(rows) != 3 || rows[0].Question != "hond" || rows[0].Answer != "dog" || rows[2].Answer != "mouse" {
+		t.Errorf("report: %+v", rows)
+	}
+	// the next session has the edited words
+	if st, _ := a.Start(Options{}); st.Question != "kat" || st.Total != 3 {
+		t.Errorf("next session: %+v", st)
 	}
 }

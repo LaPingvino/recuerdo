@@ -1329,6 +1329,14 @@ func (w *TeachTabWidget) HideCorrection() {
 	w.nextButton.SetEnabled(false)
 }
 
+// KeepPractice ends a practice still running (its lesson is being
+// closed), keeping what was answered as a test.
+func (w *WordsLessonWidget) KeepPractice() {
+	if w.teachWidget != nil && w.teachWidget.isTeaching {
+		w.teachWidget.finishTeaching()
+	}
+}
+
 // finishTeaching completes the teaching session
 func (w *TeachTabWidget) finishTeaching() {
 	w.isTeaching = false
