@@ -25,6 +25,7 @@ func TestMain(m *testing.M) {
 	os.Setenv("QT_QPA_PLATFORM", "offscreen")
 	qt.NewQApplication([]string{"gui-test"})
 	driveTabs()
+	driveLossy()
 	os.Exit(m.Run())
 }
 

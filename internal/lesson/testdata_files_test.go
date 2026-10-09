@@ -180,3 +180,43 @@ func TestTextRoundTrip(t *testing.T) {
 		}
 	}
 }
+
+// A first row is a header only when it is one: two languages, or the
+// words for question and answer; not a word pair that looks like one.
+func TestCSVHeaderOrFirstPair(t *testing.T) {
+	for row, header := range map[[2]string]bool{
+		{"English", "German"}:             true,
+		{"Questions", "Answers"}:          true,
+		{"Vraag", "Antwoord (betekenis)"}: true,
+		{"Esperanto", "Frisian"}:          true,
+		{"English", "Engels"}:             false, // a lesson on language names
+		{"Nederlands", "Dutch"}:           false,
+		{"vraag", "question"}:             false, // Dutch-English
+		{"answer", "antwoord"}:            false,
+		{"hond", "dog"}:                   false,
+	} {
+		if got := isCSVHeader(row[:]); got != header {
+			t.Errorf("%v: header %v, want %v", row, got, header)
+		}
+	}
+}
+
+func TestLosses(t *testing.T) {
+	d := NewLessonData()
+	d.List.Title = "Dieren"
+	d.List.QuestionLanguage, d.List.AnswerLanguage = "Dutch", "English"
+	d.List.Items = []WordItem{{Questions: []string{"hond"}, Answers: []string{"dog"}, Comment: "c"}}
+	d.List.Tests = []Test{{}}
+	for path, want := range map[string]string{
+		"x/Dieren.otwd":  "",
+		"x/Dieren.kvtml": "",
+		"x/Dieren.csv":   "the results of 1 test",
+		"x/other.csv":    `the results of 1 test; the title "Dieren"`,
+		"x/Dieren.txt":   "the results of 1 test; the comments",
+		"x/Dieren.t2k":   "the languages",
+	} {
+		if got := strings.Join(Losses(d, path), "; "); got != want {
+			t.Errorf("%s: %q, want %q", path, got, want)
+		}
+	}
+}

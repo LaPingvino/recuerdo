@@ -59,7 +59,10 @@ type GuiModule struct {
 	logger         *logging.Logger
 	// askSave asks whether to save a lesson with changes before closing it
 	// (nil: a message box)
-	askSave       func(name string) qt.QMessageBox__StandardButton
+	askSave func(name string) qt.QMessageBox__StandardButton
+	// askLossy asks whether to save in a format that leaves things out (a
+	// test answers it)
+	askLossy      func(path string, losses []string) bool
 	addingTab     bool
 	showingDialog bool
 
@@ -1093,10 +1096,29 @@ func (mod *GuiModule) saveCurrentLesson(as bool) {
 		}
 		path = export.WithExtension(path, filter)
 	}
+	if losses := lesson.Losses(&l.Data, path); len(losses) > 0 && !mod.lossyOK(path, losses) {
+		return
+	}
 	if err := mod.SaveCurrentLessonTo(path); err != nil {
 		qt.QMessageBox_Warning(mod.mainWindow.QWidget, "Save Lesson", "Could not save the lesson:\n"+err.Error())
 	}
 	_ = tab
+}
+
+// lossyOK asks whether to save in a format that leaves out what losses
+// names (Ctrl+S on a .csv lesson used to drop its test results unasked).
+func (mod *GuiModule) lossyOK(path string, losses []string) bool {
+	if mod.askLossy != nil {
+		return mod.askLossy(path, losses)
+	}
+	what := strings.Join(losses, ", ")
+	if i := strings.LastIndex(what, ", "); i >= 0 {
+		what = what[:i] + i18n.T(" and ") + what[i+2:]
+	}
+	return qt.QMessageBox_Warning6(mod.mainWindow.QWidget, i18n.T("Save Lesson"),
+		i18n.Tf("A %s file cannot hold %s: saving leaves them out. Save anyway?\n\n(Save As can keep everything, as .otwd.)",
+			strings.ToLower(filepath.Ext(path)), what),
+		qt.QMessageBox__Save|qt.QMessageBox__Cancel, qt.QMessageBox__Cancel) == qt.QMessageBox__Save
 }
 
 // SaveCurrentLessonTo saves the lesson in the current tab to path, in the

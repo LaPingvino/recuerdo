@@ -1503,7 +1503,6 @@ func (fl *FileLoader) GetFormatName(ext string) string {
 	}
 }
 
-
 // titleFromPath is the title of a lesson whose file has none: the file
 // name without its extension ("Dutch verbs" for Dutch verbs.csv).
 func titleFromPath(path string) string {

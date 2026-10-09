@@ -152,18 +152,23 @@ func isCSVHeader(row []string) bool {
 		return true
 	}
 	q, a := strings.ToLower(strings.TrimSpace(row[0])), strings.ToLower(strings.TrimSpace(row[1]))
-	// "Questions"/"Answers", or Teach2000's "Vraag"/"Antwoord (betekenis)"
-	if headerWords[q] && headerWords[withoutNote(a)] {
+	// "Questions"/"Answers", or Teach2000's "Vraag"/"Antwoord (betekenis)";
+	// not "vraag"/"question", which is a word and its translation
+	if questionWords[q] && answerWords[withoutNote(a)] {
 		return true
 	}
-	return languageNames[q] && languageNames[a]
+	// two languages: "English"/"German". "English"/"Engels" names one
+	// language twice, a word pair of a lesson on language names
+	lq, okq := languageNames[q]
+	la, oka := languageNames[a]
+	return okq && oka && lq != la
 }
 
-// headerWords are column names for questions and answers.
-var headerWords = map[string]bool{
-	"question": true, "questions": true, "answer": true, "answers": true,
-	"vraag": true, "vragen": true, "antwoord": true, "antwoorden": true,
-}
+// questionWords and answerWords are column names for questions and answers.
+var (
+	questionWords = map[string]bool{"question": true, "questions": true, "vraag": true, "vragen": true}
+	answerWords   = map[string]bool{"answer": true, "answers": true, "antwoord": true, "antwoorden": true}
+)
 
 // withoutNote drops a note in brackets: "antwoord (betekenis)" -> "antwoord".
 func withoutNote(s string) string {
@@ -174,10 +179,11 @@ func withoutNote(s string) string {
 }
 
 // languageNames are language names in English and in the language itself
-// (and Dutch, OpenTeacher's other main language), lower case.
-var languageNames = func() map[string]bool {
-	m := map[string]bool{}
-	for _, n := range strings.Fields(`english engels englisch anglais inglés
+// (and Dutch, OpenTeacher's other main language), lower case, each with
+// the number of its language (its line below).
+var languageNames = func() map[string]int {
+	m := map[string]int{}
+	for i, line := range strings.Split(`english engels englisch anglais inglés
 		dutch nederlands niederländisch néerlandais holandés
 		german duits deutsch allemand alemán
 		french frans französisch français francés
@@ -198,10 +204,19 @@ var languageNames = func() map[string]bool {
 		japanese japans japanisch japonais japonés 日本語
 		korean koreaans koreanisch coréen 한국어
 		hebrew hebreeuws hebräisch hébreu עברית
-		esperanto frisian fries frysk afrikaans indonesian indonesisch hindi persian perzisch
-		czech tsjechisch tschechisch čeština hungarian hongaars ungarisch magyar
-		romanian roemeens rumänisch română croatian kroatisch hrvatski`) {
-		m[n] = true
+		esperanto
+		frisian fries frysk
+		afrikaans
+		indonesian indonesisch
+		hindi
+		persian perzisch
+		czech tsjechisch tschechisch čeština
+		hungarian hongaars ungarisch magyar
+		romanian roemeens rumänisch română
+		croatian kroatisch hrvatski`, "\n") {
+		for _, n := range strings.Fields(line) {
+			m[n] = i + 1
+		}
 	}
 	return m
 }()
@@ -214,7 +229,7 @@ func (fl *FileLoader) loadCSVRecords(path string, records [][]string) *LessonDat
 	data.List.Title = titleFromPath(path)
 	if len(records) > 0 && isCSVHeader(records[0]) {
 		h := records[0]
-		if q, a := strings.TrimSpace(h[0]), strings.TrimSpace(h[1]); languageNames[strings.ToLower(q)] && languageNames[strings.ToLower(a)] {
+		if q, a := strings.TrimSpace(h[0]), strings.TrimSpace(h[1]); languageNames[strings.ToLower(q)] > 0 && languageNames[strings.ToLower(a)] > 0 {
 			data.List.QuestionLanguage, data.List.AnswerLanguage = q, a
 		}
 		records = records[1:]
