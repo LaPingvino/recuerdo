@@ -21,14 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     container: archlinux:latest
     steps:
-      # Pinned to the Arch Linux Archive of 2026-09-30 (Qt 6.11.2): miqt
-      # v0.14.0's bindings do not compile against Qt 6.12, which made the
-      # QAccessible*Interface classes non-copyable. Drop the pin when miqt
-      # supports 6.12.
+      # current Arch (Qt 6.12): miqt v0.15.0 builds against it
       - name: Build tools
         run: |
-          echo 'Server = https://archive.archlinux.org/repos/2026/09/30/$repo/os/$arch' > /etc/pacman.d/mirrorlist
-          pacman -Syyuu --noconfirm --needed base-devel github-cli go git pkgconf qt6-base
+          pacman -Syu --noconfirm --needed base-devel github-cli go git pkgconf qt6-base
       - uses: actions/checkout@v4
       - name: Build the package (makepkg runs as a normal user)
         run: |

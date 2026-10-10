@@ -3,7 +3,7 @@ module github.com/LaPingvino/recuerdo
 go 1.26.0
 
 require (
-	github.com/mappu/miqt v0.14.0
+	github.com/mappu/miqt v0.15.0
 	github.com/mattn/go-sqlite3 v1.14.32
 	github.com/paulmach/orb v0.13.0
 	github.com/stretchr/testify v1.8.4
