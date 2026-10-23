@@ -2,6 +2,8 @@
 
 Recuerdo is a language learning application that helps you create and study vocabulary lessons, geography maps, and multimedia content. It's a modern Go version of the popular OpenTeacher educational software.
 
+**Try it in your browser:** [lapingvino.github.io/recuerdo](https://lapingvino.github.io/recuerdo/), the web version, with nothing to install. Your lessons stay on your own computer.
+
 ## What You Can Do Right Now
 
 ### ✅ Create and Study Lessons
