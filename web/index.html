@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recuerdo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#6da6b9">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="recuerdo.svg">
 <link rel="stylesheet" href="katex/katex.min.css">
 <link rel="stylesheet" href="style.css">
@@ -174,5 +177,9 @@
 <script src="testmode.js"></script>
 <script src="teacher.js"></script>
 <script src="typing.js"></script>
+<script>
+// an app to install, and to use offline (sw.js)
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch((e) => console.warn("no offline use:", e));
+</script>
 </body>
 </html>
