@@ -25,7 +25,7 @@ footer a { color: var(--accent); }
 textarea, input, select { font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: .45rem .6rem; }
 textarea { width: 100%; resize: vertical; }
 .row { display: flex; gap: .6rem; margin-top: .6rem; flex-wrap: wrap; }
-.button { font: inherit; padding: .45rem 1rem; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--text); cursor: pointer; }
+.button { display: inline-block; margin-block: .15rem; font: inherit; padding: .45rem 1rem; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--text); cursor: pointer; }
 .button:hover { border-color: var(--accent); }
 .button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
 .error { color: var(--wrong); }
