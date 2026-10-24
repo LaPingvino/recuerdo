@@ -30,6 +30,9 @@ type Item struct {
 	// the same as safe HTML, for words with markup (richtext)
 	QuestionHTML string `json:"questionHtml"`
 	AnswerHTML   string `json:"answerHtml"`
+	// X and Y: where a place is on a map lesson's map (in its pixels)
+	X *int `json:"x,omitempty"`
+	Y *int `json:"y,omitempty"`
 }
 
 // Lesson is an opened lesson.
@@ -39,6 +42,10 @@ type Lesson struct {
 	AnswerLanguage   string `json:"answerLanguage"`
 	Items            []Item `json:"items"`
 	Sessions         int    `json:"sessions"`
+	// Kind is "words", or "topo" for a map with places (Map: the picture,
+	// as a data URL)
+	Kind string `json:"kind"`
+	Map  string `json:"map,omitempty"`
 }
 
 // Options start a practice session (empty values: the defaults).
@@ -69,6 +76,8 @@ type State struct {
 	// AnswerIsMath: the answer is a formula, so the page offers the
 	// formula builder in the answer field (typed as TeX, without $).
 	AnswerIsMath bool `json:"answerIsMath,omitempty"`
+	// ItemID is the item asked (a map lesson marks its place)
+	ItemID int `json:"itemId,omitempty"`
 }
 
 // Result is the outcome of an answer.
@@ -130,7 +139,7 @@ func (a *App) Open(name string, data []byte) (Lesson, error) {
 	if err != nil {
 		return Lesson{}, err
 	}
-	if len(d.List.Items) == 0 {
+	if _, isMap := d.Resources[lesson.MapImageResource].([]byte); len(d.List.Items) == 0 && !isMap {
 		return Lesson{}, fmt.Errorf("%s has no words", name)
 	}
 	a.data, a.name, a.session = d, name, nil
@@ -159,11 +168,14 @@ func (a *App) Lesson() (Lesson, error) {
 	}
 	l := a.data.List
 	out := Lesson{Title: l.Title, QuestionLanguage: l.QuestionLanguage, AnswerLanguage: l.AnswerLanguage,
-		Items: []Item{}, Sessions: len(l.Tests)}
+		Items: []Item{}, Sessions: len(l.Tests), Kind: "words"}
+	if a.isTopo() {
+		out.Kind, out.Map = "topo", a.mapURL()
+	}
 	for _, it := range l.Items {
-		q, ans := compose(it.Questions), compose(it.Answers)
-		out.Items = append(out.Items, Item{ID: it.ID, Question: q, Answer: ans, Comment: it.Comment,
-			QuestionHTML: richtext.Sanitize(q), AnswerHTML: richtext.Sanitize(ans)})
+		item := itemOf(it)
+		item.QuestionHTML, item.AnswerHTML = richtext.Sanitize(item.Question), richtext.Sanitize(item.Answer)
+		out.Items = append(out.Items, item)
 	}
 	return out, nil
 }
@@ -230,6 +242,7 @@ func (a *App) State() State {
 	st.Asked, st.Total = s.Progress()
 	st.Right, st.Answered = s.Score()
 	if item, index, ok := s.Current(); ok {
+		st.ItemID = item.ID
 		st.Question = compose(item.Questions)
 		st.Answer = s.CurrentAnswer()
 		st.Shuffle = strings.TrimPrefix(teaching.ShuffleHint(st.Answer, nil), "Hint: ")

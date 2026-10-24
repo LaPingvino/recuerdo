@@ -118,3 +118,8 @@ dl.typing-facts { display: grid; grid-template-columns: max-content 1fr; gap: .2
 dl.typing-facts dt { color: var(--muted); }
 dl.typing-facts dd { margin: 0; }
 #typingBody > .row { align-items: center; }
+
+/* map lessons (topo.js): the lesson's picture, zoomable */
+.map { height: min(60vh, 520px); margin: .75rem 0; border-radius: 6px; background: #ddd; }
+.map .place { background: #c0392b; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 2px #000; }
+.map .place.asked { background: #f1c40f; width: 18px !important; height: 18px !important; margin: -9px 0 0 -9px !important; }

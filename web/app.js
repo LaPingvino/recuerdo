@@ -191,6 +191,7 @@ function showLesson(l) {
 	text($("lessonTitle"), l.title);
 	$("titleEdit").value = l.title;
 	showWords();
+	if (globalThis.topo) topo.show(l); // a map lesson: its map (topo.js)
 	$("practice").hidden = true; $("done").hidden = true; $("options").hidden = false;
 	showResults();
 	showTab("practise");
@@ -263,6 +264,7 @@ function showTab(name) {
 	for (const p of document.querySelectorAll(".panel")) p.hidden = p.dataset.panel !== name;
 	if (name === "practise" && !$("practice").hidden) $("answer").focus();
 	if (name === "results" && api) showResults();
+	if (globalThis.topo) setTimeout(() => topo.refit()); // maps that were out of sight
 }
 for (const b of document.querySelectorAll(".tab")) b.addEventListener("click", () => showTab(b.dataset.tab));
 $("close").addEventListener("click", () => { $("lesson").hidden = true; $("start").hidden = false; text($("lessonTitle"), ""); });
@@ -294,6 +296,7 @@ let repeatTimer = null, currentState = {};
 function showState(st) {
 	currentState = st;
 	if (st.done || !st.active) { finish(st); return; }
+	if (lesson && lesson.kind === "topo" && globalThis.topo && topo.state(st)) return; // a map's (topo.js)
 	const mode = $("mode").value;
 	// the words' safe HTML (furigana, H<sub>2</sub>O, pictures), made by
 	// Go's internal/richtext
@@ -344,6 +347,11 @@ $("answerForm").addEventListener("submit", (e) => {
 	e.preventDefault();
 	const given = $("answer").value;
 	if (!given.trim()) return;
+	answerWith(given);
+});
+// answerWith answers the question with given (typed, or a place clicked on
+// a map) and shows how it went.
+function answerWith(given) {
 	try {
 		const r = call("answer", given);
 		const fb = $("feedback");
@@ -355,7 +363,7 @@ $("answerForm").addEventListener("submit", (e) => {
 		showState(call("state"));
 		showResults();
 	} catch (err) { text($("feedback"), err.message); }
-});
+}
 $("stopButton").addEventListener("click", () => finish(call("stop")));
 
 function finish(st) {

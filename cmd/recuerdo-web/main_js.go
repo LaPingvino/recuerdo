@@ -71,6 +71,21 @@ func main() {
 		"removeItem": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(nil, app.RemoveItem(args[0].Int()))
 		}),
+		// map lessons (webapi/topo.go)
+		"newTopo": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			data := make([]byte, args[1].Get("length").Int())
+			js.CopyBytesToGo(data, args[1])
+			return reply(app.NewTopo(args[0].String(), data))
+		}),
+		"addPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(app.AddPlace(args[0].String(), args[1].Int(), args[2].Int()))
+		}),
+		"setPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(nil, app.SetPlace(args[0].Int(), args[1].String(), args[2].Int(), args[3].Int()))
+		}),
+		"nearestPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return app.NearestPlace(args[0].Int(), args[1].Int(), args[2].Float())
+		}),
 		"viewAnswer":  js.FuncOf(func(js.Value, []js.Value) any { return reply(app.ViewAnswer()) }),
 		"judge":       js.FuncOf(func(_ js.Value, args []js.Value) any { return reply(nil, app.Judge(args[0].Bool())) }),
 		"skip":        js.FuncOf(func(js.Value, []js.Value) any { return reply(nil, app.Skip()) }),
