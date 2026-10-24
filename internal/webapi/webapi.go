@@ -17,6 +17,7 @@ import (
 	wordsreverser "github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
+	"github.com/LaPingvino/recuerdo/internal/osm"
 	"github.com/LaPingvino/recuerdo/internal/richtext"
 	"github.com/LaPingvino/recuerdo/internal/teaching"
 )
@@ -46,6 +47,9 @@ type Lesson struct {
 	// as a data URL)
 	Kind string `json:"kind"`
 	Map  string `json:"map,omitempty"`
+	// FromOSM: the map was drawn from OpenStreetMap, so places can be
+	// put on it by name
+	FromOSM bool `json:"fromOsm,omitempty"`
 }
 
 // Options start a practice session (empty values: the defaults).
@@ -115,6 +119,7 @@ type App struct {
 	// to them are compared without spaces
 	mathAnswer map[int]bool
 	asked      lesson.WordList // the words the session asks, as at Start
+	osmAreas   []osm.Area      // the areas the last OpenStreetMap search found (osm.go)
 }
 
 // ErrNoLesson is returned when there is no lesson to work on.
@@ -171,6 +176,7 @@ func (a *App) Lesson() (Lesson, error) {
 		Items: []Item{}, Sessions: len(l.Tests), Kind: "words"}
 	if a.isTopo() {
 		out.Kind, out.Map = "topo", a.mapURL()
+		_, out.FromOSM = a.data.Resources[lesson.MapGeoResource].([]byte)
 	}
 	for _, it := range l.Items {
 		item := itemOf(it)

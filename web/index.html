@@ -31,6 +31,7 @@
 			<p data-i18n>Drop a lesson file here, or choose one.</p>
 			<label class="button primary"><span data-i18n>Choose a file…</span><input type="file" id="file" hidden></label>
 			<label class="button"><span data-i18n>New map lesson from a picture…</span><input type="file" id="newMap" accept="image/*" hidden></label>
+			<button id="newOsmMap" class="button" data-i18n>New map from OpenStreetMap…</button>
 			<p class="hint" data-i18n>OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more</p>
 		</div>
 		<div class="type-list">
@@ -100,6 +101,7 @@
 		<div data-panel="words" class="panel">
 			<label class="title-edit"><span data-i18n>Title</span> <input id="titleEdit"></label>
 			<div id="mapEditor" class="map" hidden></div>
+			<form id="osmPlaceForm" class="row" hidden><input id="osmPlaceName" data-i18n-placeholder="A place on this map: Amsterdam, Rhine, Alps"> <button class="button" data-i18n>Put it where it is</button></form>
 			<p id="mapHint" class="mode-hint" hidden data-i18n>Click the map to put a place there; drag a place to move it; click a place to rename or remove it.</p>
 			<table class="words edit"><thead><tr><th data-i18n>Question</th><th data-i18n>Answer</th><th></th></tr></thead><tbody id="wordRows"></tbody></table>
 			<p class="hint" data-i18n>Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it.</p>
@@ -162,6 +164,16 @@
 	</section>
 </main>
 
+<dialog id="osmDialog">
+	<form method="dialog" id="osmForm">
+		<h2 data-i18n>Map from OpenStreetMap</h2>
+		<p class="row"><input id="osmQuery" data-i18n-placeholder="A country, a province, a region: Netherlands, Bavaria, Andes"> <button id="osmSearch" type="button" class="button" data-i18n>Search</button></p>
+		<p><select id="osmAreas" size="6" style="width:100%"></select></p>
+		<p><label><span data-i18n>Map</span> <select id="osmStyle"></select></label></p>
+		<p id="osmStatus" class="mode-hint" data-i18n>Map data © OpenStreetMap contributors.</p>
+		<div class="row"><button id="osmUse" value="ok" type="button" class="button primary" data-i18n>Use this map</button><button value="cancel" class="button" data-i18n>Cancel</button></div>
+	</form>
+</dialog>
 <dialog id="downloadDialog">
 	<form method="dialog">
 		<p data-i18n>Download the lesson, with your results</p>

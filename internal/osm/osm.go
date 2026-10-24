@@ -21,6 +21,7 @@ import (
 	"math"
 	"net/http"
 	"net/url"
+	"runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -118,7 +119,9 @@ func get(ctx context.Context, u string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Set("User-Agent", UserAgent)
+	if runtime.GOOS != "js" { // a browser sends its own, and may not let a page set one
+		req.Header.Set("User-Agent", UserAgent)
+	}
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err

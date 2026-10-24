@@ -8,6 +8,7 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"io"
 	"log"
@@ -29,6 +30,21 @@ func reply(v any, err error) any {
 	}
 	b, _ := json.Marshal(v)
 	return string(b)
+}
+
+// promise runs f in a goroutine and returns a Promise of its reply: work
+// that waits on the network (fetch) cannot run in the page's event.
+func promise(f func(ctx context.Context) (any, error)) js.Value {
+	var handler js.Func
+	handler = js.FuncOf(func(_ js.Value, args []js.Value) any {
+		resolve := args[0]
+		go func() {
+			defer handler.Release()
+			resolve.Invoke(reply(f(context.Background())))
+		}()
+		return nil
+	})
+	return js.Global().Get("Promise").New(handler)
 }
 
 func main() {
@@ -82,6 +98,19 @@ func main() {
 		}),
 		"setPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(nil, app.SetPlace(args[0].Int(), args[1].String(), args[2].Int(), args[3].Int()))
+		}),
+		"osmStyles": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.OSMStyles(), nil) }),
+		"osmSearch": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			q := args[0].String()
+			return promise(func(ctx context.Context) (any, error) { return app.OSMSearch(ctx, q) })
+		}),
+		"osmMap": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			i, style, title := args[0].Int(), args[1].Int(), args[2].String()
+			return promise(func(ctx context.Context) (any, error) { return app.OSMMap(ctx, i, style, title) })
+		}),
+		"osmPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			name := args[0].String()
+			return promise(func(ctx context.Context) (any, error) { return app.OSMPlace(ctx, name) })
 		}),
 		"nearestPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return app.NearestPlace(args[0].Int(), args[1].Int(), args[2].Float())

@@ -64,6 +64,7 @@ const topo = {
 	async show(l) {
 		const isMap = l.kind === "topo";
 		$("mapEditor").hidden = $("mapHint").hidden = $("topoModeLabel").hidden = !isMap;
+		$("osmPlaceForm").hidden = !(isMap && l.fromOsm);
 		$("practiceMap").hidden = true;
 		for (const o of $("format").options) o.hidden = (o.value === "ottp") !== isMap; // a map's file keeps the map
 		$("format").value = isMap ? "ottp" : "otwd";
@@ -186,4 +187,65 @@ $("newMap").addEventListener("change", async () => {
 		showTab("words");
 	} catch (e) { showError(e); }
 	$("newMap").value = "";
+});
+
+// ---- a new map from OpenStreetMap (Go: internal/webapi/osm.go) ----
+// osmCall calls a Go function that answers with a promise of its reply.
+async function osmCall(name, ...args) {
+	const out = JSON.parse(await api[name](...args));
+	if (out && out.error) throw new Error(out.error);
+	return out;
+}
+$("newOsmMap").addEventListener("click", () => {
+	const style = $("osmStyle");
+	if (!style.options.length) {
+		for (const [i, name] of call("osmStyles").entries()) {
+			const o = document.createElement("option"); o.value = i; o.textContent = t(name); style.append(o);
+		}
+	}
+	$("osmDialog").showModal();
+	$("osmQuery").focus();
+});
+async function osmSearch() {
+	const q = $("osmQuery").value.trim();
+	if (!q) return;
+	text($("osmStatus"), t("Searching…"));
+	try {
+		const names = await osmCall("osmSearch", q);
+		const list = $("osmAreas"); list.replaceChildren();
+		for (const [i, n] of names.entries()) {
+			const o = document.createElement("option"); o.value = i; o.textContent = n; list.append(o);
+		}
+		if (names.length) list.selectedIndex = 0;
+		text($("osmStatus"), names.length ? t("Map data © OpenStreetMap contributors.") : t("No areas found: try a country, province or region."));
+	} catch (e) { text($("osmStatus"), e.message); }
+}
+$("osmSearch").addEventListener("click", osmSearch);
+$("osmQuery").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); osmSearch(); } });
+$("osmUse").addEventListener("click", async () => {
+	const list = $("osmAreas");
+	if (list.selectedIndex < 0) { text($("osmStatus"), t("Search for an area first.")); return; }
+	const title = list.options[list.selectedIndex].textContent.split(",")[0];
+	text($("osmStatus"), t("Drawing the map…"));
+	$("osmUse").disabled = true;
+	try {
+		const l = await osmCall("osmMap", +list.value, +$("osmStyle").value, title);
+		$("osmDialog").close();
+		showLesson(l);
+		showTab("words");
+	} catch (e) { text($("osmStatus"), e.message); }
+	$("osmUse").disabled = false;
+});
+
+// a place put on an OpenStreetMap map by name, where it is
+$("osmPlaceForm").addEventListener("submit", async (e) => {
+	e.preventDefault();
+	const name = $("osmPlaceName").value.trim();
+	if (!name) return;
+	try {
+		await osmCall("osmPlace", name);
+		$("osmPlaceName").value = "";
+		lesson = call("lesson");
+		topo.places(lesson);
+	} catch (err) { alert(err.message); }
 });
