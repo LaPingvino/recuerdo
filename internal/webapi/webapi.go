@@ -14,6 +14,7 @@ import (
 
 	"github.com/LaPingvino/recuerdo/internal/i18n"
 	"github.com/LaPingvino/recuerdo/internal/lesson"
+	"github.com/LaPingvino/recuerdo/internal/lesson/mediakind"
 	wordsreverser "github.com/LaPingvino/recuerdo/internal/modules/logic/reversers/words"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/checker"
 	"github.com/LaPingvino/recuerdo/internal/modules/logic/wordsString/composer"
@@ -34,6 +35,13 @@ type Item struct {
 	// X and Y: where a place is on a map lesson's map (in its pixels)
 	X *int `json:"x,omitempty"`
 	Y *int `json:"y,omitempty"`
+	// a media lesson's item: its Name, its MediaKind ("picture", "sound",
+	// "YouTube video", …) and its File (embedded: see MediaFile) or Media
+	// (a web address)
+	Name      string `json:"name,omitempty"`
+	MediaKind string `json:"mediaKind,omitempty"`
+	File      string `json:"file,omitempty"`
+	Media     string `json:"media,omitempty"`
 }
 
 // Lesson is an opened lesson.
@@ -43,7 +51,8 @@ type Lesson struct {
 	AnswerLanguage   string `json:"answerLanguage"`
 	Items            []Item `json:"items"`
 	Sessions         int    `json:"sessions"`
-	// Kind is "words", or "topo" for a map with places (Map: the picture,
+	// Kind is "words", "media" for pictures, sounds, videos and websites,
+	// or "topo" for a map with places (Map: the picture,
 	// as a data URL)
 	Kind string `json:"kind"`
 	Map  string `json:"map,omitempty"`
@@ -81,7 +90,7 @@ type State struct {
 	// formula builder in the answer field (typed as TeX, without $).
 	AnswerIsMath bool `json:"answerIsMath,omitempty"`
 	// ItemID is the item asked (a map lesson marks its place)
-	ItemID int `json:"itemId,omitempty"`
+	ItemID int `json:"itemId"`
 }
 
 // Result is the outcome of an answer.
@@ -144,7 +153,9 @@ func (a *App) Open(name string, data []byte) (Lesson, error) {
 	if err != nil {
 		return Lesson{}, err
 	}
-	if _, isMap := d.Resources[lesson.MapImageResource].([]byte); len(d.List.Items) == 0 && !isMap {
+	_, isMap := d.Resources[lesson.MapImageResource].([]byte)
+	_, isMedia := d.Resources[lesson.MediaFilesResource].(map[string][]byte)
+	if len(d.List.Items) == 0 && !isMap && !isMedia {
 		return Lesson{}, fmt.Errorf("%s has no words", name)
 	}
 	a.data, a.name, a.session = d, name, nil
@@ -177,6 +188,8 @@ func (a *App) Lesson() (Lesson, error) {
 	if a.isTopo() {
 		out.Kind, out.Map = "topo", a.mapURL()
 		_, out.FromOSM = a.data.Resources[lesson.MapGeoResource].([]byte)
+	} else if a.isMedia() {
+		out.Kind = "media"
 	}
 	for _, it := range l.Items {
 		item := itemOf(it)
@@ -219,6 +232,13 @@ func (a *App) Start(o Options) (State, error) {
 	// if words are added, changed or removed while it runs
 	a.asked = a.data.List
 	a.asked.Items = append([]lesson.WordItem(nil), a.data.List.Items...)
+	if a.isMedia() {
+		// only the items with an answer are asked, as on the desktop
+		a.asked = mediakind.Teachable(a.data.List)
+		if len(a.asked.Items) == 0 {
+			return State{}, errors.New("give the items an answer first")
+		}
+	}
 	a.mathAnswer = map[int]bool{}
 	for i, it := range a.asked.Items {
 		words := it.Answers

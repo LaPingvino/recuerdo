@@ -32,7 +32,8 @@
 			<label class="button primary"><span data-i18n>Choose a file…</span><input type="file" id="file" hidden></label>
 			<label class="button"><span data-i18n>New map lesson from a picture…</span><input type="file" id="newMap" accept="image/*" hidden></label>
 			<button id="newOsmMap" class="button" data-i18n>New map from OpenStreetMap…</button>
-			<p class="hint" data-i18n>OpenTeacher lessons (.ot, .otwd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more</p>
+			<label class="button"><span data-i18n>New media lesson from pictures, sounds or videos…</span><input type="file" id="newMedia" accept="image/*,audio/*,video/*,.txt" multiple hidden></label>
+			<p class="hint" data-i18n>OpenTeacher lessons (.ot, .otwd, .ottp, .otmd), word lists (.csv, .txt), KWordQuiz (.kvtml), Anki, WRTS and more</p>
 		</div>
 		<div class="type-list">
 			<h2 data-i18n>Or type a list</h2>
@@ -103,6 +104,13 @@
 			<div id="mapEditor" class="map" hidden></div>
 			<form id="osmPlaceForm" class="row" hidden><input id="osmPlaceName" data-i18n-placeholder="A place on this map: Amsterdam, Rhine, Alps"> <button class="button" data-i18n>Put it where it is</button></form>
 			<p id="mapHint" class="mode-hint" hidden data-i18n>Click the map to put a place there; drag a place to move it; click a place to rename or remove it.</p>
+			<div id="mediaEditor" hidden>
+				<div id="mediaItems"></div>
+				<div class="row">
+					<label class="button"><span data-i18n>Add pictures, sounds or videos…</span><input type="file" id="addMedia" accept="image/*,audio/*,video/*,.txt" multiple hidden></label>
+					<form id="mediaAddressForm" class="row"><input id="mediaAddress" type="url" data-i18n-placeholder="A website or a YouTube, Vimeo or Dailymotion video"> <button class="button" data-i18n>Add</button></form>
+				</div>
+			</div>
 			<table class="words edit"><thead><tr><th data-i18n>Question</th><th data-i18n>Answer</th><th></th></tr></thead><tbody id="wordRows"></tbody></table>
 			<p class="hint" data-i18n>Several words for one question: separate them with commas. Changes are kept until you leave the page: download the lesson to keep it.</p>
 		</div>
@@ -130,6 +138,7 @@
 				<p class="counter" id="counter"></p>
 				<p class="question" id="question"></p>
 				<div id="practiceMap" class="map" hidden></div>
+				<div id="practiceMedia" class="practice-media" hidden></div>
 				<p class="mode-hint" id="modeHint"></p>
 				<div class="inmind" id="inmind" hidden>
 					<button id="viewAnswer" class="button primary" type="button" data-i18n>View answer</button>
@@ -183,6 +192,7 @@
 			<option value="txt">Text (.txt)</option>
 			<option value="kvtml">KWordQuiz (.kvtml)</option>
 			<option value="ottp">OpenTeaching Topography (.ottp)</option>
+			<option value="otmd">OpenTeaching Media (.otmd)</option>
 		</select></label></p>
 		<div class="row"><button value="ok" class="button primary" data-i18n>Download</button><button value="cancel" class="button" data-i18n>Cancel</button></div>
 	</form>
@@ -196,6 +206,7 @@
 <script src="katex/contrib/auto-render.min.js"></script>
 <script src="app.js"></script>
 <script src="topo.js"></script>
+<script src="media.js"></script>
 <script src="testmode.js"></script>
 <script src="teacher.js"></script>
 <script src="typing.js"></script>

@@ -99,6 +99,26 @@ func main() {
 		"setPlace": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			return reply(nil, app.SetPlace(args[0].Int(), args[1].String(), args[2].Int(), args[3].Int()))
 		}),
+		"newMedia": js.FuncOf(func(_ js.Value, args []js.Value) any { return reply(app.NewMedia(args[0].String())) }),
+		"addMediaFile": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			data := make([]byte, args[1].Get("length").Int())
+			js.CopyBytesToGo(data, args[1])
+			return reply(app.AddMediaFile(args[0].String(), data))
+		}),
+		"addMediaAddress": js.FuncOf(func(_ js.Value, args []js.Value) any { return reply(app.AddMediaAddress(args[0].String())) }),
+		"setMedia": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			return reply(nil, app.SetMedia(args[0].Int(), args[1].String(), args[2].String(), args[3].String()))
+		}),
+		// mediaFile is an embedded file as {bytes: Uint8Array, type}, or null
+		"mediaFile": js.FuncOf(func(_ js.Value, args []js.Value) any {
+			b, typ := app.MediaFile(args[0].String())
+			if b == nil {
+				return js.Null()
+			}
+			arr := js.Global().Get("Uint8Array").New(len(b))
+			js.CopyBytesToJS(arr, b)
+			return map[string]any{"bytes": arr, "type": typ}
+		}),
 		"osmStyles": js.FuncOf(func(js.Value, []js.Value) any { return reply(app.OSMStyles(), nil) }),
 		"osmSearch": js.FuncOf(func(_ js.Value, args []js.Value) any {
 			q := args[0].String()

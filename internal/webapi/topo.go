@@ -92,5 +92,7 @@ func (a *App) NearestPlace(x, y int, radius float64) string {
 // itemOf is a lesson item as the page has it.
 func itemOf(it lesson.WordItem) Item {
 	q, ans := compose(it.Questions), compose(it.Answers)
-	return Item{ID: it.ID, Question: q, Answer: ans, Comment: it.Comment, X: it.X, Y: it.Y}
+	out := Item{ID: it.ID, Question: q, Answer: ans, Comment: it.Comment, X: it.X, Y: it.Y}
+	mediaOf(&out, it)
+	return out
 }

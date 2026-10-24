@@ -192,6 +192,11 @@ function showLesson(l) {
 	$("titleEdit").value = l.title;
 	showWords();
 	if (globalThis.topo) topo.show(l); // a map lesson: its map (topo.js)
+	if (globalThis.media) media.show(l); // a media lesson: its items (media.js)
+	// a map's or media lesson's file keeps its pictures: only its own format
+	const own = { topo: "ottp", media: "otmd" }[l.kind];
+	for (const o of $("format").options) o.hidden = own ? o.value !== own : o.value === "ottp" || o.value === "otmd";
+	$("format").value = own || "otwd";
 	$("practice").hidden = true; $("done").hidden = true; $("options").hidden = false;
 	showResults();
 	showTab("practise");
@@ -297,6 +302,8 @@ function showState(st) {
 	currentState = st;
 	if (st.done || !st.active) { finish(st); return; }
 	if (lesson && lesson.kind === "topo" && globalThis.topo && topo.state(st)) return; // a map's (topo.js)
+	$("practiceMedia").hidden = true;
+	if (lesson && lesson.kind === "media" && globalThis.media) media.state(st); // the item shown (media.js)
 	const mode = $("mode").value;
 	// the words' safe HTML (furigana, H<sub>2</sub>O, pictures), made by
 	// Go's internal/richtext
